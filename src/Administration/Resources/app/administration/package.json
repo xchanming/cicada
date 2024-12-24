@@ -54,7 +54,7 @@
   ],
   "dependencies": {
     "@cicada-ag/meteor-admin-sdk": "5.6.1",
-    "@cicada-ag/meteor-component-library": "3.11.0",
+    "@cicada-ag/meteor-component-library": "4.0.0",
     "@cicada-ag/meteor-icon-kit": "5.4.0",
     "@cicada-ag/webpack-copy-after-build": "1.0.1",
     "@cicada-ag/webpack-kill-process-on-failed-build": "1.0.0",

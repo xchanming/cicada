@@ -34,7 +34,7 @@ class UserProvisionerTest extends TestCase
                     static::assertFalse($data['admin']);
                     static::assertTrue($data['active']);
 
-                    return password_verify('cicada', (string) $data['password']);
+                    return password_verify('12345678', (string) $data['password']);
                 })
             );
         $connection->expects(static::once())->method('fetchOne')->willReturn(json_encode(['_value' => 8], \JSON_THROW_ON_ERROR));
@@ -51,7 +51,7 @@ class UserProvisionerTest extends TestCase
         ];
 
         $provisioner = new UserProvisioner($connection);
-        $provisioner->provision('admin', 'cicada', $user);
+        $provisioner->provision('admin', '12345678', $user);
     }
 
     public function testProvisionThrowsIfUserAlreadyExists(): void
@@ -74,7 +74,7 @@ class UserProvisionerTest extends TestCase
         $provisioner = new UserProvisioner($connection);
         $this->expectException(\RuntimeException::class);
         $this->expectExceptionMessage('User with username "admin" already exists.');
-        $provisioner->provision('admin', 'cicada', $user);
+        $provisioner->provision('admin', '12345678', $user);
     }
 
     public function testProvisionThrowsIfPasswordTooShort(): void

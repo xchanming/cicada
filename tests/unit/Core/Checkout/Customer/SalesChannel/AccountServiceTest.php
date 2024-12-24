@@ -96,7 +96,7 @@ class AccountServiceTest extends TestCase
             $cartRestorer,
         );
 
-        $token = $accountService->loginByCredentials('foo@bar.de', 'cicada', $salesChannelContext);
+        $token = $accountService->loginByCredentials('foo@bar.de', '12345678', $salesChannelContext);
         static::assertSame($loggedinSalesChannelContext->getToken(), $token);
         static::assertTrue($beforeLoginEventCalled);
         static::assertTrue($loginEventCalled);

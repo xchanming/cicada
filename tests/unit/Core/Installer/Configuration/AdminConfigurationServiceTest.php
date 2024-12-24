@@ -32,7 +32,7 @@ class AdminConfigurationServiceTest extends TestCase
                     static::assertTrue($data['admin']);
                     static::assertTrue($data['active']);
 
-                    return password_verify('cicada', (string) $data['password']);
+                    return password_verify('12345678', (string) $data['password']);
                 })
             );
 
@@ -45,7 +45,7 @@ class AdminConfigurationServiceTest extends TestCase
 
         $user = [
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'firstName' => 'first',
             'lastName' => 'last',
             'email' => 'test@test.com',
