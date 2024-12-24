@@ -43,7 +43,7 @@ jobs:
           working-directory: ""
 
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           cicada-version: ${{ github.ref }}
           cicada-repository: ${{ github.repository }}
@@ -70,7 +70,7 @@ jobs:
     name: "PHPStan"
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           cicada-version: ${{ github.ref }}
           cicada-repository: ${{ github.repository }}
@@ -120,7 +120,7 @@ jobs:
       DATABASE_HOST: "127.0.0.1"
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           install: true
           cicada-version: ${{ github.ref }}
@@ -178,7 +178,7 @@ jobs:
 
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           cicada-version: ${{ github.ref }}
           cicada-repository: ${{ github.repository }}
@@ -202,7 +202,7 @@ jobs:
     name: "PHP license check"
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           cicada-version: ${{ github.ref }}
           cicada-repository: ${{ github.repository }}
