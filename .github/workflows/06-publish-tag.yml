@@ -5,8 +5,9 @@ on:
     tags:
       - 'v*'
 env:
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
   GITHUB_SYNC_USER: "gxiaosong"
-  REMOTE_BASE_URL: "https://${{ secrets.GITHUB_TOKEN }}@github.com/xchanming"
+  REMOTE_BASE_URL: "https://${{ secrets.TOKEN }}@github.com/xchanming"
 
 jobs:
   php:
