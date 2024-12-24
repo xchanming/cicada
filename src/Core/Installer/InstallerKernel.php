@@ -34,12 +34,12 @@ class InstallerKernel extends HttpKernel
         parent::__construct($environment, $debug);
 
         // @codeCoverageIgnoreStart - not testable, as static calls cannot be mocked
-        if (InstalledVersions::isInstalled('cicada/platform')) {
-            $version = InstalledVersions::getVersion('cicada/platform')
-                . '@' . InstalledVersions::getReference('cicada/platform');
+        if (InstalledVersions::isInstalled('cicada-ag/platform')) {
+            $version = InstalledVersions::getVersion('cicada-ag/platform')
+                . '@' . InstalledVersions::getReference('cicada-ag/platform');
         } else {
-            $version = InstalledVersions::getVersion('cicada/core')
-                . '@' . InstalledVersions::getReference('cicada/core');
+            $version = InstalledVersions::getVersion('cicada-ag/core')
+                . '@' . InstalledVersions::getReference('cicada-ag/core');
         }
         // @codeCoverageIgnoreEnd
 

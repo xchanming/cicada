@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "cicada/core": "~6.4"
+        "cicada-ag/core": "~6.4"
     },
     "extra": {
         "cicada-plugin-class": "SwagTestTheme\\SwagTestTheme",

@@ -259,7 +259,7 @@ class ChangelogProcessor
             $platformRoot = $this->projectDir;
             $composerJson = json_decode((string) file_get_contents($this->projectDir . '/composer.json'), true, 512, \JSON_THROW_ON_ERROR);
 
-            if ($composerJson === null || $composerJson['name'] !== 'cicada/platform') {
+            if ($composerJson === null || $composerJson['name'] !== 'cicada-ag/platform') {
                 $platformRoot .= '/platform';
             }
 

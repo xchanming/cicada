@@ -11,7 +11,7 @@
         }
     ],
     "conflict": {
-        "cicada/core": "> 6.3.0.0"
+        "cicada-ag/core": "> 6.3.0.0"
     },
     "extra": {
         "cicada-plugin-class": "SwagTestValidateConflictsSpecificMessage\\SwagTestValidateConflictsSpecificMessage",

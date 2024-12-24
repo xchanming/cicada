@@ -247,7 +247,7 @@ class Feature
             return;
         }
 
-        trigger_deprecation('cicada/core', '', $message);
+        trigger_deprecation('cicada-ag/core', '', $message);
     }
 
     public static function deprecatedMethodMessage(string $class, string $method, string $majorVersion, ?string $replacement = null): string

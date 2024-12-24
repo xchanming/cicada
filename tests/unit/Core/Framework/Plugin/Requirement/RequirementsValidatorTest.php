@@ -92,7 +92,7 @@ class RequirementsValidatorTest extends TestCase
             $packages[] = $requirement->getParameters()['requirement'];
         }
 
-        static::assertContains('cicada/platform', $packages);
+        static::assertContains('cicada-ag/platform', $packages);
         static::assertContains('test/not-installed', $packages);
     }
 
@@ -200,7 +200,7 @@ class RequirementsValidatorTest extends TestCase
         $this->expectExceptionMessageMatches(\sprintf(
             $regexTemplate,
             preg_quote($plugin->getComposerName(), '#'),
-            preg_quote('cicada/core', '#')
+            preg_quote('cicada-ag/core', '#')
         ));
         $this->createValidator()->validateRequirements($plugin, Context::createDefaultContext(), 'test');
     }

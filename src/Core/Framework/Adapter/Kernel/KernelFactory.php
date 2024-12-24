@@ -40,12 +40,12 @@ class KernelFactory
         ?KernelPluginLoader $pluginLoader = null,
         ?Connection $connection = null
     ): HttpKernelInterface {
-        if (InstalledVersions::isInstalled('cicada/platform')) {
-            $cicadaVersion = InstalledVersions::getVersion('cicada/platform')
-                . '@' . InstalledVersions::getReference('cicada/platform');
+        if (InstalledVersions::isInstalled('cicada-ag/platform')) {
+            $cicadaVersion = InstalledVersions::getVersion('cicada-ag/platform')
+                . '@' . InstalledVersions::getReference('cicada-ag/platform');
         } else {
-            $cicadaVersion = InstalledVersions::getVersion('cicada/core')
-                . '@' . InstalledVersions::getReference('cicada/core');
+            $cicadaVersion = InstalledVersions::getVersion('cicada-ag/core')
+                . '@' . InstalledVersions::getReference('cicada-ag/core');
         }
 
         $middlewares = [];

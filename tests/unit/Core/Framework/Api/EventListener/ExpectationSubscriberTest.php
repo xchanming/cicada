@@ -38,7 +38,7 @@ class ExpectationSubscriberTest extends TestCase
                 'dev' => false,
             ],
             'versions' => [
-                'cicada/core' => [
+                'cicada-ag/core' => [
                     'version' => '6.3.0.0',
                     'dev_requirement' => false,
                 ],
@@ -49,7 +49,7 @@ class ExpectationSubscriberTest extends TestCase
     public function testExpectFailsOutdatedCicadaVersion(): void
     {
         $request = $this->makeRequest();
-        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada/core:~6.4');
+        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada-ag/core:~6.4');
 
         $event = new ControllerEvent(
             $this->createMock(Kernel::class),
@@ -67,7 +67,7 @@ class ExpectationSubscriberTest extends TestCase
     public function testExpectMatchesCicadaVersion(): void
     {
         $request = $this->makeRequest();
-        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada/core:~6.3.0.0');
+        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada-ag/core:~6.3.0.0');
 
         $event = new ControllerEvent(
             $this->createMock(Kernel::class),
@@ -82,7 +82,7 @@ class ExpectationSubscriberTest extends TestCase
     public function testExpectMatchesCicadaVersionButNotPlugin(): void
     {
         $request = $this->makeRequest();
-        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada/core:~6.3.0.0,swag/paypal:*');
+        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada-ag/core:~6.3.0.0,swag/paypal:*');
 
         $event = new ControllerEvent(
             $this->createMock(Kernel::class),
@@ -102,7 +102,7 @@ class ExpectationSubscriberTest extends TestCase
         $this->expectationSubscriber = new ExpectationSubscriber('6.3.0.0', [['composerName' => 'swag/paypal', 'active' => true, 'version' => '1.0.0']]);
 
         $request = $this->makeRequest();
-        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada/core:~6.3.0.0,swag/paypal:*');
+        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada-ag/core:~6.3.0.0,swag/paypal:*');
 
         $event = new ControllerEvent(
             $this->createMock(Kernel::class),
@@ -119,7 +119,7 @@ class ExpectationSubscriberTest extends TestCase
         $this->expectationSubscriber = new ExpectationSubscriber('6.3.0.0', [['composerName' => 'swag/paypal', 'active' => false, 'version' => '1.0.0']]);
 
         $request = $this->makeRequest();
-        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada/core:~6.3.0.0,swag/paypal:*');
+        $request->headers->set(PlatformRequest::HEADER_EXPECT_PACKAGES, 'cicada-ag/core:~6.3.0.0,swag/paypal:*');
 
         $event = new ControllerEvent(
             $this->createMock(Kernel::class),

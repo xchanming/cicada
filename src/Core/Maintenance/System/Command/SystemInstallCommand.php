@@ -131,7 +131,7 @@ class SystemInstallCommand extends Command
                 'command' => 'user:create',
                 'username' => 'admin',
                 '--admin' => true,
-                '--password' => 'cicada',
+                '--password' => '12345678',
             ];
 
             if ($application->has('sales-channel:create:storefront')) {

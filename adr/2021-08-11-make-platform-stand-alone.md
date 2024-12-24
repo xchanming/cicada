@@ -1,5 +1,5 @@
 ---
-title: Make cicada/platform stand-alone for development and testing
+title: Make cicada-ag/platform stand-alone for development and testing
 date: 2021-08-11
 area: product-operations
 tags: [cicada, platform, development, testing]
@@ -10,7 +10,7 @@ tags: [cicada, platform, development, testing]
 The platform requires some additional config, a console and web entrypoint and additional development tooling for development, tests and
 running the application. In practice this is provided by one of the templates: `cicada/development` or `cicada/production`. 
 This creates a cyclic dependency, which brings some problems:
-- `cicada/development` and `cicada/platform` need to be updated in lockstep, which makes updating them individually sometimes impossible 
+- `cicada/development` and `cicada-ag/platform` need to be updated in lockstep, which makes updating them individually sometimes impossible 
 - some IDEs have trouble with multi-repository projects
 - updating development tooling breaks everything
 - auto-detection of git revision and diff is broken because the development template is the root
@@ -18,9 +18,9 @@ This creates a cyclic dependency, which brings some problems:
 
 ## Decision
 
-- use cicada/platform directly in the pipeline
+- use cicada-ag/platform directly in the pipeline
 - allow development without a template by moving the development tooling into platform
-- only advertise this as `cicada/platform` development setup. Projects should still start with `cicada/production` as a template
+- only advertise this as `cicada-ag/platform` development setup. Projects should still start with `cicada/production` as a template
 - `cicada/development` should continue to work
 - allow testing by adding entrypoints for cli and web
 - add scripts to composer to ease common tasks
@@ -41,5 +41,5 @@ This creates a cyclic dependency, which brings some problems:
 - simplified CI, which also makes errors easier to reproduce locally
 - simplified local setup  
 - no custom scripts that are not available in all setups
-- projects may try to use cicada/platform directly
+- projects may try to use cicada-ag/platform directly
 - yet another cicada setup to choose from

@@ -34,14 +34,14 @@ LOCK_DSN=flock
 # MAILER_DSN=null://null
 ###< symfony/mailer ###
 
-###> cicada/core ###
+###> cicada-ag/core ###
 APP_ENV=prod
 APP_URL=http://127.0.0.1:8000
 APP_SECRET=SECRET_PLACEHOLDER
 INSTANCE_ID=INSTANCEID_PLACEHOLDER
 BLUE_GREEN_DEPLOYMENT=0
 DATABASE_URL=mysql://root:root@localhost/cicada
-###< cicada/core ###
+###< cicada-ag/core ###
 
 ###> cicada/elasticsearch ###
 OPENSEARCH_URL=http://localhost:9200
@@ -55,11 +55,11 @@ CICADA_ADMIN_ES_ENABLED=0
 CICADA_ADMIN_ES_REFRESH_INDICES=0
 ###< cicada/elasticsearch ###
 
-###> cicada/storefront ###
+###> cicada-ag/storefront ###
 STOREFRONT_PROXY_URL=http://localhost
 CICADA_HTTP_CACHE_ENABLED=1
 CICADA_HTTP_DEFAULT_TTL=7200
-###< cicada/storefront ###
+###< cicada-ag/storefront ###
 EOT;
 
     public function __construct(

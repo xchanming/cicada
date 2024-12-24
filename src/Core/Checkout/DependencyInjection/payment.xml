@@ -99,7 +99,7 @@
         </service>
 
         <service id="cicada.jwt_signer" class="Lcobucci\JWT\Signer\Rsa\Sha256">
-            <deprecated package="cicada/core" version="6.7.0">tag:v6.7.0 - The %service_id% service will be removed in v6.7.0.0 without replacement</deprecated>
+            <deprecated package="cicada-ag/core" version="6.7.0">tag:v6.7.0 - The %service_id% service will be removed in v6.7.0.0 without replacement</deprecated>
         </service>
 
         <service id="Cicada\Core\Checkout\Payment\Cart\Token\JWTFactoryV2">

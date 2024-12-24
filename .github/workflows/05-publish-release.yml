@@ -66,7 +66,7 @@ jobs:
           if: github.event.action == 'published'
           id: sts-admin-api-reference
           with:
-            scope: cicada/admin-api-reference
+            scope: cicada-ag/administration-api-reference
             identity: release
 
         - name: Trigger Admin API schema build
@@ -78,7 +78,7 @@ jobs:
             -H "Accept: application/vnd.github.everest-preview+json" \
             -H "Authorization: Bearer ${{ steps.sts-admin-api-reference.outputs.token }}" \
             -H "Content-Type: application/json" \
-            https://api.github.com/repos/cicada/admin-api-reference/actions/workflows/manual_versioning.yml/dispatches \
+            https://api.github.com/repos/cicada-ag/administration-api-reference/actions/workflows/manual_versioning.yml/dispatches \
             -d '{"ref": "latest", "inputs": {"cicada_version": "${{ github.event.release.tag_name }}"}}'
 
         - uses: octo-sts/action@v1.0.0

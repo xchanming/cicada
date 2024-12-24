@@ -11,6 +11,6 @@
         }
     ],
     "require": {
-        "cicada/platform": "6.4.*@dev"
+        "cicada-ag/platform": "6.4.*@dev"
     }
 }

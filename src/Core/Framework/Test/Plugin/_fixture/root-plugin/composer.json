@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "cicada/platform": "^v6.6.2.0"
+        "cicada-ag/platform": "^v6.6.2.0"
     },
     "autoload": {
         "psr-4": {

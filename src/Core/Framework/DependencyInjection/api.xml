@@ -234,12 +234,12 @@
         <service class="League\OAuth2\Server\CryptKey" id="cicada.private_key">
             <argument>%cicada.api.jwt_key.private_key_path%</argument>
             <argument>%cicada.api.jwt_key.private_key_passphrase%</argument>
-            <deprecated package="cicada/core" version="6.7.0">tag:v6.7.0 - The %service_id% service will be removed in v6.7.0.0 without replacement</deprecated>
+            <deprecated package="cicada-ag/core" version="6.7.0">tag:v6.7.0 - The %service_id% service will be removed in v6.7.0.0 without replacement</deprecated>
         </service>
         <service class="League\OAuth2\Server\CryptKey" id="cicada.public_key">
             <argument>%cicada.api.jwt_key.public_key_path%</argument>
 
-            <deprecated package="cicada/core" version="6.7.0">tag:v6.7.0 - The %service_id% service will be removed in v6.7.0.0 without replacement</deprecated>
+            <deprecated package="cicada-ag/core" version="6.7.0">tag:v6.7.0 - The %service_id% service will be removed in v6.7.0.0 without replacement</deprecated>
         </service>
 
         <service id="cicada.jwt_config" class="Lcobucci\JWT\Configuration">

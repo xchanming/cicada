@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "license": "MIT",
     "require": {
-        "cicada/core": "~6.6.0"
+        "cicada-ag/core": "~6.6.0"
     },
     "extra": {
         "cicada-plugin-class": "{{ namespace }}\\{{ className }}",

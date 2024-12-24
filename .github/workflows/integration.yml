@@ -366,7 +366,7 @@ jobs:
 
       - name: Require cicada
         working-directory: old-cicada
-        run: composer require cicada/core:${{ matrix.update.version }}
+        run: composer require cicada-ag/core:${{ matrix.update.version }}
 
       - name: Install
         working-directory: old-cicada

@@ -160,10 +160,10 @@ class AnnotationTagTest extends TestCase
         $envVersion = $_SERVER['VERSION'] ?? $_SERVER['TAG'] ?? '';
         if (\is_string($envVersion) && $envVersion !== '') {
             $cicadaVersion = $envVersion;
-        } elseif (InstalledVersions::isInstalled('cicada/platform')) {
-            $cicadaVersion = InstalledVersions::getVersion('cicada/platform');
+        } elseif (InstalledVersions::isInstalled('cicada-ag/platform')) {
+            $cicadaVersion = InstalledVersions::getVersion('cicada-ag/platform');
         } else {
-            $cicadaVersion = InstalledVersions::getVersion('cicada/core');
+            $cicadaVersion = InstalledVersions::getVersion('cicada-ag/core');
         }
         $cicadaVersion = ltrim((string) $cicadaVersion, 'v ');
 

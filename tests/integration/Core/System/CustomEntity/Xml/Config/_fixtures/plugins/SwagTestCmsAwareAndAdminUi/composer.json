@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "cicada/core": ">=6.0"
+        "cicada-ag/core": ">=6.0"
     },
     "extra": {
         "cicada-plugin-class": "SwagTestCmsAwareAndAdminUi\\SwagTestCmsAwareAndAdminUi",

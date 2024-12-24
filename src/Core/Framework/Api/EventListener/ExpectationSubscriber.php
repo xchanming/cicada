@@ -23,11 +23,11 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class ExpectationSubscriber implements EventSubscriberInterface
 {
     private const CICADA_CORE_PACKAGES = [
-        'cicada/platform',
-        'cicada/core',
-        'cicada/administration',
-        'cicada/elasticsearch',
-        'cicada/storefront',
+        'cicada-ag/platform',
+        'cicada-ag/core',
+        'cicada-ag/administration',
+        'cicada-ag/elasticsearch',
+        'cicada-ag/storefront',
     ];
 
     /**

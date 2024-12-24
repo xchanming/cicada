@@ -11,8 +11,8 @@
         }
     ],
     "conflict": {
-        "cicada/core": "*",
-        "cicada/storefront": "*"
+        "cicada-ag/core": "*",
+        "cicada-ag/storefront": "*"
     },
     "extra": {
         "cicada-plugin-class": "SwagTestValidateConflictsWildcardIncompatibility\\SwagTestValidateConflictsWildcardIncompatibility",

@@ -33,7 +33,7 @@ class EnvironmentRequirementsValidatorTest extends TestCase
     {
         $systemEnvironment = new PlatformRepository([], $composerOverrides);
 
-        $corePackage = new RootPackage($coreComposerName ?? 'cicada/platform', '1.0.0', '1.0.0');
+        $corePackage = new RootPackage($coreComposerName ?? 'cicada-ag/platform', '1.0.0', '1.0.0');
         $corePackage->setRequires($requires);
 
         $repoManagerMock = $this->createMock(RepositoryManager::class);
@@ -67,19 +67,19 @@ class EnvironmentRequirementsValidatorTest extends TestCase
         $versionParser = new VersionParser();
 
         yield 'platform repo with satisfied requirement' => [
-            'cicada/platform',
+            'cicada-ag/platform',
             [
                 'php' => '7.4.3',
             ],
             [
                 'someRequirement' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'someRequirement',
                     $versionParser->parseConstraints('>=1.3.0'),
                     Link::TYPE_REQUIRE
                 ),
                 'php' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'php',
                     $versionParser->parseConstraints('>=7.4.3'),
                     Link::TYPE_REQUIRE
@@ -96,19 +96,19 @@ class EnvironmentRequirementsValidatorTest extends TestCase
         ];
 
         yield 'platform repo with not satisfied requirement' => [
-            'cicada/platform',
+            'cicada-ag/platform',
             [
                 'php' => '7.4.2',
             ],
             [
                 'someRequirement' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'someRequirement',
                     $versionParser->parseConstraints('>=1.3.0'),
                     Link::TYPE_REQUIRE
                 ),
                 'php' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'php',
                     $versionParser->parseConstraints('>=7.4.3'),
                     Link::TYPE_REQUIRE
@@ -125,19 +125,19 @@ class EnvironmentRequirementsValidatorTest extends TestCase
         ];
 
         yield 'platform repo with missing requirement' => [
-            'cicada/platform',
+            'cicada-ag/platform',
             [
                 'composer-runtime-api' => false,
             ],
             [
                 'someRequirement' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'someRequirement',
                     $versionParser->parseConstraints('>=1.3.0'),
                     Link::TYPE_REQUIRE
                 ),
                 'composer-runtime-api' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'composer-runtime-api',
                     $versionParser->parseConstraints('^2.0'),
                     Link::TYPE_REQUIRE
@@ -154,19 +154,19 @@ class EnvironmentRequirementsValidatorTest extends TestCase
         ];
 
         yield 'core repo with satisfied requirement' => [
-            'cicada/core',
+            'cicada-ag/core',
             [
                 'php' => '7.4.3',
             ],
             [
                 'someRequirement' => new Link(
-                    'cicada/core',
+                    'cicada-ag/core',
                     'someRequirement',
                     $versionParser->parseConstraints('>=1.3.0'),
                     Link::TYPE_REQUIRE
                 ),
                 'php' => new Link(
-                    'cicada/core',
+                    'cicada-ag/core',
                     'php',
                     $versionParser->parseConstraints('>=7.4.3'),
                     Link::TYPE_REQUIRE
@@ -189,13 +189,13 @@ class EnvironmentRequirementsValidatorTest extends TestCase
             ],
             [
                 'someRequirement' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'someRequirement',
                     $versionParser->parseConstraints('>=1.3.0'),
                     Link::TYPE_REQUIRE
                 ),
                 'php' => new Link(
-                    'cicada/platform',
+                    'cicada-ag/platform',
                     'php',
                     $versionParser->parseConstraints('>=7.4.3'),
                     Link::TYPE_REQUIRE

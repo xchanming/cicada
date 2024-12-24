@@ -11,7 +11,7 @@
         }
     ],
     "conflict": {
-        "cicada/storefront": "< 6.1.0"
+        "cicada-ag/storefront": "< 6.1.0"
     },
     "extra": {
         "cicada-plugin-class": "SwagTestValidateConflictsValid\\SwagTestValidateConflictsValid",

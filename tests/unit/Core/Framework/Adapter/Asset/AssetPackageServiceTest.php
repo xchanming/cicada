@@ -68,7 +68,7 @@ class AssetPackageServiceTest extends TestCase
 
         return AssetPackageService::create(
             [
-                'TestBundle' => '/var/www/html/vendor/cicada/core/TestBundle',
+                'TestBundle' => '/var/www/html/vendor/cicada-ag/core/TestBundle',
                 'TestPlugin' => '/var/www/html/custom/plugins/TestPlugin',
             ],
             new FallbackUrlPackage('', $emptyVersionStrategy, $requestStack),

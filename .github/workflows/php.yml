@@ -102,7 +102,7 @@ jobs:
       - name: Prepare repo
         run: |
           set -e
-          git remote add bc-checker-upstream https://github.com/cicada/platform.git
+          git remote add bc-checker-upstream https://github.com/cicada-ag/platform.git
           git fetch bc-checker-upstream
       - name: BC Checker lastest tag
         if: github.event_name != 'pull_request'

@@ -23,9 +23,9 @@ class EnvironmentRequirementsValidator implements RequirementsValidatorInterface
 
     public function validateRequirements(RequirementsCheckCollection $checks): RequirementsCheckCollection
     {
-        $platform = $this->composer->getRepositoryManager()->getLocalRepository()->findPackage('cicada/platform', '*');
+        $platform = $this->composer->getRepositoryManager()->getLocalRepository()->findPackage('cicada-ag/platform', '*');
         if (!$platform) {
-            $platform = $this->composer->getRepositoryManager()->getLocalRepository()->findPackage('cicada/core', '*');
+            $platform = $this->composer->getRepositoryManager()->getLocalRepository()->findPackage('cicada-ag/core', '*');
         }
         if (!$platform) {
             $platform = $this->composer->getPackage();

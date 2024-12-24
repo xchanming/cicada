@@ -30,7 +30,7 @@ custom_version_core() {
   branch="$(deployment_branch_name)"
   major_alias="$(current_major_alias)"
 
-  printf "cicada/platform:dev-%s as %s;cicada/commercial:dev-%s;swag/saas-rufus:dev-%s" "${branch}" "${major_alias}" "${branch}" "${branch}"
+  printf "cicada-ag/platform:dev-%s as %s;cicada/commercial:dev-%s;swag/saas-rufus:dev-%s" "${branch}" "${major_alias}" "${branch}" "${branch}"
 }
 
 # custom_version_extensions returns the custom version for the extension
@@ -67,7 +67,7 @@ Please review the changes and merge this MR if you are satisfied with the deploy
 <p>
 For the core dependencies, the dates of the latest commits on the branches are as follows, please make sure that all pipelines are green! 👀
 <ul>
-<li><span>cicada/platform: <b>$(commit_date "cicada-private" "${deployment_branch_name_url_encoded}")</b></span></li>
+<li><span>cicada-ag/platform: <b>$(commit_date "cicada-private" "${deployment_branch_name_url_encoded}")</b></span></li>
 <li><span>cicada/commercial: <b>$(commit_date "SwagCommercial" "${deployment_branch_name_url_encoded}")</b></span></li>
 <li><span>swag/saas-rufus: <b>$(commit_date "Rufus" "${deployment_branch_name_url_encoded}")</b></span></li>
 </ul>
