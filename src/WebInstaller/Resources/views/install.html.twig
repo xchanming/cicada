@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="card__title">
+        <h2>{{ 'cicada.update.steps.install.title'|trans }}</h2>
+    </div>
+
+    <div class="card__body">
+        <p>
+            {{ 'cicada.update.steps.install.info'|trans|raw }}
+        </p>
+
+        <p>
+            <label for="cicadaVersion">{{ "cicada.update.steps.install.cicadaVersion"|trans }}</label>
+            <select id="cicadaVersion" name="cicadaVersion" required="required">
+                {% set foundStable = false %}
+                {% for version in versions %}
+                    {% set isSelected = false %}
+                    {% if 'rc' not in version and foundStable == false %}
+                        {% set isSelected = true %}
+                        {% set foundStable = true %}
+                    {% endif %}
+
+                    <option value="{{ version }}"{% if isSelected %} selected{% endif %}>{{ version }}{% if 'rc' in version %} {{ 'cicada.update.rc_hint'|trans }}{% endif %}</option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <div class="alert alert-info" role="alert">
+            {{ 'cicada.update.steps.install.after_install'|trans|raw }}
+        </div>
+
+        <div class="alert alert-error" id="log-error" style="display: none">{{ 'cicada.update.steps.install.error'|trans|raw }}</div>
+
+        <div id="log-card" style="display: none;">
+            <pre class="form-control" id="log-output" style="height: 60vh;"></pre>
+        </div>
+
+    </div>
+
+    <div class="card__footer flex-container">
+        <a class="btn flex-item flex-left" href="{{ url('configure') }}">{{ 'cicada.update.back'|trans }}</a>
+        <button type="submit" class="btn btn-primary flex-item flex-right" id="install-start">{{ 'cicada.update.steps.install.submit'|trans }}</button>
+    </div>
+{% endblock %}

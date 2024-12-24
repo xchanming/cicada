@@ -1,0 +1,47 @@
+{
+  "name": "theme-with-file-associations",
+  "author": "cicada AG",
+  "previewMedia": "app/cicada_logo_preview.svg",
+  "tabs": {
+    "mainTab": {
+      "label": {
+        "en-GB": "mainTab"
+      }
+    }
+  },
+  "config": {
+    "sections": {
+      "mainSection": {
+        "label": {
+          "en-GB": "main section"
+        }
+      }
+    },
+    "blocks": {
+      "mainBlock": {
+        "label": {
+          "en-GB": "main block"
+        }
+      }
+    },
+
+    "fields": {
+      "cicadaLogo": {
+        "label": {
+          "en-GB": "Cicada Logo",
+          "de-DE": "Cicada Logo"
+        },
+        "helpText": {
+          "en-GB": "this is the cicada logo",
+          "de-DE": "this is the cicada Logo"
+        },
+        "type": "media",
+        "value": "app/storefront/src/assets/image/cicada_logo.svg",
+        "editable": true,
+        "tab": "tabGeneralLayout",
+        "block": "blockLayout",
+        "section": "sectionBackgroundImage"
+      }
+    }
+  }
+}

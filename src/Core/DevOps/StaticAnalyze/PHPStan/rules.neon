@@ -1,0 +1,20 @@
+rules:
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\PHPUnitClassAttributesOverAnnotationsRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\PHPUnitMethodAttributesOverAnnotationsRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\ScheduledTaskTooLowIntervalRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\RuleAreasFlagNotAllowedRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\RuleConditionHasRuleConfigRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\NoAssertsOnObjectsRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoFlowEventAwareExtendsRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoFlowStoreFunctionRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoEnvironmentHelperInsideCompilerPassRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoSuperGlobalsInsideCompilerPassRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoDALAutoload
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\DALFieldsMustBeRegisteredWithSchemaBuilder
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\RouteScopeRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\MessagesShouldNotUsePHPStanTypes
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\UseCLIContextRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoInconfiguredMetricAllowed
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\UseHasherRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\PropertyNativeTypeRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoManualSalesChannelContextCreationRule

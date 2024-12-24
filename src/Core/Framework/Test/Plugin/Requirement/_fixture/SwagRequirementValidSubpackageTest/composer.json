@@ -1,0 +1,25 @@
+{
+    "name": "swag/requirement-valid-subpackage-test",
+    "description": "Test requirement validator",
+    "version": "v1.0.0",
+    "type": "cicada-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cicada AG",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "cicada/core": "6.6.*@dev"
+    },
+    "extra": {
+        "cicada-plugin-class": "SwagRequirementValidSubpackageTest\\SwagRequirementValidSubpackageTest",
+        "copyright": "(c) by cicada AG",
+        "label": {
+            "de-DE": "Test für Requirement Validator",
+            "en-GB": "Test for requirement validator"
+        }
+    }
+}

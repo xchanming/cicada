@@ -1,0 +1,145 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_settings_cicada_updates_wizard %}
+<sw-page class="sw-settings-cicada-updates-wizard">
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_settings_cicada_updates_wizard_smart_bar_header %}
+    <template #smart-bar-header>
+        <h2 v-if="updateInfo.version">
+            {{ $t('sw-settings-cicada-updates.general.title', {version: updateInfo.version }) }}
+        </h2>
+        <h2 v-if="!updateInfo.version">
+            {{ $t('sw-settings-cicada-updates.general.emptyTitle') }}
+        </h2>
+    </template>
+    {% endblock %}
+
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_settings_cicada_updates_wizard_smart_bar_actions %}
+    <template #smart-bar-actions>
+        <div
+            :key="updatePossible"
+            v-tooltip="updateButtonTooltip"
+        >
+            <sw-button
+                v-if="updateInfo.version"
+                :disabled="!updatePossible"
+                :is-loading="updaterIsRunning"
+                variant="primary"
+                class="sw-settings-cicada-updates-wizard__start-update"
+                @click="updateModalShown = true"
+            >
+                {{ $t('sw-settings-cicada-updates.infos.startUpdate') }}
+            </sw-button>
+        </div>
+    </template>
+    {% endblock %}
+
+    <template #content>
+        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+        {% block sw_settings_cicada_updates_wizard_content %}
+        <sw-card-view v-if="isLoading || updateInfo.version">
+            <sw-settings-cicada-updates-info
+                v-if="updateInfo"
+                :is-loading="isLoading"
+                :changelog="updateInfo.body"
+            />
+            <sw-settings-cicada-updates-requirements
+                :is-loading="isLoading"
+                :update-info="updateInfo"
+                :requirements="requirements"
+            />
+            <sw-settings-cicada-updates-plugins
+                :plugins="plugins"
+                :is-loading="isLoading"
+            />
+        </sw-card-view>
+
+        <sw-empty-state
+            v-if="!isLoading && !updateInfo.version"
+            :title="$tc('sw-settings-cicada-updates.general.emptyState')"
+        />
+
+        <sw-modal
+            v-if="updaterIsRunning"
+            :title="$t('sw-settings-cicada-updates.cards.updating')"
+            variant="small"
+            class="sw-cicada-updates-progressbar"
+        >
+            <div class="progress-wrapper">
+                <sw-progress-bar
+                    :value="progressbarValue"
+                    :max-value="100"
+                />
+                <span class="progress-title">
+                    <p v-if="step === 'download'">{{ $t('sw-settings-cicada-updates.infos.progress.download') }}</p>
+                    <p v-if="step === 'unpack'">{{ $t('sw-settings-cicada-updates.infos.progress.unpack') }}</p>
+                    <p v-if="step === 'deactivate'">{{ $t('sw-settings-cicada-updates.infos.progress.deactivate') }}</p>
+                </span>
+            </div>
+        </sw-modal>
+
+        <sw-modal
+            v-if="updateModalShown"
+            class="sw-settings-cicada-updates-check__start-update"
+            :title="$t('sw-settings-cicada-updates.general.emptyTitle')"
+            variant="small"
+            @modal-close="updateModalShown = false"
+        >
+            <sw-alert
+                v-if="displayUnknownPluginsWarning"
+                variant="warning"
+            >
+                {{ $tc('sw-settings-cicada-updates.updateModal.messageNotInStore') }}
+            </sw-alert>
+
+            <sw-alert
+                v-if="displayIncompatiblePluginsWarning"
+                variant="warning"
+            >
+                {{ $tc('sw-settings-cicada-updates.updateModal.messageIncompatible') }}
+            </sw-alert>
+
+            <sw-radio-field
+                v-if="displayIncompatiblePluginsWarning"
+                v-model:value="chosenPluginBehaviour"
+                :options="[
+                    {'value': 'all', 'name': optionDeactivateAllTranslation },
+                    {'value': 'notCompatible', 'name': optionDeactivateIncompatibleTranslation },
+                    {'value': '', 'name': $tc('sw-settings-cicada-updates.plugins.actions.deactivateNone')}]"
+            />
+
+            <template v-if="displayAllPluginsOkayInfo">
+                {{ $tc('sw-settings-cicada-updates.updateModal.messageOkay') }}
+            </template>
+
+            <template #modal-footer>
+                <sw-checkbox-field
+                    v-model:value="checkedBackupCheckbox"
+                    class="sw-settings-cicada-updates-check__start-update-backup-checkbox"
+                    :label="$tc('sw-settings-cicada-updates.updateModal.backupLabel')"
+                />
+
+                <div class="sw-settings-cicada-updates-check__start-update-actions">
+                    <sw-button
+                        size="small"
+                        @click="updateModalShown = false"
+                    >
+                        {{ $tc('global.default.cancel') }}
+                    </sw-button>
+
+                    <sw-button
+                        :disabled="!checkedBackupCheckbox"
+                        variant="primary"
+                        size="small"
+                        class="sw-settings-cicada-updates-check__start-update-button"
+                        @click="startUpdateProcess()"
+                    >
+                        {{ $tc('sw-settings-cicada-updates.updateModal.actions.install') }}
+                    </sw-button>
+                </div>
+            </template>
+        </sw-modal>
+        {% endblock %}
+    </template>
+</sw-page>
+{% endblock %}

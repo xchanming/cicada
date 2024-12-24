@@ -1,0 +1,9 @@
+{
+  "name": "ThemeWithoutStorefront",
+  "author": "cicada AG",
+  "views": [
+    "@PayPal",
+    "@ThemeWithoutStorefront",
+    "@Plugins"
+  ]
+}

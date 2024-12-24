@@ -1,0 +1,16 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_cicada_updates_info %}
+<sw-card
+    position-identifier="sw-cicada-updates-info"
+    :title="$t('sw-settings-cicada-updates.cards.info')"
+    :is-loading="isLoading"
+>
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_cicada_updates_info_content %}
+    <div
+        class="sw-changelog"
+        v-html="changelog"
+    ></div>
+    {% endblock %}
+</sw-card>
+{% endblock %}

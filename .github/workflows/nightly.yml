@@ -1,0 +1,97 @@
+name: Nightly
+
+on:
+  schedule:
+    - cron: "0 1 * * *" # every day at 01:00
+  workflow_dispatch:
+
+jobs:
+  clean-ghcr:
+    name: Delete old unused container images
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    steps:
+      - name: Collect skipped SHAs
+        id: skip-sha
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          result="skip-sha="
+          while read tag; do
+            docker_manifest=$(docker manifest inspect ghcr.io/cicada/cicada/ci-e2e:${tag} 2>&1 || true)
+            # If the image does not exist or an error happens
+            if ! jq '.' <<<"${docker_manifest}" > /dev/null 2>&1; then
+              echo "${tag}: ${docker_manifest}"
+              continue
+            fi
+            # Only collect the shas of multi-arch images
+            if [[ $(jq -r '.manifests | length' <<<"${docker_manifest}") -gt 0 ]]; then
+              result="${result}$(jq -r '.manifests[] | .digest' <<<"${docker_manifest}" | paste -s -d ',' -),"
+            fi
+          done<<<$(gh api '/orgs/cicada/packages/container/cicada%2Fci-e2e/versions?per_page=100' --jq '.[] | .metadata.container.tags[] | select(. == "latest" or . == "trunk" or . == "6.5.x" or startswith("v"))')
+          echo "${result}" >> "${GITHUB_OUTPUT}"
+      - name: Delete old images
+        uses: snok/container-retention-policy@v3.0.0
+        with:
+          account: cicada
+          token: ${{ github.token }}
+          cut-off: 2d
+          image-names: ${{ github.event.repository.name }}/ci-e2e
+          image-tags: "!latest, !trunk, !6.5.x, !v*"
+          skip-shas: ${{ steps.skip-sha.outputs.skip-sha }}
+          keep-n-most-recent: 1
+          dry-run: ${{ env.ACT && true || false }}
+
+  redis:
+    name: Redis
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    strategy:
+      fail-fast: false
+      matrix:
+        redis:
+          - redis:alpine
+          - eqalpha/keydb:latest
+          - valkey/valkey:8.0
+    services:
+      redis:
+        image: ${{ matrix.redis }}
+        ports:
+          - "6379:6379"
+    env:
+      REDIS_URL: redis://localhost:6379
+      COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+
+    steps:
+      - name: Setup Cicada
+        uses: cicada/setup-cicada@main
+        with:
+          cicada-version: ${{ github.ref }}
+          cicada-repository: ${{ github.repository }}
+      - name: Run PHPUnit
+        run: |
+          ./vendor/bin/phpunit --group=redis
+
+  admin:
+    uses: ./.github/workflows/admin.yml
+    secrets: inherit
+    if: github.repository == 'cicada/cicada'
+  integration:
+    uses: ./.github/workflows/integration.yml
+    secrets: inherit
+    if: github.repository == 'cicada/cicada'
+  php:
+    uses: ./.github/workflows/php.yml
+    secrets: inherit
+    if: github.repository == 'cicada/cicada'
+  storefront:
+    uses: ./.github/workflows/storefront.yml
+    secrets: inherit
+    if: github.repository == 'cicada/cicada'
+  downstream:
+    uses: ./.github/workflows/downstream.yml
+    secrets: inherit
+    if: github.repository == 'cicada/cicada'
+    with:
+      nightly: true
+

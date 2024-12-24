@@ -1,0 +1,123 @@
+import './acl';
+
+const { Module } = Cicada;
+
+/* eslint-disable max-len, sw-deprecation-rules/private-feature-declarations */
+Cicada.Component.register(
+    'sw-settings-rule-add-assignment-modal',
+    () => import('./component/sw-settings-rule-add-assignment-modal'),
+);
+Cicada.Component.register(
+    'sw-settings-rule-add-assignment-listing',
+    () => import('./component/sw-settings-rule-add-assignment-listing'),
+);
+Cicada.Component.extend(
+    'sw-settings-rule-assignment-listing',
+    'sw-entity-listing',
+    () => import('./component/sw-settings-rule-assignment-listing'),
+);
+Cicada.Component.register('sw-settings-rule-category-tree', () => import('./component/sw-settings-rule-category-tree'));
+Cicada.Component.extend(
+    'sw-settings-rule-tree-item',
+    'sw-tree-item',
+    () => import('./component/sw-settings-rule-tree-item'),
+);
+Cicada.Component.extend('sw-settings-rule-tree', 'sw-tree', () => import('./component/sw-settings-rule-tree'));
+Cicada.Component.register('sw-settings-rule-list', () => import('./page/sw-settings-rule-list'));
+Cicada.Component.register('sw-settings-rule-detail', () => import('./page/sw-settings-rule-detail'));
+Cicada.Component.register('sw-settings-rule-detail-base', () => import('./view/sw-settings-rule-detail-base'));
+Cicada.Component.register(
+    'sw-settings-rule-detail-assignments',
+    () => import('./view/sw-settings-rule-detail-assignments'),
+);
+/* eslint-enable max-len, sw-deprecation-rules/private-feature-declarations */
+
+/**
+ * @private
+ * @package services-settings
+ */
+Module.register('sw-settings-rule', {
+    type: 'core',
+    name: 'settings-rule',
+    title: 'sw-settings-rule.general.mainMenuItemGeneral',
+    description: 'sw-settings-rule.general.descriptionTextModule',
+    color: '#9AA8B5',
+    icon: 'regular-cog',
+    favicon: 'icon-module-settings.png',
+    entity: 'rule',
+
+    routes: {
+        index: {
+            component: 'sw-settings-rule-list',
+            path: 'index',
+            meta: {
+                parentPath: 'sw.settings.index',
+                privilege: 'rule.viewer',
+            },
+        },
+        detail: {
+            component: 'sw-settings-rule-detail',
+            path: 'detail/:id',
+            meta: {
+                parentPath: 'sw.settings.rule.index',
+                privilege: 'rule.viewer',
+            },
+            props: {
+                default(route) {
+                    return {
+                        ruleId: route.params.id,
+                    };
+                },
+            },
+            redirect: {
+                name: 'sw.settings.rule.detail.base',
+            },
+            children: {
+                base: {
+                    component: 'sw-settings-rule-detail-base',
+                    path: 'base',
+                    meta: {
+                        parentPath: 'sw.settings.rule.index',
+                        privilege: 'rule.viewer',
+                    },
+                },
+                assignments: {
+                    component: 'sw-settings-rule-detail-assignments',
+                    path: 'assignments',
+                    meta: {
+                        parentPath: 'sw.settings.rule.index',
+                        privilege: 'rule.viewer',
+                    },
+                },
+            },
+        },
+        create: {
+            component: 'sw-settings-rule-detail',
+            path: 'create',
+            meta: {
+                parentPath: 'sw.settings.rule.index',
+                privilege: 'rule.creator',
+            },
+            redirect: {
+                name: 'sw.settings.rule.create.base',
+            },
+            children: {
+                base: {
+                    component: 'sw-settings-rule-detail-base',
+                    path: 'base',
+                    meta: {
+                        parentPath: 'sw.settings.rule.index',
+                        privilege: 'rule.viewer',
+                    },
+                },
+            },
+        },
+    },
+
+    settingsItem: {
+        group: 'shop',
+        to: 'sw.settings.rule.index',
+        icon: 'regular-rule',
+        privilege: 'rule.viewer',
+    },
+});

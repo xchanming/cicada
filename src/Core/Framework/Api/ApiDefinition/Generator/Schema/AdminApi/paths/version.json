@@ -1,0 +1,34 @@
+{
+    "openapi": "3.0.0",
+    "info": [],
+    "paths": {
+        "\/_info\/version": {
+            "get": {
+                "tags": [
+                    "System Info & Health Check"
+                ],
+                "summary": "Get the Cicada version",
+                "description": "Get the version of the Cicada instance",
+                "operationId": "infoCicadaVersion",
+                "responses": {
+                    "200": {
+                        "description": "Returns the version of the Cicada instance.",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "properties": {
+                                        "version": {
+                                            "description": "The Cicada version.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

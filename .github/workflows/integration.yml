@@ -1,0 +1,462 @@
+name: Integration tests
+
+on:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  acceptance:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        name:
+          - 'Platform'
+          - 'Install'
+        major:
+          - ''
+        include:
+          - name: 'Platform'
+            major: ${{ contains(github.workflow_ref, 'nightly') && 'major' || '' }}
+    continue-on-error: ${{ matrix.major == 'true' }}
+    env:
+      CICADA_HTTP_CACHE_ENABLED: 0
+      CICADA_DISABLE_UPDATE_CHECK: "true"
+      BLUE_GREEN_DEPLOYMENT: 1
+      COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+    services:
+      database:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+          MYSQL_DATABASE: cicada
+        ports:
+          - "3306:3306"
+        options: --health-cmd="mysqladmin ping"
+      redis: # Redis is required since cache rework
+        image: ${{ matrix.major == 'major' && 'redis:alpine' || '' }}
+        ports:
+          - "6379:6379"
+    steps:
+      - name: Define environment for major testing
+        shell: bash
+        if: ${{ matrix.major == 'major' }}
+        run: |
+          echo "Workflow Ref: ${{ github.workflow_ref }}"
+          echo "V6_7_0_0=1" >> $GITHUB_ENV
+          echo "FEATURE_ALL=major" >> $GITHUB_ENV
+          echo "DISABLE_VUE_COMPAT=0" >> $GITHUB_ENV
+          echo "REDIS_URL=redis://localhost:6379" >> $GITHUB_ENV
+          echo "ADMIN_VITE=1" >> $GITHUB_ENV
+
+      - name: Setup Cicada
+        uses: cicada/setup-cicada@main
+        with:
+          mysql-version: 'skip'
+          cicada-version: ${{ github.ref }}
+          cicada-repository: ${{ github.repository }}
+          install: ${{ matrix.name != 'Install' }} # When testing the installation routine of Cicada, don't execute the installation automatically
+          install-admin: ${{ matrix.name != 'Install' }}
+          install-storefront: ${{ matrix.name != 'Install' }}
+          env: prod
+
+      - name: Build js
+        if: ${{ matrix.name == 'Install' }}
+        run: |
+          mkdir -p config/jwt
+          composer run build:js:admin
+          composer npm:storefront run production # we cannot use build:js because it requires a db
+          (cd src/Storefront/Resources/app/storefront && node copy-to-vendor.js)
+
+      - name: Start Webserver
+        if: ${{ matrix.name == 'Install' }}
+        shell: bash
+        working-directory: ${{ inputs.path }}
+        env:
+          SYMFONY_DAEMON: "1"
+          SYMFONY_NO_TLS: "1"
+          SYMFONY_ALLOW_HTTP: "1"
+          SYMFONY_PORT: "8000"
+          SYMFONY_ALLOW_ALL_IP: "1"
+        run: symfony server:start
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        working-directory: tests/acceptance
+        run: npm ci
+
+      - name: Install Playwright Browsers
+        working-directory: tests/acceptance
+        run: npx playwright install --with-deps chromium
+
+      - name: Run your tests with reporting
+        if: ${{ contains(github.workflow_ref, 'nightly') }}
+        working-directory: tests/acceptance
+        run: |-
+          npx pwc \
+            --ci-build-id "${{ format('{0}-{1}-{2}', github.repository, github.run_id, github.run_attempt) }}${{ matrix.major }}" \
+            --project-id ${{ secrets.CURRENTS_PROJECT_ID }} \
+            --key ${{ secrets.CURRENTS_RECORD_KEY }} \
+            -- --project ${{ matrix.name }} --trace=on
+
+      - name: Run your tests
+        if: ${{ !contains(github.workflow_ref, 'nightly') }}
+        working-directory: tests/acceptance
+        run: npx playwright test --project=${{ matrix.name }} ${{ matrix.name == 'Install' && '--trace=on' || '' }}
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-${{ matrix.name }}${{ matrix.major == 'major' && '-major' || '' }}
+          path: tests/acceptance/test-results/
+          retention-days: 3
+
+  phpunit:
+    name: "${{ matrix.tests.testsuite }}${{ matrix.tests.path }} ${{ matrix.db }}"
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        tests:
+          - path: Administration
+          - path: Core/Checkout
+          - path: Core/Content
+          - path: Core/Framework
+          - path: Core/Installer
+          - path: Core/Maintenance
+          - path: Core/System
+          - path: Elasticsearch
+          - path: Storefront
+          - testsuite: devops,migration
+        db:
+          - mysql:8.0
+          - mariadb:11
+    env:
+      APP_ENV: test
+      DATABASE_URL: mysql://root@127.0.0.1:3306/root
+      APP_URL: http://localhost:8000
+      APP_SECRET: def00000bb5acb32b54ff8ee130270586eec0e878f7337dc7a837acc31d3ff00f93a56b595448b4b29664847dd51991b3314ff65aeeeb761a133b0ec0e070433bff08e48
+      OPENSEARCH_URL: 127.0.0.1:9200
+      BLUE_GREEN_DEPLOYMENT: 1
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+      COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+
+    services:
+      elasticsearch:
+        image: ${{ matrix.tests.path != '' && 'opensearchproject/opensearch:1' || 'alpine' }}
+        env:
+          discovery.type: single-node
+          plugins.security.disabled: "true"
+        ports:
+          - "9200:9200"
+      database:
+        image: ${{ matrix.db }}
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+          MYSQL_DATABASE: cicada
+        ports:
+          - "3306:3306"
+        options: --health-cmd="mysqladmin ping || mariadb-admin ping"
+
+    steps:
+      - name: Setup Cicada
+        uses: cicada/setup-cicada@main
+        with:
+          mysql-version: 'skip'
+          cicada-version: ${{ github.ref }}
+          cicada-repository: ${{ github.repository }}
+
+      - name: Start Webserver
+        run: symfony server:start -d
+
+      - name: Install Cicada
+        run: php src/Core/TestBootstrap.php
+
+      - name: Run PHPUnit testsuite
+        if: ${{ matrix.tests.testsuite != '' }}
+        run: php -d memory_limit=-1 vendor/bin/phpunit --testsuite "${{ matrix.tests.testsuite }}"
+
+      - name: Run PHPUnit path
+        if: ${{ matrix.tests.path != '' }}
+        run: php -d memory_limit=-1 vendor/bin/phpunit -- tests/integration/${{ matrix.tests.path }}
+
+  win-checkout:
+    runs-on: windows-latest
+    name: "Windows check"
+
+    steps:
+      - name: Support longpaths
+        run: git config --system core.longpaths true
+
+      - name: Clone platform
+        uses: actions/checkout@v4
+  php-security:
+    runs-on: ubuntu-24.04
+    name: "Composer dependencies"
+    env:
+      COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+    steps:
+      - name: Clone platform
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Install Composer
+        run: |
+          composer install --no-interaction --no-scripts
+          curl --location --output local-php-security-checker https://github.com/fabpot/local-php-security-checker/releases/download/v1.0.0/local-php-security-checker_1.0.0_linux_amd64
+          echo 'e5b12488ca78bc07c149e9352278bf10667b88a8461caac10154f9a6f5476369  local-php-security-checker' > local-php-security-checker.sha256
+          sha256sum --check local-php-security-checker.sha256
+          chmod +x local-php-security-checker
+
+      - name: Run on platform
+        run: ./local-php-security-checker
+  code-ql:
+    name: Analyze
+    runs-on: ubuntu-24.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["javascript"]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
+  docker:
+    runs-on: ubuntu-24.04
+    if: ${{ github.repository == 'cicada/cicada' && (github.event_name == 'workflow_dispatch' || github.event_name == 'push') }}
+    permissions:
+      packages: write
+    env:
+      CICADA_ADMIN_SKIP_SOURCEMAP_GENERATION: "1"
+      COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+    steps:
+      - name: Setup Cicada
+        uses: cicada/setup-cicada@main
+        with:
+          cicada-version: ${{ github.ref }}
+          cicada-repository: ${{ github.repository }}
+          install: true
+          install-admin: true
+          install-storefront: true
+          env: prod
+
+      - name: Build
+        run: |
+          composer run build:js
+      - name: Ignore node_modules folders
+        run: |
+          echo '**/node_modules' >> .dockerignore
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login into Github Docker Registery
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        if: ${{ !github.ref_protected }}
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository }}/ci-e2e:${{ github.run_id }}
+          file: .gitlab/docker/dev/Dockerfile
+      - name: Build and push trunk
+        uses: docker/build-push-action@v5
+        if: ${{ github.ref_protected }}
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/${{ github.repository }}/ci-e2e:${{ github.run_id }},ghcr.io/${{ github.repository }}/ci-e2e:${{ github.ref_name }}
+          file: .gitlab/docker/dev/Dockerfile
+
+  tested-update-versions:
+    name: tested-versions
+    runs-on: ubuntu-24.04
+    outputs:
+      first-version: ${{ steps.versions.outputs.first-version }}
+      latest-version: ${{ steps.versions.outputs.latest-version }}
+      lts-first-version: ${{ steps.versions.outputs.lts-first-version }}
+      lts-latest-version: ${{ steps.versions.outputs.lts-latest-version }}
+    steps:
+      - name: Generate versions
+        id: versions
+        uses: cicada/github-actions/versions@main
+
+  acceptance-update:
+    needs: tested-update-versions
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        update:
+          - version: ${{ needs.tested-update-versions.outputs.lts-latest-version }}
+          - version: ${{ needs.tested-update-versions.outputs.first-version }}
+          - version: ${{ needs.tested-update-versions.outputs.latest-version }}
+    env:
+      CICADA_HTTP_CACHE_ENABLED: 0
+      BLUE_GREEN_DEPLOYMENT: 1
+      CICADA_DISABLE_UPDATE_CHECK: "0"
+      CICADA_UPDATE_FROM: ${{ matrix.update.version }}
+      SW_RECOVERY_NEXT_VERSION: "6.6.9999999.9999999"
+      SW_RECOVERY_NEXT_BRANCH: "6.6.9999999.9999999"
+      SW_RECOVERY_REPOSITORY: '{"type": "path", "url": "${{ github.workspace }}/new-cicada/src/*", "options": { "symlink": true } }'
+    steps:
+      - name: Create cicada dirs
+        run: mkdir -p old-cicada new-cicada
+      - name: Setup new Cicada
+        uses: cicada/setup-cicada@main
+        env:
+          COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+        with:
+          cicada-version: ${{ github.ref }}
+          cicada-repository: ${{ github.repository }}
+          install-admin: true
+          env: dev
+          path: new-cicada
+
+      - name: Build new cicada
+        working-directory: new-cicada
+        run: |
+          composer run npm:storefront ci
+          composer run npm:storefront run production
+          (cd src/Storefront/Resources/app/storefront && node copy-to-vendor.js)
+
+          composer -d src/Core config version ${SW_RECOVERY_NEXT_VERSION}
+          composer -d src/Administration config version ${SW_RECOVERY_NEXT_VERSION}
+          composer -d src/Storefront config version ${SW_RECOVERY_NEXT_VERSION}
+          composer -d src/Elasticsearch config version ${SW_RECOVERY_NEXT_VERSION}
+
+      - name: Build updater
+        working-directory: new-cicada/src/WebInstaller
+        run: |
+          composer config platform.php 8.2
+          composer install
+          composer build-phar
+
+      - name: Checkout template
+        uses: actions/checkout@v4
+        with:
+          repository: cicada/production
+          path: old-cicada
+
+      - name: Configure project root
+        run: |
+          echo "PROJECT_ROOT=${{ github.workspace }}/old-cicada" >> "$GITHUB_ENV"
+
+      - name: Require cicada
+        working-directory: old-cicada
+        run: composer require cicada/core:${{ matrix.update.version }}
+
+      - name: Install
+        working-directory: old-cicada
+        run: |
+          sed -i -e "s/cicada.store.frw: '1'/cicada.store.frw: '0'"/ config/services.yaml
+          bin/console system:install --basic-setup --drop-database --create-database
+
+      - name: Copy WebInstaller
+        run: cp new-cicada/src/WebInstaller/cicada-installer.phar.php old-cicada/public/cicada-installer.phar.php
+
+      - name: Start web server
+        working-directory: old-cicada
+        run: symfony server:start -d
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        working-directory: new-cicada/tests/acceptance
+        run: npm ci
+      - name: Install Playwright Browsers
+        working-directory: new-cicada/tests/acceptance
+        run: npx playwright install --with-deps chromium
+      - name: Run update tests with reporting
+        if: ${{ contains(github.workflow_ref, 'nightly') }}
+        working-directory: new-cicada/tests/acceptance
+        run: npx pwc --project-id ${{ secrets.CURRENTS_PROJECT_ID }} --key ${{ secrets.CURRENTS_RECORD_KEY }} -- --project=Update --trace=on
+      - name: Run update tests
+        if: ${{ !contains(github.workflow_ref, 'nightly') }}
+        working-directory: new-cicada/tests/acceptance
+        run: npx playwright test --project=Update --trace=on
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-update-${{ matrix.update.version }}
+          path: new-cicada/tests/acceptance/test-results/
+          retention-days: 3
+
+  blue-green-66-67:
+    name: "PHP blue green 6.6 -> 6.7 -> 6.6"
+    runs-on: ubuntu-24.04
+    env:
+      APP_ENV: test
+      APP_URL: http://localhost:8000
+      APP_SECRET: def00000bb5acb32b54ff8ee130270586eec0e878f7337dc7a837acc31d3ff00f93a56b595448b4b29664847dd51991b3314ff65aeeeb761a133b0ec0e070433bff08e48
+      OPENSEARCH_URL: 127.0.0.1:9200
+      BLUE_GREEN_DEPLOYMENT: 1
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+
+    services:
+      elasticsearch:
+        image: "opensearchproject/opensearch:1"
+        env:
+          discovery.type: single-node
+          plugins.security.disabled: "true"
+        ports:
+          - "9200:9200"
+
+    steps:
+      - name: Setup previous major version
+        uses: cicada/setup-cicada@main
+        with:
+          install: "false"
+          cicada-version: ${{ github.ref }}
+          cicada-repository: ${{ github.repository }}
+
+      - name: Start Webserver
+        run: symfony server:start -d
+
+      - name: Install Cicada in previous major version on test DB
+        if: ${{ contains(github.workflow_ref, 'nightly') }}
+        run: composer init:testdb
+
+      - name: Run next major migrations on test DB
+        if: ${{ contains(github.workflow_ref, 'nightly') }}
+        run: DATABASE_URL="mysql://root@127.0.0.1:3306/cicada_test" bin/console database:migrate --all core.V6_7
+
+      - name: Run integration tests
+        if: ${{ contains(github.workflow_ref, 'nightly') }}
+        run: php -d memory_limit=-1 vendor/bin/phpunit --testsuite "integration" --exclude-group=needsWebserver,skip-paratest,not-deterministic --stop-on-error --stop-on-failure
+
+      - name: Install Cicada in previous major version
+        if: ${{ !contains(github.workflow_ref, 'nightly') }}
+        run: bin/console system:install --basic-setup --create-database --skip-assets-install
+
+      - name: Run next major migrations
+        if: ${{ !contains(github.workflow_ref, 'nightly') }}
+        run: bin/console database:migrate --all core.V6_7
+
+      - name: Run blue-green check
+        if: ${{ !contains(github.workflow_ref, 'nightly') }}
+        run: php .gitlab/bin/blue-green-check.php # TODO: Move script to .github after migration

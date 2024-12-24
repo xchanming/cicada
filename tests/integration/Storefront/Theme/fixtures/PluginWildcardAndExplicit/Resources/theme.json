@@ -1,0 +1,10 @@
+{
+  "name": "PluginWildcardAndExplicit",
+  "author": "cicada AG",
+  "views": [
+    "@Storefront",
+    "@PayPal",
+    "@PluginWildcardAndExplicit",
+    "@Plugins"
+  ]
+}

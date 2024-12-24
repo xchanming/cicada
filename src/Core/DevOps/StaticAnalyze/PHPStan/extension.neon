@@ -1,0 +1,28 @@
+services:
+    -
+        class: Cicada\Core\DevOps\StaticAnalyze\PHPStan\Type\CollectionHasSpecifyingExtension
+        tags:
+            - phpstan.typeSpecifier.methodTypeSpecifyingExtension
+    -
+        factory: Cicada\Core\DevOps\StaticAnalyze\PHPStan\Configuration(%cicada%)
+
+    -
+        class: Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\AclValidPermissionsHelper
+
+parameters:
+    cicada:
+        allowedNonDomainExceptions:
+            - Cicada\Core\Framework\Plugin\Exception\DecorationPatternException
+            - Cicada\Core\Framework\Validation\Exception\ConstraintViolationException
+            - Cicada\Core\Framework\Api\Controller\Exception\PermissionDeniedException
+            - Twig\Error\LoaderError
+            - Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
+            - Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException
+            - Symfony\Component\Messenger\Exception\RecoverableMessageHandlingException
+            - Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+            - Symfony\Component\HttpFoundation\Exception\BadRequestException
+
+parametersSchema:
+    cicada: structure([
+        allowedNonDomainExceptions: list(string),
+    ])

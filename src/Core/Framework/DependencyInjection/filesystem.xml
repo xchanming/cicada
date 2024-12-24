@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Filesystem -->
+        <service id="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory">
+            <argument type="tagged_iterator" tag="cicada.filesystem.factory"/>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="cicada.filesystem.public" public="true">
+            <factory service="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%cicada.filesystem.public%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="cicada.filesystem.private" public="true">
+            <factory service="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="privateFactory"/>
+            <argument>%cicada.filesystem.private%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="cicada.filesystem.temp" public="true">
+            <factory service="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="privateFactory"/>
+            <argument>%cicada.filesystem.temp%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="cicada.filesystem.theme" public="true">
+            <factory service="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%cicada.filesystem.theme%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="cicada.filesystem.sitemap" public="true">
+            <factory service="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%cicada.filesystem.sitemap%</argument>
+        </service>
+
+        <service class="League\Flysystem\FilesystemOperator" id="cicada.filesystem.asset" public="true">
+            <factory service="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory" method="factory"/>
+            <argument>%cicada.filesystem.asset%</argument>
+        </service>
+
+        <service class="Cicada\Core\Framework\Adapter\Filesystem\Adapter\LocalFactory" id="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory.local">
+            <tag name="cicada.filesystem.factory"/>
+        </service>
+
+        <service class="Cicada\Core\Framework\Adapter\Filesystem\Adapter\AwsS3v3Factory" id="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory.amazon_s3">
+            <tag name="cicada.filesystem.factory"/>
+        </service>
+
+        <service class="Cicada\Core\Framework\Adapter\Filesystem\Adapter\GoogleStorageFactory" id="Cicada\Core\Framework\Adapter\Filesystem\FilesystemFactory.google_storage">
+            <tag name="cicada.filesystem.factory"/>
+        </service>
+
+        <service id="console.command.assets_install" class="Cicada\Core\Framework\Adapter\Asset\AssetInstallCommand">
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="Cicada\Core\Framework\Plugin\Util\AssetService"/>
+            <argument type="service" id="Cicada\Core\Framework\App\ActiveAppsLoader"/>
+            <tag name="console.command"/>
+        </service>
+
+        <!-- Assets -->
+        <service id="cicada.asset.public" class="Cicada\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%cicada.filesystem.public.url%</argument>
+            </argument>
+            <argument type="service" id="assets.empty_version_strategy"/>
+            <argument type="service" id="request_stack" on-invalid="null"/>
+            <tag name="cicada.asset" asset="public"/>
+        </service>
+
+        <service id="cicada.asset.theme.version_strategy" class="Cicada\Core\Framework\Adapter\Asset\FlysystemLastModifiedVersionStrategy">
+            <argument>theme-metaData</argument>
+            <argument type="service" id="cicada.filesystem.theme"/>
+            <argument type="service" id="cache.object"/>
+        </service>
+
+        <service id="cicada.asset.asset.version_strategy" class="Cicada\Core\Framework\Adapter\Asset\FlysystemLastModifiedVersionStrategy">
+            <argument>asset-metaData</argument>
+            <argument type="service" id="cicada.filesystem.asset"/>
+            <argument type="service" id="cache.object"/>
+        </service>
+
+        <service id="cicada.asset.asset" class="Cicada\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%cicada.filesystem.asset.url%</argument>
+            </argument>
+            <argument type="service" id="cicada.asset.asset.version_strategy"/>
+            <argument type="service" id="request_stack" on-invalid="null"/>
+            <tag name="cicada.asset" asset="asset"/>
+        </service>
+
+        <service id="cicada.asset.asset_without_versioning" class="Cicada\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%cicada.filesystem.asset.url%</argument>
+            </argument>
+            <argument type="service" id="assets.empty_version_strategy"/>
+            <argument type="service" id="request_stack" on-invalid="null"/>
+        </service>
+
+        <service id="cicada.asset.sitemap" class="Cicada\Core\Framework\Adapter\Asset\FallbackUrlPackage" lazy="true">
+            <argument type="collection">
+                <argument>%cicada.filesystem.sitemap.url%</argument>
+            </argument>
+            <argument type="service" id="assets.empty_version_strategy"/>
+            <argument type="service" id="request_stack" on-invalid="null"/>
+            <tag name="cicada.asset" asset="sitemap"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInputFactory"/>
+    </services>
+</container>

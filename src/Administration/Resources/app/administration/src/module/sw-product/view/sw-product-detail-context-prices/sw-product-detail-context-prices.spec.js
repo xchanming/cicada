@@ -1,0 +1,308 @@
+/**
+ * @package inventory
+ */
+
+import { mount } from '@vue/test-utils';
+
+import productStore from 'src/module/sw-product/page/sw-product-detail/state';
+
+const { EntityCollection } = Cicada.Data;
+
+const createWrapper = async () => {
+    return mount(
+        await wrapTestComponent('sw-product-detail-context-prices', {
+            sync: true,
+        }),
+        {
+            global: {
+                stubs: {
+                    'sw-container': await wrapTestComponent('sw-container'),
+                    'sw-card': await wrapTestComponent('sw-card'),
+                    'sw-card-deprecated': await wrapTestComponent('sw-card-deprecated', { sync: true }),
+                    'sw-icon': true,
+                    'sw-loader': true,
+                    'sw-switch-field': await wrapTestComponent('sw-switch-field'),
+                    'sw-switch-field-deprecated': await wrapTestComponent('sw-switch-field-deprecated', { sync: true }),
+                    'sw-checkbox-field': await wrapTestComponent('sw-checkbox-field'),
+                    'sw-checkbox-field-deprecated': await wrapTestComponent('sw-checkbox-field-deprecated', { sync: true }),
+                    'sw-inheritance-switch': true,
+                    'sw-block-field': await wrapTestComponent('sw-block-field'),
+                    'sw-base-field': await wrapTestComponent('sw-base-field'),
+                    'sw-field-error': true,
+                    'sw-button': true,
+                    'sw-data-grid': await wrapTestComponent('sw-data-grid'),
+                    'sw-data-grid-settings': true,
+                    'sw-field': true,
+                    'sw-number-field': await wrapTestComponent('sw-number-field'),
+                    'sw-number-field-deprecated': await wrapTestComponent('sw-number-field-deprecated', { sync: true }),
+                    'sw-contextual-field': await wrapTestComponent('sw-contextual-field'),
+                    'sw-context-button': true,
+                    'sw-context-menu-item': true,
+                    'sw-list-price-field': await wrapTestComponent('sw-list-price-field'),
+                    'sw-price-field': await wrapTestComponent('sw-price-field'),
+                    'sw-entity-single-select': await wrapTestComponent('sw-entity-single-select'),
+                    'sw-select-base': await wrapTestComponent('sw-select-base'),
+                    'sw-skeleton': true,
+                    'sw-select-rule-create': true,
+                    'sw-help-text': true,
+                    'sw-ai-copilot-badge': true,
+                    'router-link': true,
+                    'sw-data-grid-inline-edit': true,
+                    'sw-extension-component-section': true,
+                    'sw-data-grid-column-boolean': true,
+                    'sw-data-grid-skeleton': true,
+                    'sw-field-copyable': true,
+                    'sw-maintain-currencies-modal': true,
+                },
+                provide: {
+                    repositoryFactory: {
+                        create: (repositoryName) => {
+                            if (repositoryName === 'rule') {
+                                const rules = [
+                                    {
+                                        id: 'ruleId',
+                                        name: 'ruleName',
+                                    },
+                                ];
+                                rules.total = rules.length;
+
+                                return {
+                                    search: () => Promise.resolve(rules),
+                                    get: () => Promise.resolve(rules),
+                                };
+                            }
+
+                            if (repositoryName === 'product_price') {
+                                return {
+                                    create: () => ({
+                                        search: () => Promise.resolve(),
+                                    }),
+                                };
+                            }
+
+                            return {};
+                        },
+                    },
+                    validationService: {},
+                },
+            },
+        },
+    );
+};
+
+describe('src/module/sw-product/view/sw-product-detail-context-prices', () => {
+    /** @type Wrapper */
+    let wrapper;
+
+    beforeEach(() => {
+        if (Cicada.State.get('swProductDetail')) {
+            Cicada.State.unregisterModule('swProductDetail');
+        }
+        Cicada.State.registerModule('swProductDetail', productStore);
+
+        if (Cicada.State.get('context')) {
+            Cicada.State.unregisterModule('context');
+        }
+        Cicada.State.registerModule('context', {
+            namespaced: true,
+
+            getters: {
+                isSystemDefaultLanguage() {
+                    return true;
+                },
+            },
+
+            state: {
+                api: {
+                    assetsPath: '/',
+                },
+            },
+        });
+    });
+
+    it('should show inherited state when product is a variant', async () => {
+        Cicada.State.commit('swProductDetail/setProduct', {
+            id: 'productId',
+            parentId: 'parentProductId',
+            prices: [],
+        });
+        Cicada.State.commit('swProductDetail/setParentProduct', {
+            id: 'parentProductId',
+        });
+
+        wrapper = await createWrapper();
+        await wrapper.vm.$nextTick();
+
+        expect(wrapper.vm.isChild).toBe(true);
+        expect(wrapper.vm.isInherited).toBe(true);
+    });
+
+    it('should show empty state for main product', async () => {
+        Cicada.State.commit('swProductDetail/setProduct', {
+            id: 'productId',
+            parentId: null,
+            prices: [],
+        });
+        Cicada.State.commit('swProductDetail/setParentProduct', {
+            id: 'parentProductId',
+        });
+
+        wrapper = await createWrapper();
+        await wrapper.vm.$nextTick();
+
+        expect(wrapper.vm.isChild).toBe(false);
+        expect(wrapper.vm.isInherited).toBe(false);
+    });
+
+    it('first start quantity input should be disabled', async () => {
+        Cicada.State.commit('swProductDetail/setProduct', {
+            id: 'productId',
+            parentId: 'parentProductId',
+            prices: [
+                {
+                    ruleId: 'ruleId',
+                    quantityStart: 1,
+                    quantityEnd: 4,
+                },
+            ],
+        });
+        Cicada.State.commit('swProductDetail/setParentProduct', {
+            id: 'parentProductId',
+        });
+
+        wrapper = await createWrapper();
+        await flushPromises();
+
+        // get first quantity field
+        const firstQuantityField = wrapper.find('.sw-data-grid__row--0 input[name="ruleId-1-quantityStart"]');
+
+        // check if input field has a value of 1 and is disabled
+        expect(firstQuantityField.element.value).toBe('1');
+        expect(firstQuantityField.attributes('disabled')).toBe('');
+    });
+
+    it('second start quantity input should not be disabled', async () => {
+        global.activeAclRoles = ['product.editor'];
+
+        Cicada.State.commit('swProductDetail/setProduct', {
+            id: 'productId',
+            parentId: null,
+            prices: [
+                {
+                    ruleId: 'ruleId',
+                    quantityStart: 1,
+                    quantityEnd: 4,
+                },
+                {
+                    ruleId: 'ruleId',
+                    quantityStart: 5,
+                    quantityEnd: null,
+                },
+            ],
+        });
+        Cicada.State.commit('swProductDetail/setParentProduct', {
+            id: 'parentProductId',
+        });
+
+        wrapper = await createWrapper();
+        await flushPromises();
+
+        // get second quantity field
+        const secondQuantityField = wrapper.find('.sw-data-grid__row--1 input[name="ruleId-5-quantityStart"]');
+
+        // check if input field has a value of 5 and is not disabled
+        expect(secondQuantityField.element.value).toBe('5');
+        expect(secondQuantityField.attributes('disabled')).toBeUndefined();
+    });
+
+    it('should show default price', async () => {
+        const entities = [
+            {
+                ruleId: 'rule1',
+                quantityStart: 1,
+                quantityEnd: 4,
+                price: [
+                    {
+                        currencyId: 'euro',
+                        gross: 1,
+                        linked: false,
+                        net: 1,
+                        listPrice: null,
+                    },
+                ],
+            },
+        ];
+
+        Cicada.State.commit('swProductDetail/setProduct', {
+            id: 'productId',
+            parentId: null,
+            prices: new EntityCollection(
+                '/test-price',
+                'product_price',
+                null,
+                { isCicadaContext: true },
+                entities,
+                entities.length,
+                null,
+            ),
+        });
+
+        Cicada.State.commit('swProductDetail/setParentProduct', {
+            id: 'parentProductId',
+        });
+
+        Cicada.State.commit('swProductDetail/setCurrencies', [
+            {
+                id: 'euro',
+                translated: { name: 'Euro' },
+                isSystemDefault: true,
+                isoCode: 'EUR',
+            },
+        ]);
+
+        wrapper = await createWrapper();
+        const rulesEntities = [
+            {
+                id: 'rule1',
+                name: 'customers',
+            },
+            {
+                id: 'rule2',
+                name: 'products',
+            },
+        ];
+
+        await wrapper.setData({
+            rules: new EntityCollection(
+                '/test-rule',
+                'rule',
+                null,
+                { isCicadaContext: true },
+                rulesEntities,
+                rulesEntities.length,
+                null,
+            ),
+        });
+
+        await wrapper.setProps({
+            isSetDefaultPrice: true,
+        });
+
+        wrapper.vm.$parent.$el.children.item(0).scrollTo = () => {};
+
+        await flushPromises();
+
+        const firstPriceFieldGross = wrapper.find(
+            '.context-price-group-0 .sw-data-grid__row--0 .sw-data-grid__cell--price-EUR .sw-list-price-field__price input[name="sw-price-field-gross"]',
+        );
+        expect(firstPriceFieldGross.element.value).toBe('1');
+
+        await wrapper.vm.onAddNewPriceGroup('rule2');
+        await flushPromises();
+
+        const secondPriceFieldGross = wrapper.find(
+            '.context-price-group-1 .sw-data-grid__row--0 .sw-data-grid__cell--price-EUR .sw-list-price-field__price input[name="sw-price-field-gross"]',
+        );
+        expect(secondPriceFieldGross.element.value).toBe('0');
+    });
+});

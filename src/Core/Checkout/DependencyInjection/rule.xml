@@ -1,0 +1,375 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartAmountRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartPositionPriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\GoodsCountRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\GoodsPriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemOfTypeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Promotion\Rule\PromotionLineItemRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Promotion\Rule\PromotionCodeOfTypeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Promotion\Rule\PromotionValueRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Promotion\Rule\PromotionsInCartCountRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemTotalPriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemUnitPriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemWithQuantityRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemWrapperRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartShippingCostRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartWeightRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartVolumeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartHasDeliveryFreeItemRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\BillingCountryRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\BillingStreetRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\BillingZipCodeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerGroupRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerRequestedGroupRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerTagRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerNumberRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\DifferentAddressesRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\EmailRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\IsActiveRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\LastNameRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\IsCompanyRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartTaxDisplayRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CartTotalPurchasePriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\IsGuestCustomerRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\IsNewsletterRecipientRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingCountryRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingStreetRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\BillingCityRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingCityRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\BillingStateRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingStateRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingZipCodeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerLoggedInRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemsInCartCountRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\NumberOfReviewsRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\OrderCountRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\DaysSinceLastOrderRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemTagRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\AlwaysValidRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemPropertyRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemIsNewRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemOfManufacturerRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemPurchasePriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemCreationDateRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemReleaseDateRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemClearanceSaleRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemPromotedRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemInCategoryRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemInProductStreamRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemTaxationRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemDimensionWidthRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemDimensionHeightRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemDimensionLengthRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemDimensionWeightRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemDimensionVolumeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemOfManufacturerRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemPurchasePriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemCreationDateRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemListPriceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemListPriceRatioRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemCustomFieldRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemStockRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemActualStockRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\PaymentMethodRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\ShippingMethodRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemGoodsTotalRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\OrderTotalAmountRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerCustomFieldRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerBirthdayRule">
+            <tag name="cicada.rule.definition" />
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerCreatedByAdminRule">
+            <tag name="cicada.rule.definition" />
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemProductStatesRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerAgeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerSalutationRule">
+            <tag name="cicada.rule.definition" />
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\DaysSinceLastLoginRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\DaysSinceFirstLoginRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\AffiliateCodeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\AffiliateCodeOfOrderRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\CampaignCodeOfOrderRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CampaignCodeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerDefaultPaymentMethodRule">
+            <tag name="cicada.rule.definition" />
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemPropertyValueRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\LineItemVariantValueRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Checkout\Cart\Rule\AdminSalesChannelSourceRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+    </services>
+</container>

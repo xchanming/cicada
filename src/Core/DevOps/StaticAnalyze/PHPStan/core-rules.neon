@@ -1,0 +1,19 @@
+rules:
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Deprecation\DeprecatedMethodsThrowDeprecationRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Internal\InternalClassRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Internal\InternalMethodRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration\AddColumnRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration\NoAfterStatementRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration\NoDropStatementInUpdateRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\CoversAttributeRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\MockingSimpleObjectsNotAllowedRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\FinalClassRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\AbstractClassUsageRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\DecorationPatternRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\PackageAnnotationRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\DomainExceptionRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\ExtensionRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\NoNewRequestInStorefrontRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\AclValidPermissionsInMethodRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\AclValidPermissionsInRouteAttributesRule
+    - Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\CicadaNamespaceStyleRule

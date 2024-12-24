@@ -1,0 +1,9 @@
+@import "~scss/variables";
+
+.sw-settings-search-live-search-keyword {
+    &__highlight {
+        color: $color-cicada-brand-500;
+        font-weight: $font-weight-bold;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,210 @@
+import { mount } from '@vue/test-utils';
+
+/**
+ * @package checkout
+ */
+describe('src/module/sw-extension/page/sw-extension-config.spec', () => {
+    let SwExtensionConfig;
+    let SwMeteorPage;
+
+    async function createWrapper() {
+        return mount(SwExtensionConfig, {
+            global: {
+                mocks: {
+                    $route: {
+                        meta: {
+                            $module: null,
+                        },
+                    },
+                },
+                stubs: {
+                    'sw-meteor-page': await wrapTestComponent('sw-meteor-page', { sync: true }),
+                    'sw-system-config': await wrapTestComponent('sw-system-config', { sync: true }),
+                    'sw-extension-icon': await wrapTestComponent('sw-extension-icon', { sync: true }),
+                    'sw-external-link': {
+                        template: '<a><slot></slot></a>',
+                    },
+                    'sw-button': {
+                        inheritAttrs: false,
+                        template: '<button :class="$attrs.class" @click="$emit(\'click\', $event)"><slot></slot></button>',
+                    },
+                    'sw-search-bar': true,
+                    'sw-notification-center': true,
+                    'sw-help-center-v2': true,
+                    'sw-meteor-navigation': true,
+                    'sw-icon': true,
+                    'sw-tabs': true,
+                    'sw-sales-channel-switch': true,
+                    'sw-alert': true,
+                    'sw-form-field-renderer': true,
+                    'sw-inherit-wrapper': true,
+                    'sw-card': true,
+                    'sw-app-topbar-button': true,
+                },
+                provide: {
+                    cicadaExtensionService: {
+                        updateExtensionData: jest.fn(),
+                    },
+                    systemConfigApiService: {
+                        getValues: () => {
+                            return Promise.resolve({
+                                'core.store.apiUri': 'https://api.cicada.com',
+                                'core.store.licenseHost': 'sw6.test.cicada.in',
+                                'core.store.shopSecret': 'very.s3cret',
+                                'core.store.cicadaId': 'max@muster.com',
+                            });
+                        },
+                    },
+                },
+            },
+            props: {
+                namespace: 'MyExtension',
+            },
+            data() {
+                return { extension: null };
+            },
+        });
+    }
+
+    beforeAll(async () => {
+        SwExtensionConfig = await wrapTestComponent('sw-extension-config', {
+            sync: true,
+        });
+        SwMeteorPage = await wrapTestComponent('sw-meteor-page', {
+            sync: true,
+        });
+    });
+
+    beforeEach(async () => {
+        if (typeof Cicada.State.get('cicadaExtensions') !== 'undefined') {
+            Cicada.State.unregisterModule('cicadaExtensions');
+        }
+
+        Cicada.State.registerModule('cicadaExtensions', {
+            namespaced: true,
+            state: {
+                myExtensions: { data: [] },
+            },
+            mutations: {
+                setMyExtensions(state, extensions) {
+                    state.myExtensions = extensions;
+                },
+            },
+        });
+    });
+
+    it('domain should suffix config', async () => {
+        const wrapper = await createWrapper();
+
+        expect(wrapper.vm.domain).toBe('MyExtension.config');
+    });
+
+    it('should reload extensions on createdComponent', async () => {
+        const wrapper = await createWrapper();
+
+        expect(wrapper.vm.cicadaExtensionService.updateExtensionData).toHaveBeenCalledTimes(1);
+    });
+
+    it('should not reload extensions on createdComponent if extensions are loaded', async () => {
+        Cicada.State.commit('cicadaExtensions/setMyExtensions', {
+            data: [{ name: 'test-extension' }],
+        });
+        const wrapper = await createWrapper();
+
+        expect(wrapper.vm.cicadaExtensionService.updateExtensionData).toHaveBeenCalledTimes(0);
+    });
+
+    it('Save click success', async () => {
+        const wrapper = await createWrapper();
+
+        const saveAllMock = jest.fn(() => Promise.resolve());
+        const notificationMock = jest.fn();
+
+        wrapper.vm.createNotificationSuccess = notificationMock;
+        wrapper.vm.$refs.systemConfig.saveAll = saveAllMock;
+
+        await wrapper.get('.sw-extension-config__save-action').trigger('click');
+
+        expect(saveAllMock).toHaveBeenCalled();
+        expect(wrapper.vm.createNotificationSuccess).toHaveBeenCalledTimes(1);
+    });
+
+    it('Save click error', async () => {
+        const wrapper = await createWrapper();
+
+        wrapper.vm.createNotificationError = jest.fn();
+
+        wrapper.vm.$refs.systemConfig.saveAll = jest.fn(() => Promise.reject());
+
+        await wrapper.find('.sw-extension-config__save-action').trigger('click');
+
+        expect(wrapper.vm.createNotificationError).toHaveBeenCalledTimes(1);
+    });
+
+    it('shows default header', async () => {
+        const wrapper = await createWrapper();
+
+        const iconComponent = wrapper.get('.sw-extension-config__extension-icon img');
+        expect(iconComponent.attributes().src).toBe('administration/static/img/theme/default_theme_preview.jpg');
+        expect(iconComponent.attributes().alt).toBe('sw-extension-store.component.sw-extension-config.imageDescription');
+
+        const title = wrapper.get('.sw-meteor-page__smart-bar-title');
+        expect(title.text()).toBe('MyExtension');
+
+        const meta = wrapper.get('.sw-meteor-page__smart-bar-meta');
+        expect(meta.text()).toBe('');
+    });
+
+    it('shows header for extension details', async () => {
+        const wrapper = await createWrapper();
+
+        wrapper.vm.extension = {
+            icon: 'icon.png',
+            label: 'My extension label',
+            producerName: 'cicada AG',
+        };
+
+        await wrapper.vm.$nextTick();
+        const iconComponent = wrapper.get('.sw-extension-icon img');
+        expect(iconComponent.attributes().src).toBe('icon.png');
+        expect(iconComponent.attributes().alt).toBe('sw-extension-store.component.sw-extension-config.imageDescription');
+
+        const title = wrapper.get('.sw-meteor-page__smart-bar-title');
+        expect(title.text()).toBe('My extension label');
+
+        const meta = wrapper.get('.sw-meteor-page__smart-bar-meta');
+        expect(meta.text()).toBe('sw-extension-store.component.sw-extension-config.labelBy cicada AG');
+    });
+
+    it('shows header for extension details with producer website', async () => {
+        const wrapper = await createWrapper();
+
+        wrapper.vm.extension = {
+            producerName: 'cicada AG',
+            producerWebsite: 'https://www.cicada.com/',
+        };
+
+        await wrapper.vm.$nextTick();
+        const meta = wrapper.get('.sw-meteor-page__smart-bar-meta');
+        expect(meta.text()).toContain('sw-extension-store.component.sw-extension-config.labelBy');
+
+        const metaLink = wrapper.get('.sw-extension-config__producer-link');
+        expect(metaLink.attributes().href).toBe('https://www.cicada.com/');
+        expect(metaLink.text()).toBe('cicada AG');
+    });
+
+    it('saves from route when router navigates to sw-extension-config page', async () => {
+        const wrapper = await createWrapper();
+
+        const fromRoute = {
+            name: 'from.route.name',
+        };
+
+        SwExtensionConfig.beforeRouteEnter.call(wrapper.vm, undefined, fromRoute, (c) => c(wrapper.vm));
+        await wrapper.vm.$nextTick();
+
+        const page = wrapper.findComponent(SwMeteorPage);
+
+        expect(page.props('fromLink')).toEqual(fromRoute);
+    });
+});

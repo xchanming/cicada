@@ -1,0 +1,32 @@
+<?php declare(strict_types=1);
+
+namespace Cicada\Core\Service\ScheduledTask;
+
+use Psr\Log\LoggerInterface;
+use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
+use Cicada\Core\Service\AllServiceInstaller;
+use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+
+/**
+ * @internal
+ */
+#[Package('core')]
+#[AsMessageHandler(handles: InstallServicesTask::class)]
+final class InstallServicesTaskHandler extends ScheduledTaskHandler
+{
+    public function __construct(
+        EntityRepository $repository,
+        LoggerInterface $logger,
+        private readonly AllServiceInstaller $serviceInstaller,
+    ) {
+        parent::__construct($repository, $logger);
+    }
+
+    public function run(): void
+    {
+        $this->serviceInstaller->install(Context::createCLIContext());
+    }
+}

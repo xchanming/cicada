@@ -1,0 +1,100 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Cicada\Core\System\NumberRange\NumberRangeDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\Aggregate\NumberRangeSalesChannel\NumberRangeSalesChannelDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\Aggregate\NumberRangeState\NumberRangeStateDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\Aggregate\NumberRangeType\NumberRangeTypeDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\Aggregate\NumberRangeTypeTranslation\NumberRangeTypeTranslationDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\Aggregate\NumberRangeTranslation\NumberRangeTranslationDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <!-- Value Generator -->
+        <service id="Cicada\Core\System\NumberRange\Command\MigrateIncrementStorageCommand">
+            <argument type="service" id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementStorageRegistry"/>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementSqlStorage">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+
+            <tag name="cicada.value_generator_connector" storage="mysql"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\AbstractIncrementStorage">
+            <factory service="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementStorageRegistry"
+                     method="getStorage"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementRedisStorage">
+            <argument type="service" id="cicada.number_range.redis"/>
+            <argument type="service" id="lock.factory"/>
+            <argument type="service" id="number_range.repository"/>
+
+            <tag name="cicada.value_generator_connector" storage="redis"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementStorageRegistry">
+            <argument type="tagged_iterator" tag="cicada.value_generator_connector" index-by="storage"/>
+            <argument>%cicada.number_range.increment_storage%</argument>
+        </service>
+
+        <service id="cicada.number_range.redis" class="Redis">
+            <!-- @deprecated tag:v6.7.0 - Replace factory method with getConnection on the next line -->
+            <factory service="Cicada\Core\Framework\Adapter\Redis\RedisConnectionProvider" method="getOrCreateFromDsn"/>
+            <argument>%cicada.number_range.config.connection%</argument>
+            <!-- @deprecated tag:v6.7.0 - remove next line (dsn argument) -->
+            <argument>%cicada.number_range.config.dsn%</argument>
+        </service>
+
+        <service class="Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGenerator"
+                 id="Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGeneratorInterface"
+                 public="true">
+            <argument type="service" id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternRegistry" />
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternRegistry">
+            <argument type="tagged_iterator" tag="cicada.value_generator_pattern"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternIncrement">
+            <argument type="service" id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\AbstractIncrementStorage" />
+            <tag name="cicada.value_generator_pattern"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternDate">
+            <tag name="cicada.value_generator_pattern"/>
+        </service>
+
+        <service id="Cicada\Core\System\NumberRange\Api\NumberRangeController" public="true">
+            <argument type="service" id="Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGeneratorInterface" />
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+    </services>
+</container>

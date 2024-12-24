@@ -1,0 +1,32 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_condition_value_content %}
+<div class="sw-condition-time-range">
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_condition_time_range_field_from_time %}
+    <sw-datepicker
+        v-model:value="fromTime"
+        name="sw-field--fromTime"
+        size="medium"
+        date-type="time"
+        required
+        :config="datepickerConfig"
+        :disabled="disabled || undefined"
+        :placeholder="$tc('sw-datepicker.time.placeholder')"
+    />
+    {% endblock %}
+
+    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+    {% block sw_condition_time_range_field_to_time %}
+    <sw-datepicker
+        v-model:value="toTime"
+        name="sw-field--toTime"
+        size="medium"
+        date-type="time"
+        required
+        :config="datepickerConfig"
+        :disabled="disabled || undefined"
+        :placeholder="$tc('sw-datepicker.time.placeholder')"
+    />
+    {% endblock %}
+</div>
+{% endblock %}

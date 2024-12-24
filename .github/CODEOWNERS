@@ -1,0 +1,92 @@
+# general
+/adr/                             @cicada/product-ct-core @cicada/product-ct-admin @cicada/product-ct-storefront
+
+# this file
+/.github/CODEOWNERS     @cicada/product-ct-core @cicada/product-ct-admin @cicada/product-ct-storefront
+
+
+# ops
+/.github/               @cicada/product-operations
+/.gitlab/               @cicada/product-operations
+.gitlab-ci.yml          @cicada/product-operations
+
+
+# admin
+/src/Administration/Resources/* @cicada/product-ct-admin
+/.github/workflows/admin* @cicada/product-ct-admin @cicada/product-operations
+
+
+# storefront
+/src/Storefront/ @cicada/product-ct-storefront
+/.github/workflows/storefront* @cicada/product-ct-storefront @cicada/product-operations
+
+
+# ctrl-alt-elite
+src/Core/System/UsageData/usage-data-allow-list.json @product/engineering/solution-teams/ctrl-alt-elite
+
+
+# core
+**/composer.json @cicada/product-ct-core
+/.github/workflows/php* @cicada/product-ct-core @cicada/product-operations
+
+/src/Core/Checkout/Cart/Facade/ @cicada/product-ct-core
+/src/Core/Checkout/Cart/AbstractCartPersister.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/CartCalculator.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/CartDataCollectorInterface.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/CartPersister.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/CartProcessorInterface.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/CartRuleLoader.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/RuleLoader.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/Processor.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/Validator.php @cicada/product-ct-core
+/src/Core/Checkout/Cart/Price/ @cicada/product-ct-core
+/src/Core/Checkout/Cart/Processor/ @cicada/product-ct-core
+/src/Core/Checkout/Cart/CartValidatorInterface.php @cicada/product-ct-core
+/src/Core/Checkout/Order/SalesChannel/OrderRoute.php @cicada/product-ct-core
+/src/Core/Checkout/Promotion/Cart/PromotionProcessor.php @cicada/product-ct-core
+/src/Core/Checkout/Promotion/Cart/PromotionDeliveryProcessor.php @cicada/product-ct-core
+/src/Core/Checkout/Promotion/Cart/PromotionCalculator.php @cicada/product-ct-core
+/src/Core/Content/Media/Pathname/ @cicada/product-ct-core
+/src/Core/Content/Product/SalesChannel/ @cicada/product-ct-core
+/src/Core/Content/Product/DataAbstractionLayer/ @cicada/product-ct-core
+/src/Core/Content/Product/Cart/ @cicada/product-ct-core
+/src/Core/Content/Product/Subscriber/ProductSubscriber.php @cicada/product-ct-core
+/src/Core/Content/Seo/SeoUrlGenerator.php @cicada/product-ct-core
+/src/Core/Content/Seo/SeoResolver.php @cicada/product-ct-core
+/src/Core/Content/Seo/SeoUrlPersister.php @cicada/product-ct-core
+/src/Core/Content/Seo/SeoUrlUpdater.php @cicada/product-ct-core
+/src/Core/Content/Seo/SeoUrlTwigFactory.php @cicada/product-ct-core
+/src/Core/Content/Seo/SeoUrlPlaceholderHandler.php @cicada/product-ct-core
+/src/Core/**/Cache*.php @cicada/product-ct-core
+/src/Core/Framework/Adapter/ @cicada/product-ct-core
+/src/Core/Framework/Api/ @cicada/product-ct-core
+/src/Core/Framework/App/ @cicada/product-ct-core
+/src/Core/Framework/DataAbstractionLayer/ @cicada/product-ct-core
+/src/Core/Framework/Feature/ @cicada/product-ct-core
+/src/Core/Framework/Log/ @cicada/product-ct-core
+/src/Core/Framework/MessageQueue/ @cicada/product-ct-core
+/src/Core/Framework/Migration/ @cicada/product-ct-core
+/src/Core/Framework/Plugin/ @cicada/product-ct-core
+/src/Core/Framework/Resources/config/ @cicada/product-ct-core
+/src/Core/Framework/Routing/ @cicada/product-ct-core
+/src/Core/Framework/Rule/ @cicada/product-ct-core
+/src/Core/Framework/Script/ @cicada/product-ct-core
+/src/Core/Framework/Update/ @cicada/product-ct-core
+/src/Core/Framework/Util/ @cicada/product-ct-core
+/src/Core/Framework/Uuid/ @cicada/product-ct-core
+/src/Core/Framework/Validation/ @cicada/product-ct-core
+/src/Core/Framework/Webhook/ @cicada/product-ct-core
+/src/Core/Framework/*.php @cicada/product-ct-core
+/src/Core/Profiling/ @cicada/product-ct-core
+/src/Core/DevOps/ @cicada/product-ct-core
+/src/Core/System/CustomEntity/ @cicada/product-ct-core
+/src/Core/System/CustomField/ @cicada/product-ct-core
+/src/Core/System/Integration/ @cicada/product-ct-core
+/src/Elasticsearch/ @cicada/product-ct-core
+/bin/ @cicada/product-ct-core
+/public/ @cicada/product-ct-core
+/config/bundles.php @cicada/product-ct-core
+phpstan.neon @cicada/product-ct-core
+.bc-exclude.php @cicada/product-ct-core
+deprecation.ignore @cicada/product-ct-core
+/src/Core/Framework/Resources/config/packages/cicada.yaml @cicada/product-ct-core

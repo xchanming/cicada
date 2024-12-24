@@ -1,0 +1,40 @@
+{
+    "name": "cicada/administration",
+    "description": "Administration frontend for the Cicada Core",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cicada\\Administration\\": ""
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/runtime": true
+        }
+    },
+    "support": {
+        "issues": "https://github.com/cicada/cicada/issues",
+        "forum": "https://forum.cicada.com",
+        "wiki": "https://developer.cicada.com",
+        "docs": "https://developer.cicada.com",
+        "chat": "https://slack.cicada.com"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.6.x-dev",
+            "dev-trunk": "6.6.x-dev"
+        }
+    },
+    "require": {
+        "php": "~8.2.0 || ~8.3.0",
+        "doctrine/dbal": "^3.9",
+        "pentatrion/vite-bundle": "^7.0",
+        "cicada/core": "*",
+        "symfony/framework-bundle": "~7.2.0",
+        "symfony/http-foundation": "~7.2.0",
+        "symfony/mime": "~7.2.0",
+        "symfony/routing": "~7.2.0"
+    }
+}

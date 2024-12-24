@@ -1,0 +1,70 @@
+import template from './sw-loader.html.twig';
+
+const { Component } = Cicada;
+
+/**
+ * @package admin
+ *
+ * @private
+ * @status ready
+ * @description Wrapper component for sw-loader and mt-loader. Autoswitches between the two components.
+ */
+Component.register('sw-loader', {
+    template,
+
+    compatConfig: Cicada.compatConfig,
+
+    props: {
+        modelValue: {
+            type: String,
+            required: false,
+            default: null,
+        },
+
+        value: {
+            type: String,
+            required: false,
+            default: null,
+        },
+    },
+
+    computed: {
+        useMeteorComponent() {
+            // Use new meteor component in major
+            if (Cicada.Feature.isActive('v6.7.0.0')) {
+                return true;
+            }
+
+            // Throw warning when deprecated component is used
+            Cicada.Utils.debug.warn(
+                'sw-loader',
+                // eslint-disable-next-line max-len
+                'The old usage of "sw-loader" is deprecated and will be removed in v6.7.0.0. Please use "mt-loader" instead.',
+            );
+
+            return false;
+        },
+
+        listeners() {
+            if (this.isCompatEnabled('INSTANCE_LISTENERS')) {
+                return this.$listeners;
+            }
+
+            return {};
+        },
+    },
+
+    methods: {
+        getSlots() {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+            if (this.isCompatEnabled('INSTANCE_SCOPED_SLOTS')) {
+                return {
+                    ...this.$slots,
+                    ...this.$scopedSlots,
+                };
+            }
+
+            return this.$slots;
+        },
+    },
+});

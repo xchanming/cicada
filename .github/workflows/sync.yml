@@ -1,0 +1,34 @@
+name: Sync Repo
+
+on:
+  push:
+    branches:
+      - trunk
+      - 6.5.x
+  workflow_call:
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    permissions:
+        id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: octo-sts/action@v1.0.0
+        id: sts-cicada-private
+        with:
+          scope: cicada
+          identity: CicadaPrivateSync
+
+      - name: Push to private fork
+        run: |
+          git config --unset http."https://github.com/".extraheader
+          git config "http.https://github.com/cicada/cicada-private.git/.extraheader" "AUTHORIZATION: basic $(echo -n "x-access-token:${{ steps.sts-cicada-private.outputs.token }}" | base64)"
+          git remote add private https://github.com/cicada/cicada-private.git
+          git fetch private
+          git push -f private ${{ github.ref }}

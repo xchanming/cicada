@@ -1,0 +1,72 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_first_run_wizard_cicada_account %}
+<div class="sw-first-run-wizard-cicada-account">
+    <sw-container columns="1fr 1fr">
+        <img
+            class="sw-first-run-wizard-cicada-account__illustration"
+            :src="assetFilter('/administration/static/img/first-run-wizard/cicada-account.svg')"
+            alt=""
+        >
+        <div>
+            <h5 class="headline">
+                {{ $tc('sw-first-run-wizard.cicadaAccount.headline') }}
+            </h5>
+            <p
+                class="message"
+                v-html="$tc('sw-first-run-wizard.cicadaAccount.message')"
+            ></p>
+            <p class="create-account">
+                {{ $tc('sw-first-run-wizard.cicadaAccount.registerAccountText') }}
+                <a
+                    class="external-link"
+                    :href="$tc('sw-first-run-wizard.cicadaAccount.registerAccountUrl')"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    {{ $tc('sw-first-run-wizard.cicadaAccount.registerAccountHere') }}
+                </a>.
+            </p>
+            <div class="input-fields">
+                <sw-text-field
+                    v-model:value="cicadaId"
+                    name="cicadaId"
+                    validation="required"
+                    :label="$tc('sw-first-run-wizard.cicadaAccount.emailAddressLabel')"
+                    :placeholder="$tc('sw-first-run-wizard.cicadaAccount.emailAddressPlaceholder')"
+                />
+            </div>
+
+            <div class="input-fields">
+                <sw-password-field
+                    v-model:value="password"
+                    :label="$tc('sw-first-run-wizard.cicadaAccount.passwordLabel')"
+                    :placeholder="$tc('sw-first-run-wizard.cicadaAccount.passwordPlaceholder')"
+                />
+            </div>
+            <p class="forgot-password">
+                <a
+                    class="external-link"
+                    :href="$tc('sw-first-run-wizard.cicadaAccount.forgotPasswordUrl')"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    {{ $tc('sw-first-run-wizard.cicadaAccount.forgotPasswordText') }}
+                </a>
+            </p>
+
+            <div
+                v-if="accountError"
+                class="sw-first-run-wizard-cicada-account__error"
+            >
+                <sw-alert
+                    :title="$tc('global.default.error')"
+                    variant="error"
+                    appearance="notification"
+                >
+                    {{ $tc('sw-first-run-wizard.error.messageLoginDataInvalid') }}
+                </sw-alert>
+            </div>
+        </div>
+    </sw-container>
+</div>
+{% endblock %}

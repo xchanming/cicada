@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="cicada.messenger.enforce_message_size">true</parameter>
+    </parameters>
+
+    <services>
+        <service id="Cicada\Tests\Integration\Core\Framework\Api\EventListener\FixturesPhp\SalesChannelAuthenticationListenerTestRoute">
+            <tag name="controller.service_arguments"/>
+        </service>
+
+        <service id="Cicada\Tests\Integration\Core\Content\Seo\SalesChannel\FixturesPhp\StoreApiSeoResolverTestRoute">
+            <argument type="service" id="Cicada\Core\Content\Category\SalesChannel\CategoryRoute"/>
+            <argument type="service" id="Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory"/>
+
+            <tag name="controller.service_arguments"/>
+        </service>
+
+        <service id="Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Version\CalculatedPriceFieldTestDefinition">
+            <tag name="cicada.entity.definition" />
+        </service>
+
+        <!-- Payment -->
+        <service id="Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestConstantTaxRateProvider">
+            <tag name="cicada.tax.provider"/>
+        </service>
+
+        <service id="Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestEmptyTaxProvider">
+            <tag name="cicada.tax.provider"/>
+        </service>
+
+        <service id="Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestGenericExceptionTaxProvider">
+            <tag name="cicada.tax.provider"/>
+        </service>
+
+        <!-- Route -->
+        <service id="Cicada\Core\Content\Test\TestNavigationSeoUrlRoute">
+            <argument type="service" id="Cicada\Core\Content\Category\CategoryDefinition"/>
+
+            <tag name="cicada.seo_url.route"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Test\TestProductSeoUrlRoute">
+            <argument type="service" id="Cicada\Core\Content\Product\ProductDefinition"/>
+
+            <tag name="cicada.seo_url.route"/>
+        </service>
+
+        <service id="Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntity">
+            <tag name="cicada.entity"/>
+        </service>
+
+        <service id="Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityAgg">
+            <tag name="cicada.entity"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Test\Telemetry\Factory\TraceableTransportFactory">
+            <tag name="cicada.metric_transport_factory"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection" lazy="true">
+            <factory class="Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection" method="create"/>
+            <argument type="iterator">
+                <argument type="service" id="Cicada\Core\Framework\Test\Telemetry\Factory\TraceableTransportFactory"/>
+            </argument>
+            <argument type="service" id="Cicada\Core\Framework\Telemetry\Metrics\Config\TransportConfigProvider"/>
+        </service>
+
+    </services>
+</container>

@@ -1,0 +1,359 @@
+<?php declare(strict_types=1);
+
+namespace Cicada\Tests\Unit\Storefront\Controller;
+
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Cicada\Core\Content\Cms\CmsPageEntity;
+use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
+use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewEntity;
+use Cicada\Core\Content\Product\Exception\ReviewNotActiveExeption;
+use Cicada\Core\Content\Product\Exception\VariantNotFoundException;
+use Cicada\Core\Content\Product\ProductEntity;
+use Cicada\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRoute;
+use Cicada\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRouteResponse;
+use Cicada\Core\Content\Product\SalesChannel\FindVariant\FoundCombination;
+use Cicada\Core\Content\Product\SalesChannel\Review\AbstractProductReviewSaveRoute;
+use Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewLoader;
+use Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewResult;
+use Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewsWidgetLoadedHook;
+use Cicada\Core\Content\Product\SalesChannel\Review\RatingMatrix;
+use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
+use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
+use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Cicada\Core\Framework\Feature;
+use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
+use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
+use Cicada\Core\System\SalesChannel\NoContentResponse;
+use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Cicada\Storefront\Controller\Exception\StorefrontException;
+use Cicada\Storefront\Controller\ProductController;
+use Cicada\Storefront\Page\Product\ProductPage;
+use Cicada\Storefront\Page\Product\ProductPageLoader;
+use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPage;
+use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoader;
+use Cicada\Storefront\Page\Product\QuickView\ProductQuickViewWidgetLoadedHook;
+use Cicada\Storefront\Page\Product\Review\ProductReviewsWidgetLoadedHook as StorefrontProductReviewsWidgetLoadedHook;
+use Cicada\Tests\Unit\Storefront\Controller\Stub\ProductControllerStub;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\ConstraintViolationList;
+
+/**
+ * @internal
+ */
+#[CoversClass(ProductController::class)]
+class ProductControllerTest extends TestCase
+{
+    private MockObject&ProductPageLoader $productPageLoaderMock;
+
+    private MockObject&FindProductVariantRoute $findVariantRouteMock;
+
+    private MockObject&SeoUrlPlaceholderHandlerInterface $seoUrlPlaceholderHandlerMock;
+
+    private MockObject&MinimalQuickViewPageLoader $minimalQuickViewPageLoaderMock;
+
+    private MockObject&AbstractProductReviewSaveRoute $productReviewSaveRouteMock;
+
+    private MockObject&SystemConfigService $systemConfigServiceMock;
+
+    private MockObject&ProductReviewLoader $productReviewLoaderMock;
+
+    private ProductControllerStub $controller;
+
+    protected function setUp(): void
+    {
+        $this->productPageLoaderMock = $this->createMock(ProductPageLoader::class);
+        $this->findVariantRouteMock = $this->createMock(FindProductVariantRoute::class);
+        $this->seoUrlPlaceholderHandlerMock = $this->createMock(SeoUrlPlaceholderHandlerInterface::class);
+        $this->minimalQuickViewPageLoaderMock = $this->createMock(MinimalQuickViewPageLoader::class);
+        $this->productReviewSaveRouteMock = $this->createMock(AbstractProductReviewSaveRoute::class);
+        $this->systemConfigServiceMock = $this->createMock(SystemConfigService::class);
+        $this->productReviewLoaderMock = $this->createMock(ProductReviewLoader::class);
+
+        $this->controller = new ProductControllerStub(
+            $this->productPageLoaderMock,
+            $this->findVariantRouteMock,
+            $this->minimalQuickViewPageLoaderMock,
+            $this->productReviewSaveRouteMock,
+            $this->seoUrlPlaceholderHandlerMock,
+            $this->productReviewLoaderMock,
+            $this->systemConfigServiceMock,
+            $this->createMock(EventDispatcher::class),
+        );
+    }
+
+    public function testIndexCmsPage(): void
+    {
+        $productEntity = new SalesChannelProductEntity();
+        $productEntity->setId('test');
+        $productPage = new ProductPage();
+        $productPage->setProduct($productEntity);
+        $productPage->setCmsPage(new CmsPageEntity());
+
+        $this->productPageLoaderMock->method('load')->willReturn($productPage);
+
+        $response = $this->controller->index($this->createMock(SalesChannelContext::class), new Request());
+
+        static::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        static::assertInstanceOf(ProductPage::class, $this->controller->renderStorefrontParameters['page']);
+        static::assertSame('test', $this->controller->renderStorefrontParameters['page']->getProduct()->getId());
+        static::assertSame('@Storefront/storefront/page/content/product-detail.html.twig', $this->controller->renderStorefrontView);
+    }
+
+    public function testSwitchNoVariantReturn(): void
+    {
+        $response = $this->controller->switch(Uuid::randomHex(), new Request(), $this->createMock(SalesChannelContext::class));
+
+        static::assertSame('{"url":"","productId":""}', $response->getContent());
+    }
+
+    public function testSwitchVariantReturn(): void
+    {
+        $ids = new IdsCollection();
+
+        $options = [
+            $ids->get('group1') => $ids->get('option1'),
+            $ids->get('group2') => $ids->get('option2'),
+        ];
+
+        $request = new Request(
+            [
+                'switched' => $ids->get('element'),
+                'options' => json_encode($options, \JSON_THROW_ON_ERROR),
+            ]
+        );
+
+        $expectedDuplicatedRequestData = [
+            'options' => $options,
+            'switchedGroup' => $ids->get('element'),
+        ];
+        $expectedClonedRequest = $request->duplicate($expectedDuplicatedRequestData);
+
+        $this->findVariantRouteMock->method('load')
+            ->with(
+                $ids->get('product'),
+                static::equalTo($expectedClonedRequest)
+            )
+            ->willReturn(
+                new FindProductVariantRouteResponse(new FoundCombination($ids->get('variantId'), $options))
+            );
+
+        $this->seoUrlPlaceholderHandlerMock->method('generate')->with(
+            'frontend.detail.page',
+            ['productId' => $ids->get('variantId')]
+        )->willReturn('https://test.com/test');
+
+        $this->seoUrlPlaceholderHandlerMock->method('replace')->willReturnArgument(0);
+
+        $response = $this->controller->switch($ids->get('product'), $request, $this->createMock(SalesChannelContext::class));
+
+        static::assertSame('{"url":"https:\/\/test.com\/test","productId":"' . $ids->get('variantId') . '"}', $response->getContent());
+    }
+
+    public function testSwitchVariantException(): void
+    {
+        $ids = new IdsCollection();
+
+        $options = [
+            $ids->get('group1') => $ids->get('option1'),
+            $ids->get('group2') => $ids->get('option2'),
+        ];
+
+        $this->findVariantRouteMock->method('load')->willThrowException(new VariantNotFoundException($ids->get('product'), $options));
+
+        $response = $this->controller->switch($ids->get('product'), new Request(), $this->createMock(SalesChannelContext::class));
+
+        static::assertSame('{"url":"","productId":"' . $ids->get('product') . '"}', $response->getContent());
+    }
+
+    public function testQuickViewMinimal(): void
+    {
+        $ids = new IdsCollection();
+
+        $request = new Request(['productId' => $ids->get('productId')]);
+        $this->minimalQuickViewPageLoaderMock->method('load')->with($request)->willReturn(new MinimalQuickViewPage(new ProductEntity()));
+
+        $response = $this->controller->quickviewMinimal(
+            $request,
+            $this->createMock(SalesChannelContext::class)
+        );
+
+        static::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        static::assertInstanceOf(MinimalQuickViewPage::class, $this->controller->renderStorefrontParameters['page']);
+        static::assertInstanceOf(ProductQuickViewWidgetLoadedHook::class, $this->controller->calledHook);
+    }
+
+    public function testSaveReviewDeactivated(): void
+    {
+        $ids = new IdsCollection();
+
+        $this->systemConfigServiceMock->method('get')->with('core.listing.showReview')->willReturn(false);
+
+        $requestBag = new RequestDataBag(['test' => 'test']);
+
+        if (Feature::isActive('v6.7.0.0')) {
+            $this->expectException(StorefrontException::class);
+        } else {
+            $this->expectException(ReviewNotActiveExeption::class);
+        }
+        $this->expectExceptionMessage('Reviews not activated');
+
+        $this->controller->saveReview(
+            $ids->get('productId'),
+            $requestBag,
+            $this->createMock(SalesChannelContext::class)
+        );
+    }
+
+    public function testSaveReview(): void
+    {
+        $ids = new IdsCollection();
+
+        $this->systemConfigServiceMock->method('get')->with('core.listing.showReview')->willReturn(true);
+
+        $requestBag = new RequestDataBag(['test' => 'test']);
+
+        $this->productReviewSaveRouteMock->method('save')->with(
+            $ids->get('productId'),
+            $requestBag,
+            $this->createMock(SalesChannelContext::class)
+        )->willReturn(new NoContentResponse());
+
+        $response = $this->controller->saveReview(
+            $ids->get('productId'),
+            $requestBag,
+            $this->createMock(SalesChannelContext::class)
+        );
+
+        static::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        static::assertSame('frontend.product.reviews', $this->controller->forwardToRoute);
+        static::assertEquals(
+            [
+                'productId' => $ids->get('productId'),
+                'success' => 1,
+                'data' => $requestBag,
+                'parentId' => null,
+            ],
+            $this->controller->forwardToRouteAttributes
+        );
+        static::assertSame(['productId' => $ids->get('productId')], $this->controller->forwardToRouteParameters);
+
+        $requestBag->set('id', 'any');
+
+        $response = $this->controller->saveReview(
+            $ids->get('productId'),
+            $requestBag,
+            $this->createMock(SalesChannelContext::class)
+        );
+
+        static::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        static::assertSame('frontend.product.reviews', $this->controller->forwardToRoute);
+        static::assertEquals(
+            [
+                'productId' => $ids->get('productId'),
+                'success' => 2,
+                'data' => $requestBag,
+                'parentId' => null,
+            ],
+            $this->controller->forwardToRouteAttributes
+        );
+    }
+
+    public function testSaveReviewViolation(): void
+    {
+        $ids = new IdsCollection();
+
+        $this->systemConfigServiceMock->method('get')->with('core.listing.showReview')->willReturn(true);
+
+        $requestBag = new RequestDataBag(['test' => 'test']);
+
+        $violations = new ConstraintViolationException(new ConstraintViolationList(), []);
+
+        $this->productReviewSaveRouteMock->method('save')->willThrowException($violations);
+
+        $response = $this->controller->saveReview(
+            $ids->get('productId'),
+            new RequestDataBag(['test' => 'test']),
+            $this->createMock(SalesChannelContext::class)
+        );
+
+        static::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        static::assertSame('frontend.product.reviews', $this->controller->forwardToRoute);
+        static::assertEquals(
+            [
+                'productId' => $ids->get('productId'),
+                'success' => -1,
+                'data' => $requestBag,
+                'formViolations' => $violations,
+            ],
+            $this->controller->forwardToRouteAttributes
+        );
+        static::assertSame(['productId' => $ids->get('productId')], $this->controller->forwardToRouteParameters);
+    }
+
+    public function testLoadReviewResults(): void
+    {
+        $ids = new IdsCollection();
+
+        $this->systemConfigServiceMock->method('get')->with('core.listing.showReview')->willReturn(true);
+
+        $productId = Uuid::randomHex();
+        $parentId = Uuid::randomHex();
+
+        $request = new Request([
+            'test' => 'test',
+            'productId' => $productId,
+            'parentId' => $parentId,
+        ]);
+
+        $productReview = new ProductReviewEntity();
+        $productReview->setUniqueIdentifier($ids->get('productReview'));
+        $reviewResult = new ProductReviewResult(
+            'review',
+            1,
+            new ProductReviewCollection([$productReview]),
+            null,
+            new Criteria(),
+            Context::createDefaultContext()
+        );
+        $reviewResult->setMatrix(new RatingMatrix([]));
+        $reviewResult->setProductId($productId);
+        $reviewResult->setParentId($parentId);
+
+        $this->productReviewLoaderMock->method('load')->with(
+            $request,
+            $this->createMock(SalesChannelContext::class),
+            $productId,
+            $parentId
+        )->willReturn($reviewResult);
+
+        $response = $this->controller->loadReviews(
+            $productId,
+            $request,
+            $this->createMock(SalesChannelContext::class)
+        );
+
+        static::assertSame(Response::HTTP_OK, $response->getStatusCode());
+        static::assertSame('storefront/component/review/review.html.twig', $this->controller->renderStorefrontView);
+        static::assertEquals(
+            [
+                'reviews' => $reviewResult,
+                'ratingSuccess' => null,
+            ],
+            $this->controller->renderStorefrontParameters
+        );
+
+        if (Feature::isActive('v6.7.0.0')) {
+            static::assertInstanceOf(ProductReviewsWidgetLoadedHook::class, $this->controller->calledHook);
+        } else {
+            static::assertInstanceOf(StorefrontProductReviewsWidgetLoadedHook::class, $this->controller->calledHook);
+        }
+    }
+}

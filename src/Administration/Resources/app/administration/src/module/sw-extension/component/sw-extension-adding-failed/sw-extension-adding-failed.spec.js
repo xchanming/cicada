@@ -1,0 +1,115 @@
+import { mount } from '@vue/test-utils';
+import extensionStore from 'src/module/sw-extension/store/extensions.store';
+import CicadaExtensionService from 'src/module/sw-extension/service/cicada-extension.service';
+
+Cicada.State.registerModule('cicadaExtensions', extensionStore);
+
+async function createWrapper() {
+    const cicadaExtensionService = new CicadaExtensionService();
+
+    return mount(await wrapTestComponent('sw-extension-adding-failed', { sync: true }), {
+        global: {
+            stubs: {
+                'sw-circle-icon': await wrapTestComponent('sw-circle-icon', { sync: true }),
+                'sw-button': await wrapTestComponent('sw-button', {
+                    sync: true,
+                }),
+                'sw-button-deprecated': await wrapTestComponent('sw-button-deprecated', { sync: true }),
+                'i18n-t': true,
+                'sw-icon': true,
+                'sw-label': true,
+                'router-link': true,
+                'sw-loader': true,
+            },
+            provide: {
+                cicadaExtensionService,
+            },
+        },
+        props: {
+            extensionName: 'test-app',
+        },
+    });
+}
+
+/**
+ * @package checkout
+ */
+describe('src/module/sw-extension-component/sw-extension-adding-failed', () => {
+    it('passes correct props to sw-circle-icon', async () => {
+        const wrapper = await createWrapper();
+
+        expect(wrapper.getComponent('.sw-circle-icon').props('variant')).toBe('danger');
+        expect(wrapper.getComponent('.sw-circle-icon').props('size')).toBe(72);
+        expect(wrapper.getComponent('.sw-circle-icon').props('iconName')).toBe('regular-times-circle-s');
+    });
+
+    it('has a primary block button', async () => {
+        Cicada.State.commit('cicadaExtensions/myExtensions', []);
+
+        const wrapper = await createWrapper();
+
+        const closeButton = wrapper.getComponent('button.sw-button');
+
+        expect(closeButton.classes('sw-button--primary')).toBe(true);
+        expect(closeButton.classes('sw-button--block')).toBe(true);
+    });
+
+    it('emits close if close button is clicked', async () => {
+        Cicada.State.commit('cicadaExtensions/myExtensions', []);
+
+        const wrapper = await createWrapper();
+
+        await wrapper.get('button.sw-button').trigger('click');
+
+        expect(wrapper.emitted().close).toBeTruthy();
+    });
+
+    it('renders all information if extension is rent', async () => {
+        Cicada.State.commit('cicadaExtensions/myExtensions', [
+            {
+                name: 'test-app',
+                storeLicense: {
+                    variant: 'rent',
+                },
+            },
+        ]);
+
+        const wrapper = await createWrapper();
+
+        expect(wrapper.get('.sw-extension-adding-failed__text-licence-cancellation').text()).toBe(
+            'sw-extension-store.component.sw-extension-adding-failed.installationFailed.notificationLicense',
+        );
+    });
+
+    it('does not render additional information if the license is not a subscription', async () => {
+        Cicada.State.commit('cicadaExtensions/myExtensions', [
+            {
+                name: 'test-app',
+                storeLicense: {
+                    variant: 'buy',
+                },
+            },
+        ]);
+
+        const wrapper = await createWrapper();
+
+        expect(wrapper.find('.sw-extension-installation-failed__text-licence-cancellation').exists()).toBe(false);
+        expect(wrapper.find('h3').text()).toBe(
+            'sw-extension-store.component.sw-extension-adding-failed.installationFailed.titleFailure',
+        );
+        expect(wrapper.find('p').text()).toBe(
+            'sw-extension-store.component.sw-extension-adding-failed.installationFailed.textProblem',
+        );
+    });
+
+    // eslint-disable-next-line max-len
+    it('does not render additional information about licenses and uses general failure text if extension is not licensed', async () => {
+        Cicada.State.commit('cicadaExtensions/myExtensions', []);
+
+        const wrapper = await createWrapper();
+
+        expect(wrapper.find('.sw-extension-installation-failed__text-licence-cancellation').exists()).toBe(false);
+        expect(wrapper.find('h3').text()).toBe('sw-extension-store.component.sw-extension-adding-failed.titleFailure');
+        expect(wrapper.find('p').text()).toBe('sw-extension-store.component.sw-extension-adding-failed.textProblem');
+    });
+});

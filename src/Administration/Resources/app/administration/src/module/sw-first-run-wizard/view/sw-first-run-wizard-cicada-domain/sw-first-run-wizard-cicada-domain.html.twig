@@ -1,0 +1,59 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_first_run_wizard_cicada_domain %}
+<div class="sw-first-run-wizard-cicada-domain">
+    <h3 class="headline">
+        {{ $tc('sw-first-run-wizard.cicadaDomain.headline') }}
+    </h3>
+    <p
+        class="message"
+        v-html="$tc('sw-first-run-wizard.cicadaDomain.message')"
+    ></p>
+
+    <sw-switch-field
+        v-model:value="createShopDomain"
+        :label="$tc('sw-first-run-wizard.cicadaDomain.labelCreateDomain')"
+    />
+
+    <div v-if="createShopDomain">
+        <sw-text-field
+            v-model:value="newShopDomain"
+            name="newShopDomain"
+            validation="required"
+            :label="'Shop domain'"
+        />
+        <sw-checkbox-field
+            v-model:value="testEnvironment"
+            :label="$tc('sw-first-run-wizard.cicadaDomain.testEnvironment')"
+        />
+    </div>
+    <div v-else-if="licenceDomains.length > 0">
+        <sw-select-field
+            v-model:value="selectedShopDomain"
+            label="Shop domain"
+            placeholder=""
+        >
+            <option
+                v-for="domain in licenceDomains"
+                :key="domain.domain"
+                :value="domain.domain"
+            >
+                {{ domain.domain }}
+            </option>
+        </sw-select-field>
+    </div>
+    <div
+        v-if="domainError"
+        class="sw-first-run-wizard-cicada-domain__error"
+    >
+        <sw-alert
+            :title="domainError.title"
+            variant="error"
+            appearance="notification"
+        >
+            {{ domainError.detail }}
+        </sw-alert>
+    </div>
+
+    <sw-loader v-if="isLoading" />
+</div>
+{% endblock %}

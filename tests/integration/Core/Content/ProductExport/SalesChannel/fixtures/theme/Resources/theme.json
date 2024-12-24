@@ -1,0 +1,14 @@
+{
+  "name": "SwagTheme",
+  "author": "cicada AG",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@SwagTheme"
+  ],
+  "style": [
+  ],
+  "script": [],
+  "iconSets": {
+  }
+}

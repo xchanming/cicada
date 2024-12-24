@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd"
+         bootstrap="src/Core/TestBootstrap.php"
+         cacheResult="false"
+         executionOrder="random"
+         displayDetailsOnPhpunitDeprecations="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         cacheDirectory=".phpunit.cache">
+    <coverage includeUncoveredFiles="true"/>
+    <source>
+        <include>
+            <!--
+                      DO NOT change this to a more generic structure.
+                      The phpunit file traversal is really inefficient for our test structure. A naive definition results in
+                      more than 70000 files being traversed, which has to be done for each thread/process.
+                  -->
+            <directory suffix=".php">src/Core/Checkout</directory>
+            <directory suffix=".php">src/Core/Content</directory>
+            <directory suffix=".php">src/Core/Framework</directory>
+            <directory suffix=".php">src/Core/DevOps</directory>
+            <directory suffix=".php">src/Core/Installer</directory>
+            <directory suffix=".php">src/Core/Maintenance</directory>
+            <directory suffix=".php">src/Core/Profiling</directory>
+            <directory suffix=".php">src/Core/System</directory>
+            <directory suffix=".php">src/Core/Service</directory>
+            <file>src/Core/Defaults.php</file>
+            <file>src/Core/HttpKernel.php</file>
+            <file>src/Core/HttpKernelResult.php</file>
+            <file>src/Core/Kernel.php</file>
+            <file>src/Core/PlatformRequest.php</file>
+            <file>src/Core/SalesChannelRequest.php</file>
+            <directory suffix=".php">src/Elasticsearch</directory>
+            <directory suffix=".php">src/Administration/Controller</directory>
+            <directory suffix=".php">src/Administration/DependencyInjection</directory>
+            <directory suffix=".php">src/Administration/Events</directory>
+            <directory suffix=".php">src/Administration/Framework</directory>
+            <directory suffix=".php">src/Administration/Notification</directory>
+            <directory suffix=".php">src/Administration/Service</directory>
+            <directory suffix=".php">src/Administration/Snippet</directory>
+            <directory suffix=".php">src/Administration/System</directory>
+            <file>src/Administration/Administration.php</file>
+            <directory suffix=".php">src/Storefront/Checkout</directory>
+            <directory suffix=".php">src/Storefront/Controller</directory>
+            <directory suffix=".php">src/Storefront/DependencyInjection</directory>
+            <directory suffix=".php">src/Storefront/Event</directory>
+            <directory suffix=".php">src/Storefront/Exception</directory>
+            <directory suffix=".php">src/Storefront/Framework</directory>
+            <directory suffix=".php">src/Storefront/Page</directory>
+            <directory suffix=".php">src/Storefront/Pagelet</directory>
+            <directory suffix=".php">src/Storefront/Theme</directory>
+            <file>src/Storefront/Storefront.php</file>
+            <file>src/Core/Test/FeatureFlagExtension.php</file>
+            <file>src/Core/Test/Annotation/ActiveFeatures.php</file>
+        </include>
+        <exclude>
+            <file>src/Administration/Events/PreResetExcludedSearchTermEvent.php</file>
+            <directory suffix="Definition.php">src/Administration/Notification/</directory>
+            <directory suffix="Entity.php">src/Administration/Notification/</directory>
+            <directory suffix="Event.php">src/Administration/Notification/</directory>
+            <directory suffix="Field.php">src/Administration/Notification/</directory>
+            <directory suffix="Struct.php">src/Administration/Notification/</directory>
+            <directory suffix="Collection.php">src/Administration/Notification/</directory>
+
+            <directory suffix="Definition.php">src/Administration/Snippet/</directory>
+            <directory suffix="Entity.php">src/Administration/Snippet/</directory>
+            <directory suffix="Event.php">src/Administration/Snippet/</directory>
+            <directory suffix="Field.php">src/Administration/Snippet/</directory>
+            <directory suffix="Struct.php">src/Administration/Snippet/</directory>
+            <directory suffix="Collection.php">src/Administration/Snippet/</directory>
+
+
+            <file>src/Core/Framework/Adapter/Twig/functions.php</file>
+            <directory suffix=".php">src/Core/Test/Integration/Builder</directory>
+            <directory suffix=".php">src/Core/Framework/Test</directory>
+            <directory suffix=".php">src/Core/Framework/Telemetry/Metrics/Metric</directory>
+            <directory suffix=".php">src/Core/Content/Test</directory>
+            <directory suffix=".php">src/Core/Content/Cms/DataResolver/ResolverContext/</directory>
+            <directory suffix=".php">src/Core/Content/Cms/Extension/</directory>
+            <directory suffix=".php">src/Core/DevOps/StaticAnalyze</directory>
+            <directory suffix=".php">src/Core/DevOps/Test/Command/stubs</directory>
+            <directory suffix=".php">src/Core/DevOps/Test/Environment</directory>
+            <directory suffix=".php">src/Core/Migration/Test</directory>
+            <directory suffix=".php">src/Elasticsearch/Test</directory>
+            <directory suffix=".php">src/Storefront/Test</directory>
+
+            <directory suffix="Definition.php">src/Core/</directory>
+            <directory suffix="Entity.php">src/Core/</directory>
+            <directory suffix="Event.php">src/Core/</directory>
+            <directory suffix="Field.php">src/Core/</directory>
+            <directory suffix="Struct.php">src/Core/</directory>
+            <directory suffix="Collection.php">src/Core/</directory>
+
+            <directory suffix="Definition.php">src/Storefront/Checkout</directory>
+            <directory suffix="Entity.php">src/Storefront/Checkout</directory>
+            <directory suffix="Event.php">src/Storefront/Checkout</directory>
+            <directory suffix="Field.php">src/Storefront/Checkout</directory>
+            <directory suffix="Struct.php">src/Storefront/Checkout</directory>
+            <directory suffix="Collection.php">src/Storefront/Checkout</directory>
+            <directory suffix="Event.php">src/Storefront/Event</directory>
+
+            <directory suffix="Definition.php">src/Storefront/Framework</directory>
+            <directory suffix="Entity.php">src/Storefront/Framework</directory>
+            <directory suffix="Event.php">src/Storefront/Framework</directory>
+            <directory suffix="Field.php">src/Storefront/Framework</directory>
+            <directory suffix="Struct.php">src/Storefront/Framework</directory>
+            <directory suffix="Collection.php">src/Storefront/Framework</directory>
+
+            <directory suffix="Definition.php">src/Storefront/Page</directory>
+            <directory suffix="Entity.php">src/Storefront/Page</directory>
+            <directory suffix="Event.php">src/Storefront/Page</directory>
+            <directory suffix="Field.php">src/Storefront/Page</directory>
+            <directory suffix="Struct.php">src/Storefront/Page</directory>
+            <directory suffix="Collection.php">src/Storefront/Page</directory>
+
+            <directory suffix="Definition.php">src/Storefront/Pagelet</directory>
+            <directory suffix="Entity.php">src/Storefront/Pagelet</directory>
+            <directory suffix="Event.php">src/Storefront/Pagelet</directory>
+            <directory suffix="Field.php">src/Storefront/Pagelet</directory>
+            <directory suffix="Struct.php">src/Storefront/Pagelet</directory>
+            <directory suffix="Collection.php">src/Storefront/Pagelet</directory>
+
+            <directory suffix="Definition.php">src/Storefront/Theme</directory>
+            <directory suffix="Entity.php">src/Storefront/Theme</directory>
+            <directory suffix="Event.php">src/Storefront/Theme</directory>
+            <directory suffix="Field.php">src/Storefront/Theme</directory>
+            <directory suffix="Struct.php">src/Storefront/Theme</directory>
+            <directory suffix="Collection.php">src/Storefront/Theme</directory>
+        </exclude>
+    </source>
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="-1"/>
+        <server name="KERNEL_CLASS" value="Cicada\Core\Kernel"/>
+        <env name="APP_ENV" value="test"/>
+        <env name="APP_DEBUG" value="1"/>
+        <env name="APP_SECRET" value="def00000bb5acb32b54ff8ee130270586eec0e878f7337dc7a837acc31d3ff00f93a56b595448b4b29664847dd51991b3314ff65aeeeb761a133b0ec0e070433bff08e48"/>
+        <env name="CICADA_HTTP_CACHE_ENABLED" value="0"/>
+        <env name="SHELL_VERBOSITY" value="-1"/>
+        <server name="TESTS_RUNNING" value="1"/>
+        <server name="MAILER_URL" value="null://localhost"/>
+        <server name="HTTPS" value="off"/>
+        <!--To see the full stackTrace of a Deprecation set the value to a regex matching the deprecation warning-->
+        <!--https://symfony.com/doc/current/components/phpunit_bridge.html#display-the-full-stack-trace-->
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="ignoreFile=./deprecation.ignore" />
+    </php>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/unit</directory>
+        </testsuite>
+        <testsuite name="integration">
+            <directory>tests/integration</directory>
+        </testsuite>
+        <testsuite name="devops">
+            <directory>tests/devops</directory>
+        </testsuite>
+        <testsuite name="migration">
+            <directory>tests/migration</directory>
+        </testsuite>
+        <!-- Paratest -->
+        <testsuite name="paratest">
+            <directory>src/Core/*/Test</directory>
+            <directory>src/*/Test</directory>
+            <directory>tests/unit</directory>
+        </testsuite>
+    </testsuites>
+    <extensions>
+        <bootstrap class="Ergebnis\PHPUnit\SlowTestDetector\Extension"/>
+        <bootstrap class="Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\FeatureFlagExtension"/>
+        <bootstrap class="Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogExtension"/>
+        <!-- Enable to see the db side effects of the tests. -->
+<!--        <bootstrap class="Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\DatabaseDiffExtension"/>-->
+    </extensions>
+</phpunit>

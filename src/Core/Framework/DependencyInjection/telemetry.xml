@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Cicada\Core\Framework\Telemetry\Metrics\Meter" public="true" lazy="true">
+            <argument type="service" id="Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection"/>
+            <argument type="service" id="Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfigProvider"/>
+
+            <argument type="service" id="logger"/>
+            <argument>%env(APP_ENV)%</argument>
+        </service>
+
+
+        <service id="Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfigProvider">
+            <argument>%cicada.telemetry.metrics.definitions%</argument>
+        </service>
+
+        <service id="Cicada\Core\Framework\Telemetry\Metrics\Config\TransportConfigProvider">
+            <argument type="service" id="Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfigProvider"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection" lazy="true">
+            <factory class="Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection" method="create"/>
+            <argument type="tagged_iterator" tag="cicada.metric_transport_factory"/>
+            <argument type="service" id="Cicada\Core\Framework\Telemetry\Metrics\Config\TransportConfigProvider"/>
+        </service>
+    </services>
+</container>

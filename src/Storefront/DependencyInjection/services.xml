@@ -1,0 +1,559 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="cicada.twig.app_variable.allowed_server_params" type="collection">
+            <parameter>server_name</parameter>
+            <parameter>request_uri</parameter>
+            <parameter>app_url</parameter>
+            <parameter>http_user_agent</parameter>
+            <parameter>http_host</parameter>
+            <parameter>server_name</parameter>
+            <parameter>server_port</parameter>
+            <parameter>redirect_url</parameter>
+            <parameter>https</parameter>
+            <parameter>forwarded</parameter>
+            <parameter>host</parameter>
+            <parameter>remote_addr</parameter>
+            <parameter>http_x_forwarded_for</parameter>
+            <parameter>http_x_forwarded_host</parameter>
+            <parameter>http_x_forwarded_proto</parameter>
+            <parameter>http_x_forwarded_port</parameter>
+            <parameter>http_x_forwarded_prefix</parameter>
+        </parameter>
+    </parameters>
+
+    <services>
+        <defaults autowire="true"/>
+
+        <!-- Checkout -->
+        <service id="Cicada\Storefront\Checkout\Cart\SalesChannel\StorefrontCartFacade">
+            <argument type="service" id="Cicada\Core\Checkout\Cart\SalesChannel\CartService"/>
+            <argument type="service" id="Cicada\Storefront\Checkout\Shipping\BlockedShippingMethodSwitcher"/>
+            <argument type="service" id="Cicada\Storefront\Checkout\Payment\BlockedPaymentMethodSwitcher"/>
+            <argument type="service" id="Cicada\Core\System\SalesChannel\SalesChannel\ContextSwitchRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Cart\CartCalculator"/>
+            <argument type="service" id="Cicada\Core\Checkout\Cart\CartPersister"/>
+        </service>
+
+        <service id="Cicada\Storefront\Checkout\Shipping\BlockedShippingMethodSwitcher">
+            <argument type="service" id="Cicada\Core\Checkout\Shipping\SalesChannel\ShippingMethodRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Checkout\Payment\BlockedPaymentMethodSwitcher">
+            <argument type="service" id="Cicada\Core\Checkout\Payment\SalesChannel\PaymentMethodRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\CachedDomainLoader" decorates="Cicada\Storefront\Framework\Routing\DomainLoader" decoration-priority="-1000">
+            <argument type="service" id="Cicada\Storefront\Framework\Routing\CachedDomainLoader.inner"/>
+            <argument type="service" id="cache.object"/>
+            <argument type="service" id="logger"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\CachedDomainLoaderInvalidator">
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\DomainLoader">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\RequestTransformer"
+                 decorates="Cicada\Core\Framework\Routing\RequestTransformerInterface">
+
+            <argument type="service" id="Cicada\Storefront\Framework\Routing\RequestTransformer.inner"/>
+            <argument type="service" id="Cicada\Core\Content\Seo\SeoResolver"/>
+            <argument>%cicada.routing.registered_api_prefixes%</argument>
+            <argument type="service" id="Cicada\Storefront\Framework\Routing\DomainLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\Router" decorates="router">
+            <argument type="service" id="Cicada\Storefront\Framework\Routing\Router.inner"/>
+            <argument type="service" id="request_stack"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\MaintenanceModeResolver">
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="Cicada\Core\Framework\Routing\MaintenanceModeResolver"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\StorefrontRouteScope">
+            <tag name="cicada.route_scope"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\TemplateDataExtension">
+            <argument type="service" id="request_stack"/>
+            <argument>%cicada.staging.storefront.show_banner%</argument>
+
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\TemplateConfigAccessor">
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeConfigValueAccessor"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeScripts" />
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeConfigValueAccessor">
+            <argument type="service" id="Cicada\Storefront\Theme\ResolvedConfigLoader"/>
+            <argument>%cicada.cache.tagging.each_theme_config%</argument>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\Extension\ConfigExtension">
+            <argument type="service" id="Cicada\Storefront\Framework\Twig\TemplateConfigAccessor"/>
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\IconExtension">
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\ThumbnailExtension">
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Twig\TemplateFinder"/>
+
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\TwigDateRequestListener">
+            <argument type="service" id="service_container"/>
+            <tag name="kernel.event_listener" event="kernel.request"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\ErrorTemplateResolver" public="false">
+            <argument type="service" id="twig"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\Extension\UrlEncodingTwigFilter" public="false">
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\Extension\IconCacheTwigFilter" public="false">
+            <tag name="twig.extension"/>
+        </service>
+
+        <service id="Cicada\Core\System\Salutation\AbstractSalutationsSorter" class="Cicada\Core\System\Salutation\SalutationSorter"/>
+
+        <service id="Cicada\Storefront\Framework\Media\StorefrontMediaUploader">
+            <argument type="service" id="Cicada\Core\Content\Media\MediaService"/>
+            <argument type="service" id="Cicada\Core\Content\Media\File\FileSaver"/>
+            <argument type="service" id="Cicada\Storefront\Framework\Media\StorefrontMediaValidatorRegistry"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Media\StorefrontMediaValidatorRegistry" public="true">
+            <argument type="tagged_iterator" tag="storefront.media.upload.validator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Media\Validator\StorefrontMediaImageValidator">
+            <tag name="storefront.media.upload.validator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Media\Validator\StorefrontMediaDocumentValidator">
+            <tag name="storefront.media.upload.validator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\StorefrontSubscriber">
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="router"/>
+            <argument type="service" id="Cicada\Storefront\Framework\Routing\MaintenanceModeResolver"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\TemplateDataSubscriber">
+            <argument type="service" id="Cicada\Core\Content\Seo\HreflangLoaderInterface"/>
+            <argument type="service" id="Cicada\Core\Framework\App\ShopId\ShopIdProvider"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="Cicada\Core\Framework\App\ActiveAppsLoader"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\CanonicalLinkListener">
+            <tag name="kernel.event_listener" event="Cicada\Core\Framework\Event\BeforeSendResponseEvent"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\NotFound\NotFoundSubscriber">
+            <argument type="service" id="http_kernel"/>
+            <argument type="service" id="Cicada\Core\System\SalesChannel\Context\SalesChannelContextService"/>
+            <argument>%kernel.debug%</argument>
+            <argument type="service" id="cache.object"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheTracer"/>
+            <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\Cache\EntityCacheKeyGenerator"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument>%session.storage.options%</argument>
+
+            <tag name="kernel.event_subscriber"/>
+            <tag name="kernel.reset" method="reset"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\AffiliateTracking\AffiliateTrackingListener">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Navigation\NavigationPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Category\SalesChannel\CategoryRoute"/>
+            <argument type="service" id="Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Navigation\Error\ErrorPageLoader">
+            <argument type="service" id="Cicada\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoader"/>
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Maintenance\MaintenancePageLoader">
+            <argument type="service" id="Cicada\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoader"/>
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\LandingPage\LandingPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Content\LandingPage\SalesChannel\LandingPageRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Menu\Offcanvas\MenuOffcanvasPageletLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Category\Service\NavigationLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Captcha\BasicCaptchaPageletLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Storefront\Framework\Captcha\BasicCaptcha\BasicCaptchaGenerator"/>
+            <argument type="service" id="Cicada\Core\Content\Category\Service\NavigationLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Country\CountryStateDataPageletLoader">
+            <argument type="service" id="Cicada\Core\System\Country\SalesChannel\CountryStateRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Suggest\SuggestPageLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\Suggest\ProductSuggestRoute"/>
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Header\HeaderPageletLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\System\Currency\SalesChannel\CurrencyRoute"/>
+            <argument type="service" id="Cicada\Core\System\Language\SalesChannel\LanguageRoute"/>
+            <argument type="service" id="Cicada\Core\Content\Category\Service\NavigationLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Footer\FooterPageletLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Category\Service\NavigationLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\GenericPageLoader">
+            <argument type="service" id="Cicada\Storefront\Pagelet\Header\HeaderPageletLoader"/>
+            <argument type="service" id="Cicada\Storefront\Pagelet\Footer\FooterPageletLoader"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="Cicada\Core\Checkout\Payment\SalesChannel\PaymentMethodRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Shipping\SalesChannel\ShippingMethodRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Search\SearchPageLoader" public="true">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\Search\ProductSearchRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Product\ProductPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\Detail\ProductDetailRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\Detail\ProductDetailRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Product\Configurator\ProductPageConfiguratorLoader"
+                 decorates="Cicada\Core\Content\Product\SalesChannel\Detail\ProductConfiguratorLoader">
+
+            <argument type="service" id="Cicada\Storefront\Page\Product\Configurator\ProductPageConfiguratorLoader.inner"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderRoute"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Storefront\Checkout\Cart\SalesChannel\StorefrontCartFacade"/>
+            <argument type="service" id="Cicada\Core\Checkout\Gateway\SalesChannel\CheckoutGatewayRoute"/>
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\Validation\AddressValidationFactory"/>
+            <argument type="service" id="Cicada\Core\Framework\Validation\DataValidator"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Checkout\Cart\CheckoutCartPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Storefront\Checkout\Cart\SalesChannel\StorefrontCartFacade"/>
+            <argument type="service" id="Cicada\Core\Checkout\Gateway\SalesChannel\CheckoutGatewayRoute"/>
+            <argument type="service" id="Cicada\Core\System\Country\SalesChannel\CountryRoute"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Checkout\Offcanvas\OffcanvasCartPageLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Storefront\Checkout\Cart\SalesChannel\StorefrontCartFacade"/>
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Checkout\Shipping\SalesChannel\ShippingMethodRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\Profile\AccountProfilePageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\SalesChannel\SalutationRoute"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\AbstractSalutationsSorter"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\PaymentMethod\AccountPaymentMethodPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\Overview\AccountOverviewPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\CustomerRoute"/>
+            <argument type="service" id="Cicada\Storefront\Pagelet\Newsletter\Account\NewsletterAccountPageletLoader"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\Order\AccountOrderPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\AccountService"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\Order\AccountOrderDetailPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\Order\AccountEditOrderPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Gateway\SalesChannel\CheckoutGatewayRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Cart\Order\OrderConverter"/>
+            <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderService"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+            <argument type="service" id="Cicada\Core\Checkout\Cart\SalesChannel\CartService"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\Login\AccountLoginPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\System\Country\SalesChannel\CountryRoute"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\SalesChannel\SalutationRoute"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\AbstractSalutationsSorter"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\RecoverPassword\AccountRecoverPasswordPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\CustomerRecoveryIsExpiredRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Account\CustomerGroupRegistration\CustomerGroupRegistrationPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\Account\Login\AccountLoginPageLoader"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\CustomerGroupRegistrationSettingsRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoader" public="true">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\ListAddressRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Cart\SalesChannel\CartService"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\SalesChannel\SalutationRoute"/>
+            <argument type="service" id="Cicada\Core\System\Country\SalesChannel\CountryRoute"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Newsletter\Subscribe\NewsletterSubscribePageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Newsletter\Account\NewsletterAccountPageletLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Newsletter\SalesChannel\NewsletterSubscribeRoute"/>
+            <argument type="service" id="Cicada\Core\Content\Newsletter\SalesChannel\NewsletterUnsubscribeRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\AccountNewsletterRecipientRoute"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Address\Detail\AddressDetailPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\System\Country\SalesChannel\CountryRoute"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\SalesChannel\SalutationRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\ListAddressRoute"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\AbstractSalutationsSorter"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Address\Listing\AddressListingPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\System\Country\SalesChannel\CountryRoute"/>
+            <argument type="service" id="Cicada\Core\System\Salutation\SalesChannel\SalutationRoute"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\ListAddressRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Checkout\Cart\SalesChannel\CartService"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Sitemap\SitemapPageLoader">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Sitemap\SalesChannel\SitemapRoute"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Cms\DefaultMediaResolver" decorates="Cicada\Core\Content\Media\Cms\DefaultMediaResolver">
+            <argument type="service" id="Cicada\Storefront\Page\Cms\DefaultMediaResolver.inner"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Translation\Translator"/>
+            <argument type="service" id="assets.packages"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Cache\CacheTracer" decorates="Cicada\Core\Framework\Adapter\Cache\CacheTracer" lazy="true">
+            <argument type="service" id="Cicada\Storefront\Framework\Cache\CacheTracer.inner"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeConfigValueAccessor"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Command\SalesChannelCreateStorefrontCommand">
+            <argument type="service" id="snippet_set.repository"/>
+            <argument type="service" id="Cicada\Core\Maintenance\SalesChannel\Service\SalesChannelCreator"/>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Cookie\CookieProviderInterface" class="Cicada\Storefront\Framework\Cookie\CookieProvider"/>
+
+        <service id="Cicada\Storefront\Framework\Cookie\AppCookieProvider" decorates="Cicada\Storefront\Framework\Cookie\CookieProviderInterface">
+            <argument type="service" id="Cicada\Storefront\Framework\Cookie\AppCookieProvider.inner"/>
+            <argument type="service" id="app.repository"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Captcha\CaptchaRouteListener">
+            <argument type="tagged_iterator" tag="cicada.storefront.captcha"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="service_container" />
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Captcha\HoneypotCaptcha">
+            <argument type="service" id="validator"/>
+
+            <tag name="cicada.storefront.captcha" priority="400"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Captcha\BasicCaptcha">
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+
+            <tag name="cicada.storefront.captcha" priority="300"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Captcha\BasicCaptcha\BasicCaptchaGenerator"/>
+
+        <service id="cicada.captcha.client" class="GuzzleHttp\Client"/>
+
+        <service id="Cicada\Storefront\Framework\Captcha\GoogleReCaptchaV2">
+            <argument type="service" id="cicada.captcha.client"/>
+
+            <tag name="cicada.storefront.captcha" priority="200"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Captcha\GoogleReCaptchaV3">
+            <argument type="service" id="cicada.captcha.client"/>
+
+            <tag name="cicada.storefront.captcha" priority="100"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\ResponseHeaderListener">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Event\CartMergedSubscriber">
+            <argument type="service" id="translator"/>
+            <argument type="service" id="request_stack"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Wishlist\WishlistPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\LoadWishlistRoute"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Page\Wishlist\GuestWishlistPageLoader">
+            <argument type="service" id="Cicada\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Pagelet\Wishlist\GuestWishlistPageletLoader">
+            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\ProductListRoute"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\ProductCloseoutFilterFactory"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\App\Template\IconTemplateLoader" decorates="Cicada\Core\Framework\App\Template\TemplateLoader">
+            <argument type="service" id="Cicada\Storefront\Framework\App\Template\IconTemplateLoader.inner"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory"/>
+            <argument type="service" id="Cicada\Core\Framework\App\Source\SourceResolver"/>
+            <argument>%kernel.project_dir%</argument>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Twig\TwigAppVariable" decorates="twig.app_variable">
+            <argument type="service" id="Cicada\Storefront\Framework\Twig\TwigAppVariable.inner"/>
+            <argument>%cicada.twig.app_variable.allowed_server_params%</argument>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\Routing\DomainNotMappedListener">
+            <argument type="service" id="service_container"/>
+
+            <tag name="kernel.event_listener" event="kernel.exception"/>
+        </service>
+
+        <service id="Cicada\Storefront\Framework\SystemCheck\SaleChannelsReadinessCheck" >
+            <argument type="service" id="Symfony\Component\HttpKernel\KernelInterface" />
+            <argument type="service" id="Symfony\Component\Routing\RouterInterface" />
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+
+            <tag name="cicada.system_check"/>
+        </service>
+    </services>
+</container>

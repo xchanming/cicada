@@ -1,0 +1,198 @@
+/**
+ * @package services-settings
+ */
+import template from './sw-bulk-edit-save-modal-process.html.twig';
+import './sw-bulk-edit-save-modal-process.scss';
+
+const { chunk: chunkArray } = Cicada.Utils.array;
+
+// eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
+export default {
+    template,
+
+    compatConfig: Cicada.compatConfig,
+
+    inject: ['orderDocumentApiService'],
+
+    emits: [
+        'changes-apply',
+        'title-set',
+        'buttons-update',
+    ],
+
+    data() {
+        return {
+            requestsPerPayload: 5,
+            document: {
+                invoice: {
+                    isReached: 0,
+                },
+                storno: {
+                    isReached: 0,
+                },
+                delivery_note: {
+                    isReached: 0,
+                },
+                credit_note: {
+                    isReached: 0,
+                },
+            },
+        };
+    },
+
+    computed: {
+        selectedIds() {
+            return Cicada.State.get('cicadaApps').selectedIds;
+        },
+
+        documentTypes() {
+            return Cicada.State.get('swBulkEdit')?.orderDocuments?.download?.value;
+        },
+
+        documentTypeConfigs() {
+            return Cicada.State.getters['swBulkEdit/documentTypeConfigs'];
+        },
+
+        selectedDocumentTypes() {
+            if (!this.documentTypeConfigs || this.documentTypeConfigs.length <= 0) {
+                return [];
+            }
+
+            const selectedDocumentTypes = [];
+
+            this.documentTypeConfigs.forEach((documentTypeConfig) => {
+                const selectedDocumentType = this.documentTypes.find((documentType) => {
+                    return documentTypeConfig.type === documentType.technicalName;
+                });
+
+                if (selectedDocumentType) {
+                    selectedDocumentTypes.push(selectedDocumentType);
+                }
+            });
+
+            return selectedDocumentTypes;
+        },
+
+        createDocumentPayload() {
+            const payload = [];
+
+            this.selectedIds.forEach((selectedId) => {
+                this.documentTypeConfigs?.forEach((documentTypeConfig) => {
+                    if (documentTypeConfig) {
+                        payload.push({
+                            ...documentTypeConfig,
+                            orderId: selectedId,
+                        });
+                    }
+                });
+            });
+
+            return payload;
+        },
+    },
+
+    created() {
+        this.createdComponent();
+    },
+
+    methods: {
+        async createdComponent() {
+            this.updateButtons();
+            this.setTitle();
+            await this.createDocuments();
+            this.$emit('changes-apply');
+        },
+
+        setTitle() {
+            this.$emit('title-set', this.$tc('sw-bulk-edit.modal.process.title'));
+        },
+
+        updateButtons() {
+            const buttonConfig = [
+                {
+                    key: 'cancel',
+                    label: this.$tc('global.default.cancel'),
+                    position: 'left',
+                    action: '',
+                    disabled: false,
+                },
+                {
+                    key: 'next',
+                    label: this.$tc('global.sw-modal.labelClose'),
+                    position: 'right',
+                    variant: 'primary',
+                    action: '',
+                    disabled: true,
+                },
+            ];
+
+            this.$emit('buttons-update', buttonConfig);
+        },
+
+        async createDocuments() {
+            if (this.createDocumentPayload.length <= 0) {
+                return;
+            }
+
+            const invoiceDocuments = this.createDocumentPayload.filter((item) => item.type === 'invoice');
+            const stornoDocuments = this.createDocumentPayload.filter((item) => item.type === 'storno');
+            const creditNoteDocuments = this.createDocumentPayload.filter((item) => item.type === 'credit_note');
+            const deliveryNoteDocuments = this.createDocumentPayload.filter((item) => item.type === 'delivery_note');
+
+            if (invoiceDocuments.length > 0) {
+                await this.createDocument('invoice', invoiceDocuments);
+            }
+
+            if (stornoDocuments.length > 0) {
+                await this.createDocument('storno', stornoDocuments);
+            }
+
+            if (creditNoteDocuments.length > 0) {
+                await this.createDocument('credit_note', creditNoteDocuments);
+            }
+
+            if (deliveryNoteDocuments.length > 0) {
+                await this.createDocument('delivery_note', deliveryNoteDocuments);
+            }
+        },
+
+        async createDocument(documentType, payload) {
+            if (payload.length <= this.requestsPerPayload) {
+                await this.orderDocumentApiService.generate(documentType, payload);
+                if (this.isCompatEnabled('INSTANCE_SET')) {
+                    this.$set(this.document[documentType], 'isReached', 100);
+                } else {
+                    this.document[documentType].isReached = 100;
+                }
+
+                return Promise.resolve();
+            }
+
+            const chunkedPayload = chunkArray(payload, this.requestsPerPayload);
+            const percentages = Math.round(100 / chunkedPayload.length);
+
+            return Promise.all(
+                chunkedPayload.map(async (item) => {
+                    await this.orderDocumentApiService.generate(documentType, item);
+                    if (this.isCompatEnabled('INSTANCE_SET')) {
+                        // eslint-disable-next-line max-len
+                        this.$set(
+                            this.document[documentType],
+                            'isReached',
+                            this.document[documentType].isReached + percentages,
+                        );
+                    } else {
+                        // eslint-disable-next-line operator-assignment
+                        this.document[documentType].isReached = this.document[documentType].isReached + percentages;
+                    }
+                }),
+            ).then(() => {
+                if (this.isCompatEnabled('INSTANCE_SET')) {
+                    this.$set(this.document[documentType], 'isReached', 100);
+                } else {
+                    this.document[documentType].isReached = 100;
+                }
+            });
+        },
+    },
+};

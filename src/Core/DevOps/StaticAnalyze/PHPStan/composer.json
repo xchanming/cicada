@@ -1,0 +1,49 @@
+{
+    "name": "cicada/phpstan-extension",
+    "type": "phpstan-extension",
+    "description": "Phpstant extension with cicada specific ruleset.",
+    "keywords": [
+        "cicada",
+        "shop",
+        "phpstan"
+    ],
+    "homepage": "http://www.cicada.com",
+    "license": "MIT",
+    "autoload": {
+        "exclude-from-classmap": [
+            "*/Test/"
+        ],
+        "psr-4": {
+            "Cicada\\Core\\DevOps\\StaticAnalyze\\PHPStan": "."
+        }
+    },
+    "support": {
+        "issues": "https://github.com/cicada/cicada/issues",
+        "forum": "https://forum.cicada.com",
+        "wiki": "https://developer.cicada.com",
+        "docs": "https://developer.cicada.com",
+        "chat": "https://slack.cicada.com"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.5.x-dev",
+            "dev-trunk": "6.5.x-dev"
+        },
+        "phpstan": {
+            "includes": [
+                "phpstan-extension.neon",
+                "rules.neon"
+            ]
+        }
+    },
+    "require": {
+        "php": "~8.1.0 || ~8.2.0",
+        "phpstan/phpstan": "^1.9.14"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    }
+}

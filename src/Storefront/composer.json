@@ -1,0 +1,61 @@
+{
+    "name": "cicada/storefront",
+    "description": "Storefront for Cicada",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cicada\\Storefront\\": ""
+        },
+        "exclude-from-classmap": [
+            "*/Test/"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "support": {
+        "issues": "https://github.com/cicada/cicada/issues",
+        "forum": "https://forum.cicada.com",
+        "wiki": "https://developer.cicada.com",
+        "docs": "https://developer.cicada.com",
+        "chat": "https://slack.cicada.com"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.6.x-dev",
+            "dev-trunk": "6.6.x-dev"
+        }
+    },
+    "require": {
+        "php": "~8.2.0 || ~8.3.0",
+        "cocur/slugify": "^4.3.0",
+        "doctrine/dbal": "^3.9",
+        "meyfa/php-svg": "^0.14.0",
+        "padaliyajay/php-autoprefixer": "^1.4",
+        "scssphp/scssphp": "v1.12.0",
+        "cicada/core": "*",
+        "symfony/cache": "~7.2.0",
+        "symfony/cache-contracts": "~3.5.0",
+        "symfony/console": "~7.2.0",
+        "symfony/config": "~7.2.0",
+        "symfony/dependency-injection": "~7.2.0",
+        "symfony/event-dispatcher": "~7.2.0",
+        "symfony/event-dispatcher-contracts": "~3.5.0",
+        "symfony/framework-bundle": "~7.2.0",
+        "symfony/http-foundation": "~7.2.0",
+        "symfony/http-kernel": "~7.2.0",
+        "symfony/routing": "~7.2.0",
+        "symfony/service-contracts": "~3.5.0",
+        "symfony/validator": "~7.2.0",
+        "symfony/security-core": "~7.2.0",
+        "symfony/mime": "~7.2.0",
+        "twig/intl-extra": "^3.10.0",
+        "twig/string-extra": "^3.10.0",
+        "twig/twig": "^3.14.0"
+    },
+    "require-dev": {
+        "symfony/css-selector": "~7.2.0",
+        "phpunit/phpunit": "^10.5.38"
+    }
+}

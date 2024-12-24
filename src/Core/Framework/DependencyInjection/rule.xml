@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry">
+            <argument type="tagged_iterator" tag="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\RuleIdMatcher"/>
+
+        <service id="Cicada\Core\Framework\Rule\Container\AndRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\Container\NotRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\Container\OrRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\Container\XorRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\Container\MatchAllLineItemsRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\ScriptRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\DateRangeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\SimpleRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\SalesChannelRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\TimeRangeRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\WeekdayRule">
+            <tag name="cicada.rule.definition"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Rule\Api\RuleConfigController"
+                 public="true">
+            <argument type="tagged_iterator" tag="cicada.rule.definition"/>
+
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+    </services>
+</container>

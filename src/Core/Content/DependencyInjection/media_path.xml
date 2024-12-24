@@ -1,0 +1,104 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="Cicada\Core\Content\Media\Core\Application\MediaUrlLoader">
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator"/>
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\RemoteThumbnailLoader"/>
+            <argument>%cicada.media.remote_thumbnails.enable%</argument>
+
+            <tag name="kernel.event_listener" event="media.loaded" method="loaded" priority="20" />
+            <tag name="kernel.event_listener" event="media.partial_loaded" method="loaded" priority="19" />
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Application\RemoteThumbnailLoader">
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="cicada.filesystem.public"/>
+            <argument>%cicada.media.remote_thumbnails.pattern%</argument>
+
+            <tag name="kernel.reset" method="reset"/>
+        </service>
+
+        <service class="Cicada\Core\Content\Media\Infrastructure\Path\SqlMediaLocationBuilder" id="Cicada\Core\Content\Media\Core\Application\MediaLocationBuilder">
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Application\MediaPathUpdater">
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\AbstractMediaPathStrategy"/>
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\MediaLocationBuilder"/>
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\MediaPathStorage"/>
+
+            <tag name="kernel.event_listener" event="Cicada\Core\Content\Media\Core\Event\UpdateMediaPathEvent" method="updateMedia" priority="0" />
+            <tag name="kernel.event_listener" event="Cicada\Core\Content\Media\Core\Event\UpdateThumbnailPathEvent" method="updateThumbnails" priority="0" />
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Application\MediaPathStorage" class="Cicada\Core\Content\Media\Infrastructure\Path\SqlMediaPathStorage">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Strategy\PathStrategyFactory">
+            <argument type="tagged_iterator" tag="cicada.path.strategy"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Strategy\FilenamePathStrategy">
+            <tag name="cicada.path.strategy" />
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Strategy\IdPathStrategy">
+            <tag name="cicada.path.strategy" />
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Strategy\PhysicalFilenamePathStrategy">
+            <tag name="cicada.path.strategy" />
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Strategy\PlainPathStrategy">
+            <tag name="cicada.path.strategy" />
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator" class="Cicada\Core\Content\Media\Infrastructure\Path\MediaUrlGenerator">
+            <argument type="service" id="cicada.filesystem.public"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Core\Application\AbstractMediaPathStrategy">
+            <factory service="Cicada\Core\Content\Media\Core\Strategy\PathStrategyFactory" method="factory"/>
+            <argument>%cicada.cdn.strategy%</argument>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Infrastructure\Path\MediaPathPostUpdater">
+            <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory"/>
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\MediaPathUpdater"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry"/>
+            <tag name="cicada.entity_indexer"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Infrastructure\Command\UpdatePathCommand">
+            <tag name="console.command"/>
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\MediaPathUpdater"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Core\Content\Media\Infrastructure\Path\BanMediaUrl">
+            <argument type="service" id="cicada.media.reverse_proxy"/>
+            <argument type="service" id="Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator"/>
+
+            <tag name="kernel.event_listener" event="Cicada\Core\Content\Media\Event\MediaPathChangedEvent" method="changed" />
+        </service>
+
+        <service id="cicada.media.reverse_proxy" alias="Cicada\Core\Content\Media\Infrastructure\Path\FastlyMediaReverseProxy"/>
+
+        <service id="Cicada\Core\Content\Media\Infrastructure\Path\FastlyMediaReverseProxy">
+            <argument type="service" id="cicada.reverse_proxy.http_client"/>
+            <argument>%cicada.cdn.fastly.api_key%</argument>
+            <argument>%cicada.cdn.fastly.soft_purge%</argument>
+            <argument>%cicada.cdn.fastly.max_parallel_invalidations%</argument>
+            <argument type="service" id="logger"/>
+        </service>
+    </services>
+</container>

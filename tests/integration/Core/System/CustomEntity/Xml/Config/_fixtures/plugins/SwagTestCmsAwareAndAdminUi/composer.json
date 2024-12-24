@@ -1,0 +1,27 @@
+{
+    "name": "swag/test-cms-aware-and-admin-ui",
+    "description": "Test description",
+    "version": "1.0.0",
+    "type": "cicada-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cicada AG"
+        }
+    ],
+    "require": {
+        "cicada/core": ">=6.0"
+    },
+    "extra": {
+        "cicada-plugin-class": "SwagTestCmsAwareAndAdminUi\\SwagTestCmsAwareAndAdminUi",
+        "label": {
+            "de-DE": "Deutscher Pluginname",
+            "en-GB": "English plugin name"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+           "SwagTestCmsAwareAndAdminUi\\": "src"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "swag/test2",
+    "description": "Test 2 description",
+    "version": "v2.0.1",
+    "type": "cicada-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cicada AG",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "cicada/platform": "6.4.*@dev"
+    },
+    "extra": {
+        "cicada-plugin-class": "Swag\\Test2",
+        "label": {
+            "en-GB": "Test plugin",
+            "de-DE": "Test plugin"
+        }
+    }
+}

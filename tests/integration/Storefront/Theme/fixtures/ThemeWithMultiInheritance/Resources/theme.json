@@ -1,0 +1,16 @@
+{
+  "name": "ThemeWithMultiInheritance",
+  "author": "cicada AG",
+  "views": [
+    "@ThemeA",
+    "@ThemeB",
+    "@Plugins",
+    "@ThemeC",
+    "@ThemeWithMultiInheritance"
+  ],
+  "style": [],
+  "script": [
+    "@MockStorefront",
+    "@Plugins"
+  ]
+}

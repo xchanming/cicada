@@ -1,0 +1,20 @@
+<mt-banner
+    v-if="useMeteorComponent"
+    v-bind="$attrs"
+    v-on="listeners"
+>
+    <template #default>
+        <slot></slot>
+    </template>
+</mt-banner>
+
+<sw-alert-deprecated
+    v-else
+    v-bind="$attrs"
+    v-on="listeners"
+>
+    <slot></slot>
+    <template #actions>
+        <slot name="actions"></slot>
+    </template>
+</sw-alert-deprecated>

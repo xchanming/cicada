@@ -1,0 +1,10 @@
+@import "~scss/variables";
+
+.sw-order-detail-details {
+    &__customer-comment,
+    &__shipping-address,
+    &__billing-address,
+    &__promotion {
+        grid-column: 1 / span 2;
+    }
+}

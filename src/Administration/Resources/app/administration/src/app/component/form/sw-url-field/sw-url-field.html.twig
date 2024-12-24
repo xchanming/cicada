@@ -1,0 +1,38 @@
+{# v-on="$listeners" needed becaues vue/compat removes them from $attrs #}
+{# New mt-url-field component #}
+<mt-url-field
+    v-if="useMeteorComponent"
+    v-bind="$attrs"
+    v-model="realValue"
+>
+    <template
+        v-for="(index, name) in getSlots()"
+        #[name]="data"
+    >
+        <slot
+            :name="name"
+            v-bind="data || {}"
+        >
+        </slot>
+    </template>
+</mt-url-field>
+
+{# v-on="$listeners" needed becaues vue/compat removes them from $attrs #}
+{# Deprecated component #}
+<sw-url-field-deprecated
+    v-else
+    v-bind="$attrs"
+    v-model:value="realValue"
+    v-on="listeners"
+>
+    <template
+        v-for="(index, name) in getSlots()"
+        #[name]="data"
+    >
+        <slot
+            :name="name"
+            v-bind="data || {}"
+        >
+        </slot>
+    </template>
+</sw-url-field-deprecated>

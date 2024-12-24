@@ -1,0 +1,8 @@
+{
+  "name": "Simple theme",
+  "author": "Cicada AG",
+  "configInheritance": [
+    "@Storefront",
+    "@SimpleTheme"
+  ]
+}

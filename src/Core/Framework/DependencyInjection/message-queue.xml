@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Cicada\Core\Framework\MessageQueue\Subscriber\EarlyReturnMessagesListener"/>
+
+        <service id="Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueSizeRestrictListener">
+            <argument type="service" id="Cicada\Core\Framework\MessageQueue\Service\MessageSizeCalculator"/>
+            <argument>%cicada.messenger.enforce_message_size%</argument>
+
+            <tag name="kernel.event_listener" event="Symfony\Component\Messenger\Event\SendMessageToTransportsEvent"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueStatsSubscriber">
+            <argument type="service" id="cicada.increment.gateway.registry"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\MessageQueue\Telemetry\MessageQueueTelemetrySubscriber">
+            <argument type="service" id="Cicada\Core\Framework\Telemetry\Metrics\Meter"/>
+            <argument type="service" id="Cicada\Core\Framework\MessageQueue\Service\MessageSizeCalculator"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <!--Controller-->
+        <service id="Cicada\Core\Framework\MessageQueue\Api\ConsumeMessagesController" public="true">
+            <argument type="service" id="messenger.receiver_locator"/>
+            <argument type="service" id="messenger.default_bus"/>
+            <argument type="service" id="messenger.listener.stop_worker_on_restart_signal_listener"/>
+            <argument type="service" id="Cicada\Core\Framework\MessageQueue\Subscriber\EarlyReturnMessagesListener"/>
+            <argument type="service" id="Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueStatsSubscriber"/>
+            <argument type="string">%messenger.default_transport_name%</argument>
+            <argument type="string">%cicada.admin_worker.memory_limit%</argument>
+            <argument type="string">%cicada.admin_worker.poll_interval%</argument>
+            <argument type="service" id="lock.factory"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="messenger.transport.doctrine.factory" class="Cicada\Core\Framework\Adapter\Doctrine\Messenger\DoctrineTransportFactory">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="messenger.transport_factory" />
+        </service>
+
+        <service id="Cicada\Core\Framework\MessageQueue\SendEmailMessageJsonSerializer">
+            <tag name="serializer.normalizer"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\MessageQueue\Service\MessageSizeCalculator">
+            <argument type="service" id="messenger.default_serializer"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\MessageQueue\Middleware\RoutingOverwriteMiddleware">
+            <argument>%cicada.messenger.routing_overwrite%</argument>
+            <argument type="collection"></argument>
+        </service>
+    </services>
+</container>

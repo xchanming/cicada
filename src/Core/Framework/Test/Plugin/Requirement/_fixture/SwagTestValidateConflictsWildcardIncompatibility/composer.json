@@ -1,0 +1,25 @@
+{
+    "name": "swag/test-validate-conflicts-wildcard-incompatibility",
+    "description": "Test conflict handling",
+    "version": "v1.0.0",
+    "type": "cicada-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cicada AG",
+            "role": "Manufacturer"
+        }
+    ],
+    "conflict": {
+        "cicada/core": "*",
+        "cicada/storefront": "*"
+    },
+    "extra": {
+        "cicada-plugin-class": "SwagTestValidateConflictsWildcardIncompatibility\\SwagTestValidateConflictsWildcardIncompatibility",
+        "copyright": "(c) by cicada AG",
+        "label": {
+            "de-DE": "Test für Konflikte-Handling",
+            "en-GB": "Test for conflict handling"
+        }
+    }
+}

@@ -1,0 +1,173 @@
+name: Prepare release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    env:
+      CICADA_ADMIN_SKIP_SOURCEMAP_GENERATION: "1"
+      DATABASE_URL: mysql://root:root@127.0.0.1:3306/root
+      COMPOSER_ROOT_VERSION: 6.6.9999999-dev
+    services:
+      database:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: root
+        options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
+        ports:
+          - "3306:3306"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+          fetch-tags: "true"
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          coverage: none
+          extensions: gd, xml, dom, curl, pdo, mysqli, mbstring, pdo_mysql, bcmath
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: build cicada
+        run: |
+          composer setup
+      - uses: actions/upload-artifact@v4
+        with:
+          name: context
+          include-hidden-files: true
+          path: |
+            .
+            .github/
+            !var/cache
+            !tests/
+            !public
+            !**/node_modules
+            !vendor
+            !vendor-bin
+
+  check-recipe:
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    env:
+      GH_TOKEN: ${{ github.token }}
+      CHECK_REPOSITORY: 'cicada/recipes'
+      CHECK_WORKFLOW: 'nightly.yml'
+      CHECK_STATUS: 'success'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check whether the nightly workflow of the recipe repository is successful
+        run: |
+          bash .github/bin/check_workflow.bash "${CHECK_REPOSITORY}" "${CHECK_WORKFLOW}" "${CHECK_STATUS}"
+
+  split:
+    needs: build
+    runs-on: ubuntu-24.04
+    environment: release
+    # we use this image to get an older git version, which does not suffer from a performance regression
+    container: alpine:3.19
+    if: github.repository == 'cicada/cicada'
+    strategy:
+      matrix:
+        package:
+          - administration
+          - storefront
+          - core
+          - elasticsearch
+    env:
+      GIT_AUTHOR_EMAIL: "cicadabot@cicada.com"
+      GIT_AUTHOR_NAME: "cicadaBot"
+      GIT_COMMITTER_EMAIL: "cicadabot@cicada.com"
+      GIT_COMMITTER_NAME: "cicadaBot"
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: context
+      - name: Is protected
+        if: github.ref_protected
+        run: echo 'is protected'
+
+      - name: install deps
+        run: apk add git git-subtree bash composer
+      - name: Mark dir as safe
+        run: git config --global --add safe.directory $PWD
+      - name: split
+        run: |
+          bash .github/bin/split.bash split_repo "${{ matrix.package }}"
+          git config --global --add safe.directory $PWD/repos/${{ matrix.package }}
+          rm -Rf .git
+      - name: Include assets
+        run: |
+          bash .github/bin/split.bash include_assets "${{ matrix.package }}"
+      - name: Require core version
+        run: |
+          bash .github/bin/split.bash require_core_version "${{ matrix.package }}" "${{ github.ref_name }}" ${{ github.ref_type }}
+      - name: Commit assets
+        if: matrix.package != 'core'
+        run: |
+          bash .github/bin/split.bash commit "${{ matrix.package }}" "${{ github.ref_name }} (+ assets)"
+      - name: Tag commit
+        if: github.ref_type == 'tag'
+        run: |
+          bash .github/bin/split.bash tag "${{ matrix.package }}" "${{ github.ref_name }}"
+
+      - name: Diff
+        if: matrix.package != 'core'
+        run: |
+          cat repos/${{ matrix.package }}/composer.json
+          git -C repos/${{ matrix.package }} log -n 2
+          git -C repos/${{ matrix.package }} diff @^.. | head -n 100
+      - name: Push
+        if: github.ref_type == 'tag'
+        run: |
+          bash .github/bin/split.bash push "${{ matrix.package }}" https://git:${{ secrets.MANYREPO_SYNC_TOKEN }}@github.com/cicada "${{ github.ref_name }}"
+
+  draft-release-notes:
+    needs: split
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Draft release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # set dry run if it's not a tag
+          DRY_RUN: ${{ github.ref_type != 'tag' && '1' || '' }}
+        run: |
+          echo DRY_RUN: "${DRY_RUN}"
+          bash .github/bin/create_github_release.bash draft "${{ github.ref_name }}"
+
+  create-sbp-release:
+    needs: split
+    runs-on: ubuntu-24.04
+    if: github.repository == 'cicada/cicada'
+    strategy:
+      matrix:
+        sbp-environment: [STAGING, PRODUCTION]
+    env:
+      SBP_API_URL: ${{ secrets[format('SBP_API_URL_{0}', matrix.sbp-environment)] }}
+      SBP_TOKEN: ${{ secrets[format('SBP_API_TOKEN_{0}', matrix.sbp-environment)] }}
+      # set dry run if it's not a tag
+      DRY_RUN: ${{ github.ref_type != 'tag' && '1' || '' }}
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create sbp release
+        run: |
+          echo DRY_RUN: "${DRY_RUN}"
+          bash .github/bin/sbp_release.bash create "${{ github.ref_name }}"

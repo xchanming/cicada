@@ -1,0 +1,9 @@
+{
+  "name": "InheritanceWithConfig",
+  "author": "cicada AG",
+  "views": [
+    "@Storefront",
+    "@InheritanceWithConfig",
+    "@Plugins"
+  ]
+}

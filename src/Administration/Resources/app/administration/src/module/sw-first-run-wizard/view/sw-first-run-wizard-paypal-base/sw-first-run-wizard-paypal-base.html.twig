@@ -1,0 +1,12 @@
+<!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+{% block sw_first_run_wizard_paypal_base %}
+<router-view
+    v-slot="{ Component }"
+>
+    <component
+        :is="Component"
+        v-bind="filteredAttributes"
+        v-on="listeners"
+    />
+</router-view>
+{% endblock %}

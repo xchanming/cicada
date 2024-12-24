@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Cicada\Core\System\Tax\TaxDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\Aggregate\TaxRuleType\TaxRuleTypeDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\Aggregate\TaxRuleTypeTranslation\TaxRuleTypeTranslationDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\TaxRuleType\EntireCountryRuleTypeFilter">
+            <tag name="tax.rule_type_filter"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\TaxRuleType\IndividualStatesRuleTypeFilter">
+            <tag name="tax.rule_type_filter"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\TaxRuleType\ZipCodeRangeRuleTypeFilter">
+            <tag name="tax.rule_type_filter"/>
+        </service>
+
+        <service id="Cicada\Core\System\Tax\TaxRuleType\ZipCodeRuleTypeFilter">
+            <tag name="tax.rule_type_filter"/>
+        </service>
+    </services>
+</container>

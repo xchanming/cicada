@@ -1,0 +1,8 @@
+{
+  "name": "ConfigWithoutStorefrontDefined",
+  "author": "cicada AG",
+  "views": [
+    "@ConfigWithoutStorefrontDefined",
+    "@Plugins"
+  ]
+}

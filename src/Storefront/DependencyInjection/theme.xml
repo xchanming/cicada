@@ -1,0 +1,358 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Theme -->
+        <service id="Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory">
+            <argument type="service" id="Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader"/>
+            <argument type="service" id="Cicada\Core\Framework\App\Source\SourceResolver"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\StorefrontPluginRegistry" public="true">
+            <argument type="service" id="kernel"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory"/>
+            <argument type="service" id="Cicada\Core\Framework\App\ActiveAppsLoader"/>
+
+            <tag name="kernel.reset" method="reset"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ScssPhpCompiler" />
+
+        <service id="Cicada\Storefront\Theme\ThemeCompiler">
+            <argument type="service" id="cicada.filesystem.theme"/>
+            <argument type="service" id="cicada.filesystem.temp"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInputFactory" />
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFileResolver" />
+            <argument>%kernel.debug%</argument>
+            <argument type="service" id="Symfony\Component\EventDispatcher\EventDispatcherInterface" />
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFilesystemResolver" />
+            <argument type="tagged_iterator" tag="cicada.asset"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+            <argument type="service" id="Psr\Log\LoggerInterface"/>
+            <argument type="service" id="Cicada\Storefront\Theme\AbstractThemePathBuilder"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ScssPhpCompiler"/>
+            <argument type="service" id="messenger.default_bus"/>
+            <argument>%storefront.theme.file_delete_delay%</argument>
+            <argument>%storefront.theme.auto_prefix_css%</argument>
+            <argument>%storefront.theme.allowed_scss_values%</argument>
+            <argument>%storefront.theme.validate_on_compile%</argument>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeLifecycleService">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="media.repository"/>
+            <argument type="service" id="media_folder.repository"/>
+            <argument type="service" id="theme_media.repository"/>
+            <argument type="service" id="Cicada\Core\Content\Media\File\FileSaver"/>
+            <argument type="service" id="Cicada\Core\Content\Media\File\FileNameProvider"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFilesystemResolver"/>
+            <argument type="service" id="language.repository"/>
+            <argument type="service" id="theme_child.repository"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory" on-invalid="null"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeFileResolver">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFilesystemResolver"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeScripts">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFileResolver"/>
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="Cicada\Storefront\Theme\AbstractThemePathBuilder"/>
+            <argument type="service" id="cache.object"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\DatabaseConfigLoader"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeService">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="theme_sales_channel.repository"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeCompiler"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\AbstractConfigLoader"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="messenger.default_bus"/>
+            <argument type="service" id="Cicada\Administration\Notification\NotificationService"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ResolvedConfigLoader" lazy="true">
+            <argument type="service" id="media.repository"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\CachedResolvedConfigLoader" decorates="Cicada\Storefront\Theme\ResolvedConfigLoader" decoration-priority="-1000">
+            <argument type="service" id="Cicada\Storefront\Theme\CachedResolvedConfigLoader.inner"/>
+            <argument type="service" id="cache.object"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\CachedResolvedConfigLoaderInvalidator">
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+            <argument>%cicada.cache.tagging.each_theme_config%</argument>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeLifecycleHandler">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+
+        <service id="Cicada\Storefront\Theme\ThemeAppLifecycleHandler">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleHandler"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ConfigLoader\DatabaseAvailableThemeProvider">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ConfigLoader\DatabaseConfigLoader">
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="media.repository"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\SeedingThemePathBuilder" lazy="true">
+            <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\MD5ThemePathBuilder"/>
+
+        <service id="Cicada\Storefront\Theme\Message\DeleteThemeFilesHandler">
+            <argument type="service" id="cicada.filesystem.theme"/>
+            <argument type="service" id="Cicada\Storefront\Theme\AbstractThemePathBuilder"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheInvalidator"/>
+
+            <tag name="messenger.message_handler" />
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Message\CompileThemeHandler">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeCompiler"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\AbstractConfigLoader"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="Cicada\Administration\Notification\NotificationService"/>
+            <argument type="service" id="sales_channel.repository" />
+
+            <tag name="messenger.message_handler" />
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ConfigLoader\StaticFileConfigLoader">
+            <argument type="service" id="cicada.filesystem.private"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ConfigLoader\StaticFileAvailableThemeProvider">
+            <argument type="service" id="cicada.filesystem.private"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ConfigLoader\StaticFileConfigDumper">
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\DatabaseConfigLoader"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\DatabaseAvailableThemeProvider"/>
+            <argument type="service" id="cicada.filesystem.private"/>
+            <argument type="service" id="cicada.filesystem.temp"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="cicada.asset.theme" class="Cicada\Storefront\Theme\ThemeAssetPackage" lazy="true">
+            <argument type="collection">
+                <argument>%cicada.filesystem.theme.url%</argument>
+            </argument>
+            <argument type="service" id="cicada.asset.theme.version_strategy"/>
+            <argument type="service" id="request_stack"/>
+            <argument type="service" id="Cicada\Storefront\Theme\AbstractThemePathBuilder"/>
+            <tag name="cicada.asset" asset="theme"/>
+        </service>
+
+        <!-- Entity definitions -->
+        <service id="Cicada\Storefront\Theme\ThemeDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Aggregate\ThemeTranslationDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Aggregate\ThemeSalesChannelDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Aggregate\ThemeMediaDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Aggregate\ThemeChildDefinition">
+            <tag name="cicada.entity.definition"/>
+        </service>
+
+        <!-- Entity extensions -->
+        <service id="Cicada\Storefront\Theme\Extension\SalesChannelExtension">
+            <tag name="cicada.entity.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Extension\LanguageExtension">
+            <tag name="cicada.entity.extension"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Extension\MediaExtension">
+            <tag name="cicada.entity.extension"/>
+        </service>
+
+        <!-- Controller -->
+        <service id="Cicada\Storefront\Theme\Controller\ThemeController" public="true">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ScssPhpCompiler"/>
+            <argument>%storefront.theme.allowed_scss_values%</argument>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <!--  Commands -->
+        <service id="Cicada\Storefront\Theme\Command\ThemeCreateCommand">
+            <argument>%kernel.project_dir%</argument>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Command\ThemeChangeCommand">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="sales_channel.repository"/>
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="theme_sales_channel.repository"/>
+            <argument type="service" id="media_thumbnail.repository"/>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Command\ThemeCompileCommand">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\AbstractAvailableThemeProvider"/>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Command\ThemeDumpCommand">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFileResolver"/>
+            <argument type="service" id="theme.repository"/>
+            <argument>%kernel.project_dir%</argument>
+            <argument type="service" id="Cicada\Storefront\Theme\ConfigLoader\StaticFileConfigDumper"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeFilesystemResolver"/>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Command\ThemeRefreshCommand">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleService"/>
+
+            <tag name="console.command"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Command\ThemePrepareIconsCommand">
+
+            <tag name="console.command"/>
+        </service>
+
+        <!-- Subscriber -->
+        <service id="Cicada\Storefront\Theme\Subscriber\PluginLifecycleSubscriber">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+            <argument>%kernel.project_dir%</argument>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleHandler"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleService"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Twig\ThemeInheritanceBuilderInterface"
+                 class="Cicada\Storefront\Theme\Twig\ThemeInheritanceBuilder">
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Subscriber\AppLifecycleSubscriber">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleService"/>
+            <argument type="service" id="app.repository"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Subscriber\ThemeCompilerEnrichScssVarSubscriber">
+            <argument type="service" id="Cicada\Core\System\SystemConfig\Service\ConfigurationService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\StorefrontPluginRegistry"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <!-- Twig -->
+        <service id="Cicada\Storefront\Theme\Twig\ThemeNamespaceHierarchyBuilder">
+            <argument type="service" id="Cicada\Storefront\Theme\Twig\ThemeInheritanceBuilderInterface"/>
+            <argument type="service" id="Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader"/>
+
+            <tag name="kernel.event_subscriber" />
+            <tag name="kernel.reset" method="reset"/>
+
+            <!-- Make sure it runs after default `BundleHierarchyBuilder` -->
+            <tag name="cicada.twig.hierarchy_builder" priority="500"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Subscriber\FirstRunWizardSubscriber">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleService"/>
+            <argument type="service" id="theme.repository" />
+            <argument type="service" id="theme_sales_channel.repository" />
+            <argument type="service" id="sales_channel.repository" />
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Subscriber\UpdateSubscriber">
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeLifecycleService"/>
+            <argument type="service" id="sales_channel.repository" />
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\Subscriber\UnusedMediaSubscriber">
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="Cicada\Storefront\Theme\ThemeService"/>
+
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\DataAbstractionLayer\ThemeIndexer">
+            <tag name="cicada.entity_indexer"/>
+            <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory"/>
+            <argument type="service" id="theme.repository"/>
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader" public="true">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\DataAbstractionLayer\ThemeExceptionHandler">
+            <tag name="cicada.dal.exception_handler"/>
+        </service>
+
+        <service id="Cicada\Storefront\Theme\ThemeFilesystemResolver" public="true">
+            <argument type="service" id="Cicada\Core\Framework\App\Source\SourceResolver"/>
+            <argument type="service" id="kernel"></argument>
+        </service>
+    </services>
+</container>

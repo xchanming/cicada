@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="Cicada\Core\Profiling\Integration\Stopwatch">
+            <argument type="service" id="debug.stopwatch" on-invalid="null"/>
+
+            <tag name="cicada.profiler" integration="Symfony"/>
+        </service>
+
+        <service id="Cicada\Core\Profiling\Integration\Tideways">
+            <tag name="cicada.profiler" integration="Tideways"/>
+        </service>
+
+        <service id="Cicada\Core\Framework\Adapter\Command\CacheWatchDelayedCommand">
+            <tag name="console.command"/>
+            <argument type="service" id="event_dispatcher"/>
+            <argument type="service" id="service_container"/>
+        </service>
+
+        <service id="Cicada\Core\Profiling\Integration\Datadog">
+            <tag name="cicada.profiler" integration="Datadog"/>
+        </service>
+
+        <service id="Cicada\Core\Profiling\Integration\ServerTiming">
+            <tag name="cicada.profiler" integration="ServerTiming"/>
+            <tag name="kernel.event_listener" event="kernel.response" method="onResponseEvent"/>
+        </service>
+
+        <service id="Cicada\Core\Profiling\Profiler" public="true">
+            <argument type="tagged_iterator" tag="cicada.profiler" index-by="integration"/>
+            <argument>%cicada.profiler.integrations%</argument>
+        </service>
+    </services>
+</container>

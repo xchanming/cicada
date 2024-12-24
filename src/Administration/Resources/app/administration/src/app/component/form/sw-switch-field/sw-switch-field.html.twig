@@ -1,0 +1,23 @@
+{# v-on="$listeners" needed becaues vue/compat removes them from $attrs #}
+{# New mt-switch component #}
+<mt-switch
+    v-if="useMeteorComponent"
+    v-bind="$attrs"
+    :checked="checkedValue"
+    v-on="listeners"
+    @change="onChangeHandler"
+>
+    <slot></slot>
+</mt-switch>
+
+{# v-on="$listeners" needed becaues vue/compat removes them from $attrs #}
+{# Deprecated component #}
+<sw-switch-field-deprecated
+    v-else
+    v-bind="$attrs"
+    :value="value"
+    v-on="listeners"
+    @update:value="onChangeHandler"
+>
+    <slot></slot>
+</sw-switch-field-deprecated>
