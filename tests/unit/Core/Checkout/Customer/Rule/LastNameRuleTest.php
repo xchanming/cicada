@@ -135,10 +135,10 @@ class LastNameRuleTest extends TestCase
         return [
             'EQ - true' => [true, 'cicada', 'cicada', Rule::OPERATOR_EQ],
             'EQ - false' => [false, 'cicada', 'cicadaAG', Rule::OPERATOR_EQ],
-            'EQ(CASE) - true' => [true, 'cicada', 'ShopWare', Rule::OPERATOR_EQ],
+            'EQ(CASE) - true' => [true, 'cicada', 'Cicada', Rule::OPERATOR_EQ],
             'NEQ - true' => [true, 'cicada', 'cicadaAG', Rule::OPERATOR_NEQ],
             'NEQ - false' => [false, 'cicada', 'cicada', Rule::OPERATOR_NEQ],
-            'NEQ(CASE) - false' => [false, 'cicada', 'ShopWare', Rule::OPERATOR_NEQ],
+            'NEQ(CASE) - false' => [false, 'cicada', 'Cicada', Rule::OPERATOR_NEQ],
             'EMPTY - false' => [false, 'cicada', null, Rule::OPERATOR_EMPTY],
             'EMPTY - true' => [true, null, null, Rule::OPERATOR_EMPTY],
         ];
