@@ -93,7 +93,6 @@ parameters:
            message: '#.* has no route scope defined.*#'
            paths:
             - **/*Test.php
-            - src/WebInstaller
             - src/Core/Installer
             - src/Core/Checkout/Payment/Controller/PaymentController.php
 
