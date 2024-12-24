@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\Webhook\Handler;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Exception\RequestException;
 use Cicada\Core\Framework\App\Exception\AppNotFoundException;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
 use Cicada\Core\Framework\Context;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\Webhook\EventLog\WebhookEventLogDefinition;
 use Cicada\Core\Framework\Webhook\Message\WebhookEventMessage;
 use Cicada\Core\Framework\Webhook\Service\RelatedWebhooks;
 use Cicada\Core\Framework\Webhook\WebhookException;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\RequestException;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

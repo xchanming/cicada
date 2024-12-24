@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
-use OpenSearch\Client;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -17,6 +13,10 @@ use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchOutdatedIndexDetector;
 use Cicada\Elasticsearch\Framework\ElasticsearchRegistry;
 use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
+use OpenSearch\Client;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

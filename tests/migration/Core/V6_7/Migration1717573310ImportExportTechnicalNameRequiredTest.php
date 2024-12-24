@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Migration\Core\V6_7;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\ImportExportProfileDefinition;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Migration\V6_7\Migration1717573310ImportExportTechnicalNameRequired;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme\ConfigLoader;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\MediaPathUpdater;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Context;
@@ -14,6 +12,8 @@ use Cicada\Storefront\Theme\ConfigLoader\DatabaseConfigLoader;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

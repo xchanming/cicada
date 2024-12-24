@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Installer\Database;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\NullLogger;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationCollectionLoader;
 use Cicada\Core\Framework\Migration\MigrationRuntime;
 use Cicada\Core\Framework\Migration\MigrationSource;
+use Doctrine\DBAL\Connection;
+use Psr\Log\NullLogger;
 
 /**
  * @internal

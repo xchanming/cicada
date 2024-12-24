@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements;
 
+use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\CardField;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\CardField;
 
 /**
  * @internal

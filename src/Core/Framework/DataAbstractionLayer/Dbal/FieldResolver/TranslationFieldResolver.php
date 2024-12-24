@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StorageAware;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

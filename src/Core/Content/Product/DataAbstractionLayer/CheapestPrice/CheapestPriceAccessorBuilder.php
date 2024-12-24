@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder\FieldAccessorBuilderInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Log\LoggerInterface;
 
 #[Package('core')]
 class CheapestPriceAccessorBuilder implements FieldAccessorBuilderInterface

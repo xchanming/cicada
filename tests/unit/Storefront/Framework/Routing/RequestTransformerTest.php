@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\AbstractSeoResolver;
 use Cicada\Core\Framework\Routing\RequestTransformerInterface;
 use Cicada\Storefront\Framework\Routing\AbstractDomainLoader;
 use Cicada\Storefront\Framework\Routing\Exception\SalesChannelMappingException;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

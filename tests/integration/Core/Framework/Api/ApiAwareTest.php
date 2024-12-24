@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Notification\NotificationDefinition;
 use Cicada\Administration\Snippet\AppAdministrationSnippetDefinition;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Storefront\Theme\ThemeDefinition;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

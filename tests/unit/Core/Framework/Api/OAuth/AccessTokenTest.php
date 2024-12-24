@@ -2,6 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Api\OAuth\AccessToken;
+use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
+use Cicada\Core\Framework\Api\OAuth\FakeCryptKey;
+use Cicada\Core\Framework\Api\OAuth\Scope\WriteScope;
+use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
 use Lcobucci\JWT\Signer\Key\InMemory;
@@ -9,11 +14,6 @@ use League\OAuth2\Server\CryptKey;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\OAuth\AccessToken;
-use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
-use Cicada\Core\Framework\Api\OAuth\FakeCryptKey;
-use Cicada\Core\Framework\Api\OAuth\Scope\WriteScope;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 
 /**
  * @internal

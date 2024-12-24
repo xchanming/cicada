@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Promotion\Integration\Calculation;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -18,6 +16,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Integration\Builder\Promotion\PromotionFixtureBuilder;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionIntegrationTestBehaviour;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

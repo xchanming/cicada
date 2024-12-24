@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\Plugin\Util;
 
-use Composer\Composer;
-use Composer\IO\IOInterface;
-use Composer\Package\CompletePackageInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Composer\Factory;
 use Cicada\Core\Framework\Plugin\Composer\PackageProvider;
 use Cicada\Core\Framework\Plugin\Exception\ExceptionCollection;
 use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 use Cicada\Core\Framework\Plugin\Struct\PluginFromFileSystemStruct;
+use Composer\Composer;
+use Composer\IO\IOInterface;
+use Composer\Package\CompletePackageInterface;
 use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 use Symfony\Component\Finder\Finder;
 

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\EventListener\Authentication;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\OAuth\RefreshTokenRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityDeletedEvent;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\UserEvents;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\System\UsageData\EntitySync;
 
-use Psr\Clock\ClockInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\InstanceService;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Store\Services\StoreService;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\UsageData\UsageDataException;
+use Psr\Clock\ClockInterface;
 use Symfony\Component\HttpClient\Exception\ClientException;
 use Symfony\Component\HttpClient\Exception\ServerException;
 use Symfony\Component\HttpFoundation\Request;

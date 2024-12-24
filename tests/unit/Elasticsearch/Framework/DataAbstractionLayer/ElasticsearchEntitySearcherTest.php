@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\DataAbstractionLayer;
 
-use OpenSearch\Client;
-use OpenSearch\Common\Exceptions\NoNodesAvailableException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
@@ -19,6 +15,10 @@ use Cicada\Elasticsearch\Framework\DataAbstractionLayer\ElasticsearchEntitySearc
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\Event\ElasticsearchEntitySearcherSearchedEvent;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\Event\ElasticsearchEntitySearcherSearchEvent;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
+use OpenSearch\Client;
+use OpenSearch\Common\Exceptions\NoNodesAvailableException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

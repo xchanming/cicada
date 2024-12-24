@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Product\Aggregate\ProductKeywordDictionary\ProductKeywordDictionaryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductSearchKeyword\ProductSearchKeywordDefinition;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -27,6 +25,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\Language\LanguageEntity;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\Service\ResetInterface;
 
 /**

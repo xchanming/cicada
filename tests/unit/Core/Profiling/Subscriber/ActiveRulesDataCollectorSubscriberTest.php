@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Profiling\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Content\Rule\RuleEntity;
 use Cicada\Core\Framework\Api\Context\SystemSource;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Routing\Event\SalesChannelContextResolvedEvent;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Subscriber\ActiveRulesDataCollectorSubscriber;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

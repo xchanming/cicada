@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Event\CustomerBeforeLoginEvent;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Test\Store\ExtensionBehaviour;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Service\WebhookLoader;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

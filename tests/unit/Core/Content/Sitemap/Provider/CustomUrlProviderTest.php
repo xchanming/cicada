@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Sitemap\Provider;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Sitemap\Provider\CustomUrlProvider;
 use Cicada\Core\Content\Sitemap\Service\ConfigHandler;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

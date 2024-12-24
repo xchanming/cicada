@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\CustomerValueResolver;
 use Cicada\Core\Checkout\Customer\Exception\BadCredentialsException;
@@ -26,6 +24,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
 

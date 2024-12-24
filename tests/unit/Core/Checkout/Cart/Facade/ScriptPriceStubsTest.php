@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Facade;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\ScriptPriceStubs;
 use Cicada\Core\Checkout\Cart\Price\PercentagePriceCalculator;
 use Cicada\Core\Checkout\Cart\Price\QuantityPriceCalculator;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\Price;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\PriceCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Adapter\Command\CacheClearAllCommand;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

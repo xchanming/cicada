@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Migration\V6_3;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerRegisterEvent;
 use Cicada\Core\Checkout\Document\Renderer\CreditNoteRenderer;
@@ -28,6 +27,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

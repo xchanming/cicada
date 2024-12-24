@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Rule\Container;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Rule\LineItemInCategoryRule;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Content\Rule\RuleEntity;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Tests\Unit\Core\Checkout\Cart\SalesChannel\Helper\CartRuleHelperTrait;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Type;
 
 /**

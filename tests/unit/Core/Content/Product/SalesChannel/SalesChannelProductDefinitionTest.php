@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSection\CmsSectionCollection;
@@ -21,6 +19,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayStruct;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

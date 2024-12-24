@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Events;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Events\FlowSendMailActionEvent;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

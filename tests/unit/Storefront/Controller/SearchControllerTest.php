@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\MediaUrlPlaceholderHandlerInterface;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -28,6 +25,9 @@ use Cicada\Storefront\Page\Search\SearchPage;
 use Cicada\Storefront\Page\Search\SearchPageLoadedHook;
 use Cicada\Storefront\Page\Search\SearchPageLoader;
 use Cicada\Storefront\Page\Suggest\SuggestPageLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;

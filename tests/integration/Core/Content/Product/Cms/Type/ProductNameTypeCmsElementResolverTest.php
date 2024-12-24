@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Cms\Type;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
@@ -17,6 +16,7 @@ use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductDefinition;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

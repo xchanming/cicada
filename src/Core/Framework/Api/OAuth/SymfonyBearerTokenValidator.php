@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Exception;
@@ -9,8 +11,6 @@ use Lcobucci\JWT\UnencryptedToken;
 use Lcobucci\JWT\Validation\RequiredConstraintsViolated;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Indexing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexer;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\MessageQueue\FullEntityI
 use Cicada\Core\Framework\Event\ProgressFinishedEvent;
 use Cicada\Core\Framework\Event\ProgressStartedEvent;
 use Cicada\Core\Framework\Struct\ArrayEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

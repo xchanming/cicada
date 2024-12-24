@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Services;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
 use Cicada\Core\Framework\Store\Exception\ShopSecretInvalidException;
 use Cicada\Core\Framework\Store\Services\ShopSecretInvalidMiddleware;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

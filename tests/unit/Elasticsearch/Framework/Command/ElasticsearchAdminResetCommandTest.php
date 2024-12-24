@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Command;
 
+use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
+use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
+use Cicada\Elasticsearch\Framework\Command\ElasticsearchAdminResetCommand;
 use Doctrine\DBAL\Connection;
 use OpenSearch\Client;
 use OpenSearch\Namespaces\IndicesNamespace;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
-use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
-use Cicada\Elasticsearch\Framework\Command\ElasticsearchAdminResetCommand;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

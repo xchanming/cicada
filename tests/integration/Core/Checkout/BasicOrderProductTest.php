@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\Integration\Helper\MailEventListener;
 use Cicada\Core\Test\Integration\Traits\TestShortHands;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

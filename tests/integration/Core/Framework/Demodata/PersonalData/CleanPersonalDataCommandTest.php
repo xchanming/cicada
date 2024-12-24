@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Demodata\PersonalData;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;

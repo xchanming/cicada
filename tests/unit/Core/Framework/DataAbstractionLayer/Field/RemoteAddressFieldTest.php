@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Field;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\RemoteAddressField;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

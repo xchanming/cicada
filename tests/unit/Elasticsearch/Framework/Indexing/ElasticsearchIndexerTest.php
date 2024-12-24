@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IterableQuery;
@@ -26,6 +18,14 @@ use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexIteratorEven
 use Cicada\Elasticsearch\Framework\Indexing\IndexCreator;
 use Cicada\Elasticsearch\Framework\Indexing\IndexerOffset;
 use Cicada\Elasticsearch\Framework\Indexing\IndexingDto;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

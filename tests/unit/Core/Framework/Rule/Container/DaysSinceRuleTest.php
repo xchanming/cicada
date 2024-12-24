@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Rule\Container;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Container\DaysSinceRule;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Rule\RuleConfig;
 use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Tests\Unit\Core\Framework\Rule\Fixture\DaysSinceRuleFixture;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

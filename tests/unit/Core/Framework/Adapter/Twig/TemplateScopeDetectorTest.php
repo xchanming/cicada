@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Adapter\Twig\TemplateScopeDetector;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 

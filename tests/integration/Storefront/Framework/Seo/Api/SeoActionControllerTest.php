@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Seo\Api;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\NavigationPageSeoUrlRoute;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

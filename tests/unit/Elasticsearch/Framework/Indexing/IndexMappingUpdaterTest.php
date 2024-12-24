@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
-use OpenSearch\Client;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchRegistry;
 use Cicada\Elasticsearch\Framework\Indexing\IndexMappingProvider;
 use Cicada\Elasticsearch\Framework\Indexing\IndexMappingUpdater;
 use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
+use OpenSearch\Client;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

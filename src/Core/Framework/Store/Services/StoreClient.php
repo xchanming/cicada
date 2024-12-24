@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\ClientException;
-use Psr\Http\Message\ResponseInterface;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceException;
 use Cicada\Core\Framework\Context;
@@ -25,6 +22,9 @@ use Cicada\Core\Framework\Store\Struct\StoreLicenseViolationStruct;
 use Cicada\Core\Framework\Store\Struct\StoreLicenseViolationTypeStruct;
 use Cicada\Core\Framework\Store\Struct\StoreUpdateStruct;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\ClientException;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 

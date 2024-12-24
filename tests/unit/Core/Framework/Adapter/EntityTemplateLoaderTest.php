@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter;
 
+use Cicada\Core\Framework\Adapter\Twig\EntityTemplateLoader;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Twig\EntityTemplateLoader;
 use Twig\Error\LoaderError;
 use Twig\Source;
 

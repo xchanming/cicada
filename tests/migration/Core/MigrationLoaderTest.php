@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Migration\Core;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\Exception\InvalidMigrationClassException;
 use Cicada\Core\Framework\Migration\Exception\UnknownMigrationSourceException;
 use Cicada\Core\Framework\Migration\MigrationCollectionLoader;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Test\Migration\MigrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

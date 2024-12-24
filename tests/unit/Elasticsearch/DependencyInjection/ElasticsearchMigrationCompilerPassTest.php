@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\DependencyInjection;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\MigrationSource;
 use Cicada\Elasticsearch\DependencyInjection\ElasticsearchMigrationCompilerPass;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**

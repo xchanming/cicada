@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Bench;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\FixtureLoader;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal - only for performance benchmarks

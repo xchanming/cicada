@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\FeatureFlag;
 
-use PHPUnit\Runner\Extension\Extension;
-use PHPUnit\Runner\Extension\Facade;
-use PHPUnit\Runner\Extension\ParameterCollection;
-use PHPUnit\TextUI\Configuration\Configuration;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\Subscriber\TestFinishedSubscriber;
 use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\Subscriber\TestPreparationStartedSubscriber;
 use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\Subscriber\TestSkippedSubscriber;
+use PHPUnit\Runner\Extension\Extension;
+use PHPUnit\Runner\Extension\Facade;
+use PHPUnit\Runner\Extension\ParameterCollection;
+use PHPUnit\TextUI\Configuration\Configuration;
 
 /**
  * This extension guarantees a clean feature environment for pure unit tests

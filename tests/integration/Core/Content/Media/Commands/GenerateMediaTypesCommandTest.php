@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Commands;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Commands\GenerateMediaTypesCommand;
 use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Content\Media\MediaEntity;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

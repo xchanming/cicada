@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Payment\Cart\PaymentMethodValidator;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

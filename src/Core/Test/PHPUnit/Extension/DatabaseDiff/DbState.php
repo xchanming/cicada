@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

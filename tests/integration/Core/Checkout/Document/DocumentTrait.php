@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\PriceDefinitionFactory;
@@ -26,6 +25,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

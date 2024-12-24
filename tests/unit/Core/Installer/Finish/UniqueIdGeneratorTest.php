@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Finish;
 
+use Cicada\Core\Installer\Finish\UniqueIdGenerator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Installer\Finish\UniqueIdGenerator;
 
 /**
  * @internal

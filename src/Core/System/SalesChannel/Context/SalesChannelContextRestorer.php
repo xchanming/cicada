@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\SalesChannel\Context;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Checkout\Cart\Order\OrderConverter;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Event\SalesChannelContextRestorerOrderCriteriaEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]

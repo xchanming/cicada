@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi;
 
-use OpenApi\Analysis;
 use Cicada\Core\Framework\Log\Package;
+use OpenApi\Analysis;
 
 #[Package('core')]
 class DeactivateValidationAnalysis extends Analysis

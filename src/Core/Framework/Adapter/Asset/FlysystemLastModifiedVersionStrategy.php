@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Adapter\Asset;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Asset\VersionStrategy\VersionStrategyInterface;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 

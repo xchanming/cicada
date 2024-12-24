@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cicada\Commercial\Tests\Unit\Foo;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\TestCase;
 
 class BarTest extends TestCase
 {

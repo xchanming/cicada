@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Search\Term;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -24,6 +22,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\SearchTerm;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

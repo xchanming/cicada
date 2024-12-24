@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Indexing;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableTransaction;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 class ChildCountUpdater

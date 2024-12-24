@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\TaxProvider\Payload;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\TransferException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTax;
 use Cicada\Core\Framework\Api\Context\SystemSource;
@@ -27,6 +21,12 @@ use Cicada\Core\Framework\Test\Store\StaticInAppPurchaseFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\TaxProvider\TaxProviderDefinition;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\TransferException;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 

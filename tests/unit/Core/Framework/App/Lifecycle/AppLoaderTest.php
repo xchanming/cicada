@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle;
 
+use Cicada\Core\Framework\App\AppException;
+use Cicada\Core\Framework\App\Lifecycle\AppLoader;
+use Cicada\Core\Framework\App\Manifest\Xml\Setup\Setup;
 use Composer\InstalledVersions;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use Cicada\Core\Framework\App\AppException;
-use Cicada\Core\Framework\App\Lifecycle\AppLoader;
-use Cicada\Core\Framework\App\Manifest\Xml\Setup\Setup;
 
 /**
  * @internal

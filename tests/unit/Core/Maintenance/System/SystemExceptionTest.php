@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System;
 
+use Cicada\Core\Maintenance\MaintenanceException;
 use PHPUnit\Event\Telemetry\System;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Maintenance\MaintenanceException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

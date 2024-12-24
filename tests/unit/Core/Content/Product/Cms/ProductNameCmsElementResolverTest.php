@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Cms;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Cicada\Core\Content\Cms\DataResolver\Element\ElementDataCollection;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
@@ -13,6 +11,8 @@ use Cicada\Core\Content\Cms\SalesChannel\Struct\TextStruct;
 use Cicada\Core\Content\Product\Cms\ProductNameCmsElementResolver;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

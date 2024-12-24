@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Exception;
 
+use Cicada\Core\Checkout\Cart\Exception\TaxProviderExceptions;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Cart\Exception\TaxProviderExceptions;
 
 /**
  * @internal

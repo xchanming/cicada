@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Migration\V6_5;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Content\Flow\Aggregate\FlowTemplate\FlowTemplateDefinition;
 use Cicada\Core\Content\Flow\Dispatching\Action\SendMailAction;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 
 /**
  * @internal

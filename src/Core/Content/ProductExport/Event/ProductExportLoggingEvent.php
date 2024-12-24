@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\Event;
 
-use Monolog\Level;
 use Cicada\Core\Content\Flow\Dispatching\Action\FlowMailVariables;
 use Cicada\Core\Content\Flow\Dispatching\Aware\ScalarValuesAware;
 use Cicada\Core\Content\MailTemplate\Exception\MailEventConfigurationException;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Event\MailAware;
 use Cicada\Core\Framework\Log\LogAware;
 use Cicada\Core\Framework\Log\Package;
+use Monolog\Level;
 use Symfony\Contracts\EventDispatcher\Event;
 
 #[Package('inventory')]

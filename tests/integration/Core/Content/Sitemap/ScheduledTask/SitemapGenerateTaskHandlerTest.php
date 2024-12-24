@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\ScheduledTask;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Sitemap\ScheduledTask\SitemapGenerateTaskHandler;
 use Cicada\Core\Content\Sitemap\ScheduledTask\SitemapMessage;
 use Cicada\Core\Defaults;
@@ -20,6 +16,10 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
 

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Cart\Facade;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Price\PercentagePriceCalculator;
 use Cicada\Core\Checkout\Cart\Price\QuantityPriceCalculator;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\PriceCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\Service\ResetInterface;
 
 /**

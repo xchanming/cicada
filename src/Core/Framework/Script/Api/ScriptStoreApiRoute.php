@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Script\Api;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Adapter\Cache\CacheCompressor;
 use Cicada\Core\Framework\Adapter\Cache\Http\HttpCacheKeyGenerator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\ScriptExecutor;
 use Cicada\Core\System\SalesChannel\Api\ResponseFields;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

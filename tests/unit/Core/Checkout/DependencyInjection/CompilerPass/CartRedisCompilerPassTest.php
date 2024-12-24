@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\DependencyInjection\CompilerPass;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartPersister;
 use Cicada\Core\Checkout\Cart\RedisCartPersister;
 use Cicada\Core\Checkout\DependencyInjection\CompilerPass\CartRedisCompilerPass;
 use Cicada\Core\Checkout\DependencyInjection\DependencyInjectionException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 

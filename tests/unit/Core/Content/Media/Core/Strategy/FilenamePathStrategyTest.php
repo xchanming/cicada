@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Core\Strategy;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaPathStrategy;
 use Cicada\Core\Content\Media\Core\Params\MediaLocationStruct;
 use Cicada\Core\Content\Media\Core\Params\ThumbnailLocationStruct;
 use Cicada\Core\Content\Media\Core\Strategy\FilenamePathStrategy;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

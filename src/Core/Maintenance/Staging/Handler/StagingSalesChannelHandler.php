@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Maintenance\Staging\Handler;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

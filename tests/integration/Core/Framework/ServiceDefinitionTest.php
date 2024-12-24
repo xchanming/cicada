@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Core\Framework;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Kernel\KernelFactory;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Test\TestKernel;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\TestContainer;
 use Symfony\Component\Console\Tester\CommandTester;

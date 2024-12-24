@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\AbstractStorefrontPluginConfigurationFactory;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**

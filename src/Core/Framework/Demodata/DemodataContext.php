@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata;
 
-use Faker\Generator;
 use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
+use Faker\Generator;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**

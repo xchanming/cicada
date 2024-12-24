@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Store\Services\StoreClientFactory;
+use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Cicada\Core\System\SystemConfig\SystemConfigService;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Store\Services\StoreClientFactory;
-use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
-use Cicada\Core\System\SystemConfig\SystemConfigService;
 
 /**
  * @internal

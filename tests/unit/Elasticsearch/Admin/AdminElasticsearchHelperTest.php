@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Admin;
 
+use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
 
 /**
  * @internal

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Bench;
 
-use PhpBench\DependencyInjection\Container;
-use PhpBench\DependencyInjection\ExtensionInterface;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\TestBootstrapper;
+use PhpBench\DependencyInjection\Container;
+use PhpBench\DependencyInjection\ExtensionInterface;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

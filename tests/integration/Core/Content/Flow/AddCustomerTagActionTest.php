@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Rule\AlwaysValidRule;
 use Cicada\Core\Checkout\Customer\Event\CustomerLoginEvent;
 use Cicada\Core\Content\Flow\Dispatching\Action\AddCustomerTagAction;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

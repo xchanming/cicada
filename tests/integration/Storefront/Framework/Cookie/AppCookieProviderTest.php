@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Cookie;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Storefront\Framework\Cookie\AppCookieProvider;
 use Cicada\Storefront\Framework\Cookie\CookieProviderInterface;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

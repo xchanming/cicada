@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\ApiDefinition\Generator;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\BundleSchemaPathCollection;
 use Cicada\Tests\Unit\Core\Framework\Api\ApiDefinition\Generator\_fixtures\CustomBundleWithApiSchema\CicadaBundleWithName;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**

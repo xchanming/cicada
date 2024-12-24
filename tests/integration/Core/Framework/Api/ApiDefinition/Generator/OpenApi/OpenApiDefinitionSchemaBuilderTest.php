@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\ApiDefinition\Generator\OpenApi;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi\OpenApiDefinitionSchemaBuilder;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Tests\Integration\Core\Framework\Api\ApiDefinition\EntityDefinition\SimpleDefinition;
 use Cicada\Tests\Integration\Core\Framework\Api\ApiDefinition\EntityDefinition\SinceDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

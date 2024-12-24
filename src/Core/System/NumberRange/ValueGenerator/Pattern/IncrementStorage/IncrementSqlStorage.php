@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 #[Package('checkout')]
 class IncrementSqlStorage extends AbstractIncrementStorage

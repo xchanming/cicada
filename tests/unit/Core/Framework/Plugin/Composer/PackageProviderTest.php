@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Composer;
 
+use Cicada\Core\Framework\Plugin\Composer\PackageProvider;
+use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 use Composer\IO\NullIO;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Plugin\Composer\PackageProvider;
-use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 
 /**
  * @internal

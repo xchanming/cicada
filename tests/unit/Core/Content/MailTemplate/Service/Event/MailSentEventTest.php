@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\MailTemplate\Service\Event;
 
-use Monolog\Level;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Storer\ScalarValuesStorer;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
 use Cicada\Core\Framework\Context;
+use Monolog\Level;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 use Cicada\Core\Checkout\Cart\AbstractCartPersister;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
@@ -23,6 +19,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\RuleAreas;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 use Symfony\Contracts\Cache\CacheInterface;
 
 /**

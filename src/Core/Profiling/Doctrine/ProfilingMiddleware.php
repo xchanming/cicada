@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Profiling\Doctrine;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Driver;
 use Doctrine\DBAL\Driver\Middleware;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Bridge\Doctrine\Middleware\Debug\Driver as DebugDriver;
 use Symfony\Component\Stopwatch\Stopwatch;
 

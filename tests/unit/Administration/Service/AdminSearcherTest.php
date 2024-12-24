@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Framework\Search\CriteriaCollection;
 use Cicada\Administration\Service\AdminSearcher;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

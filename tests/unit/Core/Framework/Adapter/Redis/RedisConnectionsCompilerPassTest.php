@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Redis;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Container\ContainerInterface;
 use Cicada\Core\Framework\Adapter\Cache\RedisConnectionFactory;
 use Cicada\Core\Framework\Adapter\Redis\RedisConnectionProvider;
 use Cicada\Core\Framework\Adapter\Redis\RedisConnectionsCompilerPass;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;

@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests;
 
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\StaticCall;
@@ -10,7 +11,6 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 use PHPStan\Type\ObjectType;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

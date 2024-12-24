@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use GuzzleHttp\Exception\ClientException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Exception\StoreApiException;
 use Cicada\Core\Framework\Store\Struct\ExtensionCollection;
 use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
+use GuzzleHttp\Exception\ClientException;
 
 /**
  * @internal

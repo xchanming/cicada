@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityWriteGateway;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\SearchRanking;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

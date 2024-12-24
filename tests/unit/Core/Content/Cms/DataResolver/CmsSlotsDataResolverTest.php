@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\DataResolver;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Cicada\Core\Content\Cms\DataResolver\CmsSlotsDataResolver;
@@ -27,6 +24,9 @@ use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig;
 
+use Cicada\Core\Framework\Adapter\Twig\TwigVariableParserFactory;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Twig\TwigVariableParserFactory;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;
 

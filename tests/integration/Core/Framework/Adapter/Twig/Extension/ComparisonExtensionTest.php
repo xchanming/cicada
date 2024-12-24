@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig\Extension;
 
+use Cicada\Core\Framework\Adapter\Twig\Extension\ComparisonExtension;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Twig\Extension\ComparisonExtension;
 
 /**
  * @internal

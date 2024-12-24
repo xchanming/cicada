@@ -2,13 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\RateLimiter;
 
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\ServerRequest;
-use League\OAuth2\Server\AuthorizationServer;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 use Cicada\Core\Checkout\Customer\SalesChannel\AccountService;
 use Cicada\Core\Checkout\Customer\SalesChannel\LoginRoute;
 use Cicada\Core\Content\Newsletter\NewsletterException;
@@ -31,6 +24,13 @@ use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Integration\Traits\OrderFixture;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\ServerRequest;
+use League\OAuth2\Server\AuthorizationServer;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Migration\V6_3;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
@@ -12,6 +11,7 @@ use Cicada\Core\System\Tax\TaxRuleType\EntireCountryRuleTypeFilter;
 use Cicada\Core\System\Tax\TaxRuleType\IndividualStatesRuleTypeFilter;
 use Cicada\Core\System\Tax\TaxRuleType\ZipCodeRangeRuleTypeFilter;
 use Cicada\Core\System\Tax\TaxRuleType\ZipCodeRuleTypeFilter;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

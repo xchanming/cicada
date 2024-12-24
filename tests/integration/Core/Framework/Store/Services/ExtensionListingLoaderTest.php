@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\ExtensionListingLoader;
 use Cicada\Core\Framework\Store\Struct\ExtensionCollection;
 use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
 use Cicada\Core\Framework\Test\Store\StoreClientBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

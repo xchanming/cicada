@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Cart\TaxProvider;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Exception\TaxProviderExceptions;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
@@ -20,6 +19,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\TaxProvider\TaxProviderCollection;
 use Cicada\Core\System\TaxProvider\TaxProviderEntity;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 #[Package('checkout')]

@@ -2,6 +2,10 @@
 
 namespace Cicada\Core\Framework\JWT\Constraints;
 
+use Cicada\Core\Framework\JWT\JWTException;
+use Cicada\Core\Framework\JWT\Struct\JWKCollection;
+use Cicada\Core\Framework\JWT\Struct\JWKStruct;
+use Cicada\Core\Framework\Log\Package;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa;
@@ -11,10 +15,6 @@ use Lcobucci\JWT\Signer\Rsa\Sha512;
 use Lcobucci\JWT\Token;
 use Lcobucci\JWT\Validation\Constraint;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
-use Cicada\Core\Framework\JWT\JWTException;
-use Cicada\Core\Framework\JWT\Struct\JWKCollection;
-use Cicada\Core\Framework\JWT\Struct\JWKStruct;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('checkout')]
 final class HasValidRSAJWKSignature implements Constraint

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\Context\ActivateContext;
@@ -21,6 +19,8 @@ use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\Subscriber\PluginLifecycleSubscriber;
 use Cicada\Storefront\Theme\ThemeLifecycleHandler;
 use Cicada\Storefront\Theme\ThemeLifecycleService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

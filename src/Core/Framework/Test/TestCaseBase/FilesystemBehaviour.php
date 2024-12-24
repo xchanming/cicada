@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
+use Cicada\Core\Framework\Test\Filesystem\Adapter\MemoryAdapterFactory;
 use League\Flysystem\Filesystem;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
-use Cicada\Core\Framework\Test\Filesystem\Adapter\MemoryAdapterFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

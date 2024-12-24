@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Filesystem\Adapter;
 
+use Cicada\Core\Framework\Adapter\Filesystem\Adapter\LocalFactory;
 use League\Flysystem\Local\LocalFilesystemAdapter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Filesystem\Adapter\LocalFactory;
 
 /**
  * @internal

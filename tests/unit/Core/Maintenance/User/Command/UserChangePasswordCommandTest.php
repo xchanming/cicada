@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\User\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\User\Command\UserChangePasswordCommand;
 use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Validator\Exception\ValidationFailedException;
 

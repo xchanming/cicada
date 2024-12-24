@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DependencyInjection\CompilerPass;
 
+use Cicada\Core\Framework\DependencyInjection\CompilerPass\CompilerPassConfigTrait;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DependencyInjection\CompilerPass\CompilerPassConfigTrait;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Compiler\ValidateEnvPlaceholdersPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

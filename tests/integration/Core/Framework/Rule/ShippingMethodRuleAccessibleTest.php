@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Rule;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Framework\Context;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

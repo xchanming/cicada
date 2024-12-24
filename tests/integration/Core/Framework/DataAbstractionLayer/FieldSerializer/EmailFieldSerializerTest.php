@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\EmailField;
@@ -20,6 +18,8 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\EmailDe
 use Cicada\Core\Framework\Test\TestCaseBase\CacheTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

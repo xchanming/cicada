@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Cache\InvalidatorStorage;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Cache\InvalidatorStorage\RedisInvalidatorStorage;
 use Cicada\Core\Framework\Adapter\Cache\RedisConnectionFactory;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

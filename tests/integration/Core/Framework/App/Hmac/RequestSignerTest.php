@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Hmac;
 
+use Cicada\Core\Framework\App\Hmac\RequestSigner;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\Hmac\RequestSigner;
 
 /**
  * @internal

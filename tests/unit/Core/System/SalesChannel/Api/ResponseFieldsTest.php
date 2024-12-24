@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\SalesChannel\Api\ResponseFields;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

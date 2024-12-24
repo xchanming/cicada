@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Util;
 
-use Composer\Autoload\ClassLoader;
-use League\Flysystem\Filesystem;
-use League\Flysystem\FilesystemAdapter;
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Administration as CicadaAdministration;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
@@ -21,6 +13,14 @@ use Cicada\Core\Framework\Util\Filesystem as ThemeFilesystem;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
 use Cicada\Tests\Unit\Core\Framework\Plugin\_fixtures\ExampleBundle\ExampleBundle;
+use Composer\Autoload\ClassLoader;
+use League\Flysystem\Filesystem;
+use League\Flysystem\FilesystemAdapter;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpKernel\KernelInterface;
 

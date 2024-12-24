@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Content\Mail\Transport;
 
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\UnableToRetrieveMetadata;
 use Cicada\Core\Content\Mail\Service\Mail;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsBuilder;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\UnableToRetrieveMetadata;
 use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mailer\SentMessage;
 use Symfony\Component\Mailer\Transport\TransportInterface;

@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Increment;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableQuery;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Service;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\Mail\Message\SendMailMessage;
 use Cicada\Core\Content\Mail\Service\MailSender;
 use Cicada\Core\Framework\Struct\ArrayStruct;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;

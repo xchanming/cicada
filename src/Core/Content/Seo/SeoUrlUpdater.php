@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Seo\SeoUrlRoute\SeoUrlRouteRegistry;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
+use Doctrine\DBAL\Connection;
 
 /**
  * This class can be used to regenerate the seo urls for a route and an offset at ids.

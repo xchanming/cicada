@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedCriteriaEvent;
 use Cicada\Core\Checkout\Cart\Rule\AlwaysValidRule;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartOrderRoute;
@@ -28,6 +24,10 @@ use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestConstantTaxRateProvider;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\Event;

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Test\Stub\Framework\Util;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\UtilException;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

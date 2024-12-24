@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\LineItem\Group;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupPackagerNotFoundException;
@@ -46,6 +44,8 @@ use Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Helpers\Fakes\FakeTakeAl
 use Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Helpers\Traits\LineItemGroupTestFixtureBehaviour;
 use Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Helpers\Traits\LineItemTestFixtureBehaviour;
 use Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Helpers\Traits\RulesTestFixtureBehaviour;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

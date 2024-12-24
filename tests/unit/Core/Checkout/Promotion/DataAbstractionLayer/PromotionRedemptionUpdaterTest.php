@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Promotion\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Statement;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
@@ -27,6 +22,11 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Statement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

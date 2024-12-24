@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Installer\Controller\InstallerController;
 use Cicada\Core\Installer\Controller\SelectLanguagesController;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 
 /**

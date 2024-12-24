@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
 use Cicada\Core\Checkout\Customer\Event\CustomerGroupRegistrationAccepted;
 use Cicada\Core\Content\Flow\Dispatching\Action\SetCustomerGroupCustomFieldAction;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\CacheTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

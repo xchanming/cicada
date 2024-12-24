@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderDefinition;
 use Cicada\Core\Content\Media\Aggregate\MediaTranslation\MediaTranslationDefinition;
 use Cicada\Core\Content\Media\MediaDefinition;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriteGatewayInterface
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\UserDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

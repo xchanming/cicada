@@ -2,8 +2,6 @@
 
 namespace Cicada\Elasticsearch\Product;
 
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\Compound\DisMaxQuery;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\TokenQueryBuilder;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\Compound\DisMaxQuery;
 
 /**
  * @phpstan-type SearchConfig array{and_logic: string, field: string, tokenize: int, ranking: int}

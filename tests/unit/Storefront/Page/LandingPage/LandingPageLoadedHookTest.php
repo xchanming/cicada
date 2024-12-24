@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\LandingPage;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
 use Cicada\Storefront\Page\LandingPage\LandingPage;
 use Cicada\Storefront\Page\LandingPage\LandingPageLoadedHook;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

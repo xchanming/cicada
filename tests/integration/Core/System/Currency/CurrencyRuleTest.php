@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Currency;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionCollection;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Framework\Context;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\Constraint\ArrayOfUuid;
 use Cicada\Core\System\Currency\Rule\CurrencyRule;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
 

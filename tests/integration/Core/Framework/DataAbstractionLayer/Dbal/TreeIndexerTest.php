@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Category\DataAbstractionLayer\CategoryIndexer;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

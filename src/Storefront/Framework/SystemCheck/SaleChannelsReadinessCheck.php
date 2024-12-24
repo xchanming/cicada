@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Framework\SystemCheck;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\SystemCheck\BaseCheck;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\SystemCheck\Check\SystemCheckExecutionContext;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Kernel;
 use Cicada\Core\SalesChannelRequest;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Seo;
 
-use Cocur\Slugify\Bridge\Twig\SlugifyExtension;
-use Cocur\Slugify\Slugify;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoUrlGenerator;
 use Cicada\Core\Content\Seo\SeoUrlTwigFactory;
 use Cicada\Core\Framework\Adapter\Twig\Extension\PhpSyntaxExtension;
 use Cicada\Core\Framework\Adapter\Twig\SecurityExtension;
 use Cicada\Core\Framework\Log\Package;
+use Cocur\Slugify\Bridge\Twig\SlugifyExtension;
+use Cocur\Slugify\Slugify;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Path;
 use Twig\Cache\FilesystemCache;

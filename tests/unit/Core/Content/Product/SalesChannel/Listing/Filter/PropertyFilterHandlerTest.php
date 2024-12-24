@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing\Filter;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Filter;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Filter\PropertyListingFilterHandler;
@@ -32,6 +28,10 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

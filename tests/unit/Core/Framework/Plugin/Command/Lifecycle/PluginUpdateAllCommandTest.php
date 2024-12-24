@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Command\Lifecycle;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Plugin\Command\Lifecycle\PluginUpdateAllCommand;
 use Cicada\Core\Framework\Plugin\Context\UpdateContext;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Plugin\PluginLifecycleService;
 use Cicada\Core\Framework\Plugin\PluginService;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Tester\CommandTester;

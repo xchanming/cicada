@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Action;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItemDownload\OrderLineItemDownloadCollection;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Checkout\Offcanvas;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Shipping\SalesChannel\ShippingMethodRoute;
 use Cicada\Core\Checkout\Shipping\SalesChannel\ShippingMethodRouteResponse;
 use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
@@ -22,6 +20,8 @@ use Cicada\Storefront\Page\Checkout\Offcanvas\OffcanvasCartPageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\MetaInformation;
 use Cicada\Storefront\Page\Page;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

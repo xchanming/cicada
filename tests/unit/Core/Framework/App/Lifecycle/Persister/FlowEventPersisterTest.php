@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Flow\Event\Event;
 use Cicada\Core\Framework\App\Flow\Event\Xml\CustomEvents;
 use Cicada\Core\Framework\App\Lifecycle\Persister\FlowEventPersister;
@@ -14,6 +10,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

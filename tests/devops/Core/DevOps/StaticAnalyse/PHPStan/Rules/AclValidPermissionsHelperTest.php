@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\DevOps\Core\DevOps\StaticAnalyse\PHPStan\Rules;
 
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\AclValidPermissionsHelper;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\AclValidPermissionsHelper;
 
 /**
  * @internal

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Event\EventData;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Event\EventData\ArrayType;
 use Cicada\Core\Framework\Event\EventData\ScalarValueType;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

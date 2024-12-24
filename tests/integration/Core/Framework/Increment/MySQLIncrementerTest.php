@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Increment;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Increment\MySQLIncrementer;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

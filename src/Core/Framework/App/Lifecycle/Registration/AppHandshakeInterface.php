@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Registration;
 
-use Psr\Http\Message\RequestInterface;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * @internal only for use by the app-system

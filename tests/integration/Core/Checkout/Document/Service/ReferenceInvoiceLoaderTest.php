@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
 use Cicada\Core\Checkout\Document\Service\ReferenceInvoiceLoader;
 use Cicada\Core\Defaults;
@@ -15,6 +13,8 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -4,13 +4,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Content\Category\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Query\QueryBuilder;
-use Doctrine\DBAL\Result;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\DataAbstractionLayer\CategoryBreadcrumbUpdater;
 use Cicada\Core\Content\Category\DataAbstractionLayer\CategoryIndexer;
@@ -25,6 +18,13 @@ use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\DBAL\Result;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\TraceableMessageBus;
 

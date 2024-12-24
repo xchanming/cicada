@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\Adapter\Kernel;
 
-use Composer\Autoload\ClassLoader;
-use Composer\InstalledVersions;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Adapter\Cache\CacheIdLoader;
 use Cicada\Core\Framework\Adapter\Database\MySQLFactory;
 use Cicada\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\Plugin\KernelPluginLoader\DbalKernelPluginLoader;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
 use Cicada\Core\Kernel;
 use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
+use Composer\Autoload\ClassLoader;
+use Composer\InstalledVersions;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 

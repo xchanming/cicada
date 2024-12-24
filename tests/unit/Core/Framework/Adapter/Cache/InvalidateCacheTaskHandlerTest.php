@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Cache\InvalidateCacheTaskHandler;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Xml;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\CustomEntity\CustomEntityException;
 use Cicada\Core\System\CustomEntity\Xml\CustomEntityXmlSchema;
 use Cicada\Core\System\CustomEntity\Xml\CustomEntityXmlSchemaValidator;
 use Cicada\Core\System\CustomEntity\Xml\Entities;
 use Cicada\Core\System\CustomEntity\Xml\Entity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

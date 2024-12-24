@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerRecovery\CustomerRecoveryCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerRecovery\CustomerRecoveryEntity;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
@@ -23,6 +20,9 @@ use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\EventDispatcher\Event;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;

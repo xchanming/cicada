@@ -2,9 +2,9 @@
 
 namespace Cicada\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 #[Package('storefront')]
 /**

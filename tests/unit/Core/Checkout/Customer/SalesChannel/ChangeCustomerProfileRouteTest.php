@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\SalesChannel\ChangeCustomerProfileRoute;
 use Cicada\Core\Checkout\Customer\Validation\CustomerValidationFactory;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\StoreApiCustomFieldMapper;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

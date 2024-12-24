@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ShopId\ShopIdChangedEvent;
 use Cicada\Core\Framework\App\ShopId\ShopIdDeletedEvent;
 use Cicada\Core\Framework\Log\Package;
@@ -14,6 +12,8 @@ use Cicada\Core\System\UsageData\Consent\ConsentState;
 use Cicada\Core\System\UsageData\Services\EntityDispatchService;
 use Cicada\Core\System\UsageData\Subscriber\ShopIdChangedSubscriber;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

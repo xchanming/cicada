@@ -6,9 +6,9 @@ use Cicada\Core\Content\Seo\Exception\InvalidTemplateException;
 use Cicada\Core\Content\Seo\Exception\NoEntitiesForPreviewException;
 use Cicada\Core\Content\Seo\Exception\SeoUrlRouteNotFoundException;
 use Cicada\Core\Framework\Api\Exception\InvalidSalesChannelIdException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('buyers-experience')]

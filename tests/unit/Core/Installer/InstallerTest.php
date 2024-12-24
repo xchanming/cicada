@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Installer;
 
+use Cicada\Core\Installer\Installer;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Installer\Installer;
 use Symfony\Bundle\FrameworkBundle\DependencyInjection\FrameworkExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\Aggregate\DocumentType\DocumentTypeDefinition;
 use Cicada\Core\Checkout\Document\DocumentDefinition;
 use Cicada\Core\Checkout\Document\DocumentEntity;
@@ -30,6 +28,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Exception;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Exception\PropertyNotFoundException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Exception\PropertyNotFoundException;
 
 /**
  * @internal

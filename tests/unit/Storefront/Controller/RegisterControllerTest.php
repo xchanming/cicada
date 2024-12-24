@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -30,6 +27,9 @@ use Cicada\Storefront\Page\Account\Register\AccountRegisterPageLoadedHook;
 use Cicada\Storefront\Page\Checkout\Register\CheckoutRegisterPage;
 use Cicada\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoadedHook;
 use Cicada\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

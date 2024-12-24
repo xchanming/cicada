@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Mail\Service;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\Service\MailFactory;
 use Cicada\Core\Content\Mail\Service\MailSender;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Util\Hasher;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Mime\Email;
 

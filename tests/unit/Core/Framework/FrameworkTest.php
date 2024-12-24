@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\ExtensionRegistry;
 use Cicada\Core\Framework\Feature\FeatureFlagRegistry;
 use Cicada\Core\Framework\Framework;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 
 /**

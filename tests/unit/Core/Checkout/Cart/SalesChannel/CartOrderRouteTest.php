@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\AbstractCartPersister;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartCalculator;
@@ -29,6 +26,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;

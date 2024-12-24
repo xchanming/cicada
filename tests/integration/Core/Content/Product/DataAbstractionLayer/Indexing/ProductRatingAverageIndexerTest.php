@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\DataAbstractionLayer\Indexing;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
@@ -23,6 +20,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

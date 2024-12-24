@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Seo\SalesChannel;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Test\TestNavigationSeoUrlRoute;
 use Cicada\Core\Content\Test\TestProductSeoUrlRoute;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

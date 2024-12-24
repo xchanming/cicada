@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Api;
 
-use GuzzleHttp\Exception\ClientException;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Store\Exception\StoreInvalidCredentialsException;
 use Cicada\Core\Framework\Store\Services\FirstRunWizardService;
 use Cicada\Core\Framework\Validation\DataBag\QueryDataBag;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
+use GuzzleHttp\Exception\ClientException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

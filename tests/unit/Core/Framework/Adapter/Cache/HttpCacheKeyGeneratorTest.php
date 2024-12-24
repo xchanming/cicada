@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache;
 
+use Cicada\Core\Framework\Adapter\Cache\Http\HttpCacheKeyGenerator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Cache\Http\HttpCacheKeyGenerator;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

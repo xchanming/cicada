@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Migration\V6_3;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 /**
  * Moved to \Cicada\Elasticsearch\Migration\V6_5\Migration1689083660ElasticsearchIndexTask

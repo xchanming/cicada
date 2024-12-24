@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -23,6 +20,9 @@ use Cicada\Core\System\Currency\CurrencyCollection;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

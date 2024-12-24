@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\MailTemplate\Exception;
 
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

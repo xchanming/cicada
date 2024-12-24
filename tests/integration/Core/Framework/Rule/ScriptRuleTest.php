@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Rule;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Rule\RuleCollection;
@@ -32,6 +28,10 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\NotBlank;
 

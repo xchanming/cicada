@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Profiler;
 
+use Cicada\Elasticsearch\Profiler\ClientProfiler;
 use GuzzleHttp\Ring\Future\FutureArray;
 use OpenSearch\ClientBuilder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Profiler\ClientProfiler;
 
 use function React\Promise\resolve;
 

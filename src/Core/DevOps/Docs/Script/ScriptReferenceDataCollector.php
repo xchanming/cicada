@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\DevOps\Docs\Script;
 
-use League\ConstructFinder\ConstructFinder;
 use Cicada\Core\Framework\Log\Package;
+use League\ConstructFinder\ConstructFinder;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 

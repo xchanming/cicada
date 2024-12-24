@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Payment;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
@@ -22,6 +21,7 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
+use Psr\Log\LoggerInterface;
 
 /**
  * @deprecated tag:v6.7.0 - will be removed, use `PaymentProcessor` instead

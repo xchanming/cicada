@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Cache;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use Psr\Cache\CacheItemPoolInterface;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\DevOps\StaticAnalyze\StaticAnalyzeKernel;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
@@ -19,6 +14,11 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Kernel;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use Psr\Cache\CacheItemPoolInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\CacheClearer\CacheClearerInterface;

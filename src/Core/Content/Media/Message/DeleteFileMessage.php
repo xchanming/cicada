@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Media\Message;
 
-use League\Flysystem\Visibility;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
+use League\Flysystem\Visibility;
 
 #[Package('buyers-experience')]
 class DeleteFileMessage implements AsyncMessageInterface

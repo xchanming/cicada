@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle\Persister;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Lifecycle\Persister\TaxProviderPersister;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Manifest\Xml\Meta\Metadata;
@@ -18,6 +16,8 @@ use Cicada\Core\System\TaxProvider\TaxProviderCollection;
 use Cicada\Core\System\TaxProvider\TaxProviderDefinition;
 use Cicada\Core\System\TaxProvider\TaxProviderEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

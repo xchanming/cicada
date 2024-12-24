@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Customer\Api;
 
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Checkout\Customer\Event\CustomerGroupRegistrationAccepted;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextRestorer;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;

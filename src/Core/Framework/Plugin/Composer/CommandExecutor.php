@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Plugin\Composer;
 
-use Composer\Console\Application;
-use Composer\InstalledVersions;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\PluginComposerRemoveException;
 use Cicada\Core\Framework\Plugin\Exception\PluginComposerRequireException;
+use Composer\Console\Application;
+use Composer\InstalledVersions;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 

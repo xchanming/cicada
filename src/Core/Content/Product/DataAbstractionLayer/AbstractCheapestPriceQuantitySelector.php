@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\Query\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Query\QueryBuilder;
 
 #[Package('core')]
 abstract class AbstractCheapestPriceQuantitySelector

@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\CustomEntity\Xml\Config;
 
-use Composer\IO\NullIO;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Lifecycle\AppLifecycle;
@@ -21,6 +17,10 @@ use Cicada\Core\Framework\Plugin\Util\PluginFinder;
 use Cicada\Core\Framework\Test\Plugin\PluginTestsHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Composer\IO\NullIO;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

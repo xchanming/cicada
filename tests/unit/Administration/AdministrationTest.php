@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Administration;
 
-use Composer\Autoload\ClassLoader;
-use Pentatrion\ViteBundle\PentatrionViteBundle;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Administration;
 use Cicada\Administration\DependencyInjection\AdministrationMigrationCompilerPass;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Parameter\AdditionalBundleParameters;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
+use Composer\Autoload\ClassLoader;
+use Pentatrion\ViteBundle\PentatrionViteBundle;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

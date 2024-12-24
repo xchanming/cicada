@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Seo;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Seo\SeoUrlTemplate\SeoUrlTemplateDefinition;
 use Cicada\Core\Content\Seo\SeoUrlTemplate\SeoUrlTemplateEntity;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

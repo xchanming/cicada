@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Hook\Pricing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\PriceFactoryFactory;
 use Cicada\Core\Checkout\Cart\Facade\ScriptPriceStubs;
 use Cicada\Core\Content\Product\Hook\Pricing\ProductPricingHook;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Facade\SalesChannelRepositoryFaca
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\Facade\SystemConfigFacadeHookFactory;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

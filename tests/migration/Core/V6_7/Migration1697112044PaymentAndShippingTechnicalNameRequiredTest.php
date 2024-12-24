@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Migration\Core\V6_7;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Checkout\Shipping\ShippingMethodDefinition;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Migration\V6_7\Migration1697112044PaymentAndShippingTechnicalNameRequired;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

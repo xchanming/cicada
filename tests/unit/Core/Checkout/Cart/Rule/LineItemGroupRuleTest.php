@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilder;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilderResult;
@@ -11,6 +9,8 @@ use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
 use Cicada\Core\Checkout\Cart\Rule\LineItemGroupRule;
 use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
 

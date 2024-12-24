@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPriceUpdater;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductCategoryDenormalizer;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexer;
@@ -31,6 +26,11 @@ use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\TraceableMessageBus;
 

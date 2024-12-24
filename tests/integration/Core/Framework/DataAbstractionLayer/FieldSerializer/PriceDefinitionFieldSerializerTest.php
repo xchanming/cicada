@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\AbsolutePriceDefinition;
 use Cicada\Core\Checkout\Cart\Price\Struct\CurrencyPriceDefinition;
 use Cicada\Core\Checkout\Cart\Price\Struct\PercentagePriceDefinition;
@@ -30,6 +28,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Currency\CurrencyDefinition;
 use Cicada\Core\System\Currency\Rule\CurrencyRule;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

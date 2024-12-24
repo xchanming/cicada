@@ -2,8 +2,8 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Flow\FlowEvent\Xml;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Flow\Event\Event;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

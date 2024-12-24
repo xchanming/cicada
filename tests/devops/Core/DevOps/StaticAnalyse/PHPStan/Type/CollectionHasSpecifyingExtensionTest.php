@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\DevOps\Core\DevOps\StaticAnalyse\PHPStan\Type;
 
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Type\CollectionHasSpecifyingExtension;
 use PHPStan\Testing\TypeInferenceTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\RunInSeparateProcess;
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Type\CollectionHasSpecifyingExtension;
 
 /**
  * @internal

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Struct\PermissionCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

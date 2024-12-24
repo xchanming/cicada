@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\File;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\FileNameProvider;
 use Cicada\Core\Content\Test\Media\MediaFixtures;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

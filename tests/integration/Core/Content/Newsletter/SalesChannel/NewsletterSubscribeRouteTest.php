@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Newsletter\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Newsletter\Event\NewsletterRegisterEvent;
 use Cicada\Core\Content\Newsletter\Event\NewsletterSubscribeUrlEvent;
 use Cicada\Core\Content\Newsletter\SalesChannel\NewsletterSubscribeRoute;
@@ -19,6 +14,11 @@ use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

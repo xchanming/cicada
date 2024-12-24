@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\ScheduledTask;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
 use Cicada\Core\Content\ProductExport\Service\ProductExportFileHandlerInterface;
 use Cicada\Core\Content\ProductExport\Service\ProductExportGeneratorInterface;
@@ -23,6 +22,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceInterface;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceParameters;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;
 

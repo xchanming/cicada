@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document\Renderer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use Psr\Container\ContainerInterface;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\PriceDefinitionFactory;
@@ -39,6 +36,9 @@ use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 
 /**
  * @internal

@@ -2,13 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Logging;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use Monolog\Handler\TestHandler;
-use Monolog\Level;
-use Monolog\Logger;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailErrorEvent;
 use Cicada\Core\Content\Test\Flow\TestFlowBusinessEvent;
 use Cicada\Core\Framework\Context;
@@ -16,6 +9,13 @@ use Cicada\Core\Framework\Event\FlowLogEvent;
 use Cicada\Core\Framework\Log\LoggingService;
 use Cicada\Core\Framework\Test\Logging\Event\LogAwareTestFlowEvent;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
+use Monolog\Handler\TestHandler;
+use Monolog\Level;
+use Monolog\Logger;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

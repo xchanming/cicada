@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Maintenance\System\Service;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -16,6 +15,7 @@ use Cicada\Core\Maintenance\System\Service\ShopConfigurator;
 use Cicada\Core\System\Currency\CurrencyCollection;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

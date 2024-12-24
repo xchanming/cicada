@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Maintenance\SalesChannel\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Context;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Maintenance\SalesChannel\Command\SalesChannelUpdateDomainCommand;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 

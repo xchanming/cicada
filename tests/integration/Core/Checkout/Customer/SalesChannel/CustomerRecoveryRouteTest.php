@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Exception\CustomerNotFoundByHashException;
 use Cicada\Core\Checkout\Customer\SalesChannel\CustomerRecoveryIsExpiredRoute;
 use Cicada\Core\Defaults;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search\Parser;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
@@ -23,6 +20,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\PrefixFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\RangeFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\SuffixFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Parser\QueryStringParser;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

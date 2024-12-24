@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\CustomField;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\CustomField\CustomFieldCollection;
 use Cicada\Core\System\CustomField\CustomFieldDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

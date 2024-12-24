@@ -2,9 +2,6 @@
 
 namespace Cicada\Administration\Controller;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\FilesystemException;
-use League\Flysystem\FilesystemOperator;
 use Cicada\Administration\Events\PreResetExcludedSearchTermEvent;
 use Cicada\Administration\Framework\Routing\KnownIps\KnownIpsCollectorInterface;
 use Cicada\Administration\Snippet\SnippetFinderInterface;
@@ -30,6 +27,9 @@ use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\Currency\CurrencyEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemException;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;

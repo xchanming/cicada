@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Monolog\AnnotatePackageProcessor;
+use Cicada\Core\Framework\Log\Package;
 use Monolog\Level;
 use Monolog\LogRecord;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Monolog\AnnotatePackageProcessor;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

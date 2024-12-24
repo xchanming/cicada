@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Content\ImportExport\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\ImportExport\Exception\DeleteDefaultProfileException;
 use Cicada\Core\Content\ImportExport\ImportExportProfileDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\DeleteCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PreWriteValidationEvent;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

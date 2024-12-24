@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableQuery;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 class RatingAverageUpdater

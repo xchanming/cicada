@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Rule;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItem\LineItemCollection;
 use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
@@ -24,6 +22,8 @@ use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Tests\Unit\Core\Checkout\Cart\SalesChannel\Helper\CartRuleHelperTrait;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\NotBlank;
 

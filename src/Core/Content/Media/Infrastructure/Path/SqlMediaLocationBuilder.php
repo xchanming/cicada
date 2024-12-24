@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Media\Infrastructure\Path;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Core\Application\MediaLocationBuilder;
 use Cicada\Core\Content\Media\Core\Event\MediaLocationEvent;
 use Cicada\Core\Content\Media\Core\Event\ThumbnailLocationEvent;
@@ -11,6 +9,8 @@ use Cicada\Core\Content\Media\Core\Params\MediaLocationStruct;
 use Cicada\Core\Content\Media\Core\Params\ThumbnailLocationStruct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

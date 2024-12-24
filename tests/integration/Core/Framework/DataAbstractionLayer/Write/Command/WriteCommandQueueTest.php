@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Write\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryDefinition;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Defaults;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommandQueue;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

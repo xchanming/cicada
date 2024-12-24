@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\MailTemplate\Service\Event;
 
-use Monolog\Level;
 use Cicada\Core\Content\Flow\Dispatching\Action\FlowMailVariables;
 use Cicada\Core\Content\Flow\Dispatching\Aware\ScalarValuesAware;
 use Cicada\Core\Framework\Context;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Event\EventData\ScalarValueType;
 use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Log\LogAware;
 use Cicada\Core\Framework\Log\Package;
+use Monolog\Level;
 use Symfony\Contracts\EventDispatcher\Event;
 
 #[Package('buyers-experience')]

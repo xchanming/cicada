@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Plugin\PluginExtractor;
 use Cicada\Core\Framework\Plugin\PluginManagementService;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 

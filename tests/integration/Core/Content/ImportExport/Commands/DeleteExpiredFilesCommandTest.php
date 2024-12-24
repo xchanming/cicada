@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\Commands;
 
-use League\Flysystem\Filesystem;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportFile\ImportExportFileEntity;
 use Cicada\Core\Content\ImportExport\Command\DeleteExpiredFilesCommand;
 use Cicada\Core\Framework\Context;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
+use League\Flysystem\Filesystem;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

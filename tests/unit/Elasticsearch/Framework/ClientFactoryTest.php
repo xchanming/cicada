@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
+use Cicada\Elasticsearch\Framework\ClientFactory;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
-use Cicada\Elasticsearch\Framework\ClientFactory;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Services;
 
+use Cicada\Core\Framework\Update\Services\ApiClient;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Update\Services\ApiClient;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpClient\Exception\ServerException;
 use Symfony\Component\HttpClient\MockHttpClient;

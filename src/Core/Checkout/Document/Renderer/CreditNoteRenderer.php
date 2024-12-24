@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Document\Renderer;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Document\DocumentException;
@@ -23,6 +22,7 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\System\Locale\LocaleEntity;
 use Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGeneratorInterface;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('checkout')]

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Subscriber;
 
+use Cicada\Core\Content\Mail\Subscriber\FailedMessageSubscriber;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Mail\Subscriber\FailedMessageSubscriber;
 use Symfony\Component\Mailer\Event\FailedMessageEvent;
 use Symfony\Component\Mime\RawMessage;
 

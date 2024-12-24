@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Context;
 
+use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\Context\AdminApiSource;
 
 /**
  * @internal

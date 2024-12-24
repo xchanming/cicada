@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Service\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Store\Struct\ExtensionCollection;
 use Cicada\Core\Framework\Update\Event\ExtensionCompatibilitiesResolvedEvent;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\Update\Struct\Version;
 use Cicada\Core\Service\ServiceRegistryClient;
 use Cicada\Core\Service\ServiceRegistryEntry;
 use Cicada\Core\Service\Subscriber\ExtensionCompatibilitiesResolvedSubscriber;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

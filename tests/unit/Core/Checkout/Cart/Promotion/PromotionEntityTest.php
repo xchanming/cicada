@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Rule\LineItemGroupRule;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
@@ -19,6 +16,9 @@ use Cicada\Core\Content\Rule\RuleEntity;
 use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Rule\Container\OrRule;
 use Cicada\Core\Framework\Rule\Rule;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

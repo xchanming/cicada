@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
-use OpenSearch\Client;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
@@ -22,6 +17,11 @@ use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchOutdatedIndexDetector;
 use Cicada\Elasticsearch\Product\CustomFieldSetGateway;
 use Cicada\Elasticsearch\Product\CustomFieldUpdater;
+use OpenSearch\Client;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\Snippet\Files;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\App\Lifecycle\AppLoader;
 use Cicada\Core\System\Snippet\Files\AppSnippetFileLoader;
@@ -14,6 +11,9 @@ use Cicada\Core\System\Snippet\Files\SnippetFileLoader;
 use Cicada\Tests\Unit\Core\System\Snippet\Files\_fixtures\BaseSnippetSet\BaseSnippetSet;
 use Cicada\Tests\Unit\Core\System\Snippet\Files\_fixtures\CicadaBundleWithSnippets\CicadaBundleWithSnippets;
 use Cicada\Tests\Unit\Core\System\Snippet\Files\_fixtures\SnippetSet\SnippetSet;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

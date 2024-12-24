@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\App\Api;
 
-use Doctrine\DBAL\Connection;
-use Lcobucci\JWT\Configuration;
-use Lcobucci\JWT\Signer\Hmac\Sha256;
-use Lcobucci\JWT\Signer\Key\InMemory;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\InAppPurchase;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
+use Lcobucci\JWT\Configuration;
+use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Signer\Key\InMemory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 

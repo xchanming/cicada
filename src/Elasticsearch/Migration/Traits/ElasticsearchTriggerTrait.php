@@ -2,8 +2,8 @@
 
 namespace Cicada\Elasticsearch\Migration\Traits;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Elasticsearch\Framework\SystemUpdateListener;
+use Doctrine\DBAL\Connection;
 
 trait ElasticsearchTriggerTrait
 {

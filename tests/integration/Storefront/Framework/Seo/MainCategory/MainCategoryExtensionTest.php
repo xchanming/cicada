@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Seo\MainCategory;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Seo\MainCategory\MainCategoryCollection;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\Seo\StorefrontSalesChannelTestHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

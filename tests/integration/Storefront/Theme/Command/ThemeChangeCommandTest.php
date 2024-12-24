@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme\Command;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -17,6 +15,8 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\ThemeService;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 

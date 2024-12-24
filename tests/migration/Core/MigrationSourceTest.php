@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Migration\Core;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\MigrationSource;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Migration\V6_3\Migration1565270366PromotionSetGroupRule;
@@ -25,6 +22,9 @@ use Cicada\Core\Migration\V6_3\Migration1570622696CustomerPasswordRecovery;
 use Cicada\Core\Migration\V6_3\Migration1570629862ClearCategoryBreadcrumbs;
 use Cicada\Core\Migration\V6_3\Migration1570684913ScheduleIndexer;
 use Cicada\Core\Migration\V6_3\Migration1571059598ChangeGreatBritainToUnitedKingdom;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

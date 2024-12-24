@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Seo\Hreflang\HreflangCollection;
 use Cicada\Core\Content\Seo\Hreflang\HreflangStruct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Routing\RouterInterface;
 
 #[Package('buyers-experience')]

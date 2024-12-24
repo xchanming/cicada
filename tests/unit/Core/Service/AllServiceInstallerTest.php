@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Context;
@@ -14,6 +11,9 @@ use Cicada\Core\Service\ServiceLifecycle;
 use Cicada\Core\Service\ServiceRegistryClient;
 use Cicada\Core\Service\ServiceRegistryEntry;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

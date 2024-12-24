@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\MessageQueue\ScheduledTask\SymfonyBridge;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskDefinition;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Lock\LockFactory;
 use Symfony\Component\Scheduler\RecurringMessage;
 use Symfony\Component\Scheduler\Schedule;

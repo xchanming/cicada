@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Category\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

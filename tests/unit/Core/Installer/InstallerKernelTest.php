@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Installer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Installer\Installer;
 use Cicada\Core\Installer\InstallerKernel;
 use Cicada\Core\TestBootstrapper;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;
 

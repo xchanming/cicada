@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Indexing;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Defaults;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

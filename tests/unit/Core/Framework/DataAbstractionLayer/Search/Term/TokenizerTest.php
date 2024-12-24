@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search\Term;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Tokenizer;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Tokenizer;
 
 /**
  * @internal

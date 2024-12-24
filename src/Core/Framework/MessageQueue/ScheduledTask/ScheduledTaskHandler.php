@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\MessageQueue\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Log\LoggerInterface;
 
 #[Package('core')]
 abstract class ScheduledTaskHandler

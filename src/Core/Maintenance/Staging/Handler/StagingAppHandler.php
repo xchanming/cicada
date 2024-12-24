@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Maintenance\Staging\Handler;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

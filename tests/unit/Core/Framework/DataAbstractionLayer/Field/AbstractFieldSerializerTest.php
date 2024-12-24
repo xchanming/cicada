@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Field;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\DataStack\KeyValuePair;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Validator\ValidatorInterface;

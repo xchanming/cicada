@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Order\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -39,6 +36,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Controller\AccountOrderController;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\ParameterBag;
 

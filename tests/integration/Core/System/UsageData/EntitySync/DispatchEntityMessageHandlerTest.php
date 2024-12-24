@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\UsageData\EntitySync;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\ParameterType;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -27,6 +24,9 @@ use Cicada\Core\System\UsageData\EntitySync\Operation;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\ParameterType;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 use Symfony\Component\HttpFoundation\Request;

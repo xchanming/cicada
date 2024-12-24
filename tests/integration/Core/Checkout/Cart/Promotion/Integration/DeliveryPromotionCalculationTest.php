@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Promotion\Integration;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity;
@@ -21,6 +17,10 @@ use Cicada\Core\Test\Integration\Traits\Promotion\PromotionIntegrationTestBehavi
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
 use Cicada\Core\Test\Integration\Traits\Promotion\ShippingMethodPricesTestBehaviour;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

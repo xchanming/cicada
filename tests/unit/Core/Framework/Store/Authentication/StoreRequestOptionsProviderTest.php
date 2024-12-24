@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Authentication;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\MockObject\Rule\InvokedCount;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceException;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceUserException;
@@ -23,6 +19,10 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\System\User\UserDefinition;
 use Cicada\Core\System\User\UserEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\MockObject\Rule\InvokedCount;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

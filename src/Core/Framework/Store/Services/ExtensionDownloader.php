@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use GuzzleHttp\Exception\ClientException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Plugin\PluginManagementService;
 use Cicada\Core\Framework\Store\Exception\StoreApiException;
 use Cicada\Core\Framework\Store\StoreException;
 use Cicada\Core\Framework\Store\Struct\PluginDownloadDataStruct;
+use GuzzleHttp\Exception\ClientException;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

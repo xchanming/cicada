@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\System\CustomEntity\Schema;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\Comparator;
 use Doctrine\DBAL\Schema\Schema;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Lock\LockFactory;
 
 /**

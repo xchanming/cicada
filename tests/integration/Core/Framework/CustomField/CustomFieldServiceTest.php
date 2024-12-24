@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\CustomField;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\BoolField;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\CustomField\CustomFieldCollection;
 use Cicada\Core\System\CustomField\CustomFieldService;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
@@ -17,6 +12,11 @@ use Cicada\Core\Framework\Plugin\PluginManagementService;
 use Cicada\Core\Framework\Plugin\PluginService;
 use Cicada\Core\Framework\Plugin\PluginZipDetector;
 use Cicada\Core\Framework\Store\Struct\PluginDownloadDataStruct;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

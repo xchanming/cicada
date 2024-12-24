@@ -2,8 +2,8 @@
 
 namespace Cicada\Elasticsearch\Profiler;
 
-use OpenSearch\Client;
 use Cicada\Core\Framework\Log\Package;
+use OpenSearch\Client;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

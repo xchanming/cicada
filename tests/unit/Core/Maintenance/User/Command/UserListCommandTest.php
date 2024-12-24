@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\User\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleCollection;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleEntity;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -12,6 +10,8 @@ use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\System\User\UserEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

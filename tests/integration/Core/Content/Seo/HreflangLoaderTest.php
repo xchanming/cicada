@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Seo;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Seo\HreflangLoaderInterface;
 use Cicada\Core\Content\Seo\HreflangLoaderParameter;
@@ -23,6 +21,8 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

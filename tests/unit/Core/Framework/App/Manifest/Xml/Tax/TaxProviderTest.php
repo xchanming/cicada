@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Manifest\Xml\Tax;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Manifest\Xml\Tax\TaxProvider;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

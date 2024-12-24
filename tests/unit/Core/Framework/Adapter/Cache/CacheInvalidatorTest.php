@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache;
 
+use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
+use Cicada\Core\Framework\Adapter\Cache\InvalidatorStorage\RedisInvalidatorStorage;
+use Cicada\Core\Framework\Feature;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\NullLogger;
-use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
-use Cicada\Core\Framework\Adapter\Cache\InvalidatorStorage\RedisInvalidatorStorage;
-use Cicada\Core\Framework\Feature;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
@@ -34,6 +31,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch;
 
+use Cicada\Elasticsearch\ElasticsearchException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\ElasticsearchException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\EntitySync;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\UsageData\EntitySync\IterateEntityMessage;
 use Cicada\Core\System\UsageData\EntitySync\Operation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

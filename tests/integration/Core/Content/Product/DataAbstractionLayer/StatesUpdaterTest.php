@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexer;
 use Cicada\Core\Content\Product\DataAbstractionLayer\StatesUpdater;
 use Cicada\Core\Content\Product\ProductEntity;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

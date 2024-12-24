@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductStreamMappingIndexingMessage;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductStreamUpdater;
@@ -23,6 +21,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

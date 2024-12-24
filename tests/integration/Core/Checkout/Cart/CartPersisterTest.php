@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Statement;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CartCompressor;
@@ -30,6 +25,11 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Statement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

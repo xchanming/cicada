@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Reader;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
@@ -50,6 +46,10 @@ use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

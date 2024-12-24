@@ -2,18 +2,18 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Services;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\MiddlewareInterface;
 use Cicada\Core\Framework\Store\Services\ShopSecretInvalidMiddleware;
 use Cicada\Core\Framework\Store\Services\StoreClientFactory;
 use Cicada\Core\Framework\Store\Services\StoreSessionExpiredMiddleware;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**

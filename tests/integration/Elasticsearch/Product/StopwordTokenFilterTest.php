@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Product;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Elasticsearch\Product\StopwordTokenFilter;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

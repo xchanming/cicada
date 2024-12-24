@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\AutoIncrementField;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\IdSearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\DataAbstractionLayer\NumberRangeField;
+use Doctrine\DBAL\Connection;
 
 /**
  * Used for all search operations in the system.

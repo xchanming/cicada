@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Category\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Category\CategoryEvents;
@@ -17,6 +14,9 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

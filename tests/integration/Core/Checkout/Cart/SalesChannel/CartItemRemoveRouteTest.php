@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\SalesChannel;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\Cart\ProductCartProcessor;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Response;
 

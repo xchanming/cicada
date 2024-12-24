@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Store\Struct\AccessTokenStruct;
 use Cicada\Core\Framework\Store\Struct\ShopUserTokenStruct;
 use Cicada\Core\Framework\Test\Store\StoreClientBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

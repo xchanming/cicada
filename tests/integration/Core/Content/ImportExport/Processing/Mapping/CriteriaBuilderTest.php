@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\Processing\Mapping;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Processing\Mapping\CriteriaBuilder;
 use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

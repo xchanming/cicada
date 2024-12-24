@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
-use PHPUnit\Framework\TestCase;
+use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Event\EventData\MailRecipientStruct;
 use Cicada\Core\Framework\Event\MailAware;
-use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\Event;
 
 trait MailTemplateTestBehaviour

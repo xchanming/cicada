@@ -2,8 +2,8 @@
 
 namespace SwagManualMigrationTestPlugin\Migration;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

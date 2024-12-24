@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Migration\V6_4;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCapture\OrderTransactionCaptureStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStates;
 use Cicada\Core\Framework\Log\Package;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Migration\Traits\StateMachineMigration;
 use Cicada\Core\Migration\Traits\StateMachineMigrationTrait;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMachineTransitionActions;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

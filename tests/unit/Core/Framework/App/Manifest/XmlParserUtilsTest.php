@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Manifest;
 
+use Cicada\Core\Framework\App\Manifest\XmlParserUtils;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\Manifest\XmlParserUtils;
 
 /**
  * @internal

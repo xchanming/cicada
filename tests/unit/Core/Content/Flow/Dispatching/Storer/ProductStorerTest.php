@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Storer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Event\CustomerRegisterEvent;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Storer\ProductStorer;
@@ -18,6 +15,9 @@ use Cicada\Core\Framework\Event\EventData\MailRecipientStruct;
 use Cicada\Core\Framework\Event\ProductAware;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

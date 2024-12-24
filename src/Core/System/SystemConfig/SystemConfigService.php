@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\SystemConfig;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Adapter\Cache\Event\AddCacheTagEvent;
 use Cicada\Core\Framework\Bundle;
@@ -26,6 +24,8 @@ use Cicada\Core\System\SystemConfig\Exception\InvalidDomainException;
 use Cicada\Core\System\SystemConfig\Exception\InvalidKeyException;
 use Cicada\Core\System\SystemConfig\Exception\InvalidSettingValueException;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

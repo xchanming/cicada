@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Service;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\HandlerStack;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Exception\AppUrlChangeDetectedException;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
 use Cicada\Core\Framework\App\Payload\AppPayloadServiceHelper;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Client;
+use GuzzleHttp\HandlerStack;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 

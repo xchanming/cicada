@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Doctrine;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\RetryableException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\MeterProvider;
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\RetryableException;
 
 #[Package('core')]
 class RetryableTransaction

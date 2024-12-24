@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Elasticsearch\Framework\Command\ElasticsearchIndexingCommand;
 use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTaskHandler;
 use Cicada\Elasticsearch\Framework\Indexing\ElasticsearchIndexer;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Messenger\MessageBusInterface;
 

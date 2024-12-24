@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig\NamespaceHierarchy;
 
+use Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy\BundleHierarchyBuilder;
+use Cicada\Core\Framework\Bundle;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy\BundleHierarchyBuilder;
-use Cicada\Core\Framework\Bundle;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**

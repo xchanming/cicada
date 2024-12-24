@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\Media\Infrastructure\Path;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Core\Application\MediaPathStorage;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @codeCoverageIgnore (see \Cicada\Tests\Integration\Core\Content\Media\Infrastructure\Path\MediaPathStorageTest)

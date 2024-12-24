@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Rule\Rule\LineItem;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
@@ -11,6 +9,8 @@ use Cicada\Core\Checkout\Cart\Rule\LineItemRule;
 use Cicada\Core\Checkout\Cart\Rule\LineItemScope;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

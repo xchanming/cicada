@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Installer\Controller;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\TransferException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Finish\SystemLocker;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\TransferException;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

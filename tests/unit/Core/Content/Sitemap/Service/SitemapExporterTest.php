@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Content\Sitemap\Provider\CustomUrlProvider;
 use Cicada\Core\Content\Sitemap\Service\SitemapExporter;
 use Cicada\Core\Content\Sitemap\Service\SitemapHandleFactoryInterface;
@@ -17,6 +13,10 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDom
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

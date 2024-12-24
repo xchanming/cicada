@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Aggregate\ProductConfiguratorSetting;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductConfiguratorSetting\ProductConfiguratorSettingExceptionHandler;
 use Cicada\Core\Content\Product\ProductException;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

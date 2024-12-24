@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Administration\RateLimiter;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\RateLimiter\DisableRateLimiterCompilerPass;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Product\Cleanup;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Media\UnusedMediaPurger;
 use Cicada\Core\Content\Product\Aggregate\ProductDownload\ProductDownloadDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

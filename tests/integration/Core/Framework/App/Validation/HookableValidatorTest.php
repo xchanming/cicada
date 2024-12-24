@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Validation;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Validation\Error\MissingPermissionError;
 use Cicada\Core\Framework\App\Validation\Error\NotHookableError;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\App\Validation\HookableValidator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

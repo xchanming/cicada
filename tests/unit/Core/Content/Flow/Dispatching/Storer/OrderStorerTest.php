@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Storer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerRegisterEvent;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

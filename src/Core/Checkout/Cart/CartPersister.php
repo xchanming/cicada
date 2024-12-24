@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Cart;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Cart\Event\CartLoadedEvent;
 use Cicada\Core\Checkout\Cart\Event\CartSavedEvent;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('checkout')]

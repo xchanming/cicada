@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Framework\Validation;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\DecodedPurchaseStruct;
 use Cicada\Core\Framework\Validation\ValidatorFactory;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

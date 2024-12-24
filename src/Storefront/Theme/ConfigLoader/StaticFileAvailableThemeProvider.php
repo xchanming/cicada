@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Cicada\Storefront\Theme\ConfigLoader;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
+use League\Flysystem\FilesystemOperator;
 
 #[Package('storefront')]
 class StaticFileAvailableThemeProvider extends AbstractAvailableThemeProvider

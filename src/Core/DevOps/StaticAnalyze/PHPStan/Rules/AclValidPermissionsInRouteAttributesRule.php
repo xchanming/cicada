@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\PlatformRequest;
 use PhpParser\Node;
 use PhpParser\Node\Expr\Array_;
 use PhpParser\Node\Expr\ArrayItem;
@@ -13,8 +15,6 @@ use PHPStan\Node\InClassNode;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\PlatformRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
 

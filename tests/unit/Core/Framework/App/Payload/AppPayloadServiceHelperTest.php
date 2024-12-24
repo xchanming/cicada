@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Payload;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Api\Serializer\JsonEntityEncoder;
@@ -22,6 +20,8 @@ use Cicada\Core\Framework\Test\Store\StaticInAppPurchaseFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\TaxProvider\TaxProviderDefinition;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 

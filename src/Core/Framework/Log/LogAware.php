@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Log;
 
-use Monolog\Level;
 use Cicada\Core\Framework\Event\IsFlowEventAware;
+use Monolog\Level;
 
 #[IsFlowEventAware]
 #[Package('core')]

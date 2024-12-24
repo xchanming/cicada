@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Rule\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Content\Rule\RuleEvents;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableQuery;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Plugin\Event\PluginPostDeactivateEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostInstallEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostUninstallEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostUpdateEvent;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

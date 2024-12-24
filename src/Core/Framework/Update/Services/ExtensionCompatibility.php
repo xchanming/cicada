@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Update\Services;
 
-use GuzzleHttp\Exception\ClientException;
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Store\Struct\ExtensionCollection;
 use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
 use Cicada\Core\Framework\Update\Event\ExtensionCompatibilitiesResolvedEvent;
 use Cicada\Core\Framework\Update\Struct\Version;
+use GuzzleHttp\Exception\ClientException;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

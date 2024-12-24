@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

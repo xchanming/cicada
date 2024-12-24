@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilder;
@@ -25,6 +23,8 @@ use Cicada\Core\Checkout\Promotion\Cart\PromotionCalculator;
 use Cicada\Core\Checkout\Promotion\Cart\PromotionProcessor;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

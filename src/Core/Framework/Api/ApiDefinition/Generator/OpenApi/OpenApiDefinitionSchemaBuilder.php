@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi;
 
-use OpenApi\Annotations\Property;
-use OpenApi\Annotations\Schema;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
@@ -40,6 +38,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\UpdatedAtField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\VersionField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use OpenApi\Annotations\Property;
+use OpenApi\Annotations\Schema;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 #[Package('core')]

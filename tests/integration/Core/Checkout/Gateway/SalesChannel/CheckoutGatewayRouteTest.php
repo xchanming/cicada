@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Gateway\SalesChannel;
 
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Gateway\SalesChannel\CheckoutGatewayRoute;
 use Cicada\Core\Framework\App\Hmac\RequestSigner;
 use Cicada\Core\Framework\Context;
@@ -18,6 +13,11 @@ use Cicada\Core\Test\Integration\App\TestAppServer;
 use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

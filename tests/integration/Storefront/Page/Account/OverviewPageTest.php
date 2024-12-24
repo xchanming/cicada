@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Account;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Page\Account\Overview\AccountOverviewPageLoadedEvent;
 use Cicada\Storefront\Page\Account\Overview\AccountOverviewPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

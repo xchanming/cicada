@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Profiler;
 
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Elasticsearch\Profiler\ClientProfiler;
 use Cicada\Elasticsearch\Profiler\DataCollector;
 use Cicada\Elasticsearch\Profiler\ElasticsearchProfileCompilerPass;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception as DBALException;
 use Cicada\Core\Checkout\Cart\AbstractRuleLoader;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Content\Flow\Dispatching\Action\FlowAction;
@@ -21,6 +19,8 @@ use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\FlowState;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\FlowException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

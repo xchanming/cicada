@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\SalesChannel\Context;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Exception\CustomerNotLoggedInException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -23,6 +21,8 @@ use Cicada\Core\System\Tax\TaxRuleType\IndividualStatesRuleTypeFilter;
 use Cicada\Core\System\Tax\TaxRuleType\ZipCodeRangeRuleTypeFilter;
 use Cicada\Core\System\Tax\TaxRuleType\ZipCodeRuleTypeFilter;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

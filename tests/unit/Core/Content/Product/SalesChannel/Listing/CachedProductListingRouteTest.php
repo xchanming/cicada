@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Events\ProductListingRouteCacheKeyEvent;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\SalesChannel\Listing\AbstractProductListingRoute;
@@ -23,6 +20,9 @@ use Cicada\Core\System\Country\Event\CountryRouteCacheKeyEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Cache\CacheInterface;

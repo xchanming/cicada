@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Gateway\Command\Executor;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
-use Psr\Log\LogLevel;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Gateway\CheckoutGatewayException;
 use Cicada\Core\Checkout\Gateway\CheckoutGatewayResponse;
@@ -20,6 +16,10 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayCommand;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
+use Psr\Log\LogLevel;
 
 /**
  * @internal

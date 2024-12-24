@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\Provider;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\LandingPage\LandingPageCollection;
 use Cicada\Core\Content\LandingPage\LandingPageEntity;
 use Cicada\Core\Content\Seo\SeoUrl\SeoUrlCollection;
@@ -22,6 +20,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouterInterface;
 
 /**

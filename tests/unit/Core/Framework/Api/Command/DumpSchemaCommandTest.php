@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\EntitySchemaGenerator;
 use Cicada\Core\Framework\Api\Command\DumpSchemaCommand;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

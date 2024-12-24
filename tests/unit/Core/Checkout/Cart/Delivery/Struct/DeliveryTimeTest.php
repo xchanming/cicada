@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Delivery\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\DeliveryTime;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

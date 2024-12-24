@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Authentication;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Store\Authentication\LocaleProvider;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

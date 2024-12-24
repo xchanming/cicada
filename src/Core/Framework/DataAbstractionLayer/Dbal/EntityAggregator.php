@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
@@ -51,6 +50,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\EntityScoreQueryBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\SearchTermInterpreter;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * Allows to execute aggregated queries for all entities in the system

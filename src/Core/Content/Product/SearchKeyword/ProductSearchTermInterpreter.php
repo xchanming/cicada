@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Content\Product\SearchKeyword;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Filter\AbstractTokenFilter;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\TokenizerInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\ArrayNormalizer;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 
 #[Package('buyers-experience')]
 class ProductSearchTermInterpreter implements ProductSearchTermInterpreterInterface

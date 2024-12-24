@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache\ReverseProxy;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\AbstractCacheTracer;
 use Cicada\Core\Framework\Adapter\Cache\CacheStateSubscriber;
 use Cicada\Core\Framework\Adapter\Cache\CacheTagCollector;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\AbstractReverseProxyGateway
 use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\ReverseProxyCache;
 use Cicada\Core\Framework\Feature;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;

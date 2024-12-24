@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing\NotFound;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Framework\Routing\NotFound\NotFoundPageCacheKeyEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Field;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
@@ -32,6 +31,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\IpUtils;
 
 /**

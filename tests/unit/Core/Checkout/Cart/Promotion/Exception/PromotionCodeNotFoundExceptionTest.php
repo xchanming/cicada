@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Exception;
 
+use Cicada\Core\Checkout\Promotion\Exception\PromotionCodeNotFoundException;
+use Cicada\Core\Framework\Feature;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Promotion\Exception\PromotionCodeNotFoundException;
-use Cicada\Core\Framework\Feature;
 
 /**
  * @internal

@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\DevOps\Core;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

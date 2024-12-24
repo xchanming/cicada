@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Xml\Config;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\CustomEntity\Xml\Config\ConfigXmlElement;
 use Cicada\Tests\Unit\Core\System\CustomEntity\Xml\Config\Fixture\TestElement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

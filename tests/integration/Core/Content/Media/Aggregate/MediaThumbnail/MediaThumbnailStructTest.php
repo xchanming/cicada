@@ -2,8 +2,8 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Aggregate\MediaThumbnail;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailEntity;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

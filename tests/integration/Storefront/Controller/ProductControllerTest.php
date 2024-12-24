@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
@@ -29,6 +26,9 @@ use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Page\Product\QuickView\ProductQuickViewWidgetLoadedHook;
 use Cicada\Storefront\Page\Product\Review\ProductReviewsWidgetLoadedHook as ProductReviewsWidgetLoadedHookDeprecated;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\JsonResponse;

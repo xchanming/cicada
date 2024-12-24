@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductStream;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ProductStream\Aggregate\ProductStreamFilter\ProductStreamFilterCollection;
 use Cicada\Core\Content\ProductStream\ProductStreamCollection;
 use Cicada\Core\Content\ProductStream\ProductStreamEntity;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

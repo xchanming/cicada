@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Snippet;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Snippet\AppAdministrationSnippetCollection;
 use Cicada\Administration\Snippet\AppAdministrationSnippetDefinition;
 use Cicada\Administration\Snippet\AppAdministrationSnippetEntity;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Locale\LocaleCollection;
 use Cicada\Core\System\Locale\LocaleDefinition;
 use Cicada\Core\System\Locale\LocaleEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

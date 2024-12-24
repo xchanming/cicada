@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\Staging\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Maintenance\Staging\Command\SystemSetupStagingCommand;
 use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 

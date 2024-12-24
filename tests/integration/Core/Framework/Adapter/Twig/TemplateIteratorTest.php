@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\TemplateIterator;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Database;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\MigrationCollection;
 use Cicada\Core\Framework\Migration\MigrationCollectionLoader;
 use Cicada\Core\Installer\Database\DatabaseMigrator;
 use Cicada\Core\Installer\Database\MigrationCollectionFactory;
 use Cicada\Core\Kernel;
 use Cicada\Core\Maintenance\System\Service\SetupDatabaseAdapter;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

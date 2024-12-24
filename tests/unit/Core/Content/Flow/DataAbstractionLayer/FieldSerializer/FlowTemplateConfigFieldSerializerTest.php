@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Aggregate\FlowTemplate\FlowTemplateDefinition;
 use Cicada\Core\Content\Flow\DataAbstractionLayer\Field\FlowTemplateConfigField;
 use Cicada\Core\Content\Flow\DataAbstractionLayer\FieldSerializer\FlowTemplateConfigFieldSerializer;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validation;
 
 /**

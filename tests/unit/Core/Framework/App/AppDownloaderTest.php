@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App;
 
+use Cicada\Core\Framework\App\AppDownloader;
+use Cicada\Core\Framework\App\Exception\AppDownloadException;
 use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\AppDownloader;
-use Cicada\Core\Framework\App\Exception\AppDownloadException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpClient\Chunk\DataChunk;
 use Symfony\Component\HttpClient\Response\ResponseStream;

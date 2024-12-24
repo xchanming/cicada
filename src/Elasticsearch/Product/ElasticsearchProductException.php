@@ -2,9 +2,9 @@
 
 namespace Cicada\Elasticsearch\Product;
 
-use OpenSearch\Common\Exceptions\BadRequest400Exception;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
+use OpenSearch\Common\Exceptions\BadRequest400Exception;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('core')]

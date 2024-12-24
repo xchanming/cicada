@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Gateway\Command\Error;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Error\Error;
 use Cicada\Core\Checkout\Gateway\Error\CheckoutGatewayError;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

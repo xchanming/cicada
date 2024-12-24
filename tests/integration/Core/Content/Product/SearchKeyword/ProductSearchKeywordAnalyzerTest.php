@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\SearchKeyword;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductSearchConfig\ProductSearchConfigCollection;
 use Cicada\Core\Content\Product\Aggregate\ProductSearchConfig\ProductSearchConfigEntity;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

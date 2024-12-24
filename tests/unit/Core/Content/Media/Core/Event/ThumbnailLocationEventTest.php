@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Core\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Event\ThumbnailLocationEvent;
 use Cicada\Core\Content\Media\Core\Params\MediaLocationStruct;
 use Cicada\Core\Content\Media\Core\Params\ThumbnailLocationStruct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

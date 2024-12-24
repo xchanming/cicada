@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\Query\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
+use Doctrine\DBAL\Query\QueryBuilder;
 
 /**
  * Allows project overrides to change cheapest price selection

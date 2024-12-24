@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Source;
 
-use Doctrine\DBAL\Exception\ConnectionException;
-use Doctrine\DBAL\Exception\DriverException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
@@ -19,6 +15,10 @@ use Cicada\Core\Framework\Util\Filesystem;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
+use Doctrine\DBAL\Exception\ConnectionException;
+use Doctrine\DBAL\Exception\DriverException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

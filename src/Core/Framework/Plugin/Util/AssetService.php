@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Plugin\Util;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatch;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInput;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Plugin\Exception\PluginNotFoundException;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
 use Cicada\Core\Framework\Plugin\PluginException;
 use Cicada\Core\Framework\Util\Hasher;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;

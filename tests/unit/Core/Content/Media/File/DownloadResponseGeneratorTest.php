@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\File;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\UnableToGenerateTemporaryUrl;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\StreamInterface;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator;
 use Cicada\Core\Content\Media\File\DownloadResponseGenerator;
 use Cicada\Core\Content\Media\MediaEntity;
@@ -20,6 +12,14 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseHelper\AssertResponseHelper;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\Filesystem;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\UnableToGenerateTemporaryUrl;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\StreamInterface;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;

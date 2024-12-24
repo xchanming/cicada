@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Flow\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Flow\Event\Event;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

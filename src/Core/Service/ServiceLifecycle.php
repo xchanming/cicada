@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Service;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

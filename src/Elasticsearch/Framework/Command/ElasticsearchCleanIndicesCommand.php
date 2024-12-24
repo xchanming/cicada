@@ -2,9 +2,9 @@
 
 namespace Cicada\Elasticsearch\Framework\Command;
 
-use OpenSearch\Client;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Framework\ElasticsearchOutdatedIndexDetector;
+use OpenSearch\Client;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

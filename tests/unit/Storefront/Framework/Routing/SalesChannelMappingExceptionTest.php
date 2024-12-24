@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing;
 
+use Cicada\Storefront\Framework\Routing\Exception\SalesChannelMappingException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Storefront\Framework\Routing\Exception\SalesChannelMappingException;
 
 /**
  * @internal

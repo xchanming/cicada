@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Commands;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Command\RefreshIndexCommand;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\NavigationPageSeoUrlRoute;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

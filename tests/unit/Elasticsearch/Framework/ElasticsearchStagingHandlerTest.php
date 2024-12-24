@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchOutdatedIndexDetector;
 use Cicada\Elasticsearch\Framework\ElasticsearchStagingHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**

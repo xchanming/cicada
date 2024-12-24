@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Migration\Administration\V6_6;
 
+use Cicada\Administration\Migration\V6_6\Migration1726132532ExpandNotificationMessage;
+use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Administration\Migration\V6_6\Migration1726132532ExpandNotificationMessage;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 
 /**
  * @internal

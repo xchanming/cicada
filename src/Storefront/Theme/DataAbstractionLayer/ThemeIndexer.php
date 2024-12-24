@@ -2,8 +2,6 @@
 
 namespace Cicada\Storefront\Theme\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IterableQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableTransaction;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Storefront\Theme\Event\ThemeIndexerEvent;
 use Cicada\Storefront\Theme\ThemeDefinition;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Asset;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Asset\AssetInstallCommand;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Plugin\Util\AssetService;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\Filesystem;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

@@ -2,13 +2,13 @@
 
 namespace Cicada\Administration\Dashboard;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Price\CashRounding;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

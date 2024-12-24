@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
+use Cicada\Storefront\Theme\MD5ThemePathBuilder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Storefront\Theme\MD5ThemePathBuilder;
 
 /**
  * @internal

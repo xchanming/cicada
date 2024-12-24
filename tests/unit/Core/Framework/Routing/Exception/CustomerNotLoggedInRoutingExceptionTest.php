@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing\Exception;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Routing\Exception\CustomerNotLoggedInRoutingException;
 use Cicada\Core\Framework\Routing\RoutingException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

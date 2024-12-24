@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Installer;
 
-use Composer\InstalledVersions;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\VersionParser;
+use Composer\InstalledVersions;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Bundle\TwigBundle\TwigBundle;

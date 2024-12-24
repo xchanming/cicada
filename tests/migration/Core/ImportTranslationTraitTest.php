@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Migration\Core;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -12,6 +10,8 @@ use Cicada\Core\Migration\Traits\ImportTranslationsTrait;
 use Cicada\Core\Migration\Traits\Translations;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Tests\Migration\MigrationTestTrait;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

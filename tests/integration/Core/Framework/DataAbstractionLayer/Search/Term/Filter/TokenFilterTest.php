@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Search\Term\Filter;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Filter\TokenFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

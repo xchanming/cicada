@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber;
 
-use PHPUnit\Event\Telemetry\Duration;
-use PHPUnit\Event\Telemetry\HRTime;
-use PHPUnit\Event\Test\Finished;
-use PHPUnit\Event\Test\FinishedSubscriber;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\Common\TimeKeeper;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogExtension;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogPayload;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogPayloadCollection;
+use PHPUnit\Event\Telemetry\Duration;
+use PHPUnit\Event\Telemetry\HRTime;
+use PHPUnit\Event\Test\Finished;
+use PHPUnit\Event\Test\FinishedSubscriber;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\TestCaseBase;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\ExpectationFailedException;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

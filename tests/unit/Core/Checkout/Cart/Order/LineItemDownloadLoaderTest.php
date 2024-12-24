@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Order;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Order\LineItemDownloadLoader;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Content\Product\Aggregate\ProductDownload\ProductDownloadEntity;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

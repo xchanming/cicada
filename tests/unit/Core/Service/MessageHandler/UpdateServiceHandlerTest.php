@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Service\MessageHandler;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Service\Message\UpdateServiceMessage;
 use Cicada\Core\Service\MessageHandler\UpdateServiceHandler;
 use Cicada\Core\Service\ServiceLifecycle;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

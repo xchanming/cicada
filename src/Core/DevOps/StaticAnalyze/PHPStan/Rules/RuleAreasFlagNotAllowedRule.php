@@ -2,6 +2,10 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Content\Rule\RuleDefinition;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\RuleAreas;
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Expr\New_;
@@ -12,10 +16,6 @@ use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Content\Rule\RuleDefinition;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\RuleAreas;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @implements Rule<MethodCall>

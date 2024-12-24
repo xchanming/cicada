@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\User\Recovery;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -29,6 +26,9 @@ use Cicada\Core\System\User\UserDefinition;
 use Cicada\Core\System\User\UserEntity;
 use Cicada\Core\System\User\UserException;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Routing\RouterInterface;
 

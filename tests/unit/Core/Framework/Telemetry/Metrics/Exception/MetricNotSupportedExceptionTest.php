@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Telemetry\Metrics\Exception;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfig;
 use Cicada\Core\Framework\Telemetry\Metrics\Exception\MetricNotSupportedException;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\Metric;
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\Type;
 use Cicada\Core\Framework\Telemetry\Metrics\MetricTransportInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

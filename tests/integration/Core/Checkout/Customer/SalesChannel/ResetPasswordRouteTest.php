@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\SalesChannel;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerRecovery\CustomerRecoveryEntity;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
@@ -20,6 +18,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

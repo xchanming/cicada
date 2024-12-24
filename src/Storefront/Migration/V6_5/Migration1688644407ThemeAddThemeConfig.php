@@ -2,9 +2,9 @@
 
 namespace Cicada\Storefront\Migration\V6_5;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

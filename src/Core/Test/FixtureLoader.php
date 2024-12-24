@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Test;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Sync\SyncOperation;
 use Cicada\Core\Framework\Context;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriterInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

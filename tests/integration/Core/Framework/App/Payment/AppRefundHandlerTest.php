@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Payment;
 
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Response;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStates;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
 use Cicada\Core\Framework\App\Payment\Response\RefundResponse;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\Stock;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Checkout\Order\OrderStates;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\StateMachine\Event\StateMachineTransitionEvent;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

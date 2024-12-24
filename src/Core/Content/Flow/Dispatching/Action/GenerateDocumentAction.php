@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching\Action;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
 use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
 use Cicada\Core\Checkout\Document\Service\DocumentGenerator;
@@ -12,6 +11,7 @@ use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

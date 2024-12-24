@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\DataAbstractionLayer\PaymentMethodValidator;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
@@ -18,6 +14,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

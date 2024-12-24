@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\MessageQueue\Command;
 
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Scheduler\TaskScheduler;
 use Cicada\Core\Framework\Util\MemorySizeCalculator;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

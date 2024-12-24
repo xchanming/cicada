@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -14,6 +13,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Storefront\Page\LandingPage\LandingPageLoadedHook;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

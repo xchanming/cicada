@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Cms\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\CmsException;
 use Cicada\Core\Content\Cms\Exception\PageNotFoundException;
 use Cicada\Core\Content\Cms\Subscriber\CmsPageDefaultChangeSubscriber;
@@ -17,6 +14,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

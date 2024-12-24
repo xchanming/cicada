@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Services;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\CompiledFieldCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityWriteGateway;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\System\UsageData\Services\UsageDataAllowListService;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

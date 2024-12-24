@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\Aggregate\PaymentMethodTranslation\PaymentMethodTranslationCollection;
 use Cicada\Core\Checkout\Payment\Aggregate\PaymentMethodTranslation\PaymentMethodTranslationEntity;
 use Cicada\Core\Checkout\Payment\DataAbstractionLayer\PaymentDistinguishableNameGenerator;
@@ -21,6 +19,8 @@ use Cicada\Core\Framework\Plugin\Aggregate\PluginTranslation\PluginTranslationEn
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

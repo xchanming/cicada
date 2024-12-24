@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
+use Cicada\Elasticsearch\Product\SearchFieldConfig;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Product\SearchFieldConfig;
 
 /**
  * @internal

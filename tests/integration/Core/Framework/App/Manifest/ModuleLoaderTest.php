@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Manifest;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Manifest\ModuleLoader;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Framework\Context;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

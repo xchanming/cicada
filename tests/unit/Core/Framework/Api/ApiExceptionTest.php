@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceException;
 use Cicada\Core\Framework\Api\Controller\Exception\ExpectedUserHttpException;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Exception\MissingReverseAssociati
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\Exception\SalesChannelNotFoundException;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;

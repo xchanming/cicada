@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\JWT\Constraints;
 
-use Lcobucci\JWT\Encoding\JoseEncoder;
-use Lcobucci\JWT\Token\Parser;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\JWT\Constraints\MatchesLicenceDomain;
 use Cicada\Core\Framework\JWT\JWTException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\StoreService;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Lcobucci\JWT\Encoding\JoseEncoder;
+use Lcobucci\JWT\Token\Parser;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

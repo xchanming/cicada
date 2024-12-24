@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use GuzzleHttp\ClientInterface;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\ClientInterface;
 
 /**
  * @internal

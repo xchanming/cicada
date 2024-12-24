@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\TypeDetector;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\MediaFile;
 use Cicada\Core\Content\Media\MediaException;
 use Cicada\Core\Content\Media\MediaType\ImageType;
@@ -11,6 +9,8 @@ use Cicada\Core\Content\Media\MediaType\VideoType;
 use Cicada\Core\Content\Media\TypeDetector\ImageTypeDetector;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

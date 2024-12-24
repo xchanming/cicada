@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Dbal;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
 use Cicada\Core\Checkout\Order\OrderDefinition;
@@ -24,6 +21,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateDefinition;
 use Cicada\Core\System\StateMachine\StateMachineDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

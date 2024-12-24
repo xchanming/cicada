@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal not intended for decoration or replacement

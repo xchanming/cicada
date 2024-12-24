@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CustomCartProcessor;
@@ -18,6 +16,8 @@ use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Content\Product\State;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

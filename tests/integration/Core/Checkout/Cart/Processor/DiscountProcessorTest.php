@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Processor;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\LineItem\CartDataCollection;
@@ -27,6 +25,8 @@ use Cicada\Tests\Integration\Core\Checkout\Cart\Processor\_fixtures\CalculatedTa
 use Cicada\Tests\Integration\Core\Checkout\Cart\Processor\_fixtures\HighTaxes;
 use Cicada\Tests\Integration\Core\Checkout\Cart\Processor\_fixtures\LowTaxes;
 use Cicada\Tests\Integration\Core\Checkout\Cart\Processor\_fixtures\PercentageItem;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

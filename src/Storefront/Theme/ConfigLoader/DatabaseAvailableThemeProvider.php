@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace Cicada\Storefront\Theme\ConfigLoader;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 #[Package('storefront')]
 class DatabaseAvailableThemeProvider extends AbstractAvailableThemeProvider

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\TaxProvider;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\AmountCalculator;
 use Cicada\Core\Checkout\Cart\TaxProvider\TaxAdjustment;
 use Cicada\Core\Checkout\Cart\TaxProvider\TaxAdjustmentCalculator;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

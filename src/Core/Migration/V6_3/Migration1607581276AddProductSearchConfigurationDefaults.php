@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Migration\V6_3;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Product\Aggregate\ProductSearchConfig\ProductSearchConfigDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductSearchConfigField\ProductSearchConfigFieldDefinition;
 use Cicada\Core\Defaults;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Migration\Traits\ImportTranslationsTrait;
 use Cicada\Core\Migration\Traits\Translations;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

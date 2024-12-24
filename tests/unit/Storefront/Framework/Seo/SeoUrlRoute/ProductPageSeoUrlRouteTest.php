@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Seo\SeoUrlRoute;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

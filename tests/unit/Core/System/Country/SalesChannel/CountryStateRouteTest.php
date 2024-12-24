@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\Country\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\Event\AddCacheTagEvent;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Context;
@@ -18,6 +16,8 @@ use Cicada\Core\System\Country\SalesChannel\CountryStateRoute;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

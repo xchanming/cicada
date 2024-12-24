@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Api\MediaUploadController;
 use Cicada\Core\Content\Media\File\FileNameProvider;
 use Cicada\Core\Content\Media\File\FileSaver;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\Api\Response\ResponseFactoryInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

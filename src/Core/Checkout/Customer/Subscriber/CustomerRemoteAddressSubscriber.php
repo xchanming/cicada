@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Checkout\Customer\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\Event\CustomerLoginEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\IpUtils;
 use Symfony\Component\HttpFoundation\RequestStack;

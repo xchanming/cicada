@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Checkout\Order\Api;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Driver\Exception;
 use Cicada\Core\Checkout\Order\SalesChannel\OrderService;
 use Cicada\Core\Checkout\Payment\Cart\PaymentRefundProcessor;
 use Cicada\Core\Checkout\Payment\PaymentException;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Driver\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

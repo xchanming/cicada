@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\AfterLineItemAddedEvent;
 use Cicada\Core\Checkout\Cart\Event\AfterLineItemQuantityChangedEvent;
 use Cicada\Core\Checkout\Cart\Event\AfterLineItemRemovedEvent;
@@ -37,6 +35,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Controller\AccountOrderController;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

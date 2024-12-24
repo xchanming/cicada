@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Kernel;
 
+use Cicada\Core\Framework\Adapter\Kernel\KernelFactory;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Kernel;
+use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
 use Composer\Autoload\ClassLoader;
 use Composer\InstalledVersions;
 use Doctrine\DBAL\Driver\Middleware;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Kernel\KernelFactory;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Kernel;
-use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
 
 /**
  * @internal

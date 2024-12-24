@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Exception;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\EntityRepositoryNotFoundException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

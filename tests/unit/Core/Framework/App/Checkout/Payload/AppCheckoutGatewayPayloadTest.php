@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Checkout\Payload;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Checkout\Payload\AppCheckoutGatewayPayload;
 use Cicada\Core\Framework\App\Payload\Source;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

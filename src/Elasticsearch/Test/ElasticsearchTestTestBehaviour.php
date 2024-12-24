@@ -2,10 +2,6 @@
 
 namespace Cicada\Elasticsearch\Test;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\After;
-use PHPUnit\Framework\Attributes\Before;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityAggregator;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntitySearcher;
@@ -17,6 +13,10 @@ use Cicada\Elasticsearch\Framework\DataAbstractionLayer\CriteriaParser;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\ElasticsearchEntityAggregator;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\ElasticsearchEntitySearcher;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\Before;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\DependencyInjection\ContainerInterface;

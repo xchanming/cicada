@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\SalesChannelContextAssembledEvent;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

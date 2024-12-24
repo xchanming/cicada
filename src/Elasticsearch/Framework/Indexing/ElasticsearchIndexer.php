@@ -2,9 +2,6 @@
 
 namespace Cicada\Elasticsearch\Framework\Indexing;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -15,6 +12,9 @@ use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchRegistry;
 use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexIteratorEvent;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;

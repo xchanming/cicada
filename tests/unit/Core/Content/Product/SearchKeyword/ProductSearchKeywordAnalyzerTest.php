@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SearchKeyword;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchKeywordAnalyzer;
 use Cicada\Core\Framework\Context;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Filter\TokenFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Tokenizer;
 use Cicada\Core\System\Tag\TagCollection;
 use Cicada\Core\System\Tag\TagEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

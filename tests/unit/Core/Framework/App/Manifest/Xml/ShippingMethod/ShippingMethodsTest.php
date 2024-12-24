@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Manifest\Xml\ShippingMethod;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Manifest\Xml\ShippingMethod\ShippingMethod;
 use Cicada\Core\Framework\App\Manifest\Xml\ShippingMethod\ShippingMethods;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Util\XmlUtils;
 
 /**

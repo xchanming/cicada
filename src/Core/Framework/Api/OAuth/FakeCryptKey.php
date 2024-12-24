@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Log\Package;
 use Lcobucci\JWT\Configuration;
 use League\OAuth2\Server\CryptKey;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

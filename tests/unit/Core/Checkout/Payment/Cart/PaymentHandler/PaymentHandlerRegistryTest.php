@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Cart\PaymentHandler;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Query\QueryBuilder;
-use Doctrine\DBAL\Result;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Payment\Cart\AsyncPaymentTransactionStruct;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
@@ -31,6 +26,11 @@ use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\DBAL\Result;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

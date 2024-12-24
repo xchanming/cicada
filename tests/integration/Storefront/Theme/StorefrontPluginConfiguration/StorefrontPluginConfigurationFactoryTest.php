@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme\StorefrontPluginConfiguration;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Framework\ThemeInterface;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\AbstractStorefrontPluginConfigurationFactory;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\FileCollection;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationFactory;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

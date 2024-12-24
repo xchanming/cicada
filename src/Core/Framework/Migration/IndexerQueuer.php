@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Migration;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 class IndexerQueuer

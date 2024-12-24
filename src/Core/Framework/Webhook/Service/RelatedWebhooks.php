@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
 
 /**
  * @internal

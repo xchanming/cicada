@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\Filter\ReplaceRecursiveFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Twig\TwigFilter;
 
 /**

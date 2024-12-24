@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\App;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\App\AppStateService;
@@ -18,6 +17,7 @@ use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Theme\Exception\ThemeAssignmentException;
 use Cicada\Storefront\Theme\ThemeService;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher;
 

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App;
 
+use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Cicada\Core\Test\Integration\App\GuzzleHistoryCollector;
+use Cicada\Core\Test\Integration\App\TestAppServer;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Promise\PromiseInterface;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
-use Cicada\Core\Test\Integration\App\GuzzleHistoryCollector;
-use Cicada\Core\Test\Integration\App\TestAppServer;
 
 /**
  * @deprecated tag:v6.7.0 - reason:becomes-internal - Will be internal in v6.7.0

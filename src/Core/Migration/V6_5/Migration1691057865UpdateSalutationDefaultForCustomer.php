@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Migration\V6_5;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\System\Salutation\SalutationDefinition;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 
 /**
  * @internal

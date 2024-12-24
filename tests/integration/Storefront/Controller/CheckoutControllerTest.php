@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Error\Error;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
@@ -50,6 +47,9 @@ use Cicada\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedHook;
 use Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoadedHook;
 use Cicada\Storefront\Page\Checkout\Offcanvas\CheckoutInfoWidgetLoadedHook;
 use Cicada\Storefront\Page\Checkout\Offcanvas\CheckoutOffcanvasWidgetLoadedHook;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\RedirectResponse;

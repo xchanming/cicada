@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Exception\InvalidFileAccessTokenException;
 use Cicada\Core\Content\ImportExport\Service\DownloadService;
 use Cicada\Core\Defaults;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

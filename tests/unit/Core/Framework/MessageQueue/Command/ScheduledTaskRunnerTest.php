@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Command;
 
+use Cicada\Core\Framework\MessageQueue\Command\ScheduledTaskRunner;
+use Cicada\Core\Framework\MessageQueue\ScheduledTask\Scheduler\TaskScheduler;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Cache\CacheItemPoolInterface;
-use Cicada\Core\Framework\MessageQueue\Command\ScheduledTaskRunner;
-use Cicada\Core\Framework\MessageQueue\ScheduledTask\Scheduler\TaskScheduler;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

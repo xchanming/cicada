@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

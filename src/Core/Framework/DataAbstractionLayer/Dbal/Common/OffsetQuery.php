@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common;
 
-use Doctrine\DBAL\Query\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Query\QueryBuilder;
 
 #[Package('core')]
 class OffsetQuery implements IterableQuery

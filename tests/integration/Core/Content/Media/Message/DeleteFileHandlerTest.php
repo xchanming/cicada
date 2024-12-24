@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Message;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Message\DeleteFileHandler;
 use Cicada\Core\Content\Media\Message\DeleteFileMessage;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

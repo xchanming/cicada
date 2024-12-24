@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\EventDispatcher\EventDispatcherInterface;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler;
@@ -26,6 +22,10 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceInterface;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

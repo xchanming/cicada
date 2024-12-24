@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\DevOps\Core\DevOps\StaticAnalyse\PHPStan\Rules\Tests;
 
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\MockingSimpleObjectsNotAllowedRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\MockingSimpleObjectsNotAllowedRule;
 
 /**
  * @internal

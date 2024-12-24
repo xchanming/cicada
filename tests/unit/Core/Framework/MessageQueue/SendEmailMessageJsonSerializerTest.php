@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue;
 
+use Cicada\Core\Framework\MessageQueue\SendEmailMessageJsonSerializer;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\MessageQueue\SendEmailMessageJsonSerializer;
 use Symfony\Component\Mailer\Messenger\SendEmailMessage;
 use Symfony\Component\Mime\RawMessage;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;

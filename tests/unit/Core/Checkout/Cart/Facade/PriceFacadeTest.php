@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Facade;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\PriceFacade;
 use Cicada\Core\Checkout\Cart\Facade\ScriptPriceStubs;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
@@ -30,6 +26,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\PriceCollection;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -8,11 +8,11 @@ use AsyncAws\Core\Request;
 use AsyncAws\Core\RequestContext;
 use AsyncAws\Core\Signer\SignerV4;
 use AsyncAws\Core\Stream\StringStream;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Elasticsearch\ElasticsearchException;
 use GuzzleHttp\Ring\Future\CompletedFutureArray;
 use OpenSearch\ClientBuilder;
 use Psr\Log\LoggerInterface;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Elasticsearch\ElasticsearchException;
 
 /**
  * @internal

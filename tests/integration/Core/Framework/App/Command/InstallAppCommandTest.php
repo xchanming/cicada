@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Command;
 
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 use Cicada\Core\Framework\App\Command\AppPrinter;
 use Cicada\Core\Framework\App\Command\InstallAppCommand;
 use Cicada\Core\Framework\App\Lifecycle\AppLifecycle;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\App\Lifecycle\AppLoader;
 use Cicada\Core\Framework\App\Validation\ManifestValidator;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 

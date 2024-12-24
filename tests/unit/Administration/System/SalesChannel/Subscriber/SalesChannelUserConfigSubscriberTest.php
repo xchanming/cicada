@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\System\SalesChannel\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\System\SalesChannel\Subscriber\SalesChannelUserConfigSubscriber;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -17,6 +14,9 @@ use Cicada\Core\System\SalesChannel\SalesChannelEvents;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigCollection;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigDefinition;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

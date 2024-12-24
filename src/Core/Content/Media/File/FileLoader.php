@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Content\Media\File;
 
-use League\Flysystem\FilesystemOperator;
-use Psr\Http\Message\StreamFactoryInterface;
-use Psr\Http\Message\StreamInterface;
 use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Content\Media\MediaException;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
+use Psr\Http\Message\StreamFactoryInterface;
+use Psr\Http\Message\StreamInterface;
 
 #[Package('buyers-experience')]
 class FileLoader

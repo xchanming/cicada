@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Xml\Config\AdminUi;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\CustomEntity\Exception\CustomEntityXmlParsingException;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\AdminUiXmlSchema;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\AdminUi;
@@ -16,6 +14,8 @@ use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\Entity;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\Listing;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\Tab;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\Tabs;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

@@ -2,6 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Cart\Token;
 
+use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
+use Cicada\Core\Checkout\Payment\Cart\Token\JWTFactoryV2;
+use Cicada\Core\Checkout\Payment\Cart\Token\TokenStruct;
+use Cicada\Core\Checkout\Payment\PaymentException;
+use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Core\Test\Stub\Checkout\Payment\Cart\Token\TestKey;
+use Cicada\Core\Test\Stub\Checkout\Payment\Cart\Token\TestSigner;
 use Doctrine\DBAL\Connection;
 use Lcobucci\Clock\FrozenClock;
 use Lcobucci\JWT\Configuration;
@@ -12,13 +19,6 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
-use Cicada\Core\Checkout\Payment\Cart\Token\JWTFactoryV2;
-use Cicada\Core\Checkout\Payment\Cart\Token\TokenStruct;
-use Cicada\Core\Checkout\Payment\PaymentException;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Test\Stub\Checkout\Payment\Cart\Token\TestKey;
-use Cicada\Core\Test\Stub\Checkout\Payment\Cart\Token\TestSigner;
 
 /**
  * @internal

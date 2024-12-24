@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity\CountrySerializer;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\SerializerRegistry;
 use Cicada\Core\Content\ImportExport\Struct\Config;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\Country\CountryDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

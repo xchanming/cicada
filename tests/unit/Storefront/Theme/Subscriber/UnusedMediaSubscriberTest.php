@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Event\UnusedMediaSearchEvent;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Storefront\Theme\Subscriber\UnusedMediaSubscriber;
 use Cicada\Storefront\Theme\ThemeService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

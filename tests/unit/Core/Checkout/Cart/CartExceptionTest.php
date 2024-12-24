@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Error\Error;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Cart\Error\GenericCartError;
 use Cicada\Core\Checkout\Shipping\ShippingException;
 use Cicada\Core\Framework\Feature;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\App\Hmac;
 
+use Cicada\Core\Framework\Log\Package;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class RequestSigner

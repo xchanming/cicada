@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Feature;
 
-use Doctrine\DBAL\Exception as DBALException;
 use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Feature\Event\BeforeFeatureFlagToggleEvent;
 use Cicada\Core\Framework\Feature\Event\FeatureFlagToggledEvent;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryEntity;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

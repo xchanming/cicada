@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Script\Exception;
 
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\ScriptException;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 

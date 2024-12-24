@@ -2,6 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi;
 
+use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use OpenApi\Annotations\Delete;
 use OpenApi\Annotations\Get;
 use OpenApi\Annotations\Parameter;
@@ -10,9 +13,6 @@ use OpenApi\Annotations\PathItem;
 use OpenApi\Annotations\Post;
 use OpenApi\Annotations\Response as OpenApiResponse;
 use OpenApi\Annotations\Tag;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 

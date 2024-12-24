@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Event;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\App\Event\CustomAppEvent;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('services-settings')]

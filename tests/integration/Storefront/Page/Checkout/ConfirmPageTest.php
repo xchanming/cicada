@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Checkout;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Address\Error\AddressValidationError;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
@@ -17,6 +15,8 @@ use Cicada\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedEvent;
 use Cicada\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
 use Cicada\Tests\Integration\Storefront\Page\StorefrontPageTestConstants;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

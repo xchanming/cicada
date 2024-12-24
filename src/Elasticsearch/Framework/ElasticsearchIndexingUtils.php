@@ -2,11 +2,11 @@
 
 namespace Cicada\Elasticsearch\Framework;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Event\ElasticsearchCustomFieldsMappingEvent;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

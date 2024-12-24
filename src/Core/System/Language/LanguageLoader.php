@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\System\Language;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @phpstan-import-type LanguageData from LanguageLoaderInterface

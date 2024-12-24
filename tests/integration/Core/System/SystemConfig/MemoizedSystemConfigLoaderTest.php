@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\System\SystemConfig;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\System\SystemConfig\CachedSystemConfigLoader;
 use Cicada\Core\System\SystemConfig\ConfiguredSystemConfigLoader;
 use Cicada\Core\System\SystemConfig\MemoizedSystemConfigLoader;
 use Cicada\Core\System\SystemConfig\SystemConfigLoader;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

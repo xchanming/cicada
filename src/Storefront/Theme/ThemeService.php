@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Administration\Notification\NotificationService;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -20,6 +19,7 @@ use Cicada\Storefront\Theme\Exception\InvalidThemeConfigException;
 use Cicada\Storefront\Theme\Exception\ThemeException;
 use Cicada\Storefront\Theme\Message\CompileThemeMessage;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\Service\ResetInterface;

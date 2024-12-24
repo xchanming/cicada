@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\MessageQueue\Command\ListScheduledTaskCommand;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry\TaskRegistry;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskCollection;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskDefinition;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

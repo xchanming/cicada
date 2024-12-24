@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\UsageData\EntitySync;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\ParameterType;
-use Monolog\Logger;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
@@ -30,6 +25,11 @@ use Cicada\Core\System\UsageData\EntitySync\Operation;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\Stub\MessageBus\CollectingMessageBus;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\ParameterType;
+use Monolog\Logger;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 use Symfony\Contracts\HttpClient\ResponseInterface;

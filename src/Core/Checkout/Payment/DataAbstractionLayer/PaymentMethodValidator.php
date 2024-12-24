@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Checkout\Payment\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PreWriteValidationEvent;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

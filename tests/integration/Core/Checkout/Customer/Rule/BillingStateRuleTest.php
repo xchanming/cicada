@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Rule\BillingStateRule;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionCollection;
 use Cicada\Core\Content\Rule\RuleCollection;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

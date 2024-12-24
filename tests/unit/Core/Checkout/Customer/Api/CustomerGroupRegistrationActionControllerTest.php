@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\Api;
 
-use Doctrine\DBAL\Exception;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupDefinition;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
@@ -21,6 +16,11 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextRestorer;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Exception;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

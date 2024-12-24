@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\CustomField\Api;
 
+use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 
 /**
  * @internal

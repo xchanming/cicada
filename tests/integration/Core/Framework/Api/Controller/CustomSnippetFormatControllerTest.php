@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

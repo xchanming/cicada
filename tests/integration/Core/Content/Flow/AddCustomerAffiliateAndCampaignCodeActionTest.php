@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\Event\CustomerLoginEvent;
 use Cicada\Core\Content\Flow\Dispatching\Action\AddCustomerAffiliateAndCampaignCodeAction;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\CacheTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

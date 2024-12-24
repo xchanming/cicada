@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Stock;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\PriceDefinitionFactory;
@@ -40,6 +35,11 @@ use Cicada\Core\System\StateMachine\StateMachineRegistry;
 use Cicada\Core\System\StateMachine\Transition;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

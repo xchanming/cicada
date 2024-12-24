@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Price;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\AmountCalculator;
 use Cicada\Core\Checkout\Cart\Price\CashRounding;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
@@ -21,6 +18,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

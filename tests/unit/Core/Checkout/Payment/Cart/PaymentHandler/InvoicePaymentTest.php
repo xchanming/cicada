@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Cart\PaymentHandler;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\InvoicePayment;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerType;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,8 +2,8 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

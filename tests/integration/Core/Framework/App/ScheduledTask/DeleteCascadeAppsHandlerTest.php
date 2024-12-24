@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\ScheduledTask;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\ScheduledTask\DeleteCascadeAppsHandler;
 use Cicada\Core\Framework\App\ScheduledTask\DeleteCascadeAppsTask;
@@ -15,6 +11,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskDefinition;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

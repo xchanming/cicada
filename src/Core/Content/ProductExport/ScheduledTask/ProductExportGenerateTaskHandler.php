@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;
 

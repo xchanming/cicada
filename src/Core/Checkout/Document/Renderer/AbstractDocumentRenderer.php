@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Checkout\Document\Renderer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Document\Struct\DocumentGenerateOperation;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('checkout')]
 abstract class AbstractDocumentRenderer

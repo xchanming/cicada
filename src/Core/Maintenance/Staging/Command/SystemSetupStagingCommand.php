@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Maintenance\Staging\Command;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

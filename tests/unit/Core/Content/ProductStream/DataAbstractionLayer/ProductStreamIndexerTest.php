@@ -2,13 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ProductStream\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Query\QueryBuilder;
-use Doctrine\DBAL\Result;
-use Doctrine\DBAL\Statement;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\ProductStream\DataAbstractionLayer\ProductStreamIndexer;
@@ -24,6 +17,13 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Parser\QueryStringParser;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\DBAL\Result;
+use Doctrine\DBAL\Statement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Script\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Cache\Http\HttpCacheKeyGenerator;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber;
 
-use PHPUnit\Event\Telemetry\HRTime;
-use PHPUnit\Event\Test\Failed;
-use PHPUnit\Event\Test\FailedSubscriber;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\Common\TimeKeeper;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogPayload;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogPayloadCollection;
+use PHPUnit\Event\Telemetry\HRTime;
+use PHPUnit\Event\Test\Failed;
+use PHPUnit\Event\Test\FailedSubscriber;
 
 /**
  * @internal

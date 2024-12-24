@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
+use Cicada\Elasticsearch\Product\ElasticsearchProductException;
 use OpenSearch\Common\Exceptions\BadRequest400Exception;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Product\ElasticsearchProductException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

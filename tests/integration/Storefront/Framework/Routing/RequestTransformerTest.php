@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Routing;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoResolver;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
@@ -20,6 +17,9 @@ use Cicada\Storefront\Framework\Routing\DomainLoader;
 use Cicada\Storefront\Framework\Routing\Exception\SalesChannelMappingException;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Test\Framework\Routing\Helper\ExpectedRequest;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

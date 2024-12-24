@@ -19,10 +19,6 @@ parameters:
         consoleApplicationLoader: src/Core/DevOps/StaticAnalyze/console-application.php
 
     excludePaths:
-        - src/WebInstaller/Resources/
-        - src/WebInstaller/stub.php
-        - src/WebInstaller/vendor(?)
-        - src/WebInstaller/Tests/_fixtures
 
         # vendor patches over autoload files
         - src/Core/Framework/Adapter/Doctrine/Patch/AbstractAsset.php

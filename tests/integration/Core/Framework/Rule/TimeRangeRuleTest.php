@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Rule;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionCollection;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionEntity;
 use Cicada\Core\Framework\Context;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Rule\TimeRangeRule;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

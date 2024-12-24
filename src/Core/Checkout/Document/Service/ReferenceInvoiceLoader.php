@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Checkout\Document\Service;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal - Fetch the $referenceDocumentId if set, otherwise fetch the latest document

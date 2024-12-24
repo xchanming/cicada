@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Exception;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Store\Exception\StoreApiException;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Store\Exception\StoreApiException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

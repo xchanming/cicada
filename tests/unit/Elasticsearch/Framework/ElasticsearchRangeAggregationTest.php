@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
+use Cicada\Elasticsearch\Framework\ElasticsearchRangeAggregation;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Framework\ElasticsearchRangeAggregation;
 
 /**
  * @internal

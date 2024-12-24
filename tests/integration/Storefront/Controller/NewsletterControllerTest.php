@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientEntity;
@@ -19,6 +18,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Response;
 

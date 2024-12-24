@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Elasticsearch\Framework\Command\ElasticsearchUpdateMappingCommand;
 use Cicada\Elasticsearch\Framework\Indexing\IndexMappingUpdater;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Migration;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class MakeVersionableMigrationHelper

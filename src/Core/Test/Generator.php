@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Test;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\Delivery;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\DeliveryCollection;
@@ -38,6 +37,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

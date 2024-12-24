@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field\ScalarTypeSerializer;
 use Cicada\Core\Content\ImportExport\ImportExportException;
 use Cicada\Core\Content\ImportExport\Processing\Mapping\Mapping;
@@ -12,6 +9,9 @@ use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\IntField;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

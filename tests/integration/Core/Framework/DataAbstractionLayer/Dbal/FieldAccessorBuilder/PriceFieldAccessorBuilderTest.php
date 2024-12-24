@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder\PriceFieldAccessorBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\PriceField;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

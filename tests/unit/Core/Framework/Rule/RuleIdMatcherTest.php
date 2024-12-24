@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Contract\IdAware;
 use Cicada\Core\Framework\DataAbstractionLayer\Contract\RuleIdAware;
 use Cicada\Core\Framework\Log\Package;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Rule\RuleIdMatcher;
 use Cicada\Core\Framework\Struct\Collection;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

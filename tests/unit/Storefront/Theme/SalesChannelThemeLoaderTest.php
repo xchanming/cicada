@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
+use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Core\Test\Annotation\DisabledFeatures;
+use Cicada\Storefront\Theme\SalesChannelThemeLoader;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
-use Cicada\Storefront\Theme\SalesChannelThemeLoader;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Elasticsearch\Product;
 
-use OpenSearch\Client;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchRegistry;
+use OpenSearch\Client;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

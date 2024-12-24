@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\ActionButton;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActionButton\ActionButtonLoader;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

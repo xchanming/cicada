@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Media\File;
 
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\UnableToDeleteFile;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailEntity;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaPathStrategy;
 use Cicada\Core\Content\Media\Core\Event\UpdateMediaPathEvent;
@@ -26,6 +24,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\UnableToDeleteFile;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 

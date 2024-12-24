@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Validation\DataBag;
 
+use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 
 /**

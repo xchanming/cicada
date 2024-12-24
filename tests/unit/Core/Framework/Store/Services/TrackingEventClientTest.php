@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Services;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Store\Services\InstanceService;
+use Cicada\Core\Framework\Store\Services\TrackingEventClient;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -9,9 +12,6 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Store\Services\InstanceService;
-use Cicada\Core\Framework\Store\Services\TrackingEventClient;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -15,6 +13,8 @@ use Cicada\Core\System\SalesChannel\ContextTokenResponse;
 use Cicada\Core\System\SalesChannel\SalesChannel\ContextSwitchRoute;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Controller\ContextController;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RequestContext;

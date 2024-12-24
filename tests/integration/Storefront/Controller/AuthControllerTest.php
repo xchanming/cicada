@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartPersister;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
@@ -52,6 +50,8 @@ use Cicada\Storefront\Page\Account\RecoverPassword\AccountRecoverPasswordPage;
 use Cicada\Storefront\Page\Account\RecoverPassword\AccountRecoverPasswordPageLoader;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
 use Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Helpers\Traits\LineItemTestFixtureBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

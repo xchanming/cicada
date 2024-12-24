@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Service;
 
-use GuzzleHttp\Client;
 use Cicada\Core\Framework\App\Payload\Source;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Client;
 
 /**
  * @internal

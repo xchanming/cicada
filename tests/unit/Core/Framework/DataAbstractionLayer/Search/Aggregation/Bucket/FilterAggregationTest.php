@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket\FilterAggregation;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket\TermsAggregation;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

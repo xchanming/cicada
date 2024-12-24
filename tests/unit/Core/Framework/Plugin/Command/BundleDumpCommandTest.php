@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\BundleConfigGenerator;
 use Cicada\Core\Framework\Plugin\Command\BundleDumpCommand;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Filesystem\Filesystem;

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Suggest;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Events\ProductSuggestRouteCacheKeyEvent;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Product\SalesChannel\Suggest\AbstractProductSuggestRoute;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Cache\CacheInterface;

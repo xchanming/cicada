@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Checkout\Document\Service;
 
-use setasign\Fpdi\PdfParser\StreamReader;
-use setasign\Fpdi\Tfpdf\Fpdi;
 use Cicada\Core\Checkout\Document\DocumentCollection;
 use Cicada\Core\Checkout\Document\DocumentConfigurationFactory;
 use Cicada\Core\Checkout\Document\DocumentEntity;
@@ -17,6 +15,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
+use setasign\Fpdi\PdfParser\StreamReader;
+use setasign\Fpdi\Tfpdf\Fpdi;
 
 #[Package('checkout')]
 final class DocumentMerger

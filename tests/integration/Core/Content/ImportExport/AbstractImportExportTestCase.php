@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogCollection;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
@@ -43,6 +41,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SessionTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher;

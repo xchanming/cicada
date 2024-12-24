@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy\BundleHierarchyBuilder;
 use Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy\NamespaceHierarchyBuilder;
 use Cicada\Core\Framework\Adapter\Twig\TemplateFinder;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Adapter\Twig\TemplateScopeDetector;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Kernel;
 use Cicada\Core\Test\Stub\Framework\BundleFixture;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Twig\Cache\CacheInterface;
 use Twig\Environment;
 

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Service;
 
+use Cicada\Core\Defaults;
+use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Core\Maintenance\MaintenanceException;
+use Cicada\Core\Maintenance\System\Service\ShopConfigurator;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Defaults;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Maintenance\MaintenanceException;
-use Cicada\Core\Maintenance\System\Service\ShopConfigurator;
 
 /**
  * @internal

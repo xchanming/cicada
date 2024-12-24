@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Rule\Container;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Rule\Container\Container;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\Framework\Validation\Constraint\ArrayOfType;
 use Cicada\Core\Test\Stub\Rule\FalseRule;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Controller\CustomSnippetFormatController;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
 use Cicada\Tests\Unit\Core\Framework\Api\Controller\Fixtures\BundleWithCustomSnippet\BundleWithCustomSnippet;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Twig\Environment;
 

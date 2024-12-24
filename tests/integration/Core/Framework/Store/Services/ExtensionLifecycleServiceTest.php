@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\App\AppCollection;
@@ -21,6 +19,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Storefront\Theme\ThemeCollection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

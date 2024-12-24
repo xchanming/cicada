@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Installer\Configuration;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Installer\Controller\ShopConfigurationController;
 use Cicada\Core\Maintenance\System\Service\ShopConfigurator;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

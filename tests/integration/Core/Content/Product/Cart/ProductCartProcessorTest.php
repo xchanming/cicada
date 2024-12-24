@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Cart;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
@@ -38,6 +35,9 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

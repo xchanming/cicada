@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
 use Cicada\Core\Content\Media\MediaService;
 use Cicada\Core\Defaults;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\Store\ExtensionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Validator;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\Exception\ThemeException;
 use Cicada\Storefront\Theme\ScssPhpCompiler;
 use Cicada\Storefront\Theme\Validator\SCSSValidator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

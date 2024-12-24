@@ -2,10 +2,10 @@
 
 namespace Cicada\Storefront\Framework\Twig;
 
-use Composer\EventDispatcher\EventSubscriberInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
 use Cicada\Storefront\Framework\Routing\StorefrontRouteScope;
+use Composer\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\KernelEvents;

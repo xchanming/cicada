@@ -2,8 +2,6 @@
 
 namespace Cicada\Elasticsearch\Admin\Indexer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IterableQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('services-settings')]
 final class SalesChannelAdminSearchIndexer extends AbstractAdminIndexer

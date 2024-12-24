@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Command;
 
+use Cicada\Storefront\Theme\Command\ThemeCreateCommand;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Storefront\Theme\Command\ThemeCreateCommand;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;

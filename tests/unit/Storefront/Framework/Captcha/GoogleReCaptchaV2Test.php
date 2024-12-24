@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Captcha;
 
+use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Cicada\Storefront\Framework\Captcha\GoogleReCaptchaV2;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Exception\ServerException;
@@ -12,9 +15,6 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\System\SystemConfig\SystemConfigService;
-use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
-use Cicada\Storefront\Framework\Captcha\GoogleReCaptchaV2;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

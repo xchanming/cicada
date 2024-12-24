@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Framework\App\TaxProvider\Payload;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use Cicada\Core\Checkout\Cart\TaxProvider\Struct\TaxProviderResult;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Payload\AppPayloadServiceHelper;
 use Cicada\Core\Framework\App\TaxProvider\Response\TaxProviderResponse;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * @internal only for use by the app-system

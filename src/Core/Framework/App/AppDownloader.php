@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\App;
 
-use League\Flysystem\FilesystemException;
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\App\Exception\AppDownloadException;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemException;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Uuid;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidLengthException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

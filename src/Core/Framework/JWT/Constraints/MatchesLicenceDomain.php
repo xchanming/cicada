@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Framework\JWT\Constraints;
 
-use Lcobucci\JWT\Token;
-use Lcobucci\JWT\UnencryptedToken;
-use Lcobucci\JWT\Validation\Constraint;
 use Cicada\Core\Framework\JWT\JWTException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\DecodedPurchasesCollectionStruct;
 use Cicada\Core\Framework\Store\Services\StoreService;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Lcobucci\JWT\Token;
+use Lcobucci\JWT\UnencryptedToken;
+use Lcobucci\JWT\Validation\Constraint;
 
 #[Package('checkout')]
 final readonly class MatchesLicenceDomain implements Constraint

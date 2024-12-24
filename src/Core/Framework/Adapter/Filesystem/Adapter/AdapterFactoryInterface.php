@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Adapter\Filesystem\Adapter;
 
-use League\Flysystem\FilesystemAdapter;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemAdapter;
 
 #[Package('core')]
 interface AdapterFactoryInterface

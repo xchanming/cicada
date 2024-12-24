@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Storefront\Theme\DataAbstractionLayer\ThemeExceptionHandler;
 use Cicada\Storefront\Theme\Exception\ThemeException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

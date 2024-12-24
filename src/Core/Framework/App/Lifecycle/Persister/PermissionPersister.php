@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\Manifest\Xml\Permission\Permissions;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal only for use by the app-system

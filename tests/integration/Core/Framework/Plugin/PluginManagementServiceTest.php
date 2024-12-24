@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\StaticAnalyze\StaticAnalyzeKernel;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Test\Plugin\PluginTestsHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Kernel;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

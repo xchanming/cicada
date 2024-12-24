@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\System\SalesChannel;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Contracts\Service\ResetInterface;
 

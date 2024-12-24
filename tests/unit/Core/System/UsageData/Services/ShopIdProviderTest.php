@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Services;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\UsageData\Services\ShopIdProvider;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Order\Aggregate\OrderLineItem;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemEntity;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

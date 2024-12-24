@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\DataAbstractionLayer\CheapestPrice;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\AfterClass;
-use PHPUnit\Framework\Attributes\BeforeClass;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
@@ -28,6 +23,11 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\AfterClass;
+use PHPUnit\Framework\Attributes\BeforeClass;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\File;
 
+use Cicada\Core\Content\Media\File\FileNameValidator;
+use Cicada\Core\Content\Media\MediaException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Media\File\FileNameValidator;
-use Cicada\Core\Content\Media\MediaException;
 
 /**
  * @internal

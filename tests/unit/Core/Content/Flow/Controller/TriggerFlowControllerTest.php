@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Controller\TriggerFlowController;
 use Cicada\Core\Content\Flow\Exception\CustomTriggerByNameNotFoundException;
 use Cicada\Core\Framework\App\Aggregate\FlowEvent\AppFlowEventCollection;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

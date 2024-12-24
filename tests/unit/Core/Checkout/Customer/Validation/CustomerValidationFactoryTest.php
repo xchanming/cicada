@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\Validation;
 
-use Faker\Factory;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Validation\CustomerProfileValidationFactory;
 use Cicada\Core\Checkout\Customer\Validation\CustomerValidationFactory;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataValidationDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Faker\Factory;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;

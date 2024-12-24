@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Page\Wishlist\GuestWishlistPageLoadedEvent;
 use Cicada\Storefront\Page\Wishlist\GuestWishlistPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

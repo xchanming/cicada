@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Cms;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Cms\DefaultMediaResolver;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

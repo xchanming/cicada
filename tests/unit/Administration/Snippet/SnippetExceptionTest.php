@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Administration\Snippet;
 
+use Cicada\Administration\Snippet\SnippetException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Administration\Snippet\SnippetException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

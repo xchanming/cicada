@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart\Builder;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\PercentagePriceDefinition;
 use Cicada\Core\Checkout\Promotion\Cart\PromotionItemBuilder;
 use Cicada\Core\Checkout\Promotion\Cart\PromotionProcessor;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

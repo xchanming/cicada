@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Sync;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductCategory\ProductCategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriteGatewayInterface
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\Tax\TaxDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

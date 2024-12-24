@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Commercial\Licensing\License;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
@@ -13,6 +12,7 @@ use Cicada\Core\System\SystemConfig\Event\BeforeSystemConfigChangedEvent;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedEvent;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigDomainLoadedEvent;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

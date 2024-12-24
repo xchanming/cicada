@@ -2,13 +2,13 @@
 
 namespace Cicada\Elasticsearch\Framework\Indexing;
 
-use OpenSearch\Client;
-use OpenSearch\Common\Exceptions\BadRequest400Exception;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchRegistry;
 use Cicada\Elasticsearch\Product\ElasticsearchProductException;
+use OpenSearch\Client;
+use OpenSearch\Common\Exceptions\BadRequest400Exception;
 
 #[Package('core')]
 class IndexMappingUpdater

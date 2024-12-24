@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Profiling\Doctrine;
 
+use Cicada\Core\Profiling\Doctrine\BacktraceDebugDataHolder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Profiling\Doctrine\BacktraceDebugDataHolder;
 use Symfony\Bridge\Doctrine\Middleware\Debug\Query;
 
 /**

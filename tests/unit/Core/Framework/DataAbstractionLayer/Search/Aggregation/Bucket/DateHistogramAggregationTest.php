@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket\DateHistogramAggregation;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket\DateHistogramAggregation;
 
 /**
  * @internal

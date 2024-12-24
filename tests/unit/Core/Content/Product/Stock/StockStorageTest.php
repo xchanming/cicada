@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Stock;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Stock\StockLoadRequest;
 use Cicada\Core\Content\Product\Stock\StockStorage;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

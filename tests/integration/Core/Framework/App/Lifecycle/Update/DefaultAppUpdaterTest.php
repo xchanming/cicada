@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle\Update;
 
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\Lifecycle\Update\AbstractAppUpdater;
 use Cicada\Core\Framework\Context;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\Store\ExtensionBehaviour;
 use Cicada\Core\Framework\Test\Store\StoreClientBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

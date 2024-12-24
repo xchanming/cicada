@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 #[Package('services-settings')]

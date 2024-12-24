@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Administration\Dashboard;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Dashboard\OrderAmountService;
 use Cicada\Core\Checkout\Cart\Price\CashRounding;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
@@ -16,6 +12,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

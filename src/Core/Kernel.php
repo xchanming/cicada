@@ -2,9 +2,6 @@
 
 namespace Cicada\Core;
 
-use Composer\Autoload\ClassLoader;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception as DBALException;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Database\MySQLFactory;
 use Cicada\Core\Framework\Api\Controller\FallbackController;
@@ -17,6 +14,9 @@ use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\Framework\Util\VersionParser;
 use Cicada\Core\Service\Service;
+use Composer\Autoload\ClassLoader;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\ConfigCache;
 use Symfony\Component\Config\Loader\LoaderInterface;

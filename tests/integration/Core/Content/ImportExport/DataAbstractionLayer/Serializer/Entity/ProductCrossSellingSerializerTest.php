@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity\ProductCrossSellingSerializer;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\SerializerRegistry;
 use Cicada\Core\Content\ImportExport\Struct\Config;
@@ -20,6 +19,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

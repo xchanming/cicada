@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\Webhook\_fixtures\BusinessEvents\ArrayBusinessEvent;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\Test\Webhook\_fixtures\BusinessEvents\UnstructuredObje
 use Cicada\Core\Framework\Webhook\BusinessEventEncoder;
 use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\System\Tax\TaxEntity;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

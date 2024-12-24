@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart\Extension;
 
+use Cicada\Core\Checkout\Promotion\Cart\Extension\CartExtension;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Promotion\Cart\Extension\CartExtension;
 
 /**
  * @internal

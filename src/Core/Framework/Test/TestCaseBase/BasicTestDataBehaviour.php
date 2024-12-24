@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 trait BasicTestDataBehaviour

@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -15,6 +11,10 @@ use Cicada\Core\Framework\Store\Exception\StoreSessionExpiredException;
 use Cicada\Core\Framework\Store\Services\StoreSessionExpiredMiddleware;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\User\UserCollection;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Checkout\Customer\Exception\InvalidImitateCustomerTokenException;
 use Cicada\Core\Checkout\Customer\ImitateCustomerTokenGenerator;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

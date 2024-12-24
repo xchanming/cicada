@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Test\Flow;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
@@ -24,6 +23,7 @@ use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

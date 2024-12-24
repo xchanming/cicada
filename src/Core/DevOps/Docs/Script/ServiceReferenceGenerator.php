@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\DevOps\Docs\Script;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Script\ServiceStubs;
 use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlock\Description;
 use phpDocumentor\Reflection\DocBlock\Tags\Deprecated;
@@ -14,8 +16,6 @@ use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use phpDocumentor\Reflection\DocBlock\Tags\TagWithType;
 use phpDocumentor\Reflection\DocBlockFactory;
 use phpDocumentor\Reflection\DocBlockFactoryInterface;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Script\ServiceStubs;
 use Symfony\Component\Finder\SplFileInfo;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;

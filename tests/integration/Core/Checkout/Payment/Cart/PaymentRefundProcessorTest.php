@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment\Cart;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStateHandler;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStates;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
@@ -25,6 +22,9 @@ use Cicada\Core\Test\Integration\Builder\Order\OrderTransactionBuilder;
 use Cicada\Core\Test\Integration\Builder\Order\OrderTransactionCaptureBuilder;
 use Cicada\Core\Test\Integration\Builder\Order\OrderTransactionCaptureRefundBuilder;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

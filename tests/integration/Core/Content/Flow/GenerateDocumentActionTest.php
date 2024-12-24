@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow;
 
-use Doctrine\DBAL\Connection;
-use Monolog\Handler\TestHandler;
-use Monolog\Level;
-use Monolog\Logger;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
@@ -48,6 +42,12 @@ use Cicada\Core\Migration\Traits\Translations;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Monolog\Handler\TestHandler;
+use Monolog\Level;
+use Monolog\Logger;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

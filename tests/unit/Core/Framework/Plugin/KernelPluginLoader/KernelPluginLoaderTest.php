@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\KernelPluginLoader;
 
+use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
+use Cicada\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
+use Cicada\Tests\Unit\Core\Framework\Plugin\_fixtures\ExampleBundle\ExampleBundle;
 use Composer\Autoload\ClassLoader;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
-use Cicada\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
-use Cicada\Tests\Unit\Core\Framework\Plugin\_fixtures\ExampleBundle\ExampleBundle;
 
 /**
  * @internal

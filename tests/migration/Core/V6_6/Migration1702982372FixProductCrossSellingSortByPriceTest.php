@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Migration\Core\V6_6;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Migration\V6_6\Migration1702982372FixProductCrossSellingSortByPrice;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity\EntitySerializer;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field\FieldSerializer;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field\TranslationsSerializer;
@@ -27,6 +25,8 @@ use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\System\Locale\LocaleEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 
 /**

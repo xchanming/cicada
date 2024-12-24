@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetDefinition;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationInterface;

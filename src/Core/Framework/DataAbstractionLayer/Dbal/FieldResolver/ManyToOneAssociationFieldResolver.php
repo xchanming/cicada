@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\IdField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

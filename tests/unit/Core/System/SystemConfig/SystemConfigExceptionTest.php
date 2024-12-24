@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\System\SystemConfig;
 
+use Cicada\Core\System\SystemConfig\SystemConfigException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\System\SystemConfig\SystemConfigException;
 
 /**
  * @internal

@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Content\Media\Commands;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Cms\Subscriber;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Cms\CmsException;
 use Cicada\Core\Content\Cms\CmsPageDefinition;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityDeleteEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\Event\BeforeSystemConfigChangedEvent;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Event\CustomerBeforeLoginEvent;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Webhook\Service\RelatedWebhooks;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

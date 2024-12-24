@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Content\Media\Subscriber\MediaCreationSubscriber;
 use Cicada\Core\Framework\Context;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

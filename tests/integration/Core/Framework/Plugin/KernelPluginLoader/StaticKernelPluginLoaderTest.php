@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin\KernelPluginLoader;
 
-use Composer\Autoload\ClassLoader;
-use PHPUnit\Framework\Attributes\RunInSeparateProcess;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\Exception\KernelPluginLoaderException;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
 use Cicada\Core\Framework\Test\Plugin\_fixture\bundles\FooBarBundle;
 use Cicada\Core\Framework\Test\Plugin\_fixture\bundles\GizmoBundle;
 use Cicada\Core\Framework\Test\Plugin\PluginIntegrationTestBehaviour;
+use Composer\Autoload\ClassLoader;
+use PHPUnit\Framework\Attributes\RunInSeparateProcess;
+use PHPUnit\Framework\TestCase;
 use SwagTestPlugin\SwagTestFake;
 use SwagTestPlugin\SwagTestPlugin;
 use SwagTestWithBundle\SwagTestWithBundle;

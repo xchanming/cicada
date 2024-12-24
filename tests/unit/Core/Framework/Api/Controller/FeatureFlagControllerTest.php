@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Api\Controller\FeatureFlagController;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Feature\FeatureFlagRegistry;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

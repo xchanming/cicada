@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\InAppPurchases\Payload;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Serializer\JsonEntityEncoder;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Exception\AppRegistrationException;
@@ -20,6 +15,11 @@ use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\Store\StaticInAppPurchaseFactory;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

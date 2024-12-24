@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\CustomFields;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\JsonField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\CustomFieldService;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle\Registration;
 
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\RequestInterface;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\App\AppCollection;
@@ -27,6 +24,9 @@ use Cicada\Core\Kernel;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Integration\App\TestAppServer;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * @internal

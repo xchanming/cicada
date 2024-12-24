@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Test\Filesystem\Adapter;
 
-use League\Flysystem\FilesystemAdapter;
 use Cicada\Core\Framework\Adapter\Filesystem\Adapter\AdapterFactoryInterface;
 use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
+use League\Flysystem\FilesystemAdapter;
 
 /**
  * @internal

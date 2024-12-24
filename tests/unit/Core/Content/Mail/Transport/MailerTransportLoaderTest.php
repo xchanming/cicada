@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Transport;
 
-use Doctrine\DBAL\Exception\DriverException;
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsBuilder;
 use Cicada\Core\Content\Mail\Transport\MailerTransportDecorator;
@@ -17,6 +12,11 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Exception\DriverException;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\NullTransport;
 use Symfony\Component\Mailer\Transport\NullTransportFactory;

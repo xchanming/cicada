@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Review;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Product\SalesChannel\Review\Event\ReviewFormEvent;
 use Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewSaveRoute;
@@ -17,6 +14,9 @@ use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

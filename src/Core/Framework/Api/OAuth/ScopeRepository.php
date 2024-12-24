@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
-use Doctrine\DBAL\Connection;
-use League\OAuth2\Server\Entities\ClientEntityInterface;
-use League\OAuth2\Server\Entities\ScopeEntityInterface;
-use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
 use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
 use Cicada\Core\Framework\Api\OAuth\Scope\AdminScope;
 use Cicada\Core\Framework\Api\OAuth\Scope\UserVerifiedScope;
 use Cicada\Core\Framework\Api\OAuth\Scope\WriteScope;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
+use League\OAuth2\Server\Entities\ClientEntityInterface;
+use League\OAuth2\Server\Entities\ScopeEntityInterface;
+use League\OAuth2\Server\Repositories\ScopeRepositoryInterface;
 
 #[Package('core')]
 class ScopeRepository implements ScopeRepositoryInterface

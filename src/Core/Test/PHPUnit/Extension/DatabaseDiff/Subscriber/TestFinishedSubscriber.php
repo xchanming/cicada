@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\Subscriber;
 
-use PHPUnit\Event\Test\Finished;
-use PHPUnit\Event\Test\FinishedSubscriber;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\DbState;
+use PHPUnit\Event\Test\Finished;
+use PHPUnit\Event\Test\FinishedSubscriber;
 
 /**
  * @internal

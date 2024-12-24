@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\PluginNotAZipFileException;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Store\Api\ExtensionStoreActionsController;
 use Cicada\Core\Framework\Store\Services\ExtensionDownloader;
 use Cicada\Core\Framework\Store\Services\ExtensionLifecycleService;
 use Cicada\Core\Framework\Store\StoreException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Newsletter\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Storer\ScalarValuesStorer;
 use Cicada\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientEntity;
 use Cicada\Core\Content\Newsletter\Event\NewsletterRegisterEvent;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

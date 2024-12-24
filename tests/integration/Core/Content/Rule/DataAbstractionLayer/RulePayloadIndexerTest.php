@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Rule\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 use Cicada\Core\Content\Rule\DataAbstractionLayer\RuleIndexer;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Content\Rule\RuleEntity;
@@ -39,6 +35,10 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Migration\Test\NullConnection;
 use Cicada\Core\System\Currency\Rule\CurrencyRule;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Changelog;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Changelog\ChangelogParser;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

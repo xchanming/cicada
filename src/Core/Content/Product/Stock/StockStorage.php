@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\Stock;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Product\Events\ProductNoLongerAvailableEvent;
 use Cicada\Core\Content\Product\Events\ProductStockAlteredEvent;
 use Cicada\Core\Defaults;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]

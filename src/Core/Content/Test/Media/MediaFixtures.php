@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Test\Media;
 
-use PHPUnit\Framework\Attributes\Before;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Content\Media\MediaType\BinaryType;
 use Cicada\Core\Content\Media\MediaType\DocumentType;
@@ -10,6 +9,7 @@ use Cicada\Core\Content\Media\MediaType\ImageType;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Integration\Traits\EntityFixturesBase;
+use PHPUnit\Framework\Attributes\Before;
 
 /**
  * @deprecated tag:v6.7.0 - reason:becomes-internal - Will be internal in v6.7.0

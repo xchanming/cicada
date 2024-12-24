@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Requirement;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\RequirementStackException;
 use Cicada\Core\Framework\Plugin\Requirement\RequirementsValidator;
 use Cicada\Core\TestBootstrapper;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 /**

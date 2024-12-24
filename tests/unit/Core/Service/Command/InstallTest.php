@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Service\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Service\AllServiceInstaller;
 use Cicada\Core\Service\Command\Install;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

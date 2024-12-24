@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Redis;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Container\ContainerInterface;
 use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Adapter\Cache\RedisConnectionFactory;
 use Cicada\Core\Framework\Adapter\Redis\RedisConnectionProvider;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 use Symfony\Contracts\Service\ServiceLocatorTrait;
 
 /**

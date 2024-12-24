@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Thumbnail;
 
-use League\Flysystem\UnableToReadFile;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderEntity;
 use Cicada\Core\Content\Media\Aggregate\MediaFolderConfiguration\MediaFolderConfigurationEntity;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailCollection;
@@ -31,6 +26,11 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use League\Flysystem\UnableToReadFile;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

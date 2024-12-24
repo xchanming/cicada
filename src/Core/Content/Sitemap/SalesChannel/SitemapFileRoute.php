@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Content\Sitemap\SalesChannel;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Sitemap\Extension\SitemapFileExtension;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

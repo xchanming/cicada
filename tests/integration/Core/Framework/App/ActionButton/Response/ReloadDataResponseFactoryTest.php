@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\ActionButton\Response;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActionButton\AppAction;
 use Cicada\Core\Framework\App\ActionButton\Response\NotificationResponse;
 use Cicada\Core\Framework\App\ActionButton\Response\OpenModalResponse;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\App\Payload\Source;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Promotion\Util;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Promotion\Exception\PatternNotComplexEnoughException;
 use Cicada\Core\Checkout\Promotion\PromotionEntity;
 use Cicada\Core\Checkout\Promotion\PromotionException;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @phpstan-type CodePattern array{prefix?: string, replacement: string, suffix?: string, replacementString: string, replacementArray: array<string>}

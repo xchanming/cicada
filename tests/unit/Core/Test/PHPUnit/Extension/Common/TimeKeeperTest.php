@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Test\PHPUnit\Extension\Common;
 
+use Cicada\Core\Test\PHPUnit\Extension\Common\TimeKeeper;
 use PHPUnit\Event\Telemetry\HRTime;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Test\PHPUnit\Extension\Common\TimeKeeper;
 
 /**
  * @internal

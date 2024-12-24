@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\File;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaPathStrategy;
 use Cicada\Core\Content\Media\Core\Application\MediaLocationBuilder;
 use Cicada\Core\Content\Media\Core\Event\UpdateMediaPathEvent;
@@ -26,6 +25,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

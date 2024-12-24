@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Hmac;
 
-use GuzzleHttp\Psr7\Uri;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Hmac\QuerySigner;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use GuzzleHttp\Psr7\Uri;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

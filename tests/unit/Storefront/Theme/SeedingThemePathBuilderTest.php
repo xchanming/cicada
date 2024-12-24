@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Theme\SeedingThemePathBuilder;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

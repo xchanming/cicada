@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache\ReverseProxy;
 
+use Cicada\Core\Framework\Adapter\Cache\RedisConnectionFactory;
+use Cicada\Core\Framework\Feature;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Pool;
 use GuzzleHttp\Psr7\Request;
-use Cicada\Core\Framework\Adapter\Cache\RedisConnectionFactory;
-use Cicada\Core\Framework\Feature;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

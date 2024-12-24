@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Checkers;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Update\Checkers\WriteableCheck;
 use Cicada\Core\Framework\Update\Services\Filesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

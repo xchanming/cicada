@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Checkout\Cart\Exception;
 
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 
 #[Package('checkout')]
 class TaxProviderExceptions extends CicadaHttpException

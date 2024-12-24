@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Plugin\KernelPluginLoader;
 
-use Composer\Autoload\ClassLoader;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Parameter\AdditionalBundleParameters;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\Exception\KernelPluginLoaderException;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
+use Composer\Autoload\ClassLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;

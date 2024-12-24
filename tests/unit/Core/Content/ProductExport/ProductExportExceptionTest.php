@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ProductExport;
 
+use Cicada\Core\Content\ProductExport\ProductExportException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\ProductExport\ProductExportException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

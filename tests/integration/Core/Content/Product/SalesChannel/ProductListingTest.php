@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\SalesChannel;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\SalesChannel\Listing\ProductListingRoute;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

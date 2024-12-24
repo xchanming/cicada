@@ -2,11 +2,11 @@
 
 namespace Cicada\Administration;
 
-use Pentatrion\ViteBundle\PentatrionViteBundle;
 use Cicada\Administration\DependencyInjection\AdministrationMigrationCompilerPass;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Parameter\AdditionalBundleParameters;
+use Pentatrion\ViteBundle\PentatrionViteBundle;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

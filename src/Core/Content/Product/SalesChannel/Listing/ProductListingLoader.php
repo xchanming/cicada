@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\SalesChannel\Listing;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Product\Events\ProductListingPreviewCriteriaEvent;
 use Cicada\Core\Content\Product\Events\ProductListingResolvePreviewEvent;
 use Cicada\Core\Content\Product\Extension\LoadPreviewExtension;
@@ -27,6 +25,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('inventory')]

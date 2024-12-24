@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Api\AppJWTGenerateRoute;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Test\Generator;
 use Cicada\Storefront\Controller\AppController;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

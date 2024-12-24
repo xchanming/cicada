@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Rule;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionCollection;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionEntity;
 use Cicada\Core\Content\Rule\RuleCollection;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

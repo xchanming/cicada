@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Test\PHPUnit\Extension\DatabaseDiff;
 
+use Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\DbState;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\DbState;
 
 /**
  * @internal

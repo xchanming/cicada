@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\LineItem\QuantityInformation;
@@ -13,6 +11,8 @@ use Cicada\Core\Content\Product\Cart\ProductCartProcessor;
 use Cicada\Core\Content\Product\Cart\ProductLineItemValidator;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

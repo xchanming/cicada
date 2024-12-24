@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\ApiDefinition\Generator;
 
-use OpenApi\Annotations\OpenApi;
 use Cicada\Core\Framework\Api\ApiDefinition\ApiDefinitionGeneratorInterface;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi\OpenApiDefinitionSchemaBuilder;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
+use OpenApi\Annotations\OpenApi;
 
 /**
  * @internal

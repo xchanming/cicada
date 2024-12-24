@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Repository;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Cms\CmsPageEntity;
@@ -49,6 +44,11 @@ use Cicada\Core\System\Tax\TaxDefinition;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

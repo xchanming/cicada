@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Admin;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
@@ -21,6 +16,11 @@ use Cicada\Elasticsearch\Admin\AdminIndexingBehavior;
 use Cicada\Elasticsearch\Admin\AdminSearchRegistry;
 use Cicada\Elasticsearch\Admin\Indexer\PromotionAdminSearchIndexer;
 use Cicada\Elasticsearch\Test\AdminElasticsearchTestBehaviour;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Messenger\MessageBusInterface;

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Increment\AbstractIncrementer;
 use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
 use Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueStatsSubscriber;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Event\SendMessageToTransportsEvent;
 use Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

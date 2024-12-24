@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Rule\Rule\Context;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Rule\Exception\UnsupportedOperatorException;
 use Cicada\Core\Framework\Rule\RuleComparison;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Checkout\Cart;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Cart\Exception\CartTokenNotFoundException;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
@@ -19,6 +17,8 @@ use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\Country\CountryDefinition;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

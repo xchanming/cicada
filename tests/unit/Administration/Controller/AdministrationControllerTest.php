@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Controller;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\UnableToReadFile;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Controller\AdministrationController;
 use Cicada\Administration\Events\PreResetExcludedSearchTermEvent;
 use Cicada\Administration\Framework\Routing\KnownIps\KnownIpsCollector;
@@ -35,6 +29,12 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\Framework\DataAbstractionLayer\TestEntityDefinition;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\UnableToReadFile;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Flow\Action\Action;
 use Cicada\Core\Framework\App\Source\SourceResolver;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

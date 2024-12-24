@@ -2,10 +2,10 @@
 
 namespace Cicada\Elasticsearch\Product;
 
-use OpenSearchDSL\Query\Compound\BoolQuery;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use OpenSearchDSL\Query\Compound\BoolQuery;
 
 #[Package('core')]
 abstract class AbstractProductSearchQueryBuilder

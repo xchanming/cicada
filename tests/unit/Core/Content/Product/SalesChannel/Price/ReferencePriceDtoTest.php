@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Price;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice\CheapestPrice;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Product\SalesChannel\Price\ReferencePriceDto;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

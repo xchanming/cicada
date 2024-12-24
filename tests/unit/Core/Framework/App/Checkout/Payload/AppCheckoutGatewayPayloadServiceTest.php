@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Checkout\Payload;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\BadResponseException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Checkout\Gateway\AppCheckoutGatewayResponse;
 use Cicada\Core\Framework\App\Checkout\Payload\AppCheckoutGatewayPayload;
@@ -21,6 +13,14 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\ExceptionLogger;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @internal

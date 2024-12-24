@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Administration\Elasticsearch;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice\CheapestPriceField;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductDefinition;
 use Cicada\Core\Framework\Context;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\PriceField;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Elasticsearch\Framework\AbstractElasticsearchDefinition;
 use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Cocur\Slugify\Bridge\Twig\SlugifyExtension;
-use Cocur\Slugify\SlugifyInterface;
 use Cicada\Core\Framework\Adapter\Twig\Extension\PhpSyntaxExtension;
 use Cicada\Core\Framework\Adapter\Twig\SecurityExtension;
 use Cicada\Core\Framework\Adapter\Twig\TwigEnvironment;
 use Cicada\Core\Framework\Log\Package;
+use Cocur\Slugify\Bridge\Twig\SlugifyExtension;
+use Cocur\Slugify\SlugifyInterface;
 use Symfony\Component\Filesystem\Path;
 use Twig\Cache\FilesystemCache;
 use Twig\Environment;

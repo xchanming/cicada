@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\ConfigLoader;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Storefront\Theme\ConfigLoader\DatabaseAvailableThemeProvider;
 use Cicada\Storefront\Theme\ConfigLoader\DatabaseConfigLoader;
@@ -15,6 +11,10 @@ use Cicada\Storefront\Theme\Event\ThemeAssignedEvent;
 use Cicada\Storefront\Theme\Event\ThemeConfigChangedEvent;
 use Cicada\Storefront\Theme\Event\ThemeConfigResetEvent;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
+use League\Flysystem\Filesystem;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

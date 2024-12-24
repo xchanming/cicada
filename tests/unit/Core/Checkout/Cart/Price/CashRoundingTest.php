@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Price;
 
+use Cicada\Core\Checkout\Cart\Price\CashRounding;
+use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Cart\Price\CashRounding;
-use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 
 /**
  * @internal

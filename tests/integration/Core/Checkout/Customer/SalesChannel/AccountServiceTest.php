@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\SalesChannel;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\Exception\BadCredentialsException;
 use Cicada\Core\Checkout\Customer\Exception\CustomerNotFoundException;
@@ -19,6 +18,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceParameters;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

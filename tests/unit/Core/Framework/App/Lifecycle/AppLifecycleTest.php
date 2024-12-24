@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Snippet\AppAdministrationSnippetPersister;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleCollection;
 use Cicada\Core\Framework\App\AppCollection;
@@ -43,6 +40,9 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem as Io;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

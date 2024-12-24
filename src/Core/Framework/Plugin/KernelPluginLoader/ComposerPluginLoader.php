@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Cicada\Core\Framework\Plugin\KernelPluginLoader;
 
-use Composer\InstalledVersions;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Util\PluginFinder;
+use Composer\InstalledVersions;
 
 /**
  * @phpstan-import-type PluginInfo from KernelPluginLoader

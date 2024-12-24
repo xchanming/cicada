@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Facade;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\CartFacadeHelper;
 use Cicada\Core\Checkout\Cart\Facade\ContainerFacade;
 use Cicada\Core\Checkout\Cart\Facade\ItemFacade;
@@ -18,6 +16,8 @@ use Cicada\Core\Checkout\Cart\Facade\Traits\ItemsRemoveTrait;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\LineItem\LineItemCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

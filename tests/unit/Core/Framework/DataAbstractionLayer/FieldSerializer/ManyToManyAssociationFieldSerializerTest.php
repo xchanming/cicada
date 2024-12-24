@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -24,6 +22,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteCommandExtractor;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

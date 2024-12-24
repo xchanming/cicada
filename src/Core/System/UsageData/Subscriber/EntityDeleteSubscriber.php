@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\System\UsageData\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception as DbalException;
-use Doctrine\DBAL\ParameterType;
-use Doctrine\DBAL\Query\QueryBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityDeleteEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ReferenceVersionField;
@@ -15,6 +11,10 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\UsageData\Consent\ConsentService;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\System\UsageData\Services\EntityDeleteEventHelper;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception as DbalException;
+use Doctrine\DBAL\ParameterType;
+use Doctrine\DBAL\Query\QueryBuilder;
 use Symfony\Component\Clock\ClockInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

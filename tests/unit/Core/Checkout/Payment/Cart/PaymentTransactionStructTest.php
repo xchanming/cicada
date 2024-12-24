@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\Cart\PaymentTransactionStruct;
 use Cicada\Core\Checkout\Payment\Cart\Recurring\RecurringDataStruct;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

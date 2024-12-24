@@ -3,10 +3,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Detail;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Service\CategoryBreadcrumbBuilder;
 use Cicada\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoader;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
@@ -31,6 +27,10 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

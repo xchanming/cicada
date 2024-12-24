@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
@@ -42,6 +40,8 @@ use Cicada\Storefront\Page\Account\Register\AccountRegisterPageLoadedHook;
 use Cicada\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoadedHook;
 use Cicada\Storefront\Page\Checkout\Register\CheckoutRegisterPageLoader;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\FlashBagAwareSessionInterface;

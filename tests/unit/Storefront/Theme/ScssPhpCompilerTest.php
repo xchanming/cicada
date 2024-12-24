@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
+use Cicada\Storefront\Theme\CompilerConfiguration;
+use Cicada\Storefront\Theme\ScssPhpCompiler;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use ScssPhp\ScssPhp\OutputStyle;
-use Cicada\Storefront\Theme\CompilerConfiguration;
-use Cicada\Storefront\Theme\ScssPhpCompiler;
 
 /**
  * @internal

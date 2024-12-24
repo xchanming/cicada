@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
+use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 
 /**
  * @internal

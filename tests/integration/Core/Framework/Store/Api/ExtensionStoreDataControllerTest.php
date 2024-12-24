@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Api;
 
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Api\ExtensionStoreDataController;
 use Cicada\Core\Framework\Test\Store\ExtensionBehaviour;
 use Cicada\Core\Framework\Test\Store\StoreClientBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

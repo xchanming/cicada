@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Cms\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Event\UnusedMediaSearchEvent;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

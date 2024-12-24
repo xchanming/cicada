@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Category\Repository;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Framework\Context;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityDeletedEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use Doctrine\DBAL\Query\QueryBuilder as DbalQueryBuilderAlias;
-use Doctrine\DBAL\Types\Types;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
@@ -39,6 +35,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\Query\QueryBuilder as DbalQueryBuilderAlias;
+use Doctrine\DBAL\Types\Types;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

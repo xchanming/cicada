@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Controller\AdministrationController;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
@@ -34,6 +32,8 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\BundleFixture;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\Asset\UrlPackage;

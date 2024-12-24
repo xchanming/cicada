@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\FilesystemOperator;
 
 #[Package('services-settings')]
 interface SitemapHandleFactoryInterface

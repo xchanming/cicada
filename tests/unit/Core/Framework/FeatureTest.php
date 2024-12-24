@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Feature\FeatureException;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

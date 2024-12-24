@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\DateIntervalField;
@@ -17,6 +14,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotNull;
 use Symfony\Component\Validator\Constraints\Type;
 use Symfony\Component\Validator\ConstraintViolation;

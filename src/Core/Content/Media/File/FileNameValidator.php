@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\Media\File;
 
-use League\Flysystem\CorruptedPathDetected;
-use League\Flysystem\WhitespacePathNormalizer;
 use Cicada\Core\Content\Media\MediaException;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\CorruptedPathDetected;
+use League\Flysystem\WhitespacePathNormalizer;
 
 #[Package('buyers-experience')]
 class FileNameValidator

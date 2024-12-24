@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Promotion\Integration\Calculation;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -20,6 +17,9 @@ use Cicada\Core\Test\Integration\Traits\Promotion\PromotionIntegrationTestBehavi
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionSetGroupTestFixtureBehaviour;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,11 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use Composer\IO\NullIO;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -17,11 +15,13 @@ use Cicada\Core\Framework\Plugin\PluginCollection;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Plugin\PluginService;
 use Cicada\Core\Framework\Plugin\Util\PluginFinder;
-use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Test\Plugin\PluginTestsHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Locale\LocaleEntity;
+use Composer\IO\NullIO;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use SwagTestNoDefaultLang\SwagTestNoDefaultLang;
 use SwagTestPlugin\SwagTestPlugin;
 

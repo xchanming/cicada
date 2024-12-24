@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig\Extension;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 use Twig\Loader\ArrayLoader;
 
 /**

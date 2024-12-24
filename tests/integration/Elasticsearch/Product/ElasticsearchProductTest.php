@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Product;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\AfterClass;
-use PHPUnit\Framework\Attributes\BeforeClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -88,6 +80,14 @@ use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchIndexingUtils;
 use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
 use Cicada\Elasticsearch\Test\ElasticsearchTestTestBehaviour;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\AfterClass;
+use PHPUnit\Framework\Attributes\BeforeClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 

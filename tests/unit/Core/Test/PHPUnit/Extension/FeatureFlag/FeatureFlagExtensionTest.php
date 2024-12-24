@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Test\PHPUnit\Extension\FeatureFlag;
 
+use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\FeatureFlagExtension;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\FeatureFlagExtension;
 
 /**
  * @internal

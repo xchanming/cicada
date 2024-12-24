@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\System\Snippet\Filter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Filter\EditedFilter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

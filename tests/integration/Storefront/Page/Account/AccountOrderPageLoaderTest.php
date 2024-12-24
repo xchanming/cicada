@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Account;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -14,6 +13,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Page\Account\Order\AccountOrderPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

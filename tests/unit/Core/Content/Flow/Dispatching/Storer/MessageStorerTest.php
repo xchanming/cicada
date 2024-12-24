@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Storer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\Aware\MessageAware;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Storer\MessageStorer;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailBeforeSentEvent;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mime\Email;
 
 /**

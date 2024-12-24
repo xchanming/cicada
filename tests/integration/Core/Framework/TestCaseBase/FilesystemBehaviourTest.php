@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\TestCaseBase;
 
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\FilesystemBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

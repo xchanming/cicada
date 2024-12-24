@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\FindVariant;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRouteResponse;
 use Cicada\Core\Content\Product\SalesChannel\FindVariant\FoundCombination;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

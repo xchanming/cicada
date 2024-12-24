@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Search;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\AfterClass;
-use PHPUnit\Framework\Attributes\BeforeClass;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Exception\UnmappedFieldException;
@@ -27,6 +22,11 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\AfterClass;
+use PHPUnit\Framework\Attributes\BeforeClass;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

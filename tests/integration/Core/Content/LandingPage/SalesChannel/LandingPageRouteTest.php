@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\LandingPage\SalesChannel;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\LandingPage\LandingPageException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser as KernelBrowserAlias;
 
 /**

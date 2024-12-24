@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\System\SystemConfig\Facade;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\Awareness\HookServiceFactory;
 use Cicada\Core\Framework\Script\Execution\Awareness\SalesChannelContextAware;
 use Cicada\Core\Framework\Script\Execution\Hook;
 use Cicada\Core\Framework\Script\Execution\Script;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

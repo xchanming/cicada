@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search\Filter;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 
 /**
  * @internal

@@ -2,10 +2,10 @@
 
 namespace Cicada\Storefront\Theme\Message;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\AbstractThemePathBuilder;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

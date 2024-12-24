@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ContactForm;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ContactForm\SalesChannel\ContactFormRoute;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -14,6 +13,7 @@ use Cicada\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

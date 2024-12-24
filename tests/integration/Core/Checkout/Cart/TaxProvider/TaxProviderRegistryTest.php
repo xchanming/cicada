@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\TaxProvider;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\TaxProvider\TaxProviderRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestConstantTaxRateProvider;
 use Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestEmptyTaxProvider;
 use Cicada\Tests\Unit\Core\Checkout\Cart\TaxProvider\_fixtures\TestGenericExceptionTaxProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

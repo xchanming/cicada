@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Constraint\Callback;
-use PHPUnit\Framework\Constraint\IsEqual;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Notification\NotificationService;
 use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Defaults;
@@ -33,6 +29,10 @@ use Cicada\Storefront\Theme\ThemeService;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimpleTheme\SimpleTheme;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimpleThemeConfigInheritance\SimpleThemeConfigInheritance;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\ThemeFixtures;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Constraint\Callback;
+use PHPUnit\Framework\Constraint\IsEqual;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;

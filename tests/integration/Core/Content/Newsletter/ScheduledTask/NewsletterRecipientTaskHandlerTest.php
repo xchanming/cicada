@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Newsletter\ScheduledTask;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Newsletter\ScheduledTask\NewsletterRecipientTaskHandler;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\RangeFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

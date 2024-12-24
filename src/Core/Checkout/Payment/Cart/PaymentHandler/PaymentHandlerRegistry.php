@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Checkout\Payment\Cart\PaymentHandler;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\App\Payment\Handler\AppPaymentHandler;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\Service\ServiceProviderInterface;
 
 #[Package('checkout')]

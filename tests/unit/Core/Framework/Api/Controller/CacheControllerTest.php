@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Api\Controller\CacheController;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\NullAdapter;
 
 /**

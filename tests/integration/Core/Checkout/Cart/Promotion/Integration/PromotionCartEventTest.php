@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Promotion\Integration;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\BeforeLineItemAddedEvent;
 use Cicada\Core\Checkout\Cart\Event\BeforeLineItemRemovedEvent;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionIntegrationTestBehaviour;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

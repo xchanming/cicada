@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Payment\Payload\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Framework\App\Payload\Source;
 use Cicada\Core\Framework\App\Payment\Payload\Struct\CapturePayload;
 use Cicada\Core\Framework\App\Payment\Payload\Struct\ValidatePayload;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

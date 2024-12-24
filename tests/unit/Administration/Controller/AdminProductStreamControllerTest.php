@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Controller\AdminProductStreamController;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\RequestCriteriaBuilder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceInterface;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

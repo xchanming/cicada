@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -13,6 +12,7 @@ use Cicada\Storefront\Theme\Exception\ThemeAssignmentException;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 use Cicada\Storefront\Theme\Struct\ThemeDependencies;
+use Doctrine\DBAL\Connection;
 
 #[Package('storefront')]
 class ThemeLifecycleHandler

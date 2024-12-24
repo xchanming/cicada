@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Framework\Captcha\BasicCaptcha;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

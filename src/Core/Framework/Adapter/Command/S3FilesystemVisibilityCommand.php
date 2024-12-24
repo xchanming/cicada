@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Adapter\Command;
 
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\StorageAttributes;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\StorageAttributes;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;

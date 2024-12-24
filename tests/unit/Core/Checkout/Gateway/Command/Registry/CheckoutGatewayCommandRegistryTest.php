@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Gateway\Command\Registry;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Gateway\Command\Registry\CheckoutGatewayCommandRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayCommand;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayFooCommand;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

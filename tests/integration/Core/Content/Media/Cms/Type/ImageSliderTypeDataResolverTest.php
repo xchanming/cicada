@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Cms\Type;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Cicada\Core\Content\Cms\DataResolver\Element\ElementDataCollection;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
@@ -25,6 +23,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Increment\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Increment\AbstractIncrementer;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

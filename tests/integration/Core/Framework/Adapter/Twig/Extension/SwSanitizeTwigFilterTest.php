@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig\Extension;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\Extension\SwSanitizeTwigFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
+use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTask;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTask;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**

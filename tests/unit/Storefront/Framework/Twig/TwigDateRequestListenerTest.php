@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Twig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\PlatformRequest;
 use Cicada\Storefront\Framework\Routing\StorefrontRouteScope;
 use Cicada\Storefront\Framework\Twig\TwigDateRequestListener;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

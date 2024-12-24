@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Subscriber;
 
-use Doctrine\DBAL\Exception as DBALException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Exception\InvalidArgumentException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\System\SystemConfig\Service\ConfigurationService;
@@ -15,6 +11,10 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\Subscriber\ThemeCompilerEnrichScssVarSubscriber;
+use Doctrine\DBAL\Exception as DBALException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

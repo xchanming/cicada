@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue;
 
+use Cicada\Core\Framework\MessageQueue\MessageQueueException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\MessageQueue\MessageQueueException;
 
 /**
  * @internal

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Framework\Routing\Exception\InvalidRouteScopeException;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Event\StorefrontRenderEvent;
 use Cicada\Storefront\Page\Navigation\NavigationPage;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

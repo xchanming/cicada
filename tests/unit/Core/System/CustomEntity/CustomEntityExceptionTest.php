@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity;
 
+use Cicada\Core\System\CustomEntity\CustomEntityException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\System\CustomEntity\CustomEntityException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

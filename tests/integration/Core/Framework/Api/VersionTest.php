@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\TestBrowser;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\BoolField;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\FloatField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\IntField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\JsonField;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

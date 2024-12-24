@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Checkout;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Gateway\SalesChannel\AbstractCheckoutGatewayRoute;
 use Cicada\Core\Checkout\Gateway\SalesChannel\CheckoutGatewayRouteResponse;
@@ -15,6 +14,7 @@ use Cicada\Storefront\Page\Checkout\Cart\CheckoutCartPageLoadedEvent;
 use Cicada\Storefront\Page\Checkout\Cart\CheckoutCartPageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

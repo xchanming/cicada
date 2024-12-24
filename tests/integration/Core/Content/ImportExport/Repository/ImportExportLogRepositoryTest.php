@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\Repository;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**

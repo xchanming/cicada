@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Cms;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
 use Cicada\Storefront\Page\Cms\CmsPageLoadedHook;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

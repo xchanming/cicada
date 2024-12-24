@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductStream;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ProductStream\ProductStreamDefinition;
 use Cicada\Core\Framework\Api\Controller\SyncController;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

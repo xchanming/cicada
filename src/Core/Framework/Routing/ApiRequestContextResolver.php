@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Routing;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Request;
 
 #[Package('core')]

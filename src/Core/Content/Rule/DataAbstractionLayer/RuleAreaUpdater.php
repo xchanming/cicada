@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Rule\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\CachedRuleLoader;
 use Cicada\Core\Content\Rule\RuleDefinition;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
@@ -29,6 +27,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PreWriteValidati
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

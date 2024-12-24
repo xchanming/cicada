@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\ImportExport\Processing\Writer;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
 
 #[Package('services-settings')]
 class CsvFileWriterFactory extends AbstractWriterFactory

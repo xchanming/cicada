@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductExport\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\ProductExport\Event\ProductExportChangeEncodingEvent;
@@ -35,6 +32,9 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDom
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

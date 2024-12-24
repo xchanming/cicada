@@ -5,8 +5,8 @@ namespace Cicada\Core\Content\ProductExport\Exception;
 use Cicada\Core\Content\ProductExport\Error\Error;
 use Cicada\Core\Content\ProductExport\Error\ErrorMessage;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 
 #[Package('inventory')]
 class ExportInvalidException extends CicadaHttpException

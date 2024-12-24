@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\TestCaseBase;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

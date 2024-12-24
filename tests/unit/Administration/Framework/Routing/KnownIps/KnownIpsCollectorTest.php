@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Administration\Framework\Routing\KnownIps;
 
+use Cicada\Administration\Framework\Routing\KnownIps\KnownIpsCollector;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Administration\Framework\Routing\KnownIps\KnownIpsCollector;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

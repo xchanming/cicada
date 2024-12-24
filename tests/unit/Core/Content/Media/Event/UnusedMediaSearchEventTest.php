@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Event;
 
+use Cicada\Core\Content\Media\Event\UnusedMediaSearchEvent;
+use Cicada\Core\Framework\Log\Package;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Media\Event\UnusedMediaSearchEvent;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

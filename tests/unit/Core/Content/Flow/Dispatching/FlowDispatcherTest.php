@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Driver\PDO\Exception as DbalPdoException;
-use Doctrine\DBAL\Exception\TableNotFoundException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Content\Flow\Dispatching\FlowDispatcher;
@@ -24,6 +16,14 @@ use Cicada\Core\Framework\Event\FlowLogEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Generator;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Driver\PDO\Exception as DbalPdoException;
+use Doctrine\DBAL\Exception\TableNotFoundException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

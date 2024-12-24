@@ -2,6 +2,9 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
+use Cicada\Core\Framework\MessageQueue\LowPriorityMessageInterface;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;
@@ -15,9 +18,6 @@ use PHPStan\PhpDocParser\Parser\TypeParser;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
-use Cicada\Core\Framework\MessageQueue\LowPriorityMessageInterface;
 
 /**
  * @internal

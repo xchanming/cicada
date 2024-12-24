@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Checkout\Cart;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Event\CartBeforeSerializationEvent;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\LineItem\LineItemCollection;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('checkout')]

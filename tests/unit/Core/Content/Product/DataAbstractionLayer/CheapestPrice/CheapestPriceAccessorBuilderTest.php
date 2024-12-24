@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\DataAbstractionLayer\CheapestPrice;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 use Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice\CheapestPriceAccessorBuilder;
 use Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice\CheapestPriceField;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 
 /**
  * @internal

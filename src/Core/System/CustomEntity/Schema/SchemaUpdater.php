@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\System\CustomEntity\Schema;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Schema\Table;
 use Doctrine\DBAL\Types\Types;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
 /**

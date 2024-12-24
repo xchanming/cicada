@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing\Facade;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Routing\Facade\RequestFacadeFactory;
 use Cicada\Core\Framework\Script\Execution\Hook;
 use Cicada\Core\Framework\Script\Execution\Script;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 

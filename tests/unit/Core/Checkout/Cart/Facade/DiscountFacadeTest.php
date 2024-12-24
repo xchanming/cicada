@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Facade;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\DiscountFacade;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

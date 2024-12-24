@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\Event\RecurringPaymentOrderCriteriaEvent;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

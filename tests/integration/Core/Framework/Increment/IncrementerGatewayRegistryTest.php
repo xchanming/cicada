@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Increment;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Increment\AbstractIncrementer;
 use Cicada\Core\Framework\Increment\Exception\IncrementGatewayNotFoundException;
 use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

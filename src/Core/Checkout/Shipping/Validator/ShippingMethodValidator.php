@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Shipping\Validator;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Shipping\ShippingMethodDefinition;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\InsertCommand;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PreWriteValidati
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\ConstraintViolation;

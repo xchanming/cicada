@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Product;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
@@ -17,6 +12,11 @@ use Cicada\Elasticsearch\Framework\ElasticsearchOutdatedIndexDetector;
 use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTaskHandler;
 use Cicada\Elasticsearch\Framework\Indexing\ElasticsearchIndexer;
 use Cicada\Elasticsearch\Test\ElasticsearchTestTestBehaviour;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\DependencyInjection\ContainerInterface;

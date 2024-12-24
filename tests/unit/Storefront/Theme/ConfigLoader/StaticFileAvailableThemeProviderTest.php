@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Storefront\Theme\ConfigLoader;
 
+use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
+use Cicada\Storefront\Theme\ConfigLoader\StaticFileAvailableThemeProvider;
 use League\Flysystem\Filesystem;
 use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
-use Cicada\Storefront\Theme\ConfigLoader\StaticFileAvailableThemeProvider;
 
 /**
  * @internal

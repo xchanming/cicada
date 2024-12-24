@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Maintenance\SalesChannel\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\SalesChannel\Command\SalesChannelMaintenanceEnableCommand;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\Command\UninstallAppCommand;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

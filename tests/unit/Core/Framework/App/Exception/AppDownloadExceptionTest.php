@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Exception;
 
+use Cicada\Core\Framework\App\Exception\AppDownloadException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\Exception\AppDownloadException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

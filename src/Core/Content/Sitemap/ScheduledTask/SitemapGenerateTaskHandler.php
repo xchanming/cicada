@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Sitemap\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Sitemap\Event\SitemapSalesChannelCriteriaEvent;
 use Cicada\Core\Content\Sitemap\Service\SitemapExporterInterface;
 use Cicada\Core\Defaults;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;

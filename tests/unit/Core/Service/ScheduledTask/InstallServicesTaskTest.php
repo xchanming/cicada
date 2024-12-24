@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Service\ScheduledTask;
 
+use Cicada\Core\Service\ScheduledTask\InstallServicesTask;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Service\ScheduledTask\InstallServicesTask;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**

@@ -3,8 +3,8 @@
 namespace Cicada\Storefront\Event;
 
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Event\CicadaSalesChannelEvent;
+use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;

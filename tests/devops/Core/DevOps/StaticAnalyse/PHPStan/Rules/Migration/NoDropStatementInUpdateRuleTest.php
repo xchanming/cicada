@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\DevOps\Core\DevOps\StaticAnalyse\PHPStan\Rules\Migration;
 
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration\NoDropStatementInUpdateRule;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration\NoDropStatementInUpdateRule;
 
 /**
  * @internal

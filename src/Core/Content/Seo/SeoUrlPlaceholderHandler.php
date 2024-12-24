@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
 

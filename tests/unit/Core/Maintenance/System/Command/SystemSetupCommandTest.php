@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Maintenance\System\Command\SystemSetupCommand;
 use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tester\ApplicationTester;

@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

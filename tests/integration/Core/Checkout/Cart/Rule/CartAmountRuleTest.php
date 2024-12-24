@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Rule;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Rule\CartAmountRule;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\NotBlank;
 

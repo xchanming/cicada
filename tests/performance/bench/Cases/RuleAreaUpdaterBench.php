@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Bench\Cases;
 
-use PhpBench\Attributes as Bench;
 use Cicada\Core\Content\Rule\DataAbstractionLayer\RuleAreaUpdater;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
 use Cicada\Tests\Bench\AbstractBenchCase;
+use PhpBench\Attributes as Bench;
 
 /**
  * @internal - only for performance benchmarks

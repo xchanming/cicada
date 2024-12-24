@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
 use Cicada\Core\Framework\Update\Event\UpdatePostFinishEvent;
 use Cicada\Core\Test\Stub\MessageBus\CollectingMessageBus;
@@ -11,6 +9,8 @@ use Cicada\Elasticsearch\Framework\Indexing\ElasticsearchIndexer;
 use Cicada\Elasticsearch\Framework\Indexing\ElasticsearchIndexingMessage;
 use Cicada\Elasticsearch\Framework\Indexing\IndexerOffset;
 use Cicada\Elasticsearch\Framework\SystemUpdateListener;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

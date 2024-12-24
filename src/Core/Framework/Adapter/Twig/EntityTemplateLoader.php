@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Adapter\Twig;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\TwigLoaderConfigCompilerPass;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Service\ResetInterface;
 use Twig\Error\LoaderError;

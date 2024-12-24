@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Account;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
@@ -26,6 +25,7 @@ use Cicada\Core\System\StateMachine\Transition;
 use Cicada\Storefront\Page\Account\Order\AccountEditOrderPageLoadedEvent;
 use Cicada\Storefront\Page\Account\Order\AccountEditOrderPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

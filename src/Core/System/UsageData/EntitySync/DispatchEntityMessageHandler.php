@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\UsageData\EntitySync;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -18,6 +16,8 @@ use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\System\UsageData\Services\ManyToManyAssociationService;
 use Cicada\Core\System\UsageData\Services\ShopIdProvider;
 use Cicada\Core\System\UsageData\Services\UsageDataAllowListService;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
 

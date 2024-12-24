@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Command;
 
+use Cicada\Core\Framework\Api\Command\CreateIntegrationCommand;
+use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\Command\CreateIntegrationCommand;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Dotenv\Dotenv;
 

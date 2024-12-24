@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Checkout\Promotion\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
@@ -30,6 +28,8 @@ use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

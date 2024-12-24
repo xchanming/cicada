@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Migration;
 
+use Cicada\Core\Framework\Migration\MigrationStep;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Migration\MigrationStep;
 
 /**
  * @internal

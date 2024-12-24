@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\FindVariant;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Exception\VariantNotFoundException;
 use Cicada\Core\Content\Product\ProductException;
 use Cicada\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRoute;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Media\Infrastructure\Path;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
 
 /**
  * @internal Concrete implementations of this class should not be extended or used as a base class/type hint.

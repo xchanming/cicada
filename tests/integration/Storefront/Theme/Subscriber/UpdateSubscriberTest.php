@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Storefront\Theme\Subscriber\UpdateSubscriber;
 use Cicada\Storefront\Theme\ThemeLifecycleService;
 use Cicada\Storefront\Theme\ThemeService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

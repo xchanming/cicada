@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Content\ProductStream\Exception;
 
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 
 #[Package('inventory')]
 class NoFilterException extends CicadaHttpException

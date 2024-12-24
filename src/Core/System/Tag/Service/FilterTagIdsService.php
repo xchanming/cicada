@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\Tag\Service;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Query\Expression\CompositeExpression;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\CompiledFieldCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\CriteriaQueryBuilder;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Tag\Struct\FilteredTagIdsStruct;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\Expression\CompositeExpression;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

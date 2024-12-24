@@ -2,11 +2,11 @@
 
 namespace Cicada\Storefront\Theme\Subscriber;
 
-use Doctrine\DBAL\Exception as DBALException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SystemConfig\Service\ConfigurationService;
 use Cicada\Storefront\Theme\Event\ThemeCompilerEnrichScssVariablesEvent;
 use Cicada\Storefront\Theme\StorefrontPluginRegistryInterface;
+use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

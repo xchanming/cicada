@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Cart;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\PriceDefinitionFactory;
@@ -28,6 +27,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

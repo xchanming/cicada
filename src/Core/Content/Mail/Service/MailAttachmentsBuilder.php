@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Mail\Service;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Document\Service\DocumentGenerator;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

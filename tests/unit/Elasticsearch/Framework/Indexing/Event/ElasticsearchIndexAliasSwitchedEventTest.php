@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing\Event;
 
+use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexAliasSwitchedEvent;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexAliasSwitchedEvent;
 
 /**
  * @internal

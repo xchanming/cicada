@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerEntity;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -19,6 +18,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
 use Cicada\Core\Test\Integration\Traits\OrderFixture;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

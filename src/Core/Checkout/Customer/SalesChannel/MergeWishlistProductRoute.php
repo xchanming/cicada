@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Checkout\Customer\SalesChannel;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Checkout\Customer\Event\WishlistMergedEvent;
@@ -21,6 +19,8 @@ use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SuccessResponse;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Routing\Attribute\Route;
 

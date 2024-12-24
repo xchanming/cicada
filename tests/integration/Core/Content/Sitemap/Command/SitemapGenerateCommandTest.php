@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\Command;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Sitemap\Commands\SitemapGenerateCommand;
 use Cicada\Core\Content\Sitemap\Service\SitemapExporter;
 use Cicada\Core\Content\Sitemap\Struct\SitemapGenerationResult;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\EventDispatcher\EventDispatcher;

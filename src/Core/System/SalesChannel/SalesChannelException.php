@@ -4,9 +4,9 @@ namespace Cicada\Core\System\SalesChannel;
 
 use Cicada\Core\Checkout\Customer\Exception\CustomerNotFoundByIdException;
 use Cicada\Core\Checkout\Payment\PaymentException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('buyers-experience')]

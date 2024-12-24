@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\SalesChannel\Validation;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\DeleteCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\InsertCommand;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelLanguage\SalesChannelLanguageDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;

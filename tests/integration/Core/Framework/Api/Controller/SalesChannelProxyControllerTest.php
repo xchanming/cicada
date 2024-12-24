@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartPersister;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
@@ -35,6 +32,9 @@ use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Response;

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -12,6 +10,8 @@ use Cicada\Storefront\Page\Search\SearchPageLoadedHook;
 use Cicada\Storefront\Page\Search\SearchWidgetLoadedHook;
 use Cicada\Storefront\Page\Suggest\SuggestPageLoadedHook;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

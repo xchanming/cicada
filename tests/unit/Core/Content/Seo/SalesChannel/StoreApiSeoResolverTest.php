@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Seo\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\SalesChannel\ProductListResponse;
@@ -22,6 +20,8 @@ use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

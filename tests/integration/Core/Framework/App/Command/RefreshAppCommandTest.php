@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppService;
 use Cicada\Core\Framework\App\Command\AppPrinter;
 use Cicada\Core\Framework\App\Command\RefreshAppCommand;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

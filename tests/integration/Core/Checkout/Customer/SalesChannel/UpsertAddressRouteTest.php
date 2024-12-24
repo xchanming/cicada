@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressDefinition;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
@@ -27,6 +23,10 @@ use Cicada\Core\System\SalesChannel\StoreApiCustomFieldMapper;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Response;

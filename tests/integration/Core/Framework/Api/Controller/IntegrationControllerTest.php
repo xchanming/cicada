@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\OAuth\Scope\UserVerifiedScope;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Context;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\System\Integration\IntegrationCollection;
 use Cicada\Core\System\Integration\IntegrationEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

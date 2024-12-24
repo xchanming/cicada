@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Infrastructure\Path;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Statement;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Infrastructure\Path\SqlMediaPathStorage;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Statement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

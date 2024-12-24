@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Migration;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\Exception\InvalidMigrationClassException;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 
 #[Package('core')]
 class MigrationCollection

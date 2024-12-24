@@ -5,10 +5,10 @@ namespace Cicada\Core\Checkout\Order;
 use Cicada\Core\Checkout\Customer\Exception\CustomerAuthThrottledException;
 use Cicada\Core\Checkout\Order\Exception\DeliveryWithoutAddressException;
 use Cicada\Core\Content\Flow\Exception\CustomerDeletedException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('checkout')]

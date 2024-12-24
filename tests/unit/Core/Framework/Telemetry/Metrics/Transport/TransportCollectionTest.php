@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Telemetry\Metrics\Transport;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfig;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\TransportConfig;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Telemetry\Metrics\Factory\MetricTransportFactoryInterf
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\Type;
 use Cicada\Core\Framework\Telemetry\Metrics\MetricTransportInterface;
 use Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

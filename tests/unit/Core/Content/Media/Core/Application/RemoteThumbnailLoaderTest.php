@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Core\Application;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\Filesystem;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailEntity;
 use Cicada\Core\Content\Media\Core\Application\RemoteThumbnailLoader;
 use Cicada\Core\Content\Media\Infrastructure\Path\MediaUrlGenerator;
@@ -15,6 +9,12 @@ use Cicada\Core\Framework\Adapter\Filesystem\PrefixFilesystem;
 use Cicada\Core\Framework\DataAbstractionLayer\PartialEntity;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\Filesystem;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

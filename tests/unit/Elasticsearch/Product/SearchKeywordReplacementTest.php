@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\SearchKeywordUpdater;
 use Cicada\Core\Framework\Context;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Product\SearchKeywordReplacement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

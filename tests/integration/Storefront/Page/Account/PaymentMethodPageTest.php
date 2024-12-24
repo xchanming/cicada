@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Account;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Page\Account\PaymentMethod\AccountPaymentMethodPageLoadedEvent;
 use Cicada\Storefront\Page\Account\PaymentMethod\AccountPaymentMethodPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
 use Cicada\Tests\Integration\Storefront\Page\StorefrontPageTestConstants;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

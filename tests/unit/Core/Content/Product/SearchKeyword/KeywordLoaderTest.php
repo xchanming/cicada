@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SearchKeyword;
 
+use Cicada\Core\Content\Product\SearchKeyword\KeywordLoader;
+use Cicada\Core\Framework\Context;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\MySQL80Platform;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Product\SearchKeyword\KeywordLoader;
-use Cicada\Core\Framework\Context;
 
 /**
  * @internal

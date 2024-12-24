@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Write\Command;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\ChangeSet;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\ChangeSet;
 
 /**
  * @internal

@@ -2,6 +2,11 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests;
 
+use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Struct\Struct;
+use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use GuzzleHttp\Client;
 use PhpParser\Node;
 use PhpParser\Node\Expr\ClassConstFetch;
@@ -15,11 +20,6 @@ use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Struct\Struct;
-use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 

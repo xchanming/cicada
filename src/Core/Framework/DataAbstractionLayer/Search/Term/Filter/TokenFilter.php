@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Filter;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @phpstan-type FilterConfig array{excluded_terms: array<string>, min_search_length: int}

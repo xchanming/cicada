@@ -2,9 +2,9 @@
 
 namespace SwagTestPlugin\Migration;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

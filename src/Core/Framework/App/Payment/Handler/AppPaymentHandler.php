@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Payment\Handler;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
@@ -48,6 +47,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMachineTransitionActions;
 use Cicada\Core\System\StateMachine\StateMachineRegistry;
 use Cicada\Core\System\StateMachine\Transition;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 

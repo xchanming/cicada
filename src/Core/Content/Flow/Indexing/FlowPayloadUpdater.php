@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Indexing;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Flow\Dispatching\CachedFlowLoader;
 use Cicada\Core\Content\Flow\Dispatching\FlowBuilder;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableQuery;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('services-settings')]
 class FlowPayloadUpdater

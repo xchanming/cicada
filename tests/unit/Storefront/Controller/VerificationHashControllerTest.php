@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Controller\VerificationHashController;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

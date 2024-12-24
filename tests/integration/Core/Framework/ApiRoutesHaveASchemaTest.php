@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi3Generator;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\StoreApiGenerator;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\System\CustomEntity\Api\CustomEntityApiController;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
 use Cicada\Core\Test\Integration\Traits\SnapshotTesting;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;

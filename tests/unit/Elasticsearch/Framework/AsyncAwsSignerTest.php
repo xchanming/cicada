@@ -5,12 +5,12 @@ namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 use AsyncAws\Core\Configuration;
 use AsyncAws\Core\Credentials\CredentialProvider;
 use AsyncAws\Core\Credentials\Credentials;
+use Cicada\Elasticsearch\ElasticsearchException;
+use Cicada\Elasticsearch\Framework\AsyncAwsSigner;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
-use Cicada\Elasticsearch\ElasticsearchException;
-use Cicada\Elasticsearch\Framework\AsyncAwsSigner;
 
 /**
  * @internal

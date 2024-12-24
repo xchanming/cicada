@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Error\GenericCartError;
@@ -29,6 +26,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Controller\CartLineItemController;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

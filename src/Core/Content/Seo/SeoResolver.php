@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @phpstan-import-type ResolvedSeoUrl from AbstractSeoResolver

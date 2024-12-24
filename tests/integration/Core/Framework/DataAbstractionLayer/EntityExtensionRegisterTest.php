@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
@@ -17,6 +15,8 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\Product
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

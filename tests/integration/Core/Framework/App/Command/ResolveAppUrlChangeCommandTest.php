@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppUrlChangeResolver\Resolver;
 use Cicada\Core\Framework\App\Command\ResolveAppUrlChangeCommand;
 use Cicada\Core\Framework\Context;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

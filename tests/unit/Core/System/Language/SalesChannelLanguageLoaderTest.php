@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\Language;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\System\Language\SalesChannelLanguageLoader;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\System\Language\SalesChannelLanguageLoader;
 
 /**
  * @internal

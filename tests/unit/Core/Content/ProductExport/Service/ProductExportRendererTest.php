@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ProductExport\Service;
 
-use Monolog\Level;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ProductExport\Event\ProductExportLoggingEvent;
 use Cicada\Core\Content\ProductExport\Event\ProductExportRenderFooterContextEvent;
 use Cicada\Core\Content\ProductExport\Event\ProductExportRenderHeaderContextEvent;
@@ -20,6 +16,10 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use Monolog\Level;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;

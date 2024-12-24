@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\Event\CustomerDoubleOptInRegistrationEvent;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
@@ -11,6 +9,8 @@ use Cicada\Core\Content\Flow\Dispatching\Storer\ScalarValuesStorer;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
-use Doctrine\DBAL\Connection;
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\FullText\MatchQuery;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductTranslation\ProductTranslationDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
@@ -28,6 +22,12 @@ use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
 use Cicada\Elasticsearch\Product\ProductSearchQueryBuilder;
 use Cicada\Tests\Unit\Core\System\Language\Stubs\StaticLanguageLoader;
 use Cicada\Tests\Unit\Core\System\Language\Stubs\StaticSalesChannelLanguageLoader;
+use Doctrine\DBAL\Connection;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\FullText\MatchQuery;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Validator\Validator\ValidatorInterface;

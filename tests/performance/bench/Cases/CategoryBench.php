@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Bench\Cases;
 
-use PhpBench\Attributes\AfterMethods;
-use PhpBench\Attributes as Bench;
-use PhpBench\Attributes\BeforeMethods;
 use Cicada\Core\Content\Category\SalesChannel\NavigationRoute;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Tests\Bench\AbstractBenchCase;
+use PhpBench\Attributes\AfterMethods;
+use PhpBench\Attributes as Bench;
+use PhpBench\Attributes\BeforeMethods;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

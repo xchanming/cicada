@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DependencyInjection\CompilerPass;
 
+use Cicada\Core\Content\Product\ProductDefinition;
+use Cicada\Core\Framework\DependencyInjection\CompilerPass\AutoconfigureCompilerPass;
 use League\Flysystem\FilesystemOperator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Product\ProductDefinition;
-use Cicada\Core\Framework\DependencyInjection\CompilerPass\AutoconfigureCompilerPass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

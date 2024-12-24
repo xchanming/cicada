@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Category\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryException;
 use Cicada\Core\Content\Category\Exception\CategoryNotFoundException;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageEntity;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('inventory')]
 class CategoryBreadcrumbUpdater

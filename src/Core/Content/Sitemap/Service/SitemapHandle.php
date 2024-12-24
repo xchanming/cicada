@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Sitemap\Event\SitemapFilterOpenTagEvent;
 use Cicada\Core\Content\Sitemap\SitemapException;
 use Cicada\Core\Content\Sitemap\Struct\Url;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 #[Package('services-settings')]

@@ -2,6 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Requirements;
 
+use Cicada\Core\Installer\Requirements\EnvironmentRequirementsValidator;
+use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
+use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
+use Cicada\Core\Installer\Requirements\Struct\SystemCheck;
 use Composer\Composer;
 use Composer\Package\Link;
 use Composer\Package\RootPackage;
@@ -12,10 +16,6 @@ use Composer\Semver\VersionParser;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Installer\Requirements\EnvironmentRequirementsValidator;
-use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
-use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
-use Cicada\Core\Installer\Requirements\Struct\SystemCheck;
 
 /**
  * @internal

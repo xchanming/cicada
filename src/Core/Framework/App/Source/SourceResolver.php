@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Source;
 
-use Doctrine\DBAL\Exception as DBALException;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Filesystem;
 use Cicada\Core\Framework\Util\Hasher;
+use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Contracts\Service\ResetInterface;
 
 /**

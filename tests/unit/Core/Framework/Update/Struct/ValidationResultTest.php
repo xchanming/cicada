@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Struct;
 
+use Cicada\Core\Framework\Update\Struct\ValidationResult;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Update\Struct\ValidationResult;
 
 /**
  * @internal

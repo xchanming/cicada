@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\AppUrlChangeResolver;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppUrlChangeResolver\AbstractAppUrlChangeStrategy;
 use Cicada\Core\Framework\App\AppUrlChangeResolver\Resolver;
 use Cicada\Core\Framework\App\Exception\AppUrlChangeStrategyNotFoundException;
 use Cicada\Core\Framework\Context;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Price;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\CashRounding;
 use Cicada\Core\Checkout\Cart\Price\GrossPriceCalculator;
 use Cicada\Core\Checkout\Cart\Price\NetPriceCalculator;
@@ -20,6 +17,9 @@ use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRule;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Cart\Tax\TaxCalculator;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

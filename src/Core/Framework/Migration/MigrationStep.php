@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Migration;
 
+use Cicada\Core\Defaults;
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\ConnectionException;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Exception\TableNotFoundException;
-use Cicada\Core\Defaults;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 abstract class MigrationStep

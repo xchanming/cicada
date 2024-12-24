@@ -2,8 +2,6 @@
 
 namespace Cicada\Elasticsearch\Framework\DataAbstractionLayer;
 
-use OpenSearch\Client;
-use OpenSearchDSL\Search;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\AggregationResult\AggregationResultCollection;
@@ -14,6 +12,8 @@ use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\Event\ElasticsearchEntityAggregatorSearchedEvent;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\Event\ElasticsearchEntityAggregatorSearchEvent;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
+use OpenSearch\Client;
+use OpenSearchDSL\Search;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]

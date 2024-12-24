@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Administration\System\SalesChannel\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\System\SalesChannel\Subscriber\SalesChannelUserConfigSubscriber;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\TestUser;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

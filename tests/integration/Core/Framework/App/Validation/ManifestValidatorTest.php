@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Validation;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Exception\AppValidationException;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Validation\ManifestValidator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

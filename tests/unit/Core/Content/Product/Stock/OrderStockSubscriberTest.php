@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Stock;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Checkout\Order\OrderStates;
@@ -26,6 +22,10 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineSt
 use Cicada\Core\System\StateMachine\Event\StateMachineTransitionEvent;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

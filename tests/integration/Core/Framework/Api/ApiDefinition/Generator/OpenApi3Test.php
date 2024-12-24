@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\ApiDefinition\Generator;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\System\SalesChannel\SalesChannel\StoreApiInfoController;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

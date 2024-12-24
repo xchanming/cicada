@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Cleanup;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Media\UnusedMediaPurger;
 use Cicada\Core\Content\Product\Aggregate\ProductDownload\ProductDownloadDefinition;
 use Cicada\Core\Content\Product\Cleanup\CleanupUnusedDownloadMediaTaskHandler;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

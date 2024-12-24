@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Util;
 
+use Cicada\Core\Framework\Util\Json;
+use Cicada\Core\Framework\Util\UtilException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Util\Json;
-use Cicada\Core\Framework\Util\UtilException;
 
 /**
  * @internal

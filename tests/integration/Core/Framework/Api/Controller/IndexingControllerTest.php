@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexer;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexingMessage;
 use Cicada\Core\Framework\Api\Controller\IndexingController;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

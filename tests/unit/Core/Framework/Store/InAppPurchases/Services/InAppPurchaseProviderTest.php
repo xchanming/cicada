@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\InAppPurchases\Services;
 
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\JWT\JWTDecoder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\AbstractStoreRequestOptionsProvider;
@@ -16,6 +11,11 @@ use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseProvider;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\KeyFetcher;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

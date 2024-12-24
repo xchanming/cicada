@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\Flow;
 
-use Doctrine\DBAL\Exception as DBALException;
 use Cicada\Core\Content\Flow\Dispatching\TransactionFailedException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('services-settings')]

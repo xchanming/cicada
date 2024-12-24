@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\SystemConfig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\UtilException;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

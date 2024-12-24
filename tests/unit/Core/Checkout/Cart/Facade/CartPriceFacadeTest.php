@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Facade;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\CartPriceFacade;
 use Cicada\Core\Checkout\Cart\Facade\ScriptPriceStubs;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\PriceCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

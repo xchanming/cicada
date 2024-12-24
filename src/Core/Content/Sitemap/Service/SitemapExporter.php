@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Content\Sitemap\Event\SitemapGeneratedEvent;
 use Cicada\Core\Content\Sitemap\Exception\AlreadyLockedException;
 use Cicada\Core\Content\Sitemap\Provider\AbstractUrlProvider;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\Exception\InvalidDomainException;
+use League\Flysystem\FilesystemOperator;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('services-settings')]

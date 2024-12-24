@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Test\Stub\DataAbstractionLayer;
 
+use Cicada\Core\Test\Stub\DataAbstractionLayer\EmptyEntityExistence;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Test\Stub\DataAbstractionLayer\EmptyEntityExistence;
 
 /**
  * @internal

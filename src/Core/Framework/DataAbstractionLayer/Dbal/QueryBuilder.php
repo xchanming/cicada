@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Query\QueryBuilder as DBALQueryBuilder;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Query\QueryBuilder as DBALQueryBuilder;
 
 #[Package('core')]
 class QueryBuilder extends DBALQueryBuilder

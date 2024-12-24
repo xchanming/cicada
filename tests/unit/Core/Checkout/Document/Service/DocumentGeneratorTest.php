@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Document\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\DocumentException;
 use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
 use Cicada\Core\Checkout\Document\Renderer\AbstractDocumentRenderer;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

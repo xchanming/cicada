@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use Doctrine\DBAL\Exception;
-use League\Flysystem\Filesystem;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
@@ -45,6 +40,11 @@ use Cicada\Storefront\Theme\ThemeFilesystemResolver;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\MockThemeCompilerConcatenatedSubscriber;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\MockThemeVariablesSubscriber;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimplePlugin\SimplePlugin;
+use Doctrine\DBAL\Exception;
+use League\Flysystem\Filesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Asset\UrlPackage;
 use Symfony\Component\Asset\VersionStrategy\EmptyVersionStrategy;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

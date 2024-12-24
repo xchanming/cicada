@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Media;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\FileSaver;
 use Cicada\Core\Content\Media\MediaException;
 use Cicada\Core\Content\Media\MediaService;
@@ -17,6 +16,7 @@ use Cicada\Storefront\Framework\Media\Exception\MediaValidatorMissingException;
 use Cicada\Storefront\Framework\Media\StorefrontMediaUploader;
 use Cicada\Storefront\Framework\Media\StorefrontMediaValidatorRegistry;
 use Cicada\Storefront\Framework\StorefrontFrameworkException;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**

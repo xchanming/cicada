@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\Datadog;
 
-use PHPUnit\Runner\Extension\Extension;
-use PHPUnit\Runner\Extension\Facade;
-use PHPUnit\Runner\Extension\ParameterCollection;
-use PHPUnit\TextUI\Configuration\Configuration;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\Common\TimeKeeper;
@@ -15,6 +11,10 @@ use Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber\TestFailedSubscriber;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber\TestFinishedSubscriber;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber\TestPreparedSubscriber;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber\TestRunnerExecutionFinishedSubscriber;
+use PHPUnit\Runner\Extension\Extension;
+use PHPUnit\Runner\Extension\Facade;
+use PHPUnit\Runner\Extension\ParameterCollection;
+use PHPUnit\TextUI\Configuration\Configuration;
 
 /**
  * @internal

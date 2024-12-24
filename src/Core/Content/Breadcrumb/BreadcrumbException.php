@@ -5,8 +5,8 @@ namespace Cicada\Core\Content\Breadcrumb;
 use Cicada\Core\Content\Category\CategoryException;
 use Cicada\Core\Content\Category\Exception\CategoryNotFoundException;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

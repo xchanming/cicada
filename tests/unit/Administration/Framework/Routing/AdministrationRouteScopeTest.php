@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Administration\Framework\Routing;
 
+use Cicada\Administration\Framework\Routing\AdministrationRouteScope;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Administration\Framework\Routing\AdministrationRouteScope;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

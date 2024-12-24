@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Command\Scaffolding\Generator;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\Generator\StorefrontControllerGenerator;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\PluginScaffoldConfiguration;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\StubCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 

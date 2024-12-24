@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Core\Application;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\MediaLocationBuilder;
 use Cicada\Core\Content\Media\Core\Application\MediaPathStorage;
 use Cicada\Core\Content\Media\Core\Application\MediaPathUpdater;
@@ -11,6 +9,8 @@ use Cicada\Core\Content\Media\Core\Params\MediaLocationStruct;
 use Cicada\Core\Content\Media\Core\Params\ThumbnailLocationStruct;
 use Cicada\Core\Content\Media\Core\Strategy\PlainPathStrategy;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

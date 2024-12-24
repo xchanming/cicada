@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\SystemConfig;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Webhook\Hookable;
 use Cicada\Core\System\SystemConfig\AbstractSystemConfigLoader;
@@ -17,6 +12,11 @@ use Cicada\Core\System\SystemConfig\SystemConfigException;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\EventDispatcher\Event;
 

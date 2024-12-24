@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Service;
 
+use Cicada\Core\Service\ServiceRegistryClient;
+use Cicada\Core\Service\ServiceRegistryEntry;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Service\ServiceRegistryClient;
-use Cicada\Core\Service\ServiceRegistryEntry;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 

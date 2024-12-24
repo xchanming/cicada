@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\DependencyInjection\CompilerPass;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Framework\DependencyInjection\DependencyInjectionException;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

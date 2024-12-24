@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Kernel\KernelFactory;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
@@ -30,6 +28,8 @@ use Cicada\Core\System\CustomEntity\CustomEntityLifecycleService;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntityPersister;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use SwagTestPlugin\SwagTestPlugin;
 use SwagTestSkipRebuild\SwagTestSkipRebuild;
 use Symfony\Bundle\FrameworkBundle\Test\TestContainer;

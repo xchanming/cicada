@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\ActionButton;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActionButton\AppAction;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\App\Payload\Source;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

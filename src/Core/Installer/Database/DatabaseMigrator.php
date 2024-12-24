@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Installer\Database;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\System\Service\SetupDatabaseAdapter;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

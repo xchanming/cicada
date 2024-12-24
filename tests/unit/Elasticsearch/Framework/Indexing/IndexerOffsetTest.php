@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Elasticsearch\Framework\Indexing\IndexerOffset;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;

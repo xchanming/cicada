@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Media\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Event\MediaIndexerEvent;
 use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('buyers-experience')]

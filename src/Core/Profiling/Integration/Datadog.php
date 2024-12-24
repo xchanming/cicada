@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Profiling\Integration;
 
+use Cicada\Core\Framework\Log\Package;
 use DDTrace\Contracts\Tracer;
 use DDTrace\GlobalTracer;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal experimental atm

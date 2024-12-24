@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\CategoryEntity;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

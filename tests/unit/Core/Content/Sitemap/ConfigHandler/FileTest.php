@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Sitemap\ConfigHandler;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Sitemap\ConfigHandler\File;
 use Cicada\Core\Content\Sitemap\Service\ConfigHandler;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

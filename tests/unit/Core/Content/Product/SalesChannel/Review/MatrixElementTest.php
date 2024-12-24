@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Review;
 
+use Cicada\Core\Content\Product\SalesChannel\Review\MatrixElement;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Product\SalesChannel\Review\MatrixElement;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

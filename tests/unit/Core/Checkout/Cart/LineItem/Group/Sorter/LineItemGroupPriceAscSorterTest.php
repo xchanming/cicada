@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Sorter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupSorterInterface;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Sorter\LineItemGroupPriceAscSorter;
 use Cicada\Core\Checkout\Cart\LineItem\LineItemFlatCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group\Helpers\Traits\LineItemTestFixtureBehaviour;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

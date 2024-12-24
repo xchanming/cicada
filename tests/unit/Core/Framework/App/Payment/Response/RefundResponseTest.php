@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Payment\Response;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Payment\Response\AbstractResponse;
 use Cicada\Core\Framework\App\Payment\Response\RefundResponse;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMachineTransitionActions;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

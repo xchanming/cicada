@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\Adapter\Translation;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\ConnectionException;
-use Doctrine\DBAL\Exception\DriverException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Adapter\Cache\Event\AddCacheTagEvent;
 use Cicada\Core\Framework\Context;
@@ -15,6 +12,9 @@ use Cicada\Core\PlatformRequest;
 use Cicada\Core\SalesChannelRequest;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
 use Cicada\Core\System\Snippet\SnippetService;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\ConnectionException;
+use Doctrine\DBAL\Exception\DriverException;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\CacheWarmer\WarmableInterface;
 use Symfony\Component\Intl\Locale;

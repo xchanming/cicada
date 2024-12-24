@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use Psr\Cache\CacheItemInterface;
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Content\Sitemap\Exception\AlreadyLockedException;
 use Cicada\Core\Content\Sitemap\Provider\AbstractUrlProvider;
 use Cicada\Core\Content\Sitemap\Service\SitemapExporter;
@@ -30,6 +25,11 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use Psr\Cache\CacheItemInterface;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

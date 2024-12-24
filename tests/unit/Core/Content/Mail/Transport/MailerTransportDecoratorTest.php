@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Transport;
 
-use League\Flysystem\Filesystem;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\Service\Mail;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsBuilder;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
@@ -16,6 +12,10 @@ use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Uuid\Uuid;
+use League\Flysystem\Filesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Mime\Email;

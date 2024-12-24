@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Service;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\AppExtractor;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginException;
 use Cicada\Core\Framework\Util\Filesystem;
 use Cicada\Core\Service\Event\ServiceOutdatedEvent;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Filesystem\Filesystem as Io;
 use Symfony\Component\Filesystem\Path;
 

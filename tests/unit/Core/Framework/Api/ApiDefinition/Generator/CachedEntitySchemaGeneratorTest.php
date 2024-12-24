@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\ApiDefinition\Generator;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\CachedEntitySchemaGenerator;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\EntitySchemaGenerator;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\Cache\CacheInterface;
 
 /**

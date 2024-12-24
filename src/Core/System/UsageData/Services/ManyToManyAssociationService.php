@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\UsageData\Services;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ReferenceVersionField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

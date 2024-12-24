@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Health;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\SystemCheck\Check\SystemCheckExecutionContext;
 use Cicada\Core\Kernel;
 use Cicada\Storefront\Framework\SystemCheck\SaleChannelsReadinessCheck;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Router;
 

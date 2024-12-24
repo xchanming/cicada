@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Sitemap\Service;
 
-use League\Flysystem\DirectoryListing;
-use League\Flysystem\FileAttributes;
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Sitemap\Service\SitemapLister;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainEntity;
 use Cicada\Core\Test\Generator;
+use League\Flysystem\DirectoryListing;
+use League\Flysystem\FileAttributes;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Asset\Package;
 
 /**

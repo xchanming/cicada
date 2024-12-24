@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\After;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
@@ -20,6 +17,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\After;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpKernel\KernelInterface;
 

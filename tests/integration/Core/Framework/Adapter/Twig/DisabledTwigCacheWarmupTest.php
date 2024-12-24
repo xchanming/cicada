@@ -2,8 +2,8 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**

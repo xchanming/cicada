@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Routing;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\ContextSource;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Routing\RouteScopeListener;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

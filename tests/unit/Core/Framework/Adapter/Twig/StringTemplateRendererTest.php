@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Adapter\Twig\StringTemplateRenderer;
 use Cicada\Core\Framework\Context;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bridge\Twig\Extension\TranslationExtension;
 use Symfony\Component\Translation\Translator;
 use Twig\Environment;

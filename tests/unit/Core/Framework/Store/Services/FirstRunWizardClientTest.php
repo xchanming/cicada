@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Services;
 
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
@@ -14,6 +10,10 @@ use Cicada\Core\Framework\Store\Authentication\AbstractStoreRequestOptionsProvid
 use Cicada\Core\Framework\Store\Services\FirstRunWizardClient;
 use Cicada\Core\Framework\Store\Services\InstanceService;
 use Cicada\Core\Framework\Uuid\Uuid;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Factory;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\StatesUpdater;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
@@ -20,6 +16,10 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Doctrine\DBAL\Connection;
+use Faker\Factory;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**

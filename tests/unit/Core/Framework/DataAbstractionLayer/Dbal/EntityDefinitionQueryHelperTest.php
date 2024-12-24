@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Dbal;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Aggregate\CategoryTranslation\CategoryTranslationDefinition;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductCategory\ProductCategoryDefinition;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriteGatewayInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

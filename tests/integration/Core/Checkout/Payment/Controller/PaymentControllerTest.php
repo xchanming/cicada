@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
@@ -25,6 +24,7 @@ use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Integration\Traits\OrderFixture;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

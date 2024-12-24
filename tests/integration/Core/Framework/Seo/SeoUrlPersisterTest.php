@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Seo;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Seo\SeoUrl\SeoUrlCollection;
 use Cicada\Core\Content\Seo\SeoUrl\SeoUrlEntity;
@@ -25,6 +21,10 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

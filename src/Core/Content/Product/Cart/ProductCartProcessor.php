@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\Cart;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CartDataCollectorInterface;
@@ -32,6 +30,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\Tax\TaxEntity;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('inventory')]
 class ProductCartProcessor implements CartProcessorInterface, CartDataCollectorInterface

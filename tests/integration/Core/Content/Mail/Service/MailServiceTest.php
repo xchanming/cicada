@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Mail\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Mail\Service\AbstractMailSender;
 use Cicada\Core\Content\Mail\Service\MailFactory;
 use Cicada\Core\Content\Mail\Service\MailService;
@@ -20,6 +16,10 @@ use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Mime\Email;
 use Twig\Environment;

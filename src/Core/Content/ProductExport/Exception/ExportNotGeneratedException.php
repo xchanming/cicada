@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Content\ProductExport\Exception;
 
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('inventory')]

@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Migration\V6_4;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\MailTemplate\MailTemplateTypes;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Migration\Traits\MailSubjectUpdate;
 use Cicada\Core\Migration\Traits\MailUpdate;
 use Cicada\Core\Migration\Traits\UpdateMailTrait;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

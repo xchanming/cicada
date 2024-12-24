@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart\Discount;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantity;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantityCollection;
 use Cicada\Core\Checkout\Cart\LineItem\LineItemFlatCollection;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\DiscountPackage;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\DiscountPackageCollection;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionLineItemTestFixtureBehaviour;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

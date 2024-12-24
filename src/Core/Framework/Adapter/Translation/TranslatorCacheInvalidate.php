@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Adapter\Translation;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Feature;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Aggregate\SnippetSet\SnippetSetDefinition;
 use Cicada\Core\System\Snippet\SnippetDefinition;
 use Cicada\Core\System\Snippet\SnippetEvents;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

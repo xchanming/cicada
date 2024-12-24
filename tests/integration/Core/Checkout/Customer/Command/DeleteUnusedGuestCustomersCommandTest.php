@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
@@ -25,6 +24,7 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Integration\Builder\Customer\CustomerBuilder;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

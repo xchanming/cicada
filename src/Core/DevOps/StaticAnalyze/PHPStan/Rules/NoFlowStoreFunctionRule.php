@@ -2,6 +2,9 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
+use Cicada\Core\Content\Flow\Dispatching\Storer\FlowStorer;
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Expr\Variable;
@@ -9,9 +12,6 @@ use PhpParser\Node\Identifier;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
-use Cicada\Core\Content\Flow\Dispatching\Storer\FlowStorer;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @implements Rule<MethodCall>

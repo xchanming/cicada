@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\Validation\Constraint;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerVatIdentification;
 use Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerVatIdentificationValidator;
 use Cicada\Core\Framework\Context;
@@ -14,6 +10,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Validation\HappyPathValidator;
 use Cicada\Core\System\Country\CountryEntity;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Context\ExecutionContext;

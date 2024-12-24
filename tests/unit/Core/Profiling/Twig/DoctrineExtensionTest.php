@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Profiling\Twig;
 
+use Cicada\Core\Profiling\Twig\DoctrineExtension;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Profiling\Twig\DoctrineExtension;
 
 /**
  * @internal

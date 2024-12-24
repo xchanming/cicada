@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Event\ImportExportExceptionImportRecordEvent;
 use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

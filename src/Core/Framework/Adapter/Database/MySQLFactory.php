@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Adapter\Database;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
 use Doctrine\DBAL\Driver\Middleware;
 use Doctrine\DBAL\DriverManager;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

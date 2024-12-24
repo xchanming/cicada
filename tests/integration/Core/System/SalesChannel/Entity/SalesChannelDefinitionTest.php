@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\SalesChannel\Entity;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\SalesChannel\SalesChannelCategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
@@ -24,6 +23,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel\Context;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
 use Cicada\Core\Defaults;
@@ -16,6 +14,8 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceParameters
 use Cicada\Core\System\SalesChannel\Event\SalesChannelContextCreatedEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

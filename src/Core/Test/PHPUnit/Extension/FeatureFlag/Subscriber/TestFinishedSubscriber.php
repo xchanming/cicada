@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\Subscriber;
 
-use PHPUnit\Event\Test\Finished;
-use PHPUnit\Event\Test\FinishedSubscriber;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\SavedConfig;
+use PHPUnit\Event\Test\Finished;
+use PHPUnit\Event\Test\FinishedSubscriber;
 
 /**
  * @internal

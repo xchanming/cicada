@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\Processing\Pipe;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\PrimaryKeyResolver;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\SerializerRegistry;
 use Cicada\Core\Content\ImportExport\Processing\Pipe\EntityPipe;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

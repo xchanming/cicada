@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Checkout\Payment;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Payment\Cart\Error\PaymentMethodBlockedError;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
@@ -20,6 +18,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Checkout\Cart\Error\PaymentMethodChangedError;
 use Cicada\Storefront\Checkout\Payment\BlockedPaymentMethodSwitcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

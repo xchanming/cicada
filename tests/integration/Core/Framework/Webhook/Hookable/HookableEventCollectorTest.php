@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Hookable;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Webhook\Hookable\HookableEventCollector;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

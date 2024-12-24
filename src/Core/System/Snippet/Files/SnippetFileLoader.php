@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\System\Snippet\Files;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\KernelInterface;
 

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Test\Store;
 
-use GuzzleHttp\Client;
 use Cicada\Core\Framework\JWT\JWTDecoder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Store\InAppPurchase;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseProvider;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\KeyFetcher;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use GuzzleHttp\Client;
 use Symfony\Component\HttpKernel\Log\Logger;
 
 /**

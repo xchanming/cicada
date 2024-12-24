@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\Subscriber;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Framework\Context;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Translation;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Context;
@@ -24,6 +21,9 @@ use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 use Cicada\Storefront\Theme\ThemeService;
 use Cicada\Tests\Integration\Core\Framework\Translation\Fixtures\UnitTest_SnippetFile;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Translation\MessageCatalogueInterface;

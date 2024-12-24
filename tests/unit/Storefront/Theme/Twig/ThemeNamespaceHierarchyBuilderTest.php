@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Twig;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\Event\DocumentTemplateRendererParameterEvent;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -14,6 +10,10 @@ use Cicada\Core\Test\Generator;
 use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 use Cicada\Storefront\Theme\Twig\ThemeInheritanceBuilderInterface;
 use Cicada\Storefront\Theme\Twig\ThemeNamespaceHierarchyBuilder;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;

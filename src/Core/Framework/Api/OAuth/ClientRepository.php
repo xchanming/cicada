@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
-use Doctrine\DBAL\Connection;
-use League\OAuth2\Server\Entities\ClientEntityInterface;
-use League\OAuth2\Server\Exception\OAuthServerException;
-use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use League\OAuth2\Server\Entities\ClientEntityInterface;
+use League\OAuth2\Server\Exception\OAuthServerException;
+use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 
 #[Package('core')]
 class ClientRepository implements ClientRepositoryInterface

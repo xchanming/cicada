@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Examples;
 
-use GuzzleHttp\Client;
 use Cicada\Core\Content\Product\Extension\ResolveListingIdsExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\IdSearchResult;
+use GuzzleHttp\Client;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 
 /**

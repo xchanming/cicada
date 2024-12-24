@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\FindVariant;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\FindVariant\FoundCombination;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

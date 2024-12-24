@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Storage;
 
+use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
+use Cicada\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
+use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
-use Cicada\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
-use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 
 /**
  * @internal

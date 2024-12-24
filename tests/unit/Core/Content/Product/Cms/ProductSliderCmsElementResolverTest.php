@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Cms;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
@@ -60,6 +56,10 @@ use Cicada\Core\System\Tax\TaxDefinition;
 use Cicada\Core\System\Unit\UnitDefinition;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\Request;
 

@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document\Service;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use setasign\Fpdi\Tfpdf\Fpdi;
 use Cicada\Core\Checkout\Document\DocumentGenerationResult;
 use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
 use Cicada\Core\Checkout\Document\Renderer\DeliveryNoteRenderer;
@@ -28,6 +24,10 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use setasign\Fpdi\Tfpdf\Fpdi;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Price;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Facade\ScriptPriceStubs;
 use Cicada\Core\Content\Product\SalesChannel\Price\AppScriptProductPriceCalculator;
 use Cicada\Core\Content\Product\SalesChannel\Price\ProductPriceCalculator;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Framework\Script\Execution\ScriptExecutor;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

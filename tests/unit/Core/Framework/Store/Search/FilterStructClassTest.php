@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Search;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Search\EqualsFilterStruct;
 use Cicada\Core\Framework\Store\Search\FilterStruct;
 use Cicada\Core\Framework\Store\Search\MultiFilterStruct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

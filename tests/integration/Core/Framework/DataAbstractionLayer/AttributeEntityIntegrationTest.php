@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
@@ -30,6 +27,9 @@ use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntity;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityCollection;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

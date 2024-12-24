@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Rule\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\DataAbstractionLayer\RulePayloadSubscriber;
 use Cicada\Core\Content\Rule\DataAbstractionLayer\RulePayloadUpdater;
 use Cicada\Core\Content\Rule\RuleDefinition;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Rule\Container\OrRule;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

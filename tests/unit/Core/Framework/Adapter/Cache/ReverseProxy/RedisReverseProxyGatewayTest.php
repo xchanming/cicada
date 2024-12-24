@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache\ReverseProxy;
 
+use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\RedisReverseProxyGateway;
+use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
+use Cicada\Core\Test\Annotation\DisabledFeatures;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -9,9 +12,6 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\RedisReverseProxyGateway;
-use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 /**

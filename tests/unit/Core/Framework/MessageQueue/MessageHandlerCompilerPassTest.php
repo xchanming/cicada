@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue;
 
+use Cicada\Core\Framework\MessageQueue\MessageHandlerCompilerPass;
+use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\TestTask;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\MessageQueue\MessageHandlerCompilerPass;
-use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\TestTask;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 

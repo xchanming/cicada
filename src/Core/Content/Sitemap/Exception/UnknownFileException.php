@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Content\Sitemap\Exception;
 
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 
 #[Package('services-settings')]
 class UnknownFileException extends CicadaHttpException

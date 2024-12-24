@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\EventListener;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
 use Cicada\Core\Content\ProductExport\Service\ProductExportFileHandlerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

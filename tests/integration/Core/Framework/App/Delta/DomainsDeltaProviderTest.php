@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Delta;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\Delta\DomainsDeltaProvider;
 use Cicada\Core\Framework\App\Lifecycle\AbstractAppLifecycle;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

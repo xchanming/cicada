@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use League\MimeTypeDetection\FinfoMimeTypeDetector;
 use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
 use Cicada\Core\Checkout\Shipping\ShippingMethodDefinition;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
+use League\MimeTypeDetection\FinfoMimeTypeDetector;
 
 /**
  * @internal

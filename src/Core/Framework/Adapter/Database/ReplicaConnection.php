@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Adapter\Database;
 
-use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Kernel;
+use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
 
 /**
  * @internal

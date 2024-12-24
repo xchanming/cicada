@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Serializer;
 
+use Cicada\Core\Framework\Api\Serializer\JsonApiDecoder;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\Serializer\JsonApiDecoder;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Framework\Struct\Collection;
 use Cicada\Core\Framework\Struct\Struct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Installer\Controller\RequirementsController;
 use Cicada\Core\Installer\Requirements\RequirementsValidatorInterface;
 use Cicada\Core\Installer\Requirements\Struct\PathCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
 use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

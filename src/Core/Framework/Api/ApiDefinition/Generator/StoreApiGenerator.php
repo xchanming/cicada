@@ -2,11 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\ApiDefinition\Generator;
 
-use http\Exception\RuntimeException;
-use OpenApi\Annotations\License;
-use OpenApi\Annotations\OpenApi;
-use OpenApi\Annotations\Operation;
-use OpenApi\Annotations\Parameter;
 use Cicada\Core\Framework\Api\ApiDefinition\ApiDefinitionGeneratorInterface;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi\OpenApiDefinitionSchemaBuilder;
@@ -15,6 +10,11 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
+use http\Exception\RuntimeException;
+use OpenApi\Annotations\License;
+use OpenApi\Annotations\OpenApi;
+use OpenApi\Annotations\Operation;
+use OpenApi\Annotations\Parameter;
 
 /**
  * @internal

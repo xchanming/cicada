@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Hmac;
 
-use GuzzleHttp\Psr7\Uri;
-use Psr\Http\Message\UriInterface;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\LocaleProvider;
 use Cicada\Core\Framework\Store\InAppPurchase;
+use GuzzleHttp\Psr7\Uri;
+use Psr\Http\Message\UriInterface;
 
 /**
  * @internal only for use by the app-system

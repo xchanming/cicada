@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Util;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Filesystem;
 use Cicada\Core\Framework\Util\UtilException;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem as Io;
 use Symfony\Component\Filesystem\Path;
 

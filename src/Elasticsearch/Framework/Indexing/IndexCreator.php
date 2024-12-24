@@ -2,13 +2,13 @@
 
 namespace Cicada\Elasticsearch\Framework\Indexing;
 
-use OpenSearch\Client;
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Framework\AbstractElasticsearchDefinition;
 use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexConfigEvent;
 use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexCreatedEvent;
+use OpenSearch\Client;
+use Psr\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]
 class IndexCreator

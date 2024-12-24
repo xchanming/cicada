@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\ActionButton;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActionButton\AppActionLoader;
 use Cicada\Core\Framework\App\Aggregate\ActionButton\ActionButtonCollection;
 use Cicada\Core\Framework\App\AppException;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

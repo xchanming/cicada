@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\SalesChannelRequest;
@@ -17,6 +15,8 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\ThemeFileResolver;
 use Cicada\Storefront\Theme\ThemeScripts;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

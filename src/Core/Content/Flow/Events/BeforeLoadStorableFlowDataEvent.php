@@ -4,8 +4,8 @@ namespace Cicada\Core\Content\Flow\Events;
 
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Event\GenericEvent;
 use Cicada\Core\Framework\Event\CicadaEvent;
+use Cicada\Core\Framework\Event\GenericEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 

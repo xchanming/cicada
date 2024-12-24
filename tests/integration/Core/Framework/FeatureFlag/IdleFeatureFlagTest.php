@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\FeatureFlag;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
 /**

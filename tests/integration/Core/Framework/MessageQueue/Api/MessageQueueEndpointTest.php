@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\MessageQueue\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DependencyInjection\CompilerPass;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\CreateGeneratorScaffoldingCommandPass;
 use Cicada\Core\Framework\DependencyInjection\DependencyInjectionException;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\Generator\ScaffoldingGenerator;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\PluginScaffoldConfiguration;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\StubCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

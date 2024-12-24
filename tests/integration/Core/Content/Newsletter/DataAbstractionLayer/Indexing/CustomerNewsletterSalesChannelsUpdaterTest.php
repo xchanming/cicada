@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Newsletter\DataAbstractionLayer\Indexing;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientCollection;
 use Cicada\Core\Content\Newsletter\DataAbstractionLayer\NewsletterRecipientIndexer;
@@ -20,6 +18,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\TraceableMessageBus;
 
 /**

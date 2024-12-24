@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Util;
 
-use Composer\IO\NullIO;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\Composer\PackageProvider;
 use Cicada\Core\Framework\Plugin\Exception\ExceptionCollection;
 use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 use Cicada\Core\Framework\Plugin\Struct\PluginFromFileSystemStruct;
 use Cicada\Core\Framework\Plugin\Util\PluginFinder;
+use Composer\IO\NullIO;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

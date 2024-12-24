@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
-use GuzzleHttp\Exception\ConnectException;
-use GuzzleHttp\Psr7\Query;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\RequestInterface;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
@@ -16,6 +11,11 @@ use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
 use Cicada\Core\Framework\Test\Store\StoreClientBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Psr7\Query;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * @internal

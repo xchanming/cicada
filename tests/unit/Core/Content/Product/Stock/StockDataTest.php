@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Stock;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Stock\StockData;
 use Cicada\Core\Framework\Struct\ArrayStruct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\CriteriaQueryBuilder;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\ContainsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Query\ScoreQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

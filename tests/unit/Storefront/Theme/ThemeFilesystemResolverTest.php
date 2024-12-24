@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Kernel;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\ThemeFilesystemResolver;
 use Cicada\Tests\Unit\Storefront\Theme\fixtures\MockStorefront\MockStorefront;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
 /**

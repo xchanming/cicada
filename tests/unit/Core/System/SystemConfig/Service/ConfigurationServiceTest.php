@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\SystemConfig\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Context;
@@ -18,6 +16,8 @@ use Cicada\Core\System\SystemConfig\Util\ConfigReader;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

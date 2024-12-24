@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Subscriber;
 
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -17,6 +13,10 @@ use Cicada\Core\Framework\Webhook\EventLog\WebhookEventLogDefinition;
 use Cicada\Core\Framework\Webhook\Message\WebhookEventMessage;
 use Cicada\Core\Framework\Webhook\Subscriber\RetryWebhookMessageFailedSubscriber;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
 

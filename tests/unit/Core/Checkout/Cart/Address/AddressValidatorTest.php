@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Address;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Address\AddressValidator;
 use Cicada\Core\Checkout\Cart\Address\Error\BillingAddressCountryRegionMissingError;
 use Cicada\Core\Checkout\Cart\Address\Error\BillingAddressSalutationMissingError;
@@ -24,6 +21,9 @@ use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateEntity;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Installer\Controller;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Configuration\AdminConfigurationService;
 use Cicada\Core\Installer\Configuration\EnvConfigWriter;
@@ -10,6 +9,7 @@ use Cicada\Core\Installer\Configuration\ShopConfigurationService;
 use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;

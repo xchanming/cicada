@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\InvalidCriteriaIdsException;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Metric\CountAggregation;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Grouping\FieldGrouping;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Query\ScoreQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Acl;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Acl\AclAnnotationValidator;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Kernel;
 use Cicada\Core\PlatformRequest;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 

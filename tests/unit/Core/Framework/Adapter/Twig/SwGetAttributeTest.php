@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\SwTwigFunction;
 use Cicada\Core\Framework\Struct\ArrayStruct;
 use Cicada\Core\Framework\Struct\Struct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Extension\CoreExtension;
 use Twig\Source;

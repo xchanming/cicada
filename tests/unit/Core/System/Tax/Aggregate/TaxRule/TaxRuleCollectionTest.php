@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\Tax\Aggregate\TaxRule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleCollection;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleEntity;
 use Cicada\Core\System\Tax\Aggregate\TaxRuleType\TaxRuleTypeEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

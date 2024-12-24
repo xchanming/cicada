@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Profiling\Twig;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\SqlFormatter\HtmlHighlighter;
 use Doctrine\SqlFormatter\NullHighlighter;
 use Doctrine\SqlFormatter\SqlFormatter;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;

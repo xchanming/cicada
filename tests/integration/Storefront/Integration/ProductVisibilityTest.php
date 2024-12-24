@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Integration;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\DataAbstractionLayer\SearchKeywordUpdater;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
@@ -23,6 +21,8 @@ use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Page\Product\ProductPageLoader;
 use Cicada\Storefront\Page\Search\SearchPageLoader;
 use Cicada\Storefront\Page\Suggest\SuggestPageLoader;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

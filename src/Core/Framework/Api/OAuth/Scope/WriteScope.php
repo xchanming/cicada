@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Api\OAuth\Scope;
 
-use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use Cicada\Core\Framework\Log\Package;
+use League\OAuth2\Server\Entities\ScopeEntityInterface;
 
 #[Package('core')]
 class WriteScope implements ScopeEntityInterface

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Exception;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Exception\AppAlreadyInstalledException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

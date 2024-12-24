@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Test\Integration\Builder\Customer;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestBuilderTrait;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
 
 /**
  * @final

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\Provider;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\ProductEntity;
@@ -24,6 +22,8 @@ use Cicada\Core\System\SystemConfig\Exception\InvalidDomainException;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouterInterface;
 
 /**

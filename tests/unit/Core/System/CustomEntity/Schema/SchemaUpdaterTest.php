@@ -2,6 +2,7 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Schema;
 
+use Cicada\Core\System\CustomEntity\Schema\SchemaUpdater;
 use Doctrine\DBAL\Schema\Column;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Schema\Table;
@@ -10,7 +11,6 @@ use Doctrine\DBAL\Types\Types;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\System\CustomEntity\Schema\SchemaUpdater;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Plugin\Command\PluginListCommand;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\ComposerPluginLoader;
 use Cicada\Core\Framework\Plugin\PluginCollection;
 use Cicada\Core\Framework\Plugin\PluginEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

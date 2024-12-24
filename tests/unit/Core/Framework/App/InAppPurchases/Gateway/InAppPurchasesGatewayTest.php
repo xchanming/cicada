@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\InAppPurchases\Gateway;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\InAppPurchases\Event\InAppPurchasesGatewayEvent;
 use Cicada\Core\Framework\App\InAppPurchases\Gateway\InAppPurchasesGateway;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\App\InAppPurchases\Response\InAppPurchasesResponse;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

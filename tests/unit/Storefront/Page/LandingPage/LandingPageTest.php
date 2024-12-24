@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\LandingPage;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\LandingPage\LandingPageDefinition;
 use Cicada\Core\Content\LandingPage\LandingPageEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\LandingPage\LandingPage;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

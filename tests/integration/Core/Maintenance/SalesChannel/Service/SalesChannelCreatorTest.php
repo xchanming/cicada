@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Maintenance\SalesChannel\Service;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\SalesChannel\Service\SalesChannelCreator;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

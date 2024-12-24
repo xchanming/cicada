@@ -2,12 +2,6 @@
 
 namespace Cicada\Elasticsearch\Admin;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use OpenSearch\Client;
-use OpenSearch\Common\Exceptions\OpenSearchException;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\Event\ProgressAdvancedEvent;
 use Cicada\Core\Framework\Event\ProgressFinishedEvent;
@@ -16,6 +10,12 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Elasticsearch\Admin\Indexer\AbstractAdminIndexer;
 use Cicada\Elasticsearch\ElasticsearchException;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
+use OpenSearch\Client;
+use OpenSearch\Common\Exceptions\OpenSearchException;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 use Symfony\Component\Messenger\MessageBusInterface;

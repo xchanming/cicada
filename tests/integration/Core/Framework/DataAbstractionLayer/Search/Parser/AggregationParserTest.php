@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Search\Parser;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\InvalidAggregationQueryException;
@@ -19,6 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Parser\AggregationParser;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

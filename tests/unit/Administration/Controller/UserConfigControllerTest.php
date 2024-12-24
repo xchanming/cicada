@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Controller\UserConfigController;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
@@ -19,6 +16,9 @@ use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigDefinition;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigEntity;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

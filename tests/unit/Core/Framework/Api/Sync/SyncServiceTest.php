@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Sync;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductCategory\ProductCategoryDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Api\Sync\SyncBehavior;
@@ -28,6 +26,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriterInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteResult;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Product\Events\InvalidateProductCache;
 use Cicada\Core\Content\Product\Events\ProductIndexerEvent;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -25,6 +23,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Profiler;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

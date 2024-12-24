@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Category\SalesChannel\CategoryRoute;
 use Cicada\Core\Content\Category\SalesChannel\CategoryRouteResponse;
@@ -27,6 +24,9 @@ use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Storefront\Controller\CmsController;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

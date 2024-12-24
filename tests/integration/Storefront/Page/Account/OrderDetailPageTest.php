@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Account;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -10,6 +9,7 @@ use Cicada\Storefront\Event\RouteRequest\OrderRouteRequestEvent;
 use Cicada\Storefront\Page\Account\Order\AccountOrderDetailPageLoadedEvent;
 use Cicada\Storefront\Page\Account\Order\AccountOrderDetailPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 

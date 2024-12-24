@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Dbal;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
@@ -35,6 +33,8 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\Transla
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\TranslatableTestTranslationDefinition;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

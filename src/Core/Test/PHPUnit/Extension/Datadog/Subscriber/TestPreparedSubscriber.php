@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber;
 
-use PHPUnit\Event\Test\Prepared;
-use PHPUnit\Event\Test\PreparedSubscriber;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\Common\TimeKeeper;
+use PHPUnit\Event\Test\Prepared;
+use PHPUnit\Event\Test\PreparedSubscriber;
 
 /**
  * @internal

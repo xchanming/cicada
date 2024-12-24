@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter;
 
+use Cicada\Core\Framework\Adapter\AdapterException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\AdapterException;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Node\Expression\AbstractExpression;
 

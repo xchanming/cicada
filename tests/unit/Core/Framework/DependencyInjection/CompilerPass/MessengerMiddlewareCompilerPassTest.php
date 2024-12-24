@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DependencyInjection\CompilerPass;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexingMessage;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\MessengerMiddlewareCompilerPass;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\MessageQueue\Middleware\RoutingOverwriteMiddleware;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Database;
 
+use Cicada\Core\Framework\Adapter\Database\MySQLFactory;
 use Doctrine\DBAL\Driver;
 use Doctrine\DBAL\Driver\Middleware;
 use Doctrine\DBAL\Driver\Middleware\AbstractDriverMiddleware;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Database\MySQLFactory;
 
 /**
  * @internal

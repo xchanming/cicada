@@ -2,6 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Feature;
+use Cicada\Core\Framework\Log\Package;
 use Lcobucci\Clock\SystemClock;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Hmac\Sha256 as Hmac256;
@@ -9,9 +12,6 @@ use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha256 as Rsa256;
 use Lcobucci\JWT\Validation\Constraint\LooseValidAt;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Feature;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

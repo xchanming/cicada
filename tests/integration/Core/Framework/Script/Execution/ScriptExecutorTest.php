@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Script\Execution;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Constraint\Constraint;
-use PHPUnit\Framework\Constraint\IsInstanceOf;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Facade\RepositoryFacadeHookFactory;
@@ -21,6 +17,10 @@ use Cicada\Core\Framework\Test\Script\Execution\TestHook;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\SalesChannelRequest;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Constraint\Constraint;
+use PHPUnit\Framework\Constraint\IsInstanceOf;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 

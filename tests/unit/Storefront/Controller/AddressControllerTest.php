@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractChangeCustomerProfileRoute;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractDeleteAddressRoute;
@@ -20,6 +17,9 @@ use Cicada\Core\Test\Generator;
 use Cicada\Storefront\Controller\AddressController;
 use Cicada\Storefront\Page\Address\Detail\AddressDetailPageLoader;
 use Cicada\Storefront\Page\Address\Listing\AddressListingPageLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

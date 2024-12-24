@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\CustomEntity\Schema;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\CachedEntitySchemaGenerator;
 use Cicada\Core\Framework\App\AppEntity;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Cache\Adapter\AdapterInterface;
 
 /**

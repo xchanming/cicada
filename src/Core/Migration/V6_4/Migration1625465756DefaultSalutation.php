@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Migration\V6_4;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Migration\Traits\ImportTranslationsTrait;
 use Cicada\Core\Migration\Traits\Translations;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 
 /**
  * @internal

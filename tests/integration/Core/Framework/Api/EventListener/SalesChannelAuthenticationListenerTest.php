@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\EventListener;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\EventListener\Authentication\SalesChannelAuthenticationListener;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Storefront\Framework\Routing\MaintenanceModeResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

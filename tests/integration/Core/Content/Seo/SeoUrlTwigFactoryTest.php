@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Seo;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoUrlGenerator;
 use Cicada\Core\Content\Test\Seo\Twig\LastLetterBigTwigFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 
 /**

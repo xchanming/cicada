@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Script\Service;
 
+use Cicada\Core\Framework\Script\Facade\ArrayFacade;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Script\Facade\ArrayFacade;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Api\MediaUploadController;
 use Cicada\Core\Content\Media\Event\MediaUploadedEvent;
 use Cicada\Core\Content\Media\MediaEntity;
@@ -17,6 +14,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

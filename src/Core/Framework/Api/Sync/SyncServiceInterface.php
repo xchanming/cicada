@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Api\Sync;
 
-use Doctrine\DBAL\ConnectionException;
 use Cicada\Core\Framework\Api\Exception\InvalidSyncOperationException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\ConnectionException;
 
 #[Package('core')]
 interface SyncServiceInterface

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Requirements\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
 use Cicada\Core\Installer\Requirements\Struct\SystemCheck;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

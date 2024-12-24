@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Faker\Generator;
 use Cicada\Core\Checkout\Cart\Rule\GoodsPriceRule;
 use Cicada\Core\Checkout\Customer\Rule\CustomerGroupRule;
 use Cicada\Core\Checkout\Customer\Rule\DaysSinceFirstLoginRule;
@@ -26,6 +25,7 @@ use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Currency\Rule\CurrencyRule;
 use Cicada\Core\Test\TestDefaults;
+use Faker\Generator;
 
 /**
  * @internal

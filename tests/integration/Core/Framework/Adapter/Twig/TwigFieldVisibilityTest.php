@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\Extension\PhpSyntaxExtension;
 use Cicada\Core\Framework\Adapter\Twig\TwigEnvironment;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
 use Cicada\Core\Framework\DataAbstractionLayer\PartialEntity;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Error\RuntimeError;
 use Twig\Loader\ArrayLoader;

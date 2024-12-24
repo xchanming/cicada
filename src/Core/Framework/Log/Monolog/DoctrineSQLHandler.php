@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Defaults;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
-use Cicada\Core\Defaults;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Uuid\Uuid;
 
 #[Package('core')]
 class DoctrineSQLHandler extends AbstractProcessingHandler

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Profiling\FeatureFlag;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Feature\FeatureFlagRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Profiling\FeatureFlag\FeatureFlagProfiler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

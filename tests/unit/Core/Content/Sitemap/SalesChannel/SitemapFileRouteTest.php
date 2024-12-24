@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Sitemap\SalesChannel;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Sitemap\SalesChannel\SitemapFileRoute;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Tests\Examples\GetSitemapFileExample;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

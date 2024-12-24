@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin\Util;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\PluginException;
 use Cicada\Core\Framework\Plugin\Util\ZipUtils;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

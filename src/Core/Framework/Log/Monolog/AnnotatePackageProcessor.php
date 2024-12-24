@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Framework\Log\Package;
 use Monolog\LogRecord;
 use Monolog\Processor\ProcessorInterface;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;

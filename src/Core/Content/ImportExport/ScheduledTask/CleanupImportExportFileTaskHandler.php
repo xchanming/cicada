@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\ImportExport\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\ImportExport\Service\DeleteExpiredFilesService;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Promotion\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupServiceRegistry;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Packager\LineItemGroupCountPackager;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Sorter\LineItemGroupPriceAscSorter;
@@ -12,6 +9,9 @@ use Cicada\Core\Checkout\Promotion\Api\PromotionActionController;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterPickerInterface;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterServiceRegistry;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

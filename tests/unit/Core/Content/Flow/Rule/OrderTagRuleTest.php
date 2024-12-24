@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -17,6 +13,10 @@ use Cicada\Core\Framework\Validation\Constraint\ArrayOfUuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\Tag\TagCollection;
 use Cicada\Core\System\Tag\TagEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\NotBlank;
 

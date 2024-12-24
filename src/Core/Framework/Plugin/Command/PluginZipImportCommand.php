@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Plugin\Command;
 
-use Composer\IO\ConsoleIO;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\Context;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\NoPluginFoundInZipException;
 use Cicada\Core\Framework\Plugin\PluginManagementService;
 use Cicada\Core\Framework\Plugin\PluginService;
+use Composer\IO\ConsoleIO;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\HelperSet;

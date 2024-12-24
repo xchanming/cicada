@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Storefront\Theme\Command\ThemeCompileCommand;
 use Cicada\Storefront\Theme\ConfigLoader\AbstractAvailableThemeProvider;
 use Cicada\Storefront\Theme\ThemeService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

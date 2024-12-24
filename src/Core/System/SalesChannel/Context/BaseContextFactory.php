@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\System\SalesChannel\Context;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
@@ -26,6 +25,7 @@ use Cicada\Core\System\SalesChannel\BaseContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
 use Cicada\Core\System\Tax\TaxCollection;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

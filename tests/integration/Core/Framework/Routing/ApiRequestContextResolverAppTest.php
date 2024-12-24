@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Routing;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Framework\Api\Exception\MissingPrivilegeException;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

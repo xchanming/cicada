@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Struct\Serializer\StructNormalizer;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;

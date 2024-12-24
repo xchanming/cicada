@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Maintenance\System\Command;
 
-use Doctrine\DBAL\Configuration;
-use Doctrine\DBAL\DriverManager;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Maintenance\MaintenanceException;
 use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
+use Doctrine\DBAL\Configuration;
+use Doctrine\DBAL\DriverManager;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Delivery;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Delivery\DeliveryValidator;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\Delivery;
@@ -19,6 +17,8 @@ use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

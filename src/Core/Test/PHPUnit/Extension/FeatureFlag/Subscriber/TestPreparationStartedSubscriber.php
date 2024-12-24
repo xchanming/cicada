@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\Subscriber;
 
-use PHPUnit\Event\Test\PreparationStarted;
-use PHPUnit\Event\Test\PreparationStartedSubscriber;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\FeatureFlagExtension;
 use Cicada\Core\Test\PHPUnit\Extension\FeatureFlag\SavedConfig;
+use PHPUnit\Event\Test\PreparationStarted;
+use PHPUnit\Event\Test\PreparationStartedSubscriber;
 
 /**
  * @internal

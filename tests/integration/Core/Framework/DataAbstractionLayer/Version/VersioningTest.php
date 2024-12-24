@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Version;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
@@ -61,6 +58,9 @@ use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

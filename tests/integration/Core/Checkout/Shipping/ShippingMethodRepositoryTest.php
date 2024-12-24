@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Shipping;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @phpstan-type DeliveryTimeData array{id: string, name: string, min: int, max: int, unit: string}

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Generator;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\DataAbstractionLayer\StatesUpdater;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -21,6 +19,8 @@ use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\System\Tax\TaxEntity;
+use Doctrine\DBAL\Connection;
+use Faker\Generator;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**

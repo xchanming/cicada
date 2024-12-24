@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Content\Media\SalesChannel\MediaRouteResponse;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

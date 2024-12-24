@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
@@ -36,6 +33,9 @@ use Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPage;
 use Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoader;
 use Cicada\Storefront\Page\Checkout\Offcanvas\OffcanvasCartPage;
 use Cicada\Storefront\Page\Checkout\Offcanvas\OffcanvasCartPageLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

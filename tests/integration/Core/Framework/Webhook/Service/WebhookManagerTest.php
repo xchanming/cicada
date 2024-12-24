@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\Event\CustomerBeforeLoginEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerLoginEvent;
@@ -47,6 +39,14 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Integration\App\GuzzleHistoryCollector;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;
 

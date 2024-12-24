@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Content\Sitemap\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Sitemap\Exception\AlreadyLockedException;
 use Cicada\Core\Content\Sitemap\Service\SitemapExporterInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

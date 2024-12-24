@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\ProductCloseoutFilter;
 use Cicada\Core\Content\Product\SalesChannel\ProductCloseoutFilterFactory;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

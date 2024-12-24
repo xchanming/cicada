@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\App;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\App\Lifecycle\AppLoader;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Filesystem\Path;
 use Symfony\Contracts\Service\ResetInterface;
 

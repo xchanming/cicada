@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Core\Strategy;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Strategy\FilenamePathStrategy;
 use Cicada\Core\Content\Media\Core\Strategy\IdPathStrategy;
 use Cicada\Core\Content\Media\Core\Strategy\PathStrategyFactory;
 use Cicada\Core\Content\Media\Core\Strategy\PhysicalFilenamePathStrategy;
 use Cicada\Core\Content\Media\Core\Strategy\PlainPathStrategy;
 use Cicada\Core\Content\Media\MediaException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

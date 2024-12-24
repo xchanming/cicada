@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderCollection;
 use Cicada\Core\Content\Media\File\FileNameProvider;
 use Cicada\Core\Content\Media\File\FileSaver;
@@ -32,6 +30,8 @@ use Cicada\Storefront\Theme\ThemeFilesystemResolver;
 use Cicada\Storefront\Theme\ThemeLifecycleService;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\ThemeWithFileAssociations\ThemeWithFileAssociations;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\ThemeWithLabels\ThemeWithLabels;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

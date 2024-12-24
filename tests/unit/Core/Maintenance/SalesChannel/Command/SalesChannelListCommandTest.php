@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\SalesChannel\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\SalesChannel\Command\SalesChannelListCommand;
@@ -11,6 +9,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

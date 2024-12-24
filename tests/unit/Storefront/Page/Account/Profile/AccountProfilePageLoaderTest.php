@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Account\Profile;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Exception\CustomerNotLoggedInException;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Framework\Adapter\Translation\AbstractTranslator;
@@ -27,6 +24,9 @@ use Cicada\Storefront\Page\Account\Profile\AccountProfilePageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\MetaInformation;
 use Cicada\Storefront\Page\Page;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

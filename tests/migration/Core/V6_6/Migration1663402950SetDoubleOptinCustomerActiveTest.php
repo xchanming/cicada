@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Migration\Core\V6_6;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Migration\V6_6\Migration1663402950SetDoubleOptinCustomerActive;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Migration\MigrationTestTrait;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\ApiDefinition\Generator;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\EntitySchemaGenerator;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Tests\Integration\Core\Framework\Api\ApiDefinition\EntityDefinition\SimpleDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

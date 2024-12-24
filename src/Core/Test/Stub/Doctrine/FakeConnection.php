@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Test\Stub\Doctrine;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Cache\ArrayResult;
 use Doctrine\DBAL\Cache\QueryCacheProfile;
 use Doctrine\DBAL\Configuration;
@@ -10,7 +11,6 @@ use Doctrine\DBAL\Driver\PDO\MySQL\Driver;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\DBAL\Result;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

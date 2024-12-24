@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\DevOps\System\Command;
 
+use Cicada\Core\DevOps\System\Command\SyncComposerVersionCommand;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\DevOps\System\Command\SyncComposerVersionCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;

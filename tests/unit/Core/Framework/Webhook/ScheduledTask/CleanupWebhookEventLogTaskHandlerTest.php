@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Webhook\ScheduledTask;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Webhook\ScheduledTask\CleanupWebhookEventLogTaskHandler;
 use Cicada\Core\Framework\Webhook\Service\WebhookCleanup;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

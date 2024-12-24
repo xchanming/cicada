@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\ProductEntity;
@@ -32,6 +30,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteResult;
 use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

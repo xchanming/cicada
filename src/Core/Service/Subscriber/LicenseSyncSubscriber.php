@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Service\Subscriber;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Event\AppInstalledEvent;
@@ -19,6 +18,7 @@ use Cicada\Core\Service\ServiceRegistryClient;
 use Cicada\Core\Service\ServiceRegistryEntry;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedEvent;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

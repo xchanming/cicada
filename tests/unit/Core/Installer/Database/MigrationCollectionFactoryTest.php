@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Database;
 
+use Cicada\Core\Installer\Database\MigrationCollectionFactory;
+use Cicada\Core\TestBootstrapper;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Installer\Database\MigrationCollectionFactory;
-use Cicada\Core\TestBootstrapper;
 
 /**
  * @internal

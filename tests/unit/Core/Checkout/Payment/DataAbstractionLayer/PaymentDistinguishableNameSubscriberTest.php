@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\DataAbstractionLayer\PaymentDistinguishableNameSubscriber;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

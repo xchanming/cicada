@@ -2,13 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Exception\AppRegistrationException;
 use Cicada\Core\Framework\App\Lifecycle\Registration\AppRegistrationService;
 use Cicada\Core\Framework\App\Lifecycle\Registration\HandshakeFactory;
@@ -21,6 +14,13 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\StoreClient;
 use Cicada\Core\Framework\Uuid\Uuid;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 /**

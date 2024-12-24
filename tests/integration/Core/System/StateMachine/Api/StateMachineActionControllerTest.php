@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\StateMachine\Api;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
@@ -34,6 +32,8 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineHistory\StateMachine
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

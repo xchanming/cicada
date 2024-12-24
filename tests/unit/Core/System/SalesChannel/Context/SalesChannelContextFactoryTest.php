@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel\Context;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\Checkout\Cart\Tax\TaxDetector;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressCollection;
@@ -35,6 +33,8 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

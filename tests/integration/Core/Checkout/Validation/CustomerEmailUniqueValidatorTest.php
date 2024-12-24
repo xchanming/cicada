@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Validation;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerEmailUnique;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Validation\DataValidationDefinition;
 use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

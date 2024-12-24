@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Aggregate\MediaFolderConfigurationThumbnailSize;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolderConfiguration\MediaFolderConfigurationCollection;
 use Cicada\Core\Content\Media\Aggregate\MediaFolderConfiguration\MediaFolderConfigurationEntity;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnailSize\MediaThumbnailSizeCollection;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

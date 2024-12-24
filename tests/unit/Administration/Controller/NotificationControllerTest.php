@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Controller\NotificationController;
 use Cicada\Administration\Notification\Exception\NotificationThrottledException;
 use Cicada\Administration\Notification\NotificationService;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\RateLimiter\Exception\RateLimitExceededException;
 use Cicada\Core\Framework\RateLimiter\RateLimiter;
 use Cicada\Core\Framework\Routing\RoutingException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

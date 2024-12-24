@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Api\ExtensionStoreLicensesController;
 use Cicada\Core\Framework\Store\Services\ExtensionStoreLicensesService;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

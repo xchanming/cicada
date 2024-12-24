@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\Extensions\Extension;
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;
@@ -9,8 +11,6 @@ use PHPStan\Reflection\MissingConstantFromReflectionException;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\Extensions\Extension;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @implements Rule<InClassNode>

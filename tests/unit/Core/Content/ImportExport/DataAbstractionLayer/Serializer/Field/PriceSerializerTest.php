@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field\PriceSerializer;
 use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Defaults;
@@ -16,6 +13,9 @@ use Cicada\Core\System\Currency\CurrencyCollection;
 use Cicada\Core\System\Currency\CurrencyDefinition;
 use Cicada\Core\System\Currency\CurrencyEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

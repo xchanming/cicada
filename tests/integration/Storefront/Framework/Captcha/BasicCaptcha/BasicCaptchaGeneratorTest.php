@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Captcha\BasicCaptcha;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Storefront\Framework\Captcha\BasicCaptcha\BasicCaptchaGenerator;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

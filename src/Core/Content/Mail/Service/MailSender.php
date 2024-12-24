@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Mail\Service;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\Mail\Message\SendMailMessage;
 use Cicada\Core\Framework\Feature;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Mailer\Envelope;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Messenger\MessageBusInterface;

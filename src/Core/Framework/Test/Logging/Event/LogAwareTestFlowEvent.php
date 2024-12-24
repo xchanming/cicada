@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Test\Logging\Event;
 
-use Monolog\Level;
 use Cicada\Core\Content\Test\Flow\TestFlowBusinessEvent;
 use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Log\LogAware;
+use Monolog\Level;
 
 /**
  * @internal

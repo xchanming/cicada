@@ -2,6 +2,9 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Name;
@@ -11,9 +14,6 @@ use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @implements Rule<New_>

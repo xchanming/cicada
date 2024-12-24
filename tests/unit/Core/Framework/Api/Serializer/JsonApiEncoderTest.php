@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Serializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Tests\Unit\Core\Framework\Api\Serializer\_fixtures\TestAttributeEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 
 /**

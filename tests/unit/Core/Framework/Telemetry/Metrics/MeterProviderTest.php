@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Telemetry\Metrics;
 
+use Cicada\Core\Framework\Telemetry\Metrics\Meter;
+use Cicada\Core\Framework\Telemetry\Metrics\MeterProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Telemetry\Metrics\Meter;
-use Cicada\Core\Framework\Telemetry\Metrics\MeterProvider;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

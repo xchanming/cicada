@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\StorefrontPluginConfiguration;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\File;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\FileCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

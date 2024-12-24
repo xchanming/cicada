@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Breadcrumb\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Breadcrumb\SalesChannel\BreadcrumbRouteResponse;
 use Cicada\Core\Content\Breadcrumb\Struct\Breadcrumb;
 use Cicada\Core\Content\Breadcrumb\Struct\BreadcrumbCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

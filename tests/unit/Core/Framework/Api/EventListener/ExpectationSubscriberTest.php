@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\EventListener;
 
-use Composer\InstalledVersions;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\EventListener\ExpectationSubscriber;
 use Cicada\Core\Framework\Api\Exception\ExpectationFailedException;
 use Cicada\Core\Framework\Routing\ApiRouteScope;
 use Cicada\Core\Kernel;
 use Cicada\Core\PlatformRequest;
+use Composer\InstalledVersions;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

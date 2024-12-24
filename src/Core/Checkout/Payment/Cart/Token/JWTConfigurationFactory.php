@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\Checkout\Payment\Cart\Token;
 
+use Cicada\Core\Framework\Feature;
+use Cicada\Core\Framework\Log\Package;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Decoder;
 use Lcobucci\JWT\Encoder;
@@ -10,8 +12,6 @@ use Lcobucci\JWT\Signer;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Validation\Constraint\SignedWith;
 use League\OAuth2\Server\CryptKey;
-use Cicada\Core\Framework\Feature;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @deprecated tag:v6.7.0 - Use \Cicada\Core\Framework\Api\OAuth\JWTConfigurationFactory instead

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Administration\Snippet;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Snippet\SnippetFinder;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
 /**

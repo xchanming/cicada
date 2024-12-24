@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Category\Exception\CategoryNotFoundException;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Page\Navigation\NavigationPageLoadedEvent;
 use Cicada\Storefront\Page\Navigation\NavigationPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Route;
 
+use Cicada\Core\Framework\Api\Route\ApiRouteInfoResolver;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\Route\ApiRouteInfoResolver;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RouterInterface;

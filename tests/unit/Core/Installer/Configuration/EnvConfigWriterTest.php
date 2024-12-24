@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Configuration;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Installer\Configuration\EnvConfigWriter;
 use Cicada\Core\Installer\Finish\UniqueIdGenerator;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

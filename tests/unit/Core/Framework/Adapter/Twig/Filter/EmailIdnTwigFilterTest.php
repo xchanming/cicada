@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig\Filter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Service\EmailIdnConverter;
 use Cicada\Core\Framework\Adapter\Twig\Filter\EmailIdnTwigFilter;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

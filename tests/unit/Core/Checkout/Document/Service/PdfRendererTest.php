@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Document\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\Extension\PdfRendererExtension;
 use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
 use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
@@ -12,6 +10,8 @@ use Cicada\Core\Checkout\Document\Service\PdfRenderer;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

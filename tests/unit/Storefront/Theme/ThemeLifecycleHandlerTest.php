@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -19,6 +15,10 @@ use Cicada\Storefront\Theme\ThemeLifecycleService;
 use Cicada\Storefront\Theme\ThemeSalesChannel;
 use Cicada\Storefront\Theme\ThemeSalesChannelCollection;
 use Cicada\Storefront\Theme\ThemeService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

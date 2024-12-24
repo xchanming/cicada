@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Hmac\Guzzle;
 
-use GuzzleHttp\Exception\InvalidArgumentException;
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7\Uri;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\AppLocaleProvider;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
@@ -18,6 +12,12 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use GuzzleHttp\Exception\InvalidArgumentException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Uri;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

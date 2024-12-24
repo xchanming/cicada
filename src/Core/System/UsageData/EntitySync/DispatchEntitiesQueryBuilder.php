@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\System\UsageData\EntitySync;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Query\Expression\CompositeExpression;
-use Doctrine\DBAL\Query\QueryBuilder as DoctrineQueryBuilder;
-use Doctrine\DBAL\Result;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
@@ -17,6 +13,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\Expression\CompositeExpression;
+use Doctrine\DBAL\Query\QueryBuilder as DoctrineQueryBuilder;
+use Doctrine\DBAL\Result;
 
 /**
  * @internal

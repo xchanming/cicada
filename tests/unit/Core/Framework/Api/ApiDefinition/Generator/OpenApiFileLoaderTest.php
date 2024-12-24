@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\ApiDefinition\Generator;
 
+use Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApiFileLoader;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApiFileLoader;
 
 /**
  * @internal

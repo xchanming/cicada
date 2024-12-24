@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Requirements;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Installer\Requirements\FilesystemRequirementsValidator;
 use Cicada\Core\Installer\Requirements\Struct\PathCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

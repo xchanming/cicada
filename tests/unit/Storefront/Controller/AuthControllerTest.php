@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractImitateCustomerRoute;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractLoginRoute;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractLogoutRoute;
@@ -22,6 +19,9 @@ use Cicada\Storefront\Page\Account\Login\AccountLoginPage;
 use Cicada\Storefront\Page\Account\Login\AccountLoginPageLoadedHook;
 use Cicada\Storefront\Page\Account\Login\AccountLoginPageLoader;
 use Cicada\Storefront\Page\Account\RecoverPassword\AccountRecoverPasswordPageLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SearchKeyword;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchBuilder;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchTermInterpreterInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

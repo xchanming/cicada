@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractImitateCustomerRoute;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractLogoutRoute;
@@ -45,6 +43,8 @@ use Cicada\Storefront\Page\Account\Order\AccountOrderPageLoader;
 use Cicada\Storefront\Page\Account\RecoverPassword\AccountRecoverPasswordPageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\EventDispatcher\EventDispatcher;

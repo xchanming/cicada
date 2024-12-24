@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Webhook;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Webhook\Hookable;
 use Cicada\Core\Framework\Webhook\Service\WebhookManager;
 use Cicada\Core\Framework\Webhook\WebhookDispatcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 

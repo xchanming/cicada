@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\Snippet;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket\TermsAggregation;
@@ -18,6 +16,8 @@ use Cicada\Core\System\Snippet\Filter\SnippetFilterFactory;
 use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Translation\MessageCatalogueInterface;
 

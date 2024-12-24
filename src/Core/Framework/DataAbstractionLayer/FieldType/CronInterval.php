@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\FieldType;
 
-use Cron\CronExpression;
 use Cicada\Core\Framework\Log\Package;
+use Cron\CronExpression;
 
 #[Package('checkout')]
 class CronInterval extends CronExpression

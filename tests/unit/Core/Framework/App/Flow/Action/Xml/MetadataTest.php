@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Flow\Action\Xml;
 
+use Cicada\Core\Framework\App\Flow\Action\Xml\Metadata;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\Flow\Action\Xml\Metadata;
 use Symfony\Component\Config\Util\XmlUtils;
 
 /**

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Seo\SeoUrlRoute;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\Service\CategoryBreadcrumbBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\NavigationPageSeoUrlRoute;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

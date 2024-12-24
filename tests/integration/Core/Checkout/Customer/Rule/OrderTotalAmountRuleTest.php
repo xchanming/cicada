@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\Rule;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
@@ -25,6 +23,8 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMach
 use Cicada\Core\System\StateMachine\StateMachineRegistry;
 use Cicada\Core\System\StateMachine\Transition;
 use Cicada\Core\Test\Integration\Traits\OrderFixture;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
 

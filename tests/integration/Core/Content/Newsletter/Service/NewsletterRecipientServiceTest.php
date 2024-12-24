@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Newsletter\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientEntity;
 use Cicada\Core\Content\Newsletter\NewsletterException;
 use Cicada\Core\Content\Newsletter\SalesChannel\NewsletterConfirmRoute;
@@ -23,6 +20,9 @@ use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

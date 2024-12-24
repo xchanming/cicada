@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\SalesChannel\ContextTokenResponse;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Sync;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Sync\SyncBehavior;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

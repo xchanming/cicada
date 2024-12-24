@@ -6,8 +6,8 @@
 
 namespace Doctrine\DBAL\Schema;
 
-use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Platforms\AbstractPlatform;
 
 if (class_exists('\\' . AbstractAsset::class, false)) {
     return;

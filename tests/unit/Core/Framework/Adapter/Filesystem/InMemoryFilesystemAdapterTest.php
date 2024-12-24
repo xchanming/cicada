@@ -2,6 +2,7 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Filesystem;
 
+use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
 use League\Flysystem\DirectoryAttributes;
 use League\Flysystem\Filesystem;
 use League\Flysystem\UnableToCopyFile;
@@ -12,7 +13,6 @@ use League\Flysystem\UnableToSetVisibility;
 use League\Flysystem\Visibility;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
 
 /**
  * @internal

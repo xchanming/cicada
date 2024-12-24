@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Doctrine;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 
 /**
  * @internal

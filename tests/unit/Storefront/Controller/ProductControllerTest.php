@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewEntity;
@@ -40,6 +37,9 @@ use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoader;
 use Cicada\Storefront\Page\Product\QuickView\ProductQuickViewWidgetLoadedHook;
 use Cicada\Storefront\Page\Product\Review\ProductReviewsWidgetLoadedHook as StorefrontProductReviewsWidgetLoadedHook;
 use Cicada\Tests\Unit\Storefront\Controller\Stub\ProductControllerStub;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

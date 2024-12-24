@@ -2,11 +2,11 @@
 
 namespace Cicada\Elasticsearch\Framework;
 
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
+use Doctrine\DBAL\Exception;
 
 #[Package('buyers-experience')]
 class ElasticsearchFieldMapper

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\PluginLifecycleService;
 use Cicada\Core\Framework\Update\Api\UpdateController;
 use Cicada\Core\Framework\Update\Event\UpdatePostFinishEvent;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Update\Event\UpdatePreFinishEvent;
 use Cicada\Core\Maintenance\System\Command\SystemUpdateFinishCommand;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;

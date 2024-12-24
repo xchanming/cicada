@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductExport\Service;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\ProductExport\Exception\ExportNotFoundException;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
@@ -23,6 +20,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

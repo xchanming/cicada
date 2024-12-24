@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\App;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Template\TemplateCollection;
 use Cicada\Core\Framework\App\Template\TemplateStateService;
 use Cicada\Core\Framework\Context;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 #[Package('core')]

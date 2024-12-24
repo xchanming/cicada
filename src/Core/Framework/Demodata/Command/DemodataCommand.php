@@ -3,8 +3,6 @@
 namespace Cicada\Core\Framework\Demodata\Command;
 
 use Bezhanov\Faker\Provider\Commerce;
-use Faker\Factory;
-use Maltyxx\ImagesGenerator\ImagesGeneratorProvider;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
@@ -28,6 +26,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetDefinition;
 use Cicada\Core\System\Tag\TagDefinition;
 use Cicada\Core\System\User\UserDefinition;
+use Faker\Factory;
+use Maltyxx\ImagesGenerator\ImagesGeneratorProvider;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

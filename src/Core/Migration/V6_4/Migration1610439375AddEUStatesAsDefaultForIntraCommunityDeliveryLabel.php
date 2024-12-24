@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Migration\V6_4;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

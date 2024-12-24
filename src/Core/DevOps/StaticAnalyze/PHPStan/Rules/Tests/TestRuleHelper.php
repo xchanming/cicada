@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests;
 
+use Cicada\Core\Framework\Log\Package;
 use PHPStan\Reflection\ClassReflection;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

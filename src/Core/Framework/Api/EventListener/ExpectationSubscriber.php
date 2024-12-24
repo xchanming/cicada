@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Api\EventListener;
 
-use Composer\InstalledVersions;
-use Composer\Semver\Semver;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\ApiRouteScope;
 use Cicada\Core\Framework\Routing\KernelListenerPriorities;
 use Cicada\Core\PlatformRequest;
+use Composer\InstalledVersions;
+use Composer\Semver\Semver;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;

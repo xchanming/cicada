@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Lifecycle\AbstractAppLifecycle;
 use Cicada\Core\Framework\App\Lifecycle\AppLifecycleIterator;
 use Cicada\Core\Framework\App\Lifecycle\AppLoader;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\PartialEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

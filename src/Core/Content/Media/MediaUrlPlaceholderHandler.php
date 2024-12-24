@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Media;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator;
 use Cicada\Core\Content\Media\Core\Params\UrlParams;
 use Cicada\Core\Content\Media\Core\Params\UrlParamsSource;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Profiler;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('buyers-experience')]
 class MediaUrlPlaceholderHandler implements MediaUrlPlaceholderHandlerInterface

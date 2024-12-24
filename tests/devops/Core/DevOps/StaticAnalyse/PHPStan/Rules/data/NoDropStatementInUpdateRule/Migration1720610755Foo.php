@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Cicada\Core\Migration\V6_7;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 class Migration1720610755Foo extends MigrationStep
 {

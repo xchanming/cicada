@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @codeCoverageIgnore @see \Cicada\Tests\Integration\Core\Framework\App\Lifecycle\WebhookPersisterTest

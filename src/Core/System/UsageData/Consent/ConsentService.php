@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\System\UsageData\Consent;
 
-use Psr\Clock\ClockInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\UsageData\UsageDataException;
+use Psr\Clock\ClockInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

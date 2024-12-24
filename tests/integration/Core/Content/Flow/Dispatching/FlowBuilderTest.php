@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow\Dispatching;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\FlowBuilder;
 use Cicada\Core\Content\Flow\Dispatching\Struct\ActionSequence;
 use Cicada\Core\Content\Flow\Dispatching\Struct\IfSequence;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

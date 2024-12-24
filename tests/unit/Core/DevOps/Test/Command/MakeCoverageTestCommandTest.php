@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\DevOps\Test\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Document\Struct\DocumentGenerateOperation;
 use Cicada\Core\Content\Cms\Subscriber\UnusedMediaSubscriber;
@@ -12,13 +10,15 @@ use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\DevOps\System\Command\SystemDumpDatabaseCommand;
 use Cicada\Core\DevOps\Test\Command\MakeCoverageTestCommand;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Kernel;
 use Cicada\Core\Migration\V6_5\Migration1670854818RemoveEventActionTable;
 use Cicada\Core\Test\Stub\Framework\BundleFixture;
 use Cicada\Tests\Unit\Core\DevOps\System\Command\OpenApiValidationCommandTest;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;

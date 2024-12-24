@@ -2,11 +2,6 @@
 
 namespace Cicada\Core\DevOps\Docs\Script;
 
-use phpDocumentor\Reflection\DocBlock\Tags\Generic;
-use phpDocumentor\Reflection\DocBlock\Tags\Since;
-use phpDocumentor\Reflection\DocBlock\Tags\Var_;
-use phpDocumentor\Reflection\DocBlockFactory;
-use phpDocumentor\Reflection\DocBlockFactoryInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\Awareness\HookServiceFactory;
 use Cicada\Core\Framework\Script\Execution\Awareness\StoppableHook;
@@ -16,6 +11,11 @@ use Cicada\Core\Framework\Script\Execution\Hook;
 use Cicada\Core\Framework\Script\Execution\InterfaceHook;
 use Cicada\Core\Framework\Script\Execution\OptionalFunctionHook;
 use Cicada\Core\Framework\Script\Execution\TraceHook;
+use phpDocumentor\Reflection\DocBlock\Tags\Generic;
+use phpDocumentor\Reflection\DocBlock\Tags\Since;
+use phpDocumentor\Reflection\DocBlock\Tags\Var_;
+use phpDocumentor\Reflection\DocBlockFactory;
+use phpDocumentor\Reflection\DocBlockFactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;

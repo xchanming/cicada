@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Webhook\EventLog\WebhookEventLogDefinition;
 use Cicada\Core\Framework\Webhook\Service\WebhookCleanup;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Clock\MockClock;
 
 /**

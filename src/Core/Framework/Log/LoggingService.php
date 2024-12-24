@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Log;
 
+use Cicada\Core\Framework\Event\FlowLogEvent;
 use Monolog\Level;
 use Monolog\Logger;
-use Cicada\Core\Framework\Event\FlowLogEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

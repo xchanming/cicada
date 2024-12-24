@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Checkout\Promotion\Validator;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountDefinition;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PreWriteValidationEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationInterface;

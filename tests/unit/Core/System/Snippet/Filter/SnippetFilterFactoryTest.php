@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\Snippet\Filter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Filter\AddedFilter;
 use Cicada\Core\System\Snippet\Filter\AuthorFilter;
@@ -16,6 +13,9 @@ use Cicada\Core\System\Snippet\Filter\SnippetFilterInterface;
 use Cicada\Core\System\Snippet\Filter\TermFilter;
 use Cicada\Core\System\Snippet\Filter\TranslationKeyFilter;
 use Cicada\Core\System\Snippet\SnippetException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

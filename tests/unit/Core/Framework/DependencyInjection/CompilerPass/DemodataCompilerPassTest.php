@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DependencyInjection\CompilerPass;
 
+use Cicada\Core\Framework\Demodata\Command\DemodataCommand;
+use Cicada\Core\Framework\DependencyInjection\CompilerPass\DemodataCompilerPass;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Demodata\Command\DemodataCommand;
-use Cicada\Core\Framework\DependencyInjection\CompilerPass\DemodataCompilerPass;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

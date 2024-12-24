@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Service\SupportedFeaturesService;
 use Cicada\Core\Framework\Util\MemorySizeCalculator;
 use Cicada\Tests\Unit\Common\Stubs\IniMock;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

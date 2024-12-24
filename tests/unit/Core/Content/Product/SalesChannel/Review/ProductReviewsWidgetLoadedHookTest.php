@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Review;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewEntity;
 use Cicada\Core\Content\Product\SalesChannel\FindVariant\FindProductVariantRoute;
@@ -25,6 +22,9 @@ use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Storefront\Page\Product\ProductPageLoader;
 use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoader;
 use Cicada\Tests\Unit\Storefront\Controller\Stub\ProductControllerStub;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

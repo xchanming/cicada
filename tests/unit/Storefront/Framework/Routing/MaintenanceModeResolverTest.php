@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Routing\MaintenanceModeResolver as CoreMaintenanceModeResolver;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\SalesChannelRequest;
 use Cicada\Storefront\Framework\Routing\MaintenanceModeResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

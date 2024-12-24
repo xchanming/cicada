@@ -2,17 +2,17 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
+use Cicada\Core\Checkout\Customer\Event\CustomerAccountRecoverRequestEvent;
+use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
+use Cicada\Core\Framework\Log\Monolog\ExcludeFlowEventHandler;
+use Cicada\Core\System\User\Recovery\UserRecoveryRequestEvent;
 use Monolog\Handler\FingersCrossedHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
-use Cicada\Core\Checkout\Customer\Event\CustomerAccountRecoverRequestEvent;
-use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
-use Cicada\Core\Framework\Log\Monolog\ExcludeFlowEventHandler;
-use Cicada\Core\System\User\Recovery\UserRecoveryRequestEvent;
 
 /**
  * @internal

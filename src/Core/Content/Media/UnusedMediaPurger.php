@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Media;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Event\UnusedMediaSearchEvent;
 use Cicada\Core\Content\Media\Event\UnusedMediaSearchStartEvent;
 use Cicada\Core\Defaults;
@@ -20,6 +19,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\RangeFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

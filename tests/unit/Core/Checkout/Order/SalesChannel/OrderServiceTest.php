@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Order\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\StateMachine\StateMachineRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Validator\Validation;
 

@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\App\Hmac\Guzzle;
 
+use Cicada\Core\Framework\App\AppLocaleProvider;
+use Cicada\Core\Framework\App\Hmac\RequestSigner;
+use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\Log\Package;
 use GuzzleHttp\Exception\InvalidArgumentException;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Cicada\Core\Framework\App\AppLocaleProvider;
-use Cicada\Core\Framework\App\Hmac\RequestSigner;
-use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class AuthMiddleware

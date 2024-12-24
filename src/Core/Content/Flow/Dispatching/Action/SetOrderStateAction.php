@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching\Action;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Order\SalesChannel\OrderService;
 use Cicada\Core\Content\Flow\Dispatching\DelayableAction;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\StateMachine\Exception\IllegalTransitionException;
 use Cicada\Core\System\StateMachine\StateMachineException;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 /**

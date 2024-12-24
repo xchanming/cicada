@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RoutingException;
@@ -19,6 +17,8 @@ use Cicada\Storefront\Pagelet\Country\CountryStateDataPageletCriteriaEvent;
 use Cicada\Storefront\Pagelet\Country\CountryStateDataPageletLoadedEvent;
 use Cicada\Storefront\Pagelet\Country\CountryStateDataPageletLoadedHook;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 

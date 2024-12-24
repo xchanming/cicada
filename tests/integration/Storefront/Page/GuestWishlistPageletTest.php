@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Product\SalesChannel\AbstractProductCloseoutFilterFactory;
@@ -21,6 +19,8 @@ use Cicada\Storefront\Pagelet\Wishlist\GuestWishlistPagelet;
 use Cicada\Storefront\Pagelet\Wishlist\GuestWishlistPageletLoadedEvent;
 use Cicada\Storefront\Pagelet\Wishlist\GuestWishlistPageletLoader;
 use Cicada\Storefront\Pagelet\Wishlist\GuestWishListPageletProductCriteriaEvent;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

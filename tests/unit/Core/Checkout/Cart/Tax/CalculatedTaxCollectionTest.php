@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Tax;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTax;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

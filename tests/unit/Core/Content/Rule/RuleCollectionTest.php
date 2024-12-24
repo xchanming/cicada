@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Content\Rule\RuleEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

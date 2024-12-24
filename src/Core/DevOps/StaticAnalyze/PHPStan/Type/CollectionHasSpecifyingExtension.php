@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Type;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Struct\Collection;
 use PhpParser\Node\Expr\MethodCall;
 use PHPStan\Analyser\Scope;
 use PHPStan\Analyser\SpecifiedTypes;
@@ -12,8 +14,6 @@ use PHPStan\Reflection\MethodReflection;
 use PHPStan\Type\MethodTypeSpecifyingExtension;
 use PHPStan\Type\NullType;
 use PHPStan\Type\TypeCombinator;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Struct\Collection;
 
 /**
  * @internal

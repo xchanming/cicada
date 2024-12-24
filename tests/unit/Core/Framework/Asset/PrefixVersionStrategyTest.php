@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Asset;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Asset\FlysystemLastModifiedVersionStrategy;
 use Cicada\Core\Framework\Adapter\Asset\PrefixVersionStrategy;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

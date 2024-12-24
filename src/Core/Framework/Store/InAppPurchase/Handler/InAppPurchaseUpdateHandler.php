@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Store\InAppPurchase\Handler;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
 use Cicada\Core\Framework\Store\InAppPurchase\InAppPurchaseUpdateTask;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseUpdater;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

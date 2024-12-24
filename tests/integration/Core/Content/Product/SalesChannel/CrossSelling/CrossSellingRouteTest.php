@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\SalesChannel\CrossSelling;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductCrossSelling\ProductCrossSellingDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\Product\Events\ProductCrossSellingIdsCriteriaEvent;
@@ -28,6 +26,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;

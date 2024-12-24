@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\CustomEntity;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\TableNotFoundException;
-use Doctrine\DBAL\Schema\Schema;
-use PHPUnit\Framework\Attributes\AfterClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
@@ -66,6 +60,12 @@ use Cicada\Core\System\CustomEntity\Xml\Field\TextField;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\TableNotFoundException;
+use Doctrine\DBAL\Schema\Schema;
+use PHPUnit\Framework\Attributes\AfterClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Cms;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Cms\AbstractDefaultMediaResolver;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\Adapter\Translation\AbstractTranslator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Cms\DefaultMediaResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Asset\Package as SymfonyPackage;
 use Symfony\Component\Asset\Packages;
 

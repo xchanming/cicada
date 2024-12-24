@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Admin\Indexer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
 use Cicada\Core\Checkout\Promotion\PromotionEntity;
 use Cicada\Core\Framework\Context;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Elasticsearch\Admin\Indexer\PromotionAdminSearchIndexer;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

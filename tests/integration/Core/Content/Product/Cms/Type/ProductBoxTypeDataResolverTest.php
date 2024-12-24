@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Cms\Type;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSection\CmsSectionCollection;
@@ -29,6 +26,9 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\CachedRuleLoader;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupDefinition;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
@@ -71,6 +69,8 @@ use Cicada\Core\System\SystemConfig\CachedSystemConfigLoader;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedHook;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\Tax\TaxDefinition;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 class CacheInvalidationSubscriber

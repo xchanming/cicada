@@ -2,11 +2,6 @@
 
 namespace Cicada\Elasticsearch\Admin\Indexer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\FullText\SimpleQueryStringQuery;
-use OpenSearchDSL\Search;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -17,6 +12,11 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\FullText\SimpleQueryStringQuery;
+use OpenSearchDSL\Search;
 
 #[Package('services-settings')]
 final class ProductAdminSearchIndexer extends AbstractAdminIndexer

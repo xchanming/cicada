@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\DevOps\Core\DevOps\StaticAnalyse\PHPStan\Rules;
 
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\MessagesShouldNotUsePHPStanTypes;
 use PHPStan\Rules\Rule;
 use PHPStan\Testing\RuleTestCase;
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\MessagesShouldNotUsePHPStanTypes;
 
 /**
  * @internal

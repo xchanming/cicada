@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Version;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Defaults;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

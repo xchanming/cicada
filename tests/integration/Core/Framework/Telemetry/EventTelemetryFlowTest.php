@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Telemetry;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Telemetry\Metrics\Metric\Type;
 use Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection;
 use Cicada\Core\Framework\Test\Telemetry\Transport\TraceableTransport;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertInstanceOf;
 

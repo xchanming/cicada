@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogCollection;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogDefinition;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
@@ -23,6 +21,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\System\User\UserDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

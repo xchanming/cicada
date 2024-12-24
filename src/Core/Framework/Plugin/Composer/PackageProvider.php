@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Plugin\Composer;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 use Composer\IO\IOInterface;
 use Composer\Package\CompletePackageInterface;
 use Composer\Package\Loader\ValidatingArrayLoader;
 use Composer\Util\ConfigValidator;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 
 #[Package('core')]
 class PackageProvider

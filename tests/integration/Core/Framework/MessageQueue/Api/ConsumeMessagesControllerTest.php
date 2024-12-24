@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\MessageQueue\Api;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexingMessage;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Increment\AbstractIncrementer;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\TestTask;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

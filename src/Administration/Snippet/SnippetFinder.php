@@ -2,10 +2,10 @@
 
 namespace Cicada\Administration\Snippet;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\HtmlSanitizer;
 use Cicada\Core\Kernel;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Finder\Finder;
 
 /**

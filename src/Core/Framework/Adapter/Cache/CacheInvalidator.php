@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache;
 
-use Psr\Cache\CacheItemPoolInterface;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Adapter\Cache\InvalidatorStorage\AbstractInvalidatorStorage;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Cache\CacheItemPoolInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

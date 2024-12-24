@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Action;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\Action\RemoveOrderTagAction;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Framework\Context;
@@ -14,6 +10,10 @@ use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

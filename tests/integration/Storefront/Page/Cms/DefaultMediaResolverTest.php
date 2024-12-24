@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Cms;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Cms\AbstractDefaultMediaResolver;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Page\Cms\DefaultMediaResolver;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

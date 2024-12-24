@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Test\Stub\App;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Manifest\Xml\Meta\Metadata;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

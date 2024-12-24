@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Redis;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\Attributes\IgnoreDeprecations;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Redis\RedisConnectionProvider;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Increment\RedisIncrementer;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestKernel;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\IgnoreDeprecations;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

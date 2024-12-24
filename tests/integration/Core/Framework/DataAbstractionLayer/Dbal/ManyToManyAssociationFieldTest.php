@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Dbal;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Aggregate\CategoryTranslation\CategoryTranslationDefinition;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductCategory\ProductCategoryDefinition;
@@ -20,6 +19,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Tax\TaxDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Services;
 
-use Composer\IO\NullIO;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Context;
@@ -23,6 +20,9 @@ use Cicada\Core\Framework\Store\Struct\PermissionStruct;
 use Cicada\Core\Framework\Store\Struct\VariantCollection;
 use Cicada\Core\Framework\Test\Store\ExtensionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Composer\IO\NullIO;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

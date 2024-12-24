@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Migration\Core;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 use Cicada\Core\Framework\Migration\Command\MigrationCommand;
 use Cicada\Core\Framework\Migration\Command\MigrationDestructiveCommand;
 use Cicada\Core\Framework\Migration\Exception\MigrateException;
@@ -15,6 +11,10 @@ use Cicada\Core\Framework\Migration\MigrationRuntime;
 use Cicada\Core\Framework\Migration\MigrationSource;
 use Cicada\Core\Framework\Test\Migration\MigrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 use Symfony\Component\Cache\Adapter\TagAwareAdapter;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;

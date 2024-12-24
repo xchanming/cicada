@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\System\SystemConfig\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedHook;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

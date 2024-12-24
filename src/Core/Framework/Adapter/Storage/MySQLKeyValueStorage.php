@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Adapter\Storage;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\Service\ResetInterface;
 
 /**

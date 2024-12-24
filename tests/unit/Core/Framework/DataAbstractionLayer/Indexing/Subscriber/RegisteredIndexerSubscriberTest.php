@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Indexing\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Infrastructure\Path\MediaPathPostUpdater;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexer;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\Subscriber\RegisteredInd
 use Cicada\Core\Framework\Migration\IndexerQueuer;
 use Cicada\Core\Framework\Store\Event\FirstRunWizardFinishedEvent;
 use Cicada\Core\Framework\Update\Event\UpdatePostFinishEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

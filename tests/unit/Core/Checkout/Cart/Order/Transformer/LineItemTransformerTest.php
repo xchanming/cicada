@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Order\Transformer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Order\Transformer\LineItemTransformer;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
@@ -11,6 +9,8 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemEntity;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Product\State;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

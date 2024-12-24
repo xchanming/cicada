@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Language;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteException;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageValidator;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

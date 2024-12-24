@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\Snippet\Files;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\System\Snippet\Files\GenericSnippetFile;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Serializer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderDefinition;
 use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -42,6 +39,9 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ScalarR
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\UserDefinition;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

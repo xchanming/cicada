@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Maintenance\System\Service;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\RequestOptions;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

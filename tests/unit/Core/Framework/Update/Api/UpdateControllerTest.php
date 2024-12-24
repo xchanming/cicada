@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Store\Services\AbstractExtensionLifecycle;
 use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\Update\Struct\Version;
 use Cicada\Core\Kernel;
 use Cicada\Core\System\SalesChannel\NoContentResponse;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;

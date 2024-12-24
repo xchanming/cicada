@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Snippet;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\BasicTestDataBehaviour;
@@ -18,6 +15,9 @@ use Cicada\Core\System\Snippet\SnippetException;
 use Cicada\Core\System\Snippet\SnippetService;
 use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 use Cicada\Tests\Integration\Core\System\Snippet\Mock\MockSnippetFile;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Translation\MessageCatalogue;
 use Symfony\Component\Translation\MessageCatalogueInterface;
 

@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Plugin\Composer;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Kernel;
 use Composer\Composer;
 use Composer\Factory as ComposerFactory;
 use Composer\IO\IOInterface;
 use Composer\IO\NullIO;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Kernel;
 
 #[Package('core')]
 class Factory

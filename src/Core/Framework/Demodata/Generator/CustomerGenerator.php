@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Generator;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -17,6 +15,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGeneratorInterface;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Faker\Generator;
 
 /**
  * @internal

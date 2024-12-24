@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\UriInterface;
 use Cicada\Administration\Controller\AdminExtensionApiController;
 use Cicada\Administration\Controller\Exception\AppByNameNotFoundException;
 use Cicada\Administration\Controller\Exception\MissingAppSecretException;
@@ -25,6 +21,10 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\UriInterface;
 
 /**
  * @internal

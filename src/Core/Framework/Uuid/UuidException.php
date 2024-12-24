@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Uuid;
 
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidLengthException;
 

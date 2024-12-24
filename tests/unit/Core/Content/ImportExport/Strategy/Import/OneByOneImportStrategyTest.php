@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\Strategy\Import;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
 use Cicada\Core\Content\ImportExport\Event\ImportExportExceptionImportRecordEvent;
 use Cicada\Core\Content\ImportExport\Strategy\Import\OneByOneImportStrategy;
 use Cicada\Core\Content\ImportExport\Struct\Config;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * @internal

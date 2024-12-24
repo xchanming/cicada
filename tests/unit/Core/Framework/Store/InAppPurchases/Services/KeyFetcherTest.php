@@ -2,17 +2,17 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\InAppPurchases\Services;
 
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\KeyFetcher;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

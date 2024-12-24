@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
-use OpenSearch\Client;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
@@ -16,6 +12,10 @@ use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchRegistry;
 use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
 use Cicada\Elasticsearch\Product\LanguageSubscriber;
+use OpenSearch\Client;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

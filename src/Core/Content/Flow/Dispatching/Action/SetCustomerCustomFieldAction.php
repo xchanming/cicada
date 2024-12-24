@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching\Action;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Content\Flow\Dispatching\DelayableAction;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Event\CustomerAware;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

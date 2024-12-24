@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Util;
 
+use Cicada\Core\Framework\Util\Exception\ComparatorException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Util\Exception\ComparatorException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

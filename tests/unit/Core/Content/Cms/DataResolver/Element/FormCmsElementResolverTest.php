@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\DataResolver\Element;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Cicada\Core\Content\Cms\DataResolver\Element\ElementDataCollection;
 use Cicada\Core\Content\Cms\DataResolver\Element\FormCmsElementResolver;
@@ -18,6 +16,8 @@ use Cicada\Core\System\Salutation\SalutationCollection;
 use Cicada\Core\System\Salutation\SalutationDefinition;
 use Cicada\Core\System\Salutation\SalutationEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

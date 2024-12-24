@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Rule\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Platforms\MySQL80Platform;
-use Doctrine\DBAL\Result;
-use Doctrine\DBAL\Statement;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\DataAbstractionLayer\RuleAreaUpdater;
 use Cicada\Core\Content\Rule\RuleDefinition;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
@@ -38,6 +30,14 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Platforms\MySQL80Platform;
+use Doctrine\DBAL\Result;
+use Doctrine\DBAL\Statement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\SalesChannelRequest;
 use Cicada\Storefront\Theme\MD5ThemePathBuilder;
 use Cicada\Storefront\Theme\ThemeAssetPackage;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

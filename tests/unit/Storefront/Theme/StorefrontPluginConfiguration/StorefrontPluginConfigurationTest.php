@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\StorefrontPluginConfiguration;
 
+use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 
 /**
  * @internal

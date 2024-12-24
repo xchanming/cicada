@@ -2,9 +2,9 @@
 
 namespace Cicada\Elasticsearch\Framework;
 
+use Cicada\Core\Framework\Log\Package;
 use OpenSearchDSL\Aggregation\AbstractAggregation;
 use OpenSearchDSL\Aggregation\Type\BucketingTrait;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

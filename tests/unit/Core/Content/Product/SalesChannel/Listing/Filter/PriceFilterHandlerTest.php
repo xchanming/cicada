@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing\Filter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Filter;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Filter\PriceListingFilterHandler;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Metric\StatsAggregation;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\Filter as DALFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\RangeFilter;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

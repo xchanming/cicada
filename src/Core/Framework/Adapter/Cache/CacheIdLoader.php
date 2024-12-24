@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache;
 
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
 
 #[Package('core')]

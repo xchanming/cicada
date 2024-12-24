@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\Hreflang\HreflangCollection;
 use Cicada\Core\Content\Seo\HreflangLoaderInterface;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
@@ -19,6 +16,9 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\StorefrontPluginRegistryInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

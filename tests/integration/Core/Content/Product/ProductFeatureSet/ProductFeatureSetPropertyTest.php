@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\ProductFeatureSet;
 
-use PHPUnit\Framework\Attributes\TestWith;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Test\Product\ProductFeatureSet\ProductFeatureSetFixtures;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\Attributes\TestWith;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

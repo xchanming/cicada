@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\CustomField;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -12,6 +11,7 @@ use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetCollec
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetDefinition;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSetRelation\CustomFieldSetRelationDefinition;
 use Cicada\Core\System\CustomField\CustomFieldDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

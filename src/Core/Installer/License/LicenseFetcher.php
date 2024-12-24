@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Installer\License;
 
-use GuzzleHttp\Client;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Subscriber\InstallerLocaleListener;
+use GuzzleHttp\Client;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Migration\V6_6;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 
 /**
  * @internal

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache\InvalidatorStorage\Message;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Adapter\Cache\Message\CleanupOldCacheFolders;
 use Cicada\Core\Framework\Adapter\Cache\Message\CleanupOldCacheFoldersHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

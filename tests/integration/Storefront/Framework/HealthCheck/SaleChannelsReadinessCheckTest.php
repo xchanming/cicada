@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\HealthCheck;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\SystemCheck\Check\Status;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
@@ -14,6 +10,10 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Kernel;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Storefront\Framework\SystemCheck\SaleChannelsReadinessCheck;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

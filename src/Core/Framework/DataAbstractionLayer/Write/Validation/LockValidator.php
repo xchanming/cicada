@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Write\Validation;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\InsertCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;

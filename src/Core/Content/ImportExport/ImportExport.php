@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\ImportExport;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportFile\ImportExportFileEntity;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
 use Cicada\Core\Content\ImportExport\Event\EnrichExportCriteriaEvent;
@@ -34,6 +32,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\WriteCommandExceptionEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

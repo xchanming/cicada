@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Content\Media\Infrastructure\Path;
 
+use Cicada\Core\Content\Media\Core\Application\MediaReverseProxy;
+use Cicada\Core\Content\Media\MediaException;
+use Cicada\Core\Framework\Log\Package;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Pool;
 use GuzzleHttp\Psr7\Request;
 use Psr\Log\LoggerInterface;
-use Cicada\Core\Content\Media\Core\Application\MediaReverseProxy;
-use Cicada\Core\Content\Media\MediaException;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class FastlyMediaReverseProxy implements MediaReverseProxy

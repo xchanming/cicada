@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Health;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\SystemCheck\BaseCheck;
 use Cicada\Core\Framework\SystemCheck\Check\Category;
 use Cicada\Core\Framework\SystemCheck\Check\Result;
 use Cicada\Core\Framework\SystemCheck\Check\Status;
 use Cicada\Core\Framework\SystemCheck\Check\SystemCheckExecutionContext;
 use Cicada\Core\Framework\SystemCheck\SystemChecker;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

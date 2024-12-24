@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Test\Stub\Doctrine;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Cache\ArrayResult;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Doctrine\DBAL\Result;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

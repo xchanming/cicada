@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Plugin\Struct;
 
-use Composer\Package\CompletePackageInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
+use Composer\Package\CompletePackageInterface;
 
 #[Package('core')]
 class PluginFromFileSystemStruct extends Struct

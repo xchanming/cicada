@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Services;
 
-use Doctrine\DBAL\Cache\ArrayResult;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Platforms\MySQL80Platform;
-use Doctrine\DBAL\Result;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
@@ -22,6 +16,12 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\UsageData\Services\ManyToManyAssociationService;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Cache\ArrayResult;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Platforms\MySQL80Platform;
+use Doctrine\DBAL\Result;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

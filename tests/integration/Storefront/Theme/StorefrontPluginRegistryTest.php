@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

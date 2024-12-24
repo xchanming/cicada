@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Struct;
 
+use Cicada\Core\Framework\Struct\CloneTrait;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Struct\CloneTrait;
 
 /**
  * @internal

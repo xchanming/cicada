@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\Content\Media\File;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\UnableToGenerateTemporaryUrl;
-use Psr\Http\Message\StreamInterface;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator;
 use Cicada\Core\Content\Media\Core\Params\UrlParams;
 use Cicada\Core\Content\Media\MediaEntity;
@@ -14,6 +10,10 @@ use Cicada\Core\Content\Media\MediaService;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\Filesystem;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\UnableToGenerateTemporaryUrl;
+use Psr\Http\Message\StreamInterface;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;

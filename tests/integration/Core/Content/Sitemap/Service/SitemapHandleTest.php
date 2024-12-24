@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\Service;
 
-use League\Flysystem\Filesystem;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Sitemap\Service\SitemapHandle;
 use Cicada\Core\Content\Sitemap\Struct\Url;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\Filesystem;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

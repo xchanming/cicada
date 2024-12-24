@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\ImportExport\Processing\Writer;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
 
 /**
  * @deprecated tag:v6.7.0 - Will be removed in v6.7.0. as it is not used anymore

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\LineItem\Group;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupServiceRegistry;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Packager\LineItemGroupCountPackager;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Packager\LineItemGroupUnitPriceNetPackager;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Sorter\LineItemGroupPriceAscSorter;
 use Cicada\Core\Checkout\Cart\LineItem\Group\Sorter\LineItemGroupPriceDescSorter;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

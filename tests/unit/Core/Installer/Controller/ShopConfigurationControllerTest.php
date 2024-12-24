@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Installer\Configuration\AdminConfigurationService;
 use Cicada\Core\Installer\Configuration\EnvConfigWriter;
@@ -14,6 +10,10 @@ use Cicada\Core\Installer\Controller\ShopConfigurationController;
 use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderCollection;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailEntity;
 use Cicada\Core\Content\Media\Commands\GenerateThumbnailsCommand;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\Stub\MessageBus\CollectingMessageBus;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 

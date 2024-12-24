@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\SalesChannel\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteException;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\Maintenance\SalesChannel\Command\SalesChannelCreateCommand;
 use Cicada\Core\Maintenance\SalesChannel\Service\SalesChannelCreator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

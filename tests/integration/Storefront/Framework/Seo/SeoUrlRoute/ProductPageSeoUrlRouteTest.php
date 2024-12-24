@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Seo\SeoUrlRoute;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoUrlGenerator;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Framework\Context;
@@ -14,6 +12,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

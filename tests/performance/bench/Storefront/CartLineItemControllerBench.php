@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Bench\Storefront;
 
-use Doctrine\DBAL\Connection;
-use PhpBench\Attributes as Bench;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
@@ -15,6 +13,8 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Storefront\Controller\CartLineItemController;
 use Cicada\Tests\Bench\AbstractBenchCase;
 use Cicada\Tests\Bench\Fixtures;
+use Doctrine\DBAL\Connection;
+use PhpBench\Attributes as Bench;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;

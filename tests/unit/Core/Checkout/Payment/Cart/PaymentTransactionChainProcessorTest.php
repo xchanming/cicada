@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Payment\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
@@ -32,6 +30,8 @@ use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Routing\RouterInterface;
 

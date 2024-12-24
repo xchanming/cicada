@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\DevOps\System\Command;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

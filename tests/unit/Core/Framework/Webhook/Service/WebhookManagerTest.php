@@ -2,16 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\RequestInterface;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\AppLocaleProvider;
@@ -30,6 +20,16 @@ use Cicada\Core\Framework\Webhook\Service\WebhookLoader;
 use Cicada\Core\Framework\Webhook\Service\WebhookManager;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\MessageBus\CollectingMessageBus;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Contracts\EventDispatcher\Event;
 

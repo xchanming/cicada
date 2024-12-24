@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\SystemConfig\Facade;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Exception\MissingPrivilegeException;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Context;
@@ -23,6 +21,8 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

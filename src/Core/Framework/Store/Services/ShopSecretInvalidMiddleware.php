@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use Doctrine\DBAL\Connection;
-use Psr\Http\Message\ResponseInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
 use Cicada\Core\Framework\Store\Exception\ShopSecretInvalidException;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @internal

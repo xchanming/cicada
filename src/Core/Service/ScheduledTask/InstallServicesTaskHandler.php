@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Service\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
 use Cicada\Core\Service\AllServiceInstaller;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

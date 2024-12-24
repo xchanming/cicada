@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\JWT;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\JWT\Constraints\HasValidRSAJWKSignature;
 use Cicada\Core\Framework\JWT\Constraints\MatchesLicenceDomain;
 use Cicada\Core\Framework\JWT\JWTDecoder;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\JWT\Struct\JWKCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\StoreService;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

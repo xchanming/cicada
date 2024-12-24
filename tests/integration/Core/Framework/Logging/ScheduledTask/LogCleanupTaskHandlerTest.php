@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Logging\ScheduledTask;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry\TaskRegistry;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

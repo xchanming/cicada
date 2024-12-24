@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Delivery\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateEntity;
 use Cicada\Core\System\Country\CountryEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

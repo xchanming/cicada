@@ -2,13 +2,13 @@
 
 namespace Cicada\Elasticsearch\Framework\Command;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Command\ConsoleProgressTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Elasticsearch\ElasticsearchException;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;

@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\App\InAppPurchases\Payload;
 
-use GuzzleHttp\Client;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\InAppPurchases\Response\InAppPurchasesResponse;
 use Cicada\Core\Framework\App\Payload\AppPayloadServiceHelper;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Client;
 
 /**
  * @internal only for use by the app-system

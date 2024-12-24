@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\SearchKeyword;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchTermInterpreter;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchTermInterpreterInterface;
 use Cicada\Core\Defaults;
@@ -18,6 +14,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\SearchTerm;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\ArrayNormalizer;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

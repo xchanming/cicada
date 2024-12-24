@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Promotion;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity;
 use Cicada\Core\Checkout\Promotion\Exception\InvalidCodePatternException;
 use Cicada\Core\Checkout\Promotion\Exception\PatternNotComplexEnoughException;
@@ -11,6 +9,8 @@ use Cicada\Core\Checkout\Promotion\Exception\UnknownPromotionDiscountTypeExcepti
 use Cicada\Core\Checkout\Promotion\PromotionException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

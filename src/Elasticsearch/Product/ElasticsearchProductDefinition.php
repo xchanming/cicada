@@ -2,9 +2,6 @@
 
 namespace Cicada\Elasticsearch\Product;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use OpenSearchDSL\Query\Compound\BoolQuery;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SqlHelper;
@@ -17,6 +14,9 @@ use Cicada\Elasticsearch\Framework\AbstractElasticsearchDefinition;
 use Cicada\Elasticsearch\Framework\ElasticsearchFieldBuilder;
 use Cicada\Elasticsearch\Framework\ElasticsearchFieldMapper;
 use Cicada\Elasticsearch\Framework\ElasticsearchIndexingUtils;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use OpenSearchDSL\Query\Compound\BoolQuery;
 
 /**
  * @internal

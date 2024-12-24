@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Source;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppDownloader;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\App\Source\RemoteZip;
 use Cicada\Core\Framework\App\Source\TemporaryDirectoryFactory;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

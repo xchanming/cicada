@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Test\TestCaseHelper;
 
+use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 
 /**
  * @internal

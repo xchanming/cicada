@@ -2,7 +2,6 @@
 
 namespace Cicada\Elasticsearch\Framework;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexerLanguageCriteriaEvent;
+use Psr\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]
 class ElasticsearchLanguageProvider

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Account\Login;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Translation\AbstractTranslator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -29,6 +26,9 @@ use Cicada\Storefront\Page\Account\Login\AccountLoginPageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\MetaInformation;
 use Cicada\Storefront\Page\Page;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

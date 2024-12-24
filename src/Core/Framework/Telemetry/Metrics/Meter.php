@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Telemetry\Metrics;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfigProvider;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Telemetry\Metrics\Exception\MissingMetricConfiguration
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\Metric;
 use Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection;
+use Psr\Log\LoggerInterface;
 
 /**
  * @experimental feature:TELEMETRY_METRICS stableVersion:v6.7.0

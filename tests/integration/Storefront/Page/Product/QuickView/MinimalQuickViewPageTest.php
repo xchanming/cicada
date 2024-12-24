@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Product\QuickView;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -11,6 +10,7 @@ use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoadedEvent;
 use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
 use Cicada\Tests\Integration\Storefront\Page\StorefrontPageTestConstants;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

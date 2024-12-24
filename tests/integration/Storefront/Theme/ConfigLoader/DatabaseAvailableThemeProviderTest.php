@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Storefront\Theme\ConfigLoader;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Storefront\Theme\ConfigLoader\DatabaseAvailableThemeProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

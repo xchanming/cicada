@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Source\SourceResolver;
 use Cicada\Core\Framework\Plugin\BundleConfigGenerator;
 use Cicada\Core\Framework\Plugin\BundleConfigGeneratorInterface;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

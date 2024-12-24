@@ -2,12 +2,12 @@
 
 namespace Cicada\Elasticsearch\Framework;
 
-use OpenSearchDSL\Query\Compound\BoolQuery;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IterableQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use OpenSearchDSL\Query\Compound\BoolQuery;
 
 #[Package('core')]
 abstract class AbstractElasticsearchDefinition

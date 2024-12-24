@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\Controller;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Flow\Api\FlowActionCollector;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\EntitySchemaGenerator;
@@ -24,6 +23,7 @@ use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
 use Cicada\Core\Maintenance\System\Service\AppUrlVerifier;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;

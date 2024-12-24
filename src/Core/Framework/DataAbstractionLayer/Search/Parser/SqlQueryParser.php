@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Search\Parser;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -23,6 +21,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\SuffixFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Query\ScoreQuery;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

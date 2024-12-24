@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Framework\Log\Monolog\DoctrineSQLHandler;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Monolog\Level;
 use Monolog\LogRecord;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Monolog\DoctrineSQLHandler;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

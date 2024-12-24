@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Demodata\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
@@ -24,6 +22,8 @@ use Cicada\Core\Framework\Demodata\Event\DemodataRequestCreatedEvent;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetDefinition;
 use Cicada\Core\System\Tag\TagDefinition;
 use Cicada\Core\System\User\UserDefinition;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Tester\CommandTester;

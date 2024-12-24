@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\MessageQueue\Api\ConsumeMessagesController;
 use Cicada\Core\Framework\MessageQueue\MessageQueueException;
 use Cicada\Core\Framework\MessageQueue\Subscriber\EarlyReturnMessagesListener;
 use Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueStatsSubscriber;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Lock\LockFactory;

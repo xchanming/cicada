@@ -2,7 +2,6 @@
 
 namespace Cicada\Administration\Migration\V6_4;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelTranslation\SalesChannelTranslationDefinition;
 use Cicada\Core\System\User\UserDefinition;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

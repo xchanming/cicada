@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Promotion\Cart\Discount\ScopePackager;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantity;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantityCollection;
@@ -20,6 +18,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

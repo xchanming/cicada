@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Services;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\UsageData\Client\GatewayClient;
 use Cicada\Core\System\UsageData\Services\GatewayStatusService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\Exception\ServerException;
 use Symfony\Component\HttpClient\Response\MockResponse;
 use Symfony\Component\HttpFoundation\Response;

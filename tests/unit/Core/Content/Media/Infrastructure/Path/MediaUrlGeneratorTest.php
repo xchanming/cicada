@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Infrastructure\Path;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\AbstractMediaUrlGenerator;
 use Cicada\Core\Content\Media\Core\Params\UrlParams;
 use Cicada\Core\Content\Media\Core\Params\UrlParamsSource;
 use Cicada\Core\Content\Media\Infrastructure\Path\MediaUrlGenerator;
 use Cicada\Core\Content\Media\MediaException;
+use League\Flysystem\Filesystem;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

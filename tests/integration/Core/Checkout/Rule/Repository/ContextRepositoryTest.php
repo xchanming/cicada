@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Rule\Repository;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Currency\Rule\CurrencyRule;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

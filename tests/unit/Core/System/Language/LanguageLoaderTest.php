@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\System\Language;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Result;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageLoader;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Result;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

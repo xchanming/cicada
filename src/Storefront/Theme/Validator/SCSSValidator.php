@@ -2,12 +2,12 @@
 
 namespace Cicada\Storefront\Theme\Validator;
 
-use ScssPhp\ScssPhp\Colors;
-use ScssPhp\ScssPhp\OutputStyle;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\AbstractScssCompiler;
 use Cicada\Storefront\Theme\CompilerConfiguration;
 use Cicada\Storefront\Theme\Exception\ThemeException;
+use ScssPhp\ScssPhp\Colors;
+use ScssPhp\ScssPhp\OutputStyle;
 
 #[Package('storefront')]
 class SCSSValidator

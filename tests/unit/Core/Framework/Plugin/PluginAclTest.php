@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleDefinition;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleEntity;
 use Cicada\Core\Framework\Context;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
 use Cicada\Core\Framework\Plugin\Subscriber\PluginAclPrivilegesSubscriber;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use League\MimeTypeDetection\FinfoMimeTypeDetector;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\Log\Package;
+use League\MimeTypeDetection\FinfoMimeTypeDetector;
 
 /**
  * @internal

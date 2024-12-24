@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Flow\FlowEvent;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Flow\Event\Event;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

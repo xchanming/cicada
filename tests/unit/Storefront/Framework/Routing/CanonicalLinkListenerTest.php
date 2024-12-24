@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Event\BeforeSendResponseEvent;
 use Cicada\Core\SalesChannelRequest;
 use Cicada\Storefront\Framework\Routing\CanonicalLinkListener;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

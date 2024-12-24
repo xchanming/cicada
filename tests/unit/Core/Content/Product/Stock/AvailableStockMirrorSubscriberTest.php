@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Stock;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\Stock\AvailableStockMirrorSubscriber;
 use Cicada\Core\Framework\Context;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriteGatewayInterface
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteContext;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

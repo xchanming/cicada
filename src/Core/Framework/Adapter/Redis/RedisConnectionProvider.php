@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Adapter\Redis;
 
-use Psr\Container\ContainerInterface;
 use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Adapter\Cache\RedisConnectionFactory;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Container\ContainerInterface;
 
 /**
  * RedisConnection corresponds to a return type of symfony's RedisAdapter::createConnection and may change with symfony update.

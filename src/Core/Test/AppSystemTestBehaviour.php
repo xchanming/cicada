@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Test;
 
-use Psr\Log\NullLogger;
 use Cicada\Core\Framework\App\AppService;
 use Cicada\Core\Framework\App\Lifecycle\AppLifecycle;
 use Cicada\Core\Framework\App\Lifecycle\AppLifecycleIterator;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollection;
 use Cicada\Core\System\Snippet\Files\SnippetFileLoader;
+use Psr\Log\NullLogger;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 trait AppSystemTestBehaviour

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Template;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Template\TemplateLoader;
 use Cicada\Core\Framework\Util\Filesystem;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

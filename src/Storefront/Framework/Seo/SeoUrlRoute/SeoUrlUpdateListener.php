@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Framework\Seo\SeoUrlRoute;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\CategoryEvents;
 use Cicada\Core\Content\Category\Event\CategoryIndexerEvent;
@@ -13,6 +12,7 @@ use Cicada\Core\Content\Product\ProductEvents;
 use Cicada\Core\Content\Seo\SeoUrlUpdater;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

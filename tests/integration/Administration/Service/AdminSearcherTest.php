@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Administration\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Framework\Search\CriteriaCollection;
 use Cicada\Administration\Service\AdminSearcher;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Query\ScoreQuery;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

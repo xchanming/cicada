@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Hookable;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Event\CustomerBeforeLoginEvent;
 use Cicada\Core\Content\Flow\Dispatching\FlowFactory;
 use Cicada\Core\Content\Flow\Dispatching\FlowState;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\Webhook\Hookable\HookableBusinessEvent;
 use Cicada\Core\Framework\Webhook\Hookable\HookableEventFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme\Command;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\Source\SourceResolver;
 use Cicada\Core\Framework\Context;
@@ -18,6 +15,9 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\ThemeFileResolver;
 use Cicada\Storefront\Theme\ThemeFilesystemResolver;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Helper\HelperSet;
 use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Tester\CommandTester;

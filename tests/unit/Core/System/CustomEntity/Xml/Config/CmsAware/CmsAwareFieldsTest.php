@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Xml\Config\CmsAware;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\CustomEntity\Xml\Config\CmsAware\CmsAwareFields;
 use Cicada\Core\System\CustomEntity\Xml\Field\Field;
 use Cicada\Core\System\CustomEntity\Xml\Field\JsonField;
@@ -11,6 +9,8 @@ use Cicada\Core\System\CustomEntity\Xml\Field\ManyToManyField;
 use Cicada\Core\System\CustomEntity\Xml\Field\ManyToOneField;
 use Cicada\Core\System\CustomEntity\Xml\Field\StringField;
 use Cicada\Core\System\CustomEntity\Xml\Field\TextField;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Requirements;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Installer\Requirements\ConfigurationRequirementsValidator;
 use Cicada\Core\Installer\Requirements\IniConfigReader;
 use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
 use Cicada\Core\Installer\Requirements\Struct\SystemCheck;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

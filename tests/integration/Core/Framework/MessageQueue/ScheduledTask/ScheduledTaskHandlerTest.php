@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\MessageQueue\ScheduledTask;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -20,6 +14,12 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\DummyScheduledTaskHandler;
 use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\TestRescheduleOnFailureTask;
 use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\TestTask;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

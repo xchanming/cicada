@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Facade;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerEntity;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
@@ -31,6 +29,8 @@ use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

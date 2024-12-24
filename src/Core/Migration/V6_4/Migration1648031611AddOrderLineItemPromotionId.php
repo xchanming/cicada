@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Migration\V6_4;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Promotion\Cart\PromotionProcessor;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

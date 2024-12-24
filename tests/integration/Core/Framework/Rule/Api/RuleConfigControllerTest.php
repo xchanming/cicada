@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Rule\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupDefinition;
 use Cicada\Core\Checkout\Customer\Rule\CustomerGroupRule;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\RuleConfig;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

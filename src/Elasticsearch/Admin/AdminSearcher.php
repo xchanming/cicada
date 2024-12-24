@@ -2,16 +2,16 @@
 
 namespace Cicada\Elasticsearch\Admin;
 
-use OpenSearch\Client;
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\FullText\SimpleQueryStringQuery;
-use OpenSearchDSL\Search;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\ElasticsearchException;
+use OpenSearch\Client;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\FullText\SimpleQueryStringQuery;
+use OpenSearchDSL\Search;
 
 /**
  * @internal

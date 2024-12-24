@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Checkout\Payment;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler;
@@ -26,6 +24,8 @@ use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceInterface;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceParameters;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Psr\EventDispatcher\EventDispatcherInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 

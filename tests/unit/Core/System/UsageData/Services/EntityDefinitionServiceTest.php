@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Services;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Newsletter\Aggregate\NewsletterRecipient\NewsletterRecipientDefinition;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\System\UsageData\Services\UsageDataAllowListService;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

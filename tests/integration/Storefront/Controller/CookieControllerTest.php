@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseHelper\TestBrowser;
@@ -11,6 +9,8 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Controller\CookieController;
 use Cicada\Storefront\Framework\Captcha\GoogleReCaptchaV2;
 use Cicada\Storefront\Framework\Captcha\GoogleReCaptchaV3;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

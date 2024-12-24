@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Checkout\Document\Service;
 
-use Dompdf\Adapter\CPDF;
-use Dompdf\Dompdf;
-use Dompdf\Options;
 use Cicada\Core\Checkout\Document\Extension\PdfRendererExtension;
 use Cicada\Core\Checkout\Document\Renderer\RenderedDocument;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\Framework\Log\Package;
+use Dompdf\Adapter\CPDF;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 #[Package('checkout')]
 final class PdfRenderer

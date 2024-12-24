@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin\KernelPluginLoader;
 
-use Composer\InstalledVersions;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\ComposerPluginLoader;
 use Cicada\Core\Framework\Plugin\Util\PluginFinder;
 use Cicada\Core\Framework\Test\Plugin\PluginIntegrationTestBehaviour;
+use Composer\InstalledVersions;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use SwagTestComposerLoaded\SwagTestComposerLoaded;
 
 /**

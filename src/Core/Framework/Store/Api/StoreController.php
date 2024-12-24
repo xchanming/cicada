@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Api;
 
-use GuzzleHttp\Exception\ClientException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceException;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceUserException;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\Store\Exception\StoreTokenMissingException;
 use Cicada\Core\Framework\Store\Services\AbstractExtensionDataProvider;
 use Cicada\Core\Framework\Store\Services\StoreClient;
 use Cicada\Core\System\User\UserEntity;
+use GuzzleHttp\Exception\ClientException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

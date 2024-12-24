@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Controller\HealthCheckController;
 use Cicada\Core\Framework\Api\HealthCheck\Event\HealthCheckEvent;
 use Cicada\Core\Framework\Context;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\SystemCheck\Check\Result;
 use Cicada\Core\Framework\SystemCheck\Check\Status;
 use Cicada\Core\Framework\SystemCheck\SystemChecker;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

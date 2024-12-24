@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Api\OAuth\User;
 
-use League\OAuth2\Server\Entities\UserEntityInterface;
 use Cicada\Core\Framework\Log\Package;
+use League\OAuth2\Server\Entities\UserEntityInterface;
 
 #[Package('core')]
 class User implements UserEntityInterface

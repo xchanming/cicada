@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Increment;
 
+use Cicada\Core\Framework\Increment\ArrayIncrementer;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Increment\ArrayIncrementer;
 
 /**
  * @internal

@@ -2,15 +2,15 @@
 
 namespace Cicada\Elasticsearch\Test;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\After;
-use PHPUnit\Framework\Attributes\Before;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\Command\ElasticsearchAdminIndexingCommand;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\Before;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\DependencyInjection\ContainerInterface;

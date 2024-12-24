@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

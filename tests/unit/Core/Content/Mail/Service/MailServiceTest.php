@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Service;
 
-use Monolog\Level;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Mail\Service\AbstractMailFactory;
 use Cicada\Core\Content\Mail\Service\AbstractMailSender;
 use Cicada\Core\Content\Mail\Service\MailService;
@@ -26,6 +21,11 @@ use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Monolog\Level;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Email;

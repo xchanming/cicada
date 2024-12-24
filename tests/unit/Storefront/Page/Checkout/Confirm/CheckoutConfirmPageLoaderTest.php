@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Checkout\Confirm;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Address\Error\AddressValidationError;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
@@ -32,6 +30,8 @@ use Cicada\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoadedEvent;
 use Cicada\Storefront\Page\Checkout\Confirm\CheckoutConfirmPageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\MetaInformation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\ConstraintViolation;

@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration;
 
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PhpParser\Node\Expr\MethodCall;
 use PhpParser\Node\Identifier;
@@ -9,7 +10,6 @@ use PhpParser\Node\Scalar\String_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

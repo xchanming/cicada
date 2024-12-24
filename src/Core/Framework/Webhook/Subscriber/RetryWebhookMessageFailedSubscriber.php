@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Webhook\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Webhook\EventLog\WebhookEventLogDefinition;
 use Cicada\Core\Framework\Webhook\Message\WebhookEventMessage;
 use Cicada\Core\Framework\Webhook\Service\RelatedWebhooks;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\Event\WorkerMessageFailedEvent;
 

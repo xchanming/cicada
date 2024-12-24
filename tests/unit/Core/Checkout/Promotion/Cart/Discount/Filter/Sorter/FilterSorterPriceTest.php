@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Promotion\Cart\Discount\Filter\Sorter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantity;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantityCollection;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
@@ -18,6 +15,9 @@ use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Sorter\AbstractPriceSort
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Sorter\FilterSorterPriceAsc;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Sorter\FilterSorterPriceDesc;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

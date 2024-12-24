@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -17,6 +15,8 @@ use Cicada\Core\System\UsageData\Consent\ConsentState;
 use Cicada\Core\System\UsageData\UsageDataException;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Clock\MockClock;
 use Symfony\Component\HttpFoundation\JsonResponse;
 

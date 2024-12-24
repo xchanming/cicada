@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use Doctrine\DBAL\Connection;
-use Lcobucci\JWT\UnencryptedToken;
-use League\OAuth2\Server\Exception\OAuthServerException;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\OAuth\Scope\UserVerifiedScope;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
@@ -21,6 +16,11 @@ use Cicada\Core\Framework\Test\TestCaseHelper\TestUser;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Lcobucci\JWT\UnencryptedToken;
+use League\OAuth2\Server\Exception\OAuthServerException;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

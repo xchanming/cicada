@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\Service;
 
-use Monolog\Level;
 use Cicada\Core\Content\ProductExport\Event\ProductExportLoggingEvent;
 use Cicada\Core\Content\ProductExport\Event\ProductExportRenderFooterContextEvent;
 use Cicada\Core\Content\ProductExport\Event\ProductExportRenderHeaderContextEvent;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Adapter\Twig\StringTemplateRenderer;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Monolog\Level;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('inventory')]

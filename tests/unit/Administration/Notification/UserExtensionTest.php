@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Notification;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Notification\Extension\UserExtension;
 use Cicada\Administration\Notification\NotificationDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityProtection\EntityProtectionCollection;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\UserDefinition;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

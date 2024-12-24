@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Profiling\Doctrine;
 
+use Cicada\Core\Profiling\Doctrine\BacktraceDebugDataHolder;
+use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Profiling\Doctrine\BacktraceDebugDataHolder;
-use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
 
 /**
  * @internal

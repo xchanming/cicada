@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Test\Integration\Helper;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Events\FlowSendMailActionEvent;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Container\NotRule;
 use Cicada\Core\Framework\Rule\Exception\UnsupportedValueException;
 use Cicada\Core\Framework\Rule\SimpleRule;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Mail\Service;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\MailTemplate\MailTemplateCollection;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 
 /**
  * This class is responsible for sending mail using user-defined mail templates.

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Rule;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Rule\RuleConfig;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Rule\RuleConfig;
 
 /**
  * @internal

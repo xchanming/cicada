@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Core\Application;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\MediaLocationBuilder;
 use Cicada\Core\Content\Media\Core\Application\MediaPathStorage;
 use Cicada\Core\Content\Media\Core\Application\MediaPathUpdater;
@@ -14,6 +10,10 @@ use Cicada\Core\Content\Media\Core\Strategy\PlainPathStrategy;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

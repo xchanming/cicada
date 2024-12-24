@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderCollection;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderEntity;
 use Cicada\Core\Content\Media\Aggregate\MediaFolderConfiguration\MediaFolderConfigurationCollection;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

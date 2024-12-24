@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\UsageData\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -16,6 +14,8 @@ use Cicada\Core\System\UsageData\Consent\ConsentService;
 use Cicada\Core\System\UsageData\Consent\ConsentState;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Clock\Test\ClockSensitiveTrait;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;

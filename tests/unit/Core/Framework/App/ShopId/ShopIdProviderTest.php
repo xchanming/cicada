@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\ShopId;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\App\Exception\AppUrlChangeDetectedException;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\App\ShopId\ShopIdDeletedEvent;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

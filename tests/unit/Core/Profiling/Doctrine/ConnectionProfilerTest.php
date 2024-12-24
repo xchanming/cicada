@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Profiling\Doctrine;
 
+use Cicada\Core\Profiling\Doctrine\BacktraceDebugDataHolder;
+use Cicada\Core\Profiling\Doctrine\ConnectionProfiler;
+use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\MySQLPlatform;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Profiling\Doctrine\BacktraceDebugDataHolder;
-use Cicada\Core\Profiling\Doctrine\ConnectionProfiler;
-use Cicada\Core\Profiling\Doctrine\ProfilingMiddleware;
 use Symfony\Bridge\Doctrine\Middleware\Debug\Query;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Symfony\Component\VarDumper\Dumper\CliDumper;

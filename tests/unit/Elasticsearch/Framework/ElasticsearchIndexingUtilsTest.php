@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Elasticsearch\Event\ElasticsearchCustomFieldsMappingEvent;
 use Cicada\Elasticsearch\Framework\ElasticsearchIndexingUtils;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

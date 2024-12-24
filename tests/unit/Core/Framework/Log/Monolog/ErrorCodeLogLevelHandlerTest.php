@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Content\Product\ProductException;
+use Cicada\Core\Framework\Log\Monolog\ErrorCodeLogLevelHandler;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Monolog\Handler\FingersCrossedHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
@@ -9,9 +12,6 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LogLevel;
-use Cicada\Core\Content\Product\ProductException;
-use Cicada\Core\Framework\Log\Monolog\ErrorCodeLogLevelHandler;
-use Cicada\Core\Framework\Uuid\Uuid;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 

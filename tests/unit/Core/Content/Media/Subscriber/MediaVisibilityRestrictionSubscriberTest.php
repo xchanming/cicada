@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderDefinition;
 use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Content\Media\Subscriber\MediaVisibilityRestrictionSubscriber;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntitySearchedEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

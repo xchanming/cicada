@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Snippet\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetCollection;
 use Cicada\Core\System\CustomField\CustomFieldCollection;
 use Cicada\Core\System\Snippet\Aggregate\SnippetSet\SnippetSetCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

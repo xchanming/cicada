@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Profiler;
 
-use OpenSearch\Namespaces\CatNamespace;
-use OpenSearch\Namespaces\ClusterNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\PlatformRequest;
 use Cicada\Elasticsearch\Profiler\ClientProfiler;
 use Cicada\Elasticsearch\Profiler\DataCollector;
+use OpenSearch\Namespaces\CatNamespace;
+use OpenSearch\Namespaces\ClusterNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DependencyInjection\CompilerPass;
 
+use Cicada\Core\Framework\DependencyInjection\CompilerPass\FeatureFlagCompilerPass;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DependencyInjection\CompilerPass\FeatureFlagCompilerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 

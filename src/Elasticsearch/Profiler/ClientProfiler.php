@@ -2,10 +2,10 @@
 
 namespace Cicada\Elasticsearch\Profiler;
 
+use Cicada\Core\Framework\Log\Package;
 use OpenSearch\Client;
 use OpenSearch\Connections\ConnectionInterface;
 use OpenSearch\Namespaces\NamespaceBuilderInterface;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @phpstan-type RequestInfo array{url: string, request: array<mixed>, response: array<mixed>, time: float, backtrace: string}

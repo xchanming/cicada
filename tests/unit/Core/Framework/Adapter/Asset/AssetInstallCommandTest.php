@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Asset;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Asset\AssetInstallCommand;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\Plugin\Util\AssetService;
 use Cicada\Core\Installer\Installer;
 use Cicada\Tests\Unit\Core\Framework\Plugin\_fixtures\ExampleBundle\ExampleBundle;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;

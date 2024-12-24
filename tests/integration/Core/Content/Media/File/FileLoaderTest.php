@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\File;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\FileFetcher;
 use Cicada\Core\Content\Media\File\FileLoader;
 use Cicada\Core\Content\Media\File\FileSaver;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

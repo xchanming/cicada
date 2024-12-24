@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Context;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Plugin\PluginCollection;
 use Cicada\Core\Framework\Store\Event\InstalledExtensionsListingLoadedEvent;
 use Cicada\Core\Framework\Store\StoreException;
 use Cicada\Core\Framework\Store\Struct\ExtensionCollection;
+use Psr\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @internal

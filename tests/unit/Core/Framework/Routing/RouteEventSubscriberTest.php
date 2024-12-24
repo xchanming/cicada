@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Routing\RouteEventSubscriber;
 use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Kernel;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Event\StorefrontRenderEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           install-admin: true
           cicada-version: ${{ github.ref }}
@@ -59,7 +59,7 @@ jobs:
 
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           install-admin: true
           cicada-version: ${{ github.ref }}

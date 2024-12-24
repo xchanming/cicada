@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\System\UsageData\Consent;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\UsageData\Consent\ConsentService;
 use Cicada\Core\System\UsageData\Consent\ConsentState;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 use Symfony\Contracts\HttpClient\ResponseInterface;

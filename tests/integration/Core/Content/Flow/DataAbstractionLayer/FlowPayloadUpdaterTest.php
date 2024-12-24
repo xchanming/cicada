@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow\DataAbstractionLayer;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Cart\Rule\AlwaysValidRule;
 use Cicada\Core\Checkout\Order\OrderDefinition;
@@ -20,6 +19,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

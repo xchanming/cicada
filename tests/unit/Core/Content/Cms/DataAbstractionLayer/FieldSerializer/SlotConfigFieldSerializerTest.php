@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\DataAbstractionLayer\Field\SlotConfigField;
 use Cicada\Core\Content\Cms\DataAbstractionLayer\FieldSerializer\SlotConfigFieldSerializer;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\All;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\Collection;

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Elasticsearch\Event\ElasticsearchCustomFieldsMappingEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

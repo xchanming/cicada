@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook\Handler;
 
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\RequestInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
 use Cicada\Core\Framework\App\Source\SourceResolver;
@@ -18,6 +15,9 @@ use Cicada\Core\Framework\Webhook\Handler\WebhookEventMessageHandler;
 use Cicada\Core\Framework\Webhook\Message\WebhookEventMessage;
 use Cicada\Core\Framework\Webhook\WebhookException;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\RequestInterface;
 
 /**
  * @internal

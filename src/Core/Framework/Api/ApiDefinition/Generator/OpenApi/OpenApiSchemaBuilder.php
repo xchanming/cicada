@@ -2,6 +2,10 @@
 
 namespace Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\PlatformRequest;
 use OpenApi\Annotations\Components;
 use OpenApi\Annotations\Info;
 use OpenApi\Annotations\MediaType;
@@ -11,10 +15,6 @@ use OpenApi\Annotations\Response as OpenApiResponse;
 use OpenApi\Annotations\Schema;
 use OpenApi\Annotations\SecurityScheme;
 use OpenApi\Annotations\Server;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\PlatformRequest;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('core')]

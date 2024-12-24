@@ -2,9 +2,9 @@
 
 namespace Cicada\Storefront\Test\Controller;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing\Facade;
 
+use Cicada\Core\Framework\Routing\Facade\RequestFacade;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Routing\Facade\RequestFacade;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

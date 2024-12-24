@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Checkout\Cart;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
@@ -29,6 +27,8 @@ use Cicada\Storefront\Page\Checkout\Cart\CheckoutCartPage;
 use Cicada\Storefront\Page\Checkout\Cart\CheckoutCartPageLoader;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\MetaInformation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\AttributeMappingDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\AttributeTranslationDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

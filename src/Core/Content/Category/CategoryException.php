@@ -4,9 +4,9 @@ namespace Cicada\Core\Content\Category;
 
 use Cicada\Core\Content\Category\Exception\CategoryNotFoundException;
 use Cicada\Core\Content\Cms\Exception\PageNotFoundException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('inventory')]

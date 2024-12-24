@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching\Action;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Flow\Dispatching\DelayableAction;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Events\FlowSendMailActionEvent;
@@ -26,6 +24,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Migration\Traits;
 
+use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Cicada\Elasticsearch\Migration\Traits\ElasticsearchTriggerTrait;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
-use Cicada\Elasticsearch\Migration\Traits\ElasticsearchTriggerTrait;
 
 /**
  * @internal

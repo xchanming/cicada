@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin;
 
-use Composer\Autoload\ClassLoader;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Context;
@@ -45,6 +40,11 @@ use Cicada\Core\System\CustomEntity\Schema\CustomEntityPersister;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
+use Composer\Autoload\ClassLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

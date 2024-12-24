@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DependencyInjection\CompilerPass;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\TwigEnvironment;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\TwigEnvironmentCompilerPass;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

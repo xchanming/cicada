@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Webhook\Hookable;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Hookable\HookableEntityWrittenEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\InAppPurchases\Services;
 
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\KeyFetcher;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Service\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Context;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Service\Subscriber\InstalledExtensionsListingLoadedSubscriber;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

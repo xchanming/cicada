@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\Subscriber\CustomFieldProtectionSubscriber;
@@ -17,6 +15,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetCollection;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Response;
 

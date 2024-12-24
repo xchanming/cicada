@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Category\Service;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Breadcrumb\BreadcrumbException;
 use Cicada\Core\Content\Breadcrumb\Struct\Breadcrumb;
 use Cicada\Core\Content\Category\CategoryCollection;
@@ -28,6 +26,8 @@ use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\NavigationPageSeoUrlRoute;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @experimental stableVersion:v6.7.0 feature:BREADCRUMB_STORE_API

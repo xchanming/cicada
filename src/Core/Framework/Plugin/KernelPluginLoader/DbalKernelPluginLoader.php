@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Plugin\KernelPluginLoader;
 
+use Cicada\Core\Framework\Log\Package;
 use Composer\Autoload\ClassLoader;
 use Doctrine\DBAL\Connection;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @phpstan-import-type PluginInfo from KernelPluginLoader

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Integration;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Integration\IntegrationCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

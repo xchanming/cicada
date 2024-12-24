@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\MessageQueue\ScheduledTask;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\MessageQueue\Command\RegisterScheduledTasksCommand;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry\TaskRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

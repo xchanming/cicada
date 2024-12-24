@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Customer\Rule;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Rule\CustomerGroupRule;
 use Cicada\Core\Content\Rule\Aggregate\RuleCondition\RuleConditionCollection;
 use Cicada\Core\Content\Rule\RuleCollection;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
 

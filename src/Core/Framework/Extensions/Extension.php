@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Extensions;
 
-use Psr\EventDispatcher\StoppableEventInterface;
 use Cicada\Core\Framework\Log\Package;
+use Psr\EventDispatcher\StoppableEventInterface;
 
 /**
  * @template TResultType

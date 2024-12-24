@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Facade;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Script\Execution\Hook;
 use Cicada\Core\Framework\Script\Execution\Script;
 use Cicada\Core\Framework\Script\Execution\ScriptAppInformation;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

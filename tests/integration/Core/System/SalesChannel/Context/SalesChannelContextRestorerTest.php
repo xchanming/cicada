@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\SalesChannel\Context;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Order\OrderConverter;
@@ -34,6 +32,8 @@ use Cicada\Core\System\SalesChannel\Event\SalesChannelContextRestorerOrderCriter
 use Cicada\Core\Test\Integration\Builder\Customer\CustomerBuilder;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\EventDispatcher\Event;
 

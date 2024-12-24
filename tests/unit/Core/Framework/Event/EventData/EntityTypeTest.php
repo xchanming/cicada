@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Event\EventData;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Framework\Event\EventData\EntityType;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\FrameworkException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

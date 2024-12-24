@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Twig\Extension;
 
+use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Twig\Loader\ArrayLoader;
 
 /**

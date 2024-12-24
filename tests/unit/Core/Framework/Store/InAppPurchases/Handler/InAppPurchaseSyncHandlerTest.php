@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\InAppPurchases\Handler;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\InAppPurchase\Handler\InAppPurchaseUpdateHandler;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseUpdater;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Installer\Requirements;
 
-use Composer\Composer;
-use Composer\Repository\PlatformRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
 use Cicada\Core\Installer\Requirements\Struct\SystemCheck;
+use Composer\Composer;
+use Composer\Repository\PlatformRepository;
 
 /**
  * @internal

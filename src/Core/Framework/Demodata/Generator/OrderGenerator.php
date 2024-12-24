@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Generator;
 use Cicada\Core\Checkout\Cart\CartCalculator;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\Order\OrderConversionContext;
@@ -21,6 +19,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
+use Faker\Generator;
 
 /**
  * @internal

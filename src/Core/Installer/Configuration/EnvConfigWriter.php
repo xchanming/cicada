@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Installer\Configuration;
 
-use Defuse\Crypto\Key;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Controller\ShopConfigurationController;
 use Cicada\Core\Installer\Finish\UniqueIdGenerator;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use Defuse\Crypto\Key;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Field;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -27,6 +25,8 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\SubCasc
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\SubDefinition;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\StoreApiRouteCacheKeyEvent;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Context;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

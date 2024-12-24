@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\Processing\Mapping;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Processing\Mapping\Mapping;
 use Cicada\Core\Content\ImportExport\Processing\Mapping\MappingCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

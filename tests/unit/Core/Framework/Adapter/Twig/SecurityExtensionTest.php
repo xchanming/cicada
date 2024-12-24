@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig;
 
+use Cicada\Core\Framework\Adapter\Twig\SecurityExtension;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Twig\SecurityExtension;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;
 

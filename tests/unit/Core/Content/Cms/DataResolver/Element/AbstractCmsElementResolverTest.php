@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\DataResolver\Element;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\DataResolver\Element\AbstractCmsElementResolver;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
 use Cicada\Core\Content\Cms\DataResolver\ResolverContext\EntityResolverContext;
@@ -28,6 +25,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\Framework\DataAbstractionLayer\TestEntityDefinition;
 use Cicada\Tests\Unit\Core\Content\Cms\DataResolver\Element\Fixtures\TestCmsElementResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

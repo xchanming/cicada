@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Test\Integration\Traits\Promotion;
 
+use Cicada\Core\Defaults;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
-use Cicada\Core\Defaults;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @deprecated tag:v6.7.0 - reason:becomes-internal - Will be internal in v6.7.0

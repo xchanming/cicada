@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Cms;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Cicada\Core\Content\Cms\DataResolver\Element\ElementDataCollection;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
@@ -20,6 +18,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\ScriptExecutor;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 

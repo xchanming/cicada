@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Manifest\Xml;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Manifest\Xml\Meta\Metadata;
 use Cicada\Core\Framework\App\Validation\Error\MissingTranslationError;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

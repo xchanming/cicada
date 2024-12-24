@@ -2,8 +2,8 @@
 
 namespace Cicada\Administration\Controller\Exception;
 
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 
 #[Package('administration')]
 class MissingAppSecretException extends CicadaHttpException

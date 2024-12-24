@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Category\Event;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Event\NavigationLoadedEvent;
 use Cicada\Core\Content\Category\Service\NavigationLoader;
 use Cicada\Core\Content\Category\Service\NavigationLoaderInterface;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

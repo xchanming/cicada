@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff;
 
-use PHPUnit\Runner\Extension\Extension;
-use PHPUnit\Runner\Extension\Facade;
-use PHPUnit\Runner\Extension\ParameterCollection;
-use PHPUnit\TextUI\Configuration\Configuration;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Kernel;
 use Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\Subscriber\BeforeTestMethodCalledSubscriber;
 use Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\Subscriber\TestFinishedSubscriber;
+use PHPUnit\Runner\Extension\Extension;
+use PHPUnit\Runner\Extension\Facade;
+use PHPUnit\Runner\Extension\ParameterCollection;
+use PHPUnit\TextUI\Configuration\Configuration;
 
 /**
  * @internal

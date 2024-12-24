@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Migration;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Migration\Exception\MigrateException;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Psr\Log\LoggerInterface;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Migration\Exception\MigrateException;
 
 #[Package('core')]
 class MigrationRuntime

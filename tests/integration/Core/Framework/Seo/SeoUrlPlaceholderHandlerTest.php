@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Seo;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandler;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
 use Cicada\Core\Defaults;
@@ -15,6 +12,9 @@ use Cicada\Core\Framework\Test\TestCaseBase\BasicTestDataBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 
 /**

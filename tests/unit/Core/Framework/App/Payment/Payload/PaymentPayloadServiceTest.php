@@ -2,13 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Payment\Payload;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -28,6 +21,13 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Serializer\StructNormalizer;
 use Cicada\Core\Framework\Test\Store\StaticInAppPurchaseFactory;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Serializer;
 

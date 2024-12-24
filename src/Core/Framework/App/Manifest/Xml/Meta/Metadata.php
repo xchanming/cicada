@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\App\Manifest\Xml\Meta;
 
-use Composer\Package\Version\VersionParser;
-use Composer\Semver\Constraint\ConstraintInterface;
 use Cicada\Core\Framework\App\Manifest\Xml\XmlElement;
 use Cicada\Core\Framework\App\Manifest\XmlParserUtils;
 use Cicada\Core\Framework\App\Validation\Error\MissingTranslationError;
 use Cicada\Core\Framework\Log\Package;
+use Composer\Package\Version\VersionParser;
+use Composer\Semver\Constraint\ConstraintInterface;
 
 /**
  * @internal only for use by the app-system

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing;
 
+use Cicada\Core\Framework\Routing\RouteParamsCleanupListener;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Routing\RouteParamsCleanupListener;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

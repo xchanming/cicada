@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Log\Monolog;
 
+use Cicada\Core\Framework\Log\Package;
 use Monolog\Handler\AbstractHandler;
 use Monolog\Handler\HandlerInterface;
 use Monolog\LogRecord;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class ExcludeFlowEventHandler extends AbstractHandler

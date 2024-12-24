@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Client;
-use GuzzleHttp\Pool;
-use GuzzleHttp\Psr7\Request;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\AppLocaleProvider;
 use Cicada\Core\Framework\App\Event\AppChangedEvent;
@@ -27,6 +23,10 @@ use Cicada\Core\Framework\Webhook\Hookable\HookableEntityWrittenEvent;
 use Cicada\Core\Framework\Webhook\Hookable\HookableEventFactory;
 use Cicada\Core\Framework\Webhook\Message\WebhookEventMessage;
 use Cicada\Core\Profiling\Profiler;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Client;
+use GuzzleHttp\Pool;
+use GuzzleHttp\Psr7\Request;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

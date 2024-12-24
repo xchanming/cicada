@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Migration\Core\V6_6;
 
+use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use Cicada\Core\Migration\V6_6\Migration1718615305AddEuToCountryTable;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
-use Cicada\Core\Migration\V6_6\Migration1718615305AddEuToCountryTable;
 
 /**
  * @internal

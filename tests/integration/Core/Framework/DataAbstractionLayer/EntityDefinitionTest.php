@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionTranslation\PromotionTranslationDefinition;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
@@ -28,6 +26,8 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineSt
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateTranslationDefinition;
 use Cicada\Core\System\StateMachine\StateMachineDefinition;
 use Cicada\Core\System\StateMachine\StateMachineTranslationDefinition;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

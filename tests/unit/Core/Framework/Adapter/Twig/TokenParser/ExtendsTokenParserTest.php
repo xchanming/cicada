@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig\TokenParser;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\TemplateFinderInterface;
 use Cicada\Core\Framework\Adapter\Twig\TemplateScopeDetector;
 use Cicada\Core\Framework\Adapter\Twig\TokenParser\ExtendsTokenParser;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Error\SyntaxError;
 use Twig\Loader\ArrayLoader;

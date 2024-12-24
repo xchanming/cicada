@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Controller;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractChangeCustomerProfileRoute;
 use Cicada\Core\Checkout\Customer\SalesChannel\AbstractChangeEmailRoute;
@@ -17,6 +16,7 @@ use Cicada\Storefront\Page\Account\Overview\AccountOverviewPageLoadedHook;
 use Cicada\Storefront\Page\Account\Overview\AccountOverviewPageLoader;
 use Cicada\Storefront\Page\Account\Profile\AccountProfilePageLoadedHook;
 use Cicada\Storefront\Page\Account\Profile\AccountProfilePageLoader;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;

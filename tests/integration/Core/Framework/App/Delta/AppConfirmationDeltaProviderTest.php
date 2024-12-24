@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Delta;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Delta\AppConfirmationDeltaProvider;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

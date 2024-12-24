@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Administration\Snippet;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Administration;
 use Cicada\Administration\Snippet\SnippetException;
 use Cicada\Administration\Snippet\SnippetFinder;
@@ -16,6 +11,11 @@ use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Kernel;
 use Cicada\Storefront\Storefront;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Cleanup;
 
+use Cicada\Core\Content\Product\Cleanup\CleanupUnusedDownloadMediaTask;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Product\Cleanup\CleanupUnusedDownloadMediaTask;
 
 /**
  * @internal

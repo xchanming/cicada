@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\User\Service;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\MaintenanceException;
 use Cicada\Core\Maintenance\User\Service\UserProvisioner;
 use Cicada\Core\Test\Stub\Doctrine\FakeQueryBuilder;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

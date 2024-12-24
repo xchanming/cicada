@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\System\UsageData\Services;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\System\UsageData\Services\UsageDataAllowListService;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

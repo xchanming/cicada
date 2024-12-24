@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Struct;
 
+use Cicada\Core\Framework\Struct\StateAwareTrait;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Struct\StateAwareTrait;
 
 /**
  * @internal

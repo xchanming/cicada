@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Cicada\Core\Content\Flow\Dispatching;
 
-use Doctrine\DBAL\Connection;
-use Psr\Container\ContainerInterface;
-use Psr\EventDispatcher\StoppableEventInterface;
 use Cicada\Core\Content\Flow\Exception\ExecuteSequenceException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Event\FlowLogEvent;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
+use Psr\Container\ContainerInterface;
+use Psr\EventDispatcher\StoppableEventInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Service\ServiceSubscriberInterface;

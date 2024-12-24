@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DependencyInjection\CompilerPass;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Checkout\Cart\CartDataCollectorInterface;
 use Cicada\Core\Checkout\Cart\CartProcessorInterface;
 use Cicada\Core\Checkout\Cart\CartValidatorInterface;
@@ -37,6 +36,7 @@ use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\AbstractValueGenerator;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\Tax\TaxRuleType\TaxRuleTypeFilterInterface;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

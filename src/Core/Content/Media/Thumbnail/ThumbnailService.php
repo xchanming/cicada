@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Content\Media\Thumbnail;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderCollection;
 use Cicada\Core\Content\Media\Aggregate\MediaFolderConfiguration\MediaFolderConfigurationEntity;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailCollection;
@@ -27,6 +24,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

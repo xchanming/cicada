@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Breadcrumb\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Breadcrumb\Struct\Breadcrumb;
 use Cicada\Core\Content\Breadcrumb\Struct\BreadcrumbCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

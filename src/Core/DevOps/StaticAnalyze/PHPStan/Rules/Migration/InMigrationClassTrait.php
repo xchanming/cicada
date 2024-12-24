@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration;
 
-use PHPStan\Analyser\Scope;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use PHPStan\Analyser\Scope;
 
 /**
  * @internal

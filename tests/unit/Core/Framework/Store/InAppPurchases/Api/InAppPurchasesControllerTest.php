@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\InAppPurchases\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\ShopApiSource;
 use Cicada\Core\Framework\App\AppCollection;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Test\Store\StaticInAppPurchaseFactory;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\LandingPage;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\Exception\PageNotFoundException;
 use Cicada\Core\Content\LandingPage\LandingPageEntity;
@@ -16,6 +15,7 @@ use Cicada\Storefront\Page\LandingPage\LandingPage;
 use Cicada\Storefront\Page\LandingPage\LandingPageLoadedEvent;
 use Cicada\Storefront\Page\LandingPage\LandingPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

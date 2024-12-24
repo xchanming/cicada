@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Update\Event\UpdatePostPrepareEvent;
 use Cicada\Core\Framework\Update\Event\UpdatePrePrepareEvent;
 use Cicada\Core\Maintenance\System\Command\SystemUpdatePrepareCommand;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\EventListener;
 
-use League\OAuth2\Server\Exception\OAuthServerException;
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
+use League\OAuth2\Server\Exception\OAuthServerException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;

@@ -2,6 +2,8 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Service;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Maintenance\System\Service\AppUrlVerifier;
 use Doctrine\DBAL\Connection;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
@@ -9,8 +11,6 @@ use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Maintenance\System\Service\AppUrlVerifier;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 
 /**

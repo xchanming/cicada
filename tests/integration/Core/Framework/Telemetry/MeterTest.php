@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Telemetry;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Exception\MissingMetricConfigurationException;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
 use Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection;
 use Cicada\Core\Framework\Test\Telemetry\Transport\TraceableTransport;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertInstanceOf;
 

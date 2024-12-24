@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Product;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSection\CmsSectionCollection;
@@ -34,6 +32,8 @@ use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Generator;
 use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\Product\ProductPageLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 

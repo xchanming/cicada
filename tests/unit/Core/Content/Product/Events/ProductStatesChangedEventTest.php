@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Events;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\DataAbstractionLayer\UpdatedStates;
 use Cicada\Core\Content\Product\Events\ProductStatesChangedEvent;
 use Cicada\Core\Framework\Context;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

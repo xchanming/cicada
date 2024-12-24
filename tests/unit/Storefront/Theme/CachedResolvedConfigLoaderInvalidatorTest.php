@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -12,6 +10,8 @@ use Cicada\Storefront\Theme\CachedResolvedConfigLoaderInvalidator;
 use Cicada\Storefront\Theme\Event\ThemeAssignedEvent;
 use Cicada\Storefront\Theme\Event\ThemeConfigChangedEvent;
 use Cicada\Storefront\Theme\Event\ThemeConfigResetEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

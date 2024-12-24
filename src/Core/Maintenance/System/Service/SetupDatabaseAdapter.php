@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Maintenance\System\Service;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Kernel;
 use Cicada\Core\Maintenance\MaintenanceException;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

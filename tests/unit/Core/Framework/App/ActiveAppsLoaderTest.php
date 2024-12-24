@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App;
 
+use Cicada\Core\Framework\App\ActiveAppsLoader;
+use Cicada\Core\Framework\App\Lifecycle\AppLoader;
+use Cicada\Core\Framework\App\Manifest\Manifest;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\BackupGlobals;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\ActiveAppsLoader;
-use Cicada\Core\Framework\App\Lifecycle\AppLoader;
-use Cicada\Core\Framework\App\Manifest\Manifest;
 
 /**
  * @internal

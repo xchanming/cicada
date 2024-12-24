@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Field;
 
-use Doctrine\DBAL\ArrayParameters\Exception\MissingNamedParameter;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\DriverException;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -34,6 +30,10 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\EmptyEntityExistence;
+use Doctrine\DBAL\ArrayParameters\Exception\MissingNamedParameter;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\DriverException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Exception\AppAlreadyInstalledException;
 use Cicada\Core\Framework\App\Exception\AppDownloadException;
 use Cicada\Core\Framework\App\Exception\AppNotFoundException;
 use Cicada\Core\Framework\App\Validation\Error\AppNameError;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

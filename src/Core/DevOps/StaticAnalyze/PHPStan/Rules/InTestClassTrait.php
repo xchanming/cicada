@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
-use PHPStan\Analyser\Scope;
 use Cicada\Core\Framework\Log\Package;
+use PHPStan\Analyser\Scope;
 
 /**
  * @internal

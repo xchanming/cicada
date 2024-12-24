@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\SalesChannel\Context;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\AbstractCartPersister;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Event\SalesChannelContextTokenChangeEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('core')]

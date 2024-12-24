@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use Psr\EventDispatcher\EventDispatcherInterface;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppExtractor;
 use Cicada\Core\Framework\App\Manifest\Manifest;
@@ -17,6 +13,10 @@ use Cicada\Core\Service\Event\ServiceOutdatedEvent;
 use Cicada\Core\Service\ServiceClient;
 use Cicada\Core\Service\ServiceClientFactory;
 use Cicada\Core\Service\ServiceSourceResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

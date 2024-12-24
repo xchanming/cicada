@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Framework\Test\Plugin;
 
-use Composer\Autoload\ClassLoader;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\After;
-use PHPUnit\Framework\Attributes\Before;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Kernel;
+use Composer\Autoload\ClassLoader;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\Before;
 use SwagTestPlugin\SwagTestPlugin;
 use SwagTestSkipRebuild\SwagTestSkipRebuild;
 use SwagTestWithBundle\SwagTestWithBundle;

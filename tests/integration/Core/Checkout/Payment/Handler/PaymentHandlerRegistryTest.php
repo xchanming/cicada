@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment\Handler;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AsynchronousPaymentHandlerInterface;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\InvoicePayment;
@@ -29,6 +27,8 @@ use Cicada\Core\Test\Integration\PaymentHandler\MultipleTestPaymentHandler;
 use Cicada\Core\Test\Integration\PaymentHandler\PreparedTestPaymentHandler;
 use Cicada\Core\Test\Integration\PaymentHandler\RefundTestPaymentHandler;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

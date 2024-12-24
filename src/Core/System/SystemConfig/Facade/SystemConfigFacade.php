@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\System\SystemConfig\Facade;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Api\Exception\MissingPrivilegeException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\ScriptAppInformation;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 
 /**
  * The `config` service allows you to access the shop's and your app's configuration values.

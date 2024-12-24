@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache;
 
-use Predis\ClientInterface;
-use Relay\Relay;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
+use Predis\ClientInterface;
+use Relay\Relay;
 use Symfony\Component\Cache\Adapter\RedisAdapter;
 
 /**

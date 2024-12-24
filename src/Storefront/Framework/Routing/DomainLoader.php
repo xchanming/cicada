@@ -2,11 +2,11 @@
 
 namespace Cicada\Storefront\Framework\Routing;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
+use Doctrine\DBAL\Connection;
 
 /**
  * @phpstan-import-type Domain from AbstractDomainLoader

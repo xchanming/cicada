@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
+use Cicada\Core\Framework\Api\OAuth\ClientRepository;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
-use Cicada\Core\Framework\Api\OAuth\ClientRepository;
-use Cicada\Core\Framework\Uuid\Uuid;
 
 /**
  * @internal

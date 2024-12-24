@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Thumbnail;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnailSize\MediaThumbnailSizeEntity;
 use Cicada\Core\Content\Media\Thumbnail\ThumbnailService;
 use Cicada\Core\Content\Media\Thumbnail\ThumbnailSizeCalculator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

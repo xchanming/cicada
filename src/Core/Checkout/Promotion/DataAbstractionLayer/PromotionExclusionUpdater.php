@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Checkout\Promotion\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableQuery;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 
 #[Package('buyers-experience')]
 class PromotionExclusionUpdater

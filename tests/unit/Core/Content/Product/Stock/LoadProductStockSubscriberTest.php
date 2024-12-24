@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Stock;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductDefinition;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Content\Product\Stock\AbstractStockStorage;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\PartialEntity;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelEntityLoadedEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

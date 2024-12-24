@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ProductExport\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ProductExport\Command\ProductExportGenerateCommand;
 use Cicada\Core\Content\ProductExport\ProductExportException;
 use Cicada\Core\Content\ProductExport\Service\ProductExporterInterface;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

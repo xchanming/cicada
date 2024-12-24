@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppArchiveValidator;
 use Cicada\Core\Framework\App\Exception\AppArchiveValidationFailure;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

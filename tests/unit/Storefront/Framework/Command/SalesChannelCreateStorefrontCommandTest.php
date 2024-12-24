@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +10,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\SalesChannel\Service\SalesChannelCreator;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Storefront\Framework\Command\SalesChannelCreateStorefrontCommand;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

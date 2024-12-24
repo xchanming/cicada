@@ -2,13 +2,6 @@
 
 namespace Cicada\Core\Framework\Plugin\Requirement;
 
-use Composer\Composer;
-use Composer\Package\Link;
-use Composer\Package\PackageInterface;
-use Composer\Repository\PlatformRepository;
-use Composer\Semver\Constraint\Constraint;
-use Composer\Semver\Constraint\ConstraintInterface;
-use Composer\Semver\VersionParser;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -24,6 +17,13 @@ use Cicada\Core\Framework\Plugin\Requirement\Exception\MissingRequirementExcepti
 use Cicada\Core\Framework\Plugin\Requirement\Exception\RequirementStackException;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\VersionMismatchException;
 use Cicada\Core\Framework\Plugin\Util\PluginFinder;
+use Composer\Composer;
+use Composer\Package\Link;
+use Composer\Package\PackageInterface;
+use Composer\Repository\PlatformRepository;
+use Composer\Semver\Constraint\Constraint;
+use Composer\Semver\Constraint\ConstraintInterface;
+use Composer\Semver\VersionParser;
 
 #[Package('core')]
 class RequirementsValidator

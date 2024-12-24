@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Validator;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Rule\Container\OrRule;
 use Cicada\Core\Framework\Rule\RuleCollection;
 use Cicada\Core\Test\Stub\Rule\FalseRule;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

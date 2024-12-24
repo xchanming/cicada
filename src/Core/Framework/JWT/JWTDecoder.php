@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\JWT;
 
+use Cicada\Core\Framework\Log\Package;
 use Lcobucci\JWT\Encoding\JoseEncoder;
 use Lcobucci\JWT\Token\Parser;
 use Lcobucci\JWT\UnencryptedToken;
 use Lcobucci\JWT\Validation\Constraint;
 use Lcobucci\JWT\Validation\ConstraintViolation;
 use Lcobucci\JWT\Validation\Validator;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('checkout')]
 final class JWTDecoder

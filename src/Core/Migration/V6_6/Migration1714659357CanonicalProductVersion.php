@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Migration\V6_6;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 /**
  * This migration repairs the FK of canonical_product_id to include the version_id. To fix MySQL 8.4 compatibility

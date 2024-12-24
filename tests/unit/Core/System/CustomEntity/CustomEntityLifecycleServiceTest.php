@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Util\Filesystem;
@@ -18,6 +16,8 @@ use Cicada\Core\System\CustomEntity\Xml\CustomEntityXmlSchemaValidator;
 use Cicada\Core\System\CustomEntity\Xml\Entity;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

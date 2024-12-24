@@ -2,13 +2,13 @@
 
 namespace Cicada\Storefront\Framework\Captcha;
 
-use Psr\Container\ContainerInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\KernelListenerPriorities;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Controller\ErrorController;
+use Psr\Container\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\KernelEvents;

@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Migration;
 
-use Doctrine\DBAL\Connection;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\Exception\InvalidMigrationClassException;
 use Cicada\Core\Framework\Migration\Exception\UnknownMigrationSourceException;
+use Doctrine\DBAL\Connection;
+use Psr\Log\LoggerInterface;
 
 #[Package('core')]
 class MigrationCollectionLoader

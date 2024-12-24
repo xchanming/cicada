@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Migration\Traits;
 
+use Cicada\Core\Framework\Log\Package;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

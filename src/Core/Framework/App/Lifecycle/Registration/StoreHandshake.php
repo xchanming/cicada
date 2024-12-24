@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Registration;
 
+use Cicada\Core\Framework\App\AppException;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Store\Services\StoreClient;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
 use Psr\Http\Message\RequestInterface;
-use Cicada\Core\Framework\App\AppException;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Store\Services\StoreClient;
 
 /**
  * @internal only for use by the app-system

@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
+use Cicada\Core\Framework\Log\Package;
 use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
-use Cicada\Core\Framework\Api\OAuth\Client\ApiClient;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class AccessTokenRepository implements AccessTokenRepositoryInterface

@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Composer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\Composer\Factory;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Admin;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Promotion\PromotionEntity;
 use Cicada\Core\Framework\Api\Serializer\JsonEntityEncoder;
 use Cicada\Core\Framework\Context;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
 use Cicada\Elasticsearch\Admin\AdminSearchController;
 use Cicada\Elasticsearch\Admin\AdminSearcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Extension\ResolveListingExtension;
 use Cicada\Core\Content\Product\Extension\ResolveListingIdsExtension;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -20,6 +16,10 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Tests\Examples\ResolveListingExample;
 use Cicada\Tests\Examples\ResolveListingIdsExample;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

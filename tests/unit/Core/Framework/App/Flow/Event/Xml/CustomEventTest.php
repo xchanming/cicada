@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Flow\Event\Xml;
 
+use Cicada\Core\Framework\App\Flow\Event\Xml\CustomEvent;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\Flow\Event\Xml\CustomEvent;
 use Symfony\Component\Config\Util\XmlUtils;
 
 /**

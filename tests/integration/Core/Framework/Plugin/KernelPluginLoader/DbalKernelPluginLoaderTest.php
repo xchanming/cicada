@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin\KernelPluginLoader;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\DbalKernelPluginLoader;
 use Cicada\Core\Framework\Test\Plugin\PluginIntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Storefront\Storefront;
@@ -20,6 +18,8 @@ use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimplePlugin\SimplePlugin
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimpleTheme\SimpleTheme;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\ThemeWithMultiInheritance\ThemeWithMultiInheritance;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\ThemeWithoutStorefront\ThemeWithoutStorefront;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\System\Salutation;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Salutation\SalutationCollection;
 use Cicada\Core\System\Salutation\SalutationEntity;
 use Cicada\Core\System\Salutation\SalutationSorter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

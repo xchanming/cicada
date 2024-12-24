@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Event;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Event\AppDeletedEvent;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

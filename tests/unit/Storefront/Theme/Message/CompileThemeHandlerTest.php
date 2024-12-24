@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Message;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Notification\NotificationService;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
@@ -16,6 +14,8 @@ use Cicada\Storefront\Theme\Message\CompileThemeHandler;
 use Cicada\Storefront\Theme\Message\CompileThemeMessage;
 use Cicada\Storefront\Theme\StorefrontPluginRegistryInterface;
 use Cicada\Storefront\Theme\ThemeCompiler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

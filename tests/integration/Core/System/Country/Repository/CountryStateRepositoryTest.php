@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Country\Repository;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

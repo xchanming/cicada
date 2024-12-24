@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\System\Snippet\Files;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollection;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollectionFactory;
 use Cicada\Core\System\Snippet\Files\SnippetFileLoaderInterface;
 use Cicada\Tests\Unit\Core\System\Snippet\Mock\MockSnippetFile;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

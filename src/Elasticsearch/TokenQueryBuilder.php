@@ -2,13 +2,6 @@
 
 namespace Cicada\Elasticsearch;
 
-use OpenSearchDSL\BuilderInterface;
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\Compound\DisMaxQuery;
-use OpenSearchDSL\Query\FullText\MatchPhrasePrefixQuery;
-use OpenSearchDSL\Query\FullText\MatchQuery;
-use OpenSearchDSL\Query\Joining\NestedQuery;
-use OpenSearchDSL\Query\TermLevel\TermQuery;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
@@ -25,6 +18,13 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\CustomFieldService;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\ElasticsearchEntitySearcher;
 use Cicada\Elasticsearch\Product\SearchFieldConfig;
+use OpenSearchDSL\BuilderInterface;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\Compound\DisMaxQuery;
+use OpenSearchDSL\Query\FullText\MatchPhrasePrefixQuery;
+use OpenSearchDSL\Query\FullText\MatchQuery;
+use OpenSearchDSL\Query\Joining\NestedQuery;
+use OpenSearchDSL\Query\TermLevel\TermQuery;
 
 /**
  * @phpstan-type SearchConfig array{and_logic: string, field: string, tokenize: int, ranking: float|int}

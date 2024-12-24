@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Elasticsearch\Elasticsearch;
 use Cicada\Elasticsearch\Framework\Indexing\ElasticsearchIndexer;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\MonologBundle\MonologBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

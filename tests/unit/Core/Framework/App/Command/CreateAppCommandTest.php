@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Command;
 
+use Cicada\Core\Framework\App\Command\CreateAppCommand;
+use Cicada\Core\Framework\App\Lifecycle\RefreshableAppDryRun;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\App\Command\CreateAppCommand;
-use Cicada\Core\Framework\App\Lifecycle\RefreshableAppDryRun;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;

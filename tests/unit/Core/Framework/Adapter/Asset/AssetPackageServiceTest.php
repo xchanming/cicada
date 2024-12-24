@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Asset;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Adapter\Asset\AssetPackageService;
 use Cicada\Core\Framework\Adapter\Asset\FallbackUrlPackage;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\Asset\UrlPackage;

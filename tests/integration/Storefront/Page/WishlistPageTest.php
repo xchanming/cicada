@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Framework\Context;
@@ -13,6 +12,7 @@ use Cicada\Storefront\Page\PageLoadedEvent;
 use Cicada\Storefront\Page\Wishlist\WishlistPageLoadedEvent;
 use Cicada\Storefront\Page\Wishlist\WishlistPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

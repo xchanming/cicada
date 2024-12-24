@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Administration\Framework\Search;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Framework\Search\CriteriaCollection;
 use Cicada\Administration\Notification\NotificationEntity;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

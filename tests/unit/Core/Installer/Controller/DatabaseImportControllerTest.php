@@ -2,17 +2,17 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Controller;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\After;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Installer\Controller\DatabaseImportController;
 use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Cicada\Core\Installer\Database\DatabaseMigrator;
 use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\TypeDetector;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\MediaFile;
 use Cicada\Core\Content\Media\MediaType\AudioType;
 use Cicada\Core\Content\Media\MediaType\BinaryType;
@@ -16,6 +14,8 @@ use Cicada\Core\Content\Media\TypeDetector\DocumentTypeDetector;
 use Cicada\Core\Content\Media\TypeDetector\ImageTypeDetector;
 use Cicada\Core\Content\Media\TypeDetector\TypeDetector;
 use Cicada\Core\Content\Media\TypeDetector\VideoTypeDetector;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Indexing\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\Subscriber\EntityIndexingSubscriber;
 use Cicada\Core\Framework\Event\NestedEventCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

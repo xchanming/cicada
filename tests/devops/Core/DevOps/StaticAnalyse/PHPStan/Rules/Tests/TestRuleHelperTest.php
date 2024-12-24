@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\DevOps\Core\DevOps\StaticAnalyse\PHPStan\Rules\Tests;
 
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\TestRuleHelper;
 use PHPStan\Reflection\ClassReflection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests\TestRuleHelper;
 
 /**
  * @internal

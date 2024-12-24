@@ -2,12 +2,6 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
-use PhpParser\Node;
-use PHPStan\Analyser\Scope;
-use PHPStan\Node\InClassNode;
-use PHPStan\Rules\Rule;
-use PHPStan\Rules\RuleError;
-use PHPStan\Rules\RuleErrorBuilder;
 use Cicada\Core\Checkout\Cart\Rule\AlwaysValidRule;
 use Cicada\Core\Checkout\Cart\Rule\GoodsCountRule;
 use Cicada\Core\Checkout\Cart\Rule\GoodsPriceRule;
@@ -39,6 +33,12 @@ use Cicada\Core\Framework\Rule\SimpleRule;
 use Cicada\Core\Framework\Rule\TimeRangeRule;
 use Cicada\Core\Test\Stub\Rule\FalseRule;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
+use PhpParser\Node;
+use PHPStan\Analyser\Scope;
+use PHPStan\Node\InClassNode;
+use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleError;
+use PHPStan\Rules\RuleErrorBuilder;
 
 /**
  * @implements Rule<InClassNode>

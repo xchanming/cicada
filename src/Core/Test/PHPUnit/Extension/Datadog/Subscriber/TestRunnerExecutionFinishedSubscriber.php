@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\Datadog\Subscriber;
 
-use PHPUnit\Event\TestRunner\ExecutionFinished;
-use PHPUnit\Event\TestRunner\ExecutionFinishedSubscriber;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogPayload;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\DatadogPayloadCollection;
 use Cicada\Core\Test\PHPUnit\Extension\Datadog\Gateway\DatadogGateway;
+use PHPUnit\Event\TestRunner\ExecutionFinished;
+use PHPUnit\Event\TestRunner\ExecutionFinishedSubscriber;
 
 /**
  * @internal

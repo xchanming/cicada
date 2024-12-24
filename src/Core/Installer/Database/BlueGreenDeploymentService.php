@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Installer\Database;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**

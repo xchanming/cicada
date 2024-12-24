@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DependencyInjection\CompilerPass;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\BusinessEventRegisterCompilerPass;
 use Cicada\Core\Framework\Event\BusinessEventRegistry;
 use Cicada\Core\Framework\Framework;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**

@@ -2,8 +2,8 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Cms\Xml;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Cms\CmsExtensions;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture;
 
-use PHPUnit\Framework\Attributes\CoversNothing;
 use Cicada\Core\Checkout\Gateway\Command\AbstractCheckoutGatewayCommand;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversNothing;
 
 /**
  * @internal

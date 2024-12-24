@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Metadata;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\MediaFile;
 use Cicada\Core\Content\Media\MediaType\DocumentType;
 use Cicada\Core\Content\Media\MediaType\ImageType;
 use Cicada\Core\Content\Media\Metadata\MetadataLoader;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

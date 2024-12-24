@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart\Discount;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\DiscountLineItem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

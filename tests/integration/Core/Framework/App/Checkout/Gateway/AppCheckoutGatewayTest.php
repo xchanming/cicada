@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Checkout\Gateway;
 
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Gateway\CheckoutGatewayException;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
@@ -21,6 +18,9 @@ use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**

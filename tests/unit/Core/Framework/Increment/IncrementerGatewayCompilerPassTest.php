@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Increment;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Increment\AbstractIncrementer;
 use Cicada\Core\Framework\Increment\ArrayIncrementer;
 use Cicada\Core\Framework\Increment\IncrementerGatewayCompilerPass;
 use Cicada\Core\Framework\Increment\MySQLIncrementer;
 use Cicada\Core\Framework\Increment\RedisIncrementer;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Api;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Api\AppJWTGenerateRoute;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Framework\Test\Store\StaticInAppPurchaseFactory;
 use Cicada\Core\Test\Generator;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

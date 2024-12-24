@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Administration\Notification\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Notification\NotificationService;
 use Cicada\Administration\Notification\Subscriber\UpdateSubscriber;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Update\Event\UpdatePostFinishEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

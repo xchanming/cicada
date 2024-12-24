@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\App\Flow\Event\Event;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

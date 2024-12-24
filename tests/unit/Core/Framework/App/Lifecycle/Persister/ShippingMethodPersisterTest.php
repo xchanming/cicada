@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Lifecycle\Persister;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
 use Cicada\Core\Content\Media\MediaService;
 use Cicada\Core\Framework\App\Aggregate\AppShippingMethod\AppShippingMethodEntity;
@@ -20,6 +17,9 @@ use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Plugin\Command\Lifecycle;
 
-use Composer\IO\ConsoleIO;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Plugin\PluginLifecycleService;
 use Cicada\Core\Framework\Plugin\PluginService;
+use Composer\IO\ConsoleIO;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\HelperSet;

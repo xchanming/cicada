@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Authentication;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -16,6 +14,8 @@ use Cicada\Core\System\Locale\LocaleEntity;
 use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\System\User\UserDefinition;
 use Cicada\Core\System\User\UserEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

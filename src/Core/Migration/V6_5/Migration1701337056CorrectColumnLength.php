@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Migration\V6_5;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
+use Doctrine\DBAL\Connection;
 
 /**
  * Corrects the columns of migration \Cicada\Core\Migration\V6_5\Migration1698682149MakeTranslatableFieldsNullable

@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Content\Mail\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use Monolog\Level;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Monolog\Level;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Mailer\Event\FailedMessageEvent;
 

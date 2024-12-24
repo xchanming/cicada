@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Serializer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Api\ApiException;
@@ -26,6 +24,8 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\Extenda
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ExtendedDefinition;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ScalarRuntimeExtension;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

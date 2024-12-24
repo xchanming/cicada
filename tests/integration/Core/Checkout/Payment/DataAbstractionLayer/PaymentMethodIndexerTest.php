@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment\DataAbstractionLayer;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\DataAbstractionLayer\PaymentMethodIndexer;
 use Cicada\Core\Checkout\Payment\DataAbstractionLayer\PaymentMethodIndexingMessage;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\TraceableMessageBus;
 
 /**

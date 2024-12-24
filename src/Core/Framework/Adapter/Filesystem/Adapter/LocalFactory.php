@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Adapter\Filesystem\Adapter;
 
+use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\FilesystemAdapter;
 use League\Flysystem\Local\LocalFilesystemAdapter;
 use League\Flysystem\UnixVisibility\PortableVisibilityConverter;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 #[Package('core')]

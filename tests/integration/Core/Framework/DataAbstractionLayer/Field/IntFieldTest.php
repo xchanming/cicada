@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Field;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

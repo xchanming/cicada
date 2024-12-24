@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Adapter\Doctrine\Messenger;
 
-use Doctrine\DBAL\Connection as DBALConnection;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection as DBALConnection;
 use Symfony\Component\Messenger\Bridge\Doctrine\Transport\Connection;
 use Symfony\Component\Messenger\Bridge\Doctrine\Transport\DoctrineTransport;
 use Symfony\Component\Messenger\Transport\Serialization\SerializerInterface;

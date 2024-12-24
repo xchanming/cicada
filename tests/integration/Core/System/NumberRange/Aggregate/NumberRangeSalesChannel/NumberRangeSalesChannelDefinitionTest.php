@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\NumberRange\Aggregate\NumberRangeSalesChannel;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -13,6 +12,7 @@ use Cicada\Core\System\NumberRange\Aggregate\NumberRangeSalesChannel\NumberRange
 use Cicada\Core\System\NumberRange\NumberRangeCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

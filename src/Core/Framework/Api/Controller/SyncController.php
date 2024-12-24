@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\Controller;
 
-use Doctrine\DBAL\ConnectionException;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Exception\InvalidSyncOperationException;
 use Cicada\Core\Framework\Api\Sync\SyncBehavior;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
+use Doctrine\DBAL\ConnectionException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Migration\Core\V6_6;
 
+use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Cicada\Core\Migration\V6_6\Migration1711461580SetSystemDefaultForDefaultMailFooter;
+use Cicada\Tests\Migration\MigrationTestTrait;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\ParameterType;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
-use Cicada\Core\Migration\V6_6\Migration1711461580SetSystemDefaultForDefaultMailFooter;
-use Cicada\Tests\Migration\MigrationTestTrait;
 
 /**
  * @internal

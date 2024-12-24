@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Plugin;
 
-use Composer\IO\NullIO;
-use GuzzleHttp\Client;
 use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Struct\PluginDownloadDataStruct;
+use Composer\IO\NullIO;
+use GuzzleHttp\Client;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Response;

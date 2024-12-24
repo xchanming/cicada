@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
@@ -24,6 +21,9 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

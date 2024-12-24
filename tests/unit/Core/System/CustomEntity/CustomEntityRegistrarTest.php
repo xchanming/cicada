@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEventFactory;
@@ -15,6 +11,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\VersionManager;
 use Cicada\Core\System\CustomEntity\CustomEntityRegistrar;
 use Cicada\Core\System\CustomEntity\Schema\DynamicEntityDefinition;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

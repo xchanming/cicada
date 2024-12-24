@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\PercentagePriceDefinition;
 use Cicada\Core\Checkout\Cart\Rule\LineItemListPriceRule;
 use Cicada\Core\Framework\Context;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\System\Currency\CurrencyDefinition;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validation;
 
 /**

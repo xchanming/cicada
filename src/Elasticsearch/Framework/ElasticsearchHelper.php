@@ -2,11 +2,6 @@
 
 namespace Cicada\Elasticsearch\Framework;
 
-use OpenSearch\Client;
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\FullText\MatchQuery;
-use OpenSearchDSL\Search;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -15,6 +10,11 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\CriteriaParser;
+use OpenSearch\Client;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\FullText\MatchQuery;
+use OpenSearchDSL\Search;
+use Psr\Log\LoggerInterface;
 
 #[Package('core')]
 class ElasticsearchHelper

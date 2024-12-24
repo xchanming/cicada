@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Bench\Storefront;
 
-use Doctrine\DBAL\Connection;
-use PhpBench\Attributes as Bench;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Product\SalesChannel\Listing\ProductListingRoute;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Tests\Bench\AbstractBenchCase;
 use Cicada\Tests\Bench\Fixtures;
+use Doctrine\DBAL\Connection;
+use PhpBench\Attributes as Bench;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelInterface;
 

@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Api\Acl;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\KernelListenerPriorities;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;

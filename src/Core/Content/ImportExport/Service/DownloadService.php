@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ImportExport\Service;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportFile\ImportExportFileEntity;
 use Cicada\Core\Content\ImportExport\ImportExportException;
 use Cicada\Core\Framework\Context;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;

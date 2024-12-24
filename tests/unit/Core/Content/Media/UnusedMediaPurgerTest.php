@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Event\UnusedMediaSearchEvent;
 use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Content\Media\MediaEntity;
@@ -36,6 +33,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\UserDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

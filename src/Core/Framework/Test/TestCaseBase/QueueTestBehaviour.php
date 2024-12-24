@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
+use Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueStatsSubscriber;
+use Cicada\Core\Framework\Test\TestCaseHelper\StopWorkerWhenIdleListener;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
-use Cicada\Core\Framework\MessageQueue\Subscriber\MessageQueueStatsSubscriber;
-use Cicada\Core\Framework\Test\TestCaseHelper\StopWorkerWhenIdleListener;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ServiceLocator;
 use Symfony\Component\EventDispatcher\EventDispatcher;

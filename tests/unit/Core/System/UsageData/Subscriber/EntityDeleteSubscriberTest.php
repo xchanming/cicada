@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\DeadlockException;
-use Doctrine\DBAL\Query\QueryBuilder;
-use Doctrine\DBAL\Statement;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -34,6 +28,12 @@ use Cicada\Core\System\UsageData\Subscriber\EntityDeleteSubscriber;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\DeadlockException;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\DBAL\Statement;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Clock\MockClock;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 

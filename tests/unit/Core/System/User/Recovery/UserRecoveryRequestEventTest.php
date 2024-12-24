@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\System\User\Recovery;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Storer\ScalarValuesStorer;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\Aggregate\UserRecovery\UserRecoveryEntity;
 use Cicada\Core\System\User\Recovery\UserRecoveryRequestEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

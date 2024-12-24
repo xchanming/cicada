@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Consent;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -18,6 +16,8 @@ use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigCollection;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

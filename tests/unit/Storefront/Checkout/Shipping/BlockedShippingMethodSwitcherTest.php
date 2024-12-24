@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Checkout\Shipping;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Shipping\Cart\Error\ShippingMethodBlockedError;
 use Cicada\Core\Checkout\Shipping\SalesChannel\ShippingMethodRoute;
@@ -20,6 +18,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Checkout\Cart\Error\ShippingMethodChangedError;
 use Cicada\Storefront\Checkout\Shipping\BlockedShippingMethodSwitcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

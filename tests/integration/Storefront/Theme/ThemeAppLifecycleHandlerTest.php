@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Event\AppDeactivatedEvent;
 use Cicada\Core\Framework\App\Event\AppUpdatedEvent;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Storefront\Theme\ThemeCollection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -3,9 +3,9 @@
 namespace Cicada\Core\System\StateMachine;
 
 use Cicada\Core\Framework\Api\Exception\MissingPrivilegeException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\System\StateMachine\Exception\IllegalTransitionException;
 use Cicada\Core\System\StateMachine\Exception\UnnecessaryTransitionException;
 use Symfony\Component\HttpFoundation\Response;

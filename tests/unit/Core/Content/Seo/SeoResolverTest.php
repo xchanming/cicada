@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Seo;
 
+use Cicada\Core\Content\Seo\SeoResolver;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Cache\ArrayResult;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -10,9 +13,6 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Seo\SeoResolver;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Uuid\Uuid;
 
 /**
  * @internal

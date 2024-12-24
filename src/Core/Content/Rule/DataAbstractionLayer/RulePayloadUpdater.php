@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Rule\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Rule\DataAbstractionLayer\Indexing\ConditionTypeNotFound;
 use Cicada\Core\Framework\App\Event\AppScriptConditionEvents;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Rule\Container\ContainerInterface;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Rule\ScriptRule;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

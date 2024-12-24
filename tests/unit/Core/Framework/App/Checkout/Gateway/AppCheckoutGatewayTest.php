@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Checkout\Gateway;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\NullLogger;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Gateway\Command\CheckoutGatewayCommandCollection;
 use Cicada\Core\Checkout\Gateway\Command\Event\CheckoutGatewayCommandsCollectedEvent;
@@ -34,6 +31,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Generator;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayCommand;
 use Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture\TestCheckoutGatewayHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\NullLogger;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Cache;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheIdLoader;
 use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

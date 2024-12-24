@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Snippet\Files;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\Test\TestCaseBase\CacheTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
@@ -12,6 +10,8 @@ use Cicada\Core\System\Snippet\Files\AppSnippetFileLoader;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollection;
 use Cicada\Core\System\Snippet\Files\SnippetFileLoader;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\KernelInterface;
 
 /**

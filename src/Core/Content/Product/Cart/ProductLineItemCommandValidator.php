@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Product\Cart;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Content\Product\Exception\ProductLineItemDifferentIdException;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PreWriteValidationEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

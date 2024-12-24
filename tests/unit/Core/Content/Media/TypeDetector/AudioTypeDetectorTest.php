@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\TypeDetector;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\MediaFile;
 use Cicada\Core\Content\Media\MediaType\AudioType;
 use Cicada\Core\Content\Media\MediaType\ImageType;
 use Cicada\Core\Content\Media\TypeDetector\AudioTypeDetector;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

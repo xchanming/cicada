@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskDefinition;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

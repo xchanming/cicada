@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\AbstractCartPersister;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartCalculator;
@@ -12,6 +10,8 @@ use Cicada\Core\Checkout\Cart\CartFactory;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartLoadRoute;
 use Cicada\Core\Checkout\Cart\TaxProvider\TaxProviderProcessor;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

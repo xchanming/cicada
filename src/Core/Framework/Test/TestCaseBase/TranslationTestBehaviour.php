@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
+use Cicada\Core\Framework\Adapter\Translation\Translator;
 use PHPUnit\Framework\Attributes\After;
 use PHPUnit\Framework\Attributes\Before;
-use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 trait TranslationTestBehaviour

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Serializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -16,6 +14,8 @@ use Cicada\Core\System\Tag\TagDefinition;
 use Cicada\Core\System\Tag\TagEntity;
 use Cicada\Core\System\Tax\TaxEntity;
 use Cicada\Tests\Unit\Core\Framework\Api\Serializer\_fixtures\TestAttributeEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

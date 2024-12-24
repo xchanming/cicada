@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Seo\Event\SeoUrlUpdateEvent;
 use Cicada\Core\Content\Seo\SeoUrl\SeoUrlEntity;
 use Cicada\Core\Defaults;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 #[Package('buyers-experience')]

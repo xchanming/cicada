@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Subscriber;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseUpdater;
 use Cicada\Core\Framework\Store\Subscriber\LicenseHostChangedSubscriber;
@@ -12,6 +9,9 @@ use Cicada\Core\System\SystemConfig\Event\BeforeSystemConfigChangedEvent;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedEvent;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigDomainLoadedEvent;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

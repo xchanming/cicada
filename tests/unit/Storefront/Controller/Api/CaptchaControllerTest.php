@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Storefront\Controller\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Storefront\Controller\Api\CaptchaController;
 use Cicada\Storefront\Framework\Captcha\AbstractCaptcha;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

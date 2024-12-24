@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Order;
 
+use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 
 /**
  * @internal

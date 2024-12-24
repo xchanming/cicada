@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Twig\Extension;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Content\Media\MediaUrlPlaceholderHandlerInterface;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
@@ -23,6 +21,8 @@ use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Framework\Twig\Extension\IconCacheTwigFilter;
 use Cicada\Storefront\Framework\Twig\IconExtension;
 use Cicada\Storefront\Storefront;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Generator;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Demodata\DemodataContext;
 use Cicada\Core\Framework\Demodata\DemodataGeneratorInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Faker\Generator;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
@@ -92,6 +89,9 @@ use Cicada\Core\System\Unit\UnitDefinition;
 use Cicada\Core\System\Unit\UnitEntity;
 use Cicada\Core\Test\Integration\Traits\OrderFixture;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

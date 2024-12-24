@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\EventListener\Authentication;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Types\Types;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Log\Package;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\Util\Json;
 use Cicada\Core\Framework\Util\UtilException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Types\Types;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;

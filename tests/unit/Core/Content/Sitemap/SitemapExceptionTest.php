@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Sitemap;
 
+use Cicada\Core\Content\Sitemap\SitemapException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Sitemap\SitemapException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

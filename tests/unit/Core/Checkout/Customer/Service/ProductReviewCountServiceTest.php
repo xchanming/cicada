@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\Service;
 
+use Cicada\Core\Checkout\Customer\Service\ProductReviewCountService;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Customer\Service\ProductReviewCountService;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\InAppPurchases\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\InAppPurchase\Event\InAppPurchaseChangedEvent;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

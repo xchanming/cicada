@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Payment;
 
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Response;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Framework\App\AppException;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMachineTransitionActions;
 use Cicada\Core\Test\Generator;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * @internal

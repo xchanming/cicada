@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\FieldType;
 
+use Cicada\Core\Framework\DataAbstractionLayer\FieldType\CronInterval;
+use Cicada\Core\Framework\Log\Package;
 use Cron\CronExpression;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\FieldType\CronInterval;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

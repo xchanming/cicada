@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Struct;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Store\Struct\ReviewStruct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Tests;
 
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;
@@ -11,7 +12,6 @@ use PHPStan\Rules\RuleErrorBuilder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\Attributes\CoversNothing;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

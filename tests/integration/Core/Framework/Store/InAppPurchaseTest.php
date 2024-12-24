@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Store;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\JWT\JWTDecoder;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseProvider;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\KeyFetcher;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Media\Infrastructure\Path;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Core\Application\MediaPathUpdater;
 use Cicada\Core\Content\Media\DataAbstractionLayer\MediaIndexingMessage;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\SynchronousPostUpdateInd
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 class MediaPathPostUpdater extends SynchronousPostUpdateIndexer

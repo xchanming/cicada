@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Extension\LoadPreviewExtension;
 use Cicada\Core\Framework\Extensions\ExtensionDispatcher;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Tests\Examples\ProductListingCriteriaExtensionExample;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

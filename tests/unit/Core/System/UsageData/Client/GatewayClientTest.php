@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Client;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\UsageData\Client\GatewayClient;
 use Cicada\Core\System\UsageData\Services\ShopIdProvider;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
 

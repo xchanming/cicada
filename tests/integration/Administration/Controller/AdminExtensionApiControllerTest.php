@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Administration\Controller;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Controller\AdminExtensionApiController;
 use Cicada\Administration\Controller\Exception\AppByNameNotFoundException;
 use Cicada\Core\Framework\App\ActionButton\AppAction;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

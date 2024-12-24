@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity\SalutationSerializer;
 use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\SerializerRegistry;
 use Cicada\Core\Content\ImportExport\Struct\Config;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Salutation\SalutationCollection;
 use Cicada\Core\System\Salutation\SalutationDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

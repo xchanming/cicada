@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Framework\Migration;
 
+use Cicada\Core\Framework\Migration\MigrationException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Migration\MigrationException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

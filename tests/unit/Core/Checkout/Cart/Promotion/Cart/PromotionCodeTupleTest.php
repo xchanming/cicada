@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart;
 
+use Cicada\Core\Checkout\Promotion\Cart\PromotionCodeTuple;
+use Cicada\Core\Checkout\Promotion\PromotionEntity;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Promotion\Cart\PromotionCodeTuple;
-use Cicada\Core\Checkout\Promotion\PromotionEntity;
 
 /**
  * @internal

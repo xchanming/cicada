@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle\Persister;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\App\Manifest\Xml\CustomField\CustomFields;
 use Cicada\Core\Framework\App\Manifest\Xml\CustomField\CustomFieldSet;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetCollection;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSetRelation\CustomFieldSetRelationCollection;
 use Cicada\Core\System\CustomField\CustomFieldCollection;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal only for use by the app-system

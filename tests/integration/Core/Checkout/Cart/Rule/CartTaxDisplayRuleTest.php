@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Cart\Rule;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Rule\CartTaxDisplayRule;
 use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\Framework\Context;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

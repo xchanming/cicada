@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Service\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\ShopApiSource;
 use Cicada\Core\Framework\App\AppCollection;
@@ -17,6 +14,9 @@ use Cicada\Core\Service\Api\ServiceController;
 use Cicada\Core\Service\Message\UpdateServiceMessage;
 use Cicada\Core\Service\ServiceException;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBusInterface;

@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Customer\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\CustomerEvents;
 use Cicada\Core\Checkout\Customer\DataAbstractionLayer\CustomerIndexingMessage;
 use Cicada\Core\Checkout\Customer\Event\CustomerChangedPaymentMethodEvent;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextRestorer;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Field;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\DateIntervalField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\DateIntervalFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

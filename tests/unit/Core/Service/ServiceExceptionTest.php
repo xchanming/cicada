@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\ShopApiSource;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Service\ServiceException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 

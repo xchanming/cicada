@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Content\Flow\Dispatching\CachedFlowLoader;
 use Cicada\Core\Content\Flow\FlowEvents;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

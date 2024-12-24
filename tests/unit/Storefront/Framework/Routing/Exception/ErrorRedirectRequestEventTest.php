@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing\Exception;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Storefront\Framework\Routing\Exception\ErrorRedirectRequestEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

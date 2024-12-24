@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\OAuth\Client;
 
+use Cicada\Core\Framework\Log\Package;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\Traits\ClientTrait;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class ApiClient implements ClientEntityInterface

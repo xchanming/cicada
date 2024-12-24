@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Adapter\Asset;
 
-use Composer\Console\Input\InputOption;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Util\AssetService;
 use Cicada\Core\Installer\Installer;
+use Composer\Console\Input\InputOption;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

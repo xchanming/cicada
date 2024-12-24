@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\MailTemplate\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\Service\AbstractMailService;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
 use Cicada\Core\Content\MailTemplate\Api\MailActionController;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

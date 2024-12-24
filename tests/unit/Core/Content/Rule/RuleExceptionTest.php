@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Content\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Rule\RuleException;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\UnsupportedCommandTypeException;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\InsertCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

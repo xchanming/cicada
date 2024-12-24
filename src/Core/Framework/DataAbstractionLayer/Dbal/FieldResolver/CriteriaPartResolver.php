@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\JoinGroup;
@@ -23,6 +22,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\SingleFieldFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Parser\SqlQueryParser;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal This class is not intended for service decoration

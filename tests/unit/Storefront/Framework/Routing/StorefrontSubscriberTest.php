@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Exception\CustomerNotLoggedInException;
 use Cicada\Core\Checkout\Customer\Event\CustomerLoginEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerLogoutEvent;
@@ -19,6 +16,9 @@ use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
 use Cicada\Storefront\Framework\Routing\MaintenanceModeResolver;
 use Cicada\Storefront\Framework\Routing\StorefrontRouteScope;
 use Cicada\Storefront\Framework\Routing\StorefrontSubscriber;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

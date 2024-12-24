@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductStream\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ProductStream\DataAbstractionLayer\ProductStreamIndexer;
 use Cicada\Core\Content\ProductStream\ProductStreamDefinition;
 use Cicada\Core\Content\ProductStream\ProductStreamEntity;
@@ -22,6 +20,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

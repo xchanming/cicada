@@ -2,26 +2,6 @@
 
 namespace Cicada\Elasticsearch\Framework\DataAbstractionLayer;
 
-use OpenSearchDSL\Aggregation\AbstractAggregation;
-use OpenSearchDSL\Aggregation\Bucketing;
-use OpenSearchDSL\Aggregation\Bucketing\CompositeAggregation;
-use OpenSearchDSL\Aggregation\Bucketing\NestedAggregation;
-use OpenSearchDSL\Aggregation\Bucketing\ReverseNestedAggregation;
-use OpenSearchDSL\Aggregation\Metric;
-use OpenSearchDSL\Aggregation\Metric\ValueCountAggregation;
-use OpenSearchDSL\BuilderInterface;
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use OpenSearchDSL\Query\Compound\DisMaxQuery;
-use OpenSearchDSL\Query\FullText\MultiMatchQuery;
-use OpenSearchDSL\Query\Joining\NestedQuery;
-use OpenSearchDSL\Query\Specialized\ScriptQuery;
-use OpenSearchDSL\Query\TermLevel\ExistsQuery;
-use OpenSearchDSL\Query\TermLevel\PrefixQuery;
-use OpenSearchDSL\Query\TermLevel\RangeQuery;
-use OpenSearchDSL\Query\TermLevel\TermQuery;
-use OpenSearchDSL\Query\TermLevel\TermsQuery;
-use OpenSearchDSL\Query\TermLevel\WildcardQuery;
-use OpenSearchDSL\Sort\FieldSort;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -70,6 +50,26 @@ use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\Framework\ElasticsearchDateHistogramAggregation;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Sort\CountSort;
+use OpenSearchDSL\Aggregation\AbstractAggregation;
+use OpenSearchDSL\Aggregation\Bucketing;
+use OpenSearchDSL\Aggregation\Bucketing\CompositeAggregation;
+use OpenSearchDSL\Aggregation\Bucketing\NestedAggregation;
+use OpenSearchDSL\Aggregation\Bucketing\ReverseNestedAggregation;
+use OpenSearchDSL\Aggregation\Metric;
+use OpenSearchDSL\Aggregation\Metric\ValueCountAggregation;
+use OpenSearchDSL\BuilderInterface;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use OpenSearchDSL\Query\Compound\DisMaxQuery;
+use OpenSearchDSL\Query\FullText\MultiMatchQuery;
+use OpenSearchDSL\Query\Joining\NestedQuery;
+use OpenSearchDSL\Query\Specialized\ScriptQuery;
+use OpenSearchDSL\Query\TermLevel\ExistsQuery;
+use OpenSearchDSL\Query\TermLevel\PrefixQuery;
+use OpenSearchDSL\Query\TermLevel\RangeQuery;
+use OpenSearchDSL\Query\TermLevel\TermQuery;
+use OpenSearchDSL\Query\TermLevel\TermsQuery;
+use OpenSearchDSL\Query\TermLevel\WildcardQuery;
+use OpenSearchDSL\Sort\FieldSort;
 
 #[Package('core')]
 class CriteriaParser

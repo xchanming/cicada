@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel\Context;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartPersister;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -14,6 +11,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\SalesChannel\Event\SalesChannelContextRestoredEvent;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\RequestStack;
 

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Checkout\Cart\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\AbstractCartPersister;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartCalculator;
@@ -30,6 +27,9 @@ use Cicada\Storefront\Checkout\Cart\Error\ShippingMethodChangedError;
 use Cicada\Storefront\Checkout\Cart\SalesChannel\StorefrontCartFacade;
 use Cicada\Storefront\Checkout\Payment\BlockedPaymentMethodSwitcher;
 use Cicada\Storefront\Checkout\Shipping\BlockedShippingMethodSwitcher;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

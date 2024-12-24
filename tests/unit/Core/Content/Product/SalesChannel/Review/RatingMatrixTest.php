@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Review;
 
+use Cicada\Core\Content\Product\SalesChannel\Review\MatrixElement;
+use Cicada\Core\Content\Product\SalesChannel\Review\RatingMatrix;
+use Cicada\Core\Framework\DataAbstractionLayer\Search\AggregationResult\Bucket\Bucket;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Product\SalesChannel\Review\MatrixElement;
-use Cicada\Core\Content\Product\SalesChannel\Review\RatingMatrix;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\AggregationResult\Bucket\Bucket;
 
 /**
  * @internal

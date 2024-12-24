@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductExport\Command;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\ProductExport\Command\ProductExportGenerateCommand;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
@@ -21,6 +18,9 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDom
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Storefront\Framework\Seo\SeoUrlRoute\ProductPageSeoUrlRoute;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

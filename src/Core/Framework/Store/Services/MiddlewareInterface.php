@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
-use Psr\Http\Message\ResponseInterface;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @internal

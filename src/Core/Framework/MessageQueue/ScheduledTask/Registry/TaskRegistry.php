@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry;
 
-use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskCollection;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskDefinition;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 #[Package('core')]

@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Content\Mail\Transport;
 
-use Doctrine\DBAL\Exception\DriverException;
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Exception\DriverException;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Transport\Dsn;
 use Symfony\Component\Mailer\Transport\TransportInterface;

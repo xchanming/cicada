@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Schema\Schema;
-use Doctrine\DBAL\Schema\Table;
-use Doctrine\DBAL\Types\Types;
 use Cicada\Core\Content\Cms\DataAbstractionLayer\Field\SlotConfigField;
 use Cicada\Core\Content\Flow\DataAbstractionLayer\Field\FlowTemplateConfigField;
 use Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice\CheapestPriceField;
@@ -71,6 +68,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\VersionDataPayloadField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\VersionField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\DataAbstractionLayer\NumberRangeField;
+use Doctrine\DBAL\Schema\Schema;
+use Doctrine\DBAL\Schema\Table;
+use Doctrine\DBAL\Types\Types;
 
 /**
  * @internal

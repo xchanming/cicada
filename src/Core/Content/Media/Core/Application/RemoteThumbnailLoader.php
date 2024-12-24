@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Content\Media\Core\Application;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailCollection;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailEntity;
 use Cicada\Core\Content\Media\Core\Params\UrlParams;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Contracts\Service\ResetInterface;
 
 /**

@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Services;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\InstanceService;
 use Cicada\Core\Kernel;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

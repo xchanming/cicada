@@ -2,10 +2,6 @@
 
 namespace Cicada\Core\Framework\Plugin;
 
-use Composer\InstalledVersions;
-use Composer\IO\NullIO;
-use Composer\Semver\Comparator;
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -51,6 +47,10 @@ use Cicada\Core\System\CustomEntity\CustomEntityLifecycleService;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntityPersister;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Composer\InstalledVersions;
+use Composer\IO\NullIO;
+use Composer\Semver\Comparator;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpKernel\KernelEvents;

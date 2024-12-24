@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Parameter;
 
-use Composer\Autoload\ClassLoader;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
+use Composer\Autoload\ClassLoader;
 
 #[Package('core')]
 final class AdditionalBundleParameters

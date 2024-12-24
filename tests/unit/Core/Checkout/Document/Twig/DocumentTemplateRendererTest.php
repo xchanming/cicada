@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Document\Twig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\Event\DocumentTemplateRendererParameterEvent;
 use Cicada\Core\Checkout\Document\Twig\DocumentTemplateRenderer;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Adapter\Twig\TemplateFinder;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
 

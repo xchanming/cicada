@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\SalesChannel\Exception\LanguageOfSalesChannelDomainDeleteException;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
 use Cicada\Core\System\SalesChannel\SalesChannelExceptionHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

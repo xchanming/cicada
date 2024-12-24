@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\User\Command;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Query\QueryBuilder;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\MaintenanceException;
 use Cicada\Core\Maintenance\User\Command\UserCreateCommand;
 use Cicada\Core\Maintenance\User\Service\UserProvisioner;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

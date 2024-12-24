@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Maintenance\System\Service;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableTransaction;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\MaintenanceException;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Intl\Currencies;
 
 /**

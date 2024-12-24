@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Action;
 
+use Cicada\Core\Content\Flow\Dispatching\Action\FlowMailVariables;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Flow\Dispatching\Action\FlowMailVariables;
 
 /**
  * @internal

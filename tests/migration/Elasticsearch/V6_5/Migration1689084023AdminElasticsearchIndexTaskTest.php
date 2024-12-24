@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Migration\Elasticsearch\V6_5;
 
+use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Cicada\Elasticsearch\Migration\V6_5\Migration1689084023AdminElasticsearchIndexTask;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
-use Cicada\Elasticsearch\Migration\V6_5\Migration1689084023AdminElasticsearchIndexTask;
 
 /**
  * @internal

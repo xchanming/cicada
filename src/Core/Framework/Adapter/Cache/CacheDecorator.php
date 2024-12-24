@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache;
 
-use Psr\Cache\CacheItemInterface;
 use Cicada\Core\Framework\Log\Package;
+use Psr\Cache\CacheItemInterface;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Contracts\Cache\CacheTrait;

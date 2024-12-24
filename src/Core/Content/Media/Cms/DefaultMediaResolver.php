@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\Media\Cms;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
+use League\Flysystem\FilesystemOperator;
 
 #[Package('buyers-experience')]
 class DefaultMediaResolver extends AbstractDefaultMediaResolver

@@ -3,8 +3,8 @@
 namespace Cicada\Core\Framework\Validation;
 
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Event\GenericEvent;
 use Cicada\Core\Framework\Event\CicadaEvent;
+use Cicada\Core\Framework\Event\GenericEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Symfony\Contracts\EventDispatcher\Event;

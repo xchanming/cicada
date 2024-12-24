@@ -2,11 +2,6 @@
 
 namespace Cicada\Storefront\Theme;
 
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\UnableToDeleteDirectory;
-use Padaliyajay\PHPAutoprefixer\Autoprefixer;
-use Psr\Log\LoggerInterface;
-use ScssPhp\ScssPhp\OutputStyle;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatch;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInput;
@@ -23,6 +18,11 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\FileCollection;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 use Cicada\Storefront\Theme\Validator\SCSSValidator;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\UnableToDeleteDirectory;
+use Padaliyajay\PHPAutoprefixer\Autoprefixer;
+use Psr\Log\LoggerInterface;
+use ScssPhp\ScssPhp\OutputStyle;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Finder\Exception\DirectoryNotFoundException;

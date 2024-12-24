@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Storefront\DependencyInjection;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationSource;
 use Cicada\Storefront\DependencyInjection\StorefrontMigrationReplacementCompilerPass;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**

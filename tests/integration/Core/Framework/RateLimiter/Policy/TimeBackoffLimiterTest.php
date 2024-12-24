@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\RateLimiter\Policy;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\RateLimiter\Policy\TimeBackoff;
 use Cicada\Core\Framework\RateLimiter\Policy\TimeBackoffLimiter;
 use Cicada\Core\Framework\RateLimiter\RateLimiterFactory;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Lock\LockFactory;
 use Symfony\Component\RateLimiter\Exception\ReserveNotSupportedException;

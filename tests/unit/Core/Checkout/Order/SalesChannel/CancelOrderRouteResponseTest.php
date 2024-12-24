@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Order\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\SalesChannel\CancelOrderRouteResponse;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

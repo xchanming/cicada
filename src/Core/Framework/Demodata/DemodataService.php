@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Framework\Demodata;
 
-use Faker\Factory;
-use Faker\Generator;
-use Maltyxx\ImagesGenerator\ImagesGeneratorProvider;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\Demodata\Faker\Commerce;
 use Cicada\Core\Framework\Log\Package;
+use Faker\Factory;
+use Faker\Generator;
+use Maltyxx\ImagesGenerator\ImagesGeneratorProvider;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Console\Style\SymfonyStyle;

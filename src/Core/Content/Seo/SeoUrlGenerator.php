@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Seo;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\LandingPage\LandingPageCollection;
 use Cicada\Core\Content\Product\ProductCollection;
@@ -24,6 +23,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
 use Twig\Environment;

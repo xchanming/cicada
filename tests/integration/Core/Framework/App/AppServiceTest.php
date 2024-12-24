@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Aggregate\ActionButton\ActionButtonEntity;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppService;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
 /**

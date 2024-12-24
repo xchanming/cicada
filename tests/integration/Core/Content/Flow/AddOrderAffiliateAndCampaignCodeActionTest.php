@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Flow;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Content\Flow\Dispatching\Action\AddOrderAffiliateAndCampaignCodeAction;
 use Cicada\Core\Content\Test\Flow\OrderActionTrait;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

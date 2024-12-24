@@ -2,15 +2,15 @@
 
 namespace Cicada\Core\Checkout\Payment\Cart\Token;
 
-use Doctrine\DBAL\Connection;
-use Lcobucci\JWT\Configuration;
-use Lcobucci\JWT\UnencryptedToken;
-use Lcobucci\JWT\Validation\Constraint\LooseValidAt;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Lcobucci\JWT\Configuration;
+use Lcobucci\JWT\UnencryptedToken;
+use Lcobucci\JWT\Validation\Constraint\LooseValidAt;
 
 #[Package('checkout')]
 class JWTFactoryV2 implements TokenFactoryInterfaceV2

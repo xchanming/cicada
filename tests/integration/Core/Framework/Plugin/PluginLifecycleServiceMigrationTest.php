@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use Composer\IO\NullIO;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Migration\MigrationCollection;
@@ -32,6 +27,11 @@ use Cicada\Core\System\CustomEntity\CustomEntityLifecycleService;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntityPersister;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Composer\IO\NullIO;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

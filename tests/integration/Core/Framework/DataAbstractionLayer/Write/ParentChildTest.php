@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Write;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\FieldException\ExpectedArrayException;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteException;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,17 +2,17 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
-use OpenSearch\Client;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexConfigEvent;
 use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexCreatedEvent;
 use Cicada\Elasticsearch\Framework\Indexing\IndexCreator;
 use Cicada\Elasticsearch\Framework\Indexing\IndexMappingProvider;
 use Cicada\Elasticsearch\Product\ElasticsearchProductDefinition;
+use OpenSearch\Client;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

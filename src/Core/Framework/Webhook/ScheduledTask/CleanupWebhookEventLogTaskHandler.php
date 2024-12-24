@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Webhook\ScheduledTask;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskHandler;
 use Cicada\Core\Framework\Webhook\Service\WebhookCleanup;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Order\Validation;
 
-use Monolog\Test\TestCase;
-use PHPUnit\Framework\Attributes\CoversClass;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Order\Validation\OrderValidationFactory;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
+use Monolog\Test\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**

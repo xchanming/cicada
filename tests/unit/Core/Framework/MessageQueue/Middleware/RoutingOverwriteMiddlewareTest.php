@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Middleware;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
 use Cicada\Core\Content\Product\DataAbstractionLayer\ProductIndexingMessage;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Feature;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 use Cicada\Core\Framework\MessageQueue\LowPriorityMessageInterface;
 use Cicada\Core\Framework\MessageQueue\Middleware\RoutingOverwriteMiddleware;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Mailer\Messenger\SendEmailMessage;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\Stamp\DelayStamp;

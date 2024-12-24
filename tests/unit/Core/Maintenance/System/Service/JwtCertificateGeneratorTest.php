@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Service;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

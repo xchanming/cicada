@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductCategory\ProductCategoryDefinition;
@@ -36,6 +33,9 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Tax\TaxDefinition;
 use Cicada\Core\System\Tax\TaxEntity;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

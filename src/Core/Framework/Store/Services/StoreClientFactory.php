@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Store\Services;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\System\SystemConfig\SystemConfigService;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\System\SystemConfig\SystemConfigService;
 
 /**
  * @internal

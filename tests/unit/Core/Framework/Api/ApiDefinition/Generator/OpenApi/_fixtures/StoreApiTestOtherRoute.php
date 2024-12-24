@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\ApiDefinition\Generator\OpenApi\_fixtures;
 
-use OpenApi\Annotations as OA;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Routing\Annotation\Entity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use OpenApi\Annotations as OA;
 use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;

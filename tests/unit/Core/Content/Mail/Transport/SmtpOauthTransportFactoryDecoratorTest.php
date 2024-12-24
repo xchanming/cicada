@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Transport;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\Transport\SmtpOauthAuthenticator;
 use Cicada\Core\Content\Mail\Transport\SmtpOauthTransportFactoryDecorator;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Transport\Dsn;
 use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransport;
 use Symfony\Component\Mailer\Transport\Smtp\EsmtpTransportFactory;

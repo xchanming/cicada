@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Seo\SeoUrl;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoUrl\SeoUrlCollection;
 use Cicada\Core\Content\Seo\SeoUrl\SeoUrlEntity;
 use Cicada\Core\Defaults;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\Test\Seo\StorefrontSalesChannelTestHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

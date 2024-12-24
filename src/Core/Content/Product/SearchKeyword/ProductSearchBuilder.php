@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Product\SearchKeyword;
 
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\AndFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\ContainsFilter;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\SearchPattern;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 #[Package('services-settings')]

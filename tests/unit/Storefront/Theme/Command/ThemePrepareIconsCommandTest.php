@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Command;
 
+use Cicada\Storefront\Theme\Command\ThemePrepareIconsCommand;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Storefront\Theme\Command\ThemePrepareIconsCommand;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 

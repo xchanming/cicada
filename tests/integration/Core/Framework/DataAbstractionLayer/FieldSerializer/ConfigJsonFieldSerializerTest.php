@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\FieldSerializer;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ConfigJsonField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
@@ -18,6 +16,8 @@ use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFi
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\JsonDefinition;
 use Cicada\Core\Framework\Test\TestCaseBase\CacheTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

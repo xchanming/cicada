@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Migration\Traits;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -11,6 +10,7 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineSt
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMachineTransitionDefinition;
 use Cicada\Core\System\StateMachine\StateMachineDefinition;
 use Cicada\Core\System\StateMachine\StateMachineTranslationDefinition;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 class StateMachineMigrationImporter

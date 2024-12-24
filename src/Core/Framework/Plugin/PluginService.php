@@ -2,11 +2,8 @@
 
 namespace Cicada\Core\Framework\Plugin;
 
-use Composer\IO\IOInterface;
-use Composer\Package\AliasPackage;
-use Composer\Package\CompletePackageInterface;
-use Composer\Package\Version\VersionParser;
 use Cicada\Core\Defaults;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -17,8 +14,11 @@ use Cicada\Core\Framework\Plugin\Exception\PluginComposerJsonInvalidException;
 use Cicada\Core\Framework\Plugin\Exception\PluginNotFoundException;
 use Cicada\Core\Framework\Plugin\Util\PluginFinder;
 use Cicada\Core\Framework\Plugin\Util\VersionSanitizer;
-use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\System\Language\LanguageCollection;
+use Composer\IO\IOInterface;
+use Composer\Package\AliasPackage;
+use Composer\Package\CompletePackageInterface;
+use Composer\Package\Version\VersionParser;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Sitemap\Provider;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Sitemap\Struct\UrlResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('services-settings')]
 abstract class AbstractUrlProvider

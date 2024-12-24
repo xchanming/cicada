@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Infrastructure\Path;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Application\MediaReverseProxy;
 use Cicada\Core\Content\Media\Event\MediaPathChangedEvent;
 use Cicada\Core\Content\Media\Infrastructure\Path\BanMediaUrl;
@@ -13,6 +9,10 @@ use Cicada\Core\Content\Media\Infrastructure\Path\MediaUrlGenerator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use League\Flysystem\Filesystem;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

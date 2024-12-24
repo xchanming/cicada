@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Migration\Core\V6_6;
 
+use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Cicada\Core\Migration\V6_6\Migration1716285861AddAppSourceType;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
-use Cicada\Core\Migration\V6_6\Migration1716285861AddAppSourceType;
 
 /**
  * @internal

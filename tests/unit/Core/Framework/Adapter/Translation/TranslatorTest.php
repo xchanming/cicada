@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Translation;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Context;
@@ -17,6 +13,10 @@ use Cicada\Core\SalesChannelRequest;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
 use Cicada\Core\System\Snippet\SnippetService;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;

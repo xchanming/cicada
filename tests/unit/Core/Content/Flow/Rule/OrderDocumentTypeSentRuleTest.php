@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\MockObject\Exception;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\DocumentCollection;
 use Cicada\Core\Checkout\Document\DocumentEntity;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -19,6 +14,11 @@ use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\Constraint\ArrayOfUuid;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\MockObject\Exception;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\NotBlank;
 

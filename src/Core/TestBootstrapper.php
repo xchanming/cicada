@@ -2,13 +2,13 @@
 
 namespace Cicada\Core;
 
-use Composer\Autoload\ClassLoader;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\DevOps\StaticAnalyze\StaticAnalyzeKernel;
 use Cicada\Core\Framework\Adapter\Kernel\KernelFactory;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\DbalKernelPluginLoader;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Composer\Autoload\ClassLoader;
+use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;

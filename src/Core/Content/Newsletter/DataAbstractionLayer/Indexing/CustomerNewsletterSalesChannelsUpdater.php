@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Newsletter\DataAbstractionLayer\Indexing;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Newsletter\SalesChannel\NewsletterSubscribeRoute;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\RetryableQuery;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 #[Package('buyers-experience')]
 class CustomerNewsletterSalesChannelsUpdater

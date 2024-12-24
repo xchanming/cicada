@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document\Service;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\StreamInterface;
 use Cicada\Core\Checkout\Document\Aggregate\DocumentBaseConfig\DocumentBaseConfigEntity;
 use Cicada\Core\Checkout\Document\Aggregate\DocumentType\DocumentTypeEntity;
 use Cicada\Core\Checkout\Document\DocumentConfiguration;
@@ -43,6 +38,11 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
+use Psr\Http\Message\StreamInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

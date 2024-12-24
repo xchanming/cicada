@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Core\System\NumberRange\ValueGenerator;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\NumberRange\Exception\IncrementStorageNotFoundException;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementSqlStorage;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementStorageRegistry;
 use Cicada\Core\Test\Stub\System\NumberRange\ValueGenerator\IncrementArrayStorage;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Manifest\Xml\CustomFieldTypes;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Tests\Integration\Core\Framework\App\CustomFieldTypeTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

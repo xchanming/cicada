@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Doctrine;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\ParameterType;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\ParameterType;
 
 #[Package('core')]
 class MultiInsertQueryQueue

@@ -2,13 +2,13 @@
 
 namespace Cicada\Elasticsearch\Framework\Command;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
 use Cicada\Core\Framework\Increment\Exception\IncrementGatewayNotFoundException;
 use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Elasticsearch\Admin\AdminElasticsearchHelper;
 use Cicada\Elasticsearch\Admin\AdminSearchIndexingMessage;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

@@ -2,15 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Admin;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use OpenSearch\Common\Exceptions\NoNodesAvailableException;
-use OpenSearch\Namespaces\IndicesNamespace;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IterableQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
@@ -27,6 +18,15 @@ use Cicada\Elasticsearch\Admin\AdminSearchRegistry;
 use Cicada\Elasticsearch\Admin\Indexer\AbstractAdminIndexer;
 use Cicada\Elasticsearch\Admin\Indexer\PromotionAdminSearchIndexer;
 use Cicada\Elasticsearch\ElasticsearchException;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use OpenSearch\Common\Exceptions\NoNodesAvailableException;
+use OpenSearch\Namespaces\IndicesNamespace;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Messenger\Envelope;

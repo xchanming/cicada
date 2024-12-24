@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Admin;
 
-use Doctrine\DBAL\Connection;
-use OpenSearch\Client;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -15,6 +10,11 @@ use Cicada\Elasticsearch\Admin\AdminSearcher;
 use Cicada\Elasticsearch\Admin\AdminSearchRegistry;
 use Cicada\Elasticsearch\Admin\Indexer\ProductAdminSearchIndexer;
 use Cicada\Elasticsearch\ElasticsearchException;
+use Doctrine\DBAL\Connection;
+use OpenSearch\Client;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

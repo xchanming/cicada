@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Test\Script\Execution;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\Script;
 use Cicada\Core\Framework\Script\Execution\ScriptAppInformation;
 use Cicada\Core\Framework\Script\Execution\ScriptTwigLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Twig\Error\LoaderError;
 
 /**

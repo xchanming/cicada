@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\System\CustomField;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWriteEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\DateTimeField;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\PriceField;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetDefinition;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

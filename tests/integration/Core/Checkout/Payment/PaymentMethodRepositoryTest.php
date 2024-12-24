@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\DefaultPayment;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

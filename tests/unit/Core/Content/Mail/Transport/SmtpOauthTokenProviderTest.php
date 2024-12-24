@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Transport;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\Mail\Transport\SmtpOauthTokenProvider;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Cache\ItemInterface;

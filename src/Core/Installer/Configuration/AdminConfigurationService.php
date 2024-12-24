@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Installer\Configuration;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Controller\ShopConfigurationController;
 use Cicada\Core\Maintenance\User\Service\UserProvisioner;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle\Registration;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Exception\AppRegistrationException;
 use Cicada\Core\Framework\App\Lifecycle\Registration\HandshakeFactory;
 use Cicada\Core\Framework\App\Lifecycle\Registration\PrivateHandshake;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Kernel;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

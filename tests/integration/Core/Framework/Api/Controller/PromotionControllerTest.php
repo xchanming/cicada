@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Framework\Api\Controller;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity;
 use Cicada\Core\Checkout\Promotion\PromotionCollection;
 use Cicada\Core\Checkout\Promotion\PromotionEntity;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\TestBrowser;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

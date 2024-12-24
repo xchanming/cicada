@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache\Http;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\AbstractCacheTracer;
 use Cicada\Core\Framework\Adapter\Cache\CacheTagCollector;
 use Cicada\Core\Framework\Adapter\Cache\Http\CacheStateValidator;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Adapter\Cache\Http\CacheStore;
 use Cicada\Core\Framework\Adapter\Cache\Http\HttpCacheKeyGenerator;
 use Cicada\Core\Framework\Routing\MaintenanceModeResolver;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 use Symfony\Component\Cache\CacheItem;
 use Symfony\Component\EventDispatcher\EventDispatcher;

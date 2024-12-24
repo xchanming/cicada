@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Generator;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Order\OrderStates;
@@ -28,6 +26,8 @@ use Cicada\Core\Framework\Event\BusinessEventCollector;
 use Cicada\Core\Framework\Event\BusinessEventDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Faker\Generator;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**

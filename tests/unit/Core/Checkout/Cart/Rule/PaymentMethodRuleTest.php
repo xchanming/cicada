@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Rule\PaymentMethodRule;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
 use Cicada\Core\Framework\Log\Package;
@@ -12,6 +9,9 @@ use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\Framework\Validation\Constraint\ArrayOfUuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\NotBlank;
 

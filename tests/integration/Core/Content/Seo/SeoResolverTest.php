@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Seo;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\AbstractSeoResolver;
 use Cicada\Core\Content\Seo\SeoResolver;
 use Cicada\Core\Defaults;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\Seo\StorefrontSalesChannelTestHelper;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

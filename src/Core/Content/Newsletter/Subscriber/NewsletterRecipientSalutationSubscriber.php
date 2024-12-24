@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Content\Newsletter\Subscriber;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Newsletter\NewsletterEvents;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Salutation\SalutationDefinition;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

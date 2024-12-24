@@ -3,9 +3,6 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Review;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Content\Product\SalesChannel\Review\AbstractProductReviewRoute;
 use Cicada\Core\Content\Product\SalesChannel\Review\CachedProductReviewRoute;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Cache\CacheInterface;

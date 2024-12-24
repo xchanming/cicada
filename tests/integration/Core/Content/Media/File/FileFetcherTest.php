@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\File;
 
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\File\FileFetcher;
 use Cicada\Core\Content\Media\File\FileService;
 use Cicada\Core\Content\Media\File\FileUrlValidator;
@@ -11,6 +9,8 @@ use Cicada\Core\Content\Media\MediaException;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\TestBootstrapper;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Symfony\Component\HttpFoundation\Request;
 

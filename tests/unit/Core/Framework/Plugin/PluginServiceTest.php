@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin;
 
-use Composer\IO\IOInterface;
-use Composer\Package\CompleteAliasPackage;
-use Composer\Package\CompletePackage;
-use Composer\Package\Version\VersionParser;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Plugin\PluginCollection;
 use Cicada\Core\Framework\Plugin\PluginService;
@@ -17,6 +11,12 @@ use Cicada\Core\Framework\Plugin\Util\VersionSanitizer;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use Composer\IO\IOInterface;
+use Composer\Package\CompleteAliasPackage;
+use Composer\Package\CompletePackage;
+use Composer\Package\Version\VersionParser;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

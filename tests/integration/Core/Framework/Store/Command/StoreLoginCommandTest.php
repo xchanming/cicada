@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Cicada\Tests\Integration\Core\Framework\Store\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Command\StoreLoginCommand;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

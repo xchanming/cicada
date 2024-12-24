@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Cart\Builder;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Price\Struct\AbsolutePriceDefinition;
 use Cicada\Core\Checkout\Cart\Price\Struct\PercentagePriceDefinition;
@@ -25,6 +20,11 @@ use Cicada\Core\Framework\Rule\Container\OrRule;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Currency\CurrencyEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

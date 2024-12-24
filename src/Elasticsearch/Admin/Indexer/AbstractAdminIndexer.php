@@ -2,12 +2,12 @@
 
 namespace Cicada\Elasticsearch\Admin\Indexer;
 
-use OpenSearchDSL\Search;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IterableQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\Log\Package;
+use OpenSearchDSL\Search;
 
 #[Package('services-settings')]
 abstract class AbstractAdminIndexer

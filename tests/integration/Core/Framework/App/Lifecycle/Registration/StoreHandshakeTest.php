@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle\Registration;
 
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Lifecycle\Registration\StoreHandshake;
 use Cicada\Core\Framework\Store\Services\StoreClient;
@@ -13,6 +9,10 @@ use Cicada\Core\Framework\Test\Store\StoreClientBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Kernel;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

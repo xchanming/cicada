@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Category\Service;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Category\Exception\CategoryNotFoundException;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

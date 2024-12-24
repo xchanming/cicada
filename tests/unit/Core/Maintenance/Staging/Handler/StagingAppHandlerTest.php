@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\Staging\Handler;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Maintenance\Staging\Event\SetupStagingEvent;
 use Cicada\Core\Maintenance\Staging\Handler\StagingAppHandler;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Message;
 
+use Cicada\Storefront\Theme\Message\DeleteThemeFilesMessage;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Storefront\Theme\Message\DeleteThemeFilesMessage;
 
 /**
  * @internal

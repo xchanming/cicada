@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Document\Service;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Document\DocumentConfiguration;
 use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
 use Cicada\Core\Checkout\Document\Renderer\DeliveryNoteRenderer;
@@ -20,6 +19,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

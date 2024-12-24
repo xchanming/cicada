@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\DataAbstractionLayer\CustomerIndexer;
 use Cicada\Core\Checkout\Customer\DataAbstractionLayer\CustomerIndexingMessage;
 use Cicada\Core\Checkout\Customer\Event\CustomerIndexerEvent;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\ManyToManyIdFieldUpdater;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

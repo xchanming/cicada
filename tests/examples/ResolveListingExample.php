@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Examples;
 
-use GuzzleHttp\ClientInterface;
 use Cicada\Core\Content\Product\Extension\ResolveListingExtension;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use GuzzleHttp\ClientInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 readonly class ResolveListingExample implements EventSubscriberInterface

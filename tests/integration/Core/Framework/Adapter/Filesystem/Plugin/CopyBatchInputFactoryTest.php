@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Filesystem\Plugin;
 
+use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInputFactory;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInputFactory;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

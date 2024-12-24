@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\System\NumberRange\ValueGenerator;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\NumberRange\Exception\NoConfigurationException;
 use Cicada\Core\System\NumberRange\NumberRangeEvents;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternRegistry;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 #[Package('checkout')]

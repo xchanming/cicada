@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\CmsPageCollection;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\Exception\PageNotFoundException;
@@ -17,6 +14,9 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

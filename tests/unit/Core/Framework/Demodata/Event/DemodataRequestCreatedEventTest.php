@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Demodata\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Demodata\DemodataRequest;
 use Cicada\Core\Framework\Demodata\Event\DemodataRequestCreatedEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\ArrayInput;
 
 /**

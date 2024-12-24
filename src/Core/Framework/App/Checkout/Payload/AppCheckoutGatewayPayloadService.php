@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\App\Checkout\Payload;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Checkout\Gateway\AppCheckoutGatewayResponse;
 use Cicada\Core\Framework\App\Payload\AppPayloadServiceHelper;
 use Cicada\Core\Framework\Log\ExceptionLogger;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 /**
  * @internal only for use by the app-systems

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Checkout\Promotion\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemEntity;
@@ -16,6 +14,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\DeleteCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

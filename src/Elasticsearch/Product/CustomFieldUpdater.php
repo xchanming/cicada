@@ -2,8 +2,6 @@
 
 namespace Cicada\Elasticsearch\Product;
 
-use OpenSearch\Client;
-use OpenSearch\Common\Exceptions\BadRequest400Exception;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
@@ -14,6 +12,8 @@ use Cicada\Core\System\CustomField\CustomFieldTypes;
 use Cicada\Elasticsearch\Framework\AbstractElasticsearchDefinition;
 use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
 use Cicada\Elasticsearch\Framework\ElasticsearchOutdatedIndexDetector;
+use OpenSearch\Client;
+use OpenSearch\Common\Exceptions\BadRequest400Exception;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

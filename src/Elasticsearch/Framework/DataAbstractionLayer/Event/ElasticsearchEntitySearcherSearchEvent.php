@@ -2,12 +2,12 @@
 
 namespace Cicada\Elasticsearch\Framework\DataAbstractionLayer\Event;
 
-use OpenSearchDSL\Search;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
+use OpenSearchDSL\Search;
 use Symfony\Contracts\EventDispatcher\Event;
 
 #[Package('core')]

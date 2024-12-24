@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache\ReverseProxy;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\AbstractReverseProxyGateway;
 use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\ReverseProxyCacheClearer;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

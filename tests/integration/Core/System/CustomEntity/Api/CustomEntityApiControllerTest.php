@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\System\CustomEntity\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Tests\Integration\Core\System\CustomEntity\CustomEntityTest;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

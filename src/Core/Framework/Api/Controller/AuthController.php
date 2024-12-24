@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Api\Controller;
 
-use League\OAuth2\Server\AuthorizationServer;
 use Cicada\Core\Framework\Api\Controller\Exception\AuthThrottledException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\RateLimiter\Exception\RateLimitExceededException;
 use Cicada\Core\Framework\RateLimiter\RateLimiter;
+use League\OAuth2\Server\AuthorizationServer;
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

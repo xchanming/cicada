@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\TestCaseBase;
 
+use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Cicada\Core\Kernel;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
-use Cicada\Core\Kernel;
 
 /**
  * @internal

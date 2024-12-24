@@ -2,14 +2,14 @@
 
 namespace Cicada\Core\Framework\Test\Migration;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\After;
-use PHPUnit\Framework\Attributes\Before;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\MigrationCollection;
 use Cicada\Core\Framework\Migration\MigrationCollectionLoader;
 use Cicada\Core\Framework\Migration\MigrationSource;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\Before;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 trait MigrationTestBehaviour

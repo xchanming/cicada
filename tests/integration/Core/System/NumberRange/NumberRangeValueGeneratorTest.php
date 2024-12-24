@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\NumberRange;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -19,6 +17,8 @@ use Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGeneratorInter
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternDate;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternIncrement;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternRegistry;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

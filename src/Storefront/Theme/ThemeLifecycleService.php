@@ -2,8 +2,6 @@
 
 namespace Cicada\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Psr7\MimeType;
 use Cicada\Core\Content\Media\File\FileNameProvider;
 use Cicada\Core\Content\Media\File\FileSaver;
 use Cicada\Core\Content\Media\File\MediaFile;
@@ -22,6 +20,8 @@ use Cicada\Core\System\Locale\LocaleEntity;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\AbstractStorefrontPluginConfigurationFactory;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Psr7\MimeType;
 
 #[Package('storefront')]
 class ThemeLifecycleService

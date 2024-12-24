@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Profiling\Compiler;
 
-use Composer\InstalledVersions;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Profiling\Controller\ProfilerController;
+use Composer\InstalledVersions;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

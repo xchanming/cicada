@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\Core\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Event\MediaLocationEvent;
 use Cicada\Core\Content\Media\Core\Params\MediaLocationStruct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

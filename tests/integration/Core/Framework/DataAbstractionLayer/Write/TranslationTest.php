@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Write;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Aggregate\CategoryTranslation\CategoryTranslationCollection;
 use Cicada\Core\Content\Category\Aggregate\CategoryTranslation\CategoryTranslationEntity;
 use Cicada\Core\Content\Category\CategoryCollection;
@@ -33,6 +32,7 @@ use Cicada\Core\System\Currency\CurrencyDefinition;
 use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\Tax\TaxDefinition;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

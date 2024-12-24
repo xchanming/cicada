@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ProductExport\SalesChannel;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
 use Cicada\Core\Defaults;
@@ -19,6 +17,8 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDom
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Theme\ThemeService;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

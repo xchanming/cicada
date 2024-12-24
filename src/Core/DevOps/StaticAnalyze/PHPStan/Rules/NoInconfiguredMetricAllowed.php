@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
 use PhpParser\Node;
 use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\New_;
@@ -13,8 +15,6 @@ use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
 use PHPStan\Symfony\ParameterMap;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
 
 /**
  * @implements Rule<New_>

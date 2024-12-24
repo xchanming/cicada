@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Struct;
 
+use Cicada\Core\Framework\Struct\ArrayStruct;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Struct\ArrayStruct;
 
 /**
  * @internal

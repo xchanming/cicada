@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Command\Scaffolding;
 
+use Cicada\Core\Framework\Plugin\Command\Scaffolding\Stub;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Plugin\Command\Scaffolding\Stub;
 
 /**
  * @internal

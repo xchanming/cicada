@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Installer\Controller;
 
-use Doctrine\DBAL\Exception\DriverException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Cicada\Core\Maintenance\System\Exception\DatabaseSetupException;
@@ -10,6 +9,7 @@ use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
 use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use Cicada\Core\Maintenance\System\Service\SetupDatabaseAdapter;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use Doctrine\DBAL\Exception\DriverException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

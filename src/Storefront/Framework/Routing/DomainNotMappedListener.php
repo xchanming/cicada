@@ -2,9 +2,9 @@
 
 namespace Cicada\Storefront\Framework\Routing;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Framework\Routing\Exception\SalesChannelMappingException;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;

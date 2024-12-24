@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Script;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Script\Exception\ScriptExecutionFailedException;
 use Cicada\Core\Framework\Script\ScriptException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

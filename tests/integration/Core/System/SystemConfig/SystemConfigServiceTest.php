@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\SystemConfig;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
@@ -17,6 +14,9 @@ use Cicada\Core\System\SystemConfig\SystemConfigLoader;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

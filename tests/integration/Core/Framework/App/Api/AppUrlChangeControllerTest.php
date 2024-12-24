@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppUrlChangeResolver\Resolver;
 use Cicada\Core\Framework\App\AppUrlChangeResolver\UninstallAppsStrategy;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

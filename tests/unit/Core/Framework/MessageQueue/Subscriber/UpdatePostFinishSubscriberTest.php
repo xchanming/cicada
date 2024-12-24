@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry\TaskRegistry;
 use Cicada\Core\Framework\MessageQueue\Subscriber\UpdatePostFinishSubscriber;
 use Cicada\Core\Framework\Update\Event\UpdatePostFinishEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

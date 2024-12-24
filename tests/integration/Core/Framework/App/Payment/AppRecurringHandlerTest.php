@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Payment;
 
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Response;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Payment\Cart\PaymentTransactionStruct;
 use Cicada\Core\Framework\App\AppException;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * @internal

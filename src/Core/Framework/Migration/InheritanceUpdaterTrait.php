@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Migration;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 
 #[Package('core')]
 trait InheritanceUpdaterTrait

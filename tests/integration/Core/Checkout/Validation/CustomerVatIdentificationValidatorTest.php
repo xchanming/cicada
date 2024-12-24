@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Validation;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerVatIdentification;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Framework\Validation\DataValidationDefinition;
 use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

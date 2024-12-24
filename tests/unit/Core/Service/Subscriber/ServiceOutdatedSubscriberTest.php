@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Service\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Service\Event\ServiceOutdatedEvent;
 use Cicada\Core\Service\ServiceLifecycle;
 use Cicada\Core\Service\Subscriber\ServiceOutdatedSubscriber;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

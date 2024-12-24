@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Sitemap\Provider;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Sitemap\Provider\HomeUrlProvider;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -16,6 +15,7 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDom
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

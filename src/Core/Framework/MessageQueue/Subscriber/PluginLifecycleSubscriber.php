@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\MessageQueue\Subscriber;
 
-use Psr\Cache\CacheItemPoolInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry\TaskRegistry;
 use Cicada\Core\Framework\Plugin\Event\PluginPostActivateEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostDeactivateEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostUpdateEvent;
+use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
 

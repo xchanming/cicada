@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Admin\Indexer;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
@@ -16,6 +13,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Elasticsearch\Admin\Indexer\SalesChannelAdminSearchIndexer;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

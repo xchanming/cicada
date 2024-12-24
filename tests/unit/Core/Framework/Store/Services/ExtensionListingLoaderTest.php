@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Services;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Store\Struct\ExtensionCollection;
 use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
 use Cicada\Core\Framework\Store\Struct\StoreUpdateStruct;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

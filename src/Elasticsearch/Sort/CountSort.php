@@ -2,9 +2,9 @@
 
 namespace Cicada\Elasticsearch\Sort;
 
+use Cicada\Core\Framework\Log\Package;
 use OpenSearchDSL\BuilderInterface;
 use OpenSearchDSL\Sort\FieldSort;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class CountSort extends FieldSort

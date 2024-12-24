@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Search\Grouping;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Search\Grouping\FieldGrouping;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Grouping\FieldGrouping;
 
 /**
  * @internal

@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Routing\NotFound;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\AbstractCacheTracer;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\DataAbstractionLayer\Cache\EntityCacheKeyGenerator;
@@ -14,6 +11,9 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceInterface;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedEvent;
 use Cicada\Storefront\Framework\Routing\Exception\ErrorRedirectRequestEvent;
 use Cicada\Storefront\Framework\Routing\NotFound\NotFoundSubscriber;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Cache\Adapter\TagAwareAdapter;
 use Symfony\Component\EventDispatcher\EventDispatcher;

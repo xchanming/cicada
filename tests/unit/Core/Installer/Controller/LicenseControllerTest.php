@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Controller;
 
+use Cicada\Core\Installer\Controller\LicenseController;
+use Cicada\Core\Installer\License\LicenseFetcher;
 use GuzzleHttp\Exception\TransferException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Installer\Controller\LicenseController;
-use Cicada\Core\Installer\License\LicenseFetcher;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;

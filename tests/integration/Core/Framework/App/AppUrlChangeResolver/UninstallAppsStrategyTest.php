@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\AppUrlChangeResolver;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppUrlChangeResolver\UninstallAppsStrategy;
@@ -16,6 +15,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Storefront\Theme\ThemeAppLifecycleHandler;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

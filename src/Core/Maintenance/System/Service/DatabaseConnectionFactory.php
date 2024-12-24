@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Maintenance\System\Service;
 
-use Doctrine\DBAL\Configuration;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\DriverManager;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\MaintenanceException;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use Doctrine\DBAL\Configuration;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\DriverManager;
 
 /**
  * @deprecated tag:v6.7.0 - reason:becomes-internal

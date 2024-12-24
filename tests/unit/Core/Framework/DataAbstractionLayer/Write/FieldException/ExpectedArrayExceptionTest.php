@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Write\FieldException;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Write\FieldException\ExpectedArrayException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\DataAbstractionLayer\Write\FieldException\ExpectedArrayException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

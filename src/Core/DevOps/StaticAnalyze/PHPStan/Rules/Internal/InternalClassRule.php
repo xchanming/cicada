@@ -2,14 +2,6 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Internal;
 
-use PhpParser\Node;
-use PHPStan\Analyser\Scope;
-use PHPStan\Node\InClassNode;
-use PHPStan\Reflection\ClassReflection;
-use PHPStan\Rules\Rule;
-use PHPStan\Rules\RuleError;
-use PHPStan\Rules\RuleErrorBuilder;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\DataAbstractionLayer\Command\RefreshIndexCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
@@ -23,6 +15,14 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Storefront\Controller\StorefrontController;
+use PhpParser\Node;
+use PHPStan\Analyser\Scope;
+use PHPStan\Node\InClassNode;
+use PHPStan\Reflection\ClassReflection;
+use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleError;
+use PHPStan\Rules\RuleErrorBuilder;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\System\NumberRange\Command;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\NumberRange\Command\MigrateIncrementStorageCommand;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementSqlStorage;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\IncrementStorageRegistry;
 use Cicada\Core\Test\Stub\System\NumberRange\ValueGenerator\IncrementArrayStorage;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 

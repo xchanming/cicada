@@ -2,12 +2,6 @@
 
 namespace Cicada\Core\Framework\Api\EventListener\Authentication;
 
-use League\OAuth2\Server\AuthorizationServer;
-use League\OAuth2\Server\Grant\ClientCredentialsGrant;
-use League\OAuth2\Server\Grant\PasswordGrant;
-use League\OAuth2\Server\Grant\RefreshTokenGrant;
-use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
-use League\OAuth2\Server\Repositories\UserRepositoryInterface;
 use Cicada\Core\Framework\Api\OAuth\BearerTokenValidator;
 use Cicada\Core\Framework\Api\OAuth\SymfonyBearerTokenValidator;
 use Cicada\Core\Framework\Feature;
@@ -16,6 +10,12 @@ use Cicada\Core\Framework\Routing\ApiContextRouteScopeDependant;
 use Cicada\Core\Framework\Routing\KernelListenerPriorities;
 use Cicada\Core\Framework\Routing\RouteScopeCheckTrait;
 use Cicada\Core\Framework\Routing\RouteScopeRegistry;
+use League\OAuth2\Server\AuthorizationServer;
+use League\OAuth2\Server\Grant\ClientCredentialsGrant;
+use League\OAuth2\Server\Grant\PasswordGrant;
+use League\OAuth2\Server\Grant\RefreshTokenGrant;
+use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
+use League\OAuth2\Server\Repositories\UserRepositoryInterface;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;

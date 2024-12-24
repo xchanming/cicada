@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\Stock;
 
+use Cicada\Core\Content\Product\Stock\StockAlteration;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Product\Stock\StockAlteration;
 
 /**
  * @internal

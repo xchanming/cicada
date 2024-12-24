@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Category\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Subscriber\CategoryTreeMovedSubscriber;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityWriteResult;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
 use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

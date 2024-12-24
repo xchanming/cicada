@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\Tab;
 use Cicada\Core\System\CustomEntity\Xml\Config\AdminUi\XmlElements\Tabs;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

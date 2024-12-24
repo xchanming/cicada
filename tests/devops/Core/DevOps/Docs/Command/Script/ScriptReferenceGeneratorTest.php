@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\DevOps\Core\DevOps\Docs\Command\Script;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Docs\Script\ScriptReferenceDataCollector;
 use Cicada\Core\DevOps\Docs\Script\ScriptReferenceGenerator;
 use Cicada\Core\DevOps\Docs\Script\ScriptReferenceGeneratorCommand;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

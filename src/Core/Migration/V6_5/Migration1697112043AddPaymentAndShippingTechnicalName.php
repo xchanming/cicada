@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Migration\V6_5;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\DebitPayment;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\InvoicePayment;
@@ -14,6 +12,8 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

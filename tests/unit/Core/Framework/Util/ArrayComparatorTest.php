@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Util;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Util\ArrayComparator;
 use Cicada\Core\Framework\Util\Exception\ComparatorException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

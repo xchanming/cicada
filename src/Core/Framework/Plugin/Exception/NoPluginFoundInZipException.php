@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\Framework\Plugin\Exception;
 
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class NoPluginFoundInZipException extends CicadaHttpException

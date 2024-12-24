@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\User\Api;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
@@ -16,6 +15,7 @@ use Cicada\Core\Maintenance\User\Service\UserProvisioner;
 use Cicada\Core\System\User\Aggregate\UserRecovery\UserRecoveryEntity;
 use Cicada\Core\System\User\Recovery\UserRecoveryRequestEvent;
 use Cicada\Core\System\User\Recovery\UserRecoveryService;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\Strategy\Import;
 
-use PHPUnit\Framework\Attributes\CoversNothing;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversNothing;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

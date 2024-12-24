@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ProductExport\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Storer\ScalarValuesStorer;
 use Cicada\Core\Content\ProductExport\Event\ProductExportLoggingEvent;
 use Cicada\Core\Framework\Context;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SearchKeyword;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Product\SearchKeyword\KeywordLoader;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchTermInterpreter;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Filter\TokenFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\Tokenizer;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

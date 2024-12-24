@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Checkout\Cart\Command;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\CartCompressor;
 use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\RedisCartPersister;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\LastIdQuery;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Event\ProgressFinishedEvent;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

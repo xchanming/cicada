@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Checkout;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderException;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -11,6 +10,7 @@ use Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoadedEvent;
 use Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPageLoader;
 use Cicada\Storefront\Page\Checkout\Finish\CheckoutFinishPageOrderCriteriaEvent;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

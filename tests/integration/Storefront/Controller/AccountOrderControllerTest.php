@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
@@ -29,6 +28,7 @@ use Cicada\Storefront\Page\Account\Order\AccountEditOrderPageLoadedHook;
 use Cicada\Storefront\Page\Account\Order\AccountOrderDetailPageLoadedHook;
 use Cicada\Storefront\Page\Account\Order\AccountOrderPageLoadedHook;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\HttpFoundation\Response;
 

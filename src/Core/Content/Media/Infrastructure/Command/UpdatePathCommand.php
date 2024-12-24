@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Content\Media\Infrastructure\Command;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Core\Application\MediaPathUpdater;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\ProgressBar;

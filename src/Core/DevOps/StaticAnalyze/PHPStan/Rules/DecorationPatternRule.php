@@ -2,6 +2,15 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\App\AppUrlChangeResolver\AbstractAppUrlChangeStrategy;
+use Cicada\Core\Framework\App\Lifecycle\AbstractAppLifecycle;
+use Cicada\Core\Framework\App\Lifecycle\RefreshableAppDryRun;
+use Cicada\Core\Framework\App\Lifecycle\Update\AbstractAppUpdater;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Store\Services\AbstractExtensionDataProvider;
+use Cicada\Core\Framework\Store\Services\AbstractExtensionLifecycle;
+use Cicada\Core\Framework\Store\Services\AbstractExtensionStoreLicensesService;
+use Cicada\Core\Framework\Store\Services\AbstractStoreAppLifecycleService;
 use PhpParser\Node;
 use PhpParser\Node\Stmt\Throw_;
 use PHPStan\Analyser\Scope;
@@ -12,15 +21,6 @@ use PHPStan\Reflection\ClassReflection;
 use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\App\AppUrlChangeResolver\AbstractAppUrlChangeStrategy;
-use Cicada\Core\Framework\App\Lifecycle\AbstractAppLifecycle;
-use Cicada\Core\Framework\App\Lifecycle\RefreshableAppDryRun;
-use Cicada\Core\Framework\App\Lifecycle\Update\AbstractAppUpdater;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Store\Services\AbstractExtensionDataProvider;
-use Cicada\Core\Framework\Store\Services\AbstractExtensionLifecycle;
-use Cicada\Core\Framework\Store\Services\AbstractExtensionStoreLicensesService;
-use Cicada\Core\Framework\Store\Services\AbstractStoreAppLifecycleService;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

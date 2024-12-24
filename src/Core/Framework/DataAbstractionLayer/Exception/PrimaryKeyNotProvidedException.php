@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Exception;
 
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use DataAbstractionLayerException::primaryKeyNotProvided instead

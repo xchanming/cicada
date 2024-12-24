@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Command;
 
+use Cicada\Core\Maintenance\System\Command\SystemGenerateJwtSecretCommand;
+use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Maintenance\System\Command\SystemGenerateJwtSecretCommand;
-use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Filesystem\Filesystem;

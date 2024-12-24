@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Captcha;
 
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -17,6 +15,8 @@ use Cicada\Storefront\Framework\Captcha\AbstractCaptcha;
 use Cicada\Storefront\Framework\Captcha\BasicCaptcha;
 use Cicada\Storefront\Framework\Captcha\CaptchaRouteListener;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;

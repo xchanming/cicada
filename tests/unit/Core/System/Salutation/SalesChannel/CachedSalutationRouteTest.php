@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\Salutation\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\AbstractCacheTracer;
 use Cicada\Core\Framework\Adapter\Cache\CacheValueCompressor;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
@@ -22,6 +19,9 @@ use Cicada\Core\System\Salutation\SalesChannel\CachedSalutationRoute;
 use Cicada\Core\System\Salutation\SalesChannel\SalutationRouteResponse;
 use Cicada\Core\System\Salutation\SalutationCollection;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Cache\CacheInterface;

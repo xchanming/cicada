@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\Comparator;
 use Doctrine\DBAL\Schema\Table;
-use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

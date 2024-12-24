@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\DevOps\Core\Test;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Command\DataAbstractionLayerValidateCommand;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

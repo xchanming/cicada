@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig\Extension;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\Extension\NodeExtension;
 use Cicada\Core\Framework\Adapter\Twig\TemplateFinder;
 use Cicada\Core\Framework\Adapter\Twig\TemplateScopeDetector;
 use Cicada\Core\Framework\Adapter\Twig\TokenParser\ExtendsTokenParser;
 use Cicada\Core\Framework\Adapter\Twig\TokenParser\IncludeTokenParser;
 use Cicada\Core\Framework\Adapter\Twig\TokenParser\ReturnNodeTokenParser;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Twig\TokenParser\TokenParserInterface;
 
 /**

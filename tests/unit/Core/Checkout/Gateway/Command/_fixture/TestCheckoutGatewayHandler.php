@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Gateway\Command\_fixture;
 
-use PHPUnit\Framework\Attributes\CoversNothing;
 use Cicada\Core\Checkout\Gateway\CheckoutGatewayResponse;
 use Cicada\Core\Checkout\Gateway\Command\AbstractCheckoutGatewayCommand;
 use Cicada\Core\Checkout\Gateway\Command\Handler\AbstractCheckoutGatewayCommandHandler;
@@ -11,6 +10,7 @@ use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversNothing;
 
 /**
  * @internal

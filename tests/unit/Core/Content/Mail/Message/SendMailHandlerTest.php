@@ -2,6 +2,8 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Mail\Message;
 
+use Cicada\Core\Content\Mail\Message\SendMailHandler;
+use Cicada\Core\Content\Mail\Message\SendMailMessage;
 use League\Flysystem\FilesystemException;
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\UnableToDeleteFile;
@@ -10,8 +12,6 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
-use Cicada\Core\Content\Mail\Message\SendMailHandler;
-use Cicada\Core\Content\Mail\Message\SendMailMessage;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Mime\Email;
 

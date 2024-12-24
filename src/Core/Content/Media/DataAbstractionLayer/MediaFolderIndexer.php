@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Media\DataAbstractionLayer;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderDefinition;
 use Cicada\Core\Content\Media\Event\MediaFolderIndexerEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory;
@@ -17,6 +15,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\TreeUpdater;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 #[Package('buyers-experience')]

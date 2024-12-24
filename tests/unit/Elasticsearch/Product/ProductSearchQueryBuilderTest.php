@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Product;
 
-use OpenSearchDSL\Query\Compound\BoolQuery;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\Aggregate\CategoryTranslation\CategoryTranslationDefinition;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductCategory\ProductCategoryDefinition;
@@ -37,6 +33,10 @@ use Cicada\Elasticsearch\Product\AbstractProductSearchQueryBuilder;
 use Cicada\Elasticsearch\Product\ProductSearchQueryBuilder;
 use Cicada\Elasticsearch\Product\SearchConfigLoader;
 use Cicada\Elasticsearch\TokenQueryBuilder;
+use OpenSearchDSL\Query\Compound\BoolQuery;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

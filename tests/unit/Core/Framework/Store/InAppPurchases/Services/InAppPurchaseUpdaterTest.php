@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\InAppPurchases\Services;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\JWT\JWTDecoder;
 use Cicada\Core\Framework\Log\Package;
@@ -20,6 +14,12 @@ use Cicada\Core\Framework\Store\InAppPurchase\Services\InAppPurchaseUpdater;
 use Cicada\Core\Framework\Store\InAppPurchase\Services\KeyFetcher;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

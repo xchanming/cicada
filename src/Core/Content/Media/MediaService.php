@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Media;
 
-use Psr\Http\Message\StreamInterface;
 use Cicada\Core\Content\Media\File\FileFetcher;
 use Cicada\Core\Content\Media\File\FileLoader;
 use Cicada\Core\Content\Media\File\FileSaver;
@@ -13,6 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Psr\Http\Message\StreamInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 #[Package('buyers-experience')]

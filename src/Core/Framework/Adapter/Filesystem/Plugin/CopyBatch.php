@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Framework\Adapter\Filesystem\Plugin;
 
+use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemAdapter;
 use League\Flysystem\FilesystemOperator;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class CopyBatch

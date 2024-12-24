@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Cms;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Cms\CmsExtensions;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

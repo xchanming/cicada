@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\System\CustomEntity\Schema;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
+use Cicada\Core\System\CustomEntity\Schema\SchemaUpdater;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
-use Cicada\Core\System\CustomEntity\Schema\SchemaUpdater;
 use Symfony\Component\Lock\LockFactory;
 
 /**

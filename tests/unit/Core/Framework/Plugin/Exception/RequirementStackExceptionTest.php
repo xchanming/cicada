@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Exception;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\MissingRequirementException;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\RequirementStackException;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\VersionMismatchException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

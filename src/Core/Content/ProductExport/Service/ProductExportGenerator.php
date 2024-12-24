@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\Service;
 
-use Doctrine\DBAL\Connection;
-use Monolog\Level;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\ProductExport\Event\ProductExportChangeEncodingEvent;
@@ -31,6 +29,8 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceInterface;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceParameters;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
+use Monolog\Level;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Twig\Environment;
 

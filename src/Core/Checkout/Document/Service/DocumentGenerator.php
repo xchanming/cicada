@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Document\Service;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Document\Aggregate\DocumentType\DocumentTypeEntity;
 use Cicada\Core\Checkout\Document\DocumentEntity;
 use Cicada\Core\Checkout\Document\DocumentException;
@@ -27,6 +26,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

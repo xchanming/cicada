@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle;
 
-use Composer\InstalledVersions;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Exception\AppXmlParsingException;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
+use Composer\InstalledVersions;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 

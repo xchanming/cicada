@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Cms\SalesChannel;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfigCollection;
@@ -15,6 +14,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

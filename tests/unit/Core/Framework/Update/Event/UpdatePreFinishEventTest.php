@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Event;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Update\Event\UpdateEvent;
 use Cicada\Core\Framework\Update\Event\UpdatePreFinishEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

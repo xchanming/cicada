@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Webhook;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

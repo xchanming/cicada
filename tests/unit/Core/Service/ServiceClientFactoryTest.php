@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Service;
 
-use GuzzleHttp\ClientInterface;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Exception\AppUrlChangeDetectedException;
 use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
@@ -16,6 +12,10 @@ use Cicada\Core\Service\ServiceClientFactory;
 use Cicada\Core\Service\ServiceException;
 use Cicada\Core\Service\ServiceRegistryClient;
 use Cicada\Core\Service\ServiceRegistryEntry;
+use GuzzleHttp\ClientInterface;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 /**

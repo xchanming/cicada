@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Feature;
@@ -14,6 +12,8 @@ use Cicada\Core\System\UsageData\Exception\ConsentAlreadyRequestedException;
 use Cicada\Core\System\UsageData\Exception\ConsentAlreadyRevokedException;
 use Cicada\Core\System\UsageData\UsageDataException;
 use Cicada\Core\Test\Annotation\DisabledFeatures;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

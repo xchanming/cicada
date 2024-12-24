@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Content\Media\Subscriber;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use League\Flysystem\Visibility;
 use Cicada\Core\Content\Media\Aggregate\MediaFolder\MediaFolderDefinition;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailCollection;
 use Cicada\Core\Content\Media\Aggregate\MediaThumbnail\MediaThumbnailDefinition;
@@ -20,6 +17,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\Visibility;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Messenger\MessageBusInterface;

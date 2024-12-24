@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Elasticsearch\Framework\AbstractElasticsearchDefinition;
 use Cicada\Elasticsearch\Framework\Indexing\IndexMappingProvider;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

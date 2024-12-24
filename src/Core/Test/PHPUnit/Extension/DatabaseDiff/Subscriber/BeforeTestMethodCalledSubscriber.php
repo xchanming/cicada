@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\Subscriber;
 
-use PHPUnit\Event\Test\BeforeTestMethodCalled;
-use PHPUnit\Event\Test\BeforeTestMethodCalledSubscriber as BeforeTestMethodCalledSubscriberInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\PHPUnit\Extension\DatabaseDiff\DbState;
+use PHPUnit\Event\Test\BeforeTestMethodCalled;
+use PHPUnit\Event\Test\BeforeTestMethodCalledSubscriber as BeforeTestMethodCalledSubscriberInterface;
 
 /**
  * @internal

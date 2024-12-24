@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
-use Faker\Generator;
-use Maltyxx\ImagesGenerator\ImagesGeneratorProvider;
 use Cicada\Core\Content\Media\Aggregate\MediaDefaultFolder\MediaDefaultFolderEntity;
 use Cicada\Core\Content\Media\File\FileNameProvider;
 use Cicada\Core\Content\Media\File\FileSaver;
@@ -19,6 +16,9 @@ use Cicada\Core\Framework\Demodata\DemodataContext;
 use Cicada\Core\Framework\Demodata\DemodataGeneratorInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use Faker\Generator;
+use Maltyxx\ImagesGenerator\ImagesGeneratorProvider;
 use Symfony\Component\Finder\Finder;
 
 /**

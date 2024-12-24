@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
+use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Cicada\Core\Test\Generator;
+use Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Cache\EntityCacheKeyGeneratorTest;
 use PhpParser\Node;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Name;
@@ -11,11 +16,6 @@ use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
-use Cicada\Core\System\SalesChannel\SalesChannelContext;
-use Cicada\Core\Test\Generator;
-use Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Cache\EntityCacheKeyGeneratorTest;
 
 /**
  * This PHPStan rule prevents the manual creation of a `SalesChannelContext`.

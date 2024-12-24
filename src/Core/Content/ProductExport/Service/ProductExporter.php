@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\ProductExport\Service;
 
-use Monolog\Level;
 use Cicada\Core\Content\ProductExport\Event\ProductExportLoggingEvent;
 use Cicada\Core\Content\ProductExport\Exception\ExportInvalidException;
 use Cicada\Core\Content\ProductExport\Exception\ExportNotFoundException;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Monolog\Level;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 #[Package('inventory')]

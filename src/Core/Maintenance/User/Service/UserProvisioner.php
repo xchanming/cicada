@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Maintenance\User\Service;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\PasswordField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\PasswordFieldSerializer;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\MaintenanceException;
+use Doctrine\DBAL\Connection;
 
 /**
  * @deprecated tag:v6.7.0 - reason:becomes-internal

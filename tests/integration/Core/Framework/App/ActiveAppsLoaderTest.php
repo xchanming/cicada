@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\ActiveAppsLoader;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

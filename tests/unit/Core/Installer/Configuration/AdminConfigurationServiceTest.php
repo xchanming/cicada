@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Configuration;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Installer\Configuration\AdminConfigurationService;
 use Cicada\Core\Test\Stub\Doctrine\FakeQueryBuilder;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

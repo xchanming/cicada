@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
@@ -39,6 +38,7 @@ use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
 use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

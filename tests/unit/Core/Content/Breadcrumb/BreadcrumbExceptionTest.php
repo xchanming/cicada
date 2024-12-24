@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Breadcrumb;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Breadcrumb\BreadcrumbException;
 use Cicada\Core\Content\Category\Exception\CategoryNotFoundException;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

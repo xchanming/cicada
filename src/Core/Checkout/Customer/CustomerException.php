@@ -16,10 +16,10 @@ use Cicada\Core\Checkout\Customer\Exception\CustomerWishlistNotFoundException;
 use Cicada\Core\Checkout\Customer\Exception\DuplicateWishlistProductException;
 use Cicada\Core\Checkout\Customer\Exception\InvalidImitateCustomerTokenException;
 use Cicada\Core\Checkout\Customer\Exception\PasswordPoliciesUpdatedException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('checkout')]

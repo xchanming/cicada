@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Migration\Core\V6_6;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Schema\ForeignKeyConstraint;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -17,6 +13,10 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineSt
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\System\StateMachine\StateMachineRegistry;
 use Cicada\Core\Test\TestDefaults;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Schema\ForeignKeyConstraint;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

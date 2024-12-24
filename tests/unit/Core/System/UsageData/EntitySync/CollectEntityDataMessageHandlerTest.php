@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\EntitySync;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\System\UsageData\EntitySync\CollectEntityDataMessage;
 use Cicada\Core\System\UsageData\EntitySync\CollectEntityDataMessageHandler;
 use Cicada\Core\System\UsageData\Services\EntityDispatchService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

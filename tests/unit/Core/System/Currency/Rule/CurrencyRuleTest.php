@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\Currency\Rule;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
 use Cicada\Core\Framework\Context;
@@ -14,6 +11,9 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\System\Currency\Rule\CurrencyRule;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

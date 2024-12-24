@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing\Processor;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Processor\AbstractListingProcessor;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Processor\CompositeListingProcessor;
 use Cicada\Core\Content\Product\SalesChannel\Listing\ProductListingResult;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

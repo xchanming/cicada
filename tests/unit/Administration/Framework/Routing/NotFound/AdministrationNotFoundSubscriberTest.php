@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Administration\Framework\Routing\NotFound;
 
+use Cicada\Administration\Framework\Routing\NotFound\AdministrationNotFoundSubscriber;
+use Cicada\Core\Kernel;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Administration\Framework\Routing\NotFound\AdministrationNotFoundSubscriber;
-use Cicada\Core\Kernel;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

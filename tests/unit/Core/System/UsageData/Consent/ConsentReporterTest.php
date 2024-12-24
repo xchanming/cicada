@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\Consent;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Authentication\StoreRequestOptionsProvider;
 use Cicada\Core\Framework\Store\Services\InstanceService;
@@ -12,6 +10,8 @@ use Cicada\Core\System\UsageData\Consent\ConsentState;
 use Cicada\Core\System\UsageData\Consent\ConsentStateChangedEvent;
 use Cicada\Core\System\UsageData\Services\ShopIdProvider;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\Exception\TransportException;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;

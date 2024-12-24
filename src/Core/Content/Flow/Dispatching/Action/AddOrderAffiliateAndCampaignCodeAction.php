@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Flow\Dispatching\Action;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Flow\Dispatching\DelayableAction;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Framework\Context;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

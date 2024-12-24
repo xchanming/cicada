@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Product;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Elasticsearch\Product\CustomFieldSetGateway;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

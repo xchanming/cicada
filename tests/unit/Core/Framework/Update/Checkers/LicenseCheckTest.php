@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Checkers;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Store\Services\StoreClient;
 use Cicada\Core\Framework\Update\Checkers\LicenseCheck;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

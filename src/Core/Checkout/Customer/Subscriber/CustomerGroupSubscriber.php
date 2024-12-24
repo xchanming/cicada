@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Customer\Subscriber;
 
-use Cocur\Slugify\SlugifyInterface;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroupTranslation\CustomerGroupTranslationCollection;
 use Cicada\Core\Content\Seo\SeoUrlPersister;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NandFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\Language\LanguageEntity;
+use Cocur\Slugify\SlugifyInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

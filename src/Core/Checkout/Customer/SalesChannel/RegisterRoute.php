@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Customer\SalesChannel;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressDefinition;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
@@ -54,6 +53,7 @@ use Cicada\Core\System\SalesChannel\StoreApiCustomFieldMapper;
 use Cicada\Core\System\Salutation\SalutationCollection;
 use Cicada\Core\System\Salutation\SalutationDefinition;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\Length;

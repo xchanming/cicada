@@ -2,8 +2,8 @@
 
 namespace Cicada\Core\System\StateMachine\Loader;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\Cache\CacheInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

@@ -2,9 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Schema\Column;
-use Doctrine\DBAL\Schema\Table;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\DefinitionNotFoundException;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\BoolField;
@@ -30,6 +27,9 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\VersionField;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayEntity;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Schema\Column;
+use Doctrine\DBAL\Schema\Table;
 use Symfony\Component\String\Inflector\EnglishInflector;
 
 /**

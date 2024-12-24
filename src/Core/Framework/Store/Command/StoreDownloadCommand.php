@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Command;
 
-use GuzzleHttp\Exception\ClientException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -18,6 +17,7 @@ use Cicada\Core\Framework\Store\Exception\StoreApiException;
 use Cicada\Core\Framework\Store\Services\StoreClient;
 use Cicada\Core\Framework\Store\StoreException;
 use Cicada\Core\System\User\UserCollection;
+use GuzzleHttp\Exception\ClientException;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

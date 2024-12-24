@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\Subscriber;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Registry\TaskRegistry;
 use Cicada\Core\Framework\MessageQueue\Subscriber\PluginLifecycleSubscriber;
 use Cicada\Core\Framework\Plugin\Event\PluginPostActivateEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostDeactivateEvent;
 use Cicada\Core\Framework\Plugin\Event\PluginPostUpdateEvent;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener;
 

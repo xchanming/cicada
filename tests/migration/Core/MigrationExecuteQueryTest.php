@@ -2,15 +2,15 @@
 
 namespace Cicada\Tests\Migration\Core;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationCollection;
 use Cicada\Core\Framework\Migration\MigrationCollectionLoader;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Migration\Test\NullConnection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

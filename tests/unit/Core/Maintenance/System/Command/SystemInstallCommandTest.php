@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Maintenance\System\Command;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\Maintenance\System\Command\SystemInstallCommand;
 use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
 use Cicada\Core\Maintenance\System\Service\SetupDatabaseAdapter;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\ConsoleEvents;

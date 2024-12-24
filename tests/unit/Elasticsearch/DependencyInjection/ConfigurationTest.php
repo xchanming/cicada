@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\DependencyInjection;
 
+use Cicada\Elasticsearch\DependencyInjection\Configuration;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\DependencyInjection\Configuration;
 
 /**
  * @internal

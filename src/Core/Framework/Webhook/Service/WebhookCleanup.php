@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Framework\Webhook\Service;
 
-use Doctrine\DBAL\Connection;
-use Psr\Clock\ClockInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Webhook\EventLog\WebhookEventLogDefinition;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
+use Psr\Clock\ClockInterface;
 use Symfony\Component\Clock\NativeClock;
 
 /**

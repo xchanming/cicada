@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Mail\Service;
 
-use Monolog\Level;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\MailTemplate\Exception\SalesChannelNotFoundException;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailBeforeSentEvent;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailBeforeValidateEvent;
@@ -25,6 +23,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Monolog\Level;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Part\DataPart;

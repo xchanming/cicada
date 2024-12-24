@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Order\Listener;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
@@ -29,6 +27,8 @@ use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineSt
 use Cicada\Core\System\StateMachine\Event\StateMachineStateChangeEvent;
 use Cicada\Core\System\StateMachine\StateMachineEntity;
 use Cicada\Core\System\StateMachine\Transition;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

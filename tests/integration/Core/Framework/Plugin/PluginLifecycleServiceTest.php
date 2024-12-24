@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Plugin;
 
-use Composer\IO\NullIO;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
@@ -39,6 +34,11 @@ use Cicada\Core\System\CustomEntity\CustomEntityLifecycleService;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntityPersister;
 use Cicada\Core\System\CustomEntity\Schema\CustomEntitySchemaUpdater;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Composer\IO\NullIO;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use SwagTestPlugin\Migration\Migration1536761533TestMigration;
 use SwagTestPlugin\SwagTestPlugin;
 use Symfony\Component\DependencyInjection\ContainerInterface;

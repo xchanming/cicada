@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Content\Sitemap\Service;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\Sitemap\Struct\Sitemap;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Asset\Package;
 
 #[\Cicada\Core\Framework\Log\Package('services-settings')]

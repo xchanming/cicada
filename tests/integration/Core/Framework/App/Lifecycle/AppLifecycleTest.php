@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle;
 
-use Doctrine\DBAL\Connection;
-use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
 use Cicada\Core\Content\Media\File\FileLoader;
@@ -57,6 +54,9 @@ use Cicada\Core\System\CustomField\CustomFieldEntity;
 use Cicada\Core\System\Locale\LocaleCollection;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
+use Doctrine\DBAL\Connection;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

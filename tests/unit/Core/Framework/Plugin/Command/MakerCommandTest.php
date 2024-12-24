@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\Command\MakerCommand;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\Generator\ScaffoldingGenerator;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\Plugin\Command\Scaffolding\ScaffoldingWriter;
 use Cicada\Core\Framework\Plugin\Command\Scaffolding\StubCollection;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Plugin\PluginService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;

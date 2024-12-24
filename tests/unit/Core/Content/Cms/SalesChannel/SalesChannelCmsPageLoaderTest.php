@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSection\CmsSectionCollection;
@@ -19,6 +17,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 

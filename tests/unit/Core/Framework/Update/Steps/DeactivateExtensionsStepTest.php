@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Update\Steps;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Store\Services\ExtensionLifecycleService;
 use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\Update\Services\ExtensionCompatibility;
 use Cicada\Core\Framework\Update\Steps\DeactivateExtensionsStep;
 use Cicada\Core\Framework\Update\Struct\Version;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

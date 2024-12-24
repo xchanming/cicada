@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Promotion\Cart;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CartDataCollectorInterface;
@@ -27,6 +26,7 @@ use Cicada\Core\Framework\Util\HtmlSanitizer;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Doctrine\DBAL\Connection;
 
 #[Package('buyers-experience')]
 class PromotionCollector implements CartDataCollectorInterface

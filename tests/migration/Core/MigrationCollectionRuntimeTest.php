@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Migration\Core;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Driver\Result;
-use Monolog\Logger;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\Migration\MigrationCollection;
 use Cicada\Core\Framework\Migration\MigrationCollectionLoader;
@@ -15,6 +10,11 @@ use Cicada\Core\Framework\Migration\MigrationSource;
 use Cicada\Core\Framework\Test\Migration\_test_migrations_valid_run_time\Migration1;
 use Cicada\Core\Framework\Test\Migration\MigrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Driver\Result;
+use Monolog\Logger;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Test\Integration\Traits;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Before;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
@@ -11,6 +9,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Before;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

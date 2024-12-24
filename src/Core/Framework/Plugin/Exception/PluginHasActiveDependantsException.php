@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Plugin\Exception;
 
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginEntity;
-use Cicada\Core\Framework\CicadaHttpException;
 
 #[Package('core')]
 class PluginHasActiveDependantsException extends CicadaHttpException

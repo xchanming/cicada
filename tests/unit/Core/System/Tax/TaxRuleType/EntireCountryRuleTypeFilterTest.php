@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\System\Tax\TaxRuleType;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleEntity;
 use Cicada\Core\System\Tax\Aggregate\TaxRuleType\TaxRuleTypeEntity;
 use Cicada\Core\System\Tax\TaxRuleType\EntireCountryRuleTypeFilter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

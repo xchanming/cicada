@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Sorting;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\Sorting\ProductSortingCollection;
 use Cicada\Core\Content\Product\SalesChannel\Sorting\ProductSortingEntity;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

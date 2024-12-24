@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Driver\PDO\Exception as DbalPdoException;
-use Doctrine\DBAL\Exception\TableNotFoundException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\AbstractRuleLoader;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -46,6 +40,12 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\Tag\TagCollection;
 use Cicada\Core\System\Tag\TagEntity;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Driver\PDO\Exception as DbalPdoException;
+use Doctrine\DBAL\Exception\TableNotFoundException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 

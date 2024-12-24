@@ -2,14 +2,6 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Product;
 
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\AfterClass;
-use PHPUnit\Framework\Attributes\BeforeClass;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Depends;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -32,6 +24,14 @@ use Cicada\Elasticsearch\Event\ElasticsearchCustomFieldsMappingEvent;
 use Cicada\Elasticsearch\Framework\ElasticsearchIndexingUtils;
 use Cicada\Elasticsearch\Product\ProductSearchQueryBuilder;
 use Cicada\Elasticsearch\Test\ElasticsearchTestTestBehaviour;
+use Doctrine\DBAL\ArrayParameterType;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\AfterClass;
+use PHPUnit\Framework\Attributes\BeforeClass;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

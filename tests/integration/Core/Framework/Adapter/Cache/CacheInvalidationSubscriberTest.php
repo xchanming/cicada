@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Adapter\Cache;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Events\InvalidateProductCache;
 use Cicada\Core\Content\Product\Events\ProductNoLongerAvailableEvent;
 use Cicada\Core\Content\Product\SalesChannel\Detail\CachedProductDetailRoute;
@@ -21,6 +18,9 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\DevOps\Test\Command;
 
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Struct\Collection;
+use Cicada\Core\Framework\Struct\Struct;
 use PHPStan\BetterReflection\BetterReflection;
 use PHPStan\BetterReflection\Reflector\DefaultReflector;
 use PHPStan\BetterReflection\SourceLocator\Type\SingleFileSourceLocator;
 use PHPUnit\TextUI\XmlConfiguration\Loader;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Struct\Collection;
-use Cicada\Core\Framework\Struct\Struct;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

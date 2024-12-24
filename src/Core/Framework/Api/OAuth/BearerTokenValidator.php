@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Log\Package;
 use League\OAuth2\Server\AuthorizationValidators\AuthorizationValidatorInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Cicada\Core\Framework\Log\Package;
 use Symfony\Bridge\PsrHttpMessage\HttpFoundationFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 

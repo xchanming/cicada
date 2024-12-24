@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Api\OAuth\User\User;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\UserEntityInterface;
 use League\OAuth2\Server\Repositories\UserRepositoryInterface;
-use Cicada\Core\Framework\Api\OAuth\User\User;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Uuid\Uuid;
 
 #[Package('core')]
 class UserRepository implements UserRepositoryInterface

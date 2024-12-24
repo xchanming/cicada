@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\Tag\Service;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
@@ -20,6 +19,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Tag\Service\FilterTagIdsService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

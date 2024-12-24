@@ -12,10 +12,10 @@ use Cicada\Core\Checkout\Order\Exception\EmptyCartException;
 use Cicada\Core\Checkout\Shipping\ShippingException;
 use Cicada\Core\Content\Flow\Exception\CustomerDeletedException;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('checkout')]

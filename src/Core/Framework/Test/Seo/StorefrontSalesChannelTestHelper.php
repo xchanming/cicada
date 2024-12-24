@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Test\Seo;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Defaults;
@@ -19,6 +18,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 use Symfony\Component\DependencyInjection\Container;
 

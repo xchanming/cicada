@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Storefront\Framework\Twig\Extension;
 
-use League\Flysystem\Filesystem;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Params\UrlParams;
 use Cicada\Core\Content\Media\Infrastructure\Path\MediaUrlGenerator;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Storefront\Framework\Twig\Extension\UrlEncodingTwigFilter;
+use League\Flysystem\Filesystem;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

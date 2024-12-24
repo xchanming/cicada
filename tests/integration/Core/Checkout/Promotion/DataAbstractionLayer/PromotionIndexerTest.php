@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Promotion\DataAbstractionLayer;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Promotion\DataAbstractionLayer\PromotionIndexer;
 use Cicada\Core\Checkout\Promotion\DataAbstractionLayer\PromotionIndexingMessage;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
@@ -18,6 +17,7 @@ use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

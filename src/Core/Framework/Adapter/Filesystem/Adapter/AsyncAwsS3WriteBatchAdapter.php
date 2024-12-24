@@ -4,10 +4,10 @@ namespace Cicada\Core\Framework\Adapter\Filesystem\Adapter;
 
 use AsyncAws\Core\Result;
 use AsyncAws\S3\S3Client;
-use League\Flysystem\AsyncAwsS3\AsyncAwsS3Adapter;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInput;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\WriteBatchInterface;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\AsyncAwsS3\AsyncAwsS3Adapter;
 
 #[Package('core')]
 class AsyncAwsS3WriteBatchAdapter extends AsyncAwsS3Adapter implements WriteBatchInterface

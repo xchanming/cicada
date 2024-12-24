@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Context;
@@ -34,6 +30,10 @@ use Cicada\Tests\Integration\Storefront\Theme\fixtures\PluginWithAdditionalBundl
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimplePlugin\SimplePlugin;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimplePluginWithoutCompilation\SimplePluginWithoutCompilation;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimpleTheme\SimpleTheme;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

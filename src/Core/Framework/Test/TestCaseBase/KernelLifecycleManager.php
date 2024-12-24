@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\Test\TestCaseBase;
 
-use Composer\Autoload\ClassLoader;
-use Doctrine\DBAL\Connection;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Database\MySQLFactory;
 use Cicada\Core\Framework\Adapter\Kernel\KernelFactory;
@@ -12,6 +10,8 @@ use Cicada\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
 use Cicada\Core\Framework\Test\Filesystem\Adapter\MemoryAdapterFactory;
 use Cicada\Core\Framework\Test\TestCaseHelper\TestBrowser;
 use Cicada\Core\Kernel;
+use Composer\Autoload\ClassLoader;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Contracts\Service\ResetInterface;
 

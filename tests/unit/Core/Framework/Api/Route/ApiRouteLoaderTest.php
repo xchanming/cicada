@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Route;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Route\ApiRouteLoader;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityWriteGateway;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

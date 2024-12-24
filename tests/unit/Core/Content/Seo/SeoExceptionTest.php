@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Seo;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Seo\SeoException;
 use Cicada\Core\Framework\Api\Exception\InvalidSalesChannelIdException;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

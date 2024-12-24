@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Dbal;
 
-use Doctrine\DBAL\Types\Type;
-use Doctrine\DBAL\Types\Types;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -68,6 +64,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriteGatewayInterface
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\DataAbstractionLayer\NumberRangeField;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use Doctrine\DBAL\Types\Type;
+use Doctrine\DBAL\Types\Types;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**

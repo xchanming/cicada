@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ImportExport\ScheduledTask;
 
-use League\Flysystem\FilesystemOperator;
 use Cicada\Core\Content\ImportExport\Message\DeleteFileHandler;
 use Cicada\Core\Content\ImportExport\Message\DeleteFileMessage;
 use Cicada\Core\Content\ImportExport\ScheduledTask\CleanupImportExportFileTaskHandler;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Tests\Integration\Core\Content\ImportExport\AbstractImportExportTestCase;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\TraceableMessageBus;
 

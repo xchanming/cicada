@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\Sync;
 
+use Cicada\Core\Framework\Api\ApiException;
+use Cicada\Core\Framework\Api\Sync\SyncOperation;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\ApiException;
-use Cicada\Core\Framework\Api\Sync\SyncOperation;
 
 /**
  * @internal

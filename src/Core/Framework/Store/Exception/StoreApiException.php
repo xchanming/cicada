@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Store\Exception;
 
-use GuzzleHttp\Exception\ClientException;
-use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Log\Package;
+use GuzzleHttp\Exception\ClientException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('checkout')]

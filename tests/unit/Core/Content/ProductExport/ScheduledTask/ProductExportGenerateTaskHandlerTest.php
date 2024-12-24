@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ProductExport\ScheduledTask;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
 use Cicada\Core\Content\ProductExport\ScheduledTask\ProductExportGenerateTaskHandler;
 use Cicada\Core\Framework\Context;
@@ -17,6 +13,10 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\Stub\MessageBus\CollectingMessageBus;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

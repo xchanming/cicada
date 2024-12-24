@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Sort;
 
+use Cicada\Elasticsearch\Sort\CountSort;
 use OpenSearchDSL\Sort\FieldSort;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Elasticsearch\Sort\CountSort;
 
 /**
  * @internal

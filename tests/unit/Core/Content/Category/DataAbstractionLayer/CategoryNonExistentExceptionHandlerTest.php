@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Category\DataAbstractionLayer;
 
+use Cicada\Core\Content\Category\CategoryException;
+use Cicada\Core\Content\Category\DataAbstractionLayer\CategoryNonExistentExceptionHandler;
+use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 use Doctrine\DBAL\Driver\PDO\PDOException;
 use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 use Doctrine\DBAL\Query;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Category\CategoryException;
-use Cicada\Core\Content\Category\DataAbstractionLayer\CategoryNonExistentExceptionHandler;
-use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 
 /**
  * @internal

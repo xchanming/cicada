@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Storage;
 
+use Cicada\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
 
 /**
  * @internal

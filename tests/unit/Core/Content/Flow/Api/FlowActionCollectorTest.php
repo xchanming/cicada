@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow\Api;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Flow\Api\FlowActionCollector;
 use Cicada\Core\Content\Flow\Api\FlowActionDefinition;
 use Cicada\Core\Content\Flow\Dispatching\Action\AddCustomerTagAction;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

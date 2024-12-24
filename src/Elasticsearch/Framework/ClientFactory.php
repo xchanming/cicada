@@ -4,10 +4,10 @@ namespace Cicada\Elasticsearch\Framework;
 
 use AsyncAws\Core\Configuration;
 use AsyncAws\Core\Credentials\ChainProvider;
+use Cicada\Core\Framework\Log\Package;
 use OpenSearch\Client;
 use OpenSearch\ClientBuilder;
 use Psr\Log\LoggerInterface;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class ClientFactory

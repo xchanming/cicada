@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Message;
 
-use League\Flysystem\FilesystemOperator;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Storefront\Theme\MD5ThemePathBuilder;
 use Cicada\Storefront\Theme\Message\DeleteThemeFilesHandler;
 use Cicada\Storefront\Theme\Message\DeleteThemeFilesMessage;
+use League\Flysystem\FilesystemOperator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

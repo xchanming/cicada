@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Payment\Cart;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStateHandler;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStates;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
@@ -13,6 +12,7 @@ use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 #[Package('checkout')]
 class PaymentRefundProcessor

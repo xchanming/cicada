@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -14,6 +13,7 @@ use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Page\Navigation\Error\ErrorPageLoadedEvent;
 use Cicada\Storefront\Page\Navigation\Error\ErrorPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

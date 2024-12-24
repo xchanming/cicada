@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Framework\Routing;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Content\Seo\SeoResolver;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
@@ -22,6 +19,9 @@ use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Framework\Routing\DomainLoader;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Framework\Routing\Router;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RequestContext;

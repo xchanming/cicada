@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\ImitateCustomerTokenGenerator;
 use Cicada\Core\Checkout\Customer\SalesChannel\AccountService;
 use Cicada\Core\Checkout\Customer\SalesChannel\ImitateCustomerRoute;
@@ -15,6 +13,8 @@ use Cicada\Core\Framework\Validation\DataValidator;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

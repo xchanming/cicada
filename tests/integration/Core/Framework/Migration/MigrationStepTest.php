@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Migration;
 
+use Cicada\Core\Framework\Migration\MigrationStep;
+use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Migration\MigrationStep;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 
 /**
  * @internal

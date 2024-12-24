@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\MessageQueue\Subscriber;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Increment\AbstractIncrementer;
 use Cicada\Core\Framework\Increment\IncrementGatewayRegistry;
 use Cicada\Core\Framework\Test\MessageQueue\fixtures\BarMessage;
@@ -10,6 +9,7 @@ use Cicada\Core\Framework\Test\MessageQueue\fixtures\FooMessage;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\QueueTestBehaviour;
 use Cicada\Tests\Integration\Core\Framework\MessageQueue\fixtures\NoHandlerMessage;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 /**

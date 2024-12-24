@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Webhook;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Webhook\Service\WebhookManager;
 use Cicada\Core\Framework\Webhook\WebhookCacheClearer;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\System\User\Recovery;
 
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -19,6 +17,8 @@ use Cicada\Core\System\User\Recovery\UserRecoveryRequestEvent;
 use Cicada\Core\System\User\Recovery\UserRecoveryService;
 use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\System\User\UserEntity;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Bench\Storefront;
 
-use PhpBench\Attributes\AfterMethods;
-use PhpBench\Attributes as Bench;
-use PhpBench\Attributes\BeforeMethods;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\PlatformRequest;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Page\Search\SearchPageLoader;
 use Cicada\Tests\Bench\AbstractBenchCase;
+use PhpBench\Attributes\AfterMethods;
+use PhpBench\Attributes as Bench;
+use PhpBench\Attributes\BeforeMethods;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

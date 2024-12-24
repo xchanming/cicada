@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Migration;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use PhpParser\Node;
 use PhpParser\Node\Arg;
@@ -14,7 +15,6 @@ use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
 use PHPStan\Type\ObjectType;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @implements Rule<MethodCall>

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Profiling\Controller;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Profiling\Doctrine\ConnectionProfiler;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Profiler\Profiler;
 use Symfony\Component\VarDumper\Cloner\Data;

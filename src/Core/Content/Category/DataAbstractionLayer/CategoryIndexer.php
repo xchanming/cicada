@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Category\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\Event\CategoryIndexerEvent;
@@ -19,6 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Indexing\TreeUpdater;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 

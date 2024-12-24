@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Serializer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Struct\Collection;
 use Cicada\Core\Framework\Struct\Serializer\StructNormalizer;
 use Cicada\Core\Framework\Struct\Struct;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
 
 /**

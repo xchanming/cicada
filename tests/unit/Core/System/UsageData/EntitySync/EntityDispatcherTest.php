@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\EntitySync;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
-use Psr\Clock\ClockInterface;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Store\Services\InstanceService;
@@ -13,6 +9,10 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\UsageData\EntitySync\EntityDispatcher;
 use Cicada\Core\System\UsageData\EntitySync\Operation;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
+use Psr\Clock\ClockInterface;
 use Symfony\Component\Clock\MockClock;
 use Symfony\Component\HttpClient\Exception\RedirectionException;
 use Symfony\Component\HttpClient\Exception\ServerException;

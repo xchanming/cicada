@@ -2,6 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\Command;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Struct\Collection;
 use PhpParser\Node\Expr\ClassConstFetch;
 use PhpParser\Node\NullableType;
 use PhpParser\Node\Stmt\ClassMethod;
@@ -11,9 +14,6 @@ use PhpParser\NodeFinder;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
 use PhpParser\ParserFactory;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Struct\Collection;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

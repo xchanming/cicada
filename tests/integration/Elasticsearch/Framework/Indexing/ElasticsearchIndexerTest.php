@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Elasticsearch\Framework\Indexing;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Test\TestCaseBase\BasicTestDataBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Elasticsearch\Framework\Indexing\ElasticsearchIndexer;
 use Cicada\Elasticsearch\Test\ElasticsearchTestTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

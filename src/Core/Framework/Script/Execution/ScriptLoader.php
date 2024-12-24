@@ -2,13 +2,13 @@
 
 namespace Cicada\Core\Framework\Script\Execution;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Cache\CacheCompressor;
 use Cicada\Core\Framework\App\Lifecycle\Persister\ScriptPersister;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Twig\Cache\FilesystemCache;

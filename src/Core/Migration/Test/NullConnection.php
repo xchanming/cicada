@@ -2,12 +2,12 @@
 
 namespace Cicada\Core\Migration\Test;
 
+use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Cache\QueryCacheProfile;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\MySQL80Platform;
 use Doctrine\DBAL\Result;
 use Doctrine\DBAL\Statement;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

@@ -8,10 +8,10 @@ use Cicada\Core\Checkout\Promotion\Exception\InvalidPriceDefinitionException;
 use Cicada\Core\Checkout\Promotion\Exception\PatternNotComplexEnoughException;
 use Cicada\Core\Checkout\Promotion\Exception\SetGroupNotFoundException;
 use Cicada\Core\Checkout\Promotion\Exception\UnknownPromotionDiscountTypeException;
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('buyers-experience')]

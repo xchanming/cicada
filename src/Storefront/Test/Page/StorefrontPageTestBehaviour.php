@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Test\Page;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
@@ -30,6 +29,7 @@ use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Page\PageLoadedEvent;
 use Cicada\Storefront\Pagelet\PageletLoadedEvent;
 use Cicada\Tests\Integration\Storefront\Page\StorefrontPageTestConstants;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\Event;

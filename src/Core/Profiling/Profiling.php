@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Profiling;
 
-use Composer\InstalledVersions;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Profiling\Compiler\RemoveDevServices;
+use Composer\InstalledVersions;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;

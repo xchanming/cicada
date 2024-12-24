@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Category\Validation;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\InsertCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\UpdateCommand;
@@ -11,6 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\PostWriteValidat
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;

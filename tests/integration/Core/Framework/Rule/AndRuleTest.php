@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Rule;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Content\Rule\RuleEntity;
 use Cicada\Core\Framework\Context;
@@ -14,6 +13,7 @@ use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Type;
 
 /**

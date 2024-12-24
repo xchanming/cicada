@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Document\Service;
 
-use GuzzleHttp\Psr7\Utils;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use setasign\Fpdi\Tfpdf\Fpdi;
 use Cicada\Core\Checkout\Document\Aggregate\DocumentType\DocumentTypeEntity;
 use Cicada\Core\Checkout\Document\DocumentCollection;
 use Cicada\Core\Checkout\Document\DocumentEntity;
@@ -20,6 +16,10 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
+use GuzzleHttp\Psr7\Utils;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use setasign\Fpdi\Tfpdf\Fpdi;
 
 /**
  * @internal

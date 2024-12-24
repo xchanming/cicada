@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Twig;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Twig\ConfigurableFilesystemCache;
 use Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy\NamespaceHierarchyBuilder;
 use Cicada\Core\Framework\Adapter\Twig\TemplateFinder;
 use Cicada\Core\Framework\Adapter\Twig\TemplateScopeDetector;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Twig\Cache\FilesystemCache;
 use Twig\Environment;
 use Twig\Error\LoaderError;

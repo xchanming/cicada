@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Feature;
 
-use Doctrine\DBAL\Exception\ConnectionException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Adapter\Storage\AbstractKeyValueStorage;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Feature\Event\BeforeFeatureFlagToggleEvent;
@@ -13,6 +9,10 @@ use Cicada\Core\Framework\Feature\Event\FeatureFlagToggledEvent;
 use Cicada\Core\Framework\Feature\FeatureException;
 use Cicada\Core\Framework\Feature\FeatureFlagRegistry;
 use Cicada\Core\Test\Stub\Framework\Adapter\Storage\ArrayKeyValueStorage;
+use Doctrine\DBAL\Exception\ConnectionException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

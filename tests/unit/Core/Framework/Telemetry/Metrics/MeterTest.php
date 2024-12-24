@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Telemetry\Metrics;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Constraint\Callback;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfig;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfigProvider;
@@ -17,6 +12,11 @@ use Cicada\Core\Framework\Telemetry\Metrics\Metric\Type;
 use Cicada\Core\Framework\Telemetry\Metrics\MetricTransportInterface;
 use Cicada\Core\Framework\Telemetry\Metrics\Transport\TransportCollection;
 use Cicada\Core\Framework\Telemetry\TelemetryException;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Constraint\Callback;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

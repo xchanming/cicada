@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Content\ProductExport\Service;
 
-use League\Flysystem\FilesystemOperator;
-use League\Flysystem\UnableToDeleteFile;
 use Cicada\Core\Content\ProductExport\ProductExportEntity;
 use Cicada\Core\Content\ProductExport\Struct\ExportBehavior;
 use Cicada\Core\Framework\Log\Package;
+use League\Flysystem\FilesystemOperator;
+use League\Flysystem\UnableToDeleteFile;
 
 #[Package('inventory')]
 class ProductExportFileHandler implements ProductExportFileHandlerInterface

@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing\Event;
 
+use Cicada\Core\Framework\Routing\Event\MaintenanceModeRequestEvent;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Routing\Event\MaintenanceModeRequestEvent;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

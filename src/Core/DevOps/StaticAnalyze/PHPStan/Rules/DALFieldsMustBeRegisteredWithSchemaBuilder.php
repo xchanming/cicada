@@ -2,6 +2,11 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
+use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;
@@ -9,11 +14,6 @@ use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\App\Cms\Xml;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Cms\CmsExtensions as CmsManifest;
 use Cicada\Core\Framework\App\Cms\Xml\Block;
 use Cicada\Core\Framework\App\Cms\Xml\DefaultConfig;
 use Cicada\Core\Framework\App\Cms\Xml\Slot;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

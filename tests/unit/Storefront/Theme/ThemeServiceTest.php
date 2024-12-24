@@ -2,13 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme;
 
-use Doctrine\DBAL\Connection;
-use League\Flysystem\Filesystem;
-use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Administration\Notification\NotificationService;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -33,6 +26,13 @@ use Cicada\Storefront\Theme\ThemeCompiler;
 use Cicada\Storefront\Theme\ThemeEntity;
 use Cicada\Storefront\Theme\ThemeService;
 use Cicada\Tests\Unit\Storefront\Theme\fixtures\ThemeFixtures;
+use Doctrine\DBAL\Connection;
+use League\Flysystem\Filesystem;
+use League\Flysystem\InMemory\InMemoryFilesystemAdapter;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Messenger\Envelope;
 use Symfony\Component\Messenger\MessageBus;

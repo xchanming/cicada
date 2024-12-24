@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Service\ScheduledTask;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Service\AllServiceInstaller;
 use Cicada\Core\Service\ScheduledTask\InstallServicesTaskHandler;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 
 /**
  * @internal

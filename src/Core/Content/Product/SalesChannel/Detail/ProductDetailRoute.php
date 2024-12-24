@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Product\SalesChannel\Detail;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Content\Category\Service\CategoryBreadcrumbBuilder;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\DataResolver\ResolverContext\EntityResolverContext;
@@ -28,6 +27,7 @@ use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;

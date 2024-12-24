@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\System\CustomEntity;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEventFactory;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\VersionManager;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomEntity\Schema\DynamicEntityDefinition;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\Aggregate\CmsBlock;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockEntity;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotCollection;
 use Cicada\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Cicada\Core\Framework\Uuid\Uuid;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

@@ -2,6 +2,8 @@
 
 namespace Cicada\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Feature;
+use Cicada\Core\Framework\Log\Package;
 use Lcobucci\JWT\Configuration;
 use Lcobucci\JWT\Signer\Key\InMemory;
 use Lcobucci\JWT\Signer\Rsa\Sha256;
@@ -11,8 +13,6 @@ use League\OAuth2\Server\Entities\ScopeEntityInterface;
 use League\OAuth2\Server\Entities\Traits\AccessTokenTrait;
 use League\OAuth2\Server\Entities\Traits\EntityTrait;
 use League\OAuth2\Server\Entities\Traits\RefreshTokenTrait;
-use Cicada\Core\Framework\Feature;
-use Cicada\Core\Framework\Log\Package;
 
 #[Package('core')]
 class AccessToken implements AccessTokenEntityInterface

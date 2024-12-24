@@ -2,11 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\UsageData\EntitySync;
 
-use Doctrine\DBAL\ConnectionException;
-use Monolog\Logger;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
-use Psr\Log\LoggerInterface;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\Log\Package;
@@ -18,6 +13,11 @@ use Cicada\Core\System\UsageData\EntitySync\IterateEntityMessageHandler;
 use Cicada\Core\System\UsageData\EntitySync\Operation;
 use Cicada\Core\System\UsageData\Services\EntityDefinitionService;
 use Cicada\Core\Test\Stub\MessageBus\CollectingMessageBus;
+use Doctrine\DBAL\ConnectionException;
+use Monolog\Logger;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException;
 
 /**

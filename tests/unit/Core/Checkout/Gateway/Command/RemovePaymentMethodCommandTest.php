@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Gateway\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Gateway\Command\RemovePaymentMethodCommand;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

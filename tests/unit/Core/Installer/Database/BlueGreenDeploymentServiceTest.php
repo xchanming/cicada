@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Database;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
+use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
+use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Result;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\DevOps\Environment\EnvironmentHelper;
-use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
-use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 

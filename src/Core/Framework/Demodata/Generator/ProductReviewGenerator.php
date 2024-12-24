@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Demodata\Generator;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Checkout\Customer\Service\ProductReviewCountService;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewDefinition;
 use Cicada\Core\Defaults;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Demodata\DemodataContext;
 use Cicada\Core\Framework\Demodata\DemodataGeneratorInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\Connection;
 
 /**
  * @internal

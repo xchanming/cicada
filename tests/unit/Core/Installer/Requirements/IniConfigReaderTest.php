@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Installer\Requirements;
 
+use Cicada\Core\Installer\Requirements\IniConfigReader;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Installer\Requirements\IniConfigReader;
 
 /**
  * @internal

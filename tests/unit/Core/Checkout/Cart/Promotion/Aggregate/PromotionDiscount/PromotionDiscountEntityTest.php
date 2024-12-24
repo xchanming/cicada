@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Cart\Promotion\Aggregate\PromotionDiscount;
 
+use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Checkout\Promotion\Aggregate\PromotionDiscount\PromotionDiscountEntity;
 
 /**
  * @internal

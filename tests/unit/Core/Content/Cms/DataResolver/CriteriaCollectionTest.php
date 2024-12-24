@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Cms\DataResolver;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Cms\DataResolver\CriteriaCollection;
 use Cicada\Core\Content\Cms\Exception\DuplicateCriteriaKeyException;
@@ -11,6 +9,8 @@ use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

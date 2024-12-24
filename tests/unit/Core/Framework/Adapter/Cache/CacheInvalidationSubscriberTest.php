@@ -2,12 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Adapter\Cache;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Event\MediaIndexerEvent;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidationSubscriber;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
@@ -22,6 +16,12 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\Snippet\SnippetDefinition;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedHook;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

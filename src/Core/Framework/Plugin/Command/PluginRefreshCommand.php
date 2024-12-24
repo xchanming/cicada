@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Plugin\Command;
 
-use Composer\IO\ConsoleIO;
 use Cicada\Core\Framework\Adapter\Console\CicadaStyle;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginService;
+use Composer\IO\ConsoleIO;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

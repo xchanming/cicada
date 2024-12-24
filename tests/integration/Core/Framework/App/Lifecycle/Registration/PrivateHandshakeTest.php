@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Lifecycle\Registration;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Lifecycle\Registration\PrivateHandshake;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Kernel;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

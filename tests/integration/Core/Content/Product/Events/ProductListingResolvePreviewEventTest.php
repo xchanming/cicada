@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\Events;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\Events\ProductListingResolvePreviewEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

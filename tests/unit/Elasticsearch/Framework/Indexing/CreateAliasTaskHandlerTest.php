@@ -2,16 +2,16 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\Indexing;
 
+use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
+use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
+use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTaskHandler;
+use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexAliasSwitchedEvent;
 use Doctrine\DBAL\Connection;
 use OpenSearch\Client;
 use OpenSearch\Namespaces\IndicesNamespace;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Elasticsearch\Framework\ElasticsearchHelper;
-use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTaskHandler;
-use Cicada\Elasticsearch\Framework\Indexing\Event\ElasticsearchIndexAliasSwitchedEvent;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

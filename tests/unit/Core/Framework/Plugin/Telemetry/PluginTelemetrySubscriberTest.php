@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Plugin\Telemetry;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Telemetry\PluginTelemetrySubscriber;
 use Cicada\Core\Framework\Telemetry\Metrics\Meter;
 use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

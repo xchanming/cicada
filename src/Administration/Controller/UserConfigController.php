@@ -2,7 +2,6 @@
 
 namespace Cicada\Administration\Controller;
 
-use Doctrine\DBAL\Connection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
@@ -17,6 +16,7 @@ use Cicada\Core\Framework\Util\Json;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigCollection;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigDefinition;
+use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

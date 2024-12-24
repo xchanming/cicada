@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Api\OAuth;
 
+use Cicada\Core\Framework\Api\OAuth\JWTConfigurationFactory;
+use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Lcobucci\JWT\Signer\Hmac\Sha256 as Hmac256;
 use Lcobucci\JWT\Signer\Rsa\Sha256 as Rsa256;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Api\OAuth\JWTConfigurationFactory;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 
 /**
  * @internal

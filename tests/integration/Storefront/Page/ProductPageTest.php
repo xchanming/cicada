@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Cms\Aggregate\CmsBlock\CmsBlockCollection;
 use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\DataResolver\FieldConfig;
@@ -17,6 +15,8 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Page\Product\ProductPageLoadedEvent;
 use Cicada\Storefront\Page\Product\ProductPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

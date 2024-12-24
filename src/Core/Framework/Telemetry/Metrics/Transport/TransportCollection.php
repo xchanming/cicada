@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework\Telemetry\Metrics\Transport;
 
-use IteratorAggregate;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\TransportConfigProvider;
 use Cicada\Core\Framework\Telemetry\Metrics\Factory\MetricTransportFactoryInterface;
 use Cicada\Core\Framework\Telemetry\Metrics\MetricTransportInterface;
+use IteratorAggregate;
 
 /**
  * @template MetricTransport of MetricTransportInterface

@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Log;
 
+use Cicada\Core\Framework\Log\ExceptionLogger;
+use Cicada\Core\Framework\Log\Package;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
-use Cicada\Core\Framework\Log\ExceptionLogger;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal

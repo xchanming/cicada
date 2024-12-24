@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Page\Account\Overview;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\SalesChannel\CustomerRoute;
 use Cicada\Core\Checkout\Order\OrderCollection;
@@ -27,6 +24,9 @@ use Cicada\Storefront\Page\GenericPageLoader;
 use Cicada\Storefront\Page\MetaInformation;
 use Cicada\Storefront\Page\Page;
 use Cicada\Storefront\Pagelet\Newsletter\Account\NewsletterAccountPageletLoader;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

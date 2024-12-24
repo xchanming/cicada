@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\Store\Api;
 
-use Composer\IO\NullIO;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\PluginNotAZipFileException;
@@ -12,6 +11,7 @@ use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Store\Services\AbstractExtensionLifecycle;
 use Cicada\Core\Framework\Store\Services\ExtensionDownloader;
 use Cicada\Core\Framework\Store\StoreException;
+use Composer\IO\NullIO;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;

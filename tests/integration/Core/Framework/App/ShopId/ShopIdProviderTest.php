@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\ShopId;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\App\Exception\AppUrlChangeDetectedException;
 use Cicada\Core\Framework\App\ShopId\ShopIdProvider;
 use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\AppSystemTestBehaviour;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

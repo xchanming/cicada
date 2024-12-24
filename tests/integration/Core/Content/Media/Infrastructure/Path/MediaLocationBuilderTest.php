@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Media\Infrastructure\Path;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Media\Core\Event\MediaLocationEvent;
 use Cicada\Core\Content\Media\Core\Event\ThumbnailLocationEvent;
 use Cicada\Core\Content\Media\Core\Params\MediaLocationStruct;
@@ -17,6 +13,10 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Test\Stub\EventDispatcher\AssertingEventDispatcher;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**

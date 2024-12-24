@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Integration\Core\Maintenance\System\Service;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
 use Cicada\Core\Maintenance\System\Service\SetupDatabaseAdapter;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

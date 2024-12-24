@@ -2,9 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Flow;
 
+use Cicada\Core\Content\Flow\Dispatching\TransactionFailedException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Content\Flow\Dispatching\TransactionFailedException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**

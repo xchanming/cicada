@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework;
 
-use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -12,6 +9,9 @@ use Cicada\Elasticsearch\Framework\AbstractElasticsearchDefinition;
 use Cicada\Elasticsearch\Framework\ElasticsearchFieldBuilder;
 use Cicada\Elasticsearch\Framework\ElasticsearchIndexingUtils;
 use Cicada\Tests\Unit\Core\System\Language\Stubs\StaticLanguageLoader;
+use Doctrine\DBAL\Connection;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 

@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\App\Payment;
 
-use GuzzleHttp\Exception\ServerException;
-use GuzzleHttp\Psr7\Response;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Payment\Cart\Token\JWTFactoryV2;
 use Cicada\Core\Checkout\Payment\Cart\Token\TokenStruct;
@@ -13,6 +11,8 @@ use Cicada\Core\Framework\App\Hmac\Guzzle\AuthMiddleware;
 use Cicada\Core\Framework\App\Payment\Response\PaymentResponse;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineTransition\StateMachineTransitionActions;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Psr7\Response;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

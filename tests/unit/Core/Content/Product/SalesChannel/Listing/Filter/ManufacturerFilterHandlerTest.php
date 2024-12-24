@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Product\SalesChannel\Listing\Filter;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Filter;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Filter\ManufacturerListingFilterHandler;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Metric\EntityAggregation;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

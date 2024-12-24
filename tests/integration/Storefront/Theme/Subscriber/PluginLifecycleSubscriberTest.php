@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Theme\Subscriber;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Migration\MigrationCollection;
 use Cicada\Core\Framework\Plugin;
@@ -21,6 +20,7 @@ use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\Subscriber\PluginLifecycleSubscriber;
 use Cicada\Storefront\Theme\ThemeLifecycleHandler;
 use Cicada\Storefront\Theme\ThemeLifecycleService;
+use PHPUnit\Framework\TestCase;
 use SwagTestPlugin\SwagTestPlugin;
 
 /**

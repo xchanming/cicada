@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\Api\Exception;
 
+use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\CicadaHttpException;
 
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use ApiException::unsupportedEncoderInput instead

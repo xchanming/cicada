@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\JWT\Constraints;
 
-use Lcobucci\JWT\Encoding\JoseEncoder;
-use Lcobucci\JWT\Token\Parser;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\JWT\Constraints\HasValidRSAJWKSignature;
 use Cicada\Core\Framework\JWT\JWTException;
 use Cicada\Core\Framework\JWT\Struct\JWKCollection;
 use Cicada\Core\Framework\Log\Package;
+use Lcobucci\JWT\Encoding\JoseEncoder;
+use Lcobucci\JWT\Token\Parser;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

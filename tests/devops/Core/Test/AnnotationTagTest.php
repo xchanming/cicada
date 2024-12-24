@@ -2,14 +2,14 @@
 
 namespace Cicada\Tests\DevOps\Core\Test;
 
-use Composer\InstalledVersions;
-use PHPUnit\Framework\Attributes\CoversNothing;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Test\AnnotationTagTester;
 use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Kernel;
+use Composer\InstalledVersions;
+use PHPUnit\Framework\Attributes\CoversNothing;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
 /**

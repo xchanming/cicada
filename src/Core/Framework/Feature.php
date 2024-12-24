@@ -2,11 +2,11 @@
 
 namespace Cicada\Core\Framework;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Feature\FeatureException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @phpstan-type FeatureFlagConfig array{name?: string, default?: boolean, major?: boolean, description?: string, active?: bool, static?: bool}

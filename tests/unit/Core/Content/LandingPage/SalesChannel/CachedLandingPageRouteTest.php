@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\Content\LandingPage\SalesChannel;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\LandingPage\Event\LandingPageRouteCacheKeyEvent;
 use Cicada\Core\Content\LandingPage\LandingPageEntity;
 use Cicada\Core\Content\LandingPage\SalesChannel\AbstractLandingPageRoute;
@@ -21,6 +18,9 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Generator;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\Cache\CacheInterface;
