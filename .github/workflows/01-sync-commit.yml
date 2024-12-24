@@ -10,8 +10,6 @@ on:
       - src/Storefront/**/*
       - src/Elasticsearch/**/*
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
   packages_split:
     runs-on: ubuntu-latest
