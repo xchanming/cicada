@@ -25,8 +25,7 @@ class AdminConfigurationService
             $user['username'],
             $user['password'],
             [
-                'firstName' => $user['firstName'],
-                'lastName' => $user['lastName'],
+                'name' => $user['name'],
                 'email' => $user['email'],
             ]
         );

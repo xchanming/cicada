@@ -27,8 +27,7 @@ class UserProvisionerTest extends TestCase
                 'user',
                 static::callback(static function (array $data) use ($localeId): bool {
                     static::assertSame('admin', $data['username']);
-                    static::assertSame('first', $data['first_name']);
-                    static::assertSame('last', $data['last_name']);
+                    static::assertSame('name', $data['name']);
                     static::assertSame('test@test.com', $data['email']);
                     static::assertSame($localeId, $data['locale_id']);
                     static::assertFalse($data['admin']);
@@ -44,8 +43,7 @@ class UserProvisionerTest extends TestCase
         );
 
         $user = [
-            'firstName' => 'first',
-            'lastName' => 'last',
+            'name' => 'name',
             'email' => 'test@test.com',
             'admin' => false,
         ];
