@@ -62,7 +62,7 @@ class ElasticsearchFieldBuilderTest extends TestCase
 
         $builder = new ElasticsearchFieldBuilder($languageLoader, $utils, [
             'en' => 'sw_english_analyzer',
-            'de' => 'sw_german_analyzer',
+            'zh' => 'sw_chinese_analyzer',
         ]);
 
         $result = $builder->translated(AbstractElasticsearchDefinition::SEARCH_FIELD);
@@ -73,7 +73,7 @@ class ElasticsearchFieldBuilderTest extends TestCase
                     'fields' => [
                         'search' => [
                             'type' => 'text',
-                            'analyzer' => 'sw_german_analyzer',
+                            'analyzer' => 'sw_chinese_analyzer',
                         ],
                         'ngram' => [
                             'type' => 'text',

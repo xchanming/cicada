@@ -195,7 +195,7 @@ class ShopConfiguratorTest extends TestCase
         $this->connection->expects(static::atLeast($methodCalls))->method('fetchAllKeyValue')->willReturnOnConsecutiveCalls($expectedStateTranslations, $expectedMissingTranslations);
 
         $this->connection->expects(static::exactly($expectedInsertCall))->method('insert')->willReturnCallback($insertCallback);
-        $this->shopConfigurator->setDefaultLanguage('de_DE');
+        $this->shopConfigurator->setDefaultLanguage('zh_CN');
     }
 
     /**

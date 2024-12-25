@@ -55,14 +55,14 @@ class ElasticsearchProductDefinitionTest extends TestCase
                     ],
                 ],
             ],
-            'lang_de' => [
+            'lang_zh' => [
                 'type' => 'keyword',
                 'ignore_above' => 10000,
                 'normalizer' => 'sw_lowercase_normalizer',
                 'fields' => [
                     'search' => [
                         'type' => 'text',
-                        'analyzer' => 'sw_german_analyzer',
+                        'analyzer' => 'sw_chinese_analyzer',
                     ],
                     'ngram' => [
                         'type' => 'text',
@@ -104,8 +104,8 @@ class ElasticsearchProductDefinitionTest extends TestCase
                 'parentId' => 'parentId',
                 'code' => 'en-GB',
             ],
-            'lang_de' => [
-                'id' => 'lang_de',
+            'lang_zh' => [
+                'id' => 'lang_zh',
                 'parentId' => 'parentId',
                 'code' => 'zh-CN',
             ],
@@ -113,7 +113,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
 
         $salesChannelLanguageLoader = new StaticSalesChannelLanguageLoader([
             'lang_en' => [TestDefaults::SALES_CHANNEL],
-            'lang_de' => [TestDefaults::SALES_CHANNEL],
+            'lang_zh' => [TestDefaults::SALES_CHANNEL],
         ]);
 
         $parameterBag = new ParameterBag([
@@ -128,7 +128,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
         $utils = new ElasticsearchIndexingUtils($connection, new EventDispatcher(), $parameterBag);
         $fieldBuilder = new ElasticsearchFieldBuilder($languageLoader, $utils, [
             'en' => 'sw_english_analyzer',
-            'de' => 'sw_german_analyzer',
+            'zh' => 'sw_chinese_analyzer',
         ]);
         $fieldMapper = new ElasticsearchFieldMapper($utils);
 
@@ -306,7 +306,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
                             'dynamic' => true,
                             'properties' => [],
                         ],
-                        'lang_de' => [
+                        'lang_zh' => [
                             'type' => 'object',
                             'dynamic' => true,
                             'properties' => [],
@@ -356,8 +356,8 @@ class ElasticsearchProductDefinitionTest extends TestCase
                 'parentId' => 'parentId',
                 'code' => 'en-GB',
             ],
-            'lang_de' => [
-                'id' => 'lang_de',
+            'lang_zh' => [
+                'id' => 'lang_zh',
                 'parentId' => 'parentId',
                 'code' => 'zh-CN',
             ],
@@ -365,7 +365,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
 
         $salesChannelLoader = new StaticSalesChannelLanguageLoader([
             'lang_en' => [TestDefaults::SALES_CHANNEL],
-            'lang_de' => [TestDefaults::SALES_CHANNEL],
+            'lang_zh' => [TestDefaults::SALES_CHANNEL],
         ]);
 
         $parameterBag = new ParameterBag([
@@ -399,11 +399,11 @@ class ElasticsearchProductDefinitionTest extends TestCase
         $customFields = $mapping['properties']['customFields'];
 
         static::assertArrayHasKey('lang_en', $customFields['properties']);
-        static::assertArrayHasKey('lang_de', $customFields['properties']);
+        static::assertArrayHasKey('lang_zh', $customFields['properties']);
         static::assertArrayHasKey('properties', $customFields['properties']['lang_en']);
-        static::assertArrayHasKey('properties', $customFields['properties']['lang_de']);
+        static::assertArrayHasKey('properties', $customFields['properties']['lang_zh']);
         static::assertArrayHasKey('test1', $customFields['properties']['lang_en']['properties']);
-        static::assertArrayHasKey('test1', $customFields['properties']['lang_de']['properties']);
+        static::assertArrayHasKey('test1', $customFields['properties']['lang_zh']['properties']);
         static::assertSame(
             [
                 'type' => 'keyword',
@@ -432,11 +432,11 @@ class ElasticsearchProductDefinitionTest extends TestCase
                     'ngram' => ['type' => 'text', 'analyzer' => 'sw_ngram_analyzer'],
                 ],
             ],
-            $customFields['properties']['lang_de']['properties']['test1']
+            $customFields['properties']['lang_zh']['properties']['test1']
         );
 
         static::assertArrayHasKey('test2', $customFields['properties']['lang_en']['properties']);
-        static::assertArrayHasKey('test2', $customFields['properties']['lang_de']['properties']);
+        static::assertArrayHasKey('test2', $customFields['properties']['lang_zh']['properties']);
         static::assertSame(
             [
                 'type' => 'keyword',
@@ -465,7 +465,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
                     'ngram' => ['type' => 'text', 'analyzer' => 'sw_ngram_analyzer'],
                 ],
             ],
-            $customFields['properties']['lang_de']['properties']['test2']
+            $customFields['properties']['lang_zh']['properties']['test2']
         );
     }
 
