@@ -45,7 +45,7 @@ class LastNameRuleTest extends TestCase
         $cart = new Cart('test');
 
         $customer = new CustomerEntity();
-        $customer->setLastName('ShopWare');
+        $customer->setLastName('cicada');
 
         $context = $this->createMock(SalesChannelContext::class);
 

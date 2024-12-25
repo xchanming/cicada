@@ -135,7 +135,7 @@ jobs:
           npm i -g @redocly/cli@latest @shopware/api-gen
           export STOREFRONT_ID=$(bin/console sales-channel:list --output json | jq -r '.[] | select(.name == "Storefront") | .id')
           export OPENAPI_ACCESS_KEY=$(mysql -u root -h 127.0.0.1 cicada -se "SELECT access_key FROM sales_channel WHERE id = UNHEX(\"${STOREFRONT_ID}\")";)
-          echo -e "OPENAPI_JSON_URL=http://localhost:8000\nSHOPWARE_ADMIN_USERNAME=admin\nSHOPWARE_ADMIN_PASSWORD=cicada\nOPENAPI_ACCESS_KEY=${OPENAPI_ACCESS_KEY}" > .env
+          echo -e "OPENAPI_JSON_URL=http://localhost:8000\nSHOPWARE_ADMIN_USERNAME=admin\nSHOPWARE_ADMIN_PASSWORD=12345678\nOPENAPI_ACCESS_KEY=${OPENAPI_ACCESS_KEY}" > .env
           cat .env
 
       - name: Generate & Lint OpenApi StoreAPI schema
