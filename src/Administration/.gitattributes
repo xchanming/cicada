@@ -9,3 +9,4 @@
 # Ignore all spec files
 /Resources/app/administration/**/*.spec.js export-ignore
 /Resources/app/administration/**/*.spec.ts export-ignore
+/LICENSE -diff
