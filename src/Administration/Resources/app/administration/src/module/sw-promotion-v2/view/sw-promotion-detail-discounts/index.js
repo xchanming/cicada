@@ -40,8 +40,7 @@ export default {
 
         discounts() {
             return (
-                Cicada.State.get('swPromotionDetail').promotion &&
-                Cicada.State.get('swPromotionDetail').promotion.discounts
+                Cicada.State.get('swPromotionDetail').promotion && Cicada.State.get('swPromotionDetail').promotion.discounts
             );
         },
     },

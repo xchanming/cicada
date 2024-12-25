@@ -44,10 +44,7 @@ Cicada.Component.register(
     'sw-promotion-v2-cart-condition-form',
     () => import('./component/sw-promotion-v2-cart-condition-form'),
 );
-Cicada.Component.register(
-    'sw-promotion-v2-empty-state-hero',
-    () => import('./component/sw-promotion-v2-empty-state-hero'),
-);
+Cicada.Component.register('sw-promotion-v2-empty-state-hero', () => import('./component/sw-promotion-v2-empty-state-hero'));
 Cicada.Component.register('sw-promotion-v2-rule-select', () => import('./component/sw-promotion-v2-rule-select'));
 Cicada.Component.register(
     'sw-promotion-v2-sales-channel-select',

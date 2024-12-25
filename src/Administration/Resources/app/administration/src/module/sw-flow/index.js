@@ -22,10 +22,7 @@ Cicada.Component.register('sw-flow-sequence-selector', () => import('./component
 Cicada.Component.register('sw-flow-sequence-action-error', () => import('./component/sw-flow-sequence-action-error'));
 Cicada.Component.register('sw-flow-rule-modal', () => import('./component/modals/sw-flow-rule-modal'));
 Cicada.Component.register('sw-flow-tag-modal', () => import('./component/modals/sw-flow-tag-modal'));
-Cicada.Component.register(
-    'sw-flow-set-order-state-modal',
-    () => import('./component/modals/sw-flow-set-order-state-modal'),
-);
+Cicada.Component.register('sw-flow-set-order-state-modal', () => import('./component/modals/sw-flow-set-order-state-modal'));
 Cicada.Component.register(
     'sw-flow-generate-document-modal',
     () => import('./component/modals/sw-flow-generate-document-modal'),

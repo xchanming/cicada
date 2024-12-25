@@ -25,10 +25,7 @@ export default () => {
         'sw-media-upload-v2',
         () => import('src/app/asyncComponent/media/sw-media-compact-upload-v2'),
     );
-    Cicada.Component.register(
-        'sw-media-entity-mapper',
-        () => import('src/app/asyncComponent/media/sw-media-entity-mapper'),
-    );
+    Cicada.Component.register('sw-media-entity-mapper', () => import('src/app/asyncComponent/media/sw-media-entity-mapper'));
     Cicada.Component.register('sw-media-field', () => import('src/app/asyncComponent/media/sw-media-field'));
     Cicada.Component.register(
         'sw-media-folder-content',
@@ -54,10 +51,7 @@ export default () => {
         () => import('src/app/asyncComponent/media/sw-media-modal-folder-settings'),
     );
     Cicada.Component.register('sw-media-modal-move', () => import('src/app/asyncComponent/media/sw-media-modal-move'));
-    Cicada.Component.register(
-        'sw-media-modal-replace',
-        () => import('src/app/asyncComponent/media/sw-media-modal-replace'),
-    );
+    Cicada.Component.register('sw-media-modal-replace', () => import('src/app/asyncComponent/media/sw-media-modal-replace'));
     Cicada.Component.register('sw-media-preview-v2', () => import('src/app/asyncComponent/media/sw-media-preview-v2'));
     Cicada.Component.extend(
         'sw-media-replace',

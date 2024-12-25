@@ -59,14 +59,14 @@ class UserEntity extends Entity
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
-    protected $firstName;
+    protected $name;
 
     /**
      * @var string
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
-    protected $lastName;
+    protected $phone;
 
     /**
      * @var string|null
@@ -273,26 +273,6 @@ class UserEntity extends Entity
         $this->password = $password;
     }
 
-    public function getFirstName(): string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): void
-    {
-        $this->lastName = $lastName;
-    }
-
     public function getEmail(): string
     {
         return $this->email;
@@ -479,5 +459,25 @@ class UserEntity extends Entity
     public function setTimeZone(string $timeZone): void
     {
         $this->timeZone = $timeZone;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): void
+    {
+        $this->phone = $phone;
     }
 }

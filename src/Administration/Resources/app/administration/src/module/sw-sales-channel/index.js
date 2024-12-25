@@ -18,18 +18,12 @@ import defaultSearchConfiguration from './default-search-configuration';
 const { Module } = Cicada;
 
 /* eslint-disable max-len, sw-deprecation-rules/private-feature-declarations */
-Cicada.Component.register(
-    'sw-sales-channel-defaults-select',
-    () => import('./component/sw-sales-channel-defaults-select'),
-);
+Cicada.Component.register('sw-sales-channel-defaults-select', () => import('./component/sw-sales-channel-defaults-select'));
 Cicada.Component.register('sw-sales-channel-modal', () => import('./component/sw-sales-channel-modal'));
 Cicada.Component.register('sw-sales-channel-modal-grid', () => import('./component/sw-sales-channel-modal-grid'));
 Cicada.Component.register('sw-sales-channel-modal-detail', () => import('./component/sw-sales-channel-modal-detail'));
 Cicada.Component.register('sw-sales-channel-detail-domains', () => import('./component/sw-sales-channel-detail-domains'));
-Cicada.Component.register(
-    'sw-sales-channel-detail-hreflang',
-    () => import('./component/sw-sales-channel-detail-hreflang'),
-);
+Cicada.Component.register('sw-sales-channel-detail-hreflang', () => import('./component/sw-sales-channel-detail-hreflang'));
 Cicada.Component.register('sw-sales-channel-detail', () => import('./page/sw-sales-channel-detail'));
 Cicada.Component.extend(
     'sw-sales-channel-create',

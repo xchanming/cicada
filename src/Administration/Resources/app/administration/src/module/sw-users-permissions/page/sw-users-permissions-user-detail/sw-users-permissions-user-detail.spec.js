@@ -66,8 +66,8 @@ async function createWrapper(
                                         return Promise.resolve({
                                             localeId: '7dc07b43229843d387bb5f59233c2d66',
                                             username: 'admin',
-                                            firstName: '',
-                                            lastName: 'admin',
+                                            name: '',
+                                            phone: '18000000000',
                                             email: 'info@cicada.com',
                                             accessKeys: {
                                                 entity: 'product',
@@ -209,8 +209,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
         await wrapper.setData({ isLoading: false });
         await flushPromises();
 
-        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-firstName');
-        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-lastName');
+        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-name');
+        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-phone');
         const fieldEmail = wrapper.findComponent('.sw-settings-user-detail__grid-eMail');
         const fieldUsername = wrapper.findComponent('.sw-settings-user-detail__grid-username');
         const fieldProfilePicture = wrapper.findComponent('.sw-settings-user-detail__grid-profile-picture');
@@ -239,16 +239,16 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
             user: {
                 localeId: '12345',
                 username: 'maxmuster',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
+                phone: '18000000000',
                 email: 'max@mustermann.com',
             },
             isLoading: false,
         });
         await flushPromises();
 
-        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-firstName');
-        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-lastName');
+        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-name');
+        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-phone');
         const fieldEmail = wrapper.findComponent('.sw-settings-user-detail__grid-eMail');
         const fieldUsername = wrapper.findComponent('.sw-settings-user-detail__grid-username');
         const fieldProfilePicture = wrapper.findComponent('.sw-settings-user-detail__grid-profile-picture');
@@ -279,8 +279,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
                 admin: true,
                 localeId: '12345',
                 username: 'maxmuster',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
+                phone: '18000000000',
                 email: 'max@mustermann.com',
             },
             isLoading: false,
@@ -302,8 +302,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
                 admin: false,
                 localeId: '12345',
                 username: 'maxmuster',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
+                phone: '18000000000',
                 email: 'max@mustermann.com',
             },
             isLoading: false,
@@ -321,8 +321,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
                 admin: false,
                 localeId: '12345',
                 username: 'maxmuster',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
+                phone: '18000000000',
                 email: 'max@mustermann.com',
             },
             integrations: [
@@ -331,8 +331,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
         });
         await flushPromises();
 
-        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-firstName');
-        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-lastName');
+        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-name');
+        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-phone');
         const fieldEmail = wrapper.findComponent('.sw-settings-user-detail__grid-eMail');
         const fieldUsername = wrapper.findComponent('.sw-settings-user-detail__grid-username');
         const fieldProfilePicture = wrapper.findComponent('.sw-settings-user-detail__grid-profile-picture');
@@ -361,8 +361,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
                 admin: false,
                 localeId: '12345',
                 username: 'maxmuster',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
+                phone: '18000000000',
                 email: 'max@mustermann.com',
             },
             integrations: [
@@ -370,8 +370,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
             ],
         });
 
-        const fieldFirstName = wrapper.find('.sw-settings-user-detail__grid-firstName');
-        const fieldLastName = wrapper.find('.sw-settings-user-detail__grid-lastName');
+        const fieldFirstName = wrapper.find('.sw-settings-user-detail__grid-name');
+        const fieldLastName = wrapper.find('.sw-settings-user-detail__grid-phone');
         const fieldEmail = wrapper.find('.sw-settings-user-detail__grid-eMail');
         const fieldUsername = wrapper.find('.sw-settings-user-detail__grid-username');
         const fieldProfilePicture = wrapper.find('.sw-settings-user-detail__grid-profile-picture');

@@ -17,8 +17,5 @@ Cicada.Service().register('liveSearchService', () => {
 
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 Cicada.Service().register('excludedSearchTermService', () => {
-    return new ExcludedSearchTermService(
-        Cicada.Application.getContainer('init').httpClient,
-        Cicada.Service('loginService'),
-    );
+    return new ExcludedSearchTermService(Cicada.Application.getContainer('init').httpClient, Cicada.Service('loginService'));
 });

@@ -7,15 +7,7 @@ import orderDetailStore from 'src/module/sw-order/state/order-detail.store';
  */
 
 function getCollection(entity, collection) {
-    return new EntityCollection(
-        `/${entity}`,
-        entity,
-        null,
-        { isCicadaContext: true },
-        collection,
-        collection.length,
-        null,
-    );
+    return new EntityCollection(`/${entity}`, entity, null, { isCicadaContext: true }, collection, collection.length, null);
 }
 
 const orderFixture = {

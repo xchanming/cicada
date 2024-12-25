@@ -9,10 +9,7 @@ const { Module } = Cicada;
 /* eslint-disable max-len, sw-deprecation-rules/private-feature-declarations */
 Cicada.Component.register('sw-settings-search', () => import('./page/sw-settings-search'));
 Cicada.Component.register('sw-settings-search-view-general', () => import('./view/sw-settings-search-view-general'));
-Cicada.Component.register(
-    'sw-settings-search-view-live-search',
-    () => import('./view/sw-settings-search-view-live-search'),
-);
+Cicada.Component.register('sw-settings-search-view-live-search', () => import('./view/sw-settings-search-view-live-search'));
 Cicada.Component.register(
     'sw-settings-search-search-behaviour',
     () => import('./component/sw-settings-search-search-behaviour'),
@@ -21,10 +18,7 @@ Cicada.Component.register(
     'sw-settings-search-searchable-content',
     () => import('./component/sw-settings-search-searchable-content'),
 );
-Cicada.Component.register(
-    'sw-settings-search-example-modal',
-    () => import('./component/sw-settings-search-example-modal'),
-);
+Cicada.Component.register('sw-settings-search-example-modal', () => import('./component/sw-settings-search-example-modal'));
 Cicada.Component.register(
     'sw-settings-search-searchable-content-general',
     () => import('./component/sw-settings-search-searchable-content-general'),

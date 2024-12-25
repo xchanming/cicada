@@ -21,10 +21,7 @@ Cicada.Component.register('sw-order-create-base', () => import('./view/sw-order-
 Cicada.Component.register('sw-order-create-initial', () => import('./view/sw-order-create-initial'));
 Cicada.Component.register('sw-order-create-general', () => import('./view/sw-order-create-general'));
 Cicada.Component.register('sw-order-create-details', () => import('./view/sw-order-create-details'));
-Cicada.Component.register(
-    'sw-order-nested-line-items-modal',
-    () => import('./component/sw-order-nested-line-items-modal'),
-);
+Cicada.Component.register('sw-order-nested-line-items-modal', () => import('./component/sw-order-nested-line-items-modal'));
 Cicada.Component.register('sw-order-nested-line-items-row', () => import('./component/sw-order-nested-line-items-row'));
 Cicada.Component.register('sw-order-line-items-grid', () => import('./component/sw-order-line-items-grid'));
 Cicada.Component.register(
@@ -54,10 +51,7 @@ Cicada.Component.register('sw-order-details-state-card', () => import('./compone
 Cicada.Component.register('sw-order-inline-field', () => import('./component/sw-order-inline-field'));
 Cicada.Component.register('sw-order-user-card', () => import('./component/sw-order-user-card'));
 Cicada.Component.register('sw-order-document-card', () => import('./component/sw-order-document-card'));
-Cicada.Component.register(
-    'sw-order-document-settings-modal',
-    () => import('./component/sw-order-document-settings-modal'),
-);
+Cicada.Component.register('sw-order-document-settings-modal', () => import('./component/sw-order-document-settings-modal'));
 Cicada.Component.extend(
     'sw-order-document-settings-invoice-modal',
     'sw-order-document-settings-modal',
@@ -104,10 +98,7 @@ Cicada.Component.register('sw-order-send-document-modal', () => import('./compon
 Cicada.Component.register('sw-order-create-initial-modal', () => import('./component/sw-order-create-initial-modal'));
 Cicada.Component.register('sw-order-customer-grid', () => import('./component/sw-order-customer-grid'));
 Cicada.Component.register('sw-order-create-options', () => import('./component/sw-order-create-options'));
-Cicada.Component.register(
-    'sw-order-customer-address-select',
-    () => import('./component/sw-order-customer-address-select'),
-);
+Cicada.Component.register('sw-order-customer-address-select', () => import('./component/sw-order-customer-address-select'));
 /* eslint-enable max-len, sw-deprecation-rules/private-feature-declarations */
 
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations

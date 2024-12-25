@@ -65,8 +65,8 @@
       },
       "user-grid": {
         "labelUsername": "User name",
-        "labelFirstName": "First name",
-        "labelLastName": "Last name",
+        "labelName": "Name",
+        "labelPhone": "Phone",
         "labelRoles": "Roles",
         "labelEmail": "Email address",
         "contextMenuEdit": "Edit",
@@ -90,8 +90,8 @@
       "user-detail": {
         "labelCard": "Basic information",
         "labelIntegrationsCard": "Integrations",
-        "labelFirstName": "First name",
-        "labelLastName": "Last name",
+        "labelName": "Name",
+        "labelPhone": "Phone",
         "labelEmail": "Email address",
         "errorEmailUsed": "This email address is already in use.",
         "errorUsernameUsed": "This username is already in use.",

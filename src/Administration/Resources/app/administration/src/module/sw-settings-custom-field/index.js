@@ -12,10 +12,7 @@ Cicada.Component.extend(
     () => import('./page/sw-settings-custom-field-set-create'),
 );
 Cicada.Component.register('sw-settings-custom-field-set-list', () => import('./page/sw-settings-custom-field-set-list'));
-Cicada.Component.register(
-    'sw-settings-custom-field-set-detail',
-    () => import('./page/sw-settings-custom-field-set-detail'),
-);
+Cicada.Component.register('sw-settings-custom-field-set-detail', () => import('./page/sw-settings-custom-field-set-detail'));
 Cicada.Component.register(
     'sw-custom-field-translated-labels',
     () => import('./component/sw-custom-field-translated-labels'),

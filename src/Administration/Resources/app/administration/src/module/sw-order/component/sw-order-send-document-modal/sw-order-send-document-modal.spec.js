@@ -124,9 +124,7 @@ const mockMailHeaderFooter = {
 const mockRepositoryFactory = (entity, mailTemplates) => {
     if (entity === 'mail_template') {
         return {
-            search: jest.fn(() =>
-                Promise.resolve(new EntityCollection('', '', Cicada.Context.api, null, mailTemplates, 2)),
-            ),
+            search: jest.fn(() => Promise.resolve(new EntityCollection('', '', Cicada.Context.api, null, mailTemplates, 2))),
             get: jest.fn((value) => Promise.resolve(mailTemplates.filter((mailTemplate) => mailTemplate.id === value)[0])),
         };
     }

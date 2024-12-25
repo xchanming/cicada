@@ -15,10 +15,7 @@ Cicada.Component.register(
     'sw-settings-listing-default-sales-channel',
     () => import('./component/sw-settings-listing-default-sales-channel'),
 );
-Cicada.Component.register(
-    'sw-settings-listing-delete-modal',
-    () => import('./component/sw-settings-listing-delete-modal'),
-);
+Cicada.Component.register('sw-settings-listing-delete-modal', () => import('./component/sw-settings-listing-delete-modal'));
 Cicada.Component.register(
     'sw-settings-listing-option-general-info',
     () => import('./component/sw-settings-listing-option-general-info'),

@@ -151,9 +151,7 @@ export default {
         },
 
         isDefault(languageId) {
-            return Cicada.Context.api.systemLanguageId
-                ? Cicada.Context.api.systemLanguageId.includes(languageId)
-                : false;
+            return Cicada.Context.api.systemLanguageId ? Cicada.Context.api.systemLanguageId.includes(languageId) : false;
         },
 
         tooltipDelete(languageId) {

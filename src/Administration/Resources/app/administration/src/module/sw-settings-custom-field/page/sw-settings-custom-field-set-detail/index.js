@@ -117,11 +117,7 @@ export default {
         },
 
         async loadEntityData() {
-            this.set = await this.customFieldSetRepository.get(
-                this.setId,
-                Cicada.Context.api,
-                this.customFieldSetCriteria,
-            );
+            this.set = await this.customFieldSetRepository.get(this.setId, Cicada.Context.api, this.customFieldSetCriteria);
         },
 
         saveFinish() {

@@ -21,8 +21,7 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
 
         $user = new UserEntity();
         $user->setId($userId);
-        $user->setFirstName('Manufacturer');
-        $user->setLastName('');
+        $user->setName('Manufacturer');
         $user->setPassword('password');
         $user->setUsername('user1');
         $user->setActive(true);
@@ -62,8 +61,7 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
                     'localeId' => null,
                     'avatarId' => null,
                     'username' => 'user1',
-                    'firstName' => 'Manufacturer',
-                    'lastName' => '',
+                    'name' => 'Manufacturer',
                     'email' => 'user1@shop.de',
                     'active' => true,
                     'customFields' => null,

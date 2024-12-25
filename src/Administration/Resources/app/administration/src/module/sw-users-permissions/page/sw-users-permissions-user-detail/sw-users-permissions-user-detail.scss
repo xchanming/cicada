@@ -22,11 +22,11 @@ $sw-field-help-color: $color-darkgray-200;
         grid-column-gap: 32px;
     }
 
-    .sw-settings-user-detail__grid-firstName {
+    .sw-settings-user-detail__grid-name {
         grid-area: FirstName;
     }
 
-    .sw-settings-user-detail__grid-lastName {
+    .sw-settings-user-detail__grid-phone {
         grid-area: LastName;
     }
 

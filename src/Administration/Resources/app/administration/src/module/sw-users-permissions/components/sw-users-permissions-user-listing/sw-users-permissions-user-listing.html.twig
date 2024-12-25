@@ -86,8 +86,7 @@
         <template #preview-username="{ item, compact }">
             <sw-avatar
                 :size="compact ? '32px' : '48px'"
-                :first-name="item.firstName"
-                :last-name="item.lastName"
+                :name="item.name"
                 variant="square"
                 :source-context="item"
             />

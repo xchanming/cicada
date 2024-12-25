@@ -11,10 +11,7 @@ const { currency } = Cicada.Utils.format;
 Cicada.Filter.register(
     'currency',
     (value: string | boolean, format: string, decimalPlaces: number, additionalOptions: CurrencyOptions) => {
-        if (
-            (!value || value === true) &&
-            (!Cicada.Utils.types.isNumber(value) || Cicada.Utils.types.isEqual(value, NaN))
-        ) {
+        if ((!value || value === true) && (!Cicada.Utils.types.isNumber(value) || Cicada.Utils.types.isEqual(value, NaN))) {
             return '-';
         }
 

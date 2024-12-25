@@ -273,11 +273,7 @@ export default class Repository<EntityName extends keyof EntitySchema.Entities> 
     /**
      * Detects changes of all provided entities and send the changes to the server
      */
-    async sync(
-        entities: EntityCollection<EntityName>,
-        context = Cicada.Context.api,
-        failOnError = true,
-    ): Promise<unknown> {
+    async sync(entities: EntityCollection<EntityName>, context = Cicada.Context.api, failOnError = true): Promise<unknown> {
         const { changeset, deletions } = this.getSyncChangeset(entities);
 
         if (!this.options.keepApiErrors) {

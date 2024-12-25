@@ -131,7 +131,7 @@ class UserListCommand extends Command
             'id' => $entity->getId(),
             'email' => $entity->getEmail(),
             'username' => $entity->getUsername(),
-            'name' => $entity->getFirstName() . ' ' . $entity->getLastName(),
+            'name' => $entity->getName(),
         ];
     }
 

@@ -81,12 +81,12 @@ export default {
                     label: this.$tc('sw-users-permissions.users.user-grid.labelUsername'),
                 },
                 {
-                    property: 'firstName',
-                    label: this.$tc('sw-users-permissions.users.user-grid.labelFirstName'),
+                    property: 'name',
+                    label: this.$tc('sw-users-permissions.users.user-grid.labelName'),
                 },
                 {
-                    property: 'lastName',
-                    label: this.$tc('sw-users-permissions.users.user-grid.labelLastName'),
+                    property: 'phone',
+                    label: this.$tc('sw-users-permissions.users.user-grid.labelPhone'),
                 },
                 {
                     property: 'aclRoles',
@@ -137,7 +137,7 @@ export default {
         },
 
         async onConfirmDelete(user) {
-            const username = `${user.firstName} ${user.lastName} `;
+            const username = `${user.name}`;
             const titleDeleteSuccess = this.$tc('global.default.success');
             const messageDeleteSuccess = this.$tc(
                 'sw-users-permissions.users.user-grid.notification.deleteSuccess.message',

@@ -75,8 +75,8 @@ export default {
 
     computed: {
         ...mapPropertyErrors('user', [
-            'firstName',
-            'lastName',
+            'name',
+            'phone',
             'email',
             'username',
             'localeId',

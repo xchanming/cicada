@@ -47,8 +47,8 @@ class UserListCommandTest extends TestCase
         /** @var StaticEntityRepository<UserCollection> $repo */
         $repo = new StaticEntityRepository([
             new UserCollection([
-                $this->createUser($ids->get('user1'), 'guy@cicada.com', 'guy', 'Guy', 'Marbello'),
-                $this->createUser($ids->get('user2'), 'jen@cicada.com', 'jen', 'Jen', 'Dalimil', ['Moderator', 'CS']),
+                $this->createUser($ids->get('user1'), 'guy@cicada.com', 'guy', 'Guy'),
+                $this->createUser($ids->get('user2'), 'jen@cicada.com', 'jen', 'Jen', ['Moderator', 'CS']),
             ]),
         ]);
 
@@ -60,8 +60,8 @@ class UserListCommandTest extends TestCase
 
         $output = $commandTester->getDisplay();
 
-        static::assertStringContainsString('Guy Marbello', $output);
-        static::assertStringContainsString('Jen Dalimil', $output);
+        static::assertStringContainsString('Guy', $output);
+        static::assertStringContainsString('Jen', $output);
     }
 
     public function testWithJson(): void
@@ -71,8 +71,8 @@ class UserListCommandTest extends TestCase
         /** @var StaticEntityRepository<UserCollection> $repo */
         $repo = new StaticEntityRepository([
             new UserCollection([
-                $this->createUser($ids->get('user1'), 'guy@cicada.com', 'guy', 'Guy', 'Marbello'),
-                $this->createUser($ids->get('user2'), 'jen@cicada.com', 'jen', 'Jen', 'Dalimil', ['Moderator', 'CS']),
+                $this->createUser($ids->get('user1'), 'guy@cicada.com', 'guy', 'Guy'),
+                $this->createUser($ids->get('user2'), 'jen@cicada.com', 'jen', 'Jen', ['Moderator', 'CS']),
             ]),
         ]);
 
@@ -85,8 +85,8 @@ class UserListCommandTest extends TestCase
         $output = $commandTester->getDisplay();
 
         static::assertTrue(json_validate($output));
-        static::assertStringContainsString('Guy Marbello', $output);
-        static::assertStringContainsString('Jen Dalimil', $output);
+        static::assertStringContainsString('Guy', $output);
+        static::assertStringContainsString('Jen', $output);
     }
 
     /**
@@ -96,8 +96,7 @@ class UserListCommandTest extends TestCase
         string $id,
         string $email,
         string $username,
-        string $firstName,
-        string $secondName,
+        string $name,
         ?array $roles = null,
     ): UserEntity {
         $user = new UserEntity();
@@ -105,8 +104,7 @@ class UserListCommandTest extends TestCase
         $user->setEmail($email);
         $user->setActive(true);
         $user->setUsername($username);
-        $user->setFirstName($firstName);
-        $user->setLastName($secondName);
+        $user->setName($name);
         $user->setAdmin($roles === null);
         $user->setCreatedAt(new \DateTime());
 

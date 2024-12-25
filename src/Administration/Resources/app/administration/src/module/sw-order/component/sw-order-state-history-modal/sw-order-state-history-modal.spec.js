@@ -6,15 +6,7 @@ import EntityCollection from 'src/core/data/entity-collection.data';
  */
 
 function getCollection(entity, collection) {
-    return new EntityCollection(
-        `/${entity}`,
-        entity,
-        null,
-        { isCicadaContext: true },
-        collection,
-        collection.length,
-        null,
-    );
+    return new EntityCollection(`/${entity}`, entity, null, { isCicadaContext: true }, collection, collection.length, null);
 }
 
 const stateHistoryFixture = [

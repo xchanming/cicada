@@ -17,10 +17,7 @@ Cicada.Component.register('sw-customer-detail-order', () => import('./view/sw-cu
 Cicada.Component.register('sw-customer-base-form', () => import('./component/sw-customer-base-form'));
 Cicada.Component.register('sw-customer-base-info', () => import('./component/sw-customer-base-info'));
 Cicada.Component.register('sw-customer-address-form', () => import('./component/sw-customer-address-form'));
-Cicada.Component.register(
-    'sw-customer-address-form-options',
-    () => import('./component/sw-customer-address-form-options'),
-);
+Cicada.Component.register('sw-customer-address-form-options', () => import('./component/sw-customer-address-form-options'));
 Cicada.Component.register('sw-customer-default-addresses', () => import('./component/sw-customer-default-addresses'));
 Cicada.Component.register(
     'sw-customer-imitate-customer-modal',

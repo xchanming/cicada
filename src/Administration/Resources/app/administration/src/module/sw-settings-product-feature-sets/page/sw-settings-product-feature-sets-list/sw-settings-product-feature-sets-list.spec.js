@@ -77,9 +77,7 @@ async function createWrapper(additionalOptions = {}, privileges = []) {
                     repositoryFactory: {
                         create: () => ({
                             search: () =>
-                                Promise.resolve(
-                                    new EntityCollection('', '', Cicada.Context.api, new Criteria(1, 1), [], 0),
-                                ),
+                                Promise.resolve(new EntityCollection('', '', Cicada.Context.api, new Criteria(1, 1), [], 0)),
                         }),
                     },
                     validationService: {},

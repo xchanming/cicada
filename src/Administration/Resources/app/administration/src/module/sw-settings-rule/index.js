@@ -26,10 +26,7 @@ Cicada.Component.extend('sw-settings-rule-tree', 'sw-tree', () => import('./comp
 Cicada.Component.register('sw-settings-rule-list', () => import('./page/sw-settings-rule-list'));
 Cicada.Component.register('sw-settings-rule-detail', () => import('./page/sw-settings-rule-detail'));
 Cicada.Component.register('sw-settings-rule-detail-base', () => import('./view/sw-settings-rule-detail-base'));
-Cicada.Component.register(
-    'sw-settings-rule-detail-assignments',
-    () => import('./view/sw-settings-rule-detail-assignments'),
-);
+Cicada.Component.register('sw-settings-rule-detail-assignments', () => import('./view/sw-settings-rule-detail-assignments'));
 /* eslint-enable max-len, sw-deprecation-rules/private-feature-declarations */
 
 /**

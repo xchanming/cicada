@@ -21,14 +21,8 @@ Cicada.Component.register(
 );
 Cicada.Component.register('sw-first-run-wizard-plugins', () => import('./view/sw-first-run-wizard-plugins'));
 Cicada.Component.register('sw-first-run-wizard-cicada-base', () => import('./view/sw-first-run-wizard-cicada-base'));
-Cicada.Component.register(
-    'sw-first-run-wizard-cicada-account',
-    () => import('./view/sw-first-run-wizard-cicada-account'),
-);
-Cicada.Component.register(
-    'sw-first-run-wizard-cicada-domain',
-    () => import('./view/sw-first-run-wizard-cicada-domain'),
-);
+Cicada.Component.register('sw-first-run-wizard-cicada-account', () => import('./view/sw-first-run-wizard-cicada-account'));
+Cicada.Component.register('sw-first-run-wizard-cicada-domain', () => import('./view/sw-first-run-wizard-cicada-domain'));
 Cicada.Component.register('sw-first-run-wizard-defaults', () => import('./view/sw-first-run-wizard-defaults'));
 Cicada.Component.register('sw-first-run-wizard-store', () => import('./view/sw-first-run-wizard-store'));
 Cicada.Component.register('sw-first-run-wizard-finish', () => import('./view/sw-first-run-wizard-finish'));

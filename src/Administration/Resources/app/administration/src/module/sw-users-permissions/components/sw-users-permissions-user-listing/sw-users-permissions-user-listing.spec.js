@@ -81,12 +81,12 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
                 label: 'sw-users-permissions.users.user-grid.labelUsername',
             },
             {
-                property: 'firstName',
-                label: 'sw-users-permissions.users.user-grid.labelFirstName',
+                property: 'name',
+                label: 'sw-users-permissions.users.user-grid.labelName',
             },
             {
-                property: 'lastName',
-                label: 'sw-users-permissions.users.user-grid.labelLastName',
+                property: 'phone',
+                label: 'sw-users-permissions.users.user-grid.labelPhone',
             },
             {
                 property: 'aclRoles',
@@ -109,15 +109,15 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
                 {
                     localeId: '12345',
                     username: 'maxmuster',
-                    firstName: 'Max',
-                    lastName: 'Mustermann',
+                    name: 'Max',
+                    phone: '18000000000',
                     email: 'max@mustermann.com',
                 },
                 {
                     localeId: '7dc07b43229843d387bb5f59233c2d66',
                     username: 'admin',
-                    firstName: '',
-                    lastName: 'admin',
+                    name: 'admin',
+                    phone: null,
                     email: 'info@cicada.com',
                 },
             ],
@@ -127,15 +127,15 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
             {
                 localeId: '12345',
                 username: 'maxmuster',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
+                phone: '18000000000',
                 email: 'max@mustermann.com',
             },
             {
                 localeId: '7dc07b43229843d387bb5f59233c2d66',
                 username: 'admin',
-                firstName: '',
-                lastName: 'admin',
+                name: 'admin',
+                phone: '',
                 email: 'info@cicada.com',
             },
         ]);
