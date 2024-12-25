@@ -168,7 +168,7 @@ SQL;
         foreach ($parameters as $parameter) {
             RetryableQuery::retryable($this->connection, function () use ($parameter): void {
                 $this->connection->executeStatement(
-                    'UPDATE newsletter_recipient SET email = (:email), first_name = (:name) WHERE id IN (:ids)',
+                    'UPDATE newsletter_recipient SET email = (:email), name = (:name) WHERE id IN (:ids)',
                     [
                         'ids' => Uuid::fromHexToBytesList($parameter['newsletter_ids']),
                         'email' => $parameter['email'],

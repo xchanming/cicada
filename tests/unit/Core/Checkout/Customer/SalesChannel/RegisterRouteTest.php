@@ -669,8 +669,7 @@ class RegisterRouteTest extends TestCase
             'email' => 'test@test.de',
             'billingAddress' => [
                 'countryId' => $countryId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'salutationId' => $salutationId,
             ],
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
@@ -680,8 +679,9 @@ class RegisterRouteTest extends TestCase
                 'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             ],
             'salutationId' => $salutationId,
-            'lastName' => 'Mustermann',
-            'firstName' => 'Max',
+            'username' => 'Mustermann',
+            'nickname' => 'Mustermann',
+            'name' => 'Max',
             'vatIds' => ['123'],
             'storefrontUrl' => 'foo',
         ];
@@ -782,8 +782,7 @@ class RegisterRouteTest extends TestCase
         $data = [
             'email' => 'test@test.de',
             'billingAddress' => [
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Mustermann',
                 'salutationId' => $salutationId,
             ],
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
@@ -792,8 +791,9 @@ class RegisterRouteTest extends TestCase
                 'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             ],
             'salutationId' => $salutationId,
-            'lastName' => 'Mustermann',
-            'firstName' => 'Max',
+            'name' => 'Mustermann',
+            'username' => 'Max',
+            'nickname' => 'Max',
             'storefrontUrl' => 'foo',
         ];
 

@@ -61,14 +61,6 @@ class ContactFormValidationFactory implements DataValidationFactoryInterface
             ]));
         }
 
-        $required = $this->systemConfigService->get('core.basicInformation.lastNameFieldRequired', $context->getSalesChannel()->getId());
-        if ($required) {
-            $definition->set('lastName', new NotBlank(), new Regex([
-                'pattern' => self::DOMAIN_NAME_REGEX,
-                'match' => false,
-            ]));
-        }
-
         $required = $this->systemConfigService->get('core.basicInformation.phoneNumberFieldRequired', $context->getSalesChannel()->getId());
         if ($required) {
             $definition->add('phone', new NotBlank());

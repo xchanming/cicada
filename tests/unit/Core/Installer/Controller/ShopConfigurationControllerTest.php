@@ -145,10 +145,8 @@ class ShopConfigurationControllerTest extends TestCase
 
         $request->request->set('config_admin_email', 'test@test.com');
         $request->request->set('config_admin_username', 'admin');
-        $request->request->set('config_admin_firstName', 'first');
-        $request->request->set('config_admin_lastName', 'last');
+        $request->request->set('config_admin_name', 'first');
         $request->request->set('config_admin_password', '12345678');
-
         $request->request->set('config_shop_language', 'zh-CN');
         $request->request->set('config_shop_currency', 'CNY');
         $request->request->set('config_shop_country', 'CHN');
@@ -181,8 +179,7 @@ class ShopConfigurationControllerTest extends TestCase
         $expectedAdmin = [
             'email' => 'test@test.com',
             'username' => 'admin',
-            'firstName' => 'first',
-            'lastName' => 'last',
+            'name' => 'first',
             'password' => '12345678',
             'locale' => 'zh-CN',
         ];

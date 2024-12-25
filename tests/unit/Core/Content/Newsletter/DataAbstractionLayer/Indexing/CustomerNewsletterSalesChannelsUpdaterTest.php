@@ -25,8 +25,7 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
         $connection->method('fetchAllAssociative')->willReturn([
             [
                 'email' => 'y.tran@cicada.com',
-                'last_name' => 'Tran',
-                'first_name' => 'Y',
+                'name' => 'Y',
                 'newsletter_sales_channel_ids' => $newsletterIds,
             ],
         ]);
@@ -46,14 +45,13 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
             'newsletterIds' => json_encode([Uuid::randomHex() => Uuid::randomHex()], \JSON_THROW_ON_ERROR),
             function (MockObject $connection, ?array $ids): void {
                 $connection->expects(static::once())->method('executeStatement')->willReturnCallback(function ($sql, $params) use ($ids): void {
-                    static::assertSame('UPDATE newsletter_recipient SET email = (:email), first_name = (:firstName), last_name = (:lastName) WHERE id IN (:ids)', $sql);
+                    static::assertSame('UPDATE newsletter_recipient SET email = (:email), name = (:name) WHERE id IN (:ids)', $sql);
 
                     static::assertNotNull($ids);
                     static::assertSame([
                         'ids' => Uuid::fromHexToBytesList($ids),
                         'email' => 'y.tran@cicada.com',
-                        'firstName' => 'Y',
-                        'lastName' => 'Tran',
+                        'name' => 'Y',
                     ], $params);
                 });
             },
@@ -63,14 +61,13 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
             'newsletterIds' => json_encode([Uuid::randomHex() => Uuid::randomHex(), Uuid::randomHex() => Uuid::randomHex()], \JSON_THROW_ON_ERROR),
             function (MockObject $connection, ?array $ids): void {
                 $connection->expects(static::once())->method('executeStatement')->willReturnCallback(function ($sql, $params) use ($ids): void {
-                    static::assertSame('UPDATE newsletter_recipient SET email = (:email), first_name = (:firstName), last_name = (:lastName) WHERE id IN (:ids)', $sql);
+                    static::assertSame('UPDATE newsletter_recipient SET email = (:email), name = (:name) WHERE id IN (:ids)', $sql);
 
                     static::assertNotNull($ids);
                     static::assertSame([
                         'ids' => Uuid::fromHexToBytesList($ids),
                         'email' => 'y.tran@cicada.com',
-                        'firstName' => 'Y',
-                        'lastName' => 'Tran',
+                        'name' => 'Y',
                     ], $params);
                 });
             },

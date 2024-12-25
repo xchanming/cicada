@@ -162,7 +162,7 @@ class DispatchEntitiesQueryBuilderTest extends TestCase
 
         static::assertCount(1, $this->queryHelper->getQueryBuilder()->getQueryPart('select'));
         static::assertSame(
-            'SHA2(CONCAT(LOWER(`first_name`), LOWER(`last_name`), LOWER(`email`)), 512) AS `puid`',
+            'SHA2(CONCAT(LOWER(`name`), LOWER(`email`)), 512) AS `puid`',
             $this->queryHelper->getQueryBuilder()->getQueryPart('select')[0],
         );
     }

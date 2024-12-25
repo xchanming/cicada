@@ -112,14 +112,7 @@
 
             <hr>
 
-            <p>
-                <label for="config_admin_email">{{ "cicada.installer.configuration_admin_mail"|trans }}</label>
-                <input type="email"
-                       value="{{ parameters.config_admin_email ?? '' }}"
-                       name="config_admin_email"
-                       id="config_admin_email"
-                       required="required"/>
-            </p>
+
 
             <div class="form-group form-group--50">
                 <p>
@@ -132,11 +125,11 @@
                 </p>
 
                 <p>
-                    <label for="config_admin_phone">{{ "cicada.installer.configuration_admin_lastPhone"|trans }}</label>
-                    <input type="text"
-                           value="{{ parameters.config_admin_lastPhone ?? '' }}"
-                           name="config_admin_phone"
-                           id="config_admin_phone"
+                    <label for="config_admin_email">{{ "cicada.installer.configuration_admin_mail"|trans }}</label>
+                    <input type="email"
+                           value="{{ parameters.config_admin_email ?? '' }}"
+                           name="config_admin_email"
+                           id="config_admin_email"
                            required="required"/>
                 </p>
             </div>

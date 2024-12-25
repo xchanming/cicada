@@ -190,10 +190,9 @@ class NewsletterSubscribeRouteTest extends TestCase
             [
                 'email' => 'test@example.com',
                 'option' => 'direct',
-                'firstName' => 'Y http://localhost',
-                'lastName' => 'Tran http://localhost',
+                'name' => 'Y http://localhost',
             ],
-            ['firstName' => 'Y http://localhost', 'lastName' => 'Tran http://localhost'],
+            ['name' => 'Y http://localhost'],
             [
                 new NotBlank(),
                 new Regex([
@@ -207,10 +206,9 @@ class NewsletterSubscribeRouteTest extends TestCase
             [
                 'email' => 'test@example.com',
                 'option' => 'direct',
-                'firstName' => 'Y',
-                'lastName' => 'Tran',
+                'name' => 'Y',
             ],
-            ['firstName' => 'Y', 'lastName' => 'Tran'],
+            ['name' => 'Y'],
             [
                 new NotBlank(),
                 new Regex([

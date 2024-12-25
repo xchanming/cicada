@@ -60,16 +60,14 @@ class ContactFormServiceTest extends TestCase
         $this->addEventListener($dispatcher, $validationEventName, $validationListenerClosure);
 
         $systemConfig = static::getContainer()->get(SystemConfigService::class);
-        $systemConfig->set('core.basicInformation.firstNameFieldRequired', true);
-        $systemConfig->set('core.basicInformation.lastNameFieldRequired', true);
+        $systemConfig->set('core.basicInformation.nameFieldRequired', true);
         $systemConfig->set('core.basicInformation.phoneNumberFieldRequired', true);
         $systemConfig->set('core.basicInformation.email', 'doNotReply@example.com');
 
         $dataBag = new DataBag();
         $dataBag->add([
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => 'Firstname',
             'email' => 'test@cicada.com',
             'phone' => '12345/6789',
             'subject' => 'Subject',
@@ -85,7 +83,7 @@ class ContactFormServiceTest extends TestCase
         static::assertTrue($validationEventDidRun, "The $validationEventName Event did not run");
     }
 
-    public function testContactFormFirstNameRequiredException(): void
+    public function testContactFormNameRequiredException(): void
     {
         /** @var AbstractSalesChannelContextFactory $salesChannelContextFactory */
         $salesChannelContextFactory = static::getContainer()->get(SalesChannelContextFactory::class);
@@ -105,56 +103,13 @@ class ContactFormServiceTest extends TestCase
         $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
 
         $systemConfig = static::getContainer()->get(SystemConfigService::class);
-        $systemConfig->set('core.basicInformation.firstNameFieldRequired', true);
-        $systemConfig->set('core.basicInformation.lastNameFieldRequired', false);
+        $systemConfig->set('core.basicInformation.nameFieldRequired', true);
         $systemConfig->set('core.basicInformation.phoneNumberFieldRequired', false);
 
         $dataBag = new DataBag();
         $dataBag->add([
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => '',
-            'lastName' => 'Lastname',
-            'email' => 'test@cicada.com',
-            'phone' => '12345/6789',
-            'subject' => 'Subject',
-            'comment' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-        ]);
-
-        static::expectException(ConstraintViolationException::class);
-        $this->contactFormRoute->load($dataBag->toRequestDataBag(), $context);
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-    }
-
-    public function testContactFormLastNameRequiredException(): void
-    {
-        /** @var AbstractSalesChannelContextFactory $salesChannelContextFactory */
-        $salesChannelContextFactory = static::getContainer()->get(SalesChannelContextFactory::class);
-        $context = $salesChannelContextFactory->create(Uuid::randomHex(), TestDefaults::SALES_CHANNEL);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit): void {
-            $eventDidRun = true;
-            $phpunit->assertStringContainsString('Contact email address: test@cicada.com', $event->getContents()['text/html']);
-            $phpunit->assertStringContainsString('Lorem ipsum dolor sit amet', $event->getContents()['text/html']);
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $systemConfig = static::getContainer()->get(SystemConfigService::class);
-        $systemConfig->set('core.basicInformation.firstNameFieldRequired', false);
-        $systemConfig->set('core.basicInformation.lastNameFieldRequired', true);
-        $systemConfig->set('core.basicInformation.phoneNumberFieldRequired', false);
-
-        $dataBag = new DataBag();
-        $dataBag->add([
-            'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Firstname',
-            'lastName' => '',
+            'name' => '',
             'email' => 'test@cicada.com',
             'phone' => '12345/6789',
             'subject' => 'Subject',
@@ -187,15 +142,13 @@ class ContactFormServiceTest extends TestCase
         $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
 
         $systemConfig = static::getContainer()->get(SystemConfigService::class);
-        $systemConfig->set('core.basicInformation.firstNameFieldRequired', false);
-        $systemConfig->set('core.basicInformation.lastNameFieldRequired', false);
+        $systemConfig->set('core.basicInformation.nameFieldRequired', false);
         $systemConfig->set('core.basicInformation.phoneNumberFieldRequired', true);
 
         $dataBag = new DataBag();
         $dataBag->add([
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => '',
             'email' => 'test@cicada.com',
             'phone' => '',
             'subject' => 'Subject',
@@ -228,15 +181,13 @@ class ContactFormServiceTest extends TestCase
         $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
 
         $systemConfig = static::getContainer()->get(SystemConfigService::class);
-        $systemConfig->set('core.basicInformation.firstNameFieldRequired', false);
-        $systemConfig->set('core.basicInformation.lastNameFieldRequired', false);
+        $systemConfig->set('core.basicInformation.nameFieldRequired', false);
         $systemConfig->set('core.basicInformation.phoneNumberFieldRequired', false);
 
         $dataBag = new DataBag();
         $dataBag->add([
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => '',
-            'lastName' => '',
+            'name' => '',
             'email' => 'test@cicada.com',
             'phone' => '',
             'subject' => 'Subject',
