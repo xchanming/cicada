@@ -24,7 +24,7 @@ class Migration1589379060AddVariantCharacteristicsToEmailTemplates extends Migra
     {
         // implement update
         $enLangId = $this->fetchLanguageId('en-GB', $connection);
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         // update email templates
         $this->updateMailTemplate(

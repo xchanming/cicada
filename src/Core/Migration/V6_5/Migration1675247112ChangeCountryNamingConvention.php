@@ -59,7 +59,7 @@ class Migration1675247112ChangeCountryNamingConvention extends MigrationStep
             SELECT language.id
             FROM language
             JOIN locale ON locale.id = language.locale_id
-            WHERE locale.code = 'de-DE'
+            WHERE locale.code = 'zh-CN'
         SQL;
 
         $deLanguageId = $connection->fetchOne($getDeLanguageSql);

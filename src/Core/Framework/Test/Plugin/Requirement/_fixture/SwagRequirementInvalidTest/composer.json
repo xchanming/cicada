@@ -18,7 +18,7 @@
         "cicada-plugin-class": "SwagRequirement\\SwagRequirement",
         "copyright": "(c) by cicada AG",
         "label": {
-            "de-DE": "Test für Requirement Validator",
+            "zh-CN": "Test für Requirement Validator",
             "en-GB": "Test for requirement validator"
         }
     }

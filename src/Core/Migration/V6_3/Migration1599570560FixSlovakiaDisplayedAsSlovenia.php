@@ -35,7 +35,7 @@ class Migration1599570560FixSlovakiaDisplayedAsSlovenia extends MigrationStep
 
         try {
             $languageDE = $connection->fetchOne('SELECT language.id FROM language INNER JOIN locale
-            ON language.translation_code_id = locale.id AND locale.code = \'de-DE\'');
+            ON language.translation_code_id = locale.id AND locale.code = \'zh-CN\'');
         } catch (\Exception) {
             // German language not found, no need to update the snippet
         }

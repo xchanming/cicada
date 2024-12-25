@@ -34,11 +34,11 @@ class MetadataTest extends TestCase
 
         static::assertEquals([
             'en-GB' => 'Swag App Test',
-            'de-DE' => 'Swag App Test',
+            'zh-CN' => 'Swag App Test',
         ], $metaData->getLabel());
         static::assertEquals([
             'en-GB' => 'Test for App System',
-            'de-DE' => 'Test für das App System',
+            'zh-CN' => 'Test für das App System',
         ], $metaData->getDescription());
         static::assertEquals([
             'en-GB' => 'Following personal information will be processed on cicada AG\'s servers:
@@ -46,7 +46,7 @@ class MetadataTest extends TestCase
 - Name
 - Billing address
 - Order value',
-            'de-DE' => 'Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
+            'zh-CN' => 'Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
 
 - Name
 - Rechnungsadresse
@@ -62,7 +62,7 @@ class MetadataTest extends TestCase
 
         static::assertEquals([
             'en-GB' => 'Swag App Test',
-            'de-DE' => 'Swag App Test',
+            'zh-CN' => 'Swag App Test',
         ], $metaData->getLabel());
         static::assertEquals([], $metaData->getDescription());
 
@@ -77,7 +77,7 @@ class MetadataTest extends TestCase
 
         static::assertInstanceOf(MissingTranslationError::class, $error);
         static::assertEquals('Missing translations for "Metadata":
-- label: de-DE, fr-FR', $error->getMessage());
+- label: zh-CN, fr-FR', $error->getMessage());
     }
 
     public function testValidateTranslationsReturnsNull(): void

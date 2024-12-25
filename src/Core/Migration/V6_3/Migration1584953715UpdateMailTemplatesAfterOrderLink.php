@@ -26,7 +26,7 @@ class Migration1584953715UpdateMailTemplatesAfterOrderLink extends MigrationStep
     {
         // implement update
         $defaultLangId = $this->fetchLanguageId('en-GB', $connection);
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         // update order confirmation email templates
         $this->updateMailTemplate(

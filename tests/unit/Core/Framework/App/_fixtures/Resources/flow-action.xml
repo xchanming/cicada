@@ -5,11 +5,11 @@
             <name>abc.cde.ccc</name>
             <badge>abc</badge>
             <label>First action app</label>
-            <label lang="de-DE">First action app DE</label>
+            <label lang="zh-CN">First action app DE</label>
             <headline>Headline for action</headline>
-            <headline lang="de-DE">Überschrift für Aktion</headline>
+            <headline lang="zh-CN">Überschrift für Aktion</headline>
             <description>First action app description</description>
-            <description lang="de-DE">First action app description DE</description>
+            <description lang="zh-CN">First action app description DE</description>
             <url>https://example.xyz</url>
             <icon>resource/pencil</icon>
             <sw-icon>sw-pencil</sw-icon>
@@ -30,29 +30,29 @@
             <input-field>
                 <name>textField</name>
                 <label>To</label>
-                <label lang="de-DE">To DE</label>
+                <label lang="zh-CN">To DE</label>
                 <place-holder>Enter to...</place-holder>
-                <place-holder lang="de-DE">Enter to DE...</place-holder>
+                <place-holder lang="zh-CN">Enter to DE...</place-holder>
                 <helpText>Help text</helpText>
-                <helpText lang="de-DE">Help text DE</helpText>
+                <helpText lang="zh-CN">Help text DE</helpText>
                 <required>true</required>
                 <defaultValue>Cicada 6</defaultValue>
             </input-field>
             <input-field>
                 <name>textField</name>
                 <label>From</label>
-                <label lang="de-DE">From</label>
+                <label lang="zh-CN">From</label>
                 <place-holder>Enter from...</place-holder>
-                <place-holder lang="de-DE">Enter from...</place-holder>
+                <place-holder lang="zh-CN">Enter from...</place-holder>
                 <required>true</required>
                 <defaultValue>Cicada 6</defaultValue>
             </input-field>
             <input-field type="text">
                 <name>textField</name>
                 <label>Message</label>
-                <label lang="de-DE">Message</label>
+                <label lang="zh-CN">Message</label>
                 <place-holder>Enter message...</place-holder>
-                <place-holder lang="de-DE">Enter message...</place-holder>
+                <place-holder lang="zh-CN">Enter message...</place-holder>
                 <required>true</required>
                 <defaultValue>Hello</defaultValue>
             </input-field>
@@ -61,11 +61,11 @@
                 <options>
                     <option value="smtp">
                         <label>English label</label>
-                        <label lang="de-DE">German label</label>
+                        <label lang="zh-CN">German label</label>
                     </option>
                     <option value="pop3">
                         <label>English label</label>
-                        <label lang="de-DE">German label</label>
+                        <label lang="zh-CN">German label</label>
                     </option>
                 </options>
             </input-field>

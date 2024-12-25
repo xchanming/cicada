@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/cicada/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Configuration</title>
-        <title lang="de-DE">Konfiguration</title>
+        <title lang="zh-CN">Konfiguration</title>
 
         <input-field type="int">
             <name>passwordMinLength</name>
             <label>Minimum password length (log-in)</label>
-            <label lang="de-DE">Passwort-Mindestlänge (Registrierung)</label>
+            <label lang="zh-CN">Passwort-Mindestlänge (Registrierung)</label>
         </input-field>
     </card>
 

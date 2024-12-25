@@ -22,7 +22,7 @@ class SnippetValidatorTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $firstPath = 'irrelevant.de-DE.json';
+        $firstPath = 'irrelevant.zh-CN.json';
         $secondPath = 'irrelevant.en-GB.json';
         $snippetFileHandler->method('findAdministrationSnippetFiles')
             ->willReturn([$firstPath]);
@@ -46,9 +46,9 @@ class SnippetValidatorTest extends TestCase
         static::assertSame('german', $missingSnippets['en-GB']['german']['keyPath']);
         static::assertSame('exampleGerman', $missingSnippets['en-GB']['german']['availableValue']);
 
-        static::assertArrayHasKey('english', $missingSnippets['de-DE']);
-        static::assertSame('english', $missingSnippets['de-DE']['english']['keyPath']);
-        static::assertSame('exampleEnglish', $missingSnippets['de-DE']['english']['availableValue']);
+        static::assertArrayHasKey('english', $missingSnippets['zh-CN']);
+        static::assertSame('english', $missingSnippets['zh-CN']['english']['keyPath']);
+        static::assertSame('exampleEnglish', $missingSnippets['zh-CN']['english']['availableValue']);
     }
 
     public function testValidateShouldNotFindAnyMissingSnippets(): void
@@ -57,7 +57,7 @@ class SnippetValidatorTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $firstPath = 'irrelevant.de-DE.json';
+        $firstPath = 'irrelevant.zh-CN.json';
         $secondPath = 'irrelevant.en-GB.json';
         $snippetFileHandler->method('findAdministrationSnippetFiles')
             ->willReturn([$firstPath]);

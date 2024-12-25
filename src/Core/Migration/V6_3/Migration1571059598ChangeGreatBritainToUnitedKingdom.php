@@ -40,7 +40,7 @@ class Migration1571059598ChangeGreatBritainToUnitedKingdom extends MigrationStep
                 FROM `language`
                 INNER JOIN `locale` ON `language`.`locale_id` = `locale`.`id`
                 WHERE `language`.`id` = `country_translation`.`language_id`
-            ) = "de-DE"
+            ) = "zh-CN"
         ');
     }
 

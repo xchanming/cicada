@@ -253,7 +253,7 @@ class TranslatorTest extends TestCase
         yield 'with locale and request snippet set id but no matched db record' => [
             'dbSnippetSetIds' => [],
             'expectedSnippetSetId' => $expectedSnippetSetId,
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'requestSnippetSetId' => $expectedSnippetSetId,
         ];
 
@@ -262,7 +262,7 @@ class TranslatorTest extends TestCase
                 $foundSnippetSetId,
             ],
             'expectedSnippetSetId' => $foundSnippetSetId,
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'requestSnippetSetId' => $expectedSnippetSetId,
         ];
 
@@ -272,7 +272,7 @@ class TranslatorTest extends TestCase
                 Uuid::randomHex(),
             ],
             'expectedSnippetSetId' => $foundSnippetSetId,
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'requestSnippetSetId' => $expectedSnippetSetId,
         ];
 
@@ -283,7 +283,7 @@ class TranslatorTest extends TestCase
                 Uuid::randomHex(),
             ],
             'expectedSnippetSetId' => $expectedSnippetSetId,
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'requestSnippetSetId' => $expectedSnippetSetId,
         ];
     }

@@ -107,7 +107,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
             'lang_de' => [
                 'id' => 'lang_de',
                 'parentId' => 'parentId',
-                'code' => 'de-DE',
+                'code' => 'zh-CN',
             ],
         ]);
 
@@ -359,7 +359,7 @@ class ElasticsearchProductDefinitionTest extends TestCase
             'lang_de' => [
                 'id' => 'lang_de',
                 'parentId' => 'parentId',
-                'code' => 'de-DE',
+                'code' => 'zh-CN',
             ],
         ]);
 

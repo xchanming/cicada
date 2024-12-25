@@ -59,7 +59,7 @@ class Migration1580746806AddPaymentStates extends MigrationStep
         $stateInProgressId = Uuid::randomBytes();
         $stateFailedId = Uuid::randomBytes();
 
-        $germanId = $this->fetchLanguageId('de-DE', $connection);
+        $germanId = $this->fetchLanguageId('zh-CN', $connection);
 
         $defaultLangId = $this->fetchLanguageId('en-GB', $connection);
 

@@ -35,7 +35,7 @@ class Migration1591361320ChargebackAndAuthorized extends MigrationStep
             'technical_name' => 'authorized',
             'translations' => [
                 'en-GB' => 'Authorized',
-                'de-DE' => 'Autorisiert',
+                'zh-CN' => 'Autorisiert',
             ],
             'transition' => 'authorize',
             'from' => $this->getStateIds($connection, $machineId, ['open', 'in_progress', 'reminded']),
@@ -53,7 +53,7 @@ class Migration1591361320ChargebackAndAuthorized extends MigrationStep
             'technical_name' => 'chargeback',
             'translations' => [
                 'en-GB' => 'Chargeback',
-                'de-DE' => 'Rückbuchung',
+                'zh-CN' => 'Rückbuchung',
             ],
             'transition' => 'chargeback',
             'from' => $this->getStateIds($connection, $machineId, ['paid', 'paid_partially']),
@@ -104,9 +104,9 @@ class Migration1591361320ChargebackAndAuthorized extends MigrationStep
             $this->insertTranslation($stateId, $state['translations']['en-GB'], $language, $connection);
         }
 
-        $languages = array_filter([$this->getLanguageId('de-DE', $connection)]);
+        $languages = array_filter([$this->getLanguageId('zh-CN', $connection)]);
         foreach ($languages as $language) {
-            $this->insertTranslation($stateId, $state['translations']['de-DE'], $language, $connection);
+            $this->insertTranslation($stateId, $state['translations']['zh-CN'], $language, $connection);
         }
 
         foreach ($state['from'] as $fromId) {

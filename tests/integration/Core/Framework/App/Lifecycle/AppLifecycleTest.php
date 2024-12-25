@@ -1790,7 +1790,7 @@ class AppLifecycleTest extends TestCase
             [
                 'name' => 'first-module',
                 'label' => [
-                    'de-DE' => 'Mein erstes eigenes Modul',
+                    'zh-CN' => 'Mein erstes eigenes Modul',
                     'en-GB' => 'My first own module',
                 ],
                 'parent' => 'sw-test-structure-module',
@@ -1799,7 +1799,7 @@ class AppLifecycleTest extends TestCase
             ], [
                 'name' => 'structure-module',
                 'label' => [
-                    'de-DE' => 'Mein Menüeintrag für Module',
+                    'zh-CN' => 'Mein Menüeintrag für Module',
                     'en-GB' => 'My menu entry for modules',
                 ],
                 'parent' => 'sw-catalogue',
@@ -1870,7 +1870,7 @@ class AppLifecycleTest extends TestCase
 
         static::assertEquals([
             'label' => [
-                'de-DE' => 'Zusatzfeld Test',
+                'zh-CN' => 'Zusatzfeld Test',
                 'en-GB' => 'Custom field test',
             ],
             'translated' => true,
@@ -2300,18 +2300,18 @@ class AppLifecycleTest extends TestCase
                     'name' => 'text',
                     'type' => 'text',
                     'label' => [
-                        'de-DE' => 'Text DE',
+                        'zh-CN' => 'Text DE',
                         'en-GB' => 'Text',
                     ],
                     'options' => [],
                     'helpText' => [
-                        'de-DE' => 'Help DE',
+                        'zh-CN' => 'Help DE',
                         'en-GB' => 'Help Text',
                     ],
                     'required' => true,
                     'extensions' => [],
                     'placeHolder' => [
-                        'de-DE' => 'Enter Text DE...',
+                        'zh-CN' => 'Enter Text DE...',
                         'en-GB' => 'Enter Text...',
                     ],
                     'defaultValue' => 'Hello',

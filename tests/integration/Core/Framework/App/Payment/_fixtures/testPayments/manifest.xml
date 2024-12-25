@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/cicada/cicada/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
     <meta>
         <name>testPayments</name>
         <label>Swag App Payments Test</label>
-        <label lang="de-DE">Swag App Payments Test</label>
+        <label lang="zh-CN">Swag App Payments Test</label>
         <description>Test for App PaymentMethods</description>
-        <description lang="de-DE">Test für App PaymentMethods</description>
+        <description lang="zh-CN">Test für App PaymentMethods</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>

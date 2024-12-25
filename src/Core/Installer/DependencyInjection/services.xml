@@ -5,37 +5,15 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
         <parameter key="cicada.installer.supportedLanguages" type="collection">
-            <parameter key="de">de-DE</parameter>
+            <parameter key="zh">zh-CN</parameter>
             <parameter key="en">en-GB</parameter>
-            <parameter key="us">en-US</parameter>
-            <parameter key="cs">cs-CZ</parameter>
-            <parameter key="es">es-ES</parameter>
-            <parameter key="fr">fr-FR</parameter>
-            <parameter key="it">it-IT</parameter>
-            <parameter key="nl">nl-NL</parameter>
-            <parameter key="pl">pl-PL</parameter>
-            <parameter key="pt">pt-PT</parameter>
-            <parameter key="sv">sv-SE</parameter>
-            <parameter key="da">da-DK</parameter>
-            <parameter key="nb">nb-NO</parameter>
         </parameter>
 
         <parameter key="cicada.installer.supportedCurrencies" type="collection">
-            <parameter>EUR</parameter>
+            <parameter>CNY</parameter>
             <parameter>USD</parameter>
-            <parameter>GBP</parameter>
-            <parameter>PLN</parameter>
-            <parameter>CHF</parameter>
-            <parameter>SEK</parameter>
-            <parameter>DKK</parameter>
-            <parameter>NOK</parameter>
-            <parameter>CZK</parameter>
         </parameter>
 
-        <parameter key="cicada.installer.tosUrls" type="collection">
-            <parameter key="de">https://api.cicada.com/gtc/de_DE.html</parameter>
-            <parameter key="en">https://api.cicada.com/gtc/en_GB.html</parameter>
-        </parameter>
     </parameters>
     <services>
         <service id="cicada.asset.asset" class="Cicada\Core\Framework\Adapter\Asset\FallbackUrlPackage">
@@ -87,12 +65,6 @@
 
         <service id="cicada.installer.guzzle" class="GuzzleHttp\Client"/>
 
-        <service id="Cicada\Core\Installer\License\LicenseFetcher">
-            <argument type="service" id="cicada.installer.guzzle"/>
-            <argument>%cicada.installer.tosUrls%</argument>
-
-        </service>
-
         <service id="Cicada\Core\Installer\Controller\SelectLanguagesController" public="true">
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
@@ -103,14 +75,6 @@
             <argument type="tagged_iterator" tag="cicada.installer.requirement"/>
             <argument type="service" id="Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator"/>
             <argument type="string">%kernel.project_dir%</argument>
-
-            <call method="setContainer">
-                <argument type="service" id="service_container"/>
-            </call>
-        </service>
-
-        <service id="Cicada\Core\Installer\Controller\LicenseController" public="true">
-            <argument type="service" id="Cicada\Core\Installer\License\LicenseFetcher"/>
 
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
@@ -190,13 +154,6 @@
 
         <service id="Cicada\Core\Installer\Finish\SystemLocker">
             <argument type="string">%kernel.project_dir%</argument>
-        </service>
-
-        <service id="Cicada\Core\Installer\Finish\Notifier">
-            <argument type="string">https://api.cicada.com</argument>
-            <argument type="service" id="Cicada\Core\Installer\Finish\UniqueIdGenerator"/>
-            <argument type="service" id="GuzzleHttp\Client"/>
-            <argument type="string">%kernel.cicada_version%</argument>
         </service>
 
         <service id="Cicada\Core\Installer\Finish\UniqueIdGenerator">

@@ -83,7 +83,7 @@ class Migration1575021466AddCurrencies extends MigrationStep
     private function getDeLanguageId(Connection $connection): ?string
     {
         if (!$this->deLanguage) {
-            $this->deLanguage = $this->fetchLanguageId('de-DE', $connection);
+            $this->deLanguage = $this->fetchLanguageId('zh-CN', $connection);
         }
 
         return $this->deLanguage;

@@ -41,7 +41,7 @@ class Migration1607581276AddProductSearchConfigurationDefaults extends Migration
     private function createSearchConfigDefaultData(Connection $connection): void
     {
         $enLanguageId = $this->fetchLanguageIdByName('en-GB', $connection);
-        $deLanguageId = $this->fetchLanguageIdByName('de-DE', $connection);
+        $deLanguageId = $this->fetchLanguageIdByName('zh-CN', $connection);
 
         $searchConfigEnId = $connection->fetchOne('SELECT id FROM product_search_config WHERE language_id = :language_id', ['language_id' => $enLanguageId])
             ?: Uuid::randomBytes();

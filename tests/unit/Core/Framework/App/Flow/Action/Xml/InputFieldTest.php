@@ -40,18 +40,18 @@ class InputFieldTest extends TestCase
             'name' => 'textField',
             'label' => [
                 'en-GB' => 'To',
-                'de-DE' => 'To DE',
+                'zh-CN' => 'To DE',
             ],
             'required' => true,
             'defaultValue' => 'Cicada 6',
             'placeHolder' => [
                 'en-GB' => 'Enter to...',
-                'de-DE' => 'Enter to DE...',
+                'zh-CN' => 'Enter to DE...',
             ],
             'type' => 'text',
             'helpText' => [
                 'en-GB' => 'Help text',
-                'de-DE' => 'Help text DE',
+                'zh-CN' => 'Help text DE',
             ],
         ]);
 
@@ -77,14 +77,14 @@ class InputFieldTest extends TestCase
                     'value' => 'smtp',
                     'label' => [
                         'en-GB' => 'English label',
-                        'de-DE' => 'German label',
+                        'zh-CN' => 'German label',
                     ],
                 ],
                 [
                     'value' => 'pop3',
                     'label' => [
                         'en-GB' => 'English label',
-                        'de-DE' => 'German label',
+                        'zh-CN' => 'German label',
                     ],
                 ],
             ],
@@ -100,18 +100,18 @@ class InputFieldTest extends TestCase
             'name' => 'textField',
             'label' => [
                 'en-GB' => 'To',
-                'de-DE' => 'To DE',
+                'zh-CN' => 'To DE',
             ],
             'required' => true,
             'defaultValue' => 'Cicada 6',
             'placeHolder' => [
                 'en-GB' => 'Enter to...',
-                'de-DE' => 'Enter to DE...',
+                'zh-CN' => 'Enter to DE...',
             ],
             'type' => 'text',
             'helpText' => [
                 'en-GB' => 'Help text',
-                'de-DE' => 'Help text DE',
+                'zh-CN' => 'Help text DE',
             ],
         ]);
 

@@ -72,7 +72,7 @@ class SearchKeywordUpdaterTest extends TestCase
 
         $criteria = new Criteria();
 
-        // Delete sales channel de-DE language associations to ensure only default language is used to create keywords.
+        // Delete sales channel zh-CN language associations to ensure only default language is used to create keywords.
         $criteria->addFilter(new EqualsFilter('languageId', $this->getDeDeLanguageId()));
 
         /** @var list<array<string, string>> $salesChannalLanguageIds */
@@ -170,7 +170,7 @@ class SearchKeywordUpdaterTest extends TestCase
                 (new ProductBuilder($idsCollection, '1000'))
                     ->price(10)
                     ->name('Test product')
-                    ->translation('de-DE', 'name', 'Test produkt')
+                    ->translation('zh-CN', 'name', 'Test produkt')
                     ->build(),
                 $idsCollection,
                 [
@@ -205,7 +205,7 @@ class SearchKeywordUpdaterTest extends TestCase
                 (new ProductBuilder($idsCollection, '1000'))
                     ->price(10)
                     ->name('Test product')
-                    ->manufacturer('manufacturer', ['de-DE' => ['name' => 'Hersteller']])
+                    ->manufacturer('manufacturer', ['zh-CN' => ['name' => 'Hersteller']])
                     ->build(),
                 $idsCollection,
                 [
@@ -224,7 +224,7 @@ class SearchKeywordUpdaterTest extends TestCase
             'test it uses correct translation from parent' => [
                 (new ProductBuilder($idsCollection, '1001'))
                     ->name('Test product')
-                    ->translation('de-DE', 'name', 'Test produkt')
+                    ->translation('zh-CN', 'name', 'Test produkt')
                     ->price(5)
                     ->variant(
                         (new ProductBuilder($idsCollection, '1000'))
@@ -249,7 +249,7 @@ class SearchKeywordUpdaterTest extends TestCase
             'test it uses correct translation from parent association' => [
                 (new ProductBuilder($idsCollection, '1001'))
                     ->name('Test product')
-                    ->manufacturer('manufacturer', ['de-DE' => ['name' => 'Hersteller']])
+                    ->manufacturer('manufacturer', ['zh-CN' => ['name' => 'Hersteller']])
                     ->price(5)
                     ->variant(
                         (new ProductBuilder($idsCollection, '1000'))

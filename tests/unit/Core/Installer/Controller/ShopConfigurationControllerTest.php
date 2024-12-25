@@ -71,8 +71,8 @@ class ShopConfigurationControllerTest extends TestCase
             $this->shopConfigService,
             $this->adminConfigService,
             $this->translator,
-            ['de' => 'de-DE', 'en' => 'en-GB'],
-            ['EUR', 'USD']
+            ['zh' => 'zh-CN', 'en' => 'en-GB'],
+            ['CNY', 'USD']
         );
         $this->controller->setContainer($this->getInstallerContainer($this->twig, ['router' => $this->router]));
     }
@@ -85,13 +85,12 @@ class ShopConfigurationControllerTest extends TestCase
         $session->set(BlueGreenDeploymentService::ENV_NAME, true);
         $request->setMethod('GET');
         $request->setSession($session);
-        $request->attributes->set('_locale', 'de');
+        $request->attributes->set('_locale', 'zh');
 
         $this->connection->expects(static::once())
             ->method('fetchAllAssociative')
             ->willReturn([
-                ['iso3' => 'DEU', 'iso' => 'DE'],
-                ['iso3' => 'GBR', 'iso' => 'GB'],
+                ['iso3' => 'CHN', 'iso' => 'CN'],
             ]);
 
         $this->translator->method('trans')->willReturnCallback(fn (string $key): string => $key);
@@ -102,12 +101,11 @@ class ShopConfigurationControllerTest extends TestCase
                 array_merge($this->getDefaultViewParams(), [
                     'error' => null,
                     'countryIsos' => [
-                        ['iso3' => 'DEU', 'default' => true, 'translated' => 'cicada.installer.select_country_deu'],
-                        ['iso3' => 'GBR', 'default' => false, 'translated' => 'cicada.installer.select_country_gbr'],
+                        ['iso3' => 'CHN', 'default' => true, 'translated' => 'cicada.installer.select_country_chn'],
                     ],
-                    'currencyIsos' => ['EUR', 'USD'],
-                    'languageIsos' => ['de' => 'de-DE', 'en' => 'en-GB'],
-                    'parameters' => ['config_shop_language' => 'de-DE'],
+                    'currencyIsos' => ['CNY', 'USD'],
+                    'languageIsos' => ['zh' => 'zh-CN', 'en' => 'en-GB'],
+                    'parameters' => ['config_shop_language' => 'zh-CN'],
                 ])
             )
             ->willReturn('config');
@@ -143,20 +141,20 @@ class ShopConfigurationControllerTest extends TestCase
         $session->set(DatabaseConnectionInformation::class, $connectionInfo);
         $session->set(BlueGreenDeploymentService::ENV_NAME, true);
         $request->setSession($session);
-        $request->attributes->set('_locale', 'de');
+        $request->attributes->set('_locale', 'zh');
 
         $request->request->set('config_admin_email', 'test@test.com');
         $request->request->set('config_admin_username', 'admin');
         $request->request->set('config_admin_firstName', 'first');
         $request->request->set('config_admin_lastName', 'last');
-        $request->request->set('config_admin_password', 'cicada');
+        $request->request->set('config_admin_password', '12345678');
 
-        $request->request->set('config_shop_language', 'de-DE');
-        $request->request->set('config_shop_currency', 'EUR');
-        $request->request->set('config_shop_country', 'DEU');
+        $request->request->set('config_shop_language', 'zh-CN');
+        $request->request->set('config_shop_currency', 'CNY');
+        $request->request->set('config_shop_country', 'CHN');
         $request->request->set('config_shopName', 'shop');
         $request->request->set('config_mail', 'info@test.com');
-        $request->request->set('available_currencies', ['EUR', 'USD']);
+        $request->request->set('available_currencies', ['CNY', 'USD']);
 
         $this->setEnvVars([
             'HTTPS' => 'on',
@@ -166,10 +164,10 @@ class ShopConfigurationControllerTest extends TestCase
 
         $expectedShopInfo = [
             'name' => 'shop',
-            'locale' => 'de-DE',
-            'currency' => 'EUR',
-            'additionalCurrencies' => ['EUR', 'USD'],
-            'country' => 'DEU',
+            'locale' => 'zh-CN',
+            'currency' => 'CNY',
+            'additionalCurrencies' => ['CNY', 'USD'],
+            'country' => 'CHN',
             'email' => 'info@test.com',
             'host' => 'localhost',
             'schema' => 'https',
@@ -185,8 +183,8 @@ class ShopConfigurationControllerTest extends TestCase
             'username' => 'admin',
             'firstName' => 'first',
             'lastName' => 'last',
-            'password' => 'cicada',
-            'locale' => 'de-DE',
+            'password' => '12345678',
+            'locale' => 'zh-CN',
         ];
         $this->adminConfigService->expects(static::once())->method('createAdmin')->with($expectedAdmin, $this->connection);
 
@@ -214,7 +212,7 @@ class ShopConfigurationControllerTest extends TestCase
         $session->set(BlueGreenDeploymentService::ENV_NAME, true);
         $request->setMethod('POST');
         $request->setSession($session);
-        $request->attributes->set('_locale', 'de');
+        $request->attributes->set('_locale', 'zh');
 
         $this->setEnvVars([
             'HTTPS' => 'on',
@@ -225,8 +223,7 @@ class ShopConfigurationControllerTest extends TestCase
         $this->connection->expects(static::once())
             ->method('fetchAllAssociative')
             ->willReturn([
-                ['iso3' => 'DEU', 'iso' => 'DE'],
-                ['iso3' => 'GBR', 'iso' => 'GB'],
+                ['iso3' => 'CHN', 'iso' => 'CN'],
             ]);
 
         $this->envConfigWriter->expects(static::once())->method('writeConfig')->willThrowException(new \Exception('Test Exception'));
@@ -239,12 +236,11 @@ class ShopConfigurationControllerTest extends TestCase
                 array_merge($this->getDefaultViewParams(), [
                     'error' => 'Test Exception',
                     'countryIsos' => [
-                        ['iso3' => 'DEU', 'default' => true, 'translated' => 'cicada.installer.select_country_deu'],
-                        ['iso3' => 'GBR', 'default' => false, 'translated' => 'cicada.installer.select_country_gbr'],
+                        ['iso3' => 'CHN', 'default' => true, 'translated' => 'cicada.installer.select_country_chn'],
                     ],
-                    'currencyIsos' => ['EUR', 'USD'],
-                    'languageIsos' => ['de' => 'de-DE', 'en' => 'en-GB'],
-                    'parameters' => ['config_shop_language' => 'de-DE'],
+                    'currencyIsos' => ['CNY', 'USD'],
+                    'languageIsos' => ['zh' => 'zh-CN', 'en' => 'en-GB'],
+                    'parameters' => ['config_shop_language' => 'zh-CN'],
                 ])
             )
             ->willReturn('config');
@@ -261,7 +257,7 @@ class ShopConfigurationControllerTest extends TestCase
         $session->set(BlueGreenDeploymentService::ENV_NAME, true);
         $request->setMethod('POST');
         $request->setSession($session);
-        $request->attributes->set('_locale', 'de');
+        $request->attributes->set('_locale', 'zh');
 
         $this->setEnvVars([
             'HTTPS' => 'on',

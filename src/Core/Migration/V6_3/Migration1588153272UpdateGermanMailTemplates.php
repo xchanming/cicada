@@ -23,7 +23,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     public function update(Connection $connection): void
     {
         // implement update
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         if ($deLangId === null) {
             return;

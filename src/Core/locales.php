@@ -5,2772 +5,2772 @@ return [
         'locale' => 'aa-DJ',
         'name' => [
             'en-GB' => 'Afar',
-            'de-DE' => 'Afar',
+            'zh-CN' => 'Afar',
         ],
         'territory' => [
             'en-GB' => 'Djibouti',
-            'de-DE' => 'Dschibuti',
+            'zh-CN' => 'Dschibuti',
         ],
     ],
     [
         'locale' => 'aa-ER',
         'name' => [
             'en-GB' => 'Afar',
-            'de-DE' => 'Afar',
+            'zh-CN' => 'Afar',
         ],
         'territory' => [
             'en-GB' => 'Eritrea',
-            'de-DE' => 'Eritrea',
+            'zh-CN' => 'Eritrea',
         ],
     ],
     [
         'locale' => 'aa-ET',
         'name' => [
             'en-GB' => 'Afar',
-            'de-DE' => 'Afar',
+            'zh-CN' => 'Afar',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'af-NA',
         'name' => [
             'en-GB' => 'Afrikaans',
-            'de-DE' => 'Afrikaans',
+            'zh-CN' => 'Afrikaans',
         ],
         'territory' => [
             'en-GB' => 'Namibia',
-            'de-DE' => 'Namibia',
+            'zh-CN' => 'Namibia',
         ],
     ],
     [
         'locale' => 'af-ZA',
         'name' => [
             'en-GB' => 'Afrikaans',
-            'de-DE' => 'Afrikaans',
+            'zh-CN' => 'Afrikaans',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'ak-GH',
         'name' => [
             'en-GB' => 'Akan',
-            'de-DE' => 'Akan',
+            'zh-CN' => 'Akan',
         ],
         'territory' => [
             'en-GB' => 'Ghana',
-            'de-DE' => 'Ghana',
+            'zh-CN' => 'Ghana',
         ],
     ],
     [
         'locale' => 'am-ET',
         'name' => [
             'en-GB' => 'Amharic',
-            'de-DE' => 'Amharisch',
+            'zh-CN' => 'Amharisch',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'ar-AE',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'United Arab Emirates',
-            'de-DE' => 'Vereinigte Arabische Emirate',
+            'zh-CN' => 'Vereinigte Arabische Emirate',
         ],
     ],
     [
         'locale' => 'ar-BH',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Bahrain',
-            'de-DE' => 'Bahrain',
+            'zh-CN' => 'Bahrain',
         ],
     ],
     [
         'locale' => 'ar-DZ',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Algeria',
-            'de-DE' => 'Algerien',
+            'zh-CN' => 'Algerien',
         ],
     ],
     [
         'locale' => 'ar-EG',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Egypt',
-            'de-DE' => 'Ägypten',
+            'zh-CN' => 'Ägypten',
         ],
     ],
     [
         'locale' => 'ar-IQ',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Iraq',
-            'de-DE' => 'Irak',
+            'zh-CN' => 'Irak',
         ],
     ],
     [
         'locale' => 'ar-JO',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Jordan',
-            'de-DE' => 'Jordanien',
+            'zh-CN' => 'Jordanien',
         ],
     ],
     [
         'locale' => 'ar-KW',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Kuwait',
-            'de-DE' => 'Kuwait',
+            'zh-CN' => 'Kuwait',
         ],
     ],
     [
         'locale' => 'ar-LB',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Lebanon',
-            'de-DE' => 'Libanon',
+            'zh-CN' => 'Libanon',
         ],
     ],
     [
         'locale' => 'ar-LY',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Libya',
-            'de-DE' => 'Libyen',
+            'zh-CN' => 'Libyen',
         ],
     ],
     [
         'locale' => 'ar-MA',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Morocco',
-            'de-DE' => 'Marokko',
+            'zh-CN' => 'Marokko',
         ],
     ],
     [
         'locale' => 'ar-OM',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Oman',
-            'de-DE' => 'Oman',
+            'zh-CN' => 'Oman',
         ],
     ],
     [
         'locale' => 'ar-QA',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Qatar',
-            'de-DE' => 'Katar',
+            'zh-CN' => 'Katar',
         ],
     ],
     [
         'locale' => 'ar-SA',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Saudi Arabia',
-            'de-DE' => 'Saudi-Arabien',
+            'zh-CN' => 'Saudi-Arabien',
         ],
     ],
     [
         'locale' => 'ar-SD',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Sudan',
-            'de-DE' => 'Sudan',
+            'zh-CN' => 'Sudan',
         ],
     ],
     [
         'locale' => 'ar-SY',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Syria',
-            'de-DE' => 'Syrien',
+            'zh-CN' => 'Syrien',
         ],
     ],
     [
         'locale' => 'ar-TN',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Tunisia',
-            'de-DE' => 'Tunesien',
+            'zh-CN' => 'Tunesien',
         ],
     ],
     [
         'locale' => 'ar-YE',
         'name' => [
             'en-GB' => 'Arabic',
-            'de-DE' => 'Arabisch',
+            'zh-CN' => 'Arabisch',
         ],
         'territory' => [
             'en-GB' => 'Yemen',
-            'de-DE' => 'Jemen',
+            'zh-CN' => 'Jemen',
         ],
     ],
     [
         'locale' => 'as-IN',
         'name' => [
             'en-GB' => 'Assamese',
-            'de-DE' => 'Assamesisch',
+            'zh-CN' => 'Assamesisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'az-AZ',
         'name' => [
             'en-GB' => 'Azerbaijani',
-            'de-DE' => 'Aserbaidschanisch',
+            'zh-CN' => 'Aserbaidschanisch',
         ],
         'territory' => [
             'en-GB' => 'Azerbaijan',
-            'de-DE' => 'Aserbaidschan',
+            'zh-CN' => 'Aserbaidschan',
         ],
     ],
     [
         'locale' => 'be-BY',
         'name' => [
             'en-GB' => 'Belarusian',
-            'de-DE' => 'Weißrussisch',
+            'zh-CN' => 'Weißrussisch',
         ],
         'territory' => [
             'en-GB' => 'Belarus',
-            'de-DE' => 'Belarus',
+            'zh-CN' => 'Belarus',
         ],
     ],
     [
         'locale' => 'bg-BG',
         'name' => [
             'en-GB' => 'Bulgarian',
-            'de-DE' => 'Bulgarisch',
+            'zh-CN' => 'Bulgarisch',
         ],
         'territory' => [
             'en-GB' => 'Bulgaria',
-            'de-DE' => 'Bulgarien',
+            'zh-CN' => 'Bulgarien',
         ],
     ],
     [
         'locale' => 'bn-BD',
         'name' => [
             'en-GB' => 'Bengali',
-            'de-DE' => 'Bengalisch',
+            'zh-CN' => 'Bengalisch',
         ],
         'territory' => [
             'en-GB' => 'Bangladesh',
-            'de-DE' => 'Bangladesch',
+            'zh-CN' => 'Bangladesch',
         ],
     ],
     [
         'locale' => 'bn-IN',
         'name' => [
             'en-GB' => 'Bengali',
-            'de-DE' => 'Bengalisch',
+            'zh-CN' => 'Bengalisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'bo-CN',
         'name' => [
             'en-GB' => 'Tibetan',
-            'de-DE' => 'Tibetisch',
+            'zh-CN' => 'Tibetisch',
         ],
         'territory' => [
             'en-GB' => 'China',
-            'de-DE' => 'China',
+            'zh-CN' => 'China',
         ],
     ],
     [
         'locale' => 'bo-IN',
         'name' => [
             'en-GB' => 'Tibetan',
-            'de-DE' => 'Tibetisch',
+            'zh-CN' => 'Tibetisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'bs-BA',
         'name' => [
             'en-GB' => 'Bosnian',
-            'de-DE' => 'Bosnisch',
+            'zh-CN' => 'Bosnisch',
         ],
         'territory' => [
             'en-GB' => 'Bosnia and Herzegovina',
-            'de-DE' => 'Bosnien und Herzegowina',
+            'zh-CN' => 'Bosnien und Herzegowina',
         ],
     ],
     [
         'locale' => 'byn-ER',
         'name' => [
             'en-GB' => 'Blin',
-            'de-DE' => 'Blin',
+            'zh-CN' => 'Blin',
         ],
         'territory' => [
             'en-GB' => 'Eritrea',
-            'de-DE' => 'Eritrea',
+            'zh-CN' => 'Eritrea',
         ],
     ],
     [
         'locale' => 'ca-ES',
         'name' => [
             'en-GB' => 'Catalan',
-            'de-DE' => 'Katalanisch',
+            'zh-CN' => 'Katalanisch',
         ],
         'territory' => [
             'en-GB' => 'Spain',
-            'de-DE' => 'Spanien',
+            'zh-CN' => 'Spanien',
         ],
     ],
     [
         'locale' => 'cch-NG',
         'name' => [
             'en-GB' => 'Atsam',
-            'de-DE' => 'Atsam',
+            'zh-CN' => 'Atsam',
         ],
         'territory' => [
             'en-GB' => 'Nigeria',
-            'de-DE' => 'Nigeria',
+            'zh-CN' => 'Nigeria',
         ],
     ],
     [
         'locale' => 'cs-CZ',
         'name' => [
             'en-GB' => 'Czech',
-            'de-DE' => 'Tschechisch',
+            'zh-CN' => 'Tschechisch',
         ],
         'territory' => [
             'en-GB' => 'Czech Republic',
-            'de-DE' => 'Tschechische Republik',
+            'zh-CN' => 'Tschechische Republik',
         ],
     ],
     [
         'locale' => 'cy-GB',
         'name' => [
             'en-GB' => 'Welsh',
-            'de-DE' => 'Walisisch',
+            'zh-CN' => 'Walisisch',
         ],
         'territory' => [
             'en-GB' => 'United Kingdom',
-            'de-DE' => 'Vereinigtes Königreich',
+            'zh-CN' => 'Vereinigtes Königreich',
         ],
     ],
     [
         'locale' => 'da-DK',
         'name' => [
             'en-GB' => 'Danish',
-            'de-DE' => 'Dänisch',
+            'zh-CN' => 'Dänisch',
         ],
         'territory' => [
             'en-GB' => 'Denmark',
-            'de-DE' => 'Dänemark',
+            'zh-CN' => 'Dänemark',
         ],
     ],
     [
         'locale' => 'de-AT',
         'name' => [
             'en-GB' => 'German',
-            'de-DE' => 'Deutsch',
+            'zh-CN' => 'Deutsch',
         ],
         'territory' => [
             'en-GB' => 'Austria',
-            'de-DE' => 'Österreich',
+            'zh-CN' => 'Österreich',
         ],
     ],
     [
         'locale' => 'de-BE',
         'name' => [
             'en-GB' => 'German',
-            'de-DE' => 'Deutsch',
+            'zh-CN' => 'Deutsch',
         ],
         'territory' => [
             'en-GB' => 'Belgium',
-            'de-DE' => 'Belgien',
+            'zh-CN' => 'Belgien',
         ],
     ],
     [
         'locale' => 'de-CH',
         'name' => [
             'en-GB' => 'German',
-            'de-DE' => 'Deutsch',
+            'zh-CN' => 'Deutsch',
         ],
         'territory' => [
             'en-GB' => 'Switzerland',
-            'de-DE' => 'Schweiz',
+            'zh-CN' => 'Schweiz',
         ],
     ],
     [
-        'locale' => 'de-DE',
+        'locale' => 'zh-CN',
         'name' => [
             'en-GB' => 'German',
-            'de-DE' => 'Deutsch',
+            'zh-CN' => 'Deutsch',
         ],
         'territory' => [
             'en-GB' => 'Germany',
-            'de-DE' => 'Deutschland',
+            'zh-CN' => 'Deutschland',
         ],
     ],
     [
         'locale' => 'de-LI',
         'name' => [
             'en-GB' => 'German',
-            'de-DE' => 'Deutsch',
+            'zh-CN' => 'Deutsch',
         ],
         'territory' => [
             'en-GB' => 'Liechtenstein',
-            'de-DE' => 'Liechtenstein',
+            'zh-CN' => 'Liechtenstein',
         ],
     ],
     [
         'locale' => 'de-LU',
         'name' => [
             'en-GB' => 'German',
-            'de-DE' => 'Deutsch',
+            'zh-CN' => 'Deutsch',
         ],
         'territory' => [
             'en-GB' => 'Luxemburg',
-            'de-DE' => 'Luxemburg',
+            'zh-CN' => 'Luxemburg',
         ],
     ],
     [
         'locale' => 'dv-MV',
         'name' => [
             'en-GB' => 'Maldivian',
-            'de-DE' => 'Maledivisch',
+            'zh-CN' => 'Maledivisch',
         ],
         'territory' => [
             'en-GB' => 'Maldive Islands',
-            'de-DE' => 'Malediven',
+            'zh-CN' => 'Malediven',
         ],
     ],
     [
         'locale' => 'dz-BT',
         'name' => [
             'en-GB' => 'Bhutanese',
-            'de-DE' => 'Bhutanisch',
+            'zh-CN' => 'Bhutanisch',
         ],
         'territory' => [
             'en-GB' => 'Bhutan',
-            'de-DE' => 'Bhutan',
+            'zh-CN' => 'Bhutan',
         ],
     ],
     [
         'locale' => 'ee-GH',
         'name' => [
             'en-GB' => 'Ewe',
-            'de-DE' => 'Ewe-Sprache',
+            'zh-CN' => 'Ewe-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Ghana',
-            'de-DE' => 'Ghana',
+            'zh-CN' => 'Ghana',
         ],
     ],
     [
         'locale' => 'ee-TG',
         'name' => [
             'en-GB' => 'Ewe',
-            'de-DE' => 'Ewe-Sprache',
+            'zh-CN' => 'Ewe-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Togo',
-            'de-DE' => 'Togo',
+            'zh-CN' => 'Togo',
         ],
     ],
     [
         'locale' => 'el-CY',
         'name' => [
             'en-GB' => 'Greek',
-            'de-DE' => 'Griechisch',
+            'zh-CN' => 'Griechisch',
         ],
         'territory' => [
             'en-GB' => 'Cyprus',
-            'de-DE' => 'Zypern',
+            'zh-CN' => 'Zypern',
         ],
     ],
     [
         'locale' => 'el-GR',
         'name' => [
             'en-GB' => 'Greek',
-            'de-DE' => 'Griechisch',
+            'zh-CN' => 'Griechisch',
         ],
         'territory' => [
             'en-GB' => 'Greece',
-            'de-DE' => 'Griechenland',
+            'zh-CN' => 'Griechenland',
         ],
     ],
     [
         'locale' => 'en-AS',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'American Samoa',
-            'de-DE' => 'Amerikanisch-Samoa',
+            'zh-CN' => 'Amerikanisch-Samoa',
         ],
     ],
     [
         'locale' => 'en-AU',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Australia',
-            'de-DE' => 'Australien',
+            'zh-CN' => 'Australien',
         ],
     ],
     [
         'locale' => 'en-BE',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Belgium',
-            'de-DE' => 'Belgien',
+            'zh-CN' => 'Belgien',
         ],
     ],
     [
         'locale' => 'en-BW',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Botswana',
-            'de-DE' => 'Botsuana',
+            'zh-CN' => 'Botsuana',
         ],
     ],
     [
         'locale' => 'en-BZ',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Belize',
-            'de-DE' => 'Belize',
+            'zh-CN' => 'Belize',
         ],
     ],
     [
         'locale' => 'en-CA',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Canada',
-            'de-DE' => 'Kanada',
+            'zh-CN' => 'Kanada',
         ],
     ],
     [
         'locale' => 'en-GB',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'United Kingdom',
-            'de-DE' => 'Vereinigtes Königreich',
+            'zh-CN' => 'Vereinigtes Königreich',
         ],
     ],
     [
         'locale' => 'en-GU',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Guam',
-            'de-DE' => 'Guam',
+            'zh-CN' => 'Guam',
         ],
     ],
     [
         'locale' => 'en-HK',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Hong Kong',
-            'de-DE' => 'Sonderverwaltungszone Hongkong',
+            'zh-CN' => 'Sonderverwaltungszone Hongkong',
         ],
     ],
     [
         'locale' => 'en-IE',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Ireland',
-            'de-DE' => 'Irland',
+            'zh-CN' => 'Irland',
         ],
     ],
     [
         'locale' => 'en-IN',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'en-JM',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Jamaica',
-            'de-DE' => 'Jamaika',
+            'zh-CN' => 'Jamaika',
         ],
     ],
     [
         'locale' => 'en-MH',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Marshall Islands',
-            'de-DE' => 'Marshallinseln',
+            'zh-CN' => 'Marshallinseln',
         ],
     ],
     [
         'locale' => 'en-MP',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Northern Mariana Islands',
-            'de-DE' => 'Nördliche Marianen',
+            'zh-CN' => 'Nördliche Marianen',
         ],
     ],
     [
         'locale' => 'en-MT',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Malta',
-            'de-DE' => 'Malta',
+            'zh-CN' => 'Malta',
         ],
     ],
     [
         'locale' => 'en-NA',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Namibia',
-            'de-DE' => 'Namibia',
+            'zh-CN' => 'Namibia',
         ],
     ],
     [
         'locale' => 'en-NZ',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'New Zealand',
-            'de-DE' => 'Neuseeland',
+            'zh-CN' => 'Neuseeland',
         ],
     ],
     [
         'locale' => 'en-PH',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Philippines',
-            'de-DE' => 'Philippinen',
+            'zh-CN' => 'Philippinen',
         ],
     ],
     [
         'locale' => 'en-PK',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Pakistan',
-            'de-DE' => 'Pakistan',
+            'zh-CN' => 'Pakistan',
         ],
     ],
     [
         'locale' => 'en-SG',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Singapore',
-            'de-DE' => 'Singapur',
+            'zh-CN' => 'Singapur',
         ],
     ],
     [
         'locale' => 'en-TT',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Trinidad and Tobago',
-            'de-DE' => 'Trinidad und Tobago',
+            'zh-CN' => 'Trinidad und Tobago',
         ],
     ],
     [
         'locale' => 'en-UM',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'U.S. Minor Outlying Islands',
-            'de-DE' => 'Amerikanisch-Ozeanien',
+            'zh-CN' => 'Amerikanisch-Ozeanien',
         ],
     ],
     [
         'locale' => 'en-US',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'United States',
-            'de-DE' => 'Vereinigte Staaten',
+            'zh-CN' => 'Vereinigte Staaten',
         ],
     ],
     [
         'locale' => 'en-VI',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'American Virgin Islands',
-            'de-DE' => 'Amerikanische Jungferninseln',
+            'zh-CN' => 'Amerikanische Jungferninseln',
         ],
     ],
     [
         'locale' => 'en-ZA',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'en-ZW',
         'name' => [
             'en-GB' => 'English',
-            'de-DE' => 'Englisch',
+            'zh-CN' => 'Englisch',
         ],
         'territory' => [
             'en-GB' => 'Zimbabwe',
-            'de-DE' => 'Simbabwe',
+            'zh-CN' => 'Simbabwe',
         ],
     ],
     [
         'locale' => 'es-AR',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Argentina',
-            'de-DE' => 'Argentinien',
+            'zh-CN' => 'Argentinien',
         ],
     ],
     [
         'locale' => 'es-BO',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Bolivia',
-            'de-DE' => 'Bolivien',
+            'zh-CN' => 'Bolivien',
         ],
     ],
     [
         'locale' => 'es-CL',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Chile',
-            'de-DE' => 'Chile',
+            'zh-CN' => 'Chile',
         ],
     ],
     [
         'locale' => 'es-CO',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Colombia',
-            'de-DE' => 'Kolumbien',
+            'zh-CN' => 'Kolumbien',
         ],
     ],
     [
         'locale' => 'es-CR',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Costa Rica',
-            'de-DE' => 'Costa Rica',
+            'zh-CN' => 'Costa Rica',
         ],
     ],
     [
         'locale' => 'es-DO',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Dominican Republic',
-            'de-DE' => 'Dominikanische Republik',
+            'zh-CN' => 'Dominikanische Republik',
         ],
     ],
     [
         'locale' => 'es-EC',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Ecuador',
-            'de-DE' => 'Ecuador',
+            'zh-CN' => 'Ecuador',
         ],
     ],
     [
         'locale' => 'es-ES',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Spain',
-            'de-DE' => 'Spanien',
+            'zh-CN' => 'Spanien',
         ],
     ],
     [
         'locale' => 'es-GT',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Guatemala',
-            'de-DE' => 'Guatemala',
+            'zh-CN' => 'Guatemala',
         ],
     ],
     [
         'locale' => 'es-HN',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Honduras',
-            'de-DE' => 'Honduras',
+            'zh-CN' => 'Honduras',
         ],
     ],
     [
         'locale' => 'es-MX',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Mexico',
-            'de-DE' => 'Mexiko',
+            'zh-CN' => 'Mexiko',
         ],
     ],
     [
         'locale' => 'es-NI',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Nicaragua',
-            'de-DE' => 'Nicaragua',
+            'zh-CN' => 'Nicaragua',
         ],
     ],
     [
         'locale' => 'es-PA',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Panama',
-            'de-DE' => 'Panama',
+            'zh-CN' => 'Panama',
         ],
     ],
     [
         'locale' => 'es-PE',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Peru',
-            'de-DE' => 'Peru',
+            'zh-CN' => 'Peru',
         ],
     ],
     [
         'locale' => 'es-PR',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Puerto Rico',
-            'de-DE' => 'Puerto Rico',
+            'zh-CN' => 'Puerto Rico',
         ],
     ],
     [
         'locale' => 'es-PY',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Paraguay',
-            'de-DE' => 'Paraguay',
+            'zh-CN' => 'Paraguay',
         ],
     ],
     [
         'locale' => 'es-SV',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'El Salvador',
-            'de-DE' => 'El Salvador',
+            'zh-CN' => 'El Salvador',
         ],
     ],
     [
         'locale' => 'es-US',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'United States',
-            'de-DE' => 'Vereinigte Staaten',
+            'zh-CN' => 'Vereinigte Staaten',
         ],
     ],
     [
         'locale' => 'es-UY',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Uruguay',
-            'de-DE' => 'Uruguay',
+            'zh-CN' => 'Uruguay',
         ],
     ],
     [
         'locale' => 'es-VE',
         'name' => [
             'en-GB' => 'Spanish',
-            'de-DE' => 'Spanisch',
+            'zh-CN' => 'Spanisch',
         ],
         'territory' => [
             'en-GB' => 'Venezuela',
-            'de-DE' => 'Venezuela',
+            'zh-CN' => 'Venezuela',
         ],
     ],
     [
         'locale' => 'et-EE',
         'name' => [
             'en-GB' => 'Estonian',
-            'de-DE' => 'Estnisch',
+            'zh-CN' => 'Estnisch',
         ],
         'territory' => [
             'en-GB' => 'Estonia',
-            'de-DE' => 'Estland',
+            'zh-CN' => 'Estland',
         ],
     ],
     [
         'locale' => 'eu-ES',
         'name' => [
             'en-GB' => 'Basque',
-            'de-DE' => 'Baskisch',
+            'zh-CN' => 'Baskisch',
         ],
         'territory' => [
             'en-GB' => 'Spain',
-            'de-DE' => 'Spanien',
+            'zh-CN' => 'Spanien',
         ],
     ],
     [
         'locale' => 'fa-AF',
         'name' => [
             'en-GB' => 'Persian',
-            'de-DE' => 'Persisch',
+            'zh-CN' => 'Persisch',
         ],
         'territory' => [
             'en-GB' => 'Afghanistan',
-            'de-DE' => 'Afghanistan',
+            'zh-CN' => 'Afghanistan',
         ],
     ],
     [
         'locale' => 'fa-IR',
         'name' => [
             'en-GB' => 'Persian',
-            'de-DE' => 'Persisch',
+            'zh-CN' => 'Persisch',
         ],
         'territory' => [
             'en-GB' => 'Iran',
-            'de-DE' => 'Iran',
+            'zh-CN' => 'Iran',
         ],
     ],
     [
         'locale' => 'fi-FI',
         'name' => [
             'en-GB' => 'Finnish',
-            'de-DE' => 'Finnisch',
+            'zh-CN' => 'Finnisch',
         ],
         'territory' => [
             'en-GB' => 'Finland',
-            'de-DE' => 'Finnland',
+            'zh-CN' => 'Finnland',
         ],
     ],
     [
         'locale' => 'fil-PH',
         'name' => [
             'en-GB' => 'Filipino',
-            'de-DE' => 'Filipino',
+            'zh-CN' => 'Filipino',
         ],
         'territory' => [
             'en-GB' => 'Philippines',
-            'de-DE' => 'Philippinen',
+            'zh-CN' => 'Philippinen',
         ],
     ],
     [
         'locale' => 'fo-FO',
         'name' => [
             'en-GB' => 'Faeroese',
-            'de-DE' => 'Färöisch',
+            'zh-CN' => 'Färöisch',
         ],
         'territory' => [
             'en-GB' => 'Faeroe Islands',
-            'de-DE' => 'Färöer',
+            'zh-CN' => 'Färöer',
         ],
     ],
     [
         'locale' => 'fr-BE',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'Belgium',
-            'de-DE' => 'Belgien',
+            'zh-CN' => 'Belgien',
         ],
     ],
     [
         'locale' => 'fr-CA',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'Canada',
-            'de-DE' => 'Kanada',
+            'zh-CN' => 'Kanada',
         ],
     ],
     [
         'locale' => 'fr-CH',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'Switzerland',
-            'de-DE' => 'Schweiz',
+            'zh-CN' => 'Schweiz',
         ],
     ],
     [
         'locale' => 'fr-FR',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'France',
-            'de-DE' => 'Frankreich',
+            'zh-CN' => 'Frankreich',
         ],
     ],
     [
         'locale' => 'fr-LU',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'Luxembourg',
-            'de-DE' => 'Luxemburg',
+            'zh-CN' => 'Luxemburg',
         ],
     ],
     [
         'locale' => 'fr-MC',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'Monaco',
-            'de-DE' => 'Monaco',
+            'zh-CN' => 'Monaco',
         ],
     ],
     [
         'locale' => 'fr-SN',
         'name' => [
             'en-GB' => 'French',
-            'de-DE' => 'Französisch',
+            'zh-CN' => 'Französisch',
         ],
         'territory' => [
             'en-GB' => 'Senegal',
-            'de-DE' => 'Senegal',
+            'zh-CN' => 'Senegal',
         ],
     ],
     [
         'locale' => 'fur-IT',
         'name' => [
             'en-GB' => 'Friulian',
-            'de-DE' => 'Friulisch',
+            'zh-CN' => 'Friulisch',
         ],
         'territory' => [
             'en-GB' => 'Italy',
-            'de-DE' => 'Italien',
+            'zh-CN' => 'Italien',
         ],
     ],
     [
         'locale' => 'ga-IE',
         'name' => [
             'en-GB' => 'Irish',
-            'de-DE' => 'Irisch',
+            'zh-CN' => 'Irisch',
         ],
         'territory' => [
             'en-GB' => 'Ireland',
-            'de-DE' => 'Irland',
+            'zh-CN' => 'Irland',
         ],
     ],
     [
         'locale' => 'gaa-GH',
         'name' => [
             'en-GB' => 'Ga',
-            'de-DE' => 'Ga-Sprache',
+            'zh-CN' => 'Ga-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Ghana',
-            'de-DE' => 'Ghana',
+            'zh-CN' => 'Ghana',
         ],
     ],
     [
         'locale' => 'gez-ER',
         'name' => [
             'en-GB' => 'Geez',
-            'de-DE' => 'Geez',
+            'zh-CN' => 'Geez',
         ],
         'territory' => [
             'en-GB' => 'Eritrea',
-            'de-DE' => 'Eritrea',
+            'zh-CN' => 'Eritrea',
         ],
     ],
     [
         'locale' => 'gez-ET',
         'name' => [
             'en-GB' => 'Geez',
-            'de-DE' => 'Geez',
+            'zh-CN' => 'Geez',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'gl-ES',
         'name' => [
             'en-GB' => 'Galician',
-            'de-DE' => 'Galizisch',
+            'zh-CN' => 'Galizisch',
         ],
         'territory' => [
             'en-GB' => 'Spain',
-            'de-DE' => 'Spanien',
+            'zh-CN' => 'Spanien',
         ],
     ],
     [
         'locale' => 'gsw-CH',
         'name' => [
             'en-GB' => 'Swiss German',
-            'de-DE' => 'Schweizerdeutsch',
+            'zh-CN' => 'Schweizerdeutsch',
         ],
         'territory' => [
             'en-GB' => 'Switzerland',
-            'de-DE' => 'Schweiz',
+            'zh-CN' => 'Schweiz',
         ],
     ],
     [
         'locale' => 'gu-IN',
         'name' => [
             'en-GB' => 'Gujarati',
-            'de-DE' => 'Gujarati',
+            'zh-CN' => 'Gujarati',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'gv-GB',
         'name' => [
             'en-GB' => 'Manx',
-            'de-DE' => 'Manx',
+            'zh-CN' => 'Manx',
         ],
         'territory' => [
             'en-GB' => 'United Kingdom',
-            'de-DE' => 'Vereinigtes Königreich',
+            'zh-CN' => 'Vereinigtes Königreich',
         ],
     ],
     [
         'locale' => 'ha-GH',
         'name' => [
             'en-GB' => 'Hausa',
-            'de-DE' => 'Hausa',
+            'zh-CN' => 'Hausa',
         ],
         'territory' => [
             'en-GB' => 'Ghana',
-            'de-DE' => 'Ghana',
+            'zh-CN' => 'Ghana',
         ],
     ],
     [
         'locale' => 'ha-NE',
         'name' => [
             'en-GB' => 'Hausa',
-            'de-DE' => 'Hausa',
+            'zh-CN' => 'Hausa',
         ],
         'territory' => [
             'en-GB' => 'Niger',
-            'de-DE' => 'Niger',
+            'zh-CN' => 'Niger',
         ],
     ],
     [
         'locale' => 'ha-NG',
         'name' => [
             'en-GB' => 'Hausa',
-            'de-DE' => 'Hausa',
+            'zh-CN' => 'Hausa',
         ],
         'territory' => [
             'en-GB' => 'Nigeria',
-            'de-DE' => 'Nigeria',
+            'zh-CN' => 'Nigeria',
         ],
     ],
     [
         'locale' => 'ha-SD',
         'name' => [
             'en-GB' => 'Hausa',
-            'de-DE' => 'Hausa',
+            'zh-CN' => 'Hausa',
         ],
         'territory' => [
             'en-GB' => 'Sudan',
-            'de-DE' => 'Sudan',
+            'zh-CN' => 'Sudan',
         ],
     ],
     [
         'locale' => 'haw-US',
         'name' => [
             'en-GB' => 'Hawaiian',
-            'de-DE' => 'Hawaiisch',
+            'zh-CN' => 'Hawaiisch',
         ],
         'territory' => [
             'en-GB' => 'United States',
-            'de-DE' => 'Vereinigte Staaten',
+            'zh-CN' => 'Vereinigte Staaten',
         ],
     ],
     [
         'locale' => 'he-IL',
         'name' => [
             'en-GB' => 'Hebrew',
-            'de-DE' => 'Hebräisch',
+            'zh-CN' => 'Hebräisch',
         ],
         'territory' => [
             'en-GB' => 'Israel',
-            'de-DE' => 'Israel',
+            'zh-CN' => 'Israel',
         ],
     ],
     [
         'locale' => 'hi-IN',
         'name' => [
             'en-GB' => 'Hindi',
-            'de-DE' => 'Hindi',
+            'zh-CN' => 'Hindi',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'hr-HR',
         'name' => [
             'en-GB' => 'Croatian',
-            'de-DE' => 'Kroatisch',
+            'zh-CN' => 'Kroatisch',
         ],
         'territory' => [
             'en-GB' => 'Croatia',
-            'de-DE' => 'Kroatien',
+            'zh-CN' => 'Kroatien',
         ],
     ],
     [
         'locale' => 'hu-HU',
         'name' => [
             'en-GB' => 'Hungarian',
-            'de-DE' => 'Ungarisch',
+            'zh-CN' => 'Ungarisch',
         ],
         'territory' => [
             'en-GB' => 'Hungary',
-            'de-DE' => 'Ungarn',
+            'zh-CN' => 'Ungarn',
         ],
     ],
     [
         'locale' => 'hy-AM',
         'name' => [
             'en-GB' => 'Armenian',
-            'de-DE' => 'Armenisch',
+            'zh-CN' => 'Armenisch',
         ],
         'territory' => [
             'en-GB' => 'Armenia',
-            'de-DE' => 'Armenien',
+            'zh-CN' => 'Armenien',
         ],
     ],
     [
         'locale' => 'id-ID',
         'name' => [
             'en-GB' => 'Indonesian',
-            'de-DE' => 'Indonesisch',
+            'zh-CN' => 'Indonesisch',
         ],
         'territory' => [
             'en-GB' => 'Indonesia',
-            'de-DE' => 'Indonesien',
+            'zh-CN' => 'Indonesien',
         ],
     ],
     [
         'locale' => 'ig-NG',
         'name' => [
             'en-GB' => 'Igbo',
-            'de-DE' => 'Igbo-Sprache',
+            'zh-CN' => 'Igbo-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Nigeria',
-            'de-DE' => 'Nigeria',
+            'zh-CN' => 'Nigeria',
         ],
     ],
     [
         'locale' => 'ii-CN',
         'name' => [
             'en-GB' => 'Sichuan Yi',
-            'de-DE' => 'Sichuan Yi',
+            'zh-CN' => 'Sichuan Yi',
         ],
         'territory' => [
             'en-GB' => 'China',
-            'de-DE' => 'China',
+            'zh-CN' => 'China',
         ],
     ],
     [
         'locale' => 'is-IS',
         'name' => [
             'en-GB' => 'Icelandic',
-            'de-DE' => 'Isländisch',
+            'zh-CN' => 'Isländisch',
         ],
         'territory' => [
             'en-GB' => 'Iceland',
-            'de-DE' => 'Island',
+            'zh-CN' => 'Island',
         ],
     ],
     [
         'locale' => 'it-CH',
         'name' => [
             'en-GB' => 'Italian',
-            'de-DE' => 'Italienisch',
+            'zh-CN' => 'Italienisch',
         ],
         'territory' => [
             'en-GB' => 'Switzerland',
-            'de-DE' => 'Schweiz',
+            'zh-CN' => 'Schweiz',
         ],
     ],
     [
         'locale' => 'it-IT',
         'name' => [
             'en-GB' => 'Italian',
-            'de-DE' => 'Italienisch',
+            'zh-CN' => 'Italienisch',
         ],
         'territory' => [
             'en-GB' => 'Italy',
-            'de-DE' => 'Italien',
+            'zh-CN' => 'Italien',
         ],
     ],
     [
         'locale' => 'ja-JP',
         'name' => [
             'en-GB' => 'Japanese',
-            'de-DE' => 'Japanisch',
+            'zh-CN' => 'Japanisch',
         ],
         'territory' => [
             'en-GB' => 'Japan',
-            'de-DE' => 'Japan',
+            'zh-CN' => 'Japan',
         ],
     ],
     [
         'locale' => 'ka-GE',
         'name' => [
             'en-GB' => 'Georgian',
-            'de-DE' => 'Georgisch',
+            'zh-CN' => 'Georgisch',
         ],
         'territory' => [
             'en-GB' => 'Georgia',
-            'de-DE' => 'Georgien',
+            'zh-CN' => 'Georgien',
         ],
     ],
     [
         'locale' => 'kaj-NG',
         'name' => [
             'en-GB' => 'Jju',
-            'de-DE' => 'Jju',
+            'zh-CN' => 'Jju',
         ],
         'territory' => [
             'en-GB' => 'Nigeria',
-            'de-DE' => 'Nigeria',
+            'zh-CN' => 'Nigeria',
         ],
     ],
     [
         'locale' => 'kam-KE',
         'name' => [
             'en-GB' => 'Kamba',
-            'de-DE' => 'Kamba',
+            'zh-CN' => 'Kamba',
         ],
         'territory' => [
             'en-GB' => 'Kenya',
-            'de-DE' => 'Kenia',
+            'zh-CN' => 'Kenia',
         ],
     ],
     [
         'locale' => 'kcg-NG',
         'name' => [
             'en-GB' => 'Tyap',
-            'de-DE' => 'Tyap',
+            'zh-CN' => 'Tyap',
         ],
         'territory' => [
             'en-GB' => 'Nigeria',
-            'de-DE' => 'Nigeria',
+            'zh-CN' => 'Nigeria',
         ],
     ],
     [
         'locale' => 'kfo-CI',
         'name' => [
             'en-GB' => 'Koro',
-            'de-DE' => 'Koro',
+            'zh-CN' => 'Koro',
         ],
         'territory' => [
             'en-GB' => 'Ivory Coast',
-            'de-DE' => 'Elfenbeinküste',
+            'zh-CN' => 'Elfenbeinküste',
         ],
     ],
     [
         'locale' => 'kk-KZ',
         'name' => [
             'en-GB' => 'Kazakh',
-            'de-DE' => 'Kasachisch',
+            'zh-CN' => 'Kasachisch',
         ],
         'territory' => [
             'en-GB' => 'Kazakhstan',
-            'de-DE' => 'Kasachstan',
+            'zh-CN' => 'Kasachstan',
         ],
     ],
     [
         'locale' => 'kl-GL',
         'name' => [
             'en-GB' => 'Greenlandic',
-            'de-DE' => 'Grönländisch',
+            'zh-CN' => 'Grönländisch',
         ],
         'territory' => [
             'en-GB' => 'Greenland',
-            'de-DE' => 'Grönland',
+            'zh-CN' => 'Grönland',
         ],
     ],
     [
         'locale' => 'km-KH',
         'name' => [
             'en-GB' => 'Cambodian',
-            'de-DE' => 'Kambodschanisch',
+            'zh-CN' => 'Kambodschanisch',
         ],
         'territory' => [
             'en-GB' => 'Cambodia',
-            'de-DE' => 'Kambodscha',
+            'zh-CN' => 'Kambodscha',
         ],
     ],
     [
         'locale' => 'kn-IN',
         'name' => [
             'en-GB' => 'Kannada',
-            'de-DE' => 'Kannada',
+            'zh-CN' => 'Kannada',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'ko-KR',
         'name' => [
             'en-GB' => 'Korean',
-            'de-DE' => 'Koreanisch',
+            'zh-CN' => 'Koreanisch',
         ],
         'territory' => [
             'en-GB' => 'Republic of Korea',
-            'de-DE' => 'Republik Korea',
+            'zh-CN' => 'Republik Korea',
         ],
     ],
     [
         'locale' => 'kok-IN',
         'name' => [
             'en-GB' => 'Konkani',
-            'de-DE' => 'Konkani',
+            'zh-CN' => 'Konkani',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'kpe-GN',
         'name' => [
             'en-GB' => 'Kpelle',
-            'de-DE' => 'Kpelle-Sprache',
+            'zh-CN' => 'Kpelle-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Guinea',
-            'de-DE' => 'Guinea',
+            'zh-CN' => 'Guinea',
         ],
     ],
     [
         'locale' => 'kpe-LR',
         'name' => [
             'en-GB' => 'Kpelle',
-            'de-DE' => 'Kpelle-Sprache',
+            'zh-CN' => 'Kpelle-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Liberia',
-            'de-DE' => 'Liberia',
+            'zh-CN' => 'Liberia',
         ],
     ],
     [
         'locale' => 'ku-IQ',
         'name' => [
             'en-GB' => 'Kurdish',
-            'de-DE' => 'Kurdisch',
+            'zh-CN' => 'Kurdisch',
         ],
         'territory' => [
             'en-GB' => 'Iraq',
-            'de-DE' => 'Irak',
+            'zh-CN' => 'Irak',
         ],
     ],
     [
         'locale' => 'ku-IR',
         'name' => [
             'en-GB' => 'Kurdish',
-            'de-DE' => 'Kurdisch',
+            'zh-CN' => 'Kurdisch',
         ],
         'territory' => [
             'en-GB' => 'Iran',
-            'de-DE' => 'Iran',
+            'zh-CN' => 'Iran',
         ],
     ],
     [
         'locale' => 'ku-SY',
         'name' => [
             'en-GB' => 'Kurdish',
-            'de-DE' => 'Kurdisch',
+            'zh-CN' => 'Kurdisch',
         ],
         'territory' => [
             'en-GB' => 'Syria',
-            'de-DE' => 'Syrien',
+            'zh-CN' => 'Syrien',
         ],
     ],
     [
         'locale' => 'ku-TR',
         'name' => [
             'en-GB' => 'Kurdish',
-            'de-DE' => 'Kurdisch',
+            'zh-CN' => 'Kurdisch',
         ],
         'territory' => [
             'en-GB' => 'Turkey',
-            'de-DE' => 'Türkei',
+            'zh-CN' => 'Türkei',
         ],
     ],
     [
         'locale' => 'kw-GB',
         'name' => [
             'en-GB' => 'Cornish',
-            'de-DE' => 'Kornisch',
+            'zh-CN' => 'Kornisch',
         ],
         'territory' => [
             'en-GB' => 'United Kingdom',
-            'de-DE' => 'Vereinigtes Königreich',
+            'zh-CN' => 'Vereinigtes Königreich',
         ],
     ],
     [
         'locale' => 'ky-KG',
         'name' => [
             'en-GB' => 'Kirghiz',
-            'de-DE' => 'Kirgisisch',
+            'zh-CN' => 'Kirgisisch',
         ],
         'territory' => [
             'en-GB' => 'Kyrgyzstan',
-            'de-DE' => 'Kirgisistan',
+            'zh-CN' => 'Kirgisistan',
         ],
     ],
     [
         'locale' => 'ln-CD',
         'name' => [
             'en-GB' => 'Lingala',
-            'de-DE' => 'Lingala',
+            'zh-CN' => 'Lingala',
         ],
         'territory' => [
             'en-GB' => 'Democratic Republic of the Congo',
-            'de-DE' => 'Demokratische Republik Kongo',
+            'zh-CN' => 'Demokratische Republik Kongo',
         ],
     ],
     [
         'locale' => 'ln-CG',
         'name' => [
             'en-GB' => 'Lingala',
-            'de-DE' => 'Lingala',
+            'zh-CN' => 'Lingala',
         ],
         'territory' => [
             'en-GB' => 'Congo',
-            'de-DE' => 'Kongo',
+            'zh-CN' => 'Kongo',
         ],
     ],
     [
         'locale' => 'lo-LA',
         'name' => [
             'en-GB' => 'Lao',
-            'de-DE' => 'Laotisch',
+            'zh-CN' => 'Laotisch',
         ],
         'territory' => [
             'en-GB' => 'Laos',
-            'de-DE' => 'Laos',
+            'zh-CN' => 'Laos',
         ],
     ],
     [
         'locale' => 'lt-LT',
         'name' => [
             'en-GB' => 'Lithuanian',
-            'de-DE' => 'Litauisch',
+            'zh-CN' => 'Litauisch',
         ],
         'territory' => [
             'en-GB' => 'Lithuania',
-            'de-DE' => 'Litauen',
+            'zh-CN' => 'Litauen',
         ],
     ],
     [
         'locale' => 'lv-LV',
         'name' => [
             'en-GB' => 'Latvian',
-            'de-DE' => 'Lettisch',
+            'zh-CN' => 'Lettisch',
         ],
         'territory' => [
             'en-GB' => 'Latvia',
-            'de-DE' => 'Lettland',
+            'zh-CN' => 'Lettland',
         ],
     ],
     [
         'locale' => 'mk-MK',
         'name' => [
             'en-GB' => 'Macedonian',
-            'de-DE' => 'Mazedonisch',
+            'zh-CN' => 'Mazedonisch',
         ],
         'territory' => [
             'en-GB' => 'Macedonia',
-            'de-DE' => 'Mazedonien',
+            'zh-CN' => 'Mazedonien',
         ],
     ],
     [
         'locale' => 'ml-IN',
         'name' => [
             'en-GB' => 'Malayalam',
-            'de-DE' => 'Malayalam',
+            'zh-CN' => 'Malayalam',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'mn-CN',
         'name' => [
             'en-GB' => 'Mongol',
-            'de-DE' => 'Mongolisch',
+            'zh-CN' => 'Mongolisch',
         ],
         'territory' => [
             'en-GB' => 'China',
-            'de-DE' => 'China',
+            'zh-CN' => 'China',
         ],
     ],
     [
         'locale' => 'mn-MN',
         'name' => [
             'en-GB' => 'Mongol',
-            'de-DE' => 'Mongolisch',
+            'zh-CN' => 'Mongolisch',
         ],
         'territory' => [
             'en-GB' => 'Mongolia',
-            'de-DE' => 'Mongolei',
+            'zh-CN' => 'Mongolei',
         ],
     ],
     [
         'locale' => 'mr-IN',
         'name' => [
             'en-GB' => 'Marathi',
-            'de-DE' => 'Marathi',
+            'zh-CN' => 'Marathi',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'ms-BN',
         'name' => [
             'en-GB' => 'Malay',
-            'de-DE' => 'Malaiisch',
+            'zh-CN' => 'Malaiisch',
         ],
         'territory' => [
             'en-GB' => 'Brunei Darussalam',
-            'de-DE' => 'Brunei Darussalam',
+            'zh-CN' => 'Brunei Darussalam',
         ],
     ],
     [
         'locale' => 'ms-MY',
         'name' => [
             'en-GB' => 'Malay',
-            'de-DE' => 'Malaiisch',
+            'zh-CN' => 'Malaiisch',
         ],
         'territory' => [
             'en-GB' => 'Malaysia',
-            'de-DE' => 'Malaysia',
+            'zh-CN' => 'Malaysia',
         ],
     ],
     [
         'locale' => 'mt-MT',
         'name' => [
             'en-GB' => 'Maltese',
-            'de-DE' => 'Maltesisch',
+            'zh-CN' => 'Maltesisch',
         ],
         'territory' => [
             'en-GB' => 'Malta',
-            'de-DE' => 'Malta',
+            'zh-CN' => 'Malta',
         ],
     ],
     [
         'locale' => 'my-MM',
         'name' => [
             'en-GB' => 'Burmese',
-            'de-DE' => 'Birmanisch',
+            'zh-CN' => 'Birmanisch',
         ],
         'territory' => [
             'en-GB' => 'Myanmar',
-            'de-DE' => 'Myanmar',
+            'zh-CN' => 'Myanmar',
         ],
     ],
     [
         'locale' => 'nb-NO',
         'name' => [
             'en-GB' => 'Norwegian Bokmål',
-            'de-DE' => 'Norwegisch Bokmål',
+            'zh-CN' => 'Norwegisch Bokmål',
         ],
         'territory' => [
             'en-GB' => 'Norway',
-            'de-DE' => 'Norwegen',
+            'zh-CN' => 'Norwegen',
         ],
     ],
     [
         'locale' => 'nds-DE',
         'name' => [
             'en-GB' => 'Low German',
-            'de-DE' => 'Niederdeutsch',
+            'zh-CN' => 'Niederdeutsch',
         ],
         'territory' => [
             'en-GB' => 'Germany',
-            'de-DE' => 'Deutschland',
+            'zh-CN' => 'Deutschland',
         ],
     ],
     [
         'locale' => 'ne-IN',
         'name' => [
             'en-GB' => 'Nepalese',
-            'de-DE' => 'Nepalesisch',
+            'zh-CN' => 'Nepalesisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'ne-NP',
         'name' => [
             'en-GB' => 'Nepalese',
-            'de-DE' => 'Nepalesisch',
+            'zh-CN' => 'Nepalesisch',
         ],
         'territory' => [
             'en-GB' => 'Nepal',
-            'de-DE' => 'Nepal',
+            'zh-CN' => 'Nepal',
         ],
     ],
     [
         'locale' => 'nl-BE',
         'name' => [
             'en-GB' => 'Dutch',
-            'de-DE' => 'Niederländisch',
+            'zh-CN' => 'Niederländisch',
         ],
         'territory' => [
             'en-GB' => 'Belgium',
-            'de-DE' => 'Belgien',
+            'zh-CN' => 'Belgien',
         ],
     ],
     [
         'locale' => 'nl-NL',
         'name' => [
             'en-GB' => 'Dutch',
-            'de-DE' => 'Niederländisch',
+            'zh-CN' => 'Niederländisch',
         ],
         'territory' => [
             'en-GB' => 'Netherlands',
-            'de-DE' => 'Niederlande',
+            'zh-CN' => 'Niederlande',
         ],
     ],
     [
         'locale' => 'nn-NO',
         'name' => [
             'en-GB' => 'Norwegian Nynorsk',
-            'de-DE' => 'Norwegisch Nynorsk',
+            'zh-CN' => 'Norwegisch Nynorsk',
         ],
         'territory' => [
             'en-GB' => 'Norway',
-            'de-DE' => 'Norwegen',
+            'zh-CN' => 'Norwegen',
         ],
     ],
     [
         'locale' => 'nr-ZA',
         'name' => [
             'en-GB' => 'Southern Ndebele',
-            'de-DE' => 'Süd-Ndebele-Sprache',
+            'zh-CN' => 'Süd-Ndebele-Sprache',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'nso-ZA',
         'name' => [
             'en-GB' => 'Northern Sotho language',
-            'de-DE' => 'Nord-Sotho-Sprache',
+            'zh-CN' => 'Nord-Sotho-Sprache',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'ny-MW',
         'name' => [
             'en-GB' => 'Nyanja',
-            'de-DE' => 'Nyanja-Sprache',
+            'zh-CN' => 'Nyanja-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Malawi',
-            'de-DE' => 'Malawi',
+            'zh-CN' => 'Malawi',
         ],
     ],
     [
         'locale' => 'oc-FR',
         'name' => [
             'en-GB' => 'Occitan',
-            'de-DE' => 'Okzitanisch',
+            'zh-CN' => 'Okzitanisch',
         ],
         'territory' => [
             'en-GB' => 'France',
-            'de-DE' => 'Frankreich',
+            'zh-CN' => 'Frankreich',
         ],
     ],
     [
         'locale' => 'om-ET',
         'name' => [
             'en-GB' => 'Oromo',
-            'de-DE' => 'Oromo',
+            'zh-CN' => 'Oromo',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'om-KE',
         'name' => [
             'en-GB' => 'Oromo',
-            'de-DE' => 'Oromo',
+            'zh-CN' => 'Oromo',
         ],
         'territory' => [
             'en-GB' => 'Kenya',
-            'de-DE' => 'Kenia',
+            'zh-CN' => 'Kenia',
         ],
     ],
     [
         'locale' => 'or-IN',
         'name' => [
             'en-GB' => 'Orija',
-            'de-DE' => 'Orija',
+            'zh-CN' => 'Orija',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'pa-IN',
         'name' => [
             'en-GB' => 'Punjabi',
-            'de-DE' => 'Pandschabisch',
+            'zh-CN' => 'Pandschabisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'pa-PK',
         'name' => [
             'en-GB' => 'Punjabi',
-            'de-DE' => 'Pandschabisch',
+            'zh-CN' => 'Pandschabisch',
         ],
         'territory' => [
             'en-GB' => 'Pakistan',
-            'de-DE' => 'Pakistan',
+            'zh-CN' => 'Pakistan',
         ],
     ],
     [
         'locale' => 'pl-PL',
         'name' => [
             'en-GB' => 'Polish',
-            'de-DE' => 'Polnisch',
+            'zh-CN' => 'Polnisch',
         ],
         'territory' => [
             'en-GB' => 'Poland',
-            'de-DE' => 'Polen',
+            'zh-CN' => 'Polen',
         ],
     ],
     [
         'locale' => 'ps-AF',
         'name' => [
             'en-GB' => 'Pashto',
-            'de-DE' => 'Paschtu',
+            'zh-CN' => 'Paschtu',
         ],
         'territory' => [
             'en-GB' => 'Afghanistan',
-            'de-DE' => 'Afghanistan',
+            'zh-CN' => 'Afghanistan',
         ],
     ],
     [
         'locale' => 'pt-BR',
         'name' => [
             'en-GB' => 'Portuguese',
-            'de-DE' => 'Portugiesisch',
+            'zh-CN' => 'Portugiesisch',
         ],
         'territory' => [
             'en-GB' => 'Brazil',
-            'de-DE' => 'Brasilien',
+            'zh-CN' => 'Brasilien',
         ],
     ],
     [
         'locale' => 'pt-PT',
         'name' => [
             'en-GB' => 'Portuguese',
-            'de-DE' => 'Portugiesisch',
+            'zh-CN' => 'Portugiesisch',
         ],
         'territory' => [
             'en-GB' => 'Portugal',
-            'de-DE' => 'Portugal',
+            'zh-CN' => 'Portugal',
         ],
     ],
     [
         'locale' => 'ro-MD',
         'name' => [
             'en-GB' => 'Romanian',
-            'de-DE' => 'Rumänisch',
+            'zh-CN' => 'Rumänisch',
         ],
         'territory' => [
             'en-GB' => 'Republic of Moldova',
-            'de-DE' => 'Republik Moldau',
+            'zh-CN' => 'Republik Moldau',
         ],
     ],
     [
         'locale' => 'ro-RO',
         'name' => [
             'en-GB' => 'Romanian',
-            'de-DE' => 'Rumänisch',
+            'zh-CN' => 'Rumänisch',
         ],
         'territory' => [
             'en-GB' => 'Romania',
-            'de-DE' => 'Rumänien',
+            'zh-CN' => 'Rumänien',
         ],
     ],
     [
         'locale' => 'ru-RU',
         'name' => [
             'en-GB' => 'Russian',
-            'de-DE' => 'Russisch',
+            'zh-CN' => 'Russisch',
         ],
         'territory' => [
             'en-GB' => 'Russian Federation',
-            'de-DE' => 'Russische Föderation',
+            'zh-CN' => 'Russische Föderation',
         ],
     ],
     [
         'locale' => 'ru-UA',
         'name' => [
             'en-GB' => 'Russian',
-            'de-DE' => 'Russisch',
+            'zh-CN' => 'Russisch',
         ],
         'territory' => [
             'en-GB' => 'Ukraine',
-            'de-DE' => 'Ukraine',
+            'zh-CN' => 'Ukraine',
         ],
     ],
     [
         'locale' => 'rw-RW',
         'name' => [
             'en-GB' => 'Rwandan',
-            'de-DE' => 'Ruandisch',
+            'zh-CN' => 'Ruandisch',
         ],
         'territory' => [
             'en-GB' => 'Rwanda',
-            'de-DE' => 'Ruanda',
+            'zh-CN' => 'Ruanda',
         ],
     ],
     [
         'locale' => 'sa-IN',
         'name' => [
             'en-GB' => 'Sanskrit',
-            'de-DE' => 'Sanskrit',
+            'zh-CN' => 'Sanskrit',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'se-FI',
         'name' => [
             'en-GB' => 'Northen Samian',
-            'de-DE' => 'Nord-Samisch',
+            'zh-CN' => 'Nord-Samisch',
         ],
         'territory' => [
             'en-GB' => 'Finland',
-            'de-DE' => 'Finnland',
+            'zh-CN' => 'Finnland',
         ],
     ],
     [
         'locale' => 'se-NO',
         'name' => [
             'en-GB' => 'Northen Samian',
-            'de-DE' => 'Nord-Samisch',
+            'zh-CN' => 'Nord-Samisch',
         ],
         'territory' => [
             'en-GB' => 'Norway',
-            'de-DE' => 'Norwegen',
+            'zh-CN' => 'Norwegen',
         ],
     ],
     [
         'locale' => 'sh-BA',
         'name' => [
             'en-GB' => 'Serbo-Croat',
-            'de-DE' => 'Serbo-Kroatisch',
+            'zh-CN' => 'Serbo-Kroatisch',
         ],
         'territory' => [
             'en-GB' => 'Bosnia and Herzegovina',
-            'de-DE' => 'Bosnien und Herzegowina',
+            'zh-CN' => 'Bosnien und Herzegowina',
         ],
     ],
     [
         'locale' => 'sh-CS',
         'name' => [
             'en-GB' => 'Serbo-Croat',
-            'de-DE' => 'Serbo-Kroatisch',
+            'zh-CN' => 'Serbo-Kroatisch',
         ],
         'territory' => [
             'en-GB' => 'Serbia and Montenegro',
-            'de-DE' => 'Serbien und Montenegro',
+            'zh-CN' => 'Serbien und Montenegro',
         ],
     ],
     [
         'locale' => 'si-LK',
         'name' => [
             'en-GB' => 'Singhalese',
-            'de-DE' => 'Singhalesisch',
+            'zh-CN' => 'Singhalesisch',
         ],
         'territory' => [
             'en-GB' => 'Sri Lanka',
-            'de-DE' => 'Sri Lanka',
+            'zh-CN' => 'Sri Lanka',
         ],
     ],
     [
         'locale' => 'sid-ET',
         'name' => [
             'en-GB' => 'Sidamo',
-            'de-DE' => 'Sidamo',
+            'zh-CN' => 'Sidamo',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'sk-SK',
         'name' => [
             'en-GB' => 'Slovak',
-            'de-DE' => 'Slowakisch',
+            'zh-CN' => 'Slowakisch',
         ],
         'territory' => [
             'en-GB' => 'Slovakia',
-            'de-DE' => 'Slowakei',
+            'zh-CN' => 'Slowakei',
         ],
     ],
     [
         'locale' => 'sl-SI',
         'name' => [
             'en-GB' => 'Slovene',
-            'de-DE' => 'Slowenisch',
+            'zh-CN' => 'Slowenisch',
         ],
         'territory' => [
             'en-GB' => 'Slovenia',
-            'de-DE' => 'Slowenien',
+            'zh-CN' => 'Slowenien',
         ],
     ],
     [
         'locale' => 'so-DJ',
         'name' => [
             'en-GB' => 'Somali',
-            'de-DE' => 'Somali',
+            'zh-CN' => 'Somali',
         ],
         'territory' => [
             'en-GB' => 'Djibouti',
-            'de-DE' => 'Dschibuti',
+            'zh-CN' => 'Dschibuti',
         ],
     ],
     [
         'locale' => 'so-ET',
         'name' => [
             'en-GB' => 'Somali',
-            'de-DE' => 'Somali',
+            'zh-CN' => 'Somali',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'so-KE',
         'name' => [
             'en-GB' => 'Somali',
-            'de-DE' => 'Somali',
+            'zh-CN' => 'Somali',
         ],
         'territory' => [
             'en-GB' => 'Kenya',
-            'de-DE' => 'Kenia',
+            'zh-CN' => 'Kenia',
         ],
     ],
     [
         'locale' => 'so-SO',
         'name' => [
             'en-GB' => 'Somali',
-            'de-DE' => 'Somali',
+            'zh-CN' => 'Somali',
         ],
         'territory' => [
             'en-GB' => 'Somalia',
-            'de-DE' => 'Somalia',
+            'zh-CN' => 'Somalia',
         ],
     ],
     [
         'locale' => 'sq-AL',
         'name' => [
             'en-GB' => 'Albanian',
-            'de-DE' => 'Albanisch',
+            'zh-CN' => 'Albanisch',
         ],
         'territory' => [
             'en-GB' => 'Albania',
-            'de-DE' => 'Albanien',
+            'zh-CN' => 'Albanien',
         ],
     ],
     [
         'locale' => 'sr-BA',
         'name' => [
             'en-GB' => 'Serbian',
-            'de-DE' => 'Serbisch',
+            'zh-CN' => 'Serbisch',
         ],
         'territory' => [
             'en-GB' => 'Bosnia and Herzegovina',
-            'de-DE' => 'Bosnien und Herzegowina',
+            'zh-CN' => 'Bosnien und Herzegowina',
         ],
     ],
     [
         'locale' => 'sr-CS',
         'name' => [
             'en-GB' => 'Serbian',
-            'de-DE' => 'Serbisch',
+            'zh-CN' => 'Serbisch',
         ],
         'territory' => [
             'en-GB' => 'Serbia and Montenegro',
-            'de-DE' => 'Serbien und Montenegro',
+            'zh-CN' => 'Serbien und Montenegro',
         ],
     ],
     [
         'locale' => 'sr-ME',
         'name' => [
             'en-GB' => 'Serbian',
-            'de-DE' => 'Serbisch',
+            'zh-CN' => 'Serbisch',
         ],
         'territory' => [
             'en-GB' => 'Montenegro',
-            'de-DE' => 'Montenegro',
+            'zh-CN' => 'Montenegro',
         ],
     ],
     [
         'locale' => 'sr-RS',
         'name' => [
             'en-GB' => 'Serbian',
-            'de-DE' => 'Serbisch',
+            'zh-CN' => 'Serbisch',
         ],
         'territory' => [
             'en-GB' => 'Serbia',
-            'de-DE' => 'Serbien',
+            'zh-CN' => 'Serbien',
         ],
     ],
     [
         'locale' => 'ss-SZ',
         'name' => [
             'en-GB' => 'Swazi',
-            'de-DE' => 'Swazi',
+            'zh-CN' => 'Swazi',
         ],
         'territory' => [
             'en-GB' => 'Swaziland',
-            'de-DE' => 'Swasiland',
+            'zh-CN' => 'Swasiland',
         ],
     ],
     [
         'locale' => 'ss-ZA',
         'name' => [
             'en-GB' => 'Swazi',
-            'de-DE' => 'Swazi',
+            'zh-CN' => 'Swazi',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'st-LS',
         'name' => [
             'en-GB' => 'Southern Sotho Language',
-            'de-DE' => 'Süd-Sotho-Sprache',
+            'zh-CN' => 'Süd-Sotho-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Lesotho',
-            'de-DE' => 'Lesotho',
+            'zh-CN' => 'Lesotho',
         ],
     ],
     [
         'locale' => 'st-ZA',
         'name' => [
             'en-GB' => 'Southern Sotho Language',
-            'de-DE' => 'Süd-Sotho-Sprache',
+            'zh-CN' => 'Süd-Sotho-Sprache',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'sv-FI',
         'name' => [
             'en-GB' => 'Swedish',
-            'de-DE' => 'Schwedisch',
+            'zh-CN' => 'Schwedisch',
         ],
         'territory' => [
             'en-GB' => 'Finland',
-            'de-DE' => 'Finnland',
+            'zh-CN' => 'Finnland',
         ],
     ],
     [
         'locale' => 'sv-SE',
         'name' => [
             'en-GB' => 'Swedish',
-            'de-DE' => 'Schwedisch',
+            'zh-CN' => 'Schwedisch',
         ],
         'territory' => [
             'en-GB' => 'Sweden',
-            'de-DE' => 'Schweden',
+            'zh-CN' => 'Schweden',
         ],
     ],
     [
         'locale' => 'sw-KE',
         'name' => [
             'en-GB' => 'Swahili',
-            'de-DE' => 'Suaheli',
+            'zh-CN' => 'Suaheli',
         ],
         'territory' => [
             'en-GB' => 'Kenya',
-            'de-DE' => 'Kenia',
+            'zh-CN' => 'Kenia',
         ],
     ],
     [
         'locale' => 'sw-TZ',
         'name' => [
             'en-GB' => 'Swahili',
-            'de-DE' => 'Suaheli',
+            'zh-CN' => 'Suaheli',
         ],
         'territory' => [
             'en-GB' => 'Tanzania',
-            'de-DE' => 'Tansania',
+            'zh-CN' => 'Tansania',
         ],
     ],
     [
         'locale' => 'syr-SY',
         'name' => [
             'en-GB' => 'Syriac',
-            'de-DE' => 'Syrisch',
+            'zh-CN' => 'Syrisch',
         ],
         'territory' => [
             'en-GB' => 'Syria',
-            'de-DE' => 'Syrien',
+            'zh-CN' => 'Syrien',
         ],
     ],
     [
         'locale' => 'ta-IN',
         'name' => [
             'en-GB' => 'Tamil',
-            'de-DE' => 'Tamilisch',
+            'zh-CN' => 'Tamilisch',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'te-IN',
         'name' => [
             'en-GB' => 'Telugu',
-            'de-DE' => 'Telugu',
+            'zh-CN' => 'Telugu',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'tg-TJ',
         'name' => [
             'en-GB' => 'Tadjik',
-            'de-DE' => 'Tadschikisch',
+            'zh-CN' => 'Tadschikisch',
         ],
         'territory' => [
             'en-GB' => 'Tajikistan',
-            'de-DE' => 'Tadschikistan',
+            'zh-CN' => 'Tadschikistan',
         ],
     ],
     [
         'locale' => 'th-TH',
         'name' => [
             'en-GB' => 'Thai',
-            'de-DE' => 'Thailändisch',
+            'zh-CN' => 'Thailändisch',
         ],
         'territory' => [
             'en-GB' => 'Thailand',
-            'de-DE' => 'Thailand',
+            'zh-CN' => 'Thailand',
         ],
     ],
     [
         'locale' => 'ti-ER',
         'name' => [
             'en-GB' => 'Tigrinya',
-            'de-DE' => 'Tigrinja',
+            'zh-CN' => 'Tigrinja',
         ],
         'territory' => [
             'en-GB' => 'Eritrea',
-            'de-DE' => 'Eritrea',
+            'zh-CN' => 'Eritrea',
         ],
     ],
     [
         'locale' => 'ti-ET',
         'name' => [
             'en-GB' => 'Tigrinya',
-            'de-DE' => 'Tigrinja',
+            'zh-CN' => 'Tigrinja',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'tig-ER',
         'name' => [
             'en-GB' => 'Tigre',
-            'de-DE' => 'Tigre',
+            'zh-CN' => 'Tigre',
         ],
         'territory' => [
             'en-GB' => 'Eritrea',
-            'de-DE' => 'Eritrea',
+            'zh-CN' => 'Eritrea',
         ],
     ],
     [
         'locale' => 'tn-ZA',
         'name' => [
             'en-GB' => 'Tswana Language',
-            'de-DE' => 'Tswana-Sprache',
+            'zh-CN' => 'Tswana-Sprache',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'to-TO',
         'name' => [
             'en-GB' => 'Tongan',
-            'de-DE' => 'Tongaisch',
+            'zh-CN' => 'Tongaisch',
         ],
         'territory' => [
             'en-GB' => 'Tonga',
-            'de-DE' => 'Tonga',
+            'zh-CN' => 'Tonga',
         ],
     ],
     [
         'locale' => 'tr-TR',
         'name' => [
             'en-GB' => 'Turkish',
-            'de-DE' => 'Türkisch',
+            'zh-CN' => 'Türkisch',
         ],
         'territory' => [
             'en-GB' => 'Turkey',
-            'de-DE' => 'Türkei',
+            'zh-CN' => 'Türkei',
         ],
     ],
     [
         'locale' => 'ts-ZA',
         'name' => [
             'en-GB' => 'Tsonga',
-            'de-DE' => 'Tsonga',
+            'zh-CN' => 'Tsonga',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'tt-RU',
         'name' => [
             'en-GB' => 'Tartar',
-            'de-DE' => 'Tatarisch',
+            'zh-CN' => 'Tatarisch',
         ],
         'territory' => [
             'en-GB' => 'Russian Federation',
-            'de-DE' => 'Russische Föderation',
+            'zh-CN' => 'Russische Föderation',
         ],
     ],
     [
         'locale' => 'ug-CN',
         'name' => [
             'en-GB' => 'Uighur',
-            'de-DE' => 'Uigurisch',
+            'zh-CN' => 'Uigurisch',
         ],
         'territory' => [
             'en-GB' => 'China',
-            'de-DE' => 'China',
+            'zh-CN' => 'China',
         ],
     ],
     [
         'locale' => 'uk-UA',
         'name' => [
             'en-GB' => 'Ukrainian',
-            'de-DE' => 'Ukrainisch',
+            'zh-CN' => 'Ukrainisch',
         ],
         'territory' => [
             'en-GB' => 'Ukraine',
-            'de-DE' => 'Ukraine',
+            'zh-CN' => 'Ukraine',
         ],
     ],
     [
         'locale' => 'ur-IN',
         'name' => [
             'en-GB' => 'Urdu',
-            'de-DE' => 'Urdu',
+            'zh-CN' => 'Urdu',
         ],
         'territory' => [
             'en-GB' => 'India',
-            'de-DE' => 'Indien',
+            'zh-CN' => 'Indien',
         ],
     ],
     [
         'locale' => 'ur-PK',
         'name' => [
             'en-GB' => 'Urdu',
-            'de-DE' => 'Urdu',
+            'zh-CN' => 'Urdu',
         ],
         'territory' => [
             'en-GB' => 'Pakistan',
-            'de-DE' => 'Pakistan',
+            'zh-CN' => 'Pakistan',
         ],
     ],
     [
         'locale' => 'uz-AF',
         'name' => [
             'en-GB' => 'Uzbek',
-            'de-DE' => 'Usbekisch',
+            'zh-CN' => 'Usbekisch',
         ],
         'territory' => [
             'en-GB' => 'Afghanistan',
-            'de-DE' => 'Afghanistan',
+            'zh-CN' => 'Afghanistan',
         ],
     ],
     [
         'locale' => 'uz-UZ',
         'name' => [
             'en-GB' => 'Uzbek',
-            'de-DE' => 'Usbekisch',
+            'zh-CN' => 'Usbekisch',
         ],
         'territory' => [
             'en-GB' => 'Uzbekistan',
-            'de-DE' => 'Usbekistan',
+            'zh-CN' => 'Usbekistan',
         ],
     ],
     [
         'locale' => 've-ZA',
         'name' => [
             'en-GB' => 'Venda Language',
-            'de-DE' => 'Venda-Sprache',
+            'zh-CN' => 'Venda-Sprache',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'vi-VN',
         'name' => [
             'en-GB' => 'Vietnamese',
-            'de-DE' => 'Vietnamesisch',
+            'zh-CN' => 'Vietnamesisch',
         ],
         'territory' => [
             'en-GB' => 'Vietnam',
-            'de-DE' => 'Vietnam',
+            'zh-CN' => 'Vietnam',
         ],
     ],
     [
         'locale' => 'wal-ET',
         'name' => [
             'en-GB' => 'Walamo Language',
-            'de-DE' => 'Walamo-Sprache',
+            'zh-CN' => 'Walamo-Sprache',
         ],
         'territory' => [
             'en-GB' => 'Ethiopia',
-            'de-DE' => 'Äthiopien',
+            'zh-CN' => 'Äthiopien',
         ],
     ],
     [
         'locale' => 'wo-SN',
         'name' => [
             'en-GB' => 'Wolof',
-            'de-DE' => 'Wolof',
+            'zh-CN' => 'Wolof',
         ],
         'territory' => [
             'en-GB' => 'Senegal',
-            'de-DE' => 'Senegal',
+            'zh-CN' => 'Senegal',
         ],
     ],
     [
         'locale' => 'xh-ZA',
         'name' => [
             'en-GB' => 'Xhosa',
-            'de-DE' => 'Xhosa',
+            'zh-CN' => 'Xhosa',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
     [
         'locale' => 'yo-NG',
         'name' => [
             'en-GB' => 'Yoruba',
-            'de-DE' => 'Yoruba',
+            'zh-CN' => 'Yoruba',
         ],
         'territory' => [
             'en-GB' => 'Nigeria',
-            'de-DE' => 'Nigeria',
+            'zh-CN' => 'Nigeria',
         ],
     ],
     [
         'locale' => 'zh-CN',
         'name' => [
             'en-GB' => 'Chinese',
-            'de-DE' => 'Chinesisch',
+            'zh-CN' => 'Chinesisch',
         ],
         'territory' => [
             'en-GB' => 'China',
-            'de-DE' => 'China',
+            'zh-CN' => 'China',
         ],
     ],
     [
         'locale' => 'zh-HK',
         'name' => [
             'en-GB' => 'Chinese',
-            'de-DE' => 'Chinesisch',
+            'zh-CN' => 'Chinesisch',
         ],
         'territory' => [
             'en-GB' => 'Hong Kong',
-            'de-DE' => 'Sonderverwaltungszone Hongkong',
+            'zh-CN' => 'Sonderverwaltungszone Hongkong',
         ],
     ],
     [
         'locale' => 'zh-MO',
         'name' => [
             'en-GB' => 'Chinese',
-            'de-DE' => 'Chinesisch',
+            'zh-CN' => 'Chinesisch',
         ],
         'territory' => [
             'en-GB' => 'Macao',
-            'de-DE' => 'Sonderverwaltungszone Macao',
+            'zh-CN' => 'Sonderverwaltungszone Macao',
         ],
     ],
     [
         'locale' => 'zh-SG',
         'name' => [
             'en-GB' => 'Chinese',
-            'de-DE' => 'Chinesisch',
+            'zh-CN' => 'Chinesisch',
         ],
         'territory' => [
             'en-GB' => 'Singapur',
-            'de-DE' => 'Singapur',
+            'zh-CN' => 'Singapur',
         ],
     ],
     [
         'locale' => 'zh-TW',
         'name' => [
             'en-GB' => 'Chinese',
-            'de-DE' => 'Chinesisch',
+            'zh-CN' => 'Chinesisch',
         ],
         'territory' => [
             'en-GB' => 'Taiwan',
-            'de-DE' => 'Taiwan',
+            'zh-CN' => 'Taiwan',
         ],
     ],
     [
         'locale' => 'zu-ZA',
         'name' => [
             'en-GB' => 'Zulu',
-            'de-DE' => 'Zulu',
+            'zh-CN' => 'Zulu',
         ],
         'territory' => [
             'en-GB' => 'South Africa',
-            'de-DE' => 'Südafrika',
+            'zh-CN' => 'Südafrika',
         ],
     ],
 ];

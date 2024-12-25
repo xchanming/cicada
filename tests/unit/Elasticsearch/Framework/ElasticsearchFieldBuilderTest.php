@@ -31,7 +31,7 @@ class ElasticsearchFieldBuilderTest extends TestCase
             $deLanguageId => [
                 'id' => $deLanguageId,
                 'parentId' => 'parentId',
-                'code' => 'de-DE',
+                'code' => 'zh-CN',
             ],
             $enLanguageId => [
                 'id' => $enLanguageId,
@@ -118,7 +118,7 @@ class ElasticsearchFieldBuilderTest extends TestCase
             $deLanguageId => [
                 'id' => $deLanguageId,
                 'parentId' => 'parentId',
-                'code' => 'de-DE',
+                'code' => 'zh-CN',
             ],
             $enLanguageId => [
                 'id' => $enLanguageId,

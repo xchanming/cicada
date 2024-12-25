@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/cicada/cicada/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
     <meta>
         <name>test</name>
         <label>Swag App Test</label>
-        <label lang="de-DE">Swag App Test</label>
+        <label lang="zh-CN">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="de-DE">Test für das App System</description>
+        <description lang="zh-CN">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.1.0</version>
@@ -20,7 +20,7 @@ Following personal information will be processed on cicada AG's servers:
 - Billing address
 - Order value
         </privacyPolicyExtensions>
-        <privacyPolicyExtensions lang="de-DE">
+        <privacyPolicyExtensions lang="zh-CN">
 Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
 
 - Name
@@ -39,7 +39,7 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
             view="detail"
             url="https://swag-test.com/your-order">
             <label>View Order</label>
-            <label lang="de-DE">Zeige Bestellung</label>
+            <label lang="zh-CN">Zeige Bestellung</label>
         </action-button>
         <action-button
             action="doStuffWithProducts"
@@ -47,15 +47,15 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
             view="list"
             url="https://swag-test.com/do-stuff">
             <label>Do Stuff</label>
-            <label lang="de-DE">Mache Dinge</label>
+            <label lang="zh-CN">Mache Dinge</label>
         </action-button>
         <module name="first-module" source="https://test.com" parent="sw-test-structure-module" position="10">
             <label>My first own module</label>
-            <label lang="de-DE">Mein erstes eigenes Modul</label>
+            <label lang="zh-CN">Mein erstes eigenes Modul</label>
         </module>
         <module name="structure-module" parent="sw-catalogue" position="50">
             <label>My menu entry for modules</label>
-            <label lang="de-DE">Mein Menüeintrag für Module</label>
+            <label lang="zh-CN">Mein Menüeintrag für Module</label>
         </module>
         <main-module source="https://main-module"/>
         <base-app-url>https://base-url.com</base-app-url>
@@ -77,7 +77,7 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
         <custom-field-set global="true">
             <name>custom_field_test</name>
             <label>Custom field test</label>
-            <label lang="de-DE">Zusatzfeld Test</label>
+            <label lang="zh-CN">Zusatzfeld Test</label>
             <related-entities>
                 <product/>
                 <customer/>
@@ -115,9 +115,9 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
         <payment-method>
             <identifier>myMethod</identifier>
             <name>The app payment method</name>
-            <name lang="de-DE">Die App Zahlungsmethode</name>
+            <name lang="zh-CN">Die App Zahlungsmethode</name>
             <description>This is a description</description>
-            <description lang="de-DE">Die Zahlungsmethoden-Beschreibung</description>
+            <description lang="zh-CN">Die Zahlungsmethoden-Beschreibung</description>
             <pay-url>https://payment.app/payment/process</pay-url>
             <finalize-url>https://payment.app/payment/finalize</finalize-url>
             <validate-url>https://payment.app/payment/validate</validate-url>

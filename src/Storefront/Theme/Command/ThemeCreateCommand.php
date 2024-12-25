@@ -166,7 +166,7 @@ EOL;
   "extra": {
     "cicada-plugin-class": "#namespace#\\\\#class#",
     "label": {
-      "de-DE": "Theme #namespace# plugin",
+      "zh-CN": "Theme #namespace# plugin",
       "en-GB": "Theme #namespace# plugin"
     }
   }

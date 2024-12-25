@@ -23,7 +23,7 @@ class Migration1589357321AddCountries extends MigrationStep
 
     public function update(Connection $connection): void
     {
-        $deLanguageId = $this->getLanguageId($connection, 'de-DE');
+        $deLanguageId = $this->getLanguageId($connection, 'zh-CN');
         $languageDE = null;
         if ($deLanguageId && $deLanguageId !== Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)) {
             $languageDE = static fn (string $countryId, string $name) => [

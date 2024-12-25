@@ -315,7 +315,7 @@ class ProductSearchRouteTest extends TestCase
     public function testProductSearch(string $productNumber, array $searchTerms, ?string $languageId): void
     {
         $ids = self::$ids;
-        if ($languageId === 'de-DE') {
+        if ($languageId === 'zh-CN') {
             $languageId = $this->getDeDeLanguageId();
         }
 
@@ -398,7 +398,7 @@ class ProductSearchRouteTest extends TestCase
                     'Lorem ipsum' => false, // full name but different language
                     'manufacturer' => false, // manufacturer but different language
                 ],
-                'de-DE',
+                'zh-CN',
             ],
             'test it finds product by fallback translations' => [
                 '1002',
@@ -408,7 +408,7 @@ class ProductSearchRouteTest extends TestCase
                     'literature' => true, // part of name
                     'latin literature' => true, // full name
                 ],
-                'de-DE',
+                'zh-CN',
             ],
             'test it finds variant product' => [
                 '1000',
@@ -443,7 +443,7 @@ class ProductSearchRouteTest extends TestCase
                     'varius' => false, // manufacturer but of parent
                     'Vestibulum' => false, // manufacturer but of parent & different language
                 ],
-                'de-DE',
+                'zh-CN',
             ],
             'test it finds variant product by parent translation' => [
                 '1001.1',
@@ -456,7 +456,7 @@ class ProductSearchRouteTest extends TestCase
                     'consectetur adipiscing' => false, // full name but of parent language
                     'varius' => false, // manufacturer but of parent & different language
                 ],
-                'de-DE',
+                'zh-CN',
             ],
             'test it finds variant product with inherited data' => [
                 '1001.1',
@@ -827,7 +827,7 @@ class ProductSearchRouteTest extends TestCase
                     [
                         'salesChannelId' => $ids->get('sales-channel'),
                         'currencyId' => Defaults::CURRENCY,
-                        'snippetSetId' => $this->getSnippetSetIdForLocale('de-DE'),
+                        'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                         'url' => $_SERVER['APP_URL'] . '/de',
                     ],
                 ],

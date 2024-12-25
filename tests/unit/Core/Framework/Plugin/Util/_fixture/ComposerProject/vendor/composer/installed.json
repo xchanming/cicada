@@ -20,7 +20,7 @@
         "cicada-plugin-class": "Swag\\Test",
         "label": {
           "en-GB": "Test plugin",
-          "de-DE": "Test plugin"
+          "zh-CN": "Test plugin"
         }
       }
     },
@@ -44,7 +44,7 @@
         "cicada-plugin-class": "Swag\\Test2",
         "label": {
           "en-GB": "Test plugin",
-          "de-DE": "Test plugin"
+          "zh-CN": "Test plugin"
         }
       }
     }

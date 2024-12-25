@@ -53,7 +53,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
                     'id' => $creditCardPaymentId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Credit card',
-                        'de-DE' => 'Kreditkarte',
+                        'zh-CN' => 'Kreditkarte',
                     ],
                     'technicalName' => 'payment_creditcard',
                     'active' => true,
@@ -62,7 +62,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
                     'id' => $invoicePaymentByCicadaPluginId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Invoice',
-                        'de-DE' => 'Rechnungskauf',
+                        'zh-CN' => 'Rechnungskauf',
                     ],
                     'technicalName' => 'payment_invoice1',
                     'active' => true,
@@ -73,7 +73,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
                         'version' => '1.0.0',
                         'label' => [
                             'en-GB' => 'Cicada (English)',
-                            'de-DE' => 'Cicada (Deutsch)',
+                            'zh-CN' => 'Cicada (Deutsch)',
                         ],
                     ],
                 ],
@@ -81,7 +81,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
                     'id' => $invoicePaymentByPluginId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Invoice',
-                        'de-DE' => 'Rechnung',
+                        'zh-CN' => 'Rechnung',
                     ],
                     'technicalName' => 'payment_invoice2',
                     'active' => true,
@@ -92,7 +92,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
                         'version' => '1.0.0',
                         'label' => [
                             'en-GB' => 'Plugin (English)',
-                            'de-DE' => 'Plugin (Deutsch)',
+                            'zh-CN' => 'Plugin (Deutsch)',
                         ],
                     ],
                 ],
@@ -100,7 +100,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
                     'id' => $invoicePaymentByAppId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Invoice',
-                        'de-DE' => 'Rechnung',
+                        'zh-CN' => 'Rechnung',
                     ],
                     'technicalName' => 'payment_invoice3',
                     'active' => true,

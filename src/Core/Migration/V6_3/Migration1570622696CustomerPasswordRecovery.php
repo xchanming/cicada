@@ -77,7 +77,7 @@ SQL;
         $mailTemplateTypeId = Uuid::randomHex();
 
         $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         $connection->insert('mail_template_type', [
             'id' => Uuid::fromHexToBytes($mailTemplateTypeId),
@@ -121,7 +121,7 @@ SQL;
         $mailTemplateId = Uuid::randomHex();
 
         $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         $connection->insert('mail_template', [
             'id' => Uuid::fromHexToBytes($mailTemplateId),
@@ -159,7 +159,7 @@ SQL;
         if ($deLangId) {
             $connection->insert('mail_template_translation', [
                 'mail_template_id' => Uuid::fromHexToBytes($mailTemplateId),
-                'language_id' => $this->getLanguageIdByLocale($connection, 'de-DE'),
+                'language_id' => $this->getLanguageIdByLocale($connection, 'zh-CN'),
                 'sender_name' => '{{ shopName }}',
                 'subject' => 'Password Wiederherstellung',
                 'description' => '',

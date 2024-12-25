@@ -19,7 +19,7 @@ test ('As a merchant, I can perform bulk edits on customer information', { tag: 
     const currentCustomerGroup = (await TestDataService.getCustomerGroupById(customer3.groupId));
     const customerGroupToUpdate = await TestDataService.createCustomerGroup();
     const currentLanguage = await TestDataService.getLanguageById(customer3.languageId);
-    const languageToUpdate = await TestDataService.getLanguageData('de-DE');
+    const languageToUpdate = await TestDataService.getLanguageData('zh-CN');
     await TestDataService.assignSalesChannelLanguage(DefaultSalesChannel.salesChannel.id, languageToUpdate.id);
     const tagName1 = `001_bulk_edit_${customer1.id}`;
     const tagName2 = `002_bulk_edit_${customer2.id}`;

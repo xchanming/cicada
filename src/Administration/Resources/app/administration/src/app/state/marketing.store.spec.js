@@ -71,16 +71,16 @@ describe('src/app/state/marketing.store', () => {
             content: {
                 textColor: '#000000',
                 headline: {
-                    'de-DE': 'string (max 40 Zeichen)',
+                    'zh-CN': 'string (max 40 Zeichen)',
                     'en-GB': 'string (max 40 characters)',
                 },
                 description: {
-                    'de-DE': 'string (max 90 Zeichen)',
+                    'zh-CN': 'string (max 90 Zeichen)',
                     'en-GB': 'string (max 90 characters)',
                 },
                 cta: {
                     category: 'CategoryXY',
-                    'de-DE': 'string (max 40 Zeichen)',
+                    'zh-CN': 'string (max 40 Zeichen)',
                     'en-GB': 'string (max 40 characters)',
                 },
             },
@@ -113,16 +113,16 @@ describe('src/app/state/marketing.store', () => {
             content: {
                 textColor: '#000000',
                 headline: {
-                    'de-DE': 'string (max 40 Zeichen)',
+                    'zh-CN': 'string (max 40 Zeichen)',
                     'en-GB': 'string (max 40 characters)',
                 },
                 description: {
-                    'de-DE': 'string (max 90 Zeichen)',
+                    'zh-CN': 'string (max 90 Zeichen)',
                     'en-GB': 'string (max 90 characters)',
                 },
                 cta: {
                     category: 'CategoryXY',
-                    'de-DE': 'string (max 40 Zeichen)',
+                    'zh-CN': 'string (max 40 Zeichen)',
                     'en-GB': 'string (max 40 characters)',
                 },
             },

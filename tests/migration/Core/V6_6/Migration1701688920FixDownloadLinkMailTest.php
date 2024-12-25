@@ -32,7 +32,7 @@ class Migration1701688920FixDownloadLinkMailTest extends TestCase
         $migration = new Migration1701688920FixDownloadLinkMail();
         $migration->update($connection);
 
-        $deLangId = $this->fetchLanguageId($connection, 'de-DE');
+        $deLangId = $this->fetchLanguageId($connection, 'zh-CN');
         $enLangId = $this->fetchLanguageId($connection, 'en-GB');
         static::assertNotNull($deLangId);
         static::assertNotNull($enLangId);

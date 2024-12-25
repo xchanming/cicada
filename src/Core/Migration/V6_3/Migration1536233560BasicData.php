@@ -38,11 +38,11 @@ use Doctrine\DBAL\Connection;
 class Migration1536233560BasicData extends MigrationStep
 {
     /**
-     * @var array<string, array{id: string, name: string, nameDe: string, availableEntities: array<string, string|null>}>|null
+     * @var array<string, array{id: string, name: string, nameZh: string, availableEntities: array<string, string|null>}>|null
      */
     private ?array $mailTypes = null;
 
-    private ?string $deDeLanguageId = null;
+    private ?string $zhCnLanguageId = null;
 
     public function getCreationTimestamp(): int
     {
@@ -93,13 +93,13 @@ class Migration1536233560BasicData extends MigrationStep
     {
     }
 
-    private function getDeDeLanguageId(): string
+    private function getZhCnLanguageId(): string
     {
-        if (!$this->deDeLanguageId) {
-            $this->deDeLanguageId = Uuid::randomHex();
+        if (!$this->zhCnLanguageId) {
+            $this->zhCnLanguageId = Uuid::randomHex();
         }
 
-        return $this->deDeLanguageId;
+        return $this->zhCnLanguageId;
     }
 
     private function createLanguage(Connection $connection): void
@@ -107,11 +107,11 @@ class Migration1536233560BasicData extends MigrationStep
         $localeEn = Uuid::randomBytes();
         $localeDe = Uuid::randomBytes();
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         // first locales
         $connection->insert('locale', ['id' => $localeEn, 'code' => 'en-GB', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('locale', ['id' => $localeDe, 'code' => 'de-DE', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('locale', ['id' => $localeDe, 'code' => 'zh-CN', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
         // second languages
         $connection->insert('language', [
@@ -167,10 +167,10 @@ class Migration1536233560BasicData extends MigrationStep
 
         $queue = new MultiInsertQueryQueue($connection);
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         foreach ($localeData as $locale) {
-            if (\in_array($locale['locale'], ['en-GB', 'de-DE'], true)) {
+            if (\in_array($locale['locale'], ['en-GB', 'zh-CN'], true)) {
                 continue;
             }
 
@@ -198,8 +198,8 @@ class Migration1536233560BasicData extends MigrationStep
                     'locale_id' => $localeId,
                     'language_id' => $languageDe,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
-                    'name' => $locale['name']['de-DE'],
-                    'territory' => $locale['territory']['de-DE'],
+                    'name' => $locale['name']['zh-CN'],
+                    'territory' => $locale['territory']['zh-CN'],
                 ]
             );
         }
@@ -210,7 +210,7 @@ class Migration1536233560BasicData extends MigrationStep
     private function createCountry(Connection $connection): void
     {
         $languageDE = fn (string $countryId, string $name) => [
-            'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+            'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
             'name' => $name,
             'country_id' => $countryId,
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
@@ -738,7 +738,7 @@ class Migration1536233560BasicData extends MigrationStep
 
             if (isset($germanTranslations[$countryCode])) {
                 $connection->insert('country_state_translation', [
-                    'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+                    'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
                     'country_state_id' => $id,
                     'name' => $name,
                     'created_at' => $storageDate,
@@ -754,7 +754,7 @@ class Migration1536233560BasicData extends MigrationStep
         $GBP = Uuid::randomBytes();
 
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $connection->insert('currency', ['id' => $EUR, 'iso_code' => 'EUR', 'factor' => 1, 'symbol' => '€', 'position' => 1, 'decimal_precision' => 2, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('currency_translation', ['currency_id' => $EUR, 'language_id' => $languageEN, 'short_name' => 'EUR', 'name' => 'Euro', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -773,13 +773,13 @@ class Migration1536233560BasicData extends MigrationStep
     {
         $connection->insert('customer_group', ['id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'display_gross' => 1, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => 'Standard customer group', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()), 'name' => 'Standard-Kundengruppe', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()), 'name' => 'Standard-Kundengruppe', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
     }
 
     private function createPaymentMethod(Connection $connection): void
     {
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $ruleId = Uuid::randomBytes();
         $connection->insert('rule', ['id' => $ruleId, 'name' => 'Cart >= 0 (Payment)', 'priority' => 100, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -818,7 +818,7 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('rule_condition', ['id' => Uuid::randomBytes(), 'rule_id' => $ruleId, 'type' => 'cartCartAmount', 'value' => json_encode(['operator' => '>=', 'amount' => 0]), 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $connection->insert('shipping_method', ['id' => $standard, 'active' => 1, 'availability_rule_id' => $ruleId, 'delivery_time_id' => $deliveryTimeId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('shipping_method_translation', ['shipping_method_id' => $standard, 'language_id' => $languageEN, 'name' => 'Standard', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -843,7 +843,7 @@ class Migration1536233560BasicData extends MigrationStep
     private function createSalesChannelTypes(Connection $connection): void
     {
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $storefront = Uuid::fromHexToBytes(Defaults::SALES_CHANNEL_TYPE_STOREFRONT);
         $storefrontApi = Uuid::fromHexToBytes(Defaults::SALES_CHANNEL_TYPE_API);
@@ -861,7 +861,7 @@ class Migration1536233560BasicData extends MigrationStep
     {
         $id = Uuid::randomBytes();
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $versionId = Uuid::fromHexToBytes(Defaults::LIVE_VERSION);
 
         $connection->insert('product_manufacturer', ['id' => $id, 'version_id' => $versionId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -873,7 +873,7 @@ class Migration1536233560BasicData extends MigrationStep
     {
         $id = Uuid::randomBytes();
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $versionId = Uuid::fromHexToBytes(Defaults::LIVE_VERSION);
 
         $connection->insert('category', ['id' => $id, 'version_id' => $versionId, 'type' => CategoryDefinition::TYPE_PAGE, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -895,7 +895,7 @@ class Migration1536233560BasicData extends MigrationStep
 
         $id = Uuid::fromHexToBytes('98432def39fc4624b33213a56b8c944d');
         $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $connection->insert('sales_channel', [
             'id' => $id,
@@ -945,7 +945,7 @@ class Migration1536233560BasicData extends MigrationStep
     {
         $queue = new MultiInsertQueryQueue($connection);
 
-        $queue->addInsert('snippet_set', ['id' => Uuid::randomBytes(), 'name' => 'BASE de-DE', 'base_file' => 'messages.de-DE', 'iso' => 'de-DE', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $queue->addInsert('snippet_set', ['id' => Uuid::randomBytes(), 'name' => 'BASE zh-CN', 'base_file' => 'messages.zh-CN', 'iso' => 'zh-CN', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $queue->addInsert('snippet_set', ['id' => Uuid::randomBytes(), 'name' => 'BASE en-GB', 'base_file' => 'messages.en-GB', 'iso' => 'en-GB', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
         $queue->execute();
@@ -1030,7 +1030,7 @@ class Migration1536233560BasicData extends MigrationStep
         $inProgressId = Uuid::randomBytes();
         $canceledId = Uuid::randomBytes();
 
-        $germanId = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $germanId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $translationDE = ['language_id' => $germanId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
@@ -1097,7 +1097,7 @@ class Migration1536233560BasicData extends MigrationStep
         $returnedId = Uuid::randomBytes();
         $returnedPartiallyId = Uuid::randomBytes();
 
-        $germanId = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $germanId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $translationDE = ['language_id' => $germanId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
@@ -1181,7 +1181,7 @@ class Migration1536233560BasicData extends MigrationStep
         $refundedId = Uuid::randomBytes();
         $refundedPartiallyId = Uuid::randomBytes();
 
-        $germanId = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $germanId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $translationDE = ['language_id' => $germanId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
@@ -1291,7 +1291,7 @@ class Migration1536233560BasicData extends MigrationStep
     private function createSalutation(Connection $connection): void
     {
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $mr = Uuid::randomBytes();
         $connection->insert('salutation', [
@@ -1360,7 +1360,7 @@ class Migration1536233560BasicData extends MigrationStep
     private function createDeliveryTimes(Connection $connection): string
     {
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $oneToThree = Uuid::randomBytes();
         $twoToFive = Uuid::randomBytes();
@@ -1439,13 +1439,13 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('document_type', ['id' => $deliveryNoteId, 'technical_name' => DeliveryNoteRenderer::TYPE, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('document_type', ['id' => $creditNoteId, 'technical_name' => CreditNoteRenderer::TYPE, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
-        $connection->insert('document_type_translation', ['document_type_id' => $invoiceId, 'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()), 'name' => 'Rechnung', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('document_type_translation', ['document_type_id' => $invoiceId, 'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()), 'name' => 'Rechnung', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('document_type_translation', ['document_type_id' => $invoiceId, 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => 'Invoice', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
-        $connection->insert('document_type_translation', ['document_type_id' => $deliveryNoteId, 'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()), 'name' => 'Lieferschein', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('document_type_translation', ['document_type_id' => $deliveryNoteId, 'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()), 'name' => 'Lieferschein', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('document_type_translation', ['document_type_id' => $deliveryNoteId, 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => 'Delivery note', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
-        $connection->insert('document_type_translation', ['document_type_id' => $creditNoteId, 'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()), 'name' => 'Gutschrift', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('document_type_translation', ['document_type_id' => $creditNoteId, 'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()), 'name' => 'Gutschrift', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('document_type_translation', ['document_type_id' => $creditNoteId, 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => 'Credit note', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
     }
 
@@ -1455,7 +1455,7 @@ class Migration1536233560BasicData extends MigrationStep
         $confirmMailId = Uuid::randomBytes();
 
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         $connection->insert(
             'mail_template',
@@ -1609,7 +1609,7 @@ class Migration1536233560BasicData extends MigrationStep
     }
 
     /**
-     * @return array<string, array{id: string, name: string, nameDe: string, availableEntities: array<string, string|null>}>
+     * @return array<string, array{id: string, name: string, nameZh: string, availableEntities: array<string, string|null>}>
      */
     private function getMailTypeMapping(): array
     {
@@ -1617,43 +1617,43 @@ class Migration1536233560BasicData extends MigrationStep
             MailTemplateTypes::MAILTYPE_CUSTOMER_REGISTER => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Customer registration',
-                'nameDe' => 'Kunden-Registrierung',
+                'nameZh' => 'Kunden-Registrierung',
                 'availableEntities' => ['customer' => 'customer', 'salesChannel' => 'sales_channel'],
             ],
             'newsletterDoubleOptIn' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Newsletter double opt-in',
-                'nameDe' => 'Newsletter Double-Opt-In',
+                'nameZh' => 'Newsletter Double-Opt-In',
                 'availableEntities' => ['newsletterRecipient' => 'newsletter_recipient', 'salesChannel' => 'sales_channel'],
             ],
             'newsletterRegister' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Newsletter registration',
-                'nameDe' => 'Newsletter-Registrierung',
+                'nameZh' => 'Newsletter-Registrierung',
                 'availableEntities' => ['newsletterRecipient' => 'newsletter_recipient', 'salesChannel' => 'sales_channel'],
             ],
             MailTemplateTypes::MAILTYPE_ORDER_CONFIRM => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Order confirmation',
-                'nameDe' => 'Bestellbestätigung',
+                'nameZh' => 'Bestellbestätigung',
                 'availableEntities' => ['order' => 'order', 'salesChannel' => 'sales_channel'],
             ],
             MailTemplateTypes::MAILTYPE_CUSTOMER_GROUP_CHANGE_ACCEPT => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Customer group change accepted',
-                'nameDe' => 'Kundengruppenwechsel akzeptiert',
+                'nameZh' => 'Kundengruppenwechsel akzeptiert',
                 'availableEntities' => ['customer' => 'customer', 'salesChannel' => 'sales_channel'],
             ],
             MailTemplateTypes::MAILTYPE_CUSTOMER_GROUP_CHANGE_REJECT => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Customer group change rejected',
-                'nameDe' => 'Kundengruppenwechsel abgelehnt',
+                'nameZh' => 'Kundengruppenwechsel abgelehnt',
                 'availableEntities' => ['customer' => 'customer', 'salesChannel' => 'sales_channel'],
             ],
             MailTemplateTypes::MAILTYPE_PASSWORD_CHANGE => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Password change request',
-                'nameDe' => 'Passwort Änderungsanfrage',
+                'nameZh' => 'Passwort Änderungsanfrage',
                 'availableEntities' => [
                     'customer' => 'customer',
                     'urlResetPassword' => null,
@@ -1662,19 +1662,19 @@ class Migration1536233560BasicData extends MigrationStep
             MailTemplateTypes::MAILTYPE_SEPA_CONFIRMATION => [
                 'id' => Uuid::randomHex(),
                 'name' => 'SEPA authorization',
-                'nameDe' => 'SEPA-Autorisierung',
+                'nameZh' => 'SEPA-Autorisierung',
                 'availableEntities' => ['order' => 'order', 'salesChannel' => 'sales_channel'],
             ],
             MailTemplateTypes::MAILTYPE_STOCK_WARNING => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Product stock warning',
-                'nameDe' => 'Lagerbestandshinweis',
+                'nameZh' => 'Lagerbestandshinweis',
                 'availableEntities' => ['product' => 'product', 'salesChannel' => 'sales_channel'],
             ],
             'state_enter.order_delivery.state.returned_partially' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Open',
-                'nameDe' => 'Eintritt Bestellstatus: Offen',
+                'nameZh' => 'Eintritt Bestellstatus: Offen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1685,7 +1685,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_delivery.state.shipped_partially' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Shipped (partially)',
-                'nameDe' => 'Eintritt Bestellstatus: Teilweise versandt',
+                'nameZh' => 'Eintritt Bestellstatus: Teilweise versandt',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1696,7 +1696,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_delivery.state.returned' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Returned',
-                'nameDe' => 'Eintritt Bestellstatus: Retour',
+                'nameZh' => 'Eintritt Bestellstatus: Retour',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1707,7 +1707,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_delivery.state.shipped' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Shipped',
-                'nameDe' => 'Eintritt Bestellstatus: Versandt',
+                'nameZh' => 'Eintritt Bestellstatus: Versandt',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1718,7 +1718,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_delivery.state.cancelled' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Cancelled',
-                'nameDe' => 'Eintritt Bestellstatus: Abgebrochen',
+                'nameZh' => 'Eintritt Bestellstatus: Abgebrochen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1729,7 +1729,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.reminded' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Reminded',
-                'nameDe' => 'Eintritt Zahlungsstatus: Erinnert',
+                'nameZh' => 'Eintritt Zahlungsstatus: Erinnert',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1740,7 +1740,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.refunded_partially' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Refunded (partially)',
-                'nameDe' => 'Eintritt Zahlungsstatus: Teilweise erstattet',
+                'nameZh' => 'Eintritt Zahlungsstatus: Teilweise erstattet',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1751,7 +1751,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.cancelled' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Cancelled',
-                'nameDe' => 'Eintritt Zahlungsstatus: Abgebrochen',
+                'nameZh' => 'Eintritt Zahlungsstatus: Abgebrochen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1762,7 +1762,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.paid' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Paid',
-                'nameDe' => 'Eintritt Zahlungsstatus: Bezahlt',
+                'nameZh' => 'Eintritt Zahlungsstatus: Bezahlt',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1773,7 +1773,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.refunded' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Refunded',
-                'nameDe' => 'Eintritt Zahlungsstatus: Erstattet',
+                'nameZh' => 'Eintritt Zahlungsstatus: Erstattet',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1784,7 +1784,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.paid_partially' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Paid (partially)',
-                'nameDe' => 'Eintritt Zahlungsstatus: Teilweise bezahlt',
+                'nameZh' => 'Eintritt Zahlungsstatus: Teilweise bezahlt',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1795,7 +1795,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order_transaction.state.open' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter payment state: Open',
-                'nameDe' => 'Eintritt Zahlungsstatus: Offen',
+                'nameZh' => 'Eintritt Zahlungsstatus: Offen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1806,7 +1806,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order.state.open' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Open',
-                'nameDe' => 'Eintritt Bestellstatus: Offen',
+                'nameZh' => 'Eintritt Bestellstatus: Offen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1817,7 +1817,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order.state.in_progress' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: In progress',
-                'nameDe' => 'Eintritt Bestellstatus: In Bearbeitung',
+                'nameZh' => 'Eintritt Bestellstatus: In Bearbeitung',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1828,7 +1828,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order.state.cancelled' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Cancelled',
-                'nameDe' => 'Eintritt Bestellstatus: Abgebrochen',
+                'nameZh' => 'Eintritt Bestellstatus: Abgebrochen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1839,7 +1839,7 @@ class Migration1536233560BasicData extends MigrationStep
             'state_enter.order.state.completed' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Enter order state: Done',
-                'nameDe' => 'Eintritt Bestellstatus: Abgeschlossen',
+                'nameZh' => 'Eintritt Bestellstatus: Abgeschlossen',
                 'availableEntities' => [
                     'order' => 'order',
                     'previousState' => 'state_machine_state',
@@ -1855,7 +1855,7 @@ class Migration1536233560BasicData extends MigrationStep
         $definitionMailTypes = $this->getMailTypeMapping();
 
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         foreach ($definitionMailTypes as $typeName => $mailType) {
             $availableEntities = null;
@@ -1885,7 +1885,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'mail_template_type_translation',
                 [
                     'mail_template_type_id' => Uuid::fromHexToBytes($mailType['id']),
-                    'name' => $mailType['nameDe'],
+                    'name' => $mailType['nameZh'],
                     'language_id' => $languageDe,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -1898,7 +1898,7 @@ class Migration1536233560BasicData extends MigrationStep
         $stornoId = Uuid::randomBytes();
 
         $connection->insert('document_type', ['id' => $stornoId, 'technical_name' => StornoRenderer::TYPE, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('document_type_translation', ['document_type_id' => $stornoId, 'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()), 'name' => 'Stornorechnung', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('document_type_translation', ['document_type_id' => $stornoId, 'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()), 'name' => 'Stornorechnung', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('document_type_translation', ['document_type_id' => $stornoId, 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => 'Storno bill', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
         $stornoConfigId = Uuid::randomBytes();
@@ -1959,25 +1959,25 @@ class Migration1536233560BasicData extends MigrationStep
             'document_invoice' => [
                 'id' => Uuid::randomHex(),
                 'global' => 0,
-                'nameDe' => 'Rechnung',
+                'nameZh' => 'Rechnung',
                 'nameEn' => 'Invoice',
             ],
             'document_storno' => [
                 'id' => Uuid::randomHex(),
                 'global' => 0,
-                'nameDe' => 'Storno',
+                'nameZh' => 'Storno',
                 'nameEn' => 'Cancellation',
             ],
             'document_delivery_note' => [
                 'id' => Uuid::randomHex(),
                 'global' => 0,
-                'nameDe' => 'Lieferschein',
+                'nameZh' => 'Lieferschein',
                 'nameEn' => 'Delivery note',
             ],
             'document_credit_note' => [
                 'id' => Uuid::randomHex(),
                 'global' => 0,
-                'nameDe' => 'Gutschrift',
+                'nameZh' => 'Gutschrift',
                 'nameEn' => 'Credit note',
             ],
         ];
@@ -1986,7 +1986,7 @@ class Migration1536233560BasicData extends MigrationStep
             'document_invoice' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Invoices',
-                'nameDe' => 'Rechnungen',
+                'nameZh' => 'Rechnungen',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['document_invoice']['id'],
                 'pattern' => '{n}',
@@ -1995,7 +1995,7 @@ class Migration1536233560BasicData extends MigrationStep
             'document_storno' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Cancellations',
-                'nameDe' => 'Stornos',
+                'nameZh' => 'Stornos',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['document_storno']['id'],
                 'pattern' => '{n}',
@@ -2004,7 +2004,7 @@ class Migration1536233560BasicData extends MigrationStep
             'document_delivery_note' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Delivery notes',
-                'nameDe' => 'Lieferscheine',
+                'nameZh' => 'Lieferscheine',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['document_delivery_note']['id'],
                 'pattern' => '{n}',
@@ -2013,7 +2013,7 @@ class Migration1536233560BasicData extends MigrationStep
             'document_credit_note' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Credit notes',
-                'nameDe' => 'Gutschriften',
+                'nameZh' => 'Gutschriften',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['document_credit_note']['id'],
                 'pattern' => '{n}',
@@ -2022,7 +2022,7 @@ class Migration1536233560BasicData extends MigrationStep
         ];
 
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         foreach ($definitionNumberRangeTypes as $typeName => $numberRangeType) {
             $connection->insert(
@@ -2047,7 +2047,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'number_range_type_translation',
                 [
                     'number_range_type_id' => Uuid::fromHexToBytes($numberRangeType['id']),
-                    'type_name' => $numberRangeType['nameDe'],
+                    'type_name' => $numberRangeType['nameZh'],
                     'language_id' => $languageDe,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -2079,7 +2079,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'number_range_translation',
                 [
                     'number_range_id' => Uuid::fromHexToBytes($numberRange['id']),
-                    'name' => $numberRange['nameDe'],
+                    'name' => $numberRange['nameZh'],
                     'language_id' => $languageDe,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -2119,7 +2119,7 @@ class Migration1536233560BasicData extends MigrationStep
             'mail_template_translation',
             [
                 'mail_template_id' => $orderCofirmationTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
                 'subject' => 'Bestellbestätigung',
                 'description' => '',
                 'sender_name' => '{{ salesChannel.name }}',
@@ -2172,7 +2172,7 @@ class Migration1536233560BasicData extends MigrationStep
             'mail_template_translation',
             [
                 'mail_template_id' => $customerRegistrationTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
                 'subject' => 'Deine Registrierung bei {{ salesChannel.name }}',
                 'description' => 'Registrierungsbestätigung',
                 'sender_name' => '{{ salesChannel.name }}',
@@ -2218,7 +2218,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'content_plain' => $this->getPasswordChangePlainTemplateDe(),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 'mail_template_id' => $passwordChangeTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
             ]
         );
 
@@ -2258,7 +2258,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'content_plain' => $this->getCustomerGroupChangeAcceptedPlainTemplateDe(),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 'mail_template_id' => $customerGroupChangeAcceptedTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
             ]
         );
 
@@ -2298,7 +2298,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'content_plain' => $this->getCustomerGroupChangeRejectedPlainTemplateDe(),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 'mail_template_id' => $customerGroupChangeRejectedTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getDeDeLanguageId()),
+                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
             ]
         );
 
@@ -2835,19 +2835,19 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
             'product' => [
                 'id' => Uuid::randomHex(),
                 'global' => 1,
-                'nameDe' => 'Produkt',
+                'nameZh' => 'Produkt',
                 'nameEn' => 'Product',
             ],
             'order' => [
                 'id' => Uuid::randomHex(),
                 'global' => 0,
-                'nameDe' => 'Bestellung',
+                'nameZh' => 'Bestellung',
                 'nameEn' => 'Order',
             ],
             'customer' => [
                 'id' => Uuid::randomHex(),
                 'global' => 0,
-                'nameDe' => 'Kunde',
+                'nameZh' => 'Kunde',
                 'nameEn' => 'Customer',
             ],
         ];
@@ -2856,7 +2856,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
             'product' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Products',
-                'nameDe' => 'Produkte',
+                'nameZh' => 'Produkte',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['product']['id'],
                 'pattern' => 'SW{n}',
@@ -2865,7 +2865,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
             'order' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Orders',
-                'nameDe' => 'Bestellungen',
+                'nameZh' => 'Bestellungen',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['order']['id'],
                 'pattern' => '{n}',
@@ -2874,7 +2874,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
             'customer' => [
                 'id' => Uuid::randomHex(),
                 'name' => 'Customers',
-                'nameDe' => 'Kunden',
+                'nameZh' => 'Kunden',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['customer']['id'],
                 'pattern' => '{n}',
@@ -2883,7 +2883,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
         ];
 
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         foreach ($definitionNumberRangeTypes as $typeName => $numberRangeType) {
             $connection->insert(
@@ -2908,7 +2908,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
                 'number_range_type_translation',
                 [
                     'number_range_type_id' => Uuid::fromHexToBytes($numberRangeType['id']),
-                    'type_name' => $numberRangeType['nameDe'],
+                    'type_name' => $numberRangeType['nameZh'],
                     'language_id' => $languageDe,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -2940,7 +2940,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
                 'number_range_translation',
                 [
                     'number_range_id' => Uuid::fromHexToBytes($numberRange['id']),
-                    'name' => $numberRange['nameDe'],
+                    'name' => $numberRange['nameZh'],
                     'language_id' => $languageDe,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -2951,7 +2951,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     private function createCmsPages(Connection $connection): void
     {
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getDeDeLanguageId());
+        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $versionId = Uuid::fromHexToBytes(Defaults::LIVE_VERSION);
 
         // cms page

@@ -33,7 +33,7 @@ class TranslatedVersionsTest extends TestCase
      * @var string[]
      */
     private array $languages = [
-        'en-GB', 'de-DE',
+        'en-GB', 'zh-CN',
     ];
 
     /**
@@ -65,7 +65,7 @@ class TranslatedVersionsTest extends TestCase
 
         $this->manufacturerRepository->update([[
             'id' => $manufacturerId,
-            'name' => 'version-de-DE',
+            'name' => 'version-zh-CN',
         ]], $deVersionContext);
 
         $enOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enContext)->getEntities()->first();
@@ -79,8 +79,8 @@ class TranslatedVersionsTest extends TestCase
         static::assertNotNull($deVersion);
         static::assertSame('original-en-GB', $enOriginal->getName());
         static::assertSame('version-en-GB', $enVersion->getName());
-        static::assertSame('original-de-DE', $deOriginal->getName());
-        static::assertSame('version-de-DE', $deVersion->getName());
+        static::assertSame('original-zh-CN', $deOriginal->getName());
+        static::assertSame('version-zh-CN', $deVersion->getName());
     }
 
     public function testTranslationsFallbackToOriginal(): void
@@ -111,8 +111,8 @@ class TranslatedVersionsTest extends TestCase
         static::assertNotNull($deVersion);
         static::assertSame('original-en-GB', $enOriginal->getName());
         static::assertSame('version-en-GB', $enVersion->getName());
-        static::assertSame('original-de-DE', $deOriginal->getName());
-        static::assertSame('original-de-DE', $deVersion->getName());
+        static::assertSame('original-zh-CN', $deOriginal->getName());
+        static::assertSame('original-zh-CN', $deVersion->getName());
     }
 
     public function testInheritenceWithProductsAllAreTranslated(): void
@@ -126,19 +126,19 @@ class TranslatedVersionsTest extends TestCase
         $enVersionContext = $enContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $enContext));
         $deVersionContext = $deContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $deContext));
         $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-en-GB']], $enVersionContext);
-        $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-de-DE']], $deVersionContext);
+        $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-zh-CN']], $deVersionContext);
 
         $this->assertProductNames([
             ['child-original-en-GB', $enContext],
-            ['child-original-de-DE', $deContext],
+            ['child-original-zh-CN', $deContext],
             ['child-version-en-GB', $enVersionContext],
-            ['child-version-de-DE', $deVersionContext],
+            ['child-version-zh-CN', $deVersionContext],
         ], $ids->get('child'));
         $this->assertProductNames([
             ['parent-original-en-GB', $enContext],
-            ['parent-original-de-DE', $deContext],
+            ['parent-original-zh-CN', $deContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-de-DE', $deVersionContext],
+            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('parent'));
     }
 
@@ -156,15 +156,15 @@ class TranslatedVersionsTest extends TestCase
 
         $this->assertProductNames([
             ['child-original-en-GB', $enContext],
-            ['child-original-de-DE', $deContext],
+            ['child-original-zh-CN', $deContext],
             ['child-version-en-GB', $enVersionContext],
-            ['child-original-de-DE', $deVersionContext],
+            ['child-original-zh-CN', $deVersionContext],
         ], $ids->get('child'));
         $this->assertProductNames([
             ['parent-original-en-GB', $enContext],
-            ['parent-original-de-DE', $deContext],
+            ['parent-original-zh-CN', $deContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-de-DE', $deVersionContext],
+            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('parent'));
     }
 
@@ -181,16 +181,16 @@ class TranslatedVersionsTest extends TestCase
 
         $this->assertProductNames([
             ['parent-original-en-GB', $enContext],
-            ['parent-original-de-DE', $deContext],
+            ['parent-original-zh-CN', $deContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-de-DE', $deVersionContext],
+            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('parent'));
 
         $this->assertProductNames([
             ['parent-original-en-GB', $enContext],
-            ['parent-original-de-DE', $deContext],
+            ['parent-original-zh-CN', $deContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-de-DE', $deVersionContext],
+            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('child'));
     }
 

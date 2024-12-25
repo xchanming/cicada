@@ -46,13 +46,13 @@ class SnippetFileLoaderTest extends TestCase
 
         static::assertCount(2, $collection);
 
-        $snippetFile = $collection->getSnippetFilesByIso('de-DE')[0];
-        static::assertEquals('storefront.de-DE', $snippetFile->getName());
+        $snippetFile = $collection->getSnippetFilesByIso('zh-CN')[0];
+        static::assertEquals('storefront.zh-CN', $snippetFile->getName());
         static::assertEquals(
-            __DIR__ . '/_fixtures/CicadaBundleWithSnippets/Resources/snippet/storefront.de-DE.json',
+            __DIR__ . '/_fixtures/CicadaBundleWithSnippets/Resources/snippet/storefront.zh-CN.json',
             $snippetFile->getPath()
         );
-        static::assertEquals('de-DE', $snippetFile->getIso());
+        static::assertEquals('zh-CN', $snippetFile->getIso());
         static::assertEquals('Cicada', $snippetFile->getAuthor());
         static::assertFalse($snippetFile->isBase());
 
@@ -79,7 +79,7 @@ class SnippetFileLoaderTest extends TestCase
         $collection = new SnippetFileCollection([
             new GenericSnippetFile(
                 'test',
-                __DIR__ . '/_fixtures/CicadaBundleWithSnippets/Resources/snippet/storefront.de-DE.json',
+                __DIR__ . '/_fixtures/CicadaBundleWithSnippets/Resources/snippet/storefront.zh-CN.json',
                 'xx-XX',
                 'test Author',
                 true,
@@ -113,7 +113,7 @@ class SnippetFileLoaderTest extends TestCase
         $snippetFile = $collection->getSnippetFilesByIso('xx-XX')[0];
         static::assertEquals('test', $snippetFile->getName());
         static::assertEquals(
-            __DIR__ . '/_fixtures/CicadaBundleWithSnippets/Resources/snippet/storefront.de-DE.json',
+            __DIR__ . '/_fixtures/CicadaBundleWithSnippets/Resources/snippet/storefront.zh-CN.json',
             $snippetFile->getPath()
         );
         static::assertEquals('xx-XX', $snippetFile->getIso());
@@ -162,13 +162,13 @@ class SnippetFileLoaderTest extends TestCase
 
         static::assertCount(2, $collection);
 
-        $snippetFile = $collection->getSnippetFilesByIso('de-DE')[0];
-        static::assertEquals('storefront.de-DE', $snippetFile->getName());
+        $snippetFile = $collection->getSnippetFilesByIso('zh-CN')[0];
+        static::assertEquals('storefront.zh-CN', $snippetFile->getName());
         static::assertEquals(
-            __DIR__ . '/_fixtures/SnippetSet/Resources/snippet/storefront.de-DE.json',
+            __DIR__ . '/_fixtures/SnippetSet/Resources/snippet/storefront.zh-CN.json',
             $snippetFile->getPath()
         );
-        static::assertEquals('de-DE', $snippetFile->getIso());
+        static::assertEquals('zh-CN', $snippetFile->getIso());
         static::assertEquals('Plugin Manufacturer', $snippetFile->getAuthor());
         static::assertFalse($snippetFile->isBase());
 
@@ -214,13 +214,13 @@ class SnippetFileLoaderTest extends TestCase
 
         static::assertCount(2, $collection);
 
-        $snippetFile = $collection->getSnippetFilesByIso('de-DE')[0];
-        static::assertEquals('storefront.de-DE', $snippetFile->getName());
+        $snippetFile = $collection->getSnippetFilesByIso('zh-CN')[0];
+        static::assertEquals('storefront.zh-CN', $snippetFile->getName());
         static::assertEquals(
-            __DIR__ . '/_fixtures/BaseSnippetSet/Resources/snippet/storefront.de-DE.base.json',
+            __DIR__ . '/_fixtures/BaseSnippetSet/Resources/snippet/storefront.zh-CN.base.json',
             $snippetFile->getPath()
         );
-        static::assertEquals('de-DE', $snippetFile->getIso());
+        static::assertEquals('zh-CN', $snippetFile->getIso());
         static::assertEquals('Plugin Manufacturer', $snippetFile->getAuthor());
         static::assertEquals('BaseSnippetSet', $snippetFile->getTechnicalName());
         static::assertTrue($snippetFile->isBase());

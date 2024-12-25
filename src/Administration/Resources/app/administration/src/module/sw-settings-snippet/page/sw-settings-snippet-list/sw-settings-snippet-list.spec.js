@@ -39,10 +39,10 @@ function getSnippets() {
 function getSnippetSets() {
     const data = [
         {
-            baseFile: 'messages.de-DE',
+            baseFile: 'messages.zh-CN',
             id: 'a2f95068665e4498ae98a2318a7963df',
-            iso: 'de-DE',
-            name: 'BASE de-DE',
+            iso: 'zh-CN',
+            name: 'BASE zh-CN',
         },
     ];
 

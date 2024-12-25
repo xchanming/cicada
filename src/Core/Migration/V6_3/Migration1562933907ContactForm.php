@@ -45,7 +45,7 @@ class Migration1562933907ContactForm extends MigrationStep
         );
 
         $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         if ($defaultLangId !== $deLangId) {
             $connection->insert(

@@ -29,21 +29,21 @@ class MetadataTest extends TestCase
         static::assertEquals(
             [
                 'en-GB' => 'First action app',
-                'de-DE' => 'First action app DE',
+                'zh-CN' => 'First action app DE',
             ],
             $firstAction->getMeta()->getLabel()
         );
         static::assertEquals(
             [
                 'en-GB' => 'First action app description',
-                'de-DE' => 'First action app description DE',
+                'zh-CN' => 'First action app description DE',
             ],
             $firstAction->getMeta()->getDescription()
         );
         static::assertEquals(
             [
                 'en-GB' => 'Headline for action',
-                'de-DE' => 'Überschrift für Aktion',
+                'zh-CN' => 'Überschrift für Aktion',
             ],
             $firstAction->getMeta()->getHeadline()
         );

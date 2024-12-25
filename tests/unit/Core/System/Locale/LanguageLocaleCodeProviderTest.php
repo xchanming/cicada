@@ -36,7 +36,7 @@ class LanguageLocaleCodeProviderTest extends TestCase
         $this->languageLoader->expects(static::once())->method('loadLanguages')->willReturn($this->createData());
 
         static::assertEquals('en-GB', $this->languageLocaleProvider->getLocaleForLanguageId($this->ids->get('language-en')));
-        static::assertEquals('de-DE', $this->languageLocaleProvider->getLocaleForLanguageId($this->ids->get('language-de')));
+        static::assertEquals('zh-CN', $this->languageLocaleProvider->getLocaleForLanguageId($this->ids->get('language-de')));
         static::assertEquals('parent-locale', $this->languageLocaleProvider->getLocaleForLanguageId($this->ids->get('language-child')));
     }
 
@@ -66,7 +66,7 @@ class LanguageLocaleCodeProviderTest extends TestCase
 
         static::assertEquals([
             $this->ids->get('language-en') => 'en-GB',
-            $this->ids->get('language-de') => 'de-DE',
+            $this->ids->get('language-de') => 'zh-CN',
             $this->ids->get('language-parent') => 'parent-locale',
             $this->ids->get('language-child') => 'parent-locale',
         ], $this->languageLocaleProvider->getLocalesForLanguageIds([
@@ -86,16 +86,16 @@ class LanguageLocaleCodeProviderTest extends TestCase
             [
                 'array_key' => $this->ids->create('language-de'),
                 'id' => $this->ids->get('language-de'),
-                'code' => 'de-DE',
+                'code' => 'zh-CN',
                 'parentId' => 'parentId',
-                'parentCode' => 'de-DE',
+                'parentCode' => 'zh-CN',
             ],
             [
                 'array_key' => $this->ids->create('language-en'),
                 'id' => $this->ids->get('language-en'),
                 'code' => 'en-GB',
                 'parentId' => 'parentId',
-                'parentCode' => 'de-DE',
+                'parentCode' => 'zh-CN',
             ],
             [
                 'array_key' => $this->ids->create('language-parent'),

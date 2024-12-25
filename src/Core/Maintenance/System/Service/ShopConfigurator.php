@@ -57,7 +57,7 @@ class ShopConfigurator
             $newDefaultLanguageId = $this->createNewLanguageEntry($locale);
         }
 
-        if ($locale === 'de-DE' && $currentLocale['code'] === 'en-GB') {
+        if ($locale === 'zh-CN' && $currentLocale['code'] === 'en-GB') {
             $defaultCountryStateTranslations = $this->connection->fetchAllKeyValue('
             SELECT short_code, name FROM country_state_translation
             INNER JOIN country_state ON country_state.id = country_state_translation.country_state_id

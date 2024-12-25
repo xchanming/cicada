@@ -390,7 +390,7 @@ class ProductLoadedSubscriberTest extends TestCase
             ], Context::createDefaultContext());
 
         foreach ($languageChain as &$language) {
-            if ($language === 'de-DE') {
+            if ($language === 'zh-CN') {
                 $language = $this->getDeDeLanguageId();
             }
         }
@@ -513,12 +513,12 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('color'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'color'],
-                                    'de-DE' => ['name' => 'farbe'],
+                                    'zh-CN' => ['name' => 'farbe'],
                                 ],
                             ],
                             'translations' => [
                                 Defaults::LANGUAGE_SYSTEM => ['name' => 'red'],
-                                'de-DE' => ['name' => 'rot'],
+                                'zh-CN' => ['name' => 'rot'],
                             ],
                         ],
                         [
@@ -527,12 +527,12 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('size'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'size'],
-                                    'de-DE' => ['name' => 'größe'],
+                                    'zh-CN' => ['name' => 'größe'],
                                 ],
                             ],
                             'translations' => [
                                 Defaults::LANGUAGE_SYSTEM => ['name' => 'xl'],
-                                'de-DE' => ['name' => 'extra gross'],
+                                'zh-CN' => ['name' => 'extra gross'],
                             ],
                         ],
                         [
@@ -541,12 +541,12 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('fit'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'fit'],
-                                    'de-DE' => ['name' => 'passform'],
+                                    'zh-CN' => ['name' => 'passform'],
                                 ],
                             ],
                             'translations' => [
                                 Defaults::LANGUAGE_SYSTEM => ['name' => 'slim fit'],
-                                'de-DE' => ['name' => 'schmal'],
+                                'zh-CN' => ['name' => 'schmal'],
                             ],
                         ],
                     ],
@@ -556,7 +556,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'größe', 'option' => 'extra gross'],
                     ['group' => 'passform', 'option' => 'schmal'],
                 ],
-                ['de-DE', Defaults::LANGUAGE_SYSTEM],
+                ['zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 true,
                 $ids->get('language'),
@@ -607,7 +607,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'size', 'option' => 'xl'],
                     ['group' => 'fit', 'option' => 'slim fit'],
                 ],
-                ['de-DE', Defaults::LANGUAGE_SYSTEM],
+                ['zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 true,
                 $ids->get('language'),
@@ -658,7 +658,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'size', 'option' => 'xl'],
                     ['group' => 'fit', 'option' => 'slim fit'],
                 ],
-                [$ids->get('language'), 'de-DE', Defaults::LANGUAGE_SYSTEM],
+                [$ids->get('language'), 'zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 true,
                 $ids->get('language'),
@@ -672,7 +672,7 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('color'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'color'],
-                                    'de-DE' => ['name' => 'farbe'],
+                                    'zh-CN' => ['name' => 'farbe'],
                                 ],
                             ],
                             'translations' => [
@@ -686,7 +686,7 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('size'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'size'],
-                                    'de-DE' => ['name' => 'größe'],
+                                    'zh-CN' => ['name' => 'größe'],
                                 ],
                             ],
                             'translations' => [
@@ -700,7 +700,7 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('fit'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'fit'],
-                                    'de-DE' => ['name' => 'passform'],
+                                    'zh-CN' => ['name' => 'passform'],
                                 ],
                             ],
                             'translations' => [
@@ -715,7 +715,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'größe', 'option' => 'lx'],
                     ['group' => 'passform', 'option' => 'tif mils'],
                 ],
-                [$ids->get('language'), 'de-DE', Defaults::LANGUAGE_SYSTEM],
+                [$ids->get('language'), 'zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 true,
                 $ids->get('language'),
@@ -776,12 +776,12 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('color'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'color'],
-                                    'de-DE' => ['name' => 'farbe'],
+                                    'zh-CN' => ['name' => 'farbe'],
                                 ],
                             ],
                             'translations' => [
                                 Defaults::LANGUAGE_SYSTEM => ['name' => 'red'],
-                                'de-DE' => ['name' => 'rot'],
+                                'zh-CN' => ['name' => 'rot'],
                             ],
                         ],
                         [
@@ -790,12 +790,12 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('size'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'size'],
-                                    'de-DE' => ['name' => 'größe'],
+                                    'zh-CN' => ['name' => 'größe'],
                                 ],
                             ],
                             'translations' => [
                                 Defaults::LANGUAGE_SYSTEM => ['name' => 'xl'],
-                                'de-DE' => ['name' => 'extra gross'],
+                                'zh-CN' => ['name' => 'extra gross'],
                             ],
                         ],
                         [
@@ -804,12 +804,12 @@ class ProductLoadedSubscriberTest extends TestCase
                                 'id' => $ids->get('fit'),
                                 'translations' => [
                                     Defaults::LANGUAGE_SYSTEM => ['name' => 'fit'],
-                                    'de-DE' => ['name' => 'passform'],
+                                    'zh-CN' => ['name' => 'passform'],
                                 ],
                             ],
                             'translations' => [
                                 Defaults::LANGUAGE_SYSTEM => ['name' => 'slim fit'],
-                                'de-DE' => ['name' => 'schmal'],
+                                'zh-CN' => ['name' => 'schmal'],
                             ],
                         ],
                     ],
@@ -836,7 +836,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'größe', 'option' => 'extra gross'],
                     ['group' => 'passform', 'option' => 'schmal'],
                 ],
-                ['de-DE', Defaults::LANGUAGE_SYSTEM],
+                ['zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 false,
                 $ids->get('language'),
@@ -904,7 +904,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'fit', 'option' => 'slim fit'],
                     ['group' => 'size', 'option' => 'xl'],
                 ],
-                ['de-DE', Defaults::LANGUAGE_SYSTEM],
+                ['zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 false,
                 $ids->get('language'),
@@ -972,7 +972,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'fit', 'option' => 'slim fit'],
                     ['group' => 'size', 'option' => 'xl'],
                 ],
-                [$ids->get('language'), 'de-DE', Defaults::LANGUAGE_SYSTEM],
+                [$ids->get('language'), 'zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 false,
                 $ids->get('language'),
@@ -1046,7 +1046,7 @@ class ProductLoadedSubscriberTest extends TestCase
                     ['group' => 'baz', 'option' => 'tif mils'],
                     ['group' => 'foo', 'option' => 'der'],
                 ],
-                [$ids->get('language'), 'de-DE', Defaults::LANGUAGE_SYSTEM],
+                [$ids->get('language'), 'zh-CN', Defaults::LANGUAGE_SYSTEM],
                 (new Criteria())->addAssociation('options.group'),
                 false,
                 $ids->get('language'),

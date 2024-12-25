@@ -3,14 +3,14 @@
 
     <card>
         <title>Basic configuration</title>
-        <title lang="de-DE">Grundeinstellungen</title>
+        <title lang="zh-CN">Grundeinstellungen</title>
         <input-field>
             <name>email</name>
             <copyable>true</copyable>
             <label>eMail</label>
-            <label lang="de-DE">E-Mail</label>
+            <label lang="zh-CN">E-Mail</label>
             <placeholder>Enter your eMail address</placeholder>
-            <placeholder lang="de-DE">Bitte gib deine E-Mail Adresse ein</placeholder>
+            <placeholder lang="zh-CN">Bitte gib deine E-Mail Adresse ein</placeholder>
         </input-field>
 
         <input-field type="single-select">
@@ -26,9 +26,9 @@
                 </option>
             </options>
             <label>Mailing protocol</label>
-            <label lang="de-DE">E-Mail Versand Protokoll</label>
+            <label lang="zh-CN">E-Mail Versand Protokoll</label>
             <placeholder>Choose your preferred transfer method</placeholder>
-            <placeholder lang="de-DE">Bitte wähle dein bevorzugtes Versand Protokoll</placeholder>
+            <placeholder lang="zh-CN">Bitte wähle dein bevorzugtes Versand Protokoll</placeholder>
         </input-field>
 
         <component name="sw-select">
@@ -38,12 +38,12 @@
                 <option>
                     <id>smtp</id>
                     <name>English smtp</name>
-                    <name lang="de-DE">German smtp</name>
+                    <name lang="zh-CN">German smtp</name>
                 </option>
                 <option>
                     <id>pop3</id>
                     <name>English pop3</name>
-                    <name lang="de-DE">German pop3</name>
+                    <name lang="zh-CN">German pop3</name>
                 </option>
             </options>
         </component>

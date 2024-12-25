@@ -8,7 +8,7 @@ import './view/sw-login-recovery';
 import './view/sw-login-recovery-info';
 import './view/sw-login-recovery-recovery';
 
-import deDE from './snippet/de-DE.json';
+import deDE from './snippet/zh-CN.json';
 import enGB from './snippet/en-GB.json';
 
 const { Module } = Cicada;
@@ -24,7 +24,7 @@ Module.register('sw-login', {
     color: '#F19D12',
 
     snippets: {
-        'de-DE': deDE,
+        'zh-CN': deDE,
         'en-GB': enGB,
     },
 

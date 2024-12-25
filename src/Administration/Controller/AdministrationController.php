@@ -169,7 +169,7 @@ class AdministrationController extends AbstractController
             throw RoutingException::languageNotFound($context->getLanguageId());
         }
 
-        $deLanguageId = $this->fetchLanguageIdByName('de-DE', $this->connection);
+        $deLanguageId = $this->fetchLanguageIdByName('zh-CN', $this->connection);
         $enLanguageId = $this->fetchLanguageIdByName('en-GB', $this->connection);
 
         switch ($context->getLanguageId()) {

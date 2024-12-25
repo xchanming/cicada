@@ -25,7 +25,7 @@ class FloatFieldTest extends TestCase
             'type' => 'number',
             'label' => [
                 'en-GB' => 'Test float field',
-                'de-DE' => 'Test Kommazahlenfeld',
+                'zh-CN' => 'Test Kommazahlenfeld',
             ],
             'helpText' => [
                 'en-GB' => 'This is an float field.',

@@ -19,13 +19,13 @@ class SnippetFileCollectionTest extends TestCase
         $collection = $this->getCollection();
 
         $result_en_GB = $collection->get('storefront.en-GB');
-        $result_de_DE = $collection->get('storefront.de-DE');
+        $result_de_DE = $collection->get('storefront.zh-CN');
         $result_NA = $collection->get('not.available');
 
         static::assertNotNull($result_en_GB);
         static::assertNotNull($result_de_DE);
         static::assertSame('en-GB', $result_en_GB->getIso());
-        static::assertSame('de-DE', $result_de_DE->getIso());
+        static::assertSame('zh-CN', $result_de_DE->getIso());
         static::assertNull($result_NA);
     }
 
@@ -34,7 +34,7 @@ class SnippetFileCollectionTest extends TestCase
         $isoList = $this->getCollection()->getIsoList();
 
         static::assertCount(2, $isoList);
-        static::assertContains('de-DE', $isoList);
+        static::assertContains('zh-CN', $isoList);
         static::assertContains('en-GB', $isoList);
     }
 
@@ -43,7 +43,7 @@ class SnippetFileCollectionTest extends TestCase
         $collection = $this->getCollection();
 
         $result_en_GB = $collection->getSnippetFilesByIso('en-GB');
-        $result_de_DE = $collection->getSnippetFilesByIso('de-DE');
+        $result_de_DE = $collection->getSnippetFilesByIso('zh-CN');
         $result_empty = $collection->getSnippetFilesByIso('na-NA');
         $result_empty_two = $collection->getSnippetFilesByIso('');
 
@@ -53,7 +53,7 @@ class SnippetFileCollectionTest extends TestCase
         static::assertCount(0, $result_empty_two);
 
         static::assertSame('en-GB', $result_en_GB[0]->getIso());
-        static::assertSame('de-DE', $result_de_DE[0]->getIso());
+        static::assertSame('zh-CN', $result_de_DE[0]->getIso());
         static::assertEmpty($result_empty);
         static::assertEmpty($result_empty_two);
     }
@@ -73,11 +73,11 @@ class SnippetFileCollectionTest extends TestCase
         $collection = $this->getCollection();
 
         $result_en_GB = $collection->getBaseFileByIso('en-GB');
-        $result_de_DE = $collection->getBaseFileByIso('de-DE');
+        $result_de_DE = $collection->getBaseFileByIso('zh-CN');
 
         static::assertSame('en-GB', $result_en_GB->getIso());
         static::assertTrue($result_en_GB->isBase());
-        static::assertSame('de-DE', $result_de_DE->getIso());
+        static::assertSame('zh-CN', $result_de_DE->getIso());
         static::assertTrue($result_de_DE->isBase());
     }
 
@@ -87,7 +87,7 @@ class SnippetFileCollectionTest extends TestCase
 
         static::assertCount(3, $result);
 
-        $resultDe = array_filter($result, static fn (array $item) => $item['iso'] === 'de-DE');
+        $resultDe = array_filter($result, static fn (array $item) => $item['iso'] === 'zh-CN');
 
         $resultEn = array_filter($result, static fn (array $item) => $item['iso'] === 'en-GB');
 
@@ -98,8 +98,8 @@ class SnippetFileCollectionTest extends TestCase
     private function getCollection(): SnippetFileCollection
     {
         $collection = new SnippetFileCollection();
-        $collection->add(new MockSnippetFile('storefront.de-DE', 'de-DE', '{}', true, 'SwagPlugin'));
-        $collection->add(new MockSnippetFile('storefront.de-DE_extension', 'de-DE', '{}', false, 'SwagPlugin'));
+        $collection->add(new MockSnippetFile('storefront.zh-CN', 'zh-CN', '{}', true, 'SwagPlugin'));
+        $collection->add(new MockSnippetFile('storefront.zh-CN_extension', 'zh-CN', '{}', false, 'SwagPlugin'));
         $collection->add(new MockSnippetFile('storefront.en-GB', 'en-GB', '{}', true));
 
         return $collection;

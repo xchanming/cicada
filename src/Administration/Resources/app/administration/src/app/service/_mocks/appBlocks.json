@@ -5,7 +5,7 @@
             "category": "text-image",
             "label": {
                 "en-GB": "First block from app",
-                "de-DE": "Erster Block einer App"
+                "zh-CN": "Erster Block einer App"
             },
             "slots": {
                 "left": {
@@ -59,7 +59,7 @@
             "category": "text-image",
             "label": {
                 "en-GB": "Second block from app",
-                "de-DE": "Zweiter Block einer App"
+                "zh-CN": "Zweiter Block einer App"
             },
             "slots": {
                 "left": {

@@ -17,7 +17,7 @@
         "cicada-plugin-class": "SwagTestValidateConflictsSpecificMessage\\SwagTestValidateConflictsSpecificMessage",
         "copyright": "(c) by cicada AG",
         "label": {
-            "de-DE": "Test für Konflikte-Handling",
+            "zh-CN": "Test für Konflikte-Handling",
             "en-GB": "Test for conflict handling"
         }
     }

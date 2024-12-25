@@ -11,7 +11,7 @@
   "extra": {
     "cicada-plugin-class": "ExamplePluginForTesting\\ExamplePluginForTesting",
     "label": {
-      "de-DE": "Skeleton plugin",
+      "zh-CN": "Skeleton plugin",
       "en-GB": "Skeleton plugin"
     }
   }

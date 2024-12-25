@@ -30,7 +30,7 @@ class InstallerLocaleListenerTest extends TestCase
     #[DataProvider('installerLocaleProvider')]
     public function testSetInstallerLocale(Request $request, string $expectedLocale): void
     {
-        $listener = new InstallerLocaleListener(['de' => 'de-DE', 'en' => 'en-GB', 'nl' => 'nl-NL', 'fr' => 'fr-FR']);
+        $listener = new InstallerLocaleListener(['zh' => 'zh-CN', 'en' => 'en-GB', 'nl' => 'nl-NL', 'fr' => 'fr-FR']);
 
         $listener->setInstallerLocale(
             new RequestEvent(
@@ -65,38 +65,38 @@ class InstallerLocaleListenerTest extends TestCase
 
         $request = new Request();
         $request->setSession(new Session(new MockArraySessionStorage()));
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de-DE']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'zh-CN']);
 
-        yield 'uses browser header if it is supported with long iso code' => [
+        yield 'uses browser header if it is supported with long iso cozh' => [
             $request,
-            'de',
+            'zh',
         ];
 
         $request = new Request();
         $request->setSession(new Session(new MockArraySessionStorage()));
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'zh']);
 
-        yield 'uses browser header if it is supported with short iso code' => [
+        yield 'uses browser header if it is supported with short iso cozh' => [
             $request,
-            'de',
+            'zh',
         ];
 
         $request = new Request();
         $session = new Session(new MockArraySessionStorage());
         $session->set('language', 'es');
         $request->setSession($session);
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'zh']);
 
         yield 'falls back to browser header if session value is not supported' => [
             $request,
-            'de',
+            'zh',
         ];
 
         $request = new Request();
         $session = new Session(new MockArraySessionStorage());
         $session->set('language', 'nl');
         $request->setSession($session);
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'zh']);
 
         yield 'uses session value over browser header if it is supported' => [
             $request,
@@ -107,7 +107,7 @@ class InstallerLocaleListenerTest extends TestCase
         $session = new Session(new MockArraySessionStorage());
         $session->set('language', 'nl');
         $request->setSession($session);
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'zh']);
 
         yield 'falls back to session value if query param is not supported' => [
             $request,
@@ -118,7 +118,7 @@ class InstallerLocaleListenerTest extends TestCase
         $session = new Session(new MockArraySessionStorage());
         $session->set('language', 'nl');
         $request->setSession($session);
-        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'de']);
+        $request->headers = new HeaderBag(['HTTP_ACCEPT_LANGUAGE' => 'zh']);
 
         yield 'uses query param over session value if it is supported' => [
             $request,
@@ -128,12 +128,12 @@ class InstallerLocaleListenerTest extends TestCase
 
     public function testItSavesLanguageChangeToSession(): void
     {
-        $request = new Request(['language' => 'de']);
+        $request = new Request(['language' => 'zh']);
         $session = new Session(new MockArraySessionStorage());
         $session->set('language', 'en');
         $request->setSession($session);
 
-        $listener = new InstallerLocaleListener(['de' => 'de-DE', 'en' => 'en-GB', 'nl' => 'nl-NL', 'fr' => 'fr-FR']);
+        $listener = new InstallerLocaleListener(['zh' => 'zh-CN', 'en' => 'en-GB', 'nl' => 'nl-NL', 'fr' => 'fr-FR']);
 
         $listener->setInstallerLocale(
             new RequestEvent(
@@ -143,8 +143,8 @@ class InstallerLocaleListenerTest extends TestCase
             )
         );
 
-        static::assertSame('de', $request->attributes->get('_locale'));
-        static::assertSame('de', $request->getLocale());
-        static::assertSame('de', $session->get('language'));
+        static::assertSame('zh', $request->attributes->get('_locale'));
+        static::assertSame('zh', $request->getLocale());
+        static::assertSame('zh', $session->get('language'));
     }
 }

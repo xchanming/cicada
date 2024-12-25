@@ -42,7 +42,7 @@ async function createWrapper(privileges = [], languageId = null, stubTranslation
                                         },
                                         {
                                             id: '018d36e6165371a4b145cd683bf65869',
-                                            code: 'de-DE',
+                                            code: 'zh-CN',
                                             name: 'German',
                                             territory: 'Germany',
                                         },

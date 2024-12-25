@@ -111,7 +111,7 @@ describe('src/app/service/menu.service', () => {
 
         it('respects the current locale for apps', async () => {
             Cicada.Context.app.fallbackLocale = 'en-GB';
-            Cicada.State.get('session').currentLocale = 'de-DE';
+            Cicada.State.get('session').currentLocale = 'zh-CN';
 
             const navigation = menuService.getNavigationFromApps(testApps);
             expect(navigation).toEqual([

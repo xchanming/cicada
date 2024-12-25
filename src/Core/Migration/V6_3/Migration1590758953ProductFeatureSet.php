@@ -26,7 +26,7 @@ class Migration1590758953ProductFeatureSet extends MigrationStep
             'name' => 'Default',
             'description' => 'Default template displaying the product\'s price per scale unit',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'name' => 'Standard',
             'description' => 'Standardtemplate, hebt den Grundpreis des Produkts hervor',
         ],
@@ -141,7 +141,7 @@ SQL;
             );
         }
 
-        $languages = $this->fetchLanguageIds($connection, ['de-DE']);
+        $languages = $this->fetchLanguageIds($connection, ['zh-CN']);
 
         foreach ($languages as $language) {
             $connection->executeStatement(
@@ -149,7 +149,7 @@ SQL;
                 $this->getDefaultFeatureSetTranslation(
                     $featureSetId,
                     $language,
-                    self::TRANSLATIONS['de-DE']
+                    self::TRANSLATIONS['zh-CN']
                 )
             );
         }

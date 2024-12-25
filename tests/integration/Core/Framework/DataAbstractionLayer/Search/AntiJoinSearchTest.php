@@ -311,7 +311,7 @@ class AntiJoinSearchTest extends TestCase
                     'en-GB' => [
                         'name' => 'green',
                     ],
-                    'de-DE' => [
+                    'zh-CN' => [
                         'name' => 'grün',
                     ],
                 ],

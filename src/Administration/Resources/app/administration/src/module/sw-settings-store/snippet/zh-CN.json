@@ -1,0 +1,16 @@
+{
+  "sw-settings-store": {
+    "general": {
+      "mainMenuItemGeneral": "Cicada Account",
+      "textHeadline": "Cicada Account",
+      "description": "Change your Cicada Account settings here.",
+      "buttonSave": "Save",
+      "messageSaveSuccess": "Your Cicada Account information have been saved."
+    },
+    "detail": {
+      "titleCard": "Settings",
+      "labelHost": "Licence domain",
+      "placeholderHost": "Enter the licence domain (shop domain), specified in your Cicada Account."
+    }
+  }
+}

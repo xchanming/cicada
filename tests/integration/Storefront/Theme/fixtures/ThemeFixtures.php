@@ -21,7 +21,7 @@ class ThemeFixtures
                         'sw-color-brand-primary' => [
                             'label' => [
                                 'en-GB' => 'Primary colour',
-                                'de-DE' => 'Primärfarbe',
+                                'zh-CN' => 'Primärfarbe',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -30,7 +30,7 @@ class ThemeFixtures
                         'sw-color-brand-secondary' => [
                             'label' => [
                                 'en-GB' => 'Secondary colour',
-                                'de-DE' => 'Sekundärfarbe',
+                                'zh-CN' => 'Sekundärfarbe',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -39,7 +39,7 @@ class ThemeFixtures
                         'sw-border-color' => [
                             'label' => [
                                 'en-GB' => 'Border',
-                                'de-DE' => 'Rahmen',
+                                'zh-CN' => 'Rahmen',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -48,7 +48,7 @@ class ThemeFixtures
                         'sw-background-color' => [
                             'label' => [
                                 'en-GB' => 'Background',
-                                'de-DE' => 'Hintergrund',
+                                'zh-CN' => 'Hintergrund',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -64,7 +64,7 @@ class ThemeFixtures
                         'sw-font-family-base' => [
                             'label' => [
                                 'en-GB' => 'Fonttype text',
-                                'de-DE' => 'Schriftart Text',
+                                'zh-CN' => 'Schriftart Text',
                             ],
                             'type' => 'fontFamily',
                             'helpText' => null,
@@ -73,7 +73,7 @@ class ThemeFixtures
                         'sw-font-family-headline' => [
                             'label' => [
                                 'en-GB' => 'Fonttype headline',
-                                'de-DE' => 'Schriftart Überschrift',
+                                'zh-CN' => 'Schriftart Überschrift',
                             ],
                             'type' => 'fontFamily',
                             'helpText' => null,
@@ -82,7 +82,7 @@ class ThemeFixtures
                         'sw-headline-color' => [
                             'label' => [
                                 'en-GB' => 'Headline colour',
-                                'de-DE' => 'Überschriftfarbe',
+                                'zh-CN' => 'Überschriftfarbe',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -91,7 +91,7 @@ class ThemeFixtures
                         'sw-text-color' => [
                             'label' => [
                                 'en-GB' => 'Text colour',
-                                'de-DE' => 'Textfarbe',
+                                'zh-CN' => 'Textfarbe',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -109,11 +109,11 @@ class ThemeFixtures
                         'sw-logo-desktop' => [
                             'label' => [
                                 'en-GB' => 'Desktop',
-                                'de-DE' => 'Desktop',
+                                'zh-CN' => 'Desktop',
                             ],
                             'helpText' => [
                                 'en-GB' => 'Displayed on viewport sizes above 991px and as a fallback on smaller viewports, if no other logo is set.',
-                                'de-DE' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
+                                'zh-CN' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
                             ],
                             'type' => 'media',
                             'custom' => null,
@@ -121,11 +121,11 @@ class ThemeFixtures
                         'sw-logo-tablet' => [
                             'label' => [
                                 'en-GB' => 'Tablet',
-                                'de-DE' => 'Tablet',
+                                'zh-CN' => 'Tablet',
                             ],
                             'helpText' => [
                                 'en-GB' => 'Displayed between a viewport of 767px to 991px',
-                                'de-DE' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
+                                'zh-CN' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
                             ],
                             'type' => 'media',
                             'custom' => null,
@@ -133,11 +133,11 @@ class ThemeFixtures
                         'sw-logo-mobile' => [
                             'label' => [
                                 'en-GB' => 'Mobile',
-                                'de-DE' => 'Mobil',
+                                'zh-CN' => 'Mobil',
                             ],
                             'helpText' => [
                                 'en-GB' => 'Displayed up to a viewport of 767px',
-                                'de-DE' => 'Wird bis zu einem Viewport von 767px angezeigt',
+                                'zh-CN' => 'Wird bis zu einem Viewport von 767px angezeigt',
                             ],
                             'type' => 'media',
                             'custom' => null,
@@ -145,7 +145,7 @@ class ThemeFixtures
                         'sw-logo-share' => [
                             'label' => [
                                 'en-GB' => 'App & share icon',
-                                'de-DE' => 'App- & Share-Icon',
+                                'zh-CN' => 'App- & Share-Icon',
                             ],
                             'type' => 'media',
                             'helpText' => null,
@@ -154,7 +154,7 @@ class ThemeFixtures
                         'sw-logo-favicon' => [
                             'label' => [
                                 'en-GB' => 'Favicon',
-                                'de-DE' => 'Favicon',
+                                'zh-CN' => 'Favicon',
                             ],
                             'type' => 'media',
                             'helpText' => null,
@@ -171,7 +171,7 @@ class ThemeFixtures
                         'sw-color-price' => [
                             'label' => [
                                 'en-GB' => 'Price',
-                                'de-DE' => 'Preis',
+                                'zh-CN' => 'Preis',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -180,7 +180,7 @@ class ThemeFixtures
                         'sw-color-buy-button' => [
                             'label' => [
                                 'en-GB' => 'Buy button',
-                                'de-DE' => 'Kaufen-Button',
+                                'zh-CN' => 'Kaufen-Button',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -189,7 +189,7 @@ class ThemeFixtures
                         'sw-color-buy-button-text' => [
                             'label' => [
                                 'en-GB' => 'Buy button text',
-                                'de-DE' => 'Kaufen-Button Text',
+                                'zh-CN' => 'Kaufen-Button Text',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -206,7 +206,7 @@ class ThemeFixtures
                         'sw-color-success' => [
                             'label' => [
                                 'en-GB' => 'Success',
-                                'de-DE' => 'Erfolg',
+                                'zh-CN' => 'Erfolg',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -215,7 +215,7 @@ class ThemeFixtures
                         'sw-color-info' => [
                             'label' => [
                                 'en-GB' => 'Information',
-                                'de-DE' => 'Information',
+                                'zh-CN' => 'Information',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -224,7 +224,7 @@ class ThemeFixtures
                         'sw-color-warning' => [
                             'label' => [
                                 'en-GB' => 'Notice',
-                                'de-DE' => 'Hinweis',
+                                'zh-CN' => 'Hinweis',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -233,7 +233,7 @@ class ThemeFixtures
                         'sw-color-danger' => [
                             'label' => [
                                 'en-GB' => 'Error',
-                                'de-DE' => 'Fehler',
+                                'zh-CN' => 'Fehler',
                             ],
                             'type' => 'color',
                             'helpText' => null,
@@ -269,7 +269,7 @@ class ThemeFixtures
                                         'sw-color-brand-primary' => [
                                             'label' => [
                                                 'en-GB' => 'Primary colour',
-                                                'de-DE' => 'Primärfarbe',
+                                                'zh-CN' => 'Primärfarbe',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -279,7 +279,7 @@ class ThemeFixtures
                                         'sw-color-brand-secondary' => [
                                             'label' => [
                                                 'en-GB' => 'Secondary colour',
-                                                'de-DE' => 'Sekundärfarbe',
+                                                'zh-CN' => 'Sekundärfarbe',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -289,7 +289,7 @@ class ThemeFixtures
                                         'sw-border-color' => [
                                             'label' => [
                                                 'en-GB' => 'Border',
-                                                'de-DE' => 'Rahmen',
+                                                'zh-CN' => 'Rahmen',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -299,7 +299,7 @@ class ThemeFixtures
                                         'sw-background-color' => [
                                             'label' => [
                                                 'en-GB' => 'Background',
-                                                'de-DE' => 'Hintergrund',
+                                                'zh-CN' => 'Hintergrund',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -319,7 +319,7 @@ class ThemeFixtures
                                         'sw-color-success' => [
                                             'label' => [
                                                 'en-GB' => 'Success',
-                                                'de-DE' => 'Erfolg',
+                                                'zh-CN' => 'Erfolg',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -329,7 +329,7 @@ class ThemeFixtures
                                         'sw-color-info' => [
                                             'label' => [
                                                 'en-GB' => 'Information',
-                                                'de-DE' => 'Information',
+                                                'zh-CN' => 'Information',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -339,7 +339,7 @@ class ThemeFixtures
                                         'sw-color-warning' => [
                                             'label' => [
                                                 'en-GB' => 'Notice',
-                                                'de-DE' => 'Hinweis',
+                                                'zh-CN' => 'Hinweis',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -349,7 +349,7 @@ class ThemeFixtures
                                         'sw-color-danger' => [
                                             'label' => [
                                                 'en-GB' => 'Error',
-                                                'de-DE' => 'Fehler',
+                                                'zh-CN' => 'Fehler',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -369,7 +369,7 @@ class ThemeFixtures
                                         'sw-font-family-base' => [
                                             'label' => [
                                                 'en-GB' => 'Fonttype text',
-                                                'de-DE' => 'Schriftart Text',
+                                                'zh-CN' => 'Schriftart Text',
                                             ],
                                             'helpText' => null,
                                             'type' => 'fontFamily',
@@ -379,7 +379,7 @@ class ThemeFixtures
                                         'sw-text-color' => [
                                             'label' => [
                                                 'en-GB' => 'Text colour',
-                                                'de-DE' => 'Textfarbe',
+                                                'zh-CN' => 'Textfarbe',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -389,7 +389,7 @@ class ThemeFixtures
                                         'sw-font-family-headline' => [
                                             'label' => [
                                                 'en-GB' => 'Fonttype headline',
-                                                'de-DE' => 'Schriftart Überschrift',
+                                                'zh-CN' => 'Schriftart Überschrift',
                                             ],
                                             'helpText' => null,
                                             'type' => 'fontFamily',
@@ -399,7 +399,7 @@ class ThemeFixtures
                                         'sw-headline-color' => [
                                             'label' => [
                                                 'en-GB' => 'Headline colour',
-                                                'de-DE' => 'Überschriftfarbe',
+                                                'zh-CN' => 'Überschriftfarbe',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -419,7 +419,7 @@ class ThemeFixtures
                                         'sw-color-price' => [
                                             'label' => [
                                                 'en-GB' => 'Price',
-                                                'de-DE' => 'Preis',
+                                                'zh-CN' => 'Preis',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -429,7 +429,7 @@ class ThemeFixtures
                                         'sw-color-buy-button' => [
                                             'label' => [
                                                 'en-GB' => 'Buy button',
-                                                'de-DE' => 'Kaufen-Button',
+                                                'zh-CN' => 'Kaufen-Button',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -439,7 +439,7 @@ class ThemeFixtures
                                         'sw-color-buy-button-text' => [
                                             'label' => [
                                                 'en-GB' => 'Buy button text',
-                                                'de-DE' => 'Kaufen-Button Text',
+                                                'zh-CN' => 'Kaufen-Button Text',
                                             ],
                                             'helpText' => null,
                                             'type' => 'color',
@@ -459,11 +459,11 @@ class ThemeFixtures
                                         'sw-logo-desktop' => [
                                             'label' => [
                                                 'en-GB' => 'Desktop',
-                                                'de-DE' => 'Desktop',
+                                                'zh-CN' => 'Desktop',
                                             ],
                                             'helpText' => [
                                                 'en-GB' => 'Displayed on viewport sizes above 991px and as a fallback on smaller viewports, if no other logo is set.',
-                                                'de-DE' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
+                                                'zh-CN' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
                                             ],
                                             'type' => 'media',
                                             'custom' => null,
@@ -472,11 +472,11 @@ class ThemeFixtures
                                         'sw-logo-tablet' => [
                                             'label' => [
                                                 'en-GB' => 'Tablet',
-                                                'de-DE' => 'Tablet',
+                                                'zh-CN' => 'Tablet',
                                             ],
                                             'helpText' => [
                                                 'en-GB' => 'Displayed between a viewport of 767px to 991px',
-                                                'de-DE' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
+                                                'zh-CN' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
                                             ],
                                             'type' => 'media',
                                             'custom' => null,
@@ -485,11 +485,11 @@ class ThemeFixtures
                                         'sw-logo-mobile' => [
                                             'label' => [
                                                 'en-GB' => 'Mobile',
-                                                'de-DE' => 'Mobil',
+                                                'zh-CN' => 'Mobil',
                                             ],
                                             'helpText' => [
                                                 'en-GB' => 'Displayed up to a viewport of 767px',
-                                                'de-DE' => 'Wird bis zu einem Viewport von 767px angezeigt',
+                                                'zh-CN' => 'Wird bis zu einem Viewport von 767px angezeigt',
                                             ],
                                             'type' => 'media',
                                             'custom' => null,
@@ -498,7 +498,7 @@ class ThemeFixtures
                                         'sw-logo-share' => [
                                             'label' => [
                                                 'en-GB' => 'App & share icon',
-                                                'de-DE' => 'App- & Share-Icon',
+                                                'zh-CN' => 'App- & Share-Icon',
                                             ],
                                             'helpText' => null,
                                             'type' => 'media',
@@ -508,7 +508,7 @@ class ThemeFixtures
                                         'sw-logo-favicon' => [
                                             'label' => [
                                                 'en-GB' => 'Favicon',
-                                                'de-DE' => 'Favicon',
+                                                'zh-CN' => 'Favicon',
                                             ],
                                             'helpText' => null,
                                             'type' => 'media',
@@ -535,37 +535,37 @@ class ThemeFixtures
                 'themeColors' => [
                     'label' => [
                         'en-GB' => 'Theme colours',
-                        'de-DE' => 'Theme-Farben',
+                        'zh-CN' => 'Theme-Farben',
                     ],
                 ],
                 'typography' => [
                     'label' => [
                         'en-GB' => 'Typography',
-                        'de-DE' => 'Typografie',
+                        'zh-CN' => 'Typografie',
                     ],
                 ],
                 'media' => [
                     'label' => [
                         'en-GB' => 'Media',
-                        'de-DE' => 'Medien',
+                        'zh-CN' => 'Medien',
                     ],
                 ],
                 'eCommerce' => [
                     'label' => [
                         'en-GB' => 'E-Commerce',
-                        'de-DE' => 'E-Commerce',
+                        'zh-CN' => 'E-Commerce',
                     ],
                 ],
                 'statusColors' => [
                     'label' => [
                         'en-GB' => 'Status messages',
-                        'de-DE' => 'Status-Ausgaben',
+                        'zh-CN' => 'Status-Ausgaben',
                     ],
                 ],
                 'unordered' => [
                     'label' => [
                         'en-GB' => 'Misc',
-                        'de-DE' => 'Sonstige',
+                        'zh-CN' => 'Sonstige',
                     ],
                 ],
             ],
@@ -574,7 +574,7 @@ class ThemeFixtures
                     'name' => 'sw-color-brand-primary',
                     'label' => [
                         'en-GB' => 'Primary colour',
-                        'de-DE' => 'Primärfarbe',
+                        'zh-CN' => 'Primärfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#ff00ff',
@@ -596,7 +596,7 @@ class ThemeFixtures
                     'name' => 'sw-color-brand-secondary',
                     'label' => [
                         'en-GB' => 'Secondary colour',
-                        'de-DE' => 'Sekundärfarbe',
+                        'zh-CN' => 'Sekundärfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#474a57',
@@ -618,7 +618,7 @@ class ThemeFixtures
                     'name' => 'sw-color-success',
                     'label' => [
                         'en-GB' => 'Success',
-                        'de-DE' => 'Erfolg',
+                        'zh-CN' => 'Erfolg',
                     ],
                     'type' => 'color',
                     'value' => '#007e4e',
@@ -640,7 +640,7 @@ class ThemeFixtures
                     'name' => 'sw-color-info',
                     'label' => [
                         'en-GB' => 'Information',
-                        'de-DE' => 'Information',
+                        'zh-CN' => 'Information',
                     ],
                     'type' => 'color',
                     'value' => '#005b99',
@@ -662,7 +662,7 @@ class ThemeFixtures
                     'name' => 'sw-color-warning',
                     'label' => [
                         'en-GB' => 'Notice',
-                        'de-DE' => 'Hinweis',
+                        'zh-CN' => 'Hinweis',
                     ],
                     'type' => 'color',
                     'value' => '#974200',
@@ -684,7 +684,7 @@ class ThemeFixtures
                     'name' => 'sw-color-danger',
                     'label' => [
                         'en-GB' => 'Error',
-                        'de-DE' => 'Fehler',
+                        'zh-CN' => 'Fehler',
                     ],
                     'type' => 'color',
                     'value' => '#c20017',
@@ -706,7 +706,7 @@ class ThemeFixtures
                     'name' => 'sw-text-color',
                     'label' => [
                         'en-GB' => 'Text colour',
-                        'de-DE' => 'Textfarbe',
+                        'zh-CN' => 'Textfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -728,7 +728,7 @@ class ThemeFixtures
                     'name' => 'sw-border-color',
                     'label' => [
                         'en-GB' => 'Border',
-                        'de-DE' => 'Rahmen',
+                        'zh-CN' => 'Rahmen',
                     ],
                     'type' => 'color',
                     'value' => '#798490',
@@ -749,7 +749,7 @@ class ThemeFixtures
                 'sw-background-color' => [
                     'label' => [
                         'en-GB' => 'Background',
-                        'de-DE' => 'Hintergrund',
+                        'zh-CN' => 'Hintergrund',
                     ],
                     'type' => 'color',
                     'value' => '#fff',
@@ -772,7 +772,7 @@ class ThemeFixtures
                     'name' => 'sw-color-price',
                     'label' => [
                         'en-GB' => 'Price',
-                        'de-DE' => 'Preis',
+                        'zh-CN' => 'Preis',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -794,7 +794,7 @@ class ThemeFixtures
                     'name' => 'sw-color-buy-button',
                     'label' => [
                         'en-GB' => 'Buy button',
-                        'de-DE' => 'Kaufen-Button',
+                        'zh-CN' => 'Kaufen-Button',
                     ],
                     'type' => 'color',
                     'value' => '#0042a0',
@@ -815,7 +815,7 @@ class ThemeFixtures
                 'sw-color-buy-button-text' => [
                     'label' => [
                         'en-GB' => 'Buy button text',
-                        'de-DE' => 'Kaufen-Button Text',
+                        'zh-CN' => 'Kaufen-Button Text',
                     ],
                     'type' => 'color',
                     'value' => '#fff',
@@ -838,7 +838,7 @@ class ThemeFixtures
                     'name' => 'sw-font-family-base',
                     'label' => [
                         'en-GB' => 'Fonttype text',
-                        'de-DE' => 'Schriftart Text',
+                        'zh-CN' => 'Schriftart Text',
                     ],
                     'type' => 'fontFamily',
                     'value' => '\'Inter\', sans-serif',
@@ -860,7 +860,7 @@ class ThemeFixtures
                     'name' => 'sw-font-family-headline',
                     'label' => [
                         'en-GB' => 'Fonttype headline',
-                        'de-DE' => 'Schriftart Überschrift',
+                        'zh-CN' => 'Schriftart Überschrift',
                     ],
                     'type' => 'fontFamily',
                     'value' => '\'Inter\', sans-serif',
@@ -881,7 +881,7 @@ class ThemeFixtures
                 'sw-headline-color' => [
                     'label' => [
                         'en-GB' => 'Headline colour',
-                        'de-DE' => 'Überschriftfarbe',
+                        'zh-CN' => 'Überschriftfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -903,11 +903,11 @@ class ThemeFixtures
                 'sw-logo-desktop' => [
                     'label' => [
                         'en-GB' => 'Desktop',
-                        'de-DE' => 'Desktop',
+                        'zh-CN' => 'Desktop',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed on viewport sizes above 991px and as a fallback on smaller viewports, if no other logo is set.',
-                        'de-DE' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
+                        'zh-CN' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -928,11 +928,11 @@ class ThemeFixtures
                 'sw-logo-tablet' => [
                     'label' => [
                         'en-GB' => 'Tablet',
-                        'de-DE' => 'Tablet',
+                        'zh-CN' => 'Tablet',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed between a viewport of 767px to 991px',
-                        'de-DE' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
+                        'zh-CN' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -953,11 +953,11 @@ class ThemeFixtures
                 'sw-logo-mobile' => [
                     'label' => [
                         'en-GB' => 'Mobile',
-                        'de-DE' => 'Mobil',
+                        'zh-CN' => 'Mobil',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed up to a viewport of 767px',
-                        'de-DE' => 'Wird bis zu einem Viewport von 767px angezeigt',
+                        'zh-CN' => 'Wird bis zu einem Viewport von 767px angezeigt',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -978,7 +978,7 @@ class ThemeFixtures
                 'sw-logo-share' => [
                     'label' => [
                         'en-GB' => 'App & share icon',
-                        'de-DE' => 'App- & Share-Icon',
+                        'zh-CN' => 'App- & Share-Icon',
                     ],
                     'type' => 'media',
                     'value' => '',
@@ -1000,7 +1000,7 @@ class ThemeFixtures
                 'sw-logo-favicon' => [
                     'label' => [
                         'en-GB' => 'Favicon',
-                        'de-DE' => 'Favicon',
+                        'zh-CN' => 'Favicon',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/favicon.png',
@@ -1202,37 +1202,37 @@ class ThemeFixtures
                 'themeColors' => [
                     'label' => [
                         'en-GB' => 'Theme colours',
-                        'de-DE' => 'Theme-Farben',
+                        'zh-CN' => 'Theme-Farben',
                     ],
                 ],
                 'typography' => [
                     'label' => [
                         'en-GB' => 'Typography',
-                        'de-DE' => 'Typografie',
+                        'zh-CN' => 'Typografie',
                     ],
                 ],
                 'media' => [
                     'label' => [
                         'en-GB' => 'Media',
-                        'de-DE' => 'Medien',
+                        'zh-CN' => 'Medien',
                     ],
                 ],
                 'eCommerce' => [
                     'label' => [
                         'en-GB' => 'E-Commerce',
-                        'de-DE' => 'E-Commerce',
+                        'zh-CN' => 'E-Commerce',
                     ],
                 ],
                 'statusColors' => [
                     'label' => [
                         'en-GB' => 'Status messages',
-                        'de-DE' => 'Status-Ausgaben',
+                        'zh-CN' => 'Status-Ausgaben',
                     ],
                 ],
                 'unordered' => [
                     'label' => [
                         'en-GB' => 'Misc',
-                        'de-DE' => 'Sonstige',
+                        'zh-CN' => 'Sonstige',
                     ],
                 ],
             ],
@@ -1241,7 +1241,7 @@ class ThemeFixtures
                     'name' => 'sw-color-brand-primary',
                     'label' => [
                         'en-GB' => 'Primary colour',
-                        'de-DE' => 'Primärfarbe',
+                        'zh-CN' => 'Primärfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#ff00ff',
@@ -1263,7 +1263,7 @@ class ThemeFixtures
                     'name' => 'sw-color-brand-secondary',
                     'label' => [
                         'en-GB' => 'Secondary colour',
-                        'de-DE' => 'Sekundärfarbe',
+                        'zh-CN' => 'Sekundärfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#474a57',
@@ -1285,7 +1285,7 @@ class ThemeFixtures
                     'name' => 'sw-color-success',
                     'label' => [
                         'en-GB' => 'Success',
-                        'de-DE' => 'Erfolg',
+                        'zh-CN' => 'Erfolg',
                     ],
                     'type' => 'color',
                     'value' => '#007e4e',
@@ -1307,7 +1307,7 @@ class ThemeFixtures
                     'name' => 'sw-color-info',
                     'label' => [
                         'en-GB' => 'Information',
-                        'de-DE' => 'Information',
+                        'zh-CN' => 'Information',
                     ],
                     'type' => 'color',
                     'value' => '#005b99',
@@ -1329,7 +1329,7 @@ class ThemeFixtures
                     'name' => 'sw-color-warning',
                     'label' => [
                         'en-GB' => 'Notice',
-                        'de-DE' => 'Hinweis',
+                        'zh-CN' => 'Hinweis',
                     ],
                     'type' => 'color',
                     'value' => '#974200',
@@ -1351,7 +1351,7 @@ class ThemeFixtures
                     'name' => 'sw-color-danger',
                     'label' => [
                         'en-GB' => 'Error',
-                        'de-DE' => 'Fehler',
+                        'zh-CN' => 'Fehler',
                     ],
                     'type' => 'color',
                     'value' => '#c20017',
@@ -1373,7 +1373,7 @@ class ThemeFixtures
                     'name' => 'sw-text-color',
                     'label' => [
                         'en-GB' => 'Text colour',
-                        'de-DE' => 'Textfarbe',
+                        'zh-CN' => 'Textfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -1395,7 +1395,7 @@ class ThemeFixtures
                     'name' => 'sw-border-color',
                     'label' => [
                         'en-GB' => 'Border',
-                        'de-DE' => 'Rahmen',
+                        'zh-CN' => 'Rahmen',
                     ],
                     'type' => 'color',
                     'value' => '#798490',
@@ -1416,7 +1416,7 @@ class ThemeFixtures
                 'sw-background-color' => [
                     'label' => [
                         'en-GB' => 'Background',
-                        'de-DE' => 'Hintergrund',
+                        'zh-CN' => 'Hintergrund',
                     ],
                     'type' => 'color',
                     'value' => '#fff',
@@ -1439,7 +1439,7 @@ class ThemeFixtures
                     'name' => 'sw-color-price',
                     'label' => [
                         'en-GB' => 'Price',
-                        'de-DE' => 'Preis',
+                        'zh-CN' => 'Preis',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -1461,7 +1461,7 @@ class ThemeFixtures
                     'name' => 'sw-color-buy-button',
                     'label' => [
                         'en-GB' => 'Buy button',
-                        'de-DE' => 'Kaufen-Button',
+                        'zh-CN' => 'Kaufen-Button',
                     ],
                     'type' => 'color',
                     'value' => '#0042a0',
@@ -1482,7 +1482,7 @@ class ThemeFixtures
                 'sw-color-buy-button-text' => [
                     'label' => [
                         'en-GB' => 'Buy button text',
-                        'de-DE' => 'Kaufen-Button Text',
+                        'zh-CN' => 'Kaufen-Button Text',
                     ],
                     'type' => 'color',
                     'value' => '#fff',
@@ -1505,7 +1505,7 @@ class ThemeFixtures
                     'name' => 'sw-font-family-base',
                     'label' => [
                         'en-GB' => 'Fonttype text',
-                        'de-DE' => 'Schriftart Text',
+                        'zh-CN' => 'Schriftart Text',
                     ],
                     'type' => 'fontFamily',
                     'value' => '\'Inter\', sans-serif',
@@ -1527,7 +1527,7 @@ class ThemeFixtures
                     'name' => 'sw-font-family-headline',
                     'label' => [
                         'en-GB' => 'Fonttype headline',
-                        'de-DE' => 'Schriftart Überschrift',
+                        'zh-CN' => 'Schriftart Überschrift',
                     ],
                     'type' => 'fontFamily',
                     'value' => '\'Inter\', sans-serif',
@@ -1548,7 +1548,7 @@ class ThemeFixtures
                 'sw-headline-color' => [
                     'label' => [
                         'en-GB' => 'Headline colour',
-                        'de-DE' => 'Überschriftfarbe',
+                        'zh-CN' => 'Überschriftfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -1570,11 +1570,11 @@ class ThemeFixtures
                 'sw-logo-desktop' => [
                     'label' => [
                         'en-GB' => 'Desktop',
-                        'de-DE' => 'Desktop',
+                        'zh-CN' => 'Desktop',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed on viewport sizes above 991px and as a fallback on smaller viewports, if no other logo is set.',
-                        'de-DE' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
+                        'zh-CN' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -1595,11 +1595,11 @@ class ThemeFixtures
                 'sw-logo-tablet' => [
                     'label' => [
                         'en-GB' => 'Tablet',
-                        'de-DE' => 'Tablet',
+                        'zh-CN' => 'Tablet',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed between a viewport of 767px to 991px',
-                        'de-DE' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
+                        'zh-CN' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -1620,11 +1620,11 @@ class ThemeFixtures
                 'sw-logo-mobile' => [
                     'label' => [
                         'en-GB' => 'Mobile',
-                        'de-DE' => 'Mobil',
+                        'zh-CN' => 'Mobil',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed up to a viewport of 767px',
-                        'de-DE' => 'Wird bis zu einem Viewport von 767px angezeigt',
+                        'zh-CN' => 'Wird bis zu einem Viewport von 767px angezeigt',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -1645,7 +1645,7 @@ class ThemeFixtures
                 'sw-logo-share' => [
                     'label' => [
                         'en-GB' => 'App & share icon',
-                        'de-DE' => 'App- & Share-Icon',
+                        'zh-CN' => 'App- & Share-Icon',
                     ],
                     'type' => 'media',
                     'value' => '',
@@ -1667,7 +1667,7 @@ class ThemeFixtures
                 'sw-logo-favicon' => [
                     'label' => [
                         'en-GB' => 'Favicon',
-                        'de-DE' => 'Favicon',
+                        'zh-CN' => 'Favicon',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/favicon.png',
@@ -1869,37 +1869,37 @@ class ThemeFixtures
                 'themeColors' => [
                     'label' => [
                         'en-GB' => 'Theme colours',
-                        'de-DE' => 'Theme-Farben',
+                        'zh-CN' => 'Theme-Farben',
                     ],
                 ],
                 'typography' => [
                     'label' => [
                         'en-GB' => 'Typography',
-                        'de-DE' => 'Typografie',
+                        'zh-CN' => 'Typografie',
                     ],
                 ],
                 'media' => [
                     'label' => [
                         'en-GB' => 'Media',
-                        'de-DE' => 'Medien',
+                        'zh-CN' => 'Medien',
                     ],
                 ],
                 'eCommerce' => [
                     'label' => [
                         'en-GB' => 'E-Commerce',
-                        'de-DE' => 'E-Commerce',
+                        'zh-CN' => 'E-Commerce',
                     ],
                 ],
                 'statusColors' => [
                     'label' => [
                         'en-GB' => 'Status messages',
-                        'de-DE' => 'Status-Ausgaben',
+                        'zh-CN' => 'Status-Ausgaben',
                     ],
                 ],
                 'unordered' => [
                     'label' => [
                         'en-GB' => 'Misc',
-                        'de-DE' => 'Sonstige',
+                        'zh-CN' => 'Sonstige',
                     ],
                 ],
             ],
@@ -1908,7 +1908,7 @@ class ThemeFixtures
                     'name' => 'sw-color-brand-primary',
                     'label' => [
                         'en-GB' => 'Primary colour',
-                        'de-DE' => 'Primärfarbe',
+                        'zh-CN' => 'Primärfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#0042a0',
@@ -1930,7 +1930,7 @@ class ThemeFixtures
                     'name' => 'sw-color-brand-secondary',
                     'label' => [
                         'en-GB' => 'Secondary colour',
-                        'de-DE' => 'Sekundärfarbe',
+                        'zh-CN' => 'Sekundärfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#474a57',
@@ -1952,7 +1952,7 @@ class ThemeFixtures
                     'name' => 'sw-color-success',
                     'label' => [
                         'en-GB' => 'Success',
-                        'de-DE' => 'Erfolg',
+                        'zh-CN' => 'Erfolg',
                     ],
                     'type' => 'color',
                     'value' => '#007e4e',
@@ -1974,7 +1974,7 @@ class ThemeFixtures
                     'name' => 'sw-color-info',
                     'label' => [
                         'en-GB' => 'Information',
-                        'de-DE' => 'Information',
+                        'zh-CN' => 'Information',
                     ],
                     'type' => 'color',
                     'value' => '#005b99',
@@ -1996,7 +1996,7 @@ class ThemeFixtures
                     'name' => 'sw-color-warning',
                     'label' => [
                         'en-GB' => 'Notice',
-                        'de-DE' => 'Hinweis',
+                        'zh-CN' => 'Hinweis',
                     ],
                     'type' => 'color',
                     'value' => '#974200',
@@ -2018,7 +2018,7 @@ class ThemeFixtures
                     'name' => 'sw-color-danger',
                     'label' => [
                         'en-GB' => 'Error',
-                        'de-DE' => 'Fehler',
+                        'zh-CN' => 'Fehler',
                     ],
                     'type' => 'color',
                     'value' => '#c20017',
@@ -2040,7 +2040,7 @@ class ThemeFixtures
                     'name' => 'sw-text-color',
                     'label' => [
                         'en-GB' => 'Text colour',
-                        'de-DE' => 'Textfarbe',
+                        'zh-CN' => 'Textfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -2062,7 +2062,7 @@ class ThemeFixtures
                     'name' => 'sw-border-color',
                     'label' => [
                         'en-GB' => 'Border',
-                        'de-DE' => 'Rahmen',
+                        'zh-CN' => 'Rahmen',
                     ],
                     'type' => 'color',
                     'value' => '#798490',
@@ -2083,7 +2083,7 @@ class ThemeFixtures
                 'sw-background-color' => [
                     'label' => [
                         'en-GB' => 'Background',
-                        'de-DE' => 'Hintergrund',
+                        'zh-CN' => 'Hintergrund',
                     ],
                     'type' => 'color',
                     'value' => '#fff',
@@ -2106,7 +2106,7 @@ class ThemeFixtures
                     'name' => 'sw-color-price',
                     'label' => [
                         'en-GB' => 'Price',
-                        'de-DE' => 'Preis',
+                        'zh-CN' => 'Preis',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -2128,7 +2128,7 @@ class ThemeFixtures
                     'name' => 'sw-color-buy-button',
                     'label' => [
                         'en-GB' => 'Buy button',
-                        'de-DE' => 'Kaufen-Button',
+                        'zh-CN' => 'Kaufen-Button',
                     ],
                     'type' => 'color',
                     'value' => '#0042a0',
@@ -2149,7 +2149,7 @@ class ThemeFixtures
                 'sw-color-buy-button-text' => [
                     'label' => [
                         'en-GB' => 'Buy button text',
-                        'de-DE' => 'Kaufen-Button Text',
+                        'zh-CN' => 'Kaufen-Button Text',
                     ],
                     'type' => 'color',
                     'value' => '#fff',
@@ -2172,7 +2172,7 @@ class ThemeFixtures
                     'name' => 'sw-font-family-base',
                     'label' => [
                         'en-GB' => 'Fonttype text',
-                        'de-DE' => 'Schriftart Text',
+                        'zh-CN' => 'Schriftart Text',
                     ],
                     'type' => 'fontFamily',
                     'value' => '\'Inter\', sans-serif',
@@ -2194,7 +2194,7 @@ class ThemeFixtures
                     'name' => 'sw-font-family-headline',
                     'label' => [
                         'en-GB' => 'Fonttype headline',
-                        'de-DE' => 'Schriftart Überschrift',
+                        'zh-CN' => 'Schriftart Überschrift',
                     ],
                     'type' => 'fontFamily',
                     'value' => '\'Inter\', sans-serif',
@@ -2215,7 +2215,7 @@ class ThemeFixtures
                 'sw-headline-color' => [
                     'label' => [
                         'en-GB' => 'Headline colour',
-                        'de-DE' => 'Überschriftfarbe',
+                        'zh-CN' => 'Überschriftfarbe',
                     ],
                     'type' => 'color',
                     'value' => '#2b3136',
@@ -2237,11 +2237,11 @@ class ThemeFixtures
                 'sw-logo-desktop' => [
                     'label' => [
                         'en-GB' => 'Desktop',
-                        'de-DE' => 'Desktop',
+                        'zh-CN' => 'Desktop',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed on viewport sizes above 991px and as a fallback on smaller viewports, if no other logo is set.',
-                        'de-DE' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
+                        'zh-CN' => 'Wird bei Ansichten über 991px angezeigt und als Alternative bei kleineren Auflösungen, für die kein anderes Logo eingestellt ist.',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -2262,11 +2262,11 @@ class ThemeFixtures
                 'sw-logo-tablet' => [
                     'label' => [
                         'en-GB' => 'Tablet',
-                        'de-DE' => 'Tablet',
+                        'zh-CN' => 'Tablet',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed between a viewport of 767px to 991px',
-                        'de-DE' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
+                        'zh-CN' => 'Wird zwischen einem viewport von 767px bis 991px angezeigt',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -2287,11 +2287,11 @@ class ThemeFixtures
                 'sw-logo-mobile' => [
                     'label' => [
                         'en-GB' => 'Mobile',
-                        'de-DE' => 'Mobil',
+                        'zh-CN' => 'Mobil',
                     ],
                     'helpText' => [
                         'en-GB' => 'Displayed up to a viewport of 767px',
-                        'de-DE' => 'Wird bis zu einem Viewport von 767px angezeigt',
+                        'zh-CN' => 'Wird bis zu einem Viewport von 767px angezeigt',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/demostore-logo.png',
@@ -2312,7 +2312,7 @@ class ThemeFixtures
                 'sw-logo-share' => [
                     'label' => [
                         'en-GB' => 'App & share icon',
-                        'de-DE' => 'App- & Share-Icon',
+                        'zh-CN' => 'App- & Share-Icon',
                     ],
                     'type' => 'media',
                     'value' => '',
@@ -2334,7 +2334,7 @@ class ThemeFixtures
                 'sw-logo-favicon' => [
                     'label' => [
                         'en-GB' => 'Favicon',
-                        'de-DE' => 'Favicon',
+                        'zh-CN' => 'Favicon',
                     ],
                     'type' => 'media',
                     'value' => 'dist/assets/logo/favicon.png',

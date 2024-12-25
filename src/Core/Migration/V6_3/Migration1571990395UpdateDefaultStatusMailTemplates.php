@@ -301,7 +301,7 @@ class Migration1571990395UpdateDefaultStatusMailTemplates extends MigrationStep
             $this->defaultLangId = $this->fetchLanguageId('en-GB', $connection);
         }
         if (!$this->deLangId) {
-            $this->deLangId = $this->fetchLanguageId('de-DE', $connection);
+            $this->deLangId = $this->fetchLanguageId('zh-CN', $connection);
         }
 
         $templateTypeId = $connection->executeQuery(

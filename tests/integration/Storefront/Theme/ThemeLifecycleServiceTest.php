@@ -289,7 +289,7 @@ class ThemeLifecycleServiceTest extends TestCase
     public function testItSkipsTranslationsIfLanguageIsNotAvailable(): void
     {
         $bundle = $this->getThemeConfigWithLabels();
-        $this->deleteLanguageForLocale('de-DE');
+        $this->deleteLanguageForLocale('zh-CN');
 
         $this->themeLifecycleService->refreshTheme($bundle, $this->context);
 
@@ -325,7 +325,7 @@ class ThemeLifecycleServiceTest extends TestCase
             'fields.sw-image' => 'test help',
         ], $translation->getHelpTexts());
 
-        $germanTranslation = $this->getTranslationByLocale('de-DE', $theme->getTranslations());
+        $germanTranslation = $this->getTranslationByLocale('zh-CN', $theme->getTranslations());
         static::assertEquals([
             'fields.sw-image' => 'Test label',
         ], $germanTranslation->getLabels());
@@ -482,7 +482,7 @@ class ThemeLifecycleServiceTest extends TestCase
         $config['fields']['cicadaLogoPink'] = [
             'label' => [
                 'en-GB' => 'cicada_logo_pink',
-                'de-DE' => 'cicada_logo_pink',
+                'zh-CN' => 'cicada_logo_pink',
             ],
             'type' => 'media',
             'value' => 'app/storefront/src/assets/image/cicada_logo_pink.svg',
@@ -497,7 +497,7 @@ class ThemeLifecycleServiceTest extends TestCase
         $config['fields']['cicadaLogoPink'] = [
             'label' => [
                 'en-GB' => 'cicada_logo_pink',
-                'de-DE' => 'cicada_logo_pink',
+                'zh-CN' => 'cicada_logo_pink',
             ],
             'type' => 'media',
             'value' => 'app/storefront/src/assets/image/cicada_logo_pink2.svg',
@@ -512,7 +512,7 @@ class ThemeLifecycleServiceTest extends TestCase
         $config['fields']['cicadaLogoPink'] = [
             'label' => [
                 'en-GB' => 'cicada_logo_pink',
-                'de-DE' => 'cicada_logo_pink',
+                'zh-CN' => 'cicada_logo_pink',
             ],
             'type' => 'media',
         ];

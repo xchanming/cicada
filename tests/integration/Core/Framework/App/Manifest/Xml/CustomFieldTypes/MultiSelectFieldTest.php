@@ -36,7 +36,7 @@ class MultiSelectFieldTest extends TestCase
                 [
                     'label' => [
                         'en-GB' => 'First',
-                        'de-DE' => 'Erster',
+                        'zh-CN' => 'Erster',
                     ],
                     'value' => 'first',
                 ],

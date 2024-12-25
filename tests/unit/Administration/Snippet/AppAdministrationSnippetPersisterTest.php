@@ -152,7 +152,7 @@ class AppAdministrationSnippetPersisterTest extends TestCase
                         'id' => 'snippetToDelete',
                         'value' => \json_encode(['my' => 'deleted'], \JSON_THROW_ON_ERROR),
                         'appId' => 'appId',
-                        'localeId' => 'de-DE',
+                        'localeId' => 'zh-CN',
                     ],
                 ],
                 [
@@ -173,8 +173,8 @@ class AppAdministrationSnippetPersisterTest extends TestCase
                     'code' => 'en-GB',
                 ],
                 [
-                    'id' => 'de-DE',
-                    'code' => 'de-DE',
+                    'id' => 'zh-CN',
+                    'code' => 'zh-CN',
                 ],
             ],
             self::getAppEntity('appId'),
@@ -235,7 +235,7 @@ class AppAdministrationSnippetPersisterTest extends TestCase
             [],
             self::getAppEntity('appId'),
             [
-                'de-DE' => \json_encode(['myCustomSnippetName' => 'newTranslation'], \JSON_THROW_ON_ERROR),
+                'zh-CN' => \json_encode(['myCustomSnippetName' => 'newTranslation'], \JSON_THROW_ON_ERROR),
             ],
             'The following snippet file must always be provided when providing snippets: en-GB',
         ];

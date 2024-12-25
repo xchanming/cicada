@@ -103,7 +103,7 @@ class CustomerFlowEventsSubscriberTest extends TestCase
 
         $this->restorer->expects(static::once())
             ->method('restoreByCustomer')
-            ->willThrowException(SalesChannelException::providedLanguageNotAvailable('de-DE', ['en-GB']));
+            ->willThrowException(SalesChannelException::providedLanguageNotAvailable('zh-CN', ['en-GB']));
 
         $this->dispatcher->expects(static::never())->method('dispatch');
 

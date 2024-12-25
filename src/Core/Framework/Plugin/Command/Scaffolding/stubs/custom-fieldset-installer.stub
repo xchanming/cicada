@@ -18,7 +18,7 @@ class CustomFieldsInstaller
         'config' => [
             'label' => [
                 'en-GB' => 'English custom field set label',
-                'de-DE' => 'German custom field set label',
+                'zh-CN' => 'German custom field set label',
                 Defaults::LANGUAGE_SYSTEM => 'Mention the fallback label here'
             ]
         ],
@@ -29,7 +29,7 @@ class CustomFieldsInstaller
                 'config' => [
                     'label' => [
                         'en-GB' => 'English custom field label',
-                        'de-DE' => 'German custom field label',
+                        'zh-CN' => 'German custom field label',
                         Defaults::LANGUAGE_SYSTEM => 'Mention the fallback label here'
                     ],
                     'customFieldPosition' => 1

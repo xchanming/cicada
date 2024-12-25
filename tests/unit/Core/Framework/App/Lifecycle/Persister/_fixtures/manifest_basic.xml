@@ -4,9 +4,9 @@
     <meta>
         <name>swagUnitTestShippingMethodPersister</name>
         <label>Swag unit test shipping method persister</label>
-        <label lang="de-DE">Swag Unit Test Versandart Persister</label>
+        <label lang="zh-CN">Swag Unit Test Versandart Persister</label>
         <description>Test for install a shipping methods</description>
-        <description lang="de-DE">Test für die Installation einer Versandart</description>
+        <description lang="zh-CN">Test für die Installation einer Versandart</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -17,9 +17,9 @@
         <shipping-method>
             <identifier>shippingMethodOne</identifier>
             <name>First Shipping Method</name>
-            <name lang="de-DE">Erste Versandart</name>
+            <name lang="zh-CN">Erste Versandart</name>
             <description>This is a simple description</description>
-            <description lang="de-DE">Das ist eine einfache Beschreibung</description>
+            <description lang="zh-CN">Das ist eine einfache Beschreibung</description>
             <active>false</active>
             <icon>icons/TestIcon.png</icon>
             <delivery-time>
@@ -33,9 +33,9 @@
         <shipping-method>
             <identifier>shippingMethodTwo</identifier>
             <name>Second Shipping Method</name>
-            <name lang="de-DE">Zweite Versandart</name>
+            <name lang="zh-CN">Zweite Versandart</name>
             <description>This is another simple description</description>
-            <description lang="de-DE">Das ist eine andere einfache Beschreibung</description>
+            <description lang="zh-CN">Das ist eine andere einfache Beschreibung</description>
             <active>false</active>
             <delivery-time>
                 <id>4b00146bdc8b4175b12d3fc36ec114c9</id>

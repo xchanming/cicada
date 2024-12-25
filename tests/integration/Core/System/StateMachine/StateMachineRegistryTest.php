@@ -274,7 +274,7 @@ EOF;
                 'technicalName' => $this->stateMachineName,
                 'translations' => [
                     'en-GB' => ['name' => 'Order state'],
-                    'de-DE' => ['name' => 'Bestellungsstatus'],
+                    'zh-CN' => ['name' => 'Bestellungsstatus'],
                 ],
                 'states' => [
                     ['id' => $this->openId, 'technicalName' => OrderDeliveryStates::STATE_OPEN, 'name' => OrderDeliveryStates::STATE_OPEN],

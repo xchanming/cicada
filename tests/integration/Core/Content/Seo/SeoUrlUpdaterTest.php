@@ -29,7 +29,7 @@ class SeoUrlUpdaterTest extends TestCase
 
     // Language codes
     private const DEFAULT = 'en-GB';
-    private const PARENT = 'de-DE';
+    private const PARENT = 'zh-CN';
     private const CHILD = 'de-TEST';
 
     private IdsCollection $ids;

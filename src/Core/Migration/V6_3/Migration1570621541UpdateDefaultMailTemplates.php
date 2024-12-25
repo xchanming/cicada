@@ -26,7 +26,7 @@ class Migration1570621541UpdateDefaultMailTemplates extends MigrationStep
     {
         // implement update
         $defaultLangId = $this->fetchLanguageId('en-GB', $connection);
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         // update order confirmation
         $templateId = $this->fetchSystemMailTemplateIdFromType($connection, MailTemplateTypes::MAILTYPE_ORDER_CONFIRM);

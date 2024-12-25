@@ -68,7 +68,7 @@ describe('src/app/component/form/sw-datepicker', () => {
     });
 
     it('should use the admin locale', async () => {
-        Cicada.State.get('session').currentLocale = 'de-DE';
+        Cicada.State.get('session').currentLocale = 'zh-CN';
         wrapper = await createWrapper();
 
         expect(wrapper.vm.$data.flatpickrInstance.config.locale).toBe('de');

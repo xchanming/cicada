@@ -23,7 +23,7 @@ class Migration1595553089FixOrderConfirmationMailForAllPayloads extends Migratio
     public function update(Connection $connection): void
     {
         $enLangId = $this->fetchLanguageId('en-GB', $connection);
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         $mailTemplateContent = require __DIR__ . '/../Fixtures/MailTemplateContent.php';
 
@@ -35,8 +35,8 @@ class Migration1595553089FixOrderConfirmationMailForAllPayloads extends Migratio
             $deLangId,
             $mailTemplateContent['OrderConfirmation']['en-GB']['html'],
             $mailTemplateContent['OrderConfirmation']['en-GB']['plain'],
-            $mailTemplateContent['OrderConfirmation']['de-DE']['html'],
-            $mailTemplateContent['OrderConfirmation']['de-DE']['plain']
+            $mailTemplateContent['OrderConfirmation']['zh-CN']['html'],
+            $mailTemplateContent['OrderConfirmation']['zh-CN']['plain']
         );
     }
 

@@ -6,9 +6,9 @@ import { mount } from '@vue/test-utils';
 function getSnippetSets() {
     const data = [
         {
-            name: 'BASE de-DE',
-            baseFile: 'messages.de-DE',
-            iso: 'de-DE',
+            name: 'BASE zh-CN',
+            baseFile: 'messages.zh-CN',
+            iso: 'zh-CN',
             customFields: null,
             createdAt: '2020-09-09T07:46:37.407+00:00',
             updatedAt: null,

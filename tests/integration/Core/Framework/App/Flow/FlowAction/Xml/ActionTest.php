@@ -25,7 +25,7 @@ class ActionTest extends TestCase
         static::assertSame(
             [
                 'en-GB' => 'First action app',
-                'de-DE' => 'First action app DE',
+                'zh-CN' => 'First action app DE',
             ],
             $firstAction->getMeta()->getLabel()
         );

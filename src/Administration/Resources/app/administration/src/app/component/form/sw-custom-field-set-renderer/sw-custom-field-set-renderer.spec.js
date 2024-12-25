@@ -1830,7 +1830,7 @@ describe('src/app/component/form/sw-custom-field-set-renderer', () => {
                         config: {
                             label: {
                                 'en-GB': 'Set 1 Label GB',
-                                'de-DE': 'Set 1 Label DE',
+                                'zh-CN': 'Set 1 Label DE',
                             },
                         },
                         customFields: [

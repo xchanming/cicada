@@ -1585,11 +1585,11 @@ SWTEST;1;' . $productName . ';9.35;10;0c17372fe6aa46059a97fc28b40f46c4;7;7%%;%s'
             'mappedKey' => 'unit_short_code_en',
         ];
         $mappings[] = [
-            'key' => 'unit.translations.de-DE.name',
+            'key' => 'unit.translations.zh-CN.name',
             'mappedKey' => 'unit_name_de',
         ];
         $mappings[] = [
-            'key' => 'unit.translations.de-DE.shortCode',
+            'key' => 'unit.translations.zh-CN.shortCode',
             'mappedKey' => 'unit_short_code_de',
         ];
         $this->updateProfileMapping($clonedPropertyProfile->getId(), $mappings);
@@ -1597,7 +1597,7 @@ SWTEST;1;' . $productName . ';9.35;10;0c17372fe6aa46059a97fc28b40f46c4;7;7%%;%s'
             ['entityName' => ProductDefinition::ENTITY_NAME, 'mappedKey' => 'productNumber'],
             ['entityName' => TaxDefinition::ENTITY_NAME, 'mappedKey' => 'taxRate'],
             ['entityName' => ProductManufacturerDefinition::ENTITY_NAME, 'mappedKey' => 'translations.DEFAULT.name'],
-            ['entityName' => UnitDefinition::ENTITY_NAME, 'mappedKey' => 'translations.de-DE.name'],
+            ['entityName' => UnitDefinition::ENTITY_NAME, 'mappedKey' => 'translations.zh-CN.name'],
             ['entityName' => CategoryDefinition::ENTITY_NAME, 'mappedKey' => 'translations.en-GB.name'],
             ['entityName' => PropertyGroupOptionDefinition::ENTITY_NAME, 'mappedKey' => 'translations.DEFAULT.name'],
         ];

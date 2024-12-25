@@ -10,7 +10,7 @@
     "extra": {
         "cicada-plugin-class": "{{ namespace }}\\{{ className }}",
         "label": {
-            "de-DE": "Skeleton plugin",
+            "zh-CN": "Skeleton plugin",
             "en-GB": "Skeleton plugin"
         }
     },

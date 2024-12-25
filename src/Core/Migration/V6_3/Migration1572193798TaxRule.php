@@ -92,7 +92,7 @@ class Migration1572193798TaxRule extends MigrationStep
     private function addTaxRuleTypes(Connection $connection): void
     {
         $languageIdEn = $this->getLocaleId($connection, 'en-GB');
-        $languageIdDe = $this->getLocaleId($connection, 'de-DE');
+        $languageIdDe = $this->getLocaleId($connection, 'zh-CN');
         $languageSystem = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $dataDe = [

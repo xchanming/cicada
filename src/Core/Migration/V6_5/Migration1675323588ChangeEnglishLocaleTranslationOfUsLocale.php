@@ -47,7 +47,7 @@ class Migration1675323588ChangeEnglishLocaleTranslationOfUsLocale extends Migrat
             );
         }
 
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
         if ($deLangId) {
             $connection->executeStatement(
                 'UPDATE locale_translation

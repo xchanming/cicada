@@ -18,13 +18,13 @@ const exampleModule = {
     name: 'SwagExampleApp',
     label: {
         'en-GB': 'Swag Example App',
-        'de-DE': 'Swag Example App',
+        'zh-CN': 'Swag Example App',
     },
     modules: [
         {
             name: 'orderList',
             label: {
-                'de-DE': 'Bestellliste',
+                'zh-CN': 'Bestellliste',
                 'en-GB': 'Order list',
             },
             /* eslint-disable-next-line */

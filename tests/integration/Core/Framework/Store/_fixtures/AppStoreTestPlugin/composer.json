@@ -11,7 +11,7 @@
   "extra": {
     "cicada-plugin-class": "AppStoreTestPlugin\\AppStoreTestPlugin",
     "label": {
-      "de-DE": "Skeleton plugin",
+      "zh-CN": "Skeleton plugin",
       "en-GB": "Skeleton plugin"
     }
   }

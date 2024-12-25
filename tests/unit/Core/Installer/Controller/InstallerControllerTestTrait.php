@@ -24,7 +24,7 @@ trait InstallerControllerTestTrait
         $requestStack = new RequestStack();
         $requestStack->push(new Request([], [], ['_route' => 'installer.language-selection']));
         $container->set('request_stack', $requestStack);
-        $container->setParameter('cicada.installer.supportedLanguages', ['en' => 'en-GB', 'de' => 'de-DE']);
+        $container->setParameter('cicada.installer.supportedLanguages', ['en' => 'en-GB', 'de' => 'zh-CN']);
         $container->setParameter('kernel.cicada_version', Kernel::CICADA_FALLBACK_VERSION);
 
         foreach ($services as $id => $service) {
@@ -48,11 +48,6 @@ trait InstallerControllerTestTrait
                 ],
                 [
                     'label' => 'requirements',
-                    'active' => false,
-                    'isCompleted' => false,
-                ],
-                [
-                    'label' => 'license',
                     'active' => false,
                     'isCompleted' => false,
                 ],

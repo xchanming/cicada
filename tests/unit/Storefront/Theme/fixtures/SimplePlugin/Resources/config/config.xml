@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/cicada/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
 
     <card>
 
@@ -9,14 +9,14 @@
         <input-field type="bool">
             <name>simplePluginEnabled</name>
             <label>simplePlugin enabled</label>
-            <label lang="de-DE">simplePlugin aktivieren</label>
+            <label lang="zh-CN">simplePlugin aktivieren</label>
             <defaultValue>0</defaultValue>
         </input-field>
 
         <input-field>
             <name>simplePluginBackgroundcolor</name>
             <label>Backgroundcolor</label>
-            <label lang="de-DE">Hintergrundfarbe</label>
+            <label lang="zh-CN">Hintergrundfarbe</label>
             <copyable>true</copyable>
             <css>simple-plugin-backgroundcolor</css>
         </input-field>
@@ -24,7 +24,7 @@
         <input-field>
             <name>simplePluginFontcolor</name>
             <label>Fontcolor</label>
-            <label lang="de-DE">Textfarbe</label>
+            <label lang="zh-CN">Textfarbe</label>
             <copyable>true</copyable>
             <css>simple-plugin-fontcolor</css>
             <defaultValue>#eee</defaultValue>
@@ -33,7 +33,7 @@
         <input-field>
             <name>simplePluginBordercolor</name>
             <label>Bordercolor</label>
-            <label lang="de-DE">Rahmenfarbe</label>
+            <label lang="zh-CN">Rahmenfarbe</label>
             <copyable>true</copyable>
             <css>simple-plugin-bordercolor</css>
         </input-field>

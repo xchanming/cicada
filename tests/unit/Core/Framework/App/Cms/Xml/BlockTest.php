@@ -138,14 +138,14 @@ class BlockTest extends TestCase
             'name' => 'my-first-block',
             'label' => [
                 'en-GB' => 'First block from app',
-                'de-DE' => 'Erster Block einer App',
+                'zh-CN' => 'Erster Block einer App',
             ],
             'block' => [
                 'name' => 'my-first-block',
                 'category' => 'text-image',
                 'label' => [
                     'en-GB' => 'First block from app',
-                    'de-DE' => 'Erster Block einer App',
+                    'zh-CN' => 'Erster Block einer App',
                 ],
                 'slots' => [
                     'left' => [
@@ -203,14 +203,14 @@ class BlockTest extends TestCase
             'name' => 'my-second-block',
             'label' => [
                 'en-GB' => 'Second block from app',
-                'de-DE' => 'Zweiter Block einer App',
+                'zh-CN' => 'Zweiter Block einer App',
             ],
             'block' => [
                 'name' => 'my-second-block',
                 'category' => 'text-image',
                 'label' => [
                     'en-GB' => 'Second block from app',
-                    'de-DE' => 'Zweiter Block einer App',
+                    'zh-CN' => 'Zweiter Block einer App',
                 ],
                 'slots' => [
                     'left' => [

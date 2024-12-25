@@ -22,7 +22,7 @@ class Migration1632721037OrderDocumentMailTemplate extends MigrationStep
     use ImportTranslationsTrait;
 
     private const LOCALE_EN_GB = 'en-GB';
-    private const LOCALE_DE_DE = 'de-DE';
+    private const LOCALE_DE_DE = 'zh-CN';
 
     public function getCreationTimestamp(): int
     {

@@ -24,7 +24,7 @@ class Migration1571660203FixOrderDeliveryStateNames extends MigrationStep
     public function update(Connection $connection): void
     {
         $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         foreach ($this->getMailTemplatesMapping() as $technicalName => $mailTemplate) {
             if ($defaultLangId !== $deLangId) {

@@ -36,15 +36,15 @@ class Migration1596441551CustomerGroupRegistration extends MigrationStep
     public function createMailTypes(Connection $connection): void
     {
         $enLangId = $this->fetchLanguageId('en-GB', $connection);
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         $types = [
             'customer.group.registration.accepted' => [
-                'de-DE' => 'Kunden Gruppen Registrierung Akzeptiert',
+                'zh-CN' => 'Kunden Gruppen Registrierung Akzeptiert',
                 'en-GB' => 'Customer Group Registration Accepted',
             ],
             'customer.group.registration.declined' => [
-                'de-DE' => 'Kunden Gruppen Registrierung Abgelehnt',
+                'zh-CN' => 'Kunden Gruppen Registrierung Abgelehnt',
                 'en-GB' => 'Customer Group Registration Declined',
             ],
         ];
@@ -76,7 +76,7 @@ class Migration1596441551CustomerGroupRegistration extends MigrationStep
                 $connection->insert('mail_template_type_translation', [
                     'mail_template_type_id' => $typeId,
                     'language_id' => $deLangId,
-                    'name' => $translations['de-DE'],
+                    'name' => $translations['zh-CN'],
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]);
 
@@ -136,7 +136,7 @@ ADD `registration_seo_meta_description` longtext NULL AFTER `registration_only_c
     }
 
     /**
-     * @param array{'en-GB': string, 'de-DE': string} $typeTranslations
+     * @param array{'en-GB': string, 'zh-CN': string} $typeTranslations
      */
     private function createMailTemplates(Connection $connection, array $typeTranslations, string $typeName, string $typeId, ?string $enLangId, ?string $deLangId): void
     {
@@ -179,11 +179,11 @@ ADD `registration_seo_meta_description` longtext NULL AFTER `registration_only_c
                 [
                     'mail_template_id' => $mailTemplateId,
                     'language_id' => $deLangId,
-                    'subject' => $typeTranslations['de-DE'],
+                    'subject' => $typeTranslations['zh-CN'],
                     'description' => '',
                     'sender_name' => 'Shop',
-                    'content_html' => $mailTemplateContent[$typeName]['de-DE']['html'],
-                    'content_plain' => $mailTemplateContent[$typeName]['de-DE']['plain'],
+                    'content_html' => $mailTemplateContent[$typeName]['zh-CN']['html'],
+                    'content_plain' => $mailTemplateContent[$typeName]['zh-CN']['plain'],
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
             );

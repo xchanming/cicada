@@ -638,7 +638,7 @@ class AttributeEntityIntegrationTest extends TestCase
             'string' => 'string',
             'transString' => [
                 'en-GB' => 'transString',
-                'de-DE' => 'transString-de',
+                'zh-CN' => 'transString-de',
             ],
         ];
 

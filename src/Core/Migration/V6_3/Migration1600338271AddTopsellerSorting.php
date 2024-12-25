@@ -47,7 +47,7 @@ class Migration1600338271AddTopsellerSorting extends MigrationStep
         $connection->insert(ProductSortingDefinition::ENTITY_NAME, $sorting);
 
         $translations = new Translations(
-            ['product_sorting_id' => $sorting['id'], 'label' => $translations['de-DE']],
+            ['product_sorting_id' => $sorting['id'], 'label' => $translations['zh-CN']],
             ['product_sorting_id' => $sorting['id'], 'label' => $translations['en-GB']]
         );
 
@@ -55,7 +55,7 @@ class Migration1600338271AddTopsellerSorting extends MigrationStep
     }
 
     /**
-     * @return array{id: string, priority: int, active: int, locked: int, fields: string, created_at: string, translations: array{de-DE: string, en-GB: string}}
+     * @return array{id: string, priority: int, active: int, locked: int, fields: string, created_at: string, translations: array{zh-CN: string, en-GB: string}}
      */
     private function getTopsellerSorting(): array
     {
@@ -68,7 +68,7 @@ class Migration1600338271AddTopsellerSorting extends MigrationStep
             'fields' => json_encode([['field' => 'product.sales', 'order' => 'desc', 'priority' => 1, 'naturalSorting' => 0]], \JSON_THROW_ON_ERROR),
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
             'translations' => [
-                'de-DE' => 'Topseller',
+                'zh-CN' => 'Topseller',
                 'en-GB' => 'Topseller',
             ],
         ];

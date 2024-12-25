@@ -25,7 +25,7 @@ class Migration1599134496FixImportExportProfilesForGermanLanguage extends Migrat
             SELECT lang.id
             FROM language lang
             INNER JOIN locale loc ON lang.locale_id = loc.id
-            AND loc.code = \'de-DE\';
+            AND loc.code = \'zh-CN\';
         ');
 
         if (!$germanLanguageId) {

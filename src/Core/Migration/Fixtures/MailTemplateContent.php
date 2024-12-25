@@ -151,7 +151,7 @@ return [
 
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
 
@@ -325,7 +325,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -377,7 +377,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -428,7 +428,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -480,7 +480,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -530,7 +530,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                    <br/>
@@ -581,7 +581,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -632,7 +632,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -684,7 +684,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -736,7 +736,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -788,7 +788,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -840,7 +840,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -892,7 +892,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -944,7 +944,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -996,7 +996,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -1048,7 +1048,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -1100,7 +1100,7 @@ return [
                 You can check the current status of your order on our website under "My account" - "My orders" anytime: {{ rawUrl(\'frontend.account.order.single.page\', { \'deepLinkCode\': order.deepLinkCode}, salesChannel.domains|first.url) }}
                 However, in case you have purchased without a registration or a customer account, you do not have this option.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
@@ -1145,7 +1145,7 @@ From now on you can shop at the new conditions of this customer group.<br/><br/>
 
 Please do not hesitate to contact us at any time if you have any questions.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '<div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
@@ -1183,7 +1183,7 @@ Unfortunately we cannot activate your account for this customer group.
 
 If you have any questions, please feel free to contact us by phone or mail.',
         ],
-        'de-DE' => [
+        'zh-CN' => [
             'html' => '<div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>

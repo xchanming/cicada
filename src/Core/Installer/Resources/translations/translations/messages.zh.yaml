@@ -1,0 +1,98 @@
+cicada.installer:
+    header_title: 安装
+    menuitem_language-selection: 开始
+    menuitem_requirements: '系统要求'
+    menuitem_database-configuration: '数据库配置'
+    menuitem_database-import: 安装
+    menuitem_configuration: 配置
+    menuitem_finish: 完成
+    version_text: '版本:'
+    back: 返回
+    forward: 下一步
+    start: 开始
+    start_installation: '开始安装'
+    select_language_en: 英语 (英国)
+    select_language_zh: 中文 (中国)
+    select_country_chn: 中国
+    language-selection_welcome_title: '欢迎使用蝉鸣系统'
+    language-selection_select_language: '选择安装向导语言'
+    language-selection_header: '安装'
+    language-selection_info_message: '此处选择的语言仅适用于本安装向导。如果需要，您可以稍后为您的商店指定其他语言。'
+    language-selection_welcome_message: '欢迎来到蝉鸣系统安装程序！我们很高兴能一步步引导您完成安装过程。如果您在此过程中遇到任何问题，可以随时查看我们的文档或访问论坛寻求帮助。让我们开始吧！'
+    requirements_header: '系统要求'
+    requirements_header_files: '文件和目录'
+    requirements_header_system: 系统
+    requirements_files_info: '以下文件和目录必须存在并具有写入权限。'
+    requirements_table_files_col_check: 文件/目录
+    requirements_table_files_col_status: 状态
+    requirements_error: '您的系统没有满足安装必要条件.'
+    requirements_error_title: '您的系统没有准备好运行蝉鸣系统'
+    requirements_success: '已满足安装要求'
+    requirements_success_title: '您的系统已准备好运行蝉鸣系统'
+    requirements_php_info: '您的服务器必须满足以下系统要求才能运行'
+    requirements_php_max_compatible_version: '此蝉鸣系统版本支持 PHP 最高至 %s 版本。对于更高版本的 PHP，无法保证所有功能都能正常运行。'
+    requirements_system_col_check: 要求
+    requirements_system_col_required: 必须
+    requirements_system_col_found: '当前'
+    requirements_system_col_status: 状态
+    requirements_show_all: '(显示全部)'
+    requirements_hide_all: '(隐藏全部)'
+    requirements_status_error: 错误
+    requirements_status_warning: 警告
+    requirements_status_ready: 通过
+    database-configuration_header: '配置数据库'
+    database-configuration_field_host: '服务器地址:'
+    database-configuration_advanced_settings: '高级设置'
+    database-configuration_field_port: '端口:'
+    database-configuration_field_user: '用户:'
+    database-configuration_field_password: '密码:'
+    database-configuration_field_database: '数据库名称:'
+    database-configuration_field_new_database: '新数据库:'
+    database-configuration_info: '为了在您的系统上安装蝉鸣系统，您需要提供数据库的访问凭证。如果您不确定应该填写什么，请联系您的管理员或托管服务提供商'
+    database-configuration-create_new_database: '创建新数据库'
+    database-configuration_non_empty_database: '所选数据库已经包含数据。请选择一个空数据库或从头创建一个新的数据库。'
+    database-configuration_error_required_fields: '请填写所有空白处。'
+    database-configuration_field_ssl_ca_path: 'SSL 证书颁发机构路径'
+    database-configuration_field_ssl_cert_path: 'SSL 证书路径'
+    database-configuration_field_ssl_cert_key_path: 'SSL 证书密钥路径'
+    database-configuration_field_ssl_dont_verify_cert: '不验证服务器证书'
+    database-configuration_fetch_error: '获取数据库信息时发生错误'
+    database-configuration_access_denied: '访问被拒绝，凭证不正确'
+    database-configuration_host_not_found: '无法连接到数据库服务器'
+    database-configuration_invalid_requirements: '蝉鸣系统至少需要 MySQL 8.0.17 或 MariaDB 10.11 版本'
+    database-configuration_refresh_databases: '刷新数据库'
+    database-import_header: 安装
+    database-import_skip_import: 跳过
+    database-import_progress: '进度: '
+    database-import-hint: '<strong>注意:</strong> 如果在配置的数据库中发现任何蝉鸣系统的表结构，它们将在安装/更新过程中被删除！'
+    database-import_info_text: '正在使用所选数据库安装蝉鸣系统。根据您的系统情况，这个过程可能需要几分钟时间。'
+    database_import_success: '蝉鸣系统安装成功!'
+    database_import_install_label: '数据库安装:'
+    database_import_install_step_text: 步骤
+    database_import_install_from_text: 总共
+    migration_counter_text_migrations: '更新数据库'
+    migration_counter_text_snippets: '正在更新文本片段'
+    migration_update_success: '数据库导入!'
+    configuration_header: 配置
+    configuration_sconfig_text: '✌️✌️，快完成了。您只需要进行一些商城的基本设置，之后将完成安装。'
+    configuration_sconfig_name: '商城名称'
+    configuration_sconfig_name_info: '输入商城名称.'
+    configuration_sconfig_mail: '邮箱地址:'
+    configuration_sconfig_mail_info: '请输入用于发送邮件的电子邮件地址'
+    configuration_sconfig_domain: '域名:'
+    configuration_sconfig_language: '默认系统语言:'
+    configuration_sconfig_currency: '默认货币:'
+    configuration_sconfig_country: '默认国家:'
+    configuration_sconfig_currency_info: '此货币将用作标准货币，每次设置商品价格时都会使用它。'
+    configuration_admin_currency_cny: '人民币'
+    configuration_admin_currency_usd: '美元'
+    configuration_admin_username: '管理员账号:'
+    configuration_admin_mail: '管理员邮箱:'
+    configuration_admin_firstName: 'Admin first name:'
+    configuration_admin_lastName: 'Admin last name:'
+    configuration_defaults_warning: '请注意！您的默认系统语言和默认货币设置是永久性的，之后无法再更改。'
+    configuration_admin_currency_headline: '可用货币'
+    configuration_admin_currency_text: '向您的商店添加更多货币。如果您以后想添加货币，可以随时在管理后台创建它们。'
+    configuration_email_help_text: '此电子邮件地址将用于商店的外发电子邮件。'
+    configuration_admin_password: '管理员密码:'
+

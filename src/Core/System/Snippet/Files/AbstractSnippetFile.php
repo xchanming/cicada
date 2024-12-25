@@ -28,7 +28,7 @@ abstract class AbstractSnippetFile
      *
      * Example:
      * en-GB
-     * de-DE
+     * zh-CN
      */
     abstract public function getIso(): string;
 

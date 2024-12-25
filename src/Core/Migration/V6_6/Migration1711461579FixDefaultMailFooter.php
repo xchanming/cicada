@@ -24,7 +24,7 @@ class Migration1711461579FixDefaultMailFooter extends MigrationStep
 
     public function update(Connection $connection): void
     {
-        $languages = $this->getLanguageIds($connection, 'de-DE');
+        $languages = $this->getLanguageIds($connection, 'zh-CN');
         if (!$languages) {
             return;
         }

@@ -285,13 +285,13 @@ PHP_EOL;
                 'themeColors' => [
                     'label' => [
                         'en-GB' => 'Theme colours',
-                        'de-DE' => 'Theme-Farben',
+                        'zh-CN' => 'Theme-Farben',
                     ],
                 ],
                 'typography' => [
                     'label' => [
                         'en-GB' => 'Typography',
-                        'de-DE' => 'Typografie',
+                        'zh-CN' => 'Typografie',
                     ],
                 ],
             ],

@@ -151,7 +151,7 @@ class ConfigurationServiceTest extends TestCase
         array_unshift($config, [
             'title' => [
                 'en-GB' => 'Advanced configuration',
-                'de-DE' => 'Grundeinstellungen',
+                'zh-CN' => 'Grundeinstellungen',
             ],
             'name' => null,
             'elements' => [],
@@ -194,7 +194,7 @@ class ConfigurationServiceTest extends TestCase
             0 => [
                 'title' => [
                     'en-GB' => 'Basic configuration',
-                    'de-DE' => 'Grundeinstellungen',
+                    'zh-CN' => 'Grundeinstellungen',
                 ],
                 'name' => null,
                 'elements' => [
@@ -206,11 +206,11 @@ class ConfigurationServiceTest extends TestCase
                             'copyable' => true,
                             'label' => [
                                 'en-GB' => 'eMail',
-                                'de-DE' => 'E-Mail',
+                                'zh-CN' => 'E-Mail',
                             ],
                             'placeholder' => [
                                 'en-GB' => 'Enter your eMail address',
-                                'de-DE' => 'Bitte gib deine E-Mail Adresse ein',
+                                'zh-CN' => 'Bitte gib deine E-Mail Adresse ein',
                             ],
                         ],
                     ],
@@ -228,7 +228,7 @@ class ConfigurationServiceTest extends TestCase
             [
                 'title' => [
                     'en-GB' => 'Basic configuration',
-                    'de-DE' => 'Grundeinstellungen',
+                    'zh-CN' => 'Grundeinstellungen',
                 ],
                 'name' => null,
                 'elements' => [
@@ -239,11 +239,11 @@ class ConfigurationServiceTest extends TestCase
                             'copyable' => true,
                             'label' => [
                                 'en-GB' => 'eMail',
-                                'de-DE' => 'E-Mail',
+                                'zh-CN' => 'E-Mail',
                             ],
                             'placeholder' => [
                                 'en-GB' => 'Enter your eMail address',
-                                'de-DE' => 'Bitte gib deine E-Mail Adresse ein',
+                                'zh-CN' => 'Bitte gib deine E-Mail Adresse ein',
                             ],
                         ],
                     ],
@@ -279,7 +279,7 @@ class ConfigurationServiceTest extends TestCase
             [
                 'title' => [
                     'en-GB' => 'Basic configuration',
-                    'de-DE' => 'Grundeinstellungen',
+                    'zh-CN' => 'Grundeinstellungen',
                 ],
                 'elements' => [
                     [
@@ -289,11 +289,11 @@ class ConfigurationServiceTest extends TestCase
                             'copyable' => true,
                             'label' => [
                                 'en-GB' => 'eMail',
-                                'de-DE' => 'E-Mail',
+                                'zh-CN' => 'E-Mail',
                             ],
                             'placeholder' => [
                                 'en-GB' => 'Enter your eMail address',
-                                'de-DE' => 'Bitte gib deine E-Mail Adresse ein',
+                                'zh-CN' => 'Bitte gib deine E-Mail Adresse ein',
                             ],
                         ],
                     ],
@@ -368,7 +368,7 @@ class ConfigurationServiceTest extends TestCase
             0 => [
                 'title' => [
                     'en-GB' => 'Basic configuration',
-                    'de-DE' => 'Grundeinstellungen',
+                    'zh-CN' => 'Grundeinstellungen',
                 ],
                 'name' => null,
                 'elements' => [
@@ -379,11 +379,11 @@ class ConfigurationServiceTest extends TestCase
                             'copyable' => true,
                             'label' => [
                                 'en-GB' => 'eMail',
-                                'de-DE' => 'E-Mail',
+                                'zh-CN' => 'E-Mail',
                             ],
                             'placeholder' => [
                                 'en-GB' => 'Enter your eMail address',
-                                'de-DE' => 'Bitte gib deine E-Mail Adresse ein',
+                                'zh-CN' => 'Bitte gib deine E-Mail Adresse ein',
                             ],
                         ],
                     ],
@@ -412,11 +412,11 @@ class ConfigurationServiceTest extends TestCase
                             ],
                             'label' => [
                                 'en-GB' => 'Mailing protocol',
-                                'de-DE' => 'E-Mail Versand Protokoll',
+                                'zh-CN' => 'E-Mail Versand Protokoll',
                             ],
                             'placeholder' => [
                                 'en-GB' => 'Choose your preferred transfer method',
-                                'de-DE' => 'Bitte wähle dein bevorzugtes Versand Protokoll',
+                                'zh-CN' => 'Bitte wähle dein bevorzugtes Versand Protokoll',
                             ],
                             'flag' => 'FEATURE_NEXT_102',
                         ],
@@ -436,7 +436,7 @@ class ConfigurationServiceTest extends TestCase
             [
                 'title' => [
                     'en-GB' => 'Basic configuration',
-                    'de-DE' => 'Grundeinstellungen',
+                    'zh-CN' => 'Grundeinstellungen',
                 ],
                 'name' => null,
                 'elements' => [
@@ -446,11 +446,11 @@ class ConfigurationServiceTest extends TestCase
                         'copyable' => true,
                         'label' => [
                             'en-GB' => 'eMail',
-                            'de-DE' => 'E-Mail',
+                            'zh-CN' => 'E-Mail',
                         ],
                         'placeholder' => [
                             'en-GB' => 'Enter your eMail address',
-                            'de-DE' => 'Bitte gib deine E-Mail Adresse ein',
+                            'zh-CN' => 'Bitte gib deine E-Mail Adresse ein',
                         ],
                     ],
                     [
@@ -476,11 +476,11 @@ class ConfigurationServiceTest extends TestCase
                         ],
                         'label' => [
                             'en-GB' => 'Mailing protocol',
-                            'de-DE' => 'E-Mail Versand Protokoll',
+                            'zh-CN' => 'E-Mail Versand Protokoll',
                         ],
                         'placeholder' => [
                             'en-GB' => 'Choose your preferred transfer method',
-                            'de-DE' => 'Bitte wähle dein bevorzugtes Versand Protokoll',
+                            'zh-CN' => 'Bitte wähle dein bevorzugtes Versand Protokoll',
                         ],
                         'flag' => 'FEATURE_NEXT_102',
                     ],

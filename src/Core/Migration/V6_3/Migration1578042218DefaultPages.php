@@ -82,7 +82,7 @@ class Migration1578042218DefaultPages extends MigrationStep
         $slotId = Uuid::randomBytes();
         $versionId = $connection->fetchOne('SELECT version_id FROM cms_slot LIMIT 1');
         $languageIdDefault = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $languageIdDe = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $languageIdDe = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         $connection->insert('cms_page', [
             'id' => $id,

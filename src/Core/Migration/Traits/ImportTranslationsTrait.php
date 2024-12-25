@@ -12,7 +12,7 @@ trait ImportTranslationsTrait
 {
     protected function importTranslation(string $table, Translations $translations, Connection $connection): TranslationWriteResult
     {
-        $germanIds = $this->getLanguageIds($connection, 'de-DE');
+        $germanIds = $this->getLanguageIds($connection, 'zh-CN');
         $englishIds = array_diff(
             array_merge($this->getLanguageIds($connection, 'en-GB'), [Defaults::LANGUAGE_SYSTEM]),
             $germanIds

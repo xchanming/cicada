@@ -41,7 +41,7 @@ class SalesChannelValidatorTest extends TestCase
         $deDeLanguageId = $this->getDeDeLanguageId();
         foreach ($inserts as &$insert) {
             foreach ($insert[2] ?? [] as $key => $language) {
-                if ($language === 'de-DE') {
+                if ($language === 'zh-CN') {
                     $insert[2][$key] = $deDeLanguageId;
                 }
             }
@@ -81,7 +81,7 @@ class SalesChannelValidatorTest extends TestCase
 
         yield 'Payload with single valid entry' => [
             [
-                [$valid1, Defaults::LANGUAGE_SYSTEM, ['de-DE', Defaults::LANGUAGE_SYSTEM]],
+                [$valid1, Defaults::LANGUAGE_SYSTEM, ['zh-CN', Defaults::LANGUAGE_SYSTEM]],
             ],
             [],
             [
@@ -95,7 +95,7 @@ class SalesChannelValidatorTest extends TestCase
         $valid2 = Uuid::randomHex();
         yield 'Payload with multiple valid entries' => [
             [
-                [$valid1, Defaults::LANGUAGE_SYSTEM, [Defaults::LANGUAGE_SYSTEM, 'de-DE']],
+                [$valid1, Defaults::LANGUAGE_SYSTEM, [Defaults::LANGUAGE_SYSTEM, 'zh-CN']],
                 [$valid2, Defaults::LANGUAGE_SYSTEM, [Defaults::LANGUAGE_SYSTEM]],
             ],
             [],
@@ -135,8 +135,8 @@ class SalesChannelValidatorTest extends TestCase
 
         yield 'Payload with mixed entries' => [
             [
-                [$valid1, Defaults::LANGUAGE_SYSTEM, [Defaults::LANGUAGE_SYSTEM, 'de-DE']],
-                [$invalidId1, Defaults::LANGUAGE_SYSTEM, ['de-DE']],
+                [$valid1, Defaults::LANGUAGE_SYSTEM, [Defaults::LANGUAGE_SYSTEM, 'zh-CN']],
+                [$invalidId1, Defaults::LANGUAGE_SYSTEM, ['zh-CN']],
                 [$invalidId2, Defaults::LANGUAGE_SYSTEM],
             ],
             [$invalidId1, $invalidId2],
@@ -158,12 +158,12 @@ class SalesChannelValidatorTest extends TestCase
     {
         $deLangId = $this->getDeDeLanguageId();
         foreach ($updates as &$update) {
-            if ($update['languageId'] === 'de-DE') {
+            if ($update['languageId'] === 'zh-CN') {
                 $update['languageId'] = $deLangId;
             }
 
             foreach ($update['languages'] ?? [] as $key => $language) {
-                if ($language['id'] === 'de-DE') {
+                if ($language['id'] === 'zh-CN') {
                     $update['languages'][$key]['id'] = $deLangId;
                 }
             }
@@ -226,11 +226,11 @@ class SalesChannelValidatorTest extends TestCase
             [
                 [
                     'id' => $id1,
-                    'languageId' => 'de-DE',
+                    'languageId' => 'zh-CN',
                 ],
                 [
                     'id' => $id2,
-                    'languageId' => 'de-DE',
+                    'languageId' => 'zh-CN',
                 ],
             ],
             [$id1, $id2],
@@ -245,7 +245,7 @@ class SalesChannelValidatorTest extends TestCase
                 ],
                 [
                     'id' => $id2,
-                    'languageId' => 'de-DE',
+                    'languageId' => 'zh-CN',
                 ],
             ],
             [$id2],
@@ -256,8 +256,8 @@ class SalesChannelValidatorTest extends TestCase
             [
                 [
                     'id' => $id1,
-                    'languageId' => 'de-DE',
-                    'languages' => [['id' => 'de-DE']],
+                    'languageId' => 'zh-CN',
+                    'languages' => [['id' => 'zh-CN']],
                 ],
             ],
             [],
@@ -268,9 +268,9 @@ class SalesChannelValidatorTest extends TestCase
             [
                 [
                     'id' => $id1,
-                    'languageId' => 'de-DE',
+                    'languageId' => 'zh-CN',
                     'languages' => [
-                        ['id' => 'de-DE'],
+                        ['id' => 'zh-CN'],
                         ['id' => Defaults::LANGUAGE_SYSTEM]],
                 ],
             ],

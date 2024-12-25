@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<cms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/cicada/cicada/trunk/src/Core/Framework/App/Cms/Schema/cms-1.0.xsd">
+<cms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/Framework/App/Cms/Schema/cms-1.0.xsd">
     <blocks>
         <block>
             <name>my-first-block</name>
             <category>text-image</category>
 
             <label>First block from app</label>
-            <label lang="de-DE">Erster Block einer App</label>
+            <label lang="zh-CN">Erster Block einer App</label>
 
             <slots>
                 <slot name="left" type="manufacturer-logo">
@@ -42,7 +42,7 @@
             <category>text-image</category>
 
             <label>Second block from app</label>
-            <label lang="de-DE">Zweiter Block einer App</label>
+            <label lang="zh-CN">Zweiter Block einer App</label>
 
             <slots>
                 <slot name="left" type="form">

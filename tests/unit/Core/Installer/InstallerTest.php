@@ -24,19 +24,8 @@ class InstallerTest extends TestCase
 
         static::assertSame(
             [
-                'de' => 'de-DE',
+                'zh' => 'zh-CN',
                 'en' => 'en-GB',
-                'us' => 'en-US',
-                'cs' => 'cs-CZ',
-                'es' => 'es-ES',
-                'fr' => 'fr-FR',
-                'it' => 'it-IT',
-                'nl' => 'nl-NL',
-                'pl' => 'pl-PL',
-                'pt' => 'pt-PT',
-                'sv' => 'sv-SE',
-                'da' => 'da-DK',
-                'nb' => 'nb-NO',
             ],
             $container->getParameter('cicada.installer.supportedLanguages')
         );

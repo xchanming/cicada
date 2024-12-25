@@ -52,7 +52,7 @@ class ConfigReaderTest extends TestCase
             0 => [
                 'title' => [
                     'en-GB' => 'Basic configuration',
-                    'de-DE' => 'Grundeinstellungen',
+                    'zh-CN' => 'Grundeinstellungen',
                 ],
                 'name' => null,
                 'elements' => [
@@ -62,11 +62,11 @@ class ConfigReaderTest extends TestCase
                         'copyable' => true,
                         'label' => [
                             'en-GB' => 'eMail',
-                            'de-DE' => 'E-Mail',
+                            'zh-CN' => 'E-Mail',
                         ],
                         'placeholder' => [
                             'en-GB' => 'Enter your eMail address',
-                            'de-DE' => 'Bitte gib deine E-Mail Adresse ein',
+                            'zh-CN' => 'Bitte gib deine E-Mail Adresse ein',
                         ],
                     ],
                     1 => [
@@ -88,11 +88,11 @@ class ConfigReaderTest extends TestCase
                         ],
                         'label' => [
                             'en-GB' => 'Mailing protocol',
-                            'de-DE' => 'E-Mail Versand Protokoll',
+                            'zh-CN' => 'E-Mail Versand Protokoll',
                         ],
                         'placeholder' => [
                             'en-GB' => 'Choose your preferred transfer method',
-                            'de-DE' => 'Bitte wähle dein bevorzugtes Versand Protokoll',
+                            'zh-CN' => 'Bitte wähle dein bevorzugtes Versand Protokoll',
                         ],
                     ],
                     2 => [
@@ -104,14 +104,14 @@ class ConfigReaderTest extends TestCase
                                 'id' => 'smtp',
                                 'name' => [
                                     'en-GB' => 'English smtp',
-                                    'de-DE' => 'German smtp',
+                                    'zh-CN' => 'German smtp',
                                 ],
                             ],
                             1 => [
                                 'id' => 'pop3',
                                 'name' => [
                                     'en-GB' => 'English pop3',
-                                    'de-DE' => 'German pop3',
+                                    'zh-CN' => 'German pop3',
                                 ],
                             ],
                         ],

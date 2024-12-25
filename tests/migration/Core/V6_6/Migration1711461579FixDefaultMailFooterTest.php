@@ -30,7 +30,7 @@ class Migration1711461579FixDefaultMailFooterTest extends TestCase
     {
         $this->migration = new Migration1711461579FixDefaultMailFooter();
         $this->connection = KernelLifecycleManager::getConnection();
-        $germanLanguageId = $this->fetchLanguageId($this->connection, 'de-DE');
+        $germanLanguageId = $this->fetchLanguageId($this->connection, 'zh-CN');
         static::assertIsString($germanLanguageId);
         $this->germanLanguageId = $germanLanguageId;
     }

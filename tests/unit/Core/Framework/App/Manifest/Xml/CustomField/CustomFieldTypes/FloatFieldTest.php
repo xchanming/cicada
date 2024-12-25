@@ -29,7 +29,7 @@ class FloatFieldTest extends TestCase
         static::assertEquals('test_float_field', $floatField->getName());
         static::assertEquals([
             'en-GB' => 'Test float field',
-            'de-DE' => 'Test Kommazahlenfeld',
+            'zh-CN' => 'Test Kommazahlenfeld',
         ], $floatField->getLabel());
         static::assertEquals(['en-GB' => 'This is a float field.'], $floatField->getHelpText());
         static::assertEquals(2, $floatField->getPosition());

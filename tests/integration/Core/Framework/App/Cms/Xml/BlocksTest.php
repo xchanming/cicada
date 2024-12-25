@@ -23,7 +23,7 @@ class BlocksTest extends TestCase
         static::assertEquals(
             [
                 'en-GB' => 'First block from app',
-                'de-DE' => 'Erster Block einer App',
+                'zh-CN' => 'Erster Block einer App',
             ],
             $firstBlock->getLabel()
         );

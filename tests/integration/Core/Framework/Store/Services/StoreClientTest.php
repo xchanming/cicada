@@ -194,7 +194,7 @@ class StoreClientTest extends TestCase
     public function testMissingConnectionBecauseYouAreInGermanCellularInternet(): void
     {
         $this->getStoreRequestHandler()->append(new ConnectException(
-            'cURL error 7: Failed to connect to api.cicada.com port 443 after 4102 ms: Network is unreachable (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.cicada.com/swplatform/pluginupdates?cicadaVersion=6.4.12.0&language=de-DE&domain=',
+            'cURL error 7: Failed to connect to api.cicada.com port 443 after 4102 ms: Network is unreachable (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.cicada.com/swplatform/pluginupdates?cicadaVersion=6.4.12.0&language=zh-CN&domain=',
             $this->createMock(RequestInterface::class)
         ));
 

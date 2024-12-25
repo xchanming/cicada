@@ -2,7 +2,7 @@
 import './page/swag-example-list';
 import './page/swag-example-detail';
 import './page/swag-example-create';
-import deDE from './snippet/de-DE';
+import deDE from './snippet/zh-CN';
 import enGB from './snippet/en-GB';
 
 Cicada.Module.register('swag-example', {
@@ -14,7 +14,7 @@ Cicada.Module.register('swag-example', {
     icon: 'default-shopping-paper-bag-product',
 
     snippets: {
-        'de-DE': deDE,
+        'zh-CN': deDE,
         'en-GB': enGB
     },
 

@@ -795,13 +795,13 @@ class ThemeServiceTest extends TestCase
                                         'extend-parent-custom-config' => [
                                             'type' => 'int',
                                             'label' => [
-                                                'de-DE' => 'DE',
+                                                'zh-CN' => 'DE',
                                                 'en-GB' => 'EN',
                                             ],
                                             'value' => '20',
                                             'editable' => true,
                                             'helpText' => [
-                                                'de-DE' => 'De Helptext',
+                                                'zh-CN' => 'De Helptext',
                                                 'en-GB' => 'EN Helptext',
                                             ],
                                         ],
@@ -839,13 +839,13 @@ class ThemeServiceTest extends TestCase
                                         'parent-custom-config' => [
                                             'type' => 'int',
                                             'label' => [
-                                                'de-DE' => 'DE',
+                                                'zh-CN' => 'DE',
                                                 'en-GB' => 'EN',
                                             ],
                                             'value' => '20',
                                             'editable' => true,
                                             'helpText' => [
-                                                'de-DE' => 'De Helptext',
+                                                'zh-CN' => 'De Helptext',
                                                 'en-GB' => 'EN Helptext',
                                             ],
                                         ],

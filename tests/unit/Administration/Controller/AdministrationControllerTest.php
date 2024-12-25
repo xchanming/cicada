@@ -429,10 +429,10 @@ class AdministrationControllerTest extends TestCase
     {
         $controller = $this->createAdministrationController();
 
-        $response = $controller->snippets(new Request(query: ['locale' => 'de-DE']));
+        $response = $controller->snippets(new Request(query: ['locale' => 'zh-CN']));
 
         static::assertNotFalse($response->getContent());
-        static::assertJsonStringEqualsJsonString('{"de-DE":[],"en-GB":[]}', $response->getContent());
+        static::assertJsonStringEqualsJsonString('{"zh-CN":[],"en-GB":[]}', $response->getContent());
     }
 
     public static function excludedTerms(): \Generator

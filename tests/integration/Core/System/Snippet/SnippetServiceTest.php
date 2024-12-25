@@ -144,7 +144,7 @@ json
     #[DataProvider('dataProviderForTestGetStoreFrontSnippets')]
     public function testGetStoreFrontSnippets(MessageCatalogueInterface $catalog, array $expectedResult): void
     {
-        $service = $this->getSnippetService(new MockSnippetFile('de-DE'), new MockSnippetFile('en-GB'));
+        $service = $this->getSnippetService(new MockSnippetFile('zh-CN'), new MockSnippetFile('en-GB'));
 
         static::assertNotNull($this->getSnippetSetIdForLocale('en-GB'));
         $result = $service->getStorefrontSnippets($catalog, $this->getSnippetSetIdForLocale('en-GB'));
@@ -154,7 +154,7 @@ json
 
     public function testGetStoreFrontSnippetsOverriddenFromDB(): void
     {
-        $service = $this->getSnippetService(new MockSnippetFile('de-DE'), new MockSnippetFile('en-GB'));
+        $service = $this->getSnippetService(new MockSnippetFile('zh-CN'), new MockSnippetFile('en-GB'));
 
         $snippetSetId = $this->getSnippetSetIdForLocale('en-GB');
         static::assertNotNull($snippetSetId);
@@ -198,7 +198,7 @@ json
                     ],
                 ],
             ])),
-            new MockSnippetFile('test-fallback-de', 'de-DE', (string) json_encode([
+            new MockSnippetFile('test-fallback-de', 'zh-CN', (string) json_encode([
                 'storefront' => [
                     'account' => [
                         'overview' => 'Übersicht',
@@ -220,7 +220,7 @@ json
             ]
         );
 
-        $snippetSetId = $this->getSnippetSetIdForLocale('de-DE');
+        $snippetSetId = $this->getSnippetSetIdForLocale('zh-CN');
 
         static::assertNotNull($snippetSetId);
         $result = $service->getStorefrontSnippets($catalog, $snippetSetId, 'en-GB');

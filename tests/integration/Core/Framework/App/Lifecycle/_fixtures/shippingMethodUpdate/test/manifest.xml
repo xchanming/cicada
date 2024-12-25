@@ -3,9 +3,9 @@
     <meta>
         <name>test</name>
         <label>Swag App Test</label>
-        <label lang="de-DE">Swag App Test</label>
+        <label lang="zh-CN">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="de-DE">Test für das App System</description>
+        <description lang="zh-CN">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -16,13 +16,13 @@
         <shipping-method>
             <identifier>swagFirstShippingMethod</identifier>
             <name>new name for first shipping method</name>
-            <name lang="de-DE">ein neuer Name für die erste Versandmethode</name>
+            <name lang="zh-CN">ein neuer Name für die erste Versandmethode</name>
             <description>update of the simple description</description>
-            <description lang="de-DE">eine neue einfache Beschreibung</description>
+            <description lang="zh-CN">eine neue einfache Beschreibung</description>
             <icon>icons/new-icon.png</icon>
             <position>2</position>
             <tracking-url>https://www.mytrackingurl.com/updated-by-manifest</tracking-url>
-            <tracking-url lang="de-DE">https://de.mytrackingurl.com/updated-by-manifest</tracking-url>
+            <tracking-url lang="zh-CN">https://de.mytrackingurl.com/updated-by-manifest</tracking-url>
             <delivery-time>
                 <id>4b00146bdc8b4175b12d3fc36ec114d0</id>
                 <name>updated delivery time</name>

@@ -25,7 +25,7 @@ class IntFieldTest extends TestCase
             'type' => 'number',
             'label' => [
                 'en-GB' => 'Test int field',
-                'de-DE' => 'Test Ganzzahlenfeld',
+                'zh-CN' => 'Test Ganzzahlenfeld',
             ],
             'helpText' => [
                 'en-GB' => 'This is an int field.',

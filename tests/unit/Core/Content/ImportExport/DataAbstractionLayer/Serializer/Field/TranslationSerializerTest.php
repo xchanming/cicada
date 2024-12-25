@@ -105,7 +105,7 @@ class TranslationSerializerTest extends TestCase
             Defaults::LANGUAGE_SYSTEM => [
                 'name' => 'foo',
             ],
-            'de-DE' => [
+            'zh-CN' => [
                 'name' => 'bar',
             ],
         ];
@@ -120,7 +120,7 @@ class TranslationSerializerTest extends TestCase
                 'DEFAULT' => [
                     'name' => 'foo',
                 ],
-                'de-DE' => [
+                'zh-CN' => [
                     'name' => 'bar',
                 ],
             ],
@@ -178,7 +178,7 @@ class TranslationSerializerTest extends TestCase
             'DEFAULT' => [
                 'name' => 'foo',
             ],
-            'de-DE' => [
+            'zh-CN' => [
                 'name' => 'bar',
             ],
             'en-GB' => [],
@@ -187,7 +187,7 @@ class TranslationSerializerTest extends TestCase
         $translationsSerialized = $translationsSerializer->deserialize($this->getConfig(), $this->getTranslationsAssociationField(), $translations);
 
         static::assertSame([
-            'de-DE' => [
+            'zh-CN' => [
                 'name' => 'bar',
             ],
             Defaults::LANGUAGE_SYSTEM => [

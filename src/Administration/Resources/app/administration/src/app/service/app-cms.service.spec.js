@@ -41,7 +41,7 @@ describe('src/app/service/app-cms.service', () => {
     it('should be able to override the default block configuration', async () => {
         let defaultConfig = service.defaultBlockConfig;
 
-        Cicada.Locale.register('de-DE', {});
+        Cicada.Locale.register('zh-CN', {});
         Cicada.Locale.register('en-GB', {});
 
         expect(defaultConfig.prefix).toBe('sw-cms-block-');
@@ -96,7 +96,7 @@ describe('src/app/service/app-cms.service', () => {
         service.registerCmsBlock({
             category: 'foobar',
             label: {
-                'de-DE': 'MyBlockLabel',
+                'zh-CN': 'MyBlockLabel',
             },
         });
 

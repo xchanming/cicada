@@ -87,7 +87,7 @@ class CustomFieldUpdaterTest extends TestCase
                 'config' => [
                     'label' => [
                         'en-GB' => 'English custom field set label',
-                        'de-DE' => 'German custom field set label',
+                        'zh-CN' => 'German custom field set label',
                     ],
                 ],
                 'relations' => [[
@@ -133,7 +133,7 @@ class CustomFieldUpdaterTest extends TestCase
                 'config' => [
                     'label' => [
                         'en-GB' => 'English custom field set label',
-                        'de-DE' => 'German custom field set label',
+                        'zh-CN' => 'German custom field set label',
                     ],
                 ],
                 'customFields' => [

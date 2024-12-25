@@ -92,7 +92,7 @@ class CustomFieldTranslationTest extends TestCase
                         'root' => 'test',
                     ],
                 ],
-                'de-DE' => [
+                'zh-CN' => [
                     'customTranslated' => null,
                 ],
             ],
@@ -144,9 +144,9 @@ class CustomFieldTranslationTest extends TestCase
                         'system' => 'system',
                     ],
                 ],
-                'de-DE' => [
+                'zh-CN' => [
                     'customTranslated' => [
-                        'code' => 'de-DE',
+                        'code' => 'zh-CN',
                         'de' => 'de',
                     ],
                 ],
@@ -187,10 +187,10 @@ class CustomFieldTranslationTest extends TestCase
         $result = $repo->search(new Criteria([$id]), $context)->first();
         static::assertInstanceOf(Entity::class, $result);
 
-        $expected = ['de' => 'de', 'code' => 'de-DE'];
+        $expected = ['de' => 'de', 'code' => 'zh-CN'];
         static::assertEquals($expected, $result->get('customTranslated'));
 
-        $expectedViewData = ['code' => 'de-DE', 'system' => 'system', 'de' => 'de'];
+        $expectedViewData = ['code' => 'zh-CN', 'system' => 'system', 'de' => 'de'];
         static::assertEquals($expectedViewData, $result->getTranslated()['customTranslated']);
 
         $chain = [$rootLanguageId, Defaults::LANGUAGE_SYSTEM];

@@ -296,7 +296,7 @@ class Migration1570459127AddCmsSidebarLayout extends MigrationStep
             SELECT lang.id
             FROM language lang
             INNER JOIN locale loc ON lang.translation_code_id = loc.id
-            AND loc.code = "de-DE"'
+            AND loc.code = "zh-CN"'
         );
 
         if ($result === false || Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM) === $result) {

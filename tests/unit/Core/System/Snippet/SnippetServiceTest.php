@@ -119,7 +119,7 @@ class SnippetServiceTest extends TestCase
 
     public function testGetStorefrontSnippetsWithoutThemeRegistry(): void
     {
-        $locale = 'de-DE';
+        $locale = 'zh-CN';
         $snippetSetId = Uuid::randomHex();
         $catalog = new MessageCatalogue($locale, []);
 
@@ -234,7 +234,7 @@ class SnippetServiceTest extends TestCase
             ],
             'fetchLocaleResult' => 'vi-VN',
             'catalogMessages' => [],
-            'fallbackLocale' => 'de-DE',
+            'fallbackLocale' => 'zh-CN',
         ];
 
         yield 'fallback snippets are overridden by catalog messages' => [
@@ -255,7 +255,7 @@ class SnippetServiceTest extends TestCase
                 'catalog_key' => 'Catalog DE',
                 'title' => 'Storefront DE',
             ],
-            'fetchLocaleResult' => 'de-DE',
+            'fetchLocaleResult' => 'zh-CN',
             'catalogMessages' => [
                 'catalog_key' => 'Catalog DE',
                 'title' => 'Catalog title',
@@ -268,7 +268,7 @@ class SnippetServiceTest extends TestCase
                 'title' => 'Database title',
                 'catalog_key' => 'Catalog DE',
             ],
-            'fetchLocaleResult' => 'de-DE',
+            'fetchLocaleResult' => 'zh-CN',
             'catalogMessages' => [
                 'catalog_key' => 'Catalog DE',
                 'title' => 'Catalog title',
@@ -286,7 +286,7 @@ class SnippetServiceTest extends TestCase
             'expected' => [
                 'title' => 'Storefront DE',
             ],
-            'fetchLocaleResult' => 'de-DE',
+            'fetchLocaleResult' => 'zh-CN',
             'catalogMessages' => [],
             'fallbackLocale' => 'en-GB',
             'salesChannelId' => Uuid::randomHex(),
@@ -299,7 +299,7 @@ class SnippetServiceTest extends TestCase
             'expected' => [
                 'title' => 'SwagTheme DE',
             ],
-            'fetchLocaleResult' => 'de-DE',
+            'fetchLocaleResult' => 'zh-CN',
             'catalogMessages' => [],
             'fallbackLocale' => 'en-GB',
             'salesChannelId' => Uuid::randomHex(),
@@ -312,7 +312,7 @@ class SnippetServiceTest extends TestCase
                 'title' => 'Database title',
                 'catalog_key' => 'Catalog DE',
             ],
-            'fetchLocaleResult' => 'de-DE',
+            'fetchLocaleResult' => 'zh-CN',
             'catalogMessages' => [
                 'catalog_key' => 'Catalog DE',
                 'title' => 'Catalog title',
@@ -329,9 +329,9 @@ class SnippetServiceTest extends TestCase
 
     private function addThemes(): void
     {
-        $this->snippetCollection->add(new MockSnippetFile('storefront.de-DE', 'de-DE', '{}', true, 'Storefront'));
+        $this->snippetCollection->add(new MockSnippetFile('storefront.zh-CN', 'zh-CN', '{}', true, 'Storefront'));
         $this->snippetCollection->add(new MockSnippetFile('storefront.en-GB', 'en-GB', '{}', true, 'Storefront'));
-        $this->snippetCollection->add(new MockSnippetFile('swagtheme.de-DE', 'de-DE', '{}', true, 'SwagTheme'));
+        $this->snippetCollection->add(new MockSnippetFile('swagtheme.zh-CN', 'zh-CN', '{}', true, 'SwagTheme'));
         $this->snippetCollection->add(new MockSnippetFile('swagtheme.en-GB', 'en-GB', '{}', true, 'SwagTheme'));
     }
 }

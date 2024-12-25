@@ -40,7 +40,7 @@ class EnvConfigWriterTest extends TestCase
 
         $writer->writeConfig($info, [
             'name' => 'test',
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'currency' => 'EUR',
             'additionalCurrencies' => [],
             'country' => 'DEU',
@@ -88,7 +88,7 @@ class EnvConfigWriterTest extends TestCase
 
         $writer->writeConfig($info, [
             'name' => 'test',
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'currency' => 'EUR',
             'additionalCurrencies' => [],
             'country' => 'DEU',

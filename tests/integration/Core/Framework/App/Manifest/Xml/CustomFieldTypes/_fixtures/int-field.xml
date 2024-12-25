@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/cicada/cicada/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
+          xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/Framework/App/Manifest/Schema/manifest-2.0.xsd">
     <meta>
         <name>SwagApp</name>
         <label>Swag App Test</label>
-        <label lang="de-DE">Swag App Test</label>
+        <label lang="zh-CN">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="de-DE">Test für das App System</description>
+        <description lang="zh-CN">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -21,7 +21,7 @@
         <custom-field-set>
             <name>custom_field_test</name>
             <label>Custom field test</label>
-            <label lang="de-DE">Zusatzfeld Test</label>
+            <label lang="zh-CN">Zusatzfeld Test</label>
             <related-entities>
                 <product/>
                 <customer/>
@@ -29,7 +29,7 @@
             <fields>
                 <int name="test_int_field">
                     <label>Test int field</label>
-                    <label lang="de-DE">Test Ganzzahlenfeld</label>
+                    <label lang="zh-CN">Test Ganzzahlenfeld</label>
                     <help-text>This is an int field.</help-text>
                     <position>1</position>
                     <steps>2</steps>

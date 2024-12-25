@@ -217,7 +217,7 @@ class SalesChannelCmsPageLoaderTest extends TestCase
                     [
                         'languageId' => $this->getDeDeLanguageId(),
                         'currencyId' => Defaults::CURRENCY,
-                        'snippetSetId' => $this->getSnippetSetIdForLocale('de-DE'),
+                        'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                         'url' => 'http://localhost/de',
                     ],
                 ],
@@ -248,7 +248,7 @@ class SalesChannelCmsPageLoaderTest extends TestCase
                     [
                         'languageId' => $this->getDeDeLanguageId(),
                         'currencyId' => Defaults::CURRENCY,
-                        'snippetSetId' => $this->getSnippetSetIdForLocale('de-DE'),
+                        'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                         'url' => 'http://localhost/de',
                     ],
                 ],

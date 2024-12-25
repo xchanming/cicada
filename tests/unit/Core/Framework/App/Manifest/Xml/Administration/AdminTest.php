@@ -30,7 +30,7 @@ class AdminTest extends TestCase
         static::assertEquals('https://swag-test.com/your-order', $firstActionButton->getUrl());
         static::assertEquals([
             'en-GB' => 'View Order',
-            'de-DE' => 'Zeige Bestellung',
+            'zh-CN' => 'Zeige Bestellung',
         ], $firstActionButton->getLabel());
 
         $secondActionButton = $admin->getActionButtons()[1];
@@ -40,7 +40,7 @@ class AdminTest extends TestCase
         static::assertEquals('https://swag-test.com/do-stuff', $secondActionButton->getUrl());
         static::assertEquals([
             'en-GB' => 'Do Stuff',
-            'de-DE' => 'Mache Dinge',
+            'zh-CN' => 'Mache Dinge',
         ], $secondActionButton->getLabel());
 
         $firstModule = $admin->getModules()[0];
@@ -48,7 +48,7 @@ class AdminTest extends TestCase
         static::assertEquals('first-module', $firstModule->getName());
         static::assertEquals([
             'en-GB' => 'My first own module',
-            'de-DE' => 'Mein erstes eigenes Modul',
+            'zh-CN' => 'Mein erstes eigenes Modul',
         ], $firstModule->getLabel());
         static::assertEquals('sw-test-structure-module', $firstModule->getParent());
         static::assertEquals(10, $firstModule->getPosition());
@@ -58,7 +58,7 @@ class AdminTest extends TestCase
         static::assertEquals('structure-module', $secondModule->getName());
         static::assertEquals([
             'en-GB' => 'My menu entry for modules',
-            'de-DE' => 'Mein Menüeintrag für Module',
+            'zh-CN' => 'Mein Menüeintrag für Module',
         ], $secondModule->getLabel());
         static::assertEquals('sw-catalogue', $secondModule->getParent());
         static::assertEquals(50, $secondModule->getPosition());

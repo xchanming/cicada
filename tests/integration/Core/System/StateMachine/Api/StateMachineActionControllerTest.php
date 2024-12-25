@@ -182,7 +182,7 @@ class StateMachineActionControllerTest extends TestCase
             'id' => $productId,
             'productNumber' => $productId,
             'name' => [
-                'de-DE' => 'test',
+                'zh-CN' => 'test',
                 'en-GB' => 'test',
             ],
             'active' => true,
@@ -196,7 +196,7 @@ class StateMachineActionControllerTest extends TestCase
             'tax' => ['id' => Uuid::randomHex(), 'name' => 'test', 'taxRate' => 18],
             'manufacturer' => [
                 'name' => [
-                    'de-DE' => 'test',
+                    'zh-CN' => 'test',
                     'en-GB' => 'test',
                 ],
             ],
@@ -246,7 +246,7 @@ class StateMachineActionControllerTest extends TestCase
             'id' => $productId,
             'productNumber' => $productId,
             'name' => [
-                'de-DE' => 'test',
+                'zh-CN' => 'test',
                 'en-GB' => 'test',
             ],
             'stock' => 10,
@@ -260,7 +260,7 @@ class StateMachineActionControllerTest extends TestCase
             'tax' => ['id' => Uuid::randomHex(), 'name' => 'test', 'taxRate' => 18],
             'manufacturer' => [
                 'name' => [
-                    'de-DE' => 'test',
+                    'zh-CN' => 'test',
                     'en-GB' => 'test',
                 ],
             ],

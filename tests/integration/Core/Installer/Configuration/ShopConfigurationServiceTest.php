@@ -24,7 +24,7 @@ class ShopConfigurationServiceTest extends TestCase
 
         $service->updateShop([
             'name' => 'test-shop',
-            'locale' => 'de-DE',
+            'locale' => 'zh-CN',
             'currency' => 'USD',
             'additionalCurrencies' => ['EUR', 'CHF'],
             'country' => 'DEU',

@@ -3,16 +3,16 @@
         xsi:noNamespaceSchemaLocation="../../SystemConfig/Schema/config.xsd">
     <card>
         <title>Sitemap</title>
-        <title lang="de-DE">Sitemap</title>
+        <title lang="zh-CN">Sitemap</title>
 
         <input-field type="int">
             <name>sitemapRefreshTime</name>
             <label>Refresh interval</label>
-            <label lang="de-DE">Aktualisierungsinterval</label>
+            <label lang="zh-CN">Aktualisierungsinterval</label>
             <placeholder>Enter refresh interval (seconds)...</placeholder>
-            <placeholder lang="de-DE">Gib ein Aktualisierungsinterval an (Sekunden) ...</placeholder>
+            <placeholder lang="zh-CN">Gib ein Aktualisierungsinterval an (Sekunden) ...</placeholder>
             <helpText>Enter interval in seconds. (Active only in live mode.)</helpText>
-            <helpText lang="de-DE">Gib einen Zeitraum in Sekunden ein. (Aktiv nur im Live-Modus.)</helpText>
+            <helpText lang="zh-CN">Gib einen Zeitraum in Sekunden ein. (Aktiv nur im Live-Modus.)</helpText>
         </input-field>
 
         <input-field type="single-select">
@@ -21,21 +21,21 @@
                 <option>
                     <id>1</id>
                     <name>Manually</name>
-                    <name lang="de-DE">Manuell</name>
+                    <name lang="zh-CN">Manuell</name>
                 </option>
                 <option>
                     <id>2</id>
                     <name>Scheduled</name>
-                    <name lang="de-DE">Geplant</name>
+                    <name lang="zh-CN">Geplant</name>
                 </option>
                 <option>
                     <id>3</id>
                     <name>Live</name>
-                    <name lang="de-DE">Live</name>
+                    <name lang="zh-CN">Live</name>
                 </option>
             </options>
             <label>Refresh strategy</label>
-            <label lang="de-DE">Aktualisierungsmethode</label>
+            <label lang="zh-CN">Aktualisierungsmethode</label>
             <helpText>
                 Manually: refresh via console command: php bin/console sitemap:generate.
 
@@ -43,7 +43,7 @@
 
                 Live: Refresh in intervals defined above, if Administration is opened.
             </helpText>
-            <helpText lang="de-DE">
+            <helpText lang="zh-CN">
                 Manuell: Aktualisierung über Konsolenbefehl php bin/console sitemap:generate.
 
                 Geplant: Aktualisierung über geplante Tasks (alle 24 Stunden).
@@ -55,9 +55,9 @@
         <input-field type="bool">
             <name>excludeLinkedProducts</name>
             <label>Exclude hidden products from sitemap</label>
-            <label lang="de-DE">Versteckte Produkte von der Sitemap ausschließen</label>
+            <label lang="zh-CN">Versteckte Produkte von der Sitemap ausschließen</label>
             <helpText>Products, that are hidden in listings and search, will be excluded from the sitemap</helpText>
-            <helpText lang="de-DE">Produkte, die in den Listen und in der Suche versteckt sind, werden von der Sitemap ausgeschlossen</helpText>
+            <helpText lang="zh-CN">Produkte, die in den Listen und in der Suche versteckt sind, werden von der Sitemap ausgeschlossen</helpText>
         </input-field>
 
     </card>

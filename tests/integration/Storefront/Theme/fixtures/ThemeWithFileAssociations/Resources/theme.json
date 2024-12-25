@@ -29,11 +29,11 @@
       "cicadaLogo": {
         "label": {
           "en-GB": "Cicada Logo",
-          "de-DE": "Cicada Logo"
+          "zh-CN": "Cicada Logo"
         },
         "helpText": {
           "en-GB": "this is the cicada logo",
-          "de-DE": "this is the cicada Logo"
+          "zh-CN": "this is the cicada Logo"
         },
         "type": "media",
         "value": "app/storefront/src/assets/image/cicada_logo.svg",

@@ -44,9 +44,9 @@ class DeleteAdminFilesAfterBuildCommand extends Command
 
         $finder = new Finder();
 
-        // Find all files in Administration/Resources/app/administration/src/module except for de-DE.json and en-GB.json
+        // Find all files in Administration/Resources/app/administration/src/module except for zh-CN.json and en-GB.json
         $finder->in($adminDir . '/Resources/app/administration/src/module')
-            ->notName('de-DE.json')
+            ->notName('zh-CN.json')
             ->notName('en-GB.json')
             ->files();
 

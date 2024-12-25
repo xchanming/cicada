@@ -28,7 +28,7 @@ class SnippetFinderTest extends TestCase
 
     public function testValidSnippetMergeWithOnlySameLanguageFiles(): void
     {
-        $actual = $this->getResultSnippetsByCase('caseSameLanguage', 'de-DE');
+        $actual = $this->getResultSnippetsByCase('caseSameLanguage', 'zh-CN');
 
         $expected = [
             'test' => [
@@ -54,7 +54,7 @@ class SnippetFinderTest extends TestCase
 
     public function testValidSnippetMergeWithDifferentLanguageFiles(): void
     {
-        $actual = $this->getResultSnippetsByCase('caseDifferentLanguages', 'de-DE');
+        $actual = $this->getResultSnippetsByCase('caseDifferentLanguages', 'zh-CN');
 
         $expected = [
             'test' => [
@@ -75,7 +75,7 @@ class SnippetFinderTest extends TestCase
 
     public function testValidSnippetMergeWithMultipleLanguageFiles(): void
     {
-        $actualDe = $this->getResultSnippetsByCase('caseMultipleSameAndDifferentLanguages', 'de-DE');
+        $actualDe = $this->getResultSnippetsByCase('caseMultipleSameAndDifferentLanguages', 'zh-CN');
         $actualEn = $this->getResultSnippetsByCase('caseMultipleSameAndDifferentLanguages', 'en-GB');
 
         $expectedDe = [

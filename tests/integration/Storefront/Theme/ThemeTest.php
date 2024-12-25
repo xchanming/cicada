@@ -84,7 +84,7 @@ class ThemeTest extends TestCase
                         'en-GB' => [
                             'sw-color-brand-primary' => 'Primary colour',
                         ],
-                        'de-DE' => [
+                        'zh-CN' => [
                             'sw-color-brand-primary' => 'Primärfarbe',
                         ],
                     ],
@@ -390,7 +390,7 @@ class ThemeTest extends TestCase
                 'newBlock' => [
                     'label' => [
                         'en-GB' => 'New Block',
-                        'de-DE' => 'Neuer Block',
+                        'zh-CN' => 'Neuer Block',
                     ],
                 ],
             ],
@@ -426,7 +426,7 @@ class ThemeTest extends TestCase
 
         $themeInheritedConfig['blocks']['newBlock']['label'] = [
             'en-GB' => 'New Block',
-            'de-DE' => 'Neuer Block',
+            'zh-CN' => 'Neuer Block',
         ];
 
         foreach ($themeInheritedConfig['fields'] as $key => $field) {
@@ -992,7 +992,7 @@ class ThemeTest extends TestCase
                 'multi' => [
                     'label' => [
                         'en-GB' => 'Multi',
-                        'de-DE' => 'Multi',
+                        'zh-CN' => 'Multi',
                     ],
                     'scss' => false,
                     'type' => 'text',
@@ -1007,21 +1007,21 @@ class ThemeTest extends TestCase
                                 'value' => 'bottom',
                                 'label' => [
                                     'en-GB' => 'bottom',
-                                    'de-DE' => 'unten',
+                                    'zh-CN' => 'unten',
                                 ],
                             ],
                             1 => [
                                 'value' => 'top',
                                 'label' => [
                                     'en-GB' => 'top',
-                                    'de-DE' => 'oben',
+                                    'zh-CN' => 'oben',
                                 ],
                             ],
                             2 => [
                                 'value' => 'middle',
                                 'label' => [
                                     'en-GB' => 'middle',
-                                    'de-DE' => 'mittel',
+                                    'zh-CN' => 'mittel',
                                 ],
                             ],
                         ],

@@ -146,7 +146,7 @@ class TranslatorTest extends TestCase
         static::assertEquals('en', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
 
         $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('de-DE');
+        $catalogue = $this->translator->getCatalogue('zh-CN');
         $fallback = $catalogue->getFallbackCatalogue();
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
         static::assertEquals('en', $fallback->getLocale());
@@ -197,7 +197,7 @@ class TranslatorTest extends TestCase
         static::assertEquals('en', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
 
         $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('de-DE');
+        $catalogue = $this->translator->getCatalogue('zh-CN');
         $fallback = $catalogue->getFallbackCatalogue();
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
         static::assertEquals('de', $fallback->getLocale());
@@ -222,7 +222,7 @@ class TranslatorTest extends TestCase
             [
                 'translationKey' => 'new.unit.test.key',
                 'value' => 'Realisiert mit Unit test',
-                'setId' => $this->getSnippetSetIdForLocale('de-DE'),
+                'setId' => $this->getSnippetSetIdForLocale('zh-CN'),
                 'author' => 'Cicada',
             ],
         ];
@@ -243,7 +243,7 @@ class TranslatorTest extends TestCase
         );
         static::assertEquals(
             $snippets[1]['value'],
-            $this->translator->trans('new.unit.test.key', [], null, 'de-DE')
+            $this->translator->trans('new.unit.test.key', [], null, 'zh-CN')
         );
         static::assertEquals(
             $snippets[0]['value'],
@@ -251,14 +251,14 @@ class TranslatorTest extends TestCase
         );
         static::assertEquals(
             $snippets[1]['value'],
-            $this->translator->trans('new.unit.test.key', [], null, 'de-DE')
+            $this->translator->trans('new.unit.test.key', [], null, 'zh-CN')
         );
         static::assertEquals(
             $snippets[0]['value'],
             $this->translator->trans('new.unit.test.key')
         );
 
-        $this->translator->setLocale('de-DE');
+        $this->translator->setLocale('zh-CN');
         static::assertEquals(
             $snippets[1]['value'],
             $this->translator->trans('new.unit.test.key')
@@ -423,7 +423,7 @@ class TranslatorTest extends TestCase
             'SELECT language.id
              FROM language
              INNER JOIN locale ON translation_code_id = locale.id
-             WHERE locale.code = "de-DE"'
+             WHERE locale.code = "zh-CN"'
         );
 
         $stmt = $this->connection->prepare(

@@ -258,7 +258,7 @@ class TranslationTest extends TestCase
         $this->languageRepository->create(
             [[
                 'id' => $germanLanguageId,
-                'name' => 'de-DE',
+                'name' => 'zh-CN',
                 'locale' => [
                     'id' => Uuid::randomHex(),
                     'code' => 'x-tst_DE2',
@@ -459,7 +459,7 @@ class TranslationTest extends TestCase
         $result = $this->languageRepository->create(
             [[
                 'id' => $germanLanguageId,
-                'name' => 'de-DE',
+                'name' => 'zh-CN',
                 'locale' => [
                     'id' => Uuid::randomHex(),
                     'code' => 'x-de_DE',
@@ -863,7 +863,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
                 'en-GB' => [
                     'name' => 'en translation',
                 ],
-                'de-DE' => [
+                'zh-CN' => [
                     'name' => 'de übersetzung',
                 ],
             ],

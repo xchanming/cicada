@@ -17,11 +17,11 @@
         "cicada-plugin-class": "SwagTestWithBundle\\SwagTestWithBundle",
         "copyright": "(c) by cicada AG",
         "label": {
-            "de-DE": "Deutscher Pluginname",
+            "zh-CN": "Deutscher Pluginname",
             "en-GB": "English plugin name"
         },
         "description": {
-            "de-DE": "Deutsche Beschreibung",
+            "zh-CN": "Deutsche Beschreibung",
             "en-GB": "English description"
         }
     },

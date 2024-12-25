@@ -8,7 +8,7 @@ export default async function initializeLocaleService() {
     const localeFactory = factoryContainer.locale;
 
     // Register default snippets
-    localeFactory.register('de-DE', {});
+    localeFactory.register('zh-CN', {});
     localeFactory.register('en-GB', {});
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment

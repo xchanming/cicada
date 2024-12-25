@@ -37,7 +37,7 @@ class SingleSelectFieldTest extends TestCase
         static::assertEquals([
             'first' => [
                 'en-GB' => 'First',
-                'de-DE' => 'Erster',
+                'zh-CN' => 'Erster',
             ],
             'second' => [
                 'en-GB' => 'Second',

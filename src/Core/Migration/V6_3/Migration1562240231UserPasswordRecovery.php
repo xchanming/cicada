@@ -60,7 +60,7 @@ SQL;
         $mailTemplateTypeId = Uuid::randomHex();
 
         $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         $connection->insert('mail_template_type', [
             'id' => Uuid::fromHexToBytes($mailTemplateTypeId),
@@ -104,7 +104,7 @@ SQL;
         $mailTemplateId = Uuid::randomHex();
 
         $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'de-DE');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
 
         $connection->insert('mail_template', [
             'id' => Uuid::fromHexToBytes($mailTemplateId),

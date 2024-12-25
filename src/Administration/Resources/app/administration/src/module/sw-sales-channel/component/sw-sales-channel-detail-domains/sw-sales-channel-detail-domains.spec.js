@@ -89,7 +89,7 @@ function getExampleDomains() {
                 },
             },
             snippetSet: {
-                name: 'BASE de-DE',
+                name: 'BASE zh-CN',
             },
             isNew: () => false,
         },
@@ -106,7 +106,7 @@ function getExampleDomains() {
                 },
             },
             snippetSet: {
-                name: 'BASE de-DE',
+                name: 'BASE zh-CN',
             },
             isNew: () => false,
         },
@@ -347,7 +347,7 @@ describe('src/module/sw-sales-channel/component/sw-sales-channel-detail-domains'
                     },
                 },
                 snippetSet: {
-                    name: 'BASE de-DE',
+                    name: 'BASE zh-CN',
                 },
                 isNew: () => false,
             },
@@ -389,7 +389,7 @@ describe('src/module/sw-sales-channel/component/sw-sales-channel-detail-domains'
                     },
                 },
                 snippetSet: {
-                    name: 'BASE de-DE',
+                    name: 'BASE zh-CN',
                 },
                 isNew: () => false,
             },

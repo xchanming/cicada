@@ -351,7 +351,7 @@ class ProductSearchKeywordAnalyzerTest extends TestCase
             'name' => 'custom_Test',
             'config' => [
                 'label' => [
-                    'de-DE' => 'DE Test',
+                    'zh-CN' => 'DE Test',
                     'en-GB' => 'EN Test',
                 ],
             ],

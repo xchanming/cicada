@@ -22,20 +22,20 @@
     "plugin-icon": "src/Resources/public/plugin.png",
     "copyright": "(c) by cicada AG",
     "label": {
-      "de-DE": "Deutscher Pluginname",
+      "zh-CN": "Deutscher Pluginname",
       "de-CH": "Schweizerdeutsch Pluginname",
       "en-GB": "English plugin name"
     },
     "description": {
-      "de-DE": "Deutsche Beschreibung",
+      "zh-CN": "Deutsche Beschreibung",
       "en-GB": "English description"
     },
     "manufacturerLink": {
-      "de-DE": "https://www.example.com/de/",
+      "zh-CN": "https://www.example.com/de/",
       "en-GB": "https://www.example.com/"
     },
     "supportLink": {
-      "de-DE": "https://www.example.com/de/support",
+      "zh-CN": "https://www.example.com/de/support",
       "en-GB": "https://www.example.com/support"
     }
   },

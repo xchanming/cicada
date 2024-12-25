@@ -1025,7 +1025,7 @@ class ProductCartProcessorTest extends TestCase
                 'type' => CustomFieldTypes::TEXT,
                 'label' => [
                     'en-GB' => 'lorem_ipsum',
-                    'de-DE' => 'lorem_ipsum',
+                    'zh-CN' => 'lorem_ipsum',
                 ],
             ],
         ], $additionalData);

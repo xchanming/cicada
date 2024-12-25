@@ -30,11 +30,11 @@ class PaymentMethodTest extends TestCase
         static::assertSame('Resources/payment.png', $firstPaymentMethod->getIcon());
         static::assertSame([
             'en-GB' => 'The app payment method',
-            'de-DE' => 'Die App Zahlungsmethode',
+            'zh-CN' => 'Die App Zahlungsmethode',
         ], $firstPaymentMethod->getName());
         static::assertSame([
             'en-GB' => 'This is a description',
-            'de-DE' => 'Die Zahlungsmethoden-Beschreibung',
+            'zh-CN' => 'Die Zahlungsmethoden-Beschreibung',
         ], $firstPaymentMethod->getDescription());
 
         $secondPaymentMethod = $paymentMethods[1];

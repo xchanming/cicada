@@ -65,7 +65,7 @@ class Migration1582011195FixCountryStateGermanTranslation extends MigrationStep
             ->from('language', 'lang')
             ->innerJoin('lang', 'locale', 'loc', 'lang.translation_code_id = loc.id')
             ->where('loc.code = :germanLocale')
-            ->setParameter('germanLocale', 'de-DE')
+            ->setParameter('germanLocale', 'zh-CN')
             ->executeQuery()
             ->fetchOne();
 

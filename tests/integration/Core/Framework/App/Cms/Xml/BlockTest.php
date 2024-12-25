@@ -26,7 +26,7 @@ class BlockTest extends TestCase
         static::assertEquals(
             [
                 'en-GB' => 'First block from app',
-                'de-DE' => 'Erster Block einer App',
+                'zh-CN' => 'Erster Block einer App',
             ],
             $firstBlock->getLabel()
         );
@@ -48,7 +48,7 @@ class BlockTest extends TestCase
                 'category' => 'text-image',
                 'label' => [
                     'en-GB' => 'First block from app',
-                    'de-DE' => 'Erster Block einer App',
+                    'zh-CN' => 'Erster Block einer App',
                 ],
                 'slots' => $slots,
                 'defaultConfig' => $defaultConfig,
@@ -66,7 +66,7 @@ class BlockTest extends TestCase
                 'category' => 'text',
                 'label' => [
                     'en-GB' => 'Second block from app',
-                    'de-DE' => 'Zweiter Block einer App',
+                    'zh-CN' => 'Zweiter Block einer App',
                 ],
                 'slots' => $slots,
                 'defaultConfig' => $defaultConfig,
@@ -103,14 +103,14 @@ class BlockTest extends TestCase
                     'name' => 'first-block-name',
                     'label' => [
                         'en-GB' => 'First block from app',
-                        'de-DE' => 'Erster Block einer App',
+                        'zh-CN' => 'Erster Block einer App',
                     ],
                     'block' => [
                         'name' => 'first-block-name',
                         'category' => 'text-image',
                         'label' => [
                             'en-GB' => 'First block from app',
-                            'de-DE' => 'Erster Block einer App',
+                            'zh-CN' => 'Erster Block einer App',
                         ],
                         'slots' => [
                             'left' => [
@@ -172,14 +172,14 @@ class BlockTest extends TestCase
                     'name' => 'second-block-name',
                     'label' => [
                         'en-GB' => 'Second block from app',
-                        'de-DE' => 'Zweiter Block einer App',
+                        'zh-CN' => 'Zweiter Block einer App',
                     ],
                     'block' => [
                         'name' => 'second-block-name',
                         'category' => 'text',
                         'label' => [
                             'en-GB' => 'Second block from app',
-                            'de-DE' => 'Zweiter Block einer App',
+                            'zh-CN' => 'Zweiter Block einer App',
                         ],
                         'slots' => [
                             'left' => [

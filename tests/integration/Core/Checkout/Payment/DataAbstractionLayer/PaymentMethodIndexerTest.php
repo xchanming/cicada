@@ -54,7 +54,7 @@ class PaymentMethodIndexerTest extends TestCase
                     'id' => $creditCardPaymentId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Credit card',
-                        'de-DE' => 'Kreditkarte',
+                        'zh-CN' => 'Kreditkarte',
                     ],
                     'technicalName' => 'payment_creaditcard',
                     'active' => true,
@@ -63,7 +63,7 @@ class PaymentMethodIndexerTest extends TestCase
                     'id' => $invoicePaymentByCicadaPluginId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Invoice',
-                        'de-DE' => 'Rechnungskauf',
+                        'zh-CN' => 'Rechnungskauf',
                     ],
                     'technicalName' => 'payment_invoice',
                     'active' => true,
@@ -74,7 +74,7 @@ class PaymentMethodIndexerTest extends TestCase
                         'version' => '1.0.0',
                         'label' => [
                             'en-GB' => 'Cicada (English)',
-                            'de-DE' => 'Cicada (Deutsch)',
+                            'zh-CN' => 'Cicada (Deutsch)',
                         ],
                     ],
                 ],
@@ -82,7 +82,7 @@ class PaymentMethodIndexerTest extends TestCase
                     'id' => $invoicePaymentByPluginId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Invoice',
-                        'de-DE' => 'Rechnung',
+                        'zh-CN' => 'Rechnung',
                     ],
                     'technicalName' => 'payment_invoiceplugin',
                     'active' => true,
@@ -93,7 +93,7 @@ class PaymentMethodIndexerTest extends TestCase
                         'version' => '1.0.0',
                         'label' => [
                             'en-GB' => 'Plugin (English)',
-                            'de-DE' => 'Plugin (Deutsch)',
+                            'zh-CN' => 'Plugin (Deutsch)',
                         ],
                     ],
                 ],
@@ -101,7 +101,7 @@ class PaymentMethodIndexerTest extends TestCase
                     'id' => $invoicePaymentByAppId = Uuid::randomHex(),
                     'name' => [
                         'en-GB' => 'Invoice',
-                        'de-DE' => 'Rechnung',
+                        'zh-CN' => 'Rechnung',
                     ],
                     'technicalName' => 'payment_App_identifier',
                     'active' => true,
@@ -199,7 +199,7 @@ class PaymentMethodIndexerTest extends TestCase
                     'id' => $paymentMethodId,
                     'name' => [
                         'en-GB' => 'Credit card',
-                        'de-DE' => 'Kreditkarte',
+                        'zh-CN' => 'Kreditkarte',
                     ],
                     'technicalName' => 'payment_creditcard_test',
                     'active' => true,
@@ -210,7 +210,7 @@ class PaymentMethodIndexerTest extends TestCase
                         'version' => '1.0.0',
                         'label' => [
                             'en-GB' => 'Plugin (English)',
-                            'de-DE' => 'Plugin (Deutsch)',
+                            'zh-CN' => 'Plugin (Deutsch)',
                         ],
                     ],
                 ],

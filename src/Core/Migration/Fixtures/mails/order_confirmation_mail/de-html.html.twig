@@ -4,7 +4,7 @@
 
 Hallo {% if order.orderCustomer.salutation %}{{ order.orderCustomer.salutation.translated.letterName ~ ' ' }}{% endif %}{{ order.orderCustomer.firstName }} {{ order.orderCustomer.lastName }},<br>
 <br>
-Ihre Bestellung ist am {{ order.orderDateTime|format_datetime('medium', 'short', locale='de-DE') }} bei uns eingegangen.<br>
+Ihre Bestellung ist am {{ order.orderDateTime|format_datetime('medium', 'short', locale='zh-CN') }} bei uns eingegangen.<br>
 <br>
 Bestellnummer: {{ order.orderNumber }}<br>
 <br>

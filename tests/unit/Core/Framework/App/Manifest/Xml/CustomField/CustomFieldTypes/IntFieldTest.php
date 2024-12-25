@@ -29,7 +29,7 @@ class IntFieldTest extends TestCase
         static::assertEquals('test_int_field', $intField->getName());
         static::assertEquals([
             'en-GB' => 'Test int field',
-            'de-DE' => 'Test Ganzzahlenfeld',
+            'zh-CN' => 'Test Ganzzahlenfeld',
         ], $intField->getLabel());
         static::assertEquals(['en-GB' => 'This is an int field.'], $intField->getHelpText());
         static::assertEquals(1, $intField->getPosition());

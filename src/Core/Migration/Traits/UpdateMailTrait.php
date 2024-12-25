@@ -29,7 +29,7 @@ trait UpdateMailTrait
 
     private function updateDeMail(Connection $connection, MailUpdate $update): void
     {
-        $languages = $this->getLanguageIds($connection, 'de-DE');
+        $languages = $this->getLanguageIds($connection, 'zh-CN');
         if (!$languages) {
             return;
         }
@@ -114,7 +114,7 @@ trait UpdateMailTrait
 
     private function updateDeMailSubject(Connection $connection, MailSubjectUpdate $update): void
     {
-        $languages = $this->getLanguageIds($connection, 'de-DE');
+        $languages = $this->getLanguageIds($connection, 'zh-CN');
         if (!$languages) {
             return;
         }

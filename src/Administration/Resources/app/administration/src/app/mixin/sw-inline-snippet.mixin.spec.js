@@ -31,7 +31,7 @@ describe('src/app/mixin/sw-inline-snippet.mixin.ts', () => {
     let wrapper;
 
     beforeEach(async () => {
-        Cicada.Context.app.fallbackLocale = 'de-DE';
+        Cicada.Context.app.fallbackLocale = 'zh-CN';
         wrapper = await createWrapper();
 
         await flushPromises();
@@ -72,7 +72,7 @@ describe('src/app/mixin/sw-inline-snippet.mixin.ts', () => {
     it('should return correct fallback value with locale using the getInlineSnippet method without value', () => {
         const result = wrapper.vm.getInlineSnippet({
             'fr-FR': 'French',
-            'de-DE': 'German',
+            'zh-CN': 'German',
         });
 
         expect(result).toBe('German');

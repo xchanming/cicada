@@ -35,7 +35,7 @@ const baseAction = {
     app: 'TestApp',
     icon: 'someBase64Icon',
     label: {
-        'de-DE': 'Product hinzufügen',
+        'zh-CN': 'Product hinzufügen',
         'en-GB': 'Add product',
     },
     url: 'http://test-url/actions/product/add',

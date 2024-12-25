@@ -15,7 +15,7 @@
     "extra": {
         "cicada-plugin-class": "SwagTestWithoutConfig\\SwagTestWithoutConfig",
         "label": {
-            "de-DE": "Deutscher Pluginname",
+            "zh-CN": "Deutscher Pluginname",
             "en-GB": "English plugin name"
         }
     },

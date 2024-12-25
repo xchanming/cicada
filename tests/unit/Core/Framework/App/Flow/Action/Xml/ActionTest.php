@@ -87,11 +87,11 @@ class ActionTest extends TestCase
         $expected = [
             'label' => [
                 'en-GB' => 'First action app',
-                'de-DE' => 'First action app DE',
+                'zh-CN' => 'First action app DE',
             ],
             'description' => [
                 'en-GB' => 'First action app description',
-                'de-DE' => 'First action app description DE',
+                'zh-CN' => 'First action app description DE',
             ],
             'name' => 'abc.cde.ccc',
             'url' => 'https://example.xyz',
@@ -100,7 +100,7 @@ class ActionTest extends TestCase
             'swIcon' => 'sw-pencil',
             'headline' => [
                 'en-GB' => 'Headline for action',
-                'de-DE' => 'Überschrift für Aktion',
+                'zh-CN' => 'Überschrift für Aktion',
             ],
             'delayable' => true,
             'badge' => 'abc',

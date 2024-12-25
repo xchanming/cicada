@@ -22,7 +22,7 @@
         "cicada-plugin-class": "Swag\\RootTest\\RootPlugin",
         "label": {
             "en-GB": "Root test plugin",
-            "de-DE": "Root Test plugin"
+            "zh-CN": "Root Test plugin"
         }
     }
 }

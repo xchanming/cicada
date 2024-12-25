@@ -29,8 +29,8 @@ class MigrationForeignDefaultLanguageTest extends TestCase
     use MigrationUntouchedDbTestTrait;
 
     /**
-     * No en-GB as language, de-LI as Default language and de-DE as second language
-     * All en-GB contents should be written in de-LI and de-De contents will be written in de-DE
+     * No en-GB as language, de-LI as Default language and zh-CN as second language
+     * All en-GB contents should be written in de-LI and de-De contents will be written in zh-CN
      */
     public function testMigrationWithoutEnGb(): void
     {
@@ -111,8 +111,8 @@ class MigrationForeignDefaultLanguageTest extends TestCase
     }
 
     /**
-     * No En-GB and no de-DE as language, de-LI as Default language and de-LU as second language
-     * All en-GV contents should be written in de-LI and de-DE contents will not be written
+     * No En-GB and no zh-CN as language, de-LI as Default language and de-LU as second language
+     * All en-GV contents should be written in de-LI and zh-CN contents will not be written
      * de-LI will be left empty
      */
     public function testMigrationWithoutEnGbOrDe(): void
@@ -211,8 +211,8 @@ class MigrationForeignDefaultLanguageTest extends TestCase
     }
 
     /**
-     * En-GB and de-DE as language, but de-LI as Default language
-     * All en-GB contents should be written in En-GB and de-LI and de-DE should be filled with de-DE contents
+     * En-GB and zh-CN as language, but de-LI as Default language
+     * All en-GB contents should be written in En-GB and de-LI and zh-CN should be filled with zh-CN contents
      */
     public function testMigrationWithEnGbAndDeButDifferentDefault(): void
     {

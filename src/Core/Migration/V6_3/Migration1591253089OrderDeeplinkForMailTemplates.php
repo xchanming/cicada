@@ -24,7 +24,7 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
     {
         // implement update
         $enLangId = $this->fetchLanguageId('en-GB', $connection);
-        $deLangId = $this->fetchLanguageId('de-DE', $connection);
+        $deLangId = $this->fetchLanguageId('zh-CN', $connection);
 
         $mailTemplateContent = require __DIR__ . '/../Fixtures/MailTemplateContent.php';
 
@@ -36,8 +36,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['OrderConfirmation']['en-GB']['html'],
             $mailTemplateContent['OrderConfirmation']['en-GB']['plain'],
-            $mailTemplateContent['OrderConfirmation']['de-DE']['html'],
-            $mailTemplateContent['OrderConfirmation']['de-DE']['plain']
+            $mailTemplateContent['OrderConfirmation']['zh-CN']['html'],
+            $mailTemplateContent['OrderConfirmation']['zh-CN']['plain']
         );
 
         // update delivery email templates
@@ -48,8 +48,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['DeliveryCancellation']['en-GB']['html'],
             $mailTemplateContent['DeliveryCancellation']['en-GB']['plain'],
-            $mailTemplateContent['DeliveryCancellation']['de-DE']['html'],
-            $mailTemplateContent['DeliveryCancellation']['de-DE']['plain']
+            $mailTemplateContent['DeliveryCancellation']['zh-CN']['html'],
+            $mailTemplateContent['DeliveryCancellation']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -59,8 +59,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['DeliveryReturned']['en-GB']['html'],
             $mailTemplateContent['DeliveryReturned']['en-GB']['plain'],
-            $mailTemplateContent['DeliveryReturned']['de-DE']['html'],
-            $mailTemplateContent['DeliveryReturned']['de-DE']['plain']
+            $mailTemplateContent['DeliveryReturned']['zh-CN']['html'],
+            $mailTemplateContent['DeliveryReturned']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -70,8 +70,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['DeliveryShippedPartially']['en-GB']['html'],
             $mailTemplateContent['DeliveryShippedPartially']['en-GB']['plain'],
-            $mailTemplateContent['DeliveryShippedPartially']['de-DE']['html'],
-            $mailTemplateContent['DeliveryShippedPartially']['de-DE']['plain']
+            $mailTemplateContent['DeliveryShippedPartially']['zh-CN']['html'],
+            $mailTemplateContent['DeliveryShippedPartially']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -81,8 +81,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['DeliveryShipped']['en-GB']['html'],
             $mailTemplateContent['DeliveryShipped']['en-GB']['plain'],
-            $mailTemplateContent['DeliveryShipped']['de-DE']['html'],
-            $mailTemplateContent['DeliveryShipped']['de-DE']['plain']
+            $mailTemplateContent['DeliveryShipped']['zh-CN']['html'],
+            $mailTemplateContent['DeliveryShipped']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -92,8 +92,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['DeliveryReturnedPartially']['en-GB']['html'],
             $mailTemplateContent['DeliveryReturnedPartially']['en-GB']['plain'],
-            $mailTemplateContent['DeliveryReturnedPartially']['de-DE']['html'],
-            $mailTemplateContent['DeliveryReturnedPartially']['de-DE']['plain']
+            $mailTemplateContent['DeliveryReturnedPartially']['zh-CN']['html'],
+            $mailTemplateContent['DeliveryReturnedPartially']['zh-CN']['plain']
         );
 
         // update order state email template
@@ -104,8 +104,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['OrderCancelled']['en-GB']['html'],
             $mailTemplateContent['OrderCancelled']['en-GB']['plain'],
-            $mailTemplateContent['OrderCancelled']['de-DE']['html'],
-            $mailTemplateContent['OrderCancelled']['de-DE']['plain']
+            $mailTemplateContent['OrderCancelled']['zh-CN']['html'],
+            $mailTemplateContent['OrderCancelled']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -115,8 +115,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['OrderOpen']['en-GB']['html'],
             $mailTemplateContent['OrderOpen']['en-GB']['plain'],
-            $mailTemplateContent['OrderOpen']['de-DE']['html'],
-            $mailTemplateContent['OrderOpen']['de-DE']['plain']
+            $mailTemplateContent['OrderOpen']['zh-CN']['html'],
+            $mailTemplateContent['OrderOpen']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -126,8 +126,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['OrderInProgress']['en-GB']['html'],
             $mailTemplateContent['OrderInProgress']['en-GB']['plain'],
-            $mailTemplateContent['OrderInProgress']['de-DE']['html'],
-            $mailTemplateContent['OrderInProgress']['de-DE']['plain']
+            $mailTemplateContent['OrderInProgress']['zh-CN']['html'],
+            $mailTemplateContent['OrderInProgress']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -137,8 +137,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['OrderCompleted']['en-GB']['html'],
             $mailTemplateContent['OrderCompleted']['en-GB']['plain'],
-            $mailTemplateContent['OrderCompleted']['de-DE']['html'],
-            $mailTemplateContent['OrderCompleted']['de-DE']['plain']
+            $mailTemplateContent['OrderCompleted']['zh-CN']['html'],
+            $mailTemplateContent['OrderCompleted']['zh-CN']['plain']
         );
 
         // update payment email template
@@ -149,8 +149,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentRefundedPartially']['en-GB']['html'],
             $mailTemplateContent['PaymentRefundedPartially']['en-GB']['plain'],
-            $mailTemplateContent['PaymentRefundedPartially']['de-DE']['html'],
-            $mailTemplateContent['PaymentRefundedPartially']['de-DE']['plain']
+            $mailTemplateContent['PaymentRefundedPartially']['zh-CN']['html'],
+            $mailTemplateContent['PaymentRefundedPartially']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -160,8 +160,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentReminded']['en-GB']['html'],
             $mailTemplateContent['PaymentReminded']['en-GB']['plain'],
-            $mailTemplateContent['PaymentReminded']['de-DE']['html'],
-            $mailTemplateContent['PaymentReminded']['de-DE']['plain']
+            $mailTemplateContent['PaymentReminded']['zh-CN']['html'],
+            $mailTemplateContent['PaymentReminded']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -171,8 +171,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentOpen']['en-GB']['html'],
             $mailTemplateContent['PaymentOpen']['en-GB']['plain'],
-            $mailTemplateContent['PaymentOpen']['de-DE']['html'],
-            $mailTemplateContent['PaymentOpen']['de-DE']['plain']
+            $mailTemplateContent['PaymentOpen']['zh-CN']['html'],
+            $mailTemplateContent['PaymentOpen']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -182,8 +182,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentPaid']['en-GB']['html'],
             $mailTemplateContent['PaymentPaid']['en-GB']['plain'],
-            $mailTemplateContent['PaymentPaid']['de-DE']['html'],
-            $mailTemplateContent['PaymentPaid']['de-DE']['plain']
+            $mailTemplateContent['PaymentPaid']['zh-CN']['html'],
+            $mailTemplateContent['PaymentPaid']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -193,8 +193,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentCancelled']['en-GB']['html'],
             $mailTemplateContent['PaymentCancelled']['en-GB']['plain'],
-            $mailTemplateContent['PaymentCancelled']['de-DE']['html'],
-            $mailTemplateContent['PaymentCancelled']['de-DE']['plain']
+            $mailTemplateContent['PaymentCancelled']['zh-CN']['html'],
+            $mailTemplateContent['PaymentCancelled']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -204,8 +204,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentRefunded']['en-GB']['html'],
             $mailTemplateContent['PaymentRefunded']['en-GB']['plain'],
-            $mailTemplateContent['PaymentRefunded']['de-DE']['html'],
-            $mailTemplateContent['PaymentRefunded']['de-DE']['plain']
+            $mailTemplateContent['PaymentRefunded']['zh-CN']['html'],
+            $mailTemplateContent['PaymentRefunded']['zh-CN']['plain']
         );
 
         $this->updateMailTemplate(
@@ -215,8 +215,8 @@ class Migration1591253089OrderDeeplinkForMailTemplates extends MigrationStep
             $deLangId,
             $mailTemplateContent['PaymentPaidPartially']['en-GB']['html'],
             $mailTemplateContent['PaymentPaidPartially']['en-GB']['plain'],
-            $mailTemplateContent['PaymentPaidPartially']['de-DE']['html'],
-            $mailTemplateContent['PaymentPaidPartially']['de-DE']['plain']
+            $mailTemplateContent['PaymentPaidPartially']['zh-CN']['html'],
+            $mailTemplateContent['PaymentPaidPartially']['zh-CN']['plain']
         );
     }
 
