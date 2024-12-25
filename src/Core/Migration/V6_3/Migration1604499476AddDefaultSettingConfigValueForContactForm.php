@@ -17,7 +17,7 @@ use Doctrine\DBAL\Connection;
 class Migration1604499476AddDefaultSettingConfigValueForContactForm extends MigrationStep
 {
     private const CONFIG_KEYS = [
-        'core.basicInformation.firstNameFieldRequired',
+        'core.basicInformation.nameFieldRequired',
         'core.basicInformation.lastNameFieldRequired',
         'core.basicInformation.phoneNumberFieldRequired',
     ];

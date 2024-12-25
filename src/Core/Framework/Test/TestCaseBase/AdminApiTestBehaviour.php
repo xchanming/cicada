@@ -135,8 +135,7 @@ trait AdminApiTestBehaviour
 
         $user = [
             'id' => $userId,
-            'first_name' => $username,
-            'last_name' => '',
+            'name' => $username,
             'username' => $username,
             'password' => TestDefaults::HASHED_PASSWORD,
             'locale_id' => $this->getLocaleOfSystemLanguage($connection),
@@ -174,7 +173,7 @@ trait AdminApiTestBehaviour
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => $username,
-            'password' => 'cicada',
+            'password' => '12345678',
         ];
 
         if (!empty($scopes)) {

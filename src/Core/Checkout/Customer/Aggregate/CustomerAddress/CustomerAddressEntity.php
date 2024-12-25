@@ -25,9 +25,7 @@ class CustomerAddressEntity extends Entity
 
     protected ?string $salutationId = null;
 
-    protected string $firstName;
-
-    protected string $lastName;
+    protected string $name;
 
     protected ?string $zipcode = null;
 
@@ -70,6 +68,16 @@ class CustomerAddressEntity extends Entity
         return $this->countryId;
     }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
     public function setCountryId(string $countryId): void
     {
         $this->countryId = $countryId;
@@ -93,26 +101,6 @@ class CustomerAddressEntity extends Entity
     public function setSalutationId(string $salutationId): void
     {
         $this->salutationId = $salutationId;
-    }
-
-    public function getFirstName(): string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): void
-    {
-        $this->lastName = $lastName;
     }
 
     public function getZipcode(): ?string

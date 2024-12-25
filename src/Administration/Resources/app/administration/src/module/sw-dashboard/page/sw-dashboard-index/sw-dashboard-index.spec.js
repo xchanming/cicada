@@ -82,27 +82,27 @@ describe('module/sw-dashboard/page/sw-dashboard-index', () => {
         jest.useRealTimers();
     });
 
-    it('shall not print a personal message if firstName is not set', async () => {
+    it('shall not print a personal message if name is not set', async () => {
         wrapper = await createWrapper();
         await flushPromises();
 
         expect(wrapper.find('.sw-dashboard-index__welcome-title').text()).toStrictEqual(snippetPathGreeting);
     });
 
-    it('should display users firstName', async () => {
-        const firstName = 'John';
+    it('should display users name', async () => {
+        const name = 'John';
         wrapper = await createWrapper();
         await flushPromises();
 
         Cicada.State.commit('setCurrentUser', {
-            firstName: firstName,
+            name: name,
         });
         await flushPromises();
 
-        expect(wrapper.find('.sw-dashboard-index__welcome-title').text()).toBe(`${snippetPathGreeting}, ${firstName}`);
+        expect(wrapper.find('.sw-dashboard-index__welcome-title').text()).toBe(`${snippetPathGreeting}, ${name}`);
     });
 
-    it('shall not print a personal message if username but not firstName is set', async () => {
+    it('shall not print a personal message if username but not name is set', async () => {
         wrapper = await createWrapper();
         await flushPromises();
 

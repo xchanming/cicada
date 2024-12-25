@@ -38,7 +38,7 @@ use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
- * @phpstan-type SubscribeRequest array{email: string, storefrontUrl: string, option: string, firstName?: string, lastName?: string, zipCode?: string, city?: string, street?: string, salutationId?: string}
+ * @phpstan-type SubscribeRequest array{email: string, storefrontUrl: string, option: string, name?: string,zipCode?: string, city?: string, street?: string, salutationId?: string}
  */
 #[Route(defaults: ['_routeScope' => ['store-api']])]
 #[Package('buyers-experience')]
@@ -123,8 +123,7 @@ class NewsletterSubscribeRoute extends AbstractNewsletterSubscribeRoute
         $data = $dataBag->only(
             'email',
             'title',
-            'firstName',
-            'lastName',
+            'name',
             'zipCode',
             'city',
             'street',
@@ -190,8 +189,8 @@ class NewsletterSubscribeRoute extends AbstractNewsletterSubscribeRoute
         $definition->add('email', new NotBlank(), new Email())
             ->add('option', new NotBlank(), new Choice(array_keys($this->getOptionSelection($context))));
 
-        if (!empty($dataBag->get('firstName'))) {
-            $definition->add('firstName', new NotBlank(), new Regex([
+        if (!empty($dataBag->get('name'))) {
+            $definition->add('name', new NotBlank(), new Regex([
                 'pattern' => self::DOMAIN_NAME_REGEX,
                 'match' => false,
             ]));
@@ -218,7 +217,7 @@ class NewsletterSubscribeRoute extends AbstractNewsletterSubscribeRoute
     /**
      * @param SubscribeRequest $data
      *
-     * @return array{id: string, languageId: string, salesChannelId: string, status: string, hash: string, email: string, storefrontUrl: string, firstName?: string, lastName?: string, zipCode?: string, city?: string, street?: string, salutationId?: string}
+     * @return array{id: string, languageId: string, salesChannelId: string, status: string, hash: string, email: string, storefrontUrl: string, name?: string, zipCode?: string, city?: string, street?: string, salutationId?: string}
      */
     private function completeData(array $data, SalesChannelContext $context): array
     {

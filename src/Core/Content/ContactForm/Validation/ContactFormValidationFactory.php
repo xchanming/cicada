@@ -51,12 +51,11 @@ class ContactFormValidationFactory implements DataValidationFactoryInterface
             ->add('email', new NotBlank(), new Email())
             ->add('subject', new NotBlank())
             ->add('comment', new NotBlank())
-            ->add('firstName', new Regex(['pattern' => self::DOMAIN_NAME_REGEX, 'match' => false]))
-            ->add('lastName', new Regex(['pattern' => self::DOMAIN_NAME_REGEX, 'match' => false]));
+            ->add('name', new Regex(['pattern' => self::DOMAIN_NAME_REGEX, 'match' => false]));
 
-        $required = $this->systemConfigService->get('core.basicInformation.firstNameFieldRequired', $context->getSalesChannel()->getId());
+        $required = $this->systemConfigService->get('core.basicInformation.nameFieldRequired', $context->getSalesChannel()->getId());
         if ($required) {
-            $definition->set('firstName', new NotBlank(), new Regex([
+            $definition->set('name', new NotBlank(), new Regex([
                 'pattern' => self::DOMAIN_NAME_REGEX,
                 'match' => false,
             ]));

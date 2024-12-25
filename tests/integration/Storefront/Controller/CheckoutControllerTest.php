@@ -116,7 +116,7 @@ class CheckoutControllerTest extends TestCase
         static::assertSame(self::PRODUCT_PRICE, $order->getPrice()->getTotalPrice());
         $orderCustomerEntity = $order->getOrderCustomer();
         static::assertNotNull($orderCustomerEntity);
-        static::assertSame(self::CUSTOMER_NAME, $orderCustomerEntity->getLastName());
+        static::assertSame(self::CUSTOMER_NAME, $orderCustomerEntity->getName());
     }
 
     public function testOrderWithInactivePaymentMethod(): void
@@ -692,8 +692,7 @@ class CheckoutControllerTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $this->customerId,
-                'firstName' => 'Test',
-                'lastName' => self::CUSTOMER_NAME,
+                'name' => 'Test',
                 'city' => 'Schöppingen',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
@@ -704,8 +703,9 @@ class CheckoutControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
-            'firstName' => 'Test',
-            'lastName' => self::CUSTOMER_NAME,
+            'name' => 'Test',
+            'username' => self::CUSTOMER_NAME,
+            'nickname' => self::CUSTOMER_NAME,
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];

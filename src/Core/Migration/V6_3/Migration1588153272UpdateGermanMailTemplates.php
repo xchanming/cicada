@@ -293,7 +293,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
 
             {% set currencyIsoCode = order.currency.isoCode %}
-            Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+            Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br>
             <br>
             vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.<br>
             <br>
@@ -346,7 +346,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
                 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
                 <strong>Rechnungsadresse:</strong><br>
                 {{ billingAddress.company }}<br>
-                {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+                {{ billingAddress.name }}<br>
                 {{ billingAddress.street }} <br>
                 {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
                 {{ billingAddress.country.name }}<br>
@@ -354,7 +354,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
 
                 <strong>Lieferadresse:</strong><br>
                 {{ delivery.shippingOrderAddress.company }}<br>
-                {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+                {{ delivery.shippingOrderAddress.name }}<br>
                 {{ delivery.shippingOrderAddress.street }} <br>
                 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
                 {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -379,7 +379,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     {
         return '
         {% set currencyIsoCode = order.currency.isoCode %}
-        Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.
 
@@ -409,14 +409,14 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
         {% set billingAddress = order.addresses.get(order.billingAddressId) %}
         Rechnungsadresse:
         {{ billingAddress.company }}
-        {{ billingAddress.firstName }} {{ billingAddress.lastName }}
+        {{ billingAddress.name }}
         {{ billingAddress.street }}
         {{ billingAddress.zipcode }} {{ billingAddress.city }}
         {{ billingAddress.country.name }}
 
         Lieferadresse:
         {{ delivery.shippingOrderAddress.company }}
-        {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+        {{ delivery.shippingOrderAddress.name }}
         {{ delivery.shippingOrderAddress.street }}
         {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
         {{ delivery.shippingOrderAddress.country.name }}
@@ -437,7 +437,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
         <div style="font-family:arial; font-size:12px;">
            <br/>
            <p>
-               {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+               {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                <br/>
                der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -452,7 +452,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getDeliveryCancellationPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -467,7 +467,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -482,7 +482,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getDeliveryReturnedPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -497,7 +497,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Lieferstatys für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -512,7 +512,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getDeliveryShippedPartiallyPlainTemplateDe(): string
     {
         return '
-            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -527,7 +527,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -543,7 +543,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getDeliveryShippedPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -558,7 +558,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -574,7 +574,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getDeliveryReturnedPartiallyPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -589,7 +589,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -605,7 +605,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getOrderStateCancelledPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -620,7 +620,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -636,7 +636,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getOrderStateOpenPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -651,7 +651,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -667,7 +667,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getOrderStateProgressPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -682,7 +682,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -698,7 +698,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getOrderStateCompletedPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -713,7 +713,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -729,7 +729,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentRefundPartiallyPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -744,7 +744,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -760,7 +760,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentRemindedPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -775,7 +775,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -791,7 +791,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentOpenPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -806,7 +806,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -822,7 +822,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentPaidPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -837,7 +837,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                   {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                   {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                    <br/>
                    der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                    <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -853,7 +853,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentCancelledPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -868,7 +868,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -884,7 +884,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentRefundedPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -899,7 +899,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
             <div style="font-family:arial; font-size:12px;">
                 <br/>
                 <p>
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                     <br/>
                     der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                     <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -915,7 +915,7 @@ class Migration1588153272UpdateGermanMailTemplates extends MigrationStep
     private function getPaymentPaidPartiallyPlainTemplateDe(): string
     {
         return '
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.

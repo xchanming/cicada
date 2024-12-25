@@ -15,8 +15,9 @@ use Doctrine\DBAL\Connection;
  * @final
  * How to use:
  * $x = (new CustomerBuilder(new IdsCollection(), 'p1'))
- *          ->firstName('Max')
- *          ->lastName('Muster')
+ *          ->name('Max')
+ *          ->username('Muster')
+ *          ->nickname('Muster')
  *          ->group('standard')
  *          ->build();
  */
@@ -28,9 +29,11 @@ class CustomerBuilder
 
     public string $id;
 
-    protected string $firstName;
+    protected string $name;
 
-    protected string $lastName;
+    protected string $username;
+
+    protected string $nickname;
 
     protected string $email;
 
@@ -82,8 +85,9 @@ class CustomerBuilder
     ) {
         $this->ids = $ids;
         $this->id = $ids->create($customerNumber);
-        $this->firstName = 'Max';
-        $this->lastName = 'Mustermann';
+        $this->name = 'Max';
+        $this->username = 'Mustermann';
+        $this->nickname = 'Mustermann';
         $this->email = 'max@mustermann.com';
         $this->salutation = self::salutation($ids);
 
@@ -109,16 +113,23 @@ class CustomerBuilder
         return $this;
     }
 
-    public function firstName(string $firstName): self
+    public function name(string $name): self
     {
-        $this->firstName = $firstName;
+        $this->name = $name;
 
         return $this;
     }
 
-    public function lastName(string $lastName): self
+    public function username(string $username): self
     {
-        $this->lastName = $lastName;
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function nickname(string $nickname): self
+    {
+        $this->nickname = $nickname;
 
         return $this;
     }
@@ -179,8 +190,7 @@ class CustomerBuilder
     public function addAddress(string $key, array $customParams = []): self
     {
         $address = \array_replace([
-            'firstName' => $this->firstName,
-            'lastName' => $this->lastName,
+            'name' => $this->name,
             'city' => 'Bielefeld',
             'salutation' => self::salutation($this->ids),
             'street' => 'Buchenweg 5',

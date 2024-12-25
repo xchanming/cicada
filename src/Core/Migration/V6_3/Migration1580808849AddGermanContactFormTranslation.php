@@ -97,7 +97,7 @@ SQL;
     {
         return '<div style="font-family:arial; font-size:12px;">
     <p>
-        Folgende Nachricht wurde von {{ contactFormData.firstName }} {{ contactFormData.lastName }} an Sie via Kontakt-Formular gesendet.<br/>
+        Folgende Nachricht wurde von {{ contactFormData.name }} an Sie via Kontakt-Formular gesendet.<br/>
         <br/>
         Kontakt E-Mail: {{ contactFormData.email }}<br/>
         <br>
@@ -112,7 +112,7 @@ SQL;
 
     private function getContactFormPlainTemplateDe(): string
     {
-        return 'Folgende Nachricht wurde von {{ contactFormData.firstName }} {{ contactFormData.lastName }} an Sie via Kontakt-Formular gesendet.
+        return 'Folgende Nachricht wurde von {{ contactFormData.name }} an Sie via Kontakt-Formular gesendet.
 
 Kontakt E-Mail: {{ contactFormData.email }}
 

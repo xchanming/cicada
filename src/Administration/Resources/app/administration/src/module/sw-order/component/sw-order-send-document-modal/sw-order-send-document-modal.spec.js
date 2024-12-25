@@ -9,8 +9,7 @@ import EntityCollection from 'src/core/data/entity-collection.data';
 const mockOrderWithMailHeaderFooter = {
     orderCustomer: {
         email: 'test@cicada.com',
-        firstName: 'Test',
-        lastName: 'Tester',
+        name: 'Test',
     },
     salesChannel: {
         mailHeaderFooterId: uuid.get('headerFooter'),

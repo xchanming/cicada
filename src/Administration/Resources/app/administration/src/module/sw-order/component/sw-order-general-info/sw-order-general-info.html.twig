@@ -15,7 +15,7 @@
                     class="sw-order-general-info__summary-main-header-link"
                     :to="{ name: 'sw.customer.detail', params: { id: order.orderCustomer.customerId } }"
                 >
-                    {{ order.orderCustomer.firstName }} {{ order.orderCustomer.lastName }}
+                    {{ order.orderCustomer.name }}
                     <span v-if="order.orderCustomer.company"> - {{ order.orderCustomer.company }}</span>
                 </router-link>
                 ({{ emailIdnFilter(order.orderCustomer.email) }})
@@ -78,7 +78,7 @@
                     class="sw-order-general-info__summary-sub-last-changed-user"
                 >
                     {{ $tc('sw-order.generalTab.info.summary.by') }}
-                    {{ lastChangedUser.firstName }} {{ lastChangedUser.lastName }}
+                    {{ lastChangedUser.name }}
                 </div>
                 {% endblock %}
             </div>

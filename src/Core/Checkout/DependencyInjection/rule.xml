@@ -116,10 +116,6 @@
             <tag name="cicada.rule.definition"/>
         </service>
 
-        <service id="Cicada\Core\Checkout\Customer\Rule\LastNameRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
         <service id="Cicada\Core\Checkout\Customer\Rule\IsCompanyRule">
             <tag name="cicada.rule.definition"/>
         </service>

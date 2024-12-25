@@ -442,8 +442,8 @@ export default Cicada.Component.wrapComponentConfig({
                     primary: false,
                 },
                 {
-                    property: 'orderCustomer.firstName',
-                    dataIndex: 'orderCustomer.firstName,orderCustomer.lastName',
+                    property: 'orderCustomer.name',
+                    dataIndex: 'orderCustomer.name,orderCustomer.name',
                     label: 'sw-order.list.columnCustomerName',
                     allowResize: true,
                 },

@@ -34,8 +34,10 @@ class Migration1536232960Customer extends MigrationStep
               `default_shipping_address_id` BINARY(16) NOT NULL,
               `customer_number` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
               `salutation_id` BINARY(16) NOT NULL,
-              `first_name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-              `last_name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+              `name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+              `nickname` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+              `username` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+              `avatar_id` binary(16) DEFAULT NULL,
               `company`     VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,
               `password` VARCHAR(1024) COLLATE utf8mb4_unicode_ci NULL,
               `legacy_password` VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,
@@ -55,6 +57,7 @@ class Migration1536232960Customer extends MigrationStep
               `updated_at` DATETIME(3) NULL,
               PRIMARY KEY (`id`),
               UNIQUE `uniq.auto_increment` (`auto_increment`),
+              UNIQUE KEY `uniq.customer.username` (`username`),
               KEY `idx.firstlogin` (`first_login`),
               KEY `idx.lastlogin` (`last_login`),
               KEY `idx.customer.default_billing_address_id` (`default_billing_address_id`),
@@ -68,6 +71,7 @@ class Migration1536232960Customer extends MigrationStep
                 REFERENCES `payment_method` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
               CONSTRAINT `fk.customer.sales_channel_id` FOREIGN KEY (`sales_channel_id`)
                 REFERENCES `sales_channel` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+              CONSTRAINT `fk.customer.avatar_id` FOREIGN KEY (`avatar_id`) REFERENCES `media` (`id`) ON DELETE SET NULL,
               CONSTRAINT `fk.customer.salutation_id` FOREIGN KEY (`salutation_id`)
                 REFERENCES `salutation` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
             ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

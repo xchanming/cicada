@@ -36,14 +36,7 @@ class NewsletterRecipientEntity extends Entity
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
-    protected $firstName;
-
-    /**
-     * @var string|null
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $lastName;
+    protected $name;
 
     /**
      * @var string|null
@@ -154,26 +147,6 @@ class NewsletterRecipientEntity extends Entity
     public function setTitle(string $title): void
     {
         $this->title = $title;
-    }
-
-    public function getFirstName(): ?string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
-    public function getLastName(): ?string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): void
-    {
-        $this->lastName = $lastName;
     }
 
     public function getZipCode(): ?string
@@ -304,5 +277,15 @@ class NewsletterRecipientEntity extends Entity
     public function setTags(TagCollection $tags): void
     {
         $this->tags = $tags;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
     }
 }

@@ -441,7 +441,7 @@ class Migration1571990395UpdateDefaultStatusMailTemplates extends MigrationStep
 <div style="font-family:arial; font-size:12px;">
  <br/>
     <p>
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
         <br/>
         the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
         <strong>The new status is as follows: {{order.stateMachineState.name}}.</strong><br/>
@@ -456,7 +456,7 @@ EOT;
     {
         return <<<EOT
 
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
         The new status is as follows: {{order.stateMachineState.name}}.
@@ -472,7 +472,7 @@ EOT;
         <div style="font-family:arial; font-size:12px;">
          <br/>
             <p>
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                 <br/>
                 der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} has changed.<br/>
                 <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -487,7 +487,7 @@ EOT;
     {
         return <<<EOT
 
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -503,7 +503,7 @@ EOT;
 <div style="font-family:arial; font-size:12px;">
  <br/>
     <p>
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
         <br/>
         the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
         <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -518,7 +518,7 @@ EOT;
     {
         return <<<EOT
 
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
         The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -534,7 +534,7 @@ EOT;
         <div style="font-family:arial; font-size:12px;">
          <br/>
             <p>
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                 <br/>
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} has changed.<br/>
                 <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -549,7 +549,7 @@ EOT;
     {
         return <<<EOT
 
-        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
         Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.

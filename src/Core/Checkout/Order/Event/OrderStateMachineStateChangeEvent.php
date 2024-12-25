@@ -49,7 +49,7 @@ class OrderStateMachineStateChangeEvent extends Event implements SalesChannelAwa
             }
 
             $this->mailRecipientStruct = new MailRecipientStruct([
-                $this->order->getOrderCustomer()->getEmail() => $this->order->getOrderCustomer()->getFirstName() . ' ' . $this->order->getOrderCustomer()->getLastName(),
+                $this->order->getOrderCustomer()->getEmail() => $this->order->getOrderCustomer()->getName(),
             ]);
         }
 

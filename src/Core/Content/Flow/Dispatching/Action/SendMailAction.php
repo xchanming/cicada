@@ -280,11 +280,11 @@ class SendMailAction extends FlowAction implements DelayableAction
                 return $recipients['data'];
             case self::RECIPIENT_CONFIG_ADMIN:
                 $admins = $this->connection->fetchAllAssociative(
-                    'SELECT first_name, last_name, email FROM user WHERE admin = true'
+                    'SELECT name, email FROM user WHERE admin = true'
                 );
                 $emails = [];
                 foreach ($admins as $admin) {
-                    $emails[$admin['email']] = $admin['first_name'] . ' ' . $admin['last_name'];
+                    $emails[$admin['email']] = $admin['name'];
                 }
 
                 return $emails;
@@ -297,7 +297,7 @@ class SendMailAction extends FlowAction implements DelayableAction
                     return [];
                 }
 
-                return [$contactFormData['email'] => ($contactFormData['firstName'] ?? '') . ' ' . ($contactFormData['lastName'] ?? '')];
+                return [$contactFormData['email'] => ($contactFormData['name'] ?? '')];
             default:
                 return $mailStructRecipients;
         }
@@ -325,8 +325,7 @@ class SendMailAction extends FlowAction implements DelayableAction
 
         $data->set(
             'senderName',
-            '{% if contactFormData.firstName is defined %}{{ contactFormData.firstName }}{% endif %} '
-            . '{% if contactFormData.lastName is defined %}{{ contactFormData.lastName }}{% endif %}'
+            '{% if contactFormData.name is defined %}{{ contactFormData.name }}{% endif %}'
         );
         $data->set('senderMail', $contactFormData['email']);
     }

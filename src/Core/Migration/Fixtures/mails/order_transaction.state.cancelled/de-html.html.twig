@@ -1,7 +1,7 @@
 <div style="font-family:arial; font-size:12px;">
 
 {% set currencyIsoCode = order.currency.isoCode %}
-Hallo {% if order.orderCustomer.salutation %}{{ order.orderCustomer.salutation.translated.letterName ~ ' ' }}{% endif %}{{ order.orderCustomer.firstName }} {{ order.orderCustomer.lastName }},<br>
+Hallo {% if order.orderCustomer.salutation %}{{ order.orderCustomer.salutation.translated.letterName ~ ' ' }}{% endif %}{{ order.orderCustomer.name }},<br>
 <br>
 Ihre Bestellung ist am {{ order.orderDateTime|format_datetime('medium', 'short', locale='zh-CN') }} bei uns eingegangen.<br>
 <br>
@@ -124,7 +124,7 @@ Der Zahlungsprozess mit {{ order.transactions.first.paymentMethod.translated.nam
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Rechnungsadresse:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.translated.name }}<br>
@@ -133,7 +133,7 @@ Der Zahlungsprozess mit {{ order.transactions.first.paymentMethod.translated.nam
     {% if delivery %}
         <strong>Lieferadresse:</strong><br>
         {{ delivery.shippingOrderAddress.company }}<br>
-        {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+        {{ delivery.shippingOrderAddress.name }}<br>
         {{ delivery.shippingOrderAddress.street }} <br>
         {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
         {{ delivery.shippingOrderAddress.country.translated.name }}<br>

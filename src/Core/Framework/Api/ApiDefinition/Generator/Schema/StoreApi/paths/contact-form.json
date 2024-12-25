@@ -39,12 +39,8 @@
                                         "type": "string",
                                         "pattern": "^[0-9a-f]{32}$"
                                     },
-                                    "firstName": {
-                                        "description": "Firstname. This field may be required depending on the system settings.",
-                                        "type": "string"
-                                    },
-                                    "lastName": {
-                                        "description": "Lastname. This field may be required depending on the system settings.",
+                                    "name": {
+                                        "description": "Name. This field may be required depending on the system settings.",
                                         "type": "string"
                                     },
                                     "email": {

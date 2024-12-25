@@ -150,13 +150,13 @@ class AddressValidatorTest extends TestCase
         $customerAddress = new CustomerAddressEntity();
         $customerAddress->setId(Uuid::randomHex());
         $customerAddress->setCountryId($country->getId());
-        $customerAddress->setFirstName('John');
-        $customerAddress->setLastName('Doe');
+        $customerAddress->setName('John');
         $customerAddress->setCity('ExampleCity');
 
         $customer = new CustomerEntity();
-        $customer->setFirstName('John');
-        $customer->setLastName('Doe');
+        $customer->setName('John');
+        $customer->setUsername('Doe');
+        $customer->setNickname('Doe');
         $customer->setId(Uuid::randomHex());
         $customer->setActive(true);
         $customer->setActiveBillingAddress($customerAddress);
@@ -204,15 +204,15 @@ class AddressValidatorTest extends TestCase
         $customerAddress = new CustomerAddressEntity();
         $customerAddress->setId(Uuid::randomHex());
         $customerAddress->setCountryId($country->getId());
-        $customerAddress->setFirstName('John');
-        $customerAddress->setLastName('Doe');
+        $customerAddress->setName('John');
         $customerAddress->setCity('ExampleCity');
         $customerAddress->setSalutationId(Uuid::randomHex());
         $customerAddress->setCountry($country);
 
         $customer = new CustomerEntity();
-        $customer->setFirstName('John');
-        $customer->setLastName('Doe');
+        $customer->setName('John');
+        $customer->setUsername('Doe');
+        $customer->setNickname('Doe');
         $customer->setId(Uuid::randomHex());
         $customer->setActive(true);
         $customer->setActiveBillingAddress($customerAddress);
@@ -262,16 +262,16 @@ class AddressValidatorTest extends TestCase
         $customerAddress = new CustomerAddressEntity();
         $customerAddress->setId(Uuid::randomHex());
         $customerAddress->setCountryId($country->getId());
-        $customerAddress->setFirstName('John');
-        $customerAddress->setLastName('Doe');
+        $customerAddress->setName('John');
         $customerAddress->setCity('ExampleCity');
         $customerAddress->setSalutationId(Uuid::randomHex());
         $customerAddress->setCountry($country);
         $customerAddress->setCountryState($countryState);
 
         $customer = new CustomerEntity();
-        $customer->setFirstName('John');
-        $customer->setLastName('Doe');
+        $customer->setName('John');
+        $customer->setUsername('Doe');
+        $customer->setNickname('Doe');
         $customer->setId(Uuid::randomHex());
         $customer->setActive(true);
         $customer->setActiveBillingAddress($customerAddress);

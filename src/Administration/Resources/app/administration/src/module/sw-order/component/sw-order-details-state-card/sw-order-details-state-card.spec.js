@@ -91,8 +91,7 @@ async function createWrapper() {
                                         first: () => {
                                             return {
                                                 user: {
-                                                    firstName: 'John',
-                                                    lastName: 'Doe',
+                                                    name: 'John',
                                                 },
                                                 createdAt: new Date(),
                                             };

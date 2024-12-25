@@ -342,8 +342,7 @@ class InvoiceRendererTest extends TestCase
                 static::assertStringContainsString('Shipping address', $rendered);
                 static::assertStringContainsString($shippingAddress->getStreet(), $rendered);
                 static::assertStringContainsString($shippingAddress->getCity(), $rendered);
-                static::assertStringContainsString($shippingAddress->getFirstName(), $rendered);
-                static::assertStringContainsString($shippingAddress->getLastName(), $rendered);
+                static::assertStringContainsString($shippingAddress->getName(), $rendered);
                 static::assertStringContainsString($shippingAddress->getZipcode(), $rendered);
                 static::assertStringContainsString('123123123', $rendered);
             },

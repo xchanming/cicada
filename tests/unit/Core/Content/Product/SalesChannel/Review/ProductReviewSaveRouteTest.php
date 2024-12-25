@@ -71,8 +71,9 @@ class ProductReviewSaveRouteTest extends TestCase
         $context = Context::createDefaultContext();
         $customer = new CustomerEntity();
         $customer->setId(Uuid::randomHex());
-        $customer->setFirstName('Max');
-        $customer->setLastName('Mustermann');
+        $customer->setName('Mustermann');
+        $customer->setUsername('Mustermann');
+        $customer->setNickname('Mustermann');
         $customer->setEmail('foo@example.com');
         $salesChannel = new SalesChannelEntity();
         $salesChannel->setId('test');
@@ -92,7 +93,7 @@ class ProductReviewSaveRouteTest extends TestCase
                     'customerId' => $customer->getId(),
                     'salesChannelId' => $salesChannel->getId(),
                     'languageId' => $context->getLanguageId(),
-                    'externalUser' => $customer->getFirstName(),
+                    'externalUser' => $customer->getName(),
                     'externalEmail' => $customer->getEmail(),
                     'title' => $data->get('title'),
                     'content' => $data->get('content'),
@@ -105,13 +106,12 @@ class ProductReviewSaveRouteTest extends TestCase
         $event = new ReviewFormEvent(
             $context,
             $salesChannel->getId(),
-            new MailRecipientStruct(['foo@example.com' => 'Max Mustermann']),
+            new MailRecipientStruct(['foo@example.com' => 'Mustermann']),
             new RequestDataBag([
                 'title' => 'foo',
                 'content' => 'bar',
                 'points' => 3,
-                'name' => $customer->getFirstName(),
-                'lastName' => $customer->getLastName(),
+                'name' => $customer->getName(),
                 'email' => $customer->getEmail(),
                 'customerId' => $customer->getId(),
                 'productId' => $productId,

@@ -198,10 +198,10 @@ class SendMailActionTest extends TestCase
         switch ($recipients['type']) {
             case 'admin':
                 $admin = static::getContainer()->get(Connection::class)->fetchAssociative(
-                    'SELECT `first_name`, `last_name`, `email` FROM `user` WHERE `admin` = 1'
+                    'SELECT `name`,`email` FROM `user` WHERE `admin` = 1'
                 );
                 static::assertIsArray($admin);
-                static::assertEquals($mailService->data['recipients'], [$admin['email'] => $admin['first_name'] . ' ' . $admin['last_name']]);
+                static::assertEquals($mailService->data['recipients'], [$admin['email'] => $admin['name']]);
 
                 break;
             case 'custom':
@@ -209,7 +209,7 @@ class SendMailActionTest extends TestCase
 
                 break;
             default:
-                static::assertEquals($mailService->data['recipients'], [$order->getOrderCustomer()?->getEmail() => $order->getOrderCustomer()?->getFirstName() . ' ' . $order->getOrderCustomer()?->getLastName()]);
+                static::assertEquals($mailService->data['recipients'], [$order->getOrderCustomer()?->getEmail() => $order->getOrderCustomer()?->getName()]);
         }
 
         if ($documentTypeIds !== null && $documentTypeIds !== []) {
@@ -316,7 +316,7 @@ class SendMailActionTest extends TestCase
     }
 
     #[DataProvider('sendMailContactFormProvider')]
-    public function testSendContactFormMail(bool $hasEmail, bool $hasFname, bool $hasLname): void
+    public function testSendContactFormMail(bool $hasEmail, bool $hasName): void
     {
         $criteria = new Criteria();
         $criteria->setLimit(1);
@@ -346,12 +346,10 @@ class SendMailActionTest extends TestCase
         if ($hasEmail) {
             $data->set('email', 'test@example.com');
         }
-        if ($hasFname) {
-            $data->set('firstName', 'Cicada');
+        if ($hasName) {
+            $data->set('name', 'Cicada');
         }
-        if ($hasLname) {
-            $data->set('lastName', 'AG');
-        }
+
         $event = new ContactFormEvent($context, TestDefaults::SALES_CHANNEL, new MailRecipientStruct(['test2@example.com' => 'Cicada ag 2']), $data);
 
         $mailService = new TestEmailService();
@@ -383,7 +381,7 @@ class SendMailActionTest extends TestCase
             static::assertArrayHasKey('recipients', $mailService->data);
             static::assertIsObject($mailFilterEvent);
             static::assertEquals(1, $mailService->calls);
-            static::assertEquals([$data->get('email') => $data->get('firstName') . ' ' . $data->get('lastName')], $mailService->data['recipients']);
+            static::assertEquals([$data->get('email') => $data->get('name')], $mailService->data['recipients']);
         } else {
             static::assertIsNotObject($mailFilterEvent);
             static::assertEquals(0, $mailService->calls);
@@ -749,11 +747,12 @@ class SendMailActionTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'username' => 'Mustermann',
+            'nickname' => 'Mustermann',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
-            'password' => 'cicada',
+            'password' => '12345678',
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultBillingAddressId' => $addressId,
@@ -764,8 +763,7 @@ class SendMailActionTest extends TestCase
                     'customerId' => $customerId,
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
                     'city' => 'Schöppingen',
@@ -802,8 +800,7 @@ class SendMailActionTest extends TestCase
                 'customerId' => $customerId,
                 'email' => 'test@example.com',
                 'salutationId' => $this->getValidSalutationId(),
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
             ],
             'stateId' => $stateId,
             'paymentMethodId' => $this->getValidPaymentMethodId(),
@@ -815,8 +812,7 @@ class SendMailActionTest extends TestCase
                 [
                     'id' => $billingAddressId,
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
                     'city' => 'Schöppingen',

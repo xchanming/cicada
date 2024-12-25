@@ -63,7 +63,7 @@ class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, Mai
     {
         if (!$this->mailRecipientStruct instanceof MailRecipientStruct) {
             $this->mailRecipientStruct = new MailRecipientStruct([
-                $this->customer->getEmail() => $this->customer->getFirstName() . ' ' . $this->customer->getLastName(),
+                $this->customer->getEmail() => $this->customer->getName(),
             ]);
         }
 
@@ -89,8 +89,9 @@ class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, Mai
             'customerId' => $this->customer->getId(),
             'customerNumber' => $this->customer->getCustomerNumber(),
             'customerEmail' => $this->customer->getEmail(),
-            'customerFirstName' => $this->customer->getFirstName(),
-            'customerLastName' => $this->customer->getLastName(),
+            'customerName' => $this->customer->getName(),
+            'customerUsername' => $this->customer->getUsername(),
+            'customerNickname' => $this->customer->getNickname(),
             'customerCompany' => $this->customer->getCompany(),
             'customerSalutationId' => $this->customer->getSalutationId(),
         ];

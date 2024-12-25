@@ -164,12 +164,8 @@ export default {
                     iconTooltip: this.$tc('sw-customer.detailAddresses.columnDefaultBillingAddress'),
                 },
                 {
-                    property: 'lastName',
-                    label: this.$tc('sw-customer.detailAddresses.columnLastName'),
-                },
-                {
-                    property: 'firstName',
-                    label: this.$tc('sw-customer.detailAddresses.columnFirstName'),
+                    property: 'name',
+                    label: this.$tc('sw-customer.detailAddresses.columnName'),
                 },
                 {
                     property: 'company',

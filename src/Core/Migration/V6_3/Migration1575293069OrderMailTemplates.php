@@ -125,7 +125,7 @@ class Migration1575293069OrderMailTemplates extends MigrationStep
         return '<div style="font-family:arial; font-size:12px;">
 
 {% set currencyIsoCode = order.currency.isoCode %}
-{{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+{{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br>
 <br>
 Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}.<br>
 <br>
@@ -180,7 +180,7 @@ Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Billing address:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.name }}<br>
@@ -188,7 +188,7 @@ Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber
 
     <strong>Shipping address:</strong><br>
     {{ delivery.shippingOrderAddress.company }}<br>
-    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+    {{ delivery.shippingOrderAddress.name }}<br>
     {{ delivery.shippingOrderAddress.street }} <br>
     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -208,7 +208,7 @@ Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber
     private function getOrderConfirmationPlainTemplateEn(): string
     {
         return '{% set currencyIsoCode = order.currency.isoCode %}
-{{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+{{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
 Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}.
 
@@ -240,14 +240,14 @@ Selected shipping type: {{ delivery.shippingMethod.name }}
 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
 Billing address:
 {{ billingAddress.company }}
-{{ billingAddress.firstName }} {{ billingAddress.lastName }}
+{{ billingAddress.name }}
 {{ billingAddress.street }}
 {{ billingAddress.zipcode }} {{ billingAddress.city }}
 {{ billingAddress.country.name }}
 
 Shipping address:
 {{ delivery.shippingOrderAddress.company }}
-{{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+{{ delivery.shippingOrderAddress.name }}
 {{ delivery.shippingOrderAddress.street }}
 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
 {{ delivery.shippingOrderAddress.country.name }}
@@ -267,7 +267,7 @@ If you have any questions, do not hesitate to contact us.
         return '<div style="font-family:arial; font-size:12px;">
 
 {% set currencyIsoCode = order.currency.isoCode %}
-Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br>
 <br>
 vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.<br>
 <br>
@@ -322,7 +322,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.ord
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Rechnungsaddresse:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.name }}<br>
@@ -330,7 +330,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.ord
 
     <strong>Lieferadresse:</strong><br>
     {{ delivery.shippingOrderAddress.company }}<br>
-    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+    {{ delivery.shippingOrderAddress.name }}<br>
     {{ delivery.shippingOrderAddress.street }} <br>
     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -351,7 +351,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.ord
     private function getOrderConfirmationPlainTemplateDe(): string
     {
         return '{% set currencyIsoCode = order.currency.isoCode %}
-Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
 vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.
 
@@ -382,14 +382,14 @@ Gewählte Versandtart: {{ delivery.shippingMethod.name }}
 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
 Rechnungsadresse:
 {{ billingAddress.company }}
-{{ billingAddress.firstName }} {{ billingAddress.lastName }}
+{{ billingAddress.name }}
 {{ billingAddress.street }}
 {{ billingAddress.zipcode }} {{ billingAddress.city }}
 {{ billingAddress.country.name }}
 
 Lieferadresse:
 {{ delivery.shippingOrderAddress.company }}
-{{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+{{ delivery.shippingOrderAddress.name }}
 {{ delivery.shippingOrderAddress.street }}
 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
 {{ delivery.shippingOrderAddress.country.name }}

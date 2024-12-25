@@ -1532,7 +1532,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getRegisterTemplate_HTML_EN(): string
     {
-        return '<h3>Hello {{ firstName }} {{ lastName }}</h3>
+        return '<h3>Hello {{ name }}</h3>
                 <p>thank you very much for your registration.</p>
                 <p>You have successfully subscribed to our newsletter.</p>
         ';
@@ -1540,7 +1540,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getRegisterTemplate_PLAIN_EN(): string
     {
-        return 'Hello {{ firstName }} {{ lastName }}
+        return 'Hello {{ name }}
 
                 thank you very much for your registration.
 
@@ -1550,7 +1550,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getRegisterTemplate_HTML_DE(): string
     {
-        return '<h3>Hallo {{ firstName }} {{ lastName }}</h3>
+        return '<h3>Hallo {{ name }}</h3>
                 <p>vielen Dank für Ihre Anmeldung.</p>
                 <p>Sie haben sich erfolgreich zu unserem Newsletter angemeldet.</p>
         ';
@@ -1558,7 +1558,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getRegisterTemplate_PLAIN_DE(): string
     {
-        return 'Hallo {{ firstName }} {{ lastName }}
+        return 'Hallo {{ name }}
 
                 vielen Dank für Ihre Anmeldung.
 
@@ -1568,7 +1568,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getOptInTemplate_HTML_EN(): string
     {
-        return '<h3>Hello {{ firstName }} {{ lastName }}</h3>
+        return '<h3>Hello {{ name }}</h3>
                 <p>Thank you for your interest in our newsletter!</p>
                 <p>In order to prevent misuse of your email address, we have sent you this confirmation email. Confirm that you wish to receive the newsletter regularly by clicking <a href="{{ url }}">here</a>.</p>
                 <p>If you have not subscribed to the newsletter, please ignore this email.</p>
@@ -1577,7 +1577,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getOptInTemplate_PLAIN_EN(): string
     {
-        return 'Hello {{ firstName }} {{ lastName }}
+        return 'Hello {{ name }}
 
                 Thank you for your interest in our newsletter!
 
@@ -1589,7 +1589,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getOptInTemplate_HTML_DE(): string
     {
-        return '<h3>Hallo {{ firstName }} {{ lastName }}</h3>
+        return '<h3>Hallo {{ name }}</h3>
                 <p>Schön, dass Sie sich für unseren Newsletter interessieren!</p>
                 <p>Um einem Missbrauch Ihrer E-Mail-Adresse vorzubeugen, haben wir Ihnen diese Bestätigungsmail gesendet. Bestätigen Sie, dass Sie den Newsletter regelmäßig erhalten wollen, indem Sie <a href="{{ url }}">hier</a> klicken.</p>
                 <p>Sollten Sie den Newsletter nicht angefordert haben, ignorieren Sie diese E-Mail.</p>
@@ -1598,7 +1598,7 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function getOptInTemplate_PLAIN_DE(): string
     {
-        return 'Hallo {{ firstName }} {{ lastName }}
+        return 'Hallo {{ name }}
 
                 Schön, dass Sie sich für unseren Newsletter interessieren!
 
@@ -2402,7 +2402,7 @@ Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Billing address:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.name }}<br>
@@ -2410,7 +2410,7 @@ Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber
 
     <strong>Shipping address:</strong><br>
     {{ delivery.shippingOrderAddress.company }}<br>
-    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+    {{ delivery.shippingOrderAddress.name }}<br>
     {{ delivery.shippingOrderAddress.street }} <br>
     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -2462,14 +2462,14 @@ Selected shipping type: {{ delivery.shippingMethod.name }}
 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
 Billing address:
 {{ billingAddress.company }}
-{{ billingAddress.firstName }} {{ billingAddress.lastName }}
+{{ billingAddress.name }}
 {{ billingAddress.street }}
 {{ billingAddress.zipcode }} {{ billingAddress.city }}
 {{ billingAddress.country.name }}
 
 Shipping address:
 {{ delivery.shippingOrderAddress.company }}
-{{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+{{ delivery.shippingOrderAddress.name }}
 {{ delivery.shippingOrderAddress.street }}
 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
 {{ delivery.shippingOrderAddress.country.name }}
@@ -2544,7 +2544,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.ord
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Rechnungsaddresse:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.name }}<br>
@@ -2552,7 +2552,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.ord
 
     <strong>Lieferadresse:</strong><br>
     {{ delivery.shippingOrderAddress.company }}<br>
-    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+    {{ delivery.shippingOrderAddress.name }}<br>
     {{ delivery.shippingOrderAddress.street }} <br>
     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -2604,14 +2604,14 @@ Gewählte Versandtart: {{ delivery.shippingMethod.name }}
 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
 Rechnungsadresse:
 {{ billingAddress.company }}
-{{ billingAddress.firstName }} {{ billingAddress.lastName }}
+{{ billingAddress.name }}
 {{ billingAddress.street }}
 {{ billingAddress.zipcode }} {{ billingAddress.city }}
 {{ billingAddress.country.name }}
 
 Lieferadresse:
 {{ delivery.shippingOrderAddress.company }}
-{{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+{{ delivery.shippingOrderAddress.name }}
 {{ delivery.shippingOrderAddress.street }}
 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
 {{ delivery.shippingOrderAddress.country.name }}

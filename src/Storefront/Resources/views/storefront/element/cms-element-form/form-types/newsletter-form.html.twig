@@ -64,11 +64,11 @@
                     {% block cms_form_newsletter_input_first_name %}
                         {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
                             with {
-                            fieldName: 'firstName',
+                            fieldName: 'name',
                             autocomplete: 'section-personal given-name',
                             additionalClass: 'col-md-4',
-                            label: 'newsletter.labelFirstName',
-                            placeholder: 'newsletter.placeholderFirstName'
+                            label: 'newsletter.labelName',
+                            placeholder: 'newsletter.placeholderName'
                         }
                         %}
                     {% endblock %}

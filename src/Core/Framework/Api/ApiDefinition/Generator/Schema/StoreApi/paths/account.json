@@ -60,8 +60,8 @@
                                 "type": "object",
                                 "required": [
                                     "salutationId",
-                                    "firstName",
-                                    "lastName"
+                                    "name",
+                                    "nickname"
                                 ],
                                 "properties": {
                                     "salutationId": {
@@ -72,12 +72,12 @@
                                         "description": "(Academic) title of the customer",
                                         "type": "string"
                                     },
-                                    "firstName": {
-                                        "description": "Customer first name. Value will be reused for shipping and billing address if not provided explicitly.",
+                                    "name": {
+                                        "description": "Customer name. Value will be reused for shipping and billing address if not provided explicitly.",
                                         "type": "string"
                                     },
-                                    "lastName": {
-                                        "description": "Customer last name. Value will be reused for shipping and billing address if not provided explicitly.",
+                                    "nickname": {
+                                        "description": "Customer nickname. Value will be reused for shipping and billing address if not provided explicitly.",
                                         "type": "string"
                                     },
                                     "birthdayDay": {
@@ -794,14 +794,6 @@
                                         "description": "Id of the salutation for the customer account. Fetch options using `salutation` endpoint.",
                                         "type": "string"
                                     },
-                                    "firstName": {
-                                        "description": "Customer first name. Value will be reused for shipping and billing address if not provided explicitly.",
-                                        "type": "string"
-                                    },
-                                    "lastName": {
-                                        "description": "Customer last name. Value will be reused for shipping and billing address if not provided explicitly.",
-                                        "type": "string"
-                                    },
                                     "acceptedDataProtection": {
                                         "description": "Flag indicating accepted data protection",
                                         "type": "boolean"
@@ -809,12 +801,6 @@
                                     "storefrontUrl": {
                                         "description": "URL of the storefront for that registration. Used in confirmation emails. Has to be one of the configured domains of the sales channel.",
                                         "type": "string"
-                                    },
-                                    "billingAddress": {
-                                        "$ref": "#/components/schemas/CustomerAddress"
-                                    },
-                                    "shippingAddress": {
-                                        "$ref": "#/components/schemas/CustomerAddress"
                                     },
                                     "guest": {
                                         "description": "If set, will create a guest customer. Guest customers can re-use an email address and don't need a password.",
@@ -848,13 +834,7 @@
                                 },
                                 "required": [
                                     "email",
-                                    "password",
-                                    "salutationId",
-                                    "firstName",
-                                    "lastName",
-                                    "acceptedDataProtection",
-                                    "storefrontUrl",
-                                    "billingAddress"
+                                    "password"
                                 ],
                                 "oneOf": [
                                     {

@@ -205,7 +205,7 @@ SQL;
         return <<<MAIL
 <div style="font-family:arial; font-size:12px;">
     <p>
-        Hello {{ customerRecovery.customer.firstName }} {{ customerRecovery.customer.lastName }},<br/>
+        Hello {{ customerRecovery.customer.name }},<br/>
         <br/>
         You have requested a new password for your {{ shopName }} account.
         Click on the following link to reset your password:<br/>
@@ -225,7 +225,7 @@ MAIL;
     private function getContentPlainEn(): string
     {
         return <<<MAIL
-        Hello {{ customerRecovery.customer.firstName }} {{ customerRecovery.customer.lastName }},
+        Hello {{ customerRecovery.customer.name }},
 
         You have requested a new password for your {{ shopName }} account.
         Click on the following link to reset your password:
@@ -245,7 +245,7 @@ MAIL;
         return <<<MAIL
 <div style="font-family:arial; font-size:12px;">
     <p>
-        Hallo {{ customerRecovery.customer.firstName }} {{ customerRecovery.customer.lastName }},<br/>
+        Hallo {{ customerRecovery.customer.name }},<br/>
         <br/>
         Sie haben ein neues Passwort für Ihren {{ shopName }}-Account angefordert.
         Klicken Sie auf folgenden Link, um Ihr Passwort zurückzusetzen:<br/>
@@ -265,7 +265,7 @@ MAIL;
     private function getContentPlainDe(): string
     {
         return <<<MAIL
-        Hallo {{ customerRecovery.customer.firstName }} {{ customerRecovery.customer.lastName }},
+        Hallo {{ customerRecovery.customer.name }},
 
         Sie haben ein neues Passwort für Ihren {{ shopName }}-Account angefordert.
         Klicken Sie auf folgenden Link, um Ihr Passwort zurückzusetzen:

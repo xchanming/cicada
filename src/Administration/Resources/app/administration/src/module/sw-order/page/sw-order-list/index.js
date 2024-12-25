@@ -402,8 +402,8 @@ export default {
                     visible: false,
                 },
                 {
-                    property: 'orderCustomer.firstName',
-                    dataIndex: 'orderCustomer.lastName,orderCustomer.firstName',
+                    property: 'orderCustomer.name',
+                    dataIndex: 'orderCustomer.lastName,orderCustomer.name',
                     label: 'sw-order.list.columnCustomerName',
                     allowResize: true,
                 },

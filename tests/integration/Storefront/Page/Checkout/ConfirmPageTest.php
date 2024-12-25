@@ -118,9 +118,8 @@ class ConfirmPageTest extends TestCase
 
         $newShippingAddress = clone $activeBillingAddress;
 
-        $activeBillingAddress->setFirstName('');
+        $activeBillingAddress->setName('');
         $newShippingAddress->setId(Uuid::randomHex());
-        $newShippingAddress->setLastName('');
         $customer->setActiveShippingAddress($newShippingAddress);
 
         $cartErrors = $this->getPageLoader()->load($request, $context)->getCart()->getErrors();
@@ -132,7 +131,7 @@ class ConfirmPageTest extends TestCase
         $billingAddressViolation = $errors['billing-address-invalid'];
         static::assertInstanceOf(AddressValidationError::class, $billingAddressViolation);
         $violation = $billingAddressViolation->getViolations()->get(0);
-        static::assertSame('/firstName', $violation->getPropertyPath());
+        static::assertSame('/name', $violation->getPropertyPath());
 
         $shippingAddressViolation = $errors['shipping-address-invalid'];
         static::assertInstanceOf(AddressValidationError::class, $shippingAddressViolation);

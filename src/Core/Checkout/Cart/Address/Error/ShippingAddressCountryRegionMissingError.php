@@ -14,9 +14,8 @@ class ShippingAddressCountryRegionMissingError extends CountryRegionMissingError
     public function __construct(CustomerAddressEntity $address)
     {
         $this->message = \sprintf(
-            'A country region needs to be defined for the billing address "%s %s %s %s".',
-            $address->getFirstName(),
-            $address->getLastName(),
+            'A country region needs to be defined for the billing address "%s %s %s".',
+            $address->getName(),
             $address->getZipcode(),
             $address->getCity()
         );

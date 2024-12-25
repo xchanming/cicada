@@ -9,8 +9,8 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
 /**
  * This route is used for customer registration
- * The required parameters are: "salutationId", "firstName", "lastName", "email", "password", "billingAddress" and "storefrontUrl"
- * The "billingAddress" should has required parameters: "salutationId", "firstName", "lastName", "street", "zipcode", "city", "countyId".
+ * The required parameters are: "salutationId", "name", "nickname", "email", "password", "billingAddress" and "storefrontUrl"
+ * The "billingAddress" should has required parameters: "salutationId", "name", "nickname", "street", "zipcode", "city", "countyId".
  */
 #[Package('checkout')]
 abstract class AbstractRegisterRoute

@@ -63,8 +63,7 @@
                     <sw-avatar
                         size="80px"
                         :source-context="customer"
-                        :first-name="customer.firstName"
-                        :last-name="customer.lastName"
+                        :name="customer.name"
                     />
                     {% endblock %}
 
@@ -141,31 +140,17 @@
                                 gap="10px"
                             >
                                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                                {% block sw_customer_card_metadata_customer_name_editor_first_name %}
+                                {% block sw_customer_card_metadata_customer_name_editor_name %}
                                 <sw-text-field
-                                    v-model:value="customer.firstName"
-                                    name="sw-field--customer-firstName"
-                                    :label="$tc('sw-customer.card.labelFirstName')"
+                                    v-model:value="customer.name"
+                                    name="sw-field--customer-name"
+                                    :label="$tc('sw-customer.card.labelName')"
                                     validation="required"
                                     required
-                                    :error="customerFirstNameError"
-                                    :placeholder="$tc('sw-customer.card.placeholderFirstName')"
+                                    :error="customerNameError"
+                                    :placeholder="$tc('sw-customer.card.placeholderName')"
                                 />
                                 {% endblock %}
-
-                                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                                {% block sw_customer_card_metadata_customer_name_editor_last_name %}
-                                <sw-text-field
-                                    v-model:value="customer.lastName"
-                                    name="sw-field--customer-lastName"
-                                    :label="$tc('sw-customer.card.labelLastName')"
-                                    validation="required"
-                                    required
-                                    :error="customerLastNameError"
-                                    :placeholder="$tc('sw-customer.card.placeholderLastName')"
-                                />
-                                {% endblock %}
-                            </sw-container>
 
                             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                             {% block sw_customer_card_metadata_customer_name_editor_company %}

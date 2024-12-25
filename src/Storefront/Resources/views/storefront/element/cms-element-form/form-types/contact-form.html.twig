@@ -18,15 +18,15 @@
             {% endblock %}
 
             {% block cms_form_contact_input_first_name %}
-                {% set firstNameFieldRequired = config('core.basicInformation.firstNameFieldRequired') == true %}
+                {% set nameFieldRequired = config('core.basicInformation.nameFieldRequired') == true %}
                 {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
                     with {
-                    fieldName: 'firstName',
+                    fieldName: 'name',
                     autocomplete: 'section-personal given-name',
-                    required: firstNameFieldRequired,
+                    required: nameFieldRequired,
                     additionalClass: 'col-md-4',
-                    label: 'account.personalFirstNameLabel',
-                    placeholder: 'account.personalFirstNamePlaceholder'
+                    label: 'account.personalNameLabel',
+                    placeholder: 'account.personalNamePlaceholder'
                 }
                 %}
             {% endblock %}

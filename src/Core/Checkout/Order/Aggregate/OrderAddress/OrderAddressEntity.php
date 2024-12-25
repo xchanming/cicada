@@ -44,14 +44,7 @@ class OrderAddressEntity extends Entity
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
-    protected $firstName;
-
-    /**
-     * @var string
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $lastName;
+    protected $name;
 
     /**
      * @var string
@@ -195,26 +188,6 @@ class OrderAddressEntity extends Entity
     public function setSalutationId(string $salutationId): void
     {
         $this->salutationId = $salutationId;
-    }
-
-    public function getFirstName(): string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): void
-    {
-        $this->lastName = $lastName;
     }
 
     public function getStreet(): string
@@ -385,5 +358,15 @@ class OrderAddressEntity extends Entity
     public function setOrderVersionId(string $orderVersionId): void
     {
         $this->orderVersionId = $orderVersionId;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
     }
 }

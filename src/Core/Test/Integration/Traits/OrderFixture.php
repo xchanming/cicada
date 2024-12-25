@@ -86,8 +86,7 @@ trait OrderFixture
                         'shippingDateLatest' => (new \DateTimeImmutable())->format(Defaults::STORAGE_DATE_FORMAT),
                         'shippingOrderAddress' => [
                             'salutationId' => $salutationId,
-                            'firstName' => 'Floy',
-                            'lastName' => 'Glover',
+                            'name' => 'Floy',
                             'zipcode' => '59438-0403',
                             'city' => 'Stellaberg',
                             'street' => 'street',
@@ -126,8 +125,7 @@ trait OrderFixture
                 'orderCustomer' => [
                     'id' => $orderCustomerId,
                     'email' => 'test@example.com',
-                    'firstName' => 'Noe',
-                    'lastName' => 'Hill',
+                    'name' => 'Noe',
                     'salutationId' => $salutationId,
                     'title' => 'Doc',
                     'customerNumber' => 'Test',
@@ -135,8 +133,9 @@ trait OrderFixture
                     'customer' => [
                         'id' => $customerId,
                         'email' => 'test@example.com',
-                        'firstName' => 'Noe',
-                        'lastName' => 'Hill',
+                        'name' => 'Noe',
+                        'username' => 'Noe',
+                        'nickname' => 'Noe',
                         'salutationId' => $salutationId,
                         'title' => 'Doc',
                         'customerNumber' => 'Test',
@@ -149,8 +148,7 @@ trait OrderFixture
                             [
                                 'id' => $addressId,
                                 'salutationId' => $salutationId,
-                                'firstName' => 'Floy',
-                                'lastName' => 'Glover',
+                                'name' => 'Floy',
                                 'zipcode' => '59438-0403',
                                 'city' => 'Stellaberg',
                                 'street' => 'street',
@@ -174,8 +172,7 @@ trait OrderFixture
                 'addresses' => [
                     [
                         'salutationId' => $salutationId,
-                        'firstName' => 'Floy',
-                        'lastName' => 'Glover',
+                        'name' => 'Floy',
                         'zipcode' => '59438-0403',
                         'city' => 'Stellaberg',
                         'street' => 'street',

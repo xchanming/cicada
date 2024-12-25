@@ -418,7 +418,7 @@ Component.register('sw-settings-country-address-handling', {
                 return '';
             }
 
-            return `${item.firstName}, ${item.lastName}`;
+            return `${item.name}`;
         },
 
         onChangeCustomer(customerId: string, customer: Entity<'customer'>): void {

@@ -136,7 +136,7 @@ describe('components/rule/condition-type/sw-condition-script', () => {
                         },
                     },
                     {
-                        name: 'firstName',
+                        name: 'name',
                         type: 'text',
                         config: {
                             type: 'text',
@@ -163,10 +163,9 @@ describe('components/rule/condition-type/sw-condition-script', () => {
         await flushPromises();
 
         expect(wrapper.vm.condition.value.operator).toBeUndefined();
-        expect(wrapper.vm.condition.value.firstName).toBeUndefined();
+        expect(wrapper.vm.condition.value.name).toBeUndefined();
         expect(wrapper.vm.condition.value.productIds).toBeUndefined();
         expect(wrapper.vm.values.operator).toBeUndefined();
-        expect(wrapper.vm.values.firstName).toBeUndefined();
         expect(wrapper.vm.values.productIds).toEqual([]);
 
         await wrapper.get('.sw-single-select .sw-select__selection').trigger('click');
@@ -183,11 +182,10 @@ describe('components/rule/condition-type/sw-condition-script', () => {
         expect(wrapper.vm.condition.value.operator).toBe('!=');
         expect(wrapper.vm.values.operator).toBe('!=');
 
-        const input = wrapper.get('input[name=firstName]');
+        const input = wrapper.get('input[name=name]');
         await input.setValue('foobar');
 
-        expect(wrapper.vm.condition.value.firstName).toBe('foobar');
-        expect(wrapper.vm.values.firstName).toBe('foobar');
+        expect(wrapper.vm.condition.value.name).toBe('foobar');
 
         await wrapper.get('.sw-entity-multi-select .sw-select__selection').trigger('click');
         await flushPromises();

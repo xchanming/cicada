@@ -45,8 +45,9 @@ class CustomerBeforeDeleteSubscriberTest extends TestCase
                 'languageId' => Uuid::randomHex(),
                 'customerNumber' => 'SW1000',
                 'email' => 'foo@bar.com',
-                'firstName' => 'foo',
-                'lastName' => 'bar',
+                'name' => 'foo',
+                'username' => 'bar',
+                'nickname' => 'bar',
             ]);
 
         $definitionInstanceRegistry = static::createMock(DefinitionInstanceRegistry::class);
@@ -132,8 +133,9 @@ class CustomerBeforeDeleteSubscriberTest extends TestCase
                     'customerId' => $customer->getId(),
                     'customerNumber' => $customer->getCustomerNumber(),
                     'customerEmail' => $customer->getEmail(),
-                    'customerFirstName' => $customer->getFirstName(),
-                    'customerLastName' => $customer->getLastName(),
+                    'customerName' => $customer->getName(),
+                    'customerUsername' => $customer->getUsername(),
+                    'customerNickname' => $customer->getNickname(),
                     'customerCompany' => $customer->getCompany(),
                     'customerSalutationId' => $customer->getSalutationId(),
                 ], $event->getValues());

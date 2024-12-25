@@ -191,13 +191,13 @@ describe('module/sw-customer/page/sw-customer-address-form', () => {
 
     it('should hide the error field when a disabled field', async () => {
         await Cicada.State.dispatch('error/addApiError', {
-            expression: 'customer_address.1.firstName',
+            expression: 'customer_address.1.name',
             error: new CicadaError({
                 code: 'c1051bb4-d103-4f74-8988-acbcafc7fdc3',
                 detail: 'This value should not be blank.',
                 status: '400',
                 template: 'This value should not be blank.',
-                selfLink: 'customer_address.1.firstName',
+                selfLink: 'customer_address.1.name',
             }),
         });
 
@@ -205,18 +205,18 @@ describe('module/sw-customer/page/sw-customer-address-form', () => {
 
         await flushPromises();
 
-        const firstName = wrapper.findAll('.sw-field').at(3);
+        const name = wrapper.findAll('.sw-field').at(3);
 
         expect(wrapper.vm.disabled).toBe(false);
-        expect(firstName.classes()).toContain('has--error');
-        expect(firstName.find('.sw-field__error').text()).toBe('This value should not be blank.');
+        expect(name.classes()).toContain('has--error');
+        expect(name.find('.sw-field__error').text()).toBe('This value should not be blank.');
 
         await wrapper.setProps({ disabled: true });
         await flushPromises();
 
         expect(wrapper.vm.disabled).toBe(true);
-        expect(firstName.classes()).not.toContain('has--error');
-        expect(firstName.find('.sw-field__error').exists()).toBeFalsy();
+        expect(name.classes()).not.toContain('has--error');
+        expect(name.find('.sw-field__error').exists()).toBeFalsy();
     });
 
     it('should set required attribute based on the configuration of the country', async () => {

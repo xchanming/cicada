@@ -66,8 +66,9 @@ class CustomerProfileValidationFactory implements DataValidationFactoryInterface
         $definition
             ->add('salutationId', new EntityExists(['entity' => $this->salutationDefinition->getEntityName(), 'context' => $frameworkContext]))
             ->add('title', new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE]))
-            ->add('firstName', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_FIRST_NAME]))
-            ->add('lastName', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_LAST_NAME]))
+            ->add('name', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]))
+            ->add('username', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_USERNAME]))
+            ->add('nickname', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_NICKNAME]))
             ->add('accountType', new Choice($this->accountTypes));
 
         if ($this->systemConfigService->get('core.loginRegistration.showBirthdayField', $salesChannelId)

@@ -480,8 +480,7 @@
           "label": {
             "action": "Action*",
             "email": "Email address*",
-            "firstName": "First name*",
-            "lastName": "Last name*",
+            "name": "name*",
             "message": "Your message*",
             "newsletterSubmit": "Continue",
             "phone": "Phone number*",
@@ -493,8 +492,7 @@
             "subscribeToNewsletter": "Subscribe to newsletter"
           },
           "placeholder": {
-            "firstName": "John",
-            "lastName": "Doe",
+            "name": "John",
             "email": "john{'@'}doe.com",
             "phone": "+4920 3920173",
             "subject": "Lorem ipsum dolor sit amet.",
@@ -506,8 +504,7 @@
           },
           "newsletter": {
             "label": {
-              "firstName": "First name",
-              "lastName": "Last name",
+              "name": "First name",
               "salutation": "Salutation"
             }
           }

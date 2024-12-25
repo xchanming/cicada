@@ -183,8 +183,7 @@ describe('src/module/sw-order/page/sw-order-list', () => {
                     ...mockItem,
                     orderCustomer: {
                         customerId: '1',
-                        firstName: 'foo',
-                        lastName: 'bar',
+                        name: 'foo',
                     },
                 },
                 {
@@ -197,13 +196,13 @@ describe('src/module/sw-order/page/sw-order-list', () => {
         const firstRow = wrapper.find('.sw-data-grid__row--0');
         const secondRow = wrapper.find('.sw-data-grid__row--1');
 
-        expect(warningSpy).toHaveBeenCalledWith('[[sw-data-grid] Can not resolve accessor: orderCustomer.firstName]');
+        expect(warningSpy).toHaveBeenCalledWith('[[sw-data-grid] Can not resolve accessor: orderCustomer.name]');
 
-        expect(firstRow.find('.sw-data-grid__cell--orderCustomer-firstName').exists()).toBeTruthy();
-        expect(firstRow.find('.sw-data-grid__cell--orderCustomer-firstName').text()).toBe('bar, foo');
+        expect(firstRow.find('.sw-data-grid__cell--orderCustomer-name').exists()).toBeTruthy();
+        expect(firstRow.find('.sw-data-grid__cell--orderCustomer-name').text()).toBe('bar');
 
-        expect(secondRow.find('.sw-data-grid__cell--orderCustomer-firstName').exists()).toBeTruthy();
-        expect(secondRow.find('.sw-data-grid__cell--orderCustomer-firstName').text()).toBe('');
+        expect(secondRow.find('.sw-data-grid__cell--orderCustomer-name').exists()).toBeTruthy();
+        expect(secondRow.find('.sw-data-grid__cell--orderCustomer-name').text()).toBe('');
     });
 
     it('should add query score to the criteria', async () => {

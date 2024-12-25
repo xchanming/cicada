@@ -30,7 +30,7 @@ export default Cicada.Component.wrapComponentConfig({
                 greetingName,
             });
 
-            // in the headline we want to greet the user by his firstname
+            // in the headline we want to greet the user by his name
             // if his first name is not available, we remove the personalized greeting part
             // but we want to make sure the punctuation like `.`, `!` or `?` is kept
             // for example "Still awake, ?" -> "Still awake?"…
@@ -48,12 +48,12 @@ export default Cicada.Component.wrapComponentConfig({
         greetingName() {
             const { currentUser } = Cicada.State.get('session');
 
-            // if currentUser?.firstName returns a loose falsy value
+            // if currentUser?.name returns a loose falsy value
             // like `""`, `0`, `false`, `null`, `undefined`
             // we want to use `null` in the ongoing process chain,
             // otherwise we would need to take care of `""` and `null`
             // or `undefined` in tests and other places
-            return currentUser?.firstName || null;
+            return currentUser?.name || null;
         },
     },
 

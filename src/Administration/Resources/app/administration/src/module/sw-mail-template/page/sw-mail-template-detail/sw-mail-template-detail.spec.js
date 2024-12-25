@@ -494,7 +494,7 @@ describe('modules/sw-mail-template/page/sw-mail-template-detail', () => {
                 contentPlain: 'the status of your order at {{ salesChannel.translated.name }}',
                 // eslint-disable-next-line max-len
                 contentHtml:
-                    '{{ order.orderCustomer.salutation.translated.letterName }} {{ order.orderCustomer.firstName }} {{ order.orderCustomer.lastName }},<br/><br/>',
+                    '{{ order.orderCustomer.salutation.translated.letterName }} {{ order.orderCustomer.name }} {{ order.orderCustomer.lastName }},<br/><br/>',
                 senderName: '{{ salesChannel.name }}',
             },
             testerMail: 'foo@bar.com',

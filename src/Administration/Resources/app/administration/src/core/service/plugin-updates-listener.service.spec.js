@@ -49,7 +49,7 @@ describe('src/core/service/plugin-update-listener.service.ts', () => {
             ]),
         );
         Cicada.State.commit('setCurrentUser', {
-            firstName: 'userFirstName',
+            name: 'userName',
         });
 
         await flushPromises();
@@ -72,7 +72,7 @@ describe('src/core/service/plugin-update-listener.service.ts', () => {
         );
 
         Cicada.State.commit('setCurrentUser', {
-            firstName: 'userFirstName',
+            name: 'userName',
         });
 
         await flushPromises();
@@ -97,7 +97,7 @@ describe('src/core/service/plugin-update-listener.service.ts', () => {
 
         addPluginUpdatesListener(null, null);
         Cicada.State.commit('setCurrentUser', {
-            firstName: 'userFirstName',
+            name: 'userName',
         });
 
         await flushPromises();

@@ -70,7 +70,7 @@ async function createWrapper() {
                                         return Promise.resolve({
                                             id: 'clone-address-id',
                                             lastName: 'Thu',
-                                            firstName: 'Vo',
+                                            name: 'Vo',
                                             city: 'Berlin',
                                             street: 'Legiendamm',
                                             zipcode: '550000',
@@ -92,8 +92,7 @@ async function createWrapper() {
                     addresses: [
                         {
                             id: '1',
-                            lastName: 'Nguyen',
-                            firstName: 'Quynh',
+                            name: 'Quynh',
                             city: 'Berlin',
                             street: 'Legiendamm',
                             zipcode: '550000',
@@ -155,8 +154,7 @@ describe('module/sw-customer/view/sw-customer-detail-addresses.spec.js', () => {
         await wrapper.setData({
             currentAddress: {
                 id: '1',
-                lastName: 'Wiegand',
-                firstName: 'Daisha',
+                name: 'Daisha',
                 city: 'Lake Waldo',
                 customerId: '1',
             },

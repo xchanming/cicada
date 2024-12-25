@@ -94,7 +94,7 @@ export default function initializeContext(): void {
             admin: !!currentUser.admin,
             avatarId: currentUser.avatarId ?? '',
             email: currentUser.email ?? '',
-            firstName: currentUser.firstName ?? '',
+            name: currentUser.name ?? '',
             id: currentUser.id ?? '',
             lastName: currentUser.lastName ?? '',
             localeId: currentUser.localeId ?? '',

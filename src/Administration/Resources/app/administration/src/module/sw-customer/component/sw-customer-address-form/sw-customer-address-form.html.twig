@@ -64,29 +64,15 @@
         {% endblock %}
 
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_customer_address_form_first_name_field %}
+        {% block sw_customer_address_form_name_field %}
         <sw-text-field
-            v-model:value="address.firstName"
-            name="sw-field--address-firstName"
-            :label="$tc('sw-customer.addressForm.labelFirstName')"
-            :placeholder="$tc('sw-customer.addressForm.placeholderFirstName')"
+            v-model:value="address.name"
+            name="sw-field--address-name"
+            :label="$tc('sw-customer.addressForm.labelName')"
+            :placeholder="$tc('sw-customer.addressForm.placeholderName')"
             validation="required"
             required
-            :error="disabled ? null : addressFirstNameError"
-            :disabled="disabled"
-        />
-        {% endblock %}
-
-        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_customer_address_form_last_name_field %}
-        <sw-text-field
-            v-model:value="address.lastName"
-            name="sw-field--address-lastName"
-            :label="$tc('sw-customer.addressForm.labelLastName')"
-            :placeholder="$tc('sw-customer.addressForm.placeholderLastName')"
-            validation="required"
-            required
-            :error="disabled ? null : addressLastNameError"
+            :error="disabled ? null : addressNameError"
             :disabled="disabled"
         />
         {% endblock %}

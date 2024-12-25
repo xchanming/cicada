@@ -179,7 +179,7 @@
         </component>
 
         <component name="sw-switch-field">
-            <name>firstNameFieldRequired</name>
+            <name>nameFieldRequired</name>
             <bordered>bordered</bordered>
             <label>First name in contact forms required</label>
             <label lang="zh-CN">Vorname in Kontaktformularen als Pflichtfeld behandeln</label>

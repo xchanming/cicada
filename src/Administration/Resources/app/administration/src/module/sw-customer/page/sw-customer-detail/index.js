@@ -109,7 +109,7 @@ export default {
                 criteria.addAssociation('defaultPaymentMethod');
             }
 
-            criteria.getAssociation('addresses').addSorting(Criteria.sort('firstName'), 'ASC', false);
+            criteria.getAssociation('addresses').addSorting(Criteria.sort('name'), 'ASC', false);
 
             return criteria;
         },
@@ -299,7 +299,7 @@ export default {
                     this.isSaveSuccessful = true;
                     this.createNotificationSuccess({
                         message: this.$tc('sw-customer.detail.messageSaveSuccess', 0, {
-                            name: `${this.customer.firstName} ${this.customer.lastName}`,
+                            name: `${this.customer.name}`,
                         }),
                     });
                 })

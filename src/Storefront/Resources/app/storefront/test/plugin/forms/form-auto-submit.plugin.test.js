@@ -12,7 +12,7 @@ describe('Form auto submit plugin', () => {
     const template = `
         <form id="newsletterForm" action="/newsletter/configure" method="post">
             <input type="email" name="email" class="form-email" value="test@example.com">
-            <input type="text" name="firstName" class="form-name" value="John">
+            <input type="text" name="name" class="form-name" value="John">
             <input type="hidden" name="redirectParameters[important]" value="doNotOverwrite">
             <input type="checkbox" name="unsubscribe" class="form-unsubscribe" value="1">
         </form>

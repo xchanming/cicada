@@ -54,8 +54,8 @@ class Migration1554199340AddImportExportProfile extends MigrationStep
         $mapping = [];
 
         $fields = [
-            'firstName',
-            'lastName',
+            'name',
+            'nickname',
             'email',
             'customerNumber',
             'salesChannelId',
@@ -67,8 +67,7 @@ class Migration1554199340AddImportExportProfile extends MigrationStep
             'guest',
         ];
         $addressFields = [
-            'firstName',
-            'lastName',
+            'name',
             'salutationId',
             'street',
             'zipcode',

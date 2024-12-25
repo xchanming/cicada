@@ -52,9 +52,11 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected ?string $salutationId = null;
 
-    protected string $firstName;
+    protected string $name;
 
-    protected string $lastName;
+    protected string $username;
+
+    protected string $nickname;
 
     protected ?string $company = null;
 
@@ -185,7 +187,7 @@ class CustomerEntity extends Entity implements \Stringable
 
     public function __toString(): string
     {
-        return $this->getFirstName() . ' ' . $this->getLastName();
+        return $this->getName();
     }
 
     public function getGroupId(): string
@@ -288,26 +290,6 @@ class CustomerEntity extends Entity implements \Stringable
         $this->salutationId = $salutationId;
     }
 
-    public function getFirstName(): string
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(string $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
-    public function getLastName(): string
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(string $lastName): void
-    {
-        $this->lastName = $lastName;
-    }
-
     public function getCompany(): ?string
     {
         return $this->company;
@@ -380,6 +362,36 @@ class CustomerEntity extends Entity implements \Stringable
     public function setActive(bool $active): void
     {
         $this->active = $active;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): void
+    {
+        $this->username = $username;
+    }
+
+    public function getNickname(): string
+    {
+        return $this->nickname;
+    }
+
+    public function setNickname(string $nickname): void
+    {
+        $this->nickname = $nickname;
     }
 
     public function getDoubleOptInRegistration(): bool

@@ -68,7 +68,6 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\TestDefaults;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -242,68 +241,6 @@ class OrderConverterTest extends TestCase
         $cart->setDeliveries($this->getDeliveryCollection());
 
         $result = $this->orderConverter->convertToOrder($cart, $this->getSalesChannelContext(true), new OrderConversionContext());
-
-        // unset uncheckable ids
-        unset(
-            $result['id'],
-            $result['billingAddressId'],
-            $result['deepLinkCode'],
-            $result['orderDateTime'],
-            $result['stateId'],
-            $result['languageId'],
-        );
-        for ($i = 0; $i < (is_countable($result['lineItems']) ? \count($result['lineItems']) : 0); ++$i) {
-            unset($result['lineItems'][$i]['id']);
-        }
-
-        for ($i = 0; $i < (is_countable($result['deliveries']) ? \count($result['deliveries']) : 0); ++$i) {
-            unset(
-                $result['deliveries'][$i]['shippingOrderAddress']['id'],
-                $result['deliveries'][$i]['shippingDateEarliest'],
-                $result['deliveries'][$i]['shippingDateLatest'],
-            );
-        }
-
-        $expected = $this->getExpectedConvertToOrder();
-        unset($expected['addresses']);
-        $expected['shippingCosts']['unitPrice'] = 1;
-        $expected['shippingCosts']['totalPrice'] = 1;
-
-        $expectedJson = \json_encode($expected, \JSON_THROW_ON_ERROR);
-        static::assertIsString($expectedJson);
-        $actual = \json_encode($result, \JSON_THROW_ON_ERROR);
-        static::assertIsString($actual);
-        // As json to avoid classes
-        static::assertJsonStringEqualsJsonString($expectedJson, $actual);
-    }
-
-    /**
-     * @param class-string<\Throwable> $exceptionClass
-     */
-    #[DisabledFeatures(['v6.7.0.0'])]
-    #[DataProvider('convertToOrderExceptionsDataWithDisabledFeatures')]
-    public function testConvertToOrderExceptionsWithDisabledFeatures(string $exceptionClass, bool $loginCustomer = true, bool $conversionIncludeCustomer = true): void
-    {
-        if ($exceptionClass !== '') {
-            $this->expectException($exceptionClass);
-        }
-
-        $cart = $this->getCart();
-        $cart->setDeliveries(
-            $this->getDeliveryCollection(
-                $exceptionClass === DeliveryWithoutAddressException::class
-            )
-        );
-
-        $conversionContext = new OrderConversionContext();
-        $conversionContext->setIncludeCustomer($conversionIncludeCustomer);
-
-        $salesChannelContext = $this->getSalesChannelContext(
-            $loginCustomer,
-            $exceptionClass === AddressNotFoundException::class
-        );
-
-        $result = $this->orderConverter->convertToOrder($cart, $salesChannelContext, $conversionContext);
 
         // unset uncheckable ids
         unset(
@@ -957,8 +894,9 @@ class OrderConverterTest extends TestCase
         $customer->setId('customer-id');
         $customer->setEmail('customer-email');
         $customer->setSalutationId('customer-salutation-id');
-        $customer->setFirstName('customer-first-name');
-        $customer->setLastName('customer-last-name');
+        $customer->setName('customer-name');
+        $customer->setUsername('customer-user-name');
+        $customer->setNickname('customer-nick-name');
         $customer->setCustomerNumber('customer-number');
         $customer->setGroupId('customer-group-id');
 
@@ -974,8 +912,7 @@ class OrderConverterTest extends TestCase
         $address = new CustomerAddressEntity();
         $address->setId('billing-address-id');
         $address->setSalutationId('billing-address-salutation-id');
-        $address->setFirstName('billing-address-first-name');
-        $address->setLastName('billing-address-last-name');
+        $address->setName('billing-address-name');
         $address->setStreet('billing-address-street');
         $address->setZipcode('billing-address-zipcode');
         $address->setCity('billing-address-city');
@@ -991,8 +928,7 @@ class OrderConverterTest extends TestCase
         $customer->setCustomerId('customer-id');
         $customer->setEmail('order-customer-email');
         $customer->setSalutationId('order-customer-salutation-id');
-        $customer->setFirstName('order-customer-first-name');
-        $customer->setLastName('order-customer-last-name');
+        $customer->setName('order-customer-name');
         $customer->setCustomerNumber('order-customer-number');
 
         return $customer;
@@ -1012,8 +948,7 @@ class OrderConverterTest extends TestCase
         $address->setId('order-address-id');
         $address->setVersionId('order-address-version-id');
         $address->setSalutationId('order-address-salutation-id');
-        $address->setFirstName('order-address-first-name');
-        $address->setLastName('order-address-last-name');
+        $address->setName('order-address-name');
         $address->setStreet('order-address-street');
         $address->setZipcode('order-address-zipcode');
         $address->setCity('order-address-city');
@@ -1383,8 +1318,7 @@ class OrderConverterTest extends TestCase
                 'shippingOrderAddress' => [
                     'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
-                    'firstName' => 'billing-address-first-name',
-                    'lastName' => 'billing-address-last-name',
+                    'name' => 'billing-address-name',
                     'salutationId' => 'billing-address-salutation-id',
                     'street' => 'billing-address-street',
                     'zipcode' => 'billing-address-zipcode',
@@ -1407,8 +1341,9 @@ class OrderConverterTest extends TestCase
                 ],
                 'customerNumber' => 'customer-number',
                 'email' => 'customer-email',
-                'firstName' => 'customer-first-name',
-                'lastName' => 'customer-last-name',
+                'name' => 'customer-name',
+                'username' => 'customer-user-name',
+                'nickname' => 'customer-nick-name',
                 'remoteAddress' => null,
                 'salutationId' => 'customer-salutation-id',
                 'title' => null,
@@ -1421,8 +1356,7 @@ class OrderConverterTest extends TestCase
                 [
                     'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
-                    'firstName' => 'billing-address-first-name',
-                    'lastName' => 'billing-address-last-name',
+                    'name' => 'billing-address-name',
                     'salutationId' => 'billing-address-salutation-id',
                     'street' => 'billing-address-street',
                     'zipcode' => 'billing-address-zipcode',

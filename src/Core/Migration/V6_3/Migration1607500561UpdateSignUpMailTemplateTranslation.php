@@ -102,7 +102,7 @@ class Migration1607500561UpdateSignUpMailTemplateTranslation extends MigrationSt
     {
         return '<div style="font-family:arial; font-size:12px;">
             <p>
-                {{ customer.salutation.translated.letterName }} {{ customer.firstName }} {{ customer.lastName }},<br/>
+                {{ customer.salutation.translated.letterName }} {{ customer.name }},<br/>
                 <br/>
                 thank you for your signing up with our Shop.<br/>
                 You will gain access via the email address <strong>{{ customer.email }}</strong> and the password you have chosen.<br/>
@@ -113,7 +113,7 @@ class Migration1607500561UpdateSignUpMailTemplateTranslation extends MigrationSt
 
     private function getSignupPlainTemplateEn(): string
     {
-        return '{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},
+        return '{{ customer.salutation.translated.letterName }} {{customer.name}},
 
                 thank you for your signing up with our Shop.
                 You will gain access via the email address {{ customer.email }} and the password you have chosen.
@@ -125,7 +125,7 @@ class Migration1607500561UpdateSignUpMailTemplateTranslation extends MigrationSt
     {
         return '<div style="font-family:arial; font-size:12px;">
             <p>
-                {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br/>
+                {{ customer.salutation.translated.letterName }} {{customer.name}},<br/>
                 <br/>
                 vielen Dank für Ihre Anmeldung in unserem Shop.<br/>
                 Sie erhalten Zugriff über Ihre E-Mail-Adresse <strong>{{ customer.email }}</strong> und dem von Ihnen gewählten Kennwort.<br/>
@@ -136,7 +136,7 @@ class Migration1607500561UpdateSignUpMailTemplateTranslation extends MigrationSt
 
     private function getSignupPlainTemplateDe(): string
     {
-        return '{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},
+        return '{{ customer.salutation.translated.letterName }} {{customer.name}},
 
                 vielen Dank für Ihre Anmeldung in unserem Shop.
                 Sie erhalten Zugriff über Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gewählten Kennwort.

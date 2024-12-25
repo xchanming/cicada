@@ -9,7 +9,6 @@ use Cicada\Core\Checkout\Cart\Rule\CartVolumeRule;
 use Cicada\Core\Checkout\Cart\Rule\LineItemRule;
 use Cicada\Core\Checkout\Cart\Rule\LineItemTotalPriceRule;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
-use Cicada\Core\Checkout\Customer\Rule\LastNameRule;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler;
 use Cicada\Core\Checkout\Order\OrderDefinition;
@@ -220,29 +219,8 @@ class FlowExecutorTest extends TestCase
                         ],
                     ],
                     [
-                        'id' => $idsCollection->get('sequence-3'),
-                        'parentId' => $idsCollection->get('sequence-2'),
-                        'actionName' => null,
-                        'config' => [],
-                        'position' => 1,
-                        'trueCase' => true,
-                        'rule' => [
-                            'name' => 'Test customer rule',
-                            'priority' => 1,
-                            'conditions' => [
-                                [
-                                    'type' => (new LastNameRule())->getName(),
-                                    'value' => [
-                                        'lastName' => 'Mustermann',
-                                        'operator' => OrderTagRule::OPERATOR_EQ,
-                                    ],
-                                ],
-                            ],
-                        ],
-                    ],
-                    [
                         'id' => $idsCollection->get('sequence-4'),
-                        'parentId' => $idsCollection->get('sequence-3'),
+                        'parentId' => $idsCollection->get('sequence-2'),
                         'actionName' => null,
                         'config' => [],
                         'position' => 1,

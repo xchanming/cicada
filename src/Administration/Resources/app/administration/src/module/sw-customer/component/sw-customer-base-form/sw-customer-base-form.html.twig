@@ -48,26 +48,14 @@
         </sw-container>
 
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_customer_base_form_first_name_field %}
+        {% block sw_customer_base_form_name_field %}
         <sw-text-field
-            v-model:value="customer.firstName"
-            name="sw-field--customer-firstName"
+            v-model:value="customer.name"
+            name="sw-field--customer-name"
             required
-            :label="$tc('sw-customer.baseForm.labelFirstName')"
-            :placeholder="$tc('sw-customer.baseForm.placeholderFirstName')"
-            :error="customerFirstNameError"
-        />
-        {% endblock %}
-
-        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_customer_base_form_last_name_field %}
-        <sw-text-field
-            v-model:value="customer.lastName"
-            name="sw-field--customer-lastName"
-            required
-            :label="$tc('sw-customer.baseForm.labelLastName')"
-            :placeholder="$tc('sw-customer.baseForm.placeholderLastName')"
-            :error="customerLastNameError"
+            :label="$tc('sw-customer.baseForm.labelName')"
+            :placeholder="$tc('sw-customer.baseForm.placeholderName')"
+            :error="customerNameError"
         />
         {% endblock %}
 

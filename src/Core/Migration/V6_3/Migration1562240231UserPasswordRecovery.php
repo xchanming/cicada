@@ -169,7 +169,7 @@ SQL;
         return <<<MAIL
 <div style="font-family:arial; font-size:12px;">
     <p>
-        Dear {{ userRecovery.user.firstName }} {{ userRecovery.user.lastName }},<br/>
+        Dear {{ userRecovery.user.name }},<br/>
         <br/>
         there has been a request to reset your password.
         Please confirm the link below to specify a new password.<br/>
@@ -186,7 +186,7 @@ MAIL;
     private function getContentPlainEn(): string
     {
         return <<<MAIL
-        Dear {{ userRecovery.user.firstName }} {{ userRecovery.user.lastName }},
+        Dear {{ userRecovery.user.name }},
 
         there has been a request to reset your password.
         Please confirm the link below to specify a new password.
@@ -203,7 +203,7 @@ MAIL;
         return <<<MAIL
 <div style="font-family:arial; font-size:12px;">
     <p>
-        Hallo {{ userRecovery.user.firstName }} {{ userRecovery.user.lastName }},<br/>
+        Hallo {{ userRecovery.user.name }},<br/>
         <br/>
         es wurde eine Anfrage gestellt, um Ihr Passwort zurück zu setzen.
         Bitte bestätigen Sie den unten stehenden Link, um ein neues Passwort zu definieren.<br/>
@@ -220,7 +220,7 @@ MAIL;
     private function getContentPlainDe(): string
     {
         return <<<MAIL
-        Hallo {{ userRecovery.user.firstName }} {{ userRecovery.user.lastName }},
+        Hallo {{ userRecovery.user.name }},
 
         es wurde eine Anfrage gestellt, um Ihr Passwort zurück zu setzen.
         Bitte bestätigen Sie den unten stehenden Link, um ein neues Passwort zu definieren.

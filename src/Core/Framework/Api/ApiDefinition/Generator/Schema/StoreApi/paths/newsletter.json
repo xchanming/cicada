@@ -82,12 +82,8 @@
                                         "type": "string",
                                         "pattern": "^[0-9a-f]{32}$"
                                     },
-                                    "firstName": {
-                                        "description": "First name",
-                                        "type": "string"
-                                    },
-                                    "lastName": {
-                                        "description": "Last name",
+                                    "name": {
+                                        "description": "Name",
                                         "type": "string"
                                     },
                                     "street": {

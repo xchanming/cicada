@@ -38,7 +38,7 @@ export default function addCustomerGroupRegistrationListener(loginService) {
         const notification = {
             title: getApplicationRootReference().$tc('global.default.info'),
             message: getApplicationRootReference().$tc('sw-customer.customerGroupRegistration.notification.message', 0, {
-                name: `${customer.firstName} ${customer.lastName}`,
+                name: `${customer.name}`,
                 groupName: customer.requestedGroup.name,
             }),
             actions: [

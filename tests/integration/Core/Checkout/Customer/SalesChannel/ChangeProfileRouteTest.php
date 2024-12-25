@@ -61,7 +61,7 @@ class ChangeProfileRouteTest extends TestCase
         $this->customerRepository = static::getContainer()->get('customer.repository');
 
         $email = Uuid::randomHex() . '@example.com';
-        $this->customerId = $this->createCustomer('cicada', $email);
+        $this->customerId = $this->createCustomer('12345678', $email);
 
         $this->browser
             ->request(
@@ -69,7 +69,7 @@ class ChangeProfileRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -97,8 +97,8 @@ class ChangeProfileRouteTest extends TestCase
         static::assertArrayHasKey('errors', $response);
 
         $sources = array_column(array_column($response['errors'], 'source'), 'pointer');
-        static::assertContains('/firstName', $sources);
-        static::assertContains('/lastName', $sources);
+        static::assertContains('/name', $sources);
+        static::assertContains('/nickname', $sources);
     }
 
     public function testChangeName(): void
@@ -109,8 +109,9 @@ class ChangeProfileRouteTest extends TestCase
                 '/store-api/account/change-profile',
                 [
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
+                    'nickname' => 'Mustermann',
+                    'username' => 'Mustermann',
                 ]
             );
 
@@ -121,8 +122,8 @@ class ChangeProfileRouteTest extends TestCase
         $this->browser->request('GET', '/store-api/account/customer');
         $customer = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertSame('Max', $customer['firstName']);
-        static::assertSame('Mustermann', $customer['lastName']);
+        static::assertSame('Max', $customer['name']);
+        static::assertSame('Mustermann', $customer['nickname']);
         static::assertSame($this->getValidSalutationId(), $customer['salutationId']);
     }
 
@@ -131,8 +132,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'username' => 'Mustermann',
+            'nickname' => 'Mustermann',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -153,8 +155,8 @@ class ChangeProfileRouteTest extends TestCase
 
         static::assertEquals(['DE123456789'], $customer->getVatIds());
         static::assertEquals($changeData['company'], $customer->getCompany());
-        static::assertEquals($changeData['firstName'], $customer->getFirstName());
-        static::assertEquals($changeData['lastName'], $customer->getLastName());
+        static::assertEquals($changeData['name'], $customer->getName());
+        static::assertEquals($changeData['nickname'], $customer->getNickname());
     }
 
     public function testChangeProfileDataWithCommercialAccountAndVatIdsIsEmpty(): void
@@ -164,8 +166,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'nickname' => 'Mustermann',
+            'username' => 'Mustermann',
             'company' => 'Test Company',
             'vatIds' => [],
         ];
@@ -184,8 +187,8 @@ class ChangeProfileRouteTest extends TestCase
 
         static::assertNull($customer->getVatIds());
         static::assertEquals($changeData['company'], $customer->getCompany());
-        static::assertEquals($changeData['firstName'], $customer->getFirstName());
-        static::assertEquals($changeData['lastName'], $customer->getLastName());
+        static::assertEquals($changeData['nickname'], $customer->getNickname());
+        static::assertEquals($changeData['name'], $customer->getName());
     }
 
     public function testChangeProfileWithExistingNotSpecifiedSalutation(): void
@@ -200,8 +203,9 @@ class ChangeProfileRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-profile',
                 [
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
+                    'nickname' => 'Mustermann',
+                    'username' => 'Mustermann',
                 ]
             );
 
@@ -227,8 +231,9 @@ class ChangeProfileRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-profile',
                 [
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
+                    'nickname' => 'Mustermann',
+                    'username' => 'Mustermann',
                 ]
             );
 
@@ -370,8 +375,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'nickname' => 'Mustermann',
+            'username' => 'Mustermann',
             'company' => 'Test Company',
         ];
         if ($vatIds !== null) {
@@ -407,8 +413,8 @@ class ChangeProfileRouteTest extends TestCase
         }
 
         static::assertEquals($changeData['company'], $customer->getCompany());
-        static::assertEquals($changeData['firstName'], $customer->getFirstName());
-        static::assertEquals($changeData['lastName'], $customer->getLastName());
+        static::assertEquals($changeData['name'], $customer->getName());
+        static::assertEquals($changeData['nickname'], $customer->getNickname());
     }
 
     public function testChangeProfileDataWithPrivateAccount(): void
@@ -416,8 +422,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_PRIVATE,
-            'firstName' => 'FirstName',
-            'lastName' => 'LastName',
+            'name' => 'FirstName',
+            'nickname' => 'LastName',
+            'username' => 'Mustermann',
         ];
         $this->browser->request(
             'POST',
@@ -433,8 +440,8 @@ class ChangeProfileRouteTest extends TestCase
 
         static::assertNull($customer->getVatIds());
         static::assertEquals('', $customer->getCompany());
-        static::assertEquals($changeData['firstName'], $customer->getFirstName());
-        static::assertEquals($changeData['lastName'], $customer->getLastName());
+        static::assertEquals($changeData['name'], $customer->getName());
+        static::assertEquals($changeData['nickname'], $customer->getNickname());
     }
 
     public function testChangeSuccessWithNewsletterRecipient(): void
@@ -455,8 +462,7 @@ class ChangeProfileRouteTest extends TestCase
                 '/store-api/newsletter/subscribe',
                 [
                     'email' => $response['email'],
-                    'firstName' => $response['firstName'],
-                    'lastName' => $response['lastName'],
+                    'name' => $response['name'],
                     'option' => 'direct',
                     'storefrontUrl' => 'http://localhost',
                 ]
@@ -466,8 +472,7 @@ class ChangeProfileRouteTest extends TestCase
         $newsletterRecipient = static::getContainer()->get(Connection::class)
             ->fetchAssociative('SELECT * FROM newsletter_recipient WHERE status = "direct" AND email = ?', [$response['email']]);
 
-        static::assertSame($newsletterRecipient['first_name'], $response['firstName']);
-        static::assertSame($newsletterRecipient['last_name'], $response['lastName']);
+        static::assertSame($newsletterRecipient['name'], $response['name']);
 
         $this->browser
             ->request(
@@ -476,8 +481,9 @@ class ChangeProfileRouteTest extends TestCase
                 [
                     'salutationId' => $this->getValidSalutationId(),
                     'accountType' => CustomerEntity::ACCOUNT_TYPE_PRIVATE,
-                    'firstName' => 'FirstName',
-                    'lastName' => 'LastName',
+                    'name' => 'FirstName',
+                    'nickname' => 'LastName',
+                    'username' => 'Mustermann',
                 ]
             );
 
@@ -485,8 +491,7 @@ class ChangeProfileRouteTest extends TestCase
         $newsletterRecipient = static::getContainer()->get(Connection::class)
             ->fetchAssociative('SELECT * FROM newsletter_recipient WHERE status = "direct" AND email = ?', [$response['email']]);
 
-        static::assertEquals($newsletterRecipient['first_name'], 'FirstName');
-        static::assertEquals($newsletterRecipient['last_name'], 'LastName');
+        static::assertEquals($newsletterRecipient['name'], 'Max');
     }
 
     public function testChangeWithAllowedAccountType(): void
@@ -499,8 +504,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'accountType' => $accountType,
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'nickname' => 'Mustermann',
+            'username' => 'Mustermann',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -545,8 +551,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'accountType' => '',
             'salutationId' => $updateSalutationId,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'nickname' => 'Mustermann',
+            'username' => 'Mustermann',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -575,8 +582,9 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'accountType' => $notAllowedAccountType,
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'nickname' => 'Mustermann',
+            'username' => 'Mustermann',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -601,8 +609,9 @@ class ChangeProfileRouteTest extends TestCase
     {
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'nickname' => 'Mustermann',
+            'username' => 'Mustermann',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -698,8 +707,7 @@ class ChangeProfileRouteTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $addressId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schöppingen',
                 'zipcode' => '12345',
@@ -711,8 +719,9 @@ class ChangeProfileRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => $password,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
+            'username' => 'Mustermann',
+            'nickname' => 'Mustermann',
             'guest' => $guest,
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',

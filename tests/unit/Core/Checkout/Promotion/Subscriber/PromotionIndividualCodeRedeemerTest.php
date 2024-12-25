@@ -95,8 +95,7 @@ class PromotionIndividualCodeRedeemerTest extends TestCase
         $order->setId(Uuid::randomHex());
         $customer = new OrderCustomerEntity();
         $customer->setId(Uuid::randomHex());
-        $customer->setFirstName('foo');
-        $customer->setLastName('bar');
+        $customer->setName('foo');
         $customer->setCustomerId(Uuid::randomHex());
         $order->setOrderCustomer($customer);
 
@@ -125,7 +124,7 @@ class PromotionIndividualCodeRedeemerTest extends TestCase
             'payload' => [
                 'orderId' => $order->getId(),
                 'customerId' => $customer->getCustomerId(),
-                'customerName' => 'foo bar',
+                'customerName' => 'foo',
             ],
         ]]], $repository->updates);
     }

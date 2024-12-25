@@ -38,15 +38,13 @@ export default {
     computed: {
         modalTitle() {
             return this.$tc('sw-customer.imitateCustomerModal.modalTitle', {
-                firstname: this.customer.firstName,
-                lastname: this.customer.lastName,
+                name: this.customer.name,
             });
         },
 
         modalDescription() {
             return this.$tc('sw-customer.imitateCustomerModal.modalDescription', {
-                firstname: this.customer.firstName,
-                lastname: this.customer.lastName,
+                name: this.customer.name,
             });
         },
 

@@ -13,8 +13,7 @@ const orderMock = {
     orderNumber: 10000,
     orderCustomer: {
         customerId: 'orderID',
-        firstName: 'John',
-        lastName: 'Doe',
+        name: 'John',
         email: 'john@doe.dev',
     },
     currency: {

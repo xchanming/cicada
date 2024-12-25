@@ -19,7 +19,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  * @internal
  *
  * @phpstan-type Shop array{name: string, locale: string, currency: string, additionalCurrencies: null|list<string>, country: string, email: string, host: string, basePath: string, schema: string, blueGreenDeployment: bool}
- * @phpstan-type AdminUser array{email: string, username: string, firstName: string, lastName: string, password: string}
+ * @phpstan-type AdminUser array{email: string, username: string, name: string, password: string}
  */
 #[Package('core')]
 class ShopConfigurationController extends InstallerController
@@ -58,8 +58,7 @@ class ShopConfigurationController extends InstallerController
             $adminUser = [
                 'email' => (string) $request->request->get('config_admin_email'),
                 'username' => (string) $request->request->get('config_admin_username'),
-                'firstName' => (string) $request->request->get('config_admin_firstName'),
-                'lastName' => (string) $request->request->get('config_admin_lastName'),
+                'name' => (string) $request->request->get('config_admin_name'),
                 'password' => (string) $request->request->get('config_admin_password'),
                 'locale' => $this->supportedLanguages[$request->attributes->get('_locale')],
             ];

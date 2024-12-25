@@ -90,13 +90,13 @@
                         {% endblock %}
 
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_dashboard_statistics_grid_first_name %}
-                        <template #column-orderCustomer.firstName="{ item }">
+                        {% block sw_dashboard_statistics_grid_name %}
+                        <template #column-orderCustomer.name="{ item }">
                             <router-link
                                 :to="{ name: 'sw.order.detail', params: { id: item.id } }"
                                 class="sw-data-grid__cell-value"
                             >
-                                {{ item.orderCustomer.firstName }} {{ item.orderCustomer.lastName }}
+                                {{ item.orderCustomer.name }}
                             </router-link>
                         </template>
                         {% endblock %}

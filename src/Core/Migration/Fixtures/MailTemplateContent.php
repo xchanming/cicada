@@ -7,7 +7,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
 
                 {% set currencyIsoCode = order.currency.isoCode %}
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br>
                 <br>
                 Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}.<br>
                 <br>
@@ -71,7 +71,7 @@ return [
                     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
                     <strong>Billing address:</strong><br>
                     {{ billingAddress.company }}<br>
-                    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+                    {{ billingAddress.name }}<br>
                     {{ billingAddress.street }} <br>
                     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
                     {{ billingAddress.country.name }}<br>
@@ -79,7 +79,7 @@ return [
 
                     <strong>Shipping address:</strong><br>
                     {{ delivery.shippingOrderAddress.company }}<br>
-                    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+                    {{ delivery.shippingOrderAddress.name }}<br>
                     {{ delivery.shippingOrderAddress.street }} <br>
                     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
                     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -99,7 +99,7 @@ return [
             ',
             'plain' => '
                 {% set currencyIsoCode = order.currency.isoCode %}
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 Thank you for your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}.
 
@@ -129,14 +129,14 @@ return [
                 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
                 Billing address:
                 {{ billingAddress.company }}
-                {{ billingAddress.firstName }} {{ billingAddress.lastName }}
+                {{ billingAddress.name }}
                 {{ billingAddress.street }}
                 {{ billingAddress.zipcode }} {{ billingAddress.city }}
                 {{ billingAddress.country.name }}
 
                 Shipping address:
                 {{ delivery.shippingOrderAddress.company }}
-                {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+                {{ delivery.shippingOrderAddress.name }}
                 {{ delivery.shippingOrderAddress.street }}
                 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
                 {{ delivery.shippingOrderAddress.country.name }}
@@ -156,7 +156,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
 
                 {% set currencyIsoCode = order.currency.isoCode %}
-                Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+                Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br>
                 <br>
                 vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.<br>
                 <br>
@@ -218,7 +218,7 @@ return [
                     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
                     <strong>Rechnungsadresse:</strong><br>
                     {{ billingAddress.company }}<br>
-                    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+                    {{ billingAddress.name }}<br>
                     {{ billingAddress.street }} <br>
                     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
                     {{ billingAddress.country.name }}<br>
@@ -226,7 +226,7 @@ return [
 
                     <strong>Lieferadresse:</strong><br>
                     {{ delivery.shippingOrderAddress.company }}<br>
-                    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+                    {{ delivery.shippingOrderAddress.name }}<br>
                     {{ delivery.shippingOrderAddress.street }} <br>
                     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
                     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -247,7 +247,7 @@ return [
             ',
             'plain' => '
                 {% set currencyIsoCode = order.currency.isoCode %}
-                Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                Hallo {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 vielen Dank für Ihre Bestellung im {{ salesChannel.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.
 
@@ -277,14 +277,14 @@ return [
                 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
                 Rechnungsadresse:
                 {{ billingAddress.company }}
-                {{ billingAddress.firstName }} {{ billingAddress.lastName }}
+                {{ billingAddress.name }}
                 {{ billingAddress.street }}
                 {{ billingAddress.zipcode }} {{ billingAddress.city }}
                 {{ billingAddress.country.name }}
 
                 Lieferadresse:
                 {{ delivery.shippingOrderAddress.company }}
-                {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+                {{ delivery.shippingOrderAddress.name }}
                 {{ delivery.shippingOrderAddress.street }}
                 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
                 {{ delivery.shippingOrderAddress.country.name }}
@@ -305,7 +305,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                  <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                         <strong>The new status is as follows: {{order.stateMachineState.name}}.</strong><br/>
@@ -317,7 +317,7 @@ return [
             ',
             'plain' => '
 
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.stateMachineState.name}}.
@@ -330,7 +330,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -342,7 +342,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -357,7 +357,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.stateMachineState.name}}.</strong><br/>
@@ -369,7 +369,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.stateMachineState.name}}.
@@ -382,7 +382,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -394,7 +394,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -408,7 +408,7 @@ return [
             'html' => '
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.stateMachineState.name}}.</strong><br/>
@@ -420,7 +420,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.stateMachineState.name}}.
@@ -433,7 +433,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -445,7 +445,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -460,7 +460,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.stateMachineState.name}}.</strong><br/>
@@ -472,7 +472,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.stateMachineState.name}}.
@@ -485,7 +485,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.</strong><br/>
@@ -497,7 +497,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Bestellstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Bestellstatus: {{order.stateMachineState.name}}.
@@ -511,7 +511,7 @@ return [
             'html' => '<div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                         <strong>The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -522,7 +522,7 @@ return [
                     </p>
                 </div>',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.
@@ -535,7 +535,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                    <br/>
                    <p>
-                       {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                       {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                        <br/>
                        der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                        <strong>Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -546,7 +546,7 @@ return [
                    </p>
                 </div>',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -561,7 +561,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                    <br/>
                    <p>
-                       {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                       {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                        <br/>
                        the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                        <strong>The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -573,7 +573,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.
@@ -586,7 +586,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -597,7 +597,7 @@ return [
                     </p>
                 </div>',
             'plain' => '
-                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                    {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -612,7 +612,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                         <strong>The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -624,7 +624,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.
@@ -637,7 +637,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -649,7 +649,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -664,7 +664,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                         <strong>The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -676,7 +676,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.
@@ -689,7 +689,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -701,7 +701,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -716,7 +716,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                       <p>
-                          {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                          {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                           <br/>
                           the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                           <strong>The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -728,7 +728,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your delivery at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.deliveries.first.stateMachineState.name}}.
@@ -741,7 +741,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.</strong><br/>
@@ -752,7 +752,7 @@ return [
                     </p>
                 </div>',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Lieferstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Lieferstatus: {{order.deliveries.first.stateMachineState.name}}.
@@ -767,7 +767,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -780,7 +780,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -793,7 +793,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -805,7 +805,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -820,7 +820,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -832,7 +832,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -845,7 +845,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -857,7 +857,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -872,7 +872,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -884,7 +884,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -897,7 +897,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -909,7 +909,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -924,7 +924,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -936,7 +936,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -949,7 +949,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -961,7 +961,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -976,7 +976,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -988,7 +988,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -1001,7 +1001,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                       {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                       {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                        <br/>
                        der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                        <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -1013,7 +1013,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -1028,7 +1028,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -1040,7 +1040,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -1053,7 +1053,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -1065,7 +1065,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.
@@ -1080,7 +1080,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                         <p>
-                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                            {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                             <br/>
                             the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }} has changed.<br/>
                             <strong>The new status is as follows: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -1092,7 +1092,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 the status of your order at {{ salesChannel.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}  has changed.
                 The new status is as follows: {{order.transactions.first.stateMachineState.name}}.
@@ -1105,7 +1105,7 @@ return [
                 <div style="font-family:arial; font-size:12px;">
                     <br/>
                     <p>
-                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br/>
+                        {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},<br/>
                         <br/>
                         der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert.<br/>
                         <strong>Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.</strong><br/>
@@ -1117,7 +1117,7 @@ return [
                 </div>
             ',
             'plain' => '
-                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+                {{order.orderCustomer.salutation.letterName }} {{order.orderCustomer.name}},
 
                 der Zahlungsstatus für Ihre Bestellung bei {{ salesChannel.name }} (Number: {{order.orderNumber}}) vom {{ order.orderDateTime|date }} hat sich geändert!
                 Die Bestellung hat jetzt den Zahlungsstatus: {{order.transactions.first.stateMachineState.name}}.

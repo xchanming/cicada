@@ -143,20 +143,20 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
         $addressId = $this->ids->get('address');
 
         $customer = (new CustomerBuilder($this->ids, '1337'))
-            ->firstName('Max')
-            ->lastName('Mustermann')
+            ->name('Max')
+            ->username('Mustermann')
+            ->nickname('Mustermann')
             ->add('id', $this->ids->get('customer'))
             ->add('email', Uuid::randomHex() . '@example.com')
             ->add('salesChannelId', TestDefaults::SALES_CHANNEL)
-            ->add('password', 'cicada')
+            ->add('password', '12345678')
             ->defaultShippingAddress('address')
             ->defaultBillingAddress('address', [
                 'id' => $addressId,
                 'customerId' => $customerId,
                 'countryId' => $this->getValidCountryId(),
                 'salutationId' => $this->getValidSalutationId(),
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
                 'city' => 'Schöppingen',
@@ -194,8 +194,7 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
                 'customerId' => $customerId,
                 'email' => 'test@example.com',
                 'salutationId' => $this->getValidSalutationId(),
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
             ])
             ->add('stateId', $stateId)
             ->add('paymentMethodId', $paymentMethodId)
@@ -205,8 +204,7 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
             ->addAddress('address', [
                 'id' => $addressId,
                 'salutationId' => $this->getValidSalutationId(),
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
                 'city' => 'Schöppingen',

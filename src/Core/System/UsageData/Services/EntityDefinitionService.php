@@ -16,8 +16,7 @@ use Cicada\Core\Framework\Log\Package;
 class EntityDefinitionService
 {
     public const PUID_FIELDS = [
-        'firstName' => 'first_name',
-        'lastName' => 'last_name',
+        'name' => 'name',
         'email' => 'email',
     ];
 

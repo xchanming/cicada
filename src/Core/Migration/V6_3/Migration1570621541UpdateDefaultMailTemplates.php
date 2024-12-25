@@ -278,7 +278,7 @@ class Migration1570621541UpdateDefaultMailTemplates extends MigrationStep
         return '<div style="font-family:arial; font-size:12px;">
 
 {% set currencyIsoCode = order.currency.isoCode %}
-{{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+{{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.name}},<br>
 <br>
 Thank you for your order at {{ salesChannel.translated.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}.<br>
 <br>
@@ -333,7 +333,7 @@ Thank you for your order at {{ salesChannel.translated.name }} (Number: {{order.
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Billing address:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.name }}<br>
@@ -341,7 +341,7 @@ Thank you for your order at {{ salesChannel.translated.name }} (Number: {{order.
 
     <strong>Shipping address:</strong><br>
     {{ delivery.shippingOrderAddress.company }}<br>
-    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+    {{ delivery.shippingOrderAddress.name }}<br>
     {{ delivery.shippingOrderAddress.street }} <br>
     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -361,7 +361,7 @@ Thank you for your order at {{ salesChannel.translated.name }} (Number: {{order.
     private function getOrderConfirmationPlainTemplateEn(): string
     {
         return '{% set currencyIsoCode = order.currency.isoCode %}
-{{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+{{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.name}},
 
 Thank you for your order at {{ salesChannel.translated.name }} (Number: {{order.orderNumber}}) on {{ order.orderDateTime|date }}.
 
@@ -393,14 +393,14 @@ Selected shipping type: {{ delivery.shippingMethod.name }}
 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
 Billing address:
 {{ billingAddress.company }}
-{{ billingAddress.firstName }} {{ billingAddress.lastName }}
+{{ billingAddress.name }}
 {{ billingAddress.street }}
 {{ billingAddress.zipcode }} {{ billingAddress.city }}
 {{ billingAddress.country.name }}
 
 Shipping address:
 {{ delivery.shippingOrderAddress.company }}
-{{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+{{ delivery.shippingOrderAddress.name }}
 {{ delivery.shippingOrderAddress.street }}
 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
 {{ delivery.shippingOrderAddress.country.name }}
@@ -420,7 +420,7 @@ If you have any questions, do not hesitate to contact us.
         return '<div style="font-family:arial; font-size:12px;">
 
 {% set currencyIsoCode = order.currency.isoCode %}
-Hallo {{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},<br>
+Hallo {{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.name}},<br>
 <br>
 vielen Dank für Ihre Bestellung im {{ salesChannel.translated.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.<br>
 <br>
@@ -475,7 +475,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.translated.name }} (Nummer: 
     {% set billingAddress = order.addresses.get(order.billingAddressId) %}
     <strong>Rechnungsaddresse:</strong><br>
     {{ billingAddress.company }}<br>
-    {{ billingAddress.firstName }} {{ billingAddress.lastName }}<br>
+    {{ billingAddress.name }}<br>
     {{ billingAddress.street }} <br>
     {{ billingAddress.zipcode }} {{ billingAddress.city }}<br>
     {{ billingAddress.country.name }}<br>
@@ -483,7 +483,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.translated.name }} (Nummer: 
 
     <strong>Lieferadresse:</strong><br>
     {{ delivery.shippingOrderAddress.company }}<br>
-    {{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}<br>
+    {{ delivery.shippingOrderAddress.name }}<br>
     {{ delivery.shippingOrderAddress.street }} <br>
     {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}<br>
     {{ delivery.shippingOrderAddress.country.name }}<br>
@@ -504,7 +504,7 @@ vielen Dank für Ihre Bestellung im {{ salesChannel.translated.name }} (Nummer: 
     private function getOrderConfirmationPlainTemplateDe(): string
     {
         return '{% set currencyIsoCode = order.currency.isoCode %}
-Hallo {{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.firstName}} {{order.orderCustomer.lastName}},
+Hallo {{order.orderCustomer.salutation.translated.letterName }} {{order.orderCustomer.name}},
 
 vielen Dank für Ihre Bestellung im {{ salesChannel.translated.name }} (Nummer: {{order.orderNumber}}) am {{ order.orderDateTime|date }}.
 
@@ -535,14 +535,14 @@ Gewählte Versandtart: {{ delivery.shippingMethod.name }}
 {% set billingAddress = order.addresses.get(order.billingAddressId) %}
 Rechnungsadresse:
 {{ billingAddress.company }}
-{{ billingAddress.firstName }} {{ billingAddress.lastName }}
+{{ billingAddress.name }}
 {{ billingAddress.street }}
 {{ billingAddress.zipcode }} {{ billingAddress.city }}
 {{ billingAddress.country.name }}
 
 Lieferadresse:
 {{ delivery.shippingOrderAddress.company }}
-{{ delivery.shippingOrderAddress.firstName }} {{ delivery.shippingOrderAddress.lastName }}
+{{ delivery.shippingOrderAddress.name }}
 {{ delivery.shippingOrderAddress.street }}
 {{ delivery.shippingOrderAddress.zipcode}} {{ delivery.shippingOrderAddress.city }}
 {{ delivery.shippingOrderAddress.country.name }}
@@ -562,7 +562,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     {
         return '<div style="font-family:arial; font-size:12px;">
             <p>
-                {{ customer.salutation.translated.letterName }} {{ customer.firstName }} {{ customer.lastName }},<br/>
+                {{ customer.salutation.translated.letterName }} {{ customer.name }},<br/>
                 <br/>
                 thank you for your signing up with our Shop.<br/>
                 You will gain access via the email address <strong>{{ customer.email }}</strong> and the password you have chosen.<br/>
@@ -573,7 +573,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getRegistrationPlainTemplateEn(): string
     {
-        return '{{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},
+        return '{{ customer.salutation.translated.letterName }} {{customer.name}},
 
                 thank you for your signing up with our Shop.
                 You will gain access via the email address {{ customer.email }} and the password you have chosen.
@@ -585,7 +585,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     {
         return '<div style="font-family:arial; font-size:12px;">
             <p>
-                Hallo {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br/>
+                Hallo {{ customer.salutation.translated.letterName }} {{customer.name}},<br/>
                 <br/>
                 vielen Dank für Ihre Anmeldung in unserem Shop.<br/>
                 Sie erhalten Zugriff über Ihre E-Mail-Adresse <strong>{{ customer.email }}</strong> und dem von Ihnen gewählten Kennwort.<br/>
@@ -596,7 +596,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getRegistrationPlainTemplateDe(): string
     {
-        return 'Hallo {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},
+        return 'Hallo {{ customer.salutation.translated.letterName }} {{customer.name}},
 
                 vielen Dank für Ihre Anmeldung in unserem Shop.
                 Sie erhalten Zugriff über Ihre E-Mail-Adresse {{ customer.email }} und dem von Ihnen gewählten Kennwort.
@@ -608,7 +608,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     {
         return '<div style="font-family:arial; font-size:12px;">
     <p>
-        {{ customer.salutation.translated.letterName }} {{ customer.firstName }} {{ customer.lastName }},<br/>
+        {{ customer.salutation.translated.letterName }} {{ customer.name }},<br/>
         <br/>
         there has been a request to reset you Password in the Shop {{ salesChannel.translated.name }}
         Please confirm the link below to specify a new password.<br/>
@@ -624,7 +624,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     private function getPasswordChangePlainTemplateEn(): string
     {
         return '
-        {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},
+        {{ customer.salutation.translated.letterName }} {{customer.name}},
 
         there has been a request to reset you Password in the Shop {{ salesChannel.translated.name }}
         Please confirm the link below to specify a new password.
@@ -640,7 +640,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     {
         return '<div style="font-family:arial; font-size:12px;">
     <p>
-        Hallo {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},<br/>
+        Hallo {{ customer.salutation.translated.letterName }} {{customer.name}},<br/>
         <br/>
         im Shop {{ salesChannel.translated.name }} wurde eine Anfrage gestellt, um Ihr Passwort zurück zu setzen.
         Bitte bestätigen Sie den unten stehenden Link, um ein neues Passwort zu definieren.<br/>
@@ -656,7 +656,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
     private function getPasswordChangePlainTemplateDe(): string
     {
         return '
-        Hallo {{ customer.salutation.translated.letterName }} {{customer.firstName}} {{ customer.lastName }},
+        Hallo {{ customer.salutation.translated.letterName }} {{customer.name}},
 
         im Shop {{ salesChannel.translated.name }} wurde eine Anfrage gestellt, um Ihr Passwort zurück zu setzen.
         Bitte bestätigen Sie den unten stehenden Link, um ein neues Passwort zu definieren.
@@ -670,7 +670,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getRegisterTemplate_HTML_EN(): string
     {
-        return '<h3>Hello {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}</h3>
+        return '<h3>Hello {{ newsletterRecipient.name }}</h3>
                 <p>thank you very much for your registration.</p>
                 <p>You have successfully subscribed to our newsletter.</p>
         ';
@@ -678,7 +678,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getRegisterTemplate_PLAIN_EN(): string
     {
-        return 'Hello {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}
+        return 'Hello {{ newsletterRecipient.name }}
 
                 thank you very much for your registration.
 
@@ -688,7 +688,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getRegisterTemplate_HTML_DE(): string
     {
-        return '<h3>Hallo {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}</h3>
+        return '<h3>Hallo {{ newsletterRecipient.name }}</h3>
                 <p>vielen Dank für Ihre Anmeldung.</p>
                 <p>Sie haben sich erfolgreich zu unserem Newsletter angemeldet.</p>
         ';
@@ -696,7 +696,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getRegisterTemplate_PLAIN_DE(): string
     {
-        return 'Hallo {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}
+        return 'Hallo {{ newsletterRecipient.name }}
 
                 vielen Dank für Ihre Anmeldung.
 
@@ -706,7 +706,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getOptInTemplate_HTML_EN(): string
     {
-        return '<h3>Hello {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}</h3>
+        return '<h3>Hello {{ newsletterRecipient.name }}</h3>
                 <p>Thank you for your interest in our newsletter!</p>
                 <p>In order to prevent misuse of your email address, we have sent you this confirmation email. Confirm that you wish to receive the newsletter regularly by clicking <a href="{{ url }}">here</a>.</p>
                 <p>If you have not subscribed to the newsletter, please ignore this email.</p>
@@ -715,7 +715,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getOptInTemplate_PLAIN_EN(): string
     {
-        return 'Hello {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}
+        return 'Hello {{ newsletterRecipient.name }}
 
                 Thank you for your interest in our newsletter!
 
@@ -727,7 +727,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getOptInTemplate_HTML_DE(): string
     {
-        return '<h3>Hallo {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}</h3>
+        return '<h3>Hallo {{ newsletterRecipient.name }}</h3>
                 <p>Schön, dass Sie sich für unseren Newsletter interessieren!</p>
                 <p>Um einem Missbrauch Ihrer E-Mail-Adresse vorzubeugen, haben wir Ihnen diese Bestätigungsmail gesendet. Bestätigen Sie, dass Sie den Newsletter regelmäßig erhalten wollen, indem Sie <a href="{{ url }}">hier</a> klicken.</p>
                 <p>Sollten Sie den Newsletter nicht angefordert haben, ignorieren Sie diese E-Mail.</p>
@@ -736,7 +736,7 @@ Für Rückfragen stehen wir Ihnen jederzeit gerne zur Verfügung.
 
     private function getOptInTemplate_PLAIN_DE(): string
     {
-        return 'Hallo {{ newsletterRecipient.firstName }} {{ newsletterRecipient.lastName }}
+        return 'Hallo {{ newsletterRecipient.name }}
 
                 Schön, dass Sie sich für unseren Newsletter interessieren!
 

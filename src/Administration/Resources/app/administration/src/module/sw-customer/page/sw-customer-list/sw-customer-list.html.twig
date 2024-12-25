@@ -98,19 +98,18 @@
 
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                 {% block sw_product_list_grid_columns_name_preview %}
-                <template #preview-firstName="{ item, compact }">
+                <template #preview-name="{ item, compact }">
                     <sw-avatar
                         :size="compact ? '32px' : '48px'"
                         :source-context="item"
-                        :first-name="item.firstName"
-                        :last-name="item.lastName"
+                        :name="item.name"
                     />
                 </template>
                 {% endblock %}
 
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                 {% block sw_customer_list_grid_columns_name %}
-                <template #column-firstName="{ item, compact, isInlineEdit }">
+                <template #column-name="{ item, compact, isInlineEdit }">
 
                     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                     {% block sw_customer_list_grid_inline_edit_name %}
@@ -118,22 +117,13 @@
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                         {% block sw_customer_list_grid_inline_edit_first_name %}
                         <sw-text-field
-                            v-model:value="item.firstName"
-                            name="sw-field--item-firstName"
-                            class="sw-customer-list__inline-edit-first-name"
+                            v-model:value="item.name"
+                            name="sw-field--item-name"
+                            class="sw-customer-list__inline-edit-name"
                             :size="compact ? 'small' : 'default'"
                         />
                         {% endblock %}
 
-                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_customer_list_grid_inline_edit_last_name %}
-                        <sw-text-field
-                            v-model:value="item.lastName"
-                            name="sw-field--item-lastName"
-                            class="sw-customer-list__inline-edit-last-name"
-                            :size="compact ? 'small' : 'default'"
-                        />
-                        {% endblock %}
                     </template>
                     {% endblock %}
 
@@ -143,7 +133,7 @@
                         v-else
                         :to="{ name: 'sw.customer.detail', params: { id: item.id }, query: { edit: false } }"
                     >
-                        {{ item.lastName }}, {{ item.firstName }}
+                        {{ item.name }}
                     </router-link>
                     {% endblock %}
 
@@ -292,7 +282,7 @@
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                         {% block sw_customer_list_delete_modal_confirm_delete_text %}
                         <p class="sw-customer-list__confirm-delete-text">
-                            {{ $tc('sw-customer.list.textDeleteConfirm', 0, { name: `${item.firstName} ${item.lastName}` }) }}
+                            {{ $tc('sw-customer.list.textDeleteConfirm', 0, { name: `${item.name}` }) }}
                         </p>
                         {% endblock %}
 
@@ -356,13 +346,13 @@
                     >
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                         {% block sw_customer_list_bulk_edit_grid_columns_name %}
-                        <template #column-firstName="{ item }">
+                        <template #column-name="{ item }">
                             <router-link
                                 :to="{ name: 'sw.customer.detail', params: { id: item.id } }"
                                 target="_blank"
                                 rel="noreferrer noopener"
                             >
-                                {{ item.lastName }}, {{ item.firstName }}
+                                {{ item.name }}
                             </router-link>
                         </template>
                         {% endblock %}

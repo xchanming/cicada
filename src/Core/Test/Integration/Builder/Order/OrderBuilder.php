@@ -148,8 +148,7 @@ class OrderBuilder
     public function addAddress(string $key, array $customParams = []): self
     {
         $address = \array_replace([
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'city' => 'Bielefeld',
             'street' => 'Buchenweg 5',
             'zipcode' => '33062',

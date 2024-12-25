@@ -49,7 +49,7 @@
                         <sw-time-ago :date="lastStateChange.createdAt" />
                     </template>
                     <template #author>
-                        {{ lastStateChange.user ? lastStateChange.user.firstName + ' ' + lastStateChange.user.lastName : $tc('sw-order.stateCard.labelSystemUser') }}
+                        {{ lastStateChange.user ? lastStateChange.user.name : $tc('sw-order.stateCard.labelSystemUser') }}
                     </template>
                 </i18n-t>
             </div>

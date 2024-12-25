@@ -64,8 +64,7 @@ class DispatchEntitiesQueryBuilder
         $concatenatedFields = array_map(
             static fn (string $field) => \sprintf('LOWER(%s)', EntityDefinitionQueryHelper::escape($field)),
             [
-                EntityDefinitionService::PUID_FIELDS['firstName'],
-                EntityDefinitionService::PUID_FIELDS['lastName'],
+                EntityDefinitionService::PUID_FIELDS['name'],
                 EntityDefinitionService::PUID_FIELDS['email'],
             ]
         );

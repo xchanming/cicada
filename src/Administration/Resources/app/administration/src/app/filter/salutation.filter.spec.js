@@ -25,10 +25,9 @@ describe('src/app/filter/salutation.filter.ts', () => {
                     displayName: 'Mr.',
                 },
                 title: 'Dr.',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max'
             }),
-        ).toBe('Mr. Dr. Max Mustermann');
+        ).toBe('Mr. Dr. Max');
     });
 
     it('should hide salutation when no salutationKey was defined', () => {
@@ -40,10 +39,9 @@ describe('src/app/filter/salutation.filter.ts', () => {
                     displayName: 'Mr.',
                 },
                 title: 'Dr.',
-                firstName: 'Max',
-                lastName: 'Mustermann',
+                name: 'Max',
             }),
-        ).toBe('Dr. Max Mustermann');
+        ).toBe('Dr. Max');
     });
 
     it('should return the fallback snippet when no subvalues are given', () => {
@@ -55,8 +53,7 @@ describe('src/app/filter/salutation.filter.ts', () => {
                     displayName: '',
                 },
                 title: '',
-                firstName: '',
-                lastName: '',
+                name: '',
             }),
         ).toBe('');
     });
