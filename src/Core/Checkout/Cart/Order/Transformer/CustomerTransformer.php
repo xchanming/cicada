@@ -29,7 +29,6 @@ class CustomerTransformer
             'customerId' => $customer->getId(),
             'email' => $customer->getEmail(),
             'name' => $customer->getName(),
-            'username' => $customer->getUsername(),
             'nickname' => $customer->getNickname(),
             'salutationId' => $customer->getSalutationId(),
             'title' => $customer->getTitle(),

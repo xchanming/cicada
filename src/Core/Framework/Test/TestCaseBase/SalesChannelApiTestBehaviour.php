@@ -242,7 +242,6 @@ trait SalesChannelApiTestBehaviour
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
             'name' => 'Max',
-            'username' => 'Mustermann',
             'nickname' => 'Mustermann',
             'guest' => $guest,
             'salutationId' => $this->getValidSalutationId(),

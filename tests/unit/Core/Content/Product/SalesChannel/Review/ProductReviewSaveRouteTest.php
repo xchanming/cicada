@@ -72,7 +72,6 @@ class ProductReviewSaveRouteTest extends TestCase
         $customer = new CustomerEntity();
         $customer->setId(Uuid::randomHex());
         $customer->setName('Mustermann');
-        $customer->setUsername('Mustermann');
         $customer->setNickname('Mustermann');
         $customer->setEmail('foo@example.com');
         $salesChannel = new SalesChannelEntity();

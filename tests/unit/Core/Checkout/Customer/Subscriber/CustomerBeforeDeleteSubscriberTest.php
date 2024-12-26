@@ -46,7 +46,6 @@ class CustomerBeforeDeleteSubscriberTest extends TestCase
                 'customerNumber' => 'SW1000',
                 'email' => 'foo@bar.com',
                 'name' => 'foo',
-                'username' => 'bar',
                 'nickname' => 'bar',
             ]);
 
@@ -134,7 +133,6 @@ class CustomerBeforeDeleteSubscriberTest extends TestCase
                     'customerNumber' => $customer->getCustomerNumber(),
                     'customerEmail' => $customer->getEmail(),
                     'customerName' => $customer->getName(),
-                    'customerUsername' => $customer->getUsername(),
                     'customerNickname' => $customer->getNickname(),
                     'customerCompany' => $customer->getCompany(),
                     'customerSalutationId' => $customer->getSalutationId(),

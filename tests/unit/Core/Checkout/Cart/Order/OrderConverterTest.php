@@ -895,7 +895,6 @@ class OrderConverterTest extends TestCase
         $customer->setEmail('customer-email');
         $customer->setSalutationId('customer-salutation-id');
         $customer->setName('customer-name');
-        $customer->setUsername('customer-user-name');
         $customer->setNickname('customer-nick-name');
         $customer->setCustomerNumber('customer-number');
         $customer->setGroupId('customer-group-id');

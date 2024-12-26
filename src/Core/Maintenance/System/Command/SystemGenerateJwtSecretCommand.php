@@ -36,7 +36,7 @@ class SystemGenerateJwtSecretCommand extends Command
     {
         $this->addOption('private-key-path', null, InputOption::VALUE_OPTIONAL, 'JWT public key path')
             ->addOption('public-key-path', null, InputOption::VALUE_OPTIONAL, 'JWT public key path')
-            ->addOption('jwt-passphrase', null, InputOption::VALUE_OPTIONAL, 'JWT private key passphrase', 'cicada')
+            ->addOption('jwt-passphrase', null, InputOption::VALUE_OPTIONAL, 'JWT private key passphrase', 'shopware')
             ->addOption('force', 'f', InputOption::VALUE_NONE, 'Force recreation')
             ->addOption('use-env', null, InputOption::VALUE_NONE, 'Print JWT secret to console to use it as environment variable')
         ;
@@ -53,7 +53,7 @@ class SystemGenerateJwtSecretCommand extends Command
             return self::SUCCESS;
         }
 
-        $io->warning('Using JWT rsa keys are deprecated and will be removed in the next major version. Consider enabling cicada.api.jwt_key.use_app_secret in your cicada.yaml file. This command will be deleted with Cicada 6.7.0.0');
+        $io->warning('Using JWT rsa keys are deprecated and will be removed in the next major version. Consider enabling shopware.api.jwt_key.use_app_secret in your shopware.yaml file. This command will be deleted with Cicada 6.7.0.0');
 
         $passphrase = $input->getOption('jwt-passphrase');
 
@@ -82,10 +82,10 @@ class SystemGenerateJwtSecretCommand extends Command
             if ($output instanceof ConsoleOutputInterface) {
                 $errorIo = new SymfonyStyle($input, $output->getErrorOutput());
 
-                $errorIo->info('Make sure that you have configured in config/packages/cicada.yaml the following to load the JWT keys over environment variables:');
+                $errorIo->info('Make sure that you have configured in config/packages/shopware.yaml the following to load the JWT keys over environment variables:');
                 $errorIo->block(
                     <<<YAML
-    cicada:
+    shopware:
         api:
             jwt_key:
                 private_key_path: '%env(base64:JWT_PRIVATE_KEY)%'

@@ -155,7 +155,6 @@ class AddressValidatorTest extends TestCase
 
         $customer = new CustomerEntity();
         $customer->setName('John');
-        $customer->setUsername('Doe');
         $customer->setNickname('Doe');
         $customer->setId(Uuid::randomHex());
         $customer->setActive(true);
@@ -211,7 +210,6 @@ class AddressValidatorTest extends TestCase
 
         $customer = new CustomerEntity();
         $customer->setName('John');
-        $customer->setUsername('Doe');
         $customer->setNickname('Doe');
         $customer->setId(Uuid::randomHex());
         $customer->setActive(true);
@@ -270,7 +268,6 @@ class AddressValidatorTest extends TestCase
 
         $customer = new CustomerEntity();
         $customer->setName('John');
-        $customer->setUsername('Doe');
         $customer->setNickname('Doe');
         $customer->setId(Uuid::randomHex());
         $customer->setActive(true);

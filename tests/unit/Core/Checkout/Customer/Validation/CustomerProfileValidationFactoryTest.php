@@ -241,7 +241,6 @@ class CustomerProfileValidationFactoryTest extends TestCase
         if (Feature::isActive('v6.7.0.0')) {
             $definition
                 ->add('name', new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]))
-                ->add('username', new Length(['max' => CustomerDefinition::MAX_LENGTH_USERNAME]))
                 ->add('nickname', new Length(['max' => CustomerDefinition::MAX_LENGTH_NICKNAME]));
         }
     }

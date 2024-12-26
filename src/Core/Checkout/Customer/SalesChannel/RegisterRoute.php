@@ -431,7 +431,6 @@ class RegisterRoute extends AbstractRegisterRoute
             'requestedGroupId' => $data->get('requestedGroupId', null),
             'salutationId' => $data->get('salutationId'),
             'name' => $data->get('name'),
-            'username' => $data->get('username'),
             'nickname' => $data->get('nickname'),
             'email' => $data->get('email'),
             'title' => $data->get('title'),

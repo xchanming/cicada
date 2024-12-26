@@ -54,8 +54,6 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected string $name;
 
-    protected string $username;
-
     protected string $nickname;
 
     protected ?string $company = null;
@@ -372,16 +370,6 @@ class CustomerEntity extends Entity implements \Stringable
     public function setName(string $name): void
     {
         $this->name = $name;
-    }
-
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-
-    public function setUsername(string $username): void
-    {
-        $this->username = $username;
     }
 
     public function getNickname(): string

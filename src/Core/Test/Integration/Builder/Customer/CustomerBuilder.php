@@ -16,7 +16,6 @@ use Doctrine\DBAL\Connection;
  * How to use:
  * $x = (new CustomerBuilder(new IdsCollection(), 'p1'))
  *          ->name('Max')
- *          ->username('Muster')
  *          ->nickname('Muster')
  *          ->group('standard')
  *          ->build();
@@ -30,8 +29,6 @@ class CustomerBuilder
     public string $id;
 
     protected string $name;
-
-    protected string $username;
 
     protected string $nickname;
 
@@ -86,7 +83,6 @@ class CustomerBuilder
         $this->ids = $ids;
         $this->id = $ids->create($customerNumber);
         $this->name = 'Max';
-        $this->username = 'Mustermann';
         $this->nickname = 'Mustermann';
         $this->email = 'max@mustermann.com';
         $this->salutation = self::salutation($ids);
@@ -116,13 +112,6 @@ class CustomerBuilder
     public function name(string $name): self
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function username(string $username): self
-    {
-        $this->username = $username;
 
         return $this;
     }
