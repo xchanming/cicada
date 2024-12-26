@@ -54,8 +54,6 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected string $name;
 
-    protected string $nickname;
-
     protected ?string $company = null;
 
     /**
@@ -370,16 +368,6 @@ class CustomerEntity extends Entity implements \Stringable
     public function setName(string $name): void
     {
         $this->name = $name;
-    }
-
-    public function getNickname(): string
-    {
-        return $this->nickname;
-    }
-
-    public function setNickname(string $nickname): void
-    {
-        $this->nickname = $nickname;
     }
 
     public function getDoubleOptInRegistration(): bool

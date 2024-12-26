@@ -54,8 +54,6 @@ trait DocumentTrait
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Max',
-            'username' => 'Mustermann',
-            'nickname' => 'Mustermann',
             'customerNumber' => '1337',
             'languageId' => Defaults::LANGUAGE_SYSTEM,
             'email' => Uuid::randomHex() . '@example.com',

@@ -431,7 +431,6 @@ class RegisterRoute extends AbstractRegisterRoute
             'requestedGroupId' => $data->get('requestedGroupId', null),
             'salutationId' => $data->get('salutationId'),
             'name' => $data->get('name'),
-            'nickname' => $data->get('nickname'),
             'email' => $data->get('email'),
             'title' => $data->get('title'),
             'affiliateCode' => $data->get(OrderService::AFFILIATE_CODE_KEY),
@@ -512,7 +511,6 @@ class RegisterRoute extends AbstractRegisterRoute
         $mappedData = $addressData->only(
             'title',
             'name',
-            'nickname',
             'salutationId',
             'street',
             'zipcode',

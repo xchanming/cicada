@@ -90,7 +90,6 @@ class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, Mai
             'customerNumber' => $this->customer->getCustomerNumber(),
             'customerEmail' => $this->customer->getEmail(),
             'customerName' => $this->customer->getName(),
-            'customerNickname' => $this->customer->getNickname(),
             'customerCompany' => $this->customer->getCompany(),
             'customerSalutationId' => $this->customer->getSalutationId(),
         ];

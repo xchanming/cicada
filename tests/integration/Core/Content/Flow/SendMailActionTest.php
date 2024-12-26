@@ -748,8 +748,6 @@ class SendMailActionTest extends TestCase
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Max',
-            'username' => 'Mustermann',
-            'nickname' => 'Mustermann',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => '12345678',

@@ -90,7 +90,6 @@ class CustomerGenerator implements DemodataGeneratorInterface
             'customerNumber' => '1337',
             'salutationId' => $salutationId,
             'name' => 'Max',
-            'nickname' => 'Mustermann',
             'email' => 'test@example.com',
             'password' => 'cicada',
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
@@ -148,7 +147,6 @@ class CustomerGenerator implements DemodataGeneratorInterface
             $randomDate = $context->getFaker()->dateTimeBetween('-2 years');
             $id = Uuid::randomHex();
             $name = $context->getFaker()->name();
-            $nickname = $context->getFaker()->userName();
             $salutationId = Uuid::fromBytesToHex($this->getRandomSalutationId());
             $title = $this->getRandomTitle();
 
@@ -174,7 +172,6 @@ class CustomerGenerator implements DemodataGeneratorInterface
                 'salutationId' => $salutationId,
                 'title' => $title,
                 'name' => $name,
-                'nickname' => $nickname,
                 'email' => $id . $context->getFaker()->format('safeEmail'),
                 // use dummy hashed password, so not need to compute the hash for every customer
                 // password is `cicada`

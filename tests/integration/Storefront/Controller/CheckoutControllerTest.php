@@ -704,8 +704,6 @@ class CheckoutControllerTest extends TestCase
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
             'name' => 'Test',
-            'username' => self::CUSTOMER_NAME,
-            'nickname' => self::CUSTOMER_NAME,
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];

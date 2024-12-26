@@ -175,8 +175,6 @@
     "personalTitlePlaceholder": "Enter title...",
     "personalNameLabel": "Name",
     "personalNamePlaceholder": "Enter name...",
-    "personalNickNameLabel": "Nickname",
-    "personalNickNamePlaceholder": "Enter nickname...",
     "personalMailLabel": "Email address",
     "personalMailPlaceholder": "Enter email address...",
     "personalMailConfirmationLabel": "Email address confirmation",
@@ -590,10 +588,8 @@
     "labelActionSelect": "Action",
     "labelMail": "Email address",
     "labelName": "Name",
-    "labelNickName": "Nickname",
     "placeholderMail": "Enter email address...",
     "placeholderName": "John",
-    "placeholderNickName": "Doe"
   },
   "contact": {
     "headline": "Contact",

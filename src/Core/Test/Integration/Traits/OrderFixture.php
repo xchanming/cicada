@@ -134,7 +134,6 @@ trait OrderFixture
                         'id' => $customerId,
                         'email' => 'test@example.com',
                         'name' => 'Noe',
-                        'nickname' => 'Noe',
                         'salutationId' => $salutationId,
                         'title' => 'Doc',
                         'customerNumber' => 'Test',

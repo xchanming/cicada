@@ -144,7 +144,6 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
 
         $customer = (new CustomerBuilder($this->ids, '1337'))
             ->name('Max')
-            ->nickname('Mustermann')
             ->add('id', $this->ids->get('customer'))
             ->add('email', Uuid::randomHex() . '@example.com')
             ->add('salesChannelId', TestDefaults::SALES_CHANNEL)

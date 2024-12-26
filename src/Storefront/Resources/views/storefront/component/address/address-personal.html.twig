@@ -1,4 +1,4 @@
-{# Provides customer type, salutation, title, name, nickname and birthday fields for address forms (e.g. registering a user, creating or updating an address) #}
+{# Provides customer type, salutation, title, name and birthday fields for address forms (e.g. registering a user, creating or updating an address) #}
 {% block component_address_personal_fields %}
     {% block component_address_personal_account_type %}
         {% if (onlyCompanyRegistration or (config('core.loginRegistration.showAccountTypeSelection') and not hideCustomerTypeSelect)) and not hasSelectedBusiness %}

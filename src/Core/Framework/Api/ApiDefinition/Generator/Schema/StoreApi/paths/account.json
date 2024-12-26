@@ -61,7 +61,6 @@
                                 "required": [
                                     "salutationId",
                                     "name",
-                                    "nickname"
                                 ],
                                 "properties": {
                                     "salutationId": {
@@ -74,10 +73,6 @@
                                     },
                                     "name": {
                                         "description": "Customer name. Value will be reused for shipping and billing address if not provided explicitly.",
-                                        "type": "string"
-                                    },
-                                    "nickname": {
-                                        "description": "Customer nickname. Value will be reused for shipping and billing address if not provided explicitly.",
                                         "type": "string"
                                     },
                                     "birthdayDay": {

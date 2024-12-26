@@ -25,7 +25,6 @@ class CustomerTransformerTest extends TestCase
             'customerId' => $customerId,
             'email' => 'test@example.org',
             'name' => 'Max',
-            'nickname' => 'Smith',
             'salutationId' => null,
             'title' => 'Dr.',
             'vatIds' => null,
@@ -42,7 +41,6 @@ class CustomerTransformerTest extends TestCase
         $customerEntity->setId($id);
         $customerEntity->setEmail('test@example.org');
         $customerEntity->setName('Max');
-        $customerEntity->setNickname('Smith');
         $customerEntity->setTitle('Dr.');
         $customerEntity->setCompany('Acme Inc.');
         $customerEntity->setCustomerNumber('ABC123XY');

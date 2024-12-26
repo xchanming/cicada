@@ -233,14 +233,12 @@ class CustomerProfileValidationFactoryTest extends TestCase
         $definition
             ->add('salutationId', new EntityExists(['entity' => $this->salutationDefinition->getEntityName(), 'context' => $context->getContext()]))
             ->add('name', new NotBlank())
-            ->add('nickname', new NotBlank())
             ->add('accountType', new Choice($this->accountTypes))
             ->add('title', new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE]));
 
         if (Feature::isActive('v6.7.0.0')) {
             $definition
-                ->add('name', new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]))
-                ->add('nickname', new Length(['max' => CustomerDefinition::MAX_LENGTH_NICKNAME]));
+                ->add('name', new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]));
         }
     }
 

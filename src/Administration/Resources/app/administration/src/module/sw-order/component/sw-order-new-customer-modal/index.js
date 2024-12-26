@@ -46,8 +46,6 @@ export default {
             'sw.order.new.customer.detail': {
                 customer: [
                     'name',
-                    'username',
-                    'nickname',
                     'email',
                     'salesChannelId',
                     'customerNumber',

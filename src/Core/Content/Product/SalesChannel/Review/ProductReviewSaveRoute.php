@@ -67,7 +67,7 @@ class ProductReviewSaveRoute extends AbstractProductReviewSaveRoute
         $customerId = $customer->getId();
 
         if (!$data->has('name')) {
-            $data->set('name', $customer->getNickname());
+            $data->set('name', $customer->getName());
         }
 
         if (!$data->has('email')) {
@@ -102,7 +102,7 @@ class ProductReviewSaveRoute extends AbstractProductReviewSaveRoute
         $event = new ReviewFormEvent(
             $context->getContext(),
             $context->getSalesChannel()->getId(),
-            new MailRecipientStruct([$mail => $review['externalUser'] . $data->get('nickname')]),
+            new MailRecipientStruct([$mail => $review['externalUser'] . $data->get('name')]),
             $data,
             $productId,
             $customerId

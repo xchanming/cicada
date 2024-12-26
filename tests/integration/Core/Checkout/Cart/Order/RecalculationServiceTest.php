@@ -1407,8 +1407,6 @@ class RecalculationServiceTest extends TestCase
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Max',
-            'username' => 'Mustermann',
-            'nickname' => 'Mustermann',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,

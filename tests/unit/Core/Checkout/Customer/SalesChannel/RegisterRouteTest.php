@@ -679,8 +679,6 @@ class RegisterRouteTest extends TestCase
                 'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             ],
             'salutationId' => $salutationId,
-            'username' => 'Mustermann',
-            'nickname' => 'Mustermann',
             'name' => 'Max',
             'vatIds' => ['123'],
             'storefrontUrl' => 'foo',
@@ -792,8 +790,6 @@ class RegisterRouteTest extends TestCase
             ],
             'salutationId' => $salutationId,
             'name' => 'Mustermann',
-            'username' => 'Max',
-            'nickname' => 'Max',
             'storefrontUrl' => 'foo',
         ];
 

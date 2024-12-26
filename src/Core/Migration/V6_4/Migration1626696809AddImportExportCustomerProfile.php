@@ -43,8 +43,6 @@ class Migration1626696809AddImportExportCustomerProfile extends MigrationStep
                 ['key' => 'salutation.salutationKey', 'mappedKey' => 'salutation'],
                 ['key' => 'customerNumber', 'mappedKey' => 'customer_number'],
                 ['key' => 'name', 'mappedKey' => 'name'],
-                ['key' => 'username', 'mappedKey' => 'username'],
-                ['key' => 'nickname', 'mappedKey' => 'nickname'],
                 ['key' => 'email', 'mappedKey' => 'email'],
                 ['key' => 'active', 'mappedKey' => 'active'],
                 ['key' => 'guest', 'mappedKey' => 'guest'],

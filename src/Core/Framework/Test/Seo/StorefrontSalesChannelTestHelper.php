@@ -142,7 +142,6 @@ trait StorefrontSalesChannelTestHelper
             'name' => 'test',
             'email' => $email,
             'password' => $password,
-            'nickname' => 'bar',
             'groupId' => $salesChannel->getCustomerGroupId(),
             'salutationId' => $this->getValidSalutationId(),
             'salesChannelId' => $salesChannel->getId(),

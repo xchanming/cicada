@@ -3,8 +3,6 @@
     "customer": [
       "salutationId",
       "name",
-      "username",
-      "nickname",
       "email",
       "groupId",
       "salesChannelId",

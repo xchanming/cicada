@@ -294,8 +294,6 @@ trait StorefrontPageTestBehaviour
             'email' => 'foo@bar.de',
             'password' => 'password',
             'name' => 'Max',
-            'username' => 'Mustermann',
-            'nickname' => 'Mustermann',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];

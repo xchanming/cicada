@@ -158,8 +158,6 @@ class NewsletterControllerTest extends TestCase
             'password' => TestDefaults::HASHED_PASSWORD,
             'title' => 'Dr.',
             'name' => 'Max',
-            'username' => 'Mustermann',
-            'nickname' => 'Mustermann',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];

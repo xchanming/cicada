@@ -55,7 +55,6 @@ class Migration1554199340AddImportExportProfile extends MigrationStep
 
         $fields = [
             'name',
-            'nickname',
             'email',
             'customerNumber',
             'salesChannelId',
