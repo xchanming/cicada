@@ -152,17 +152,18 @@
                                 />
                                 {% endblock %}
 
-                            <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                            {% block sw_customer_card_metadata_customer_name_editor_company %}
-                            <sw-text-field
-                                v-model:value="customer.company"
-                                name="sw-field--customer-company"
-                                :required="isBusinessAccountType"
-                                :error="customerCompanyError"
-                                :label="$tc('sw-customer.card.labelCompany')"
-                                :placeholder="$tc('sw-customer.card.placeholderCompany')"
-                            />
-                            {% endblock %}
+                                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+                                {% block sw_customer_card_metadata_customer_name_editor_company %}
+                                <sw-text-field
+                                    v-model:value="customer.company"
+                                    name="sw-field--customer-company"
+                                    :required="isBusinessAccountType"
+                                    :error="customerCompanyError"
+                                    :label="$tc('sw-customer.card.labelCompany')"
+                                    :placeholder="$tc('sw-customer.card.placeholderCompany')"
+                                />
+                                {% endblock %}
+                            </sw-container>
                         </div>
                         {% endblock %}
                         {% endblock %}
