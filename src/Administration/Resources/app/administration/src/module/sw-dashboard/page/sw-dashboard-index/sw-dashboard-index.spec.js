@@ -23,4 +23,9 @@ describe('module/sw-dashboard/page/sw-dashboard-index', () => {
     afterAll(() => {
         jest.useRealTimers();
     });
+
+    it('sample test', () => {
+        expect(1 + 1).toBe(2);
+    });
 });
+
