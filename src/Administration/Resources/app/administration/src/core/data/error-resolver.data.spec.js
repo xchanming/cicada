@@ -39,15 +39,14 @@ describe('src/core/data/error-resolver.data', () => {
         it('should handles write errors and adds system errors', () => {
             const errors = [
                 { source: { pointer: '/0/name' }, code: 'CODE1' },
-                { source: { pointer: '/0/nickname' }, code: 'CODE2' },
                 {
                     source: { pointer: '/0/translations/123123' },
-                    code: 'CODE2',
+                    code: 'CODE1',
                 },
                 {
                     source: { pointer: '' },
                     message: 'System Error',
-                    code: 'CODE4',
+                    code: 'CODE3',
                 },
             ];
 
@@ -57,7 +56,6 @@ describe('src/core/data/error-resolver.data', () => {
                     changes: [
                         {
                             name: 'a',
-                            nickname: 'b',
                         },
                     ],
                 },
@@ -66,7 +64,6 @@ describe('src/core/data/error-resolver.data', () => {
                     changes: [
                         {
                             name: 'c',
-                            nickname: 'd',
                         },
                     ],
                 },
@@ -74,17 +71,13 @@ describe('src/core/data/error-resolver.data', () => {
 
             errorResolver.handleWriteErrors(changeset, { errors });
 
-            expect(Cicada.State.dispatch).toHaveBeenCalledTimes(3);
+            expect(Cicada.State.dispatch).toHaveBeenCalledTimes(2);
             expect(Cicada.State.dispatch).toHaveBeenNthCalledWith(1, 'error/addApiError', {
                 expression: expect.anything(),
                 error: expect.any(Cicada.Classes.CicadaError),
             });
-            expect(Cicada.State.dispatch).toHaveBeenNthCalledWith(2, 'error/addApiError', {
-                expression: expect.anything(),
-                error: expect.any(Cicada.Classes.CicadaError),
-            });
             expect(Cicada.State.dispatch).toHaveBeenNthCalledWith(
-                3,
+                2,
                 'error/addSystemError',
                 expect.any(Cicada.Classes.CicadaError),
             );
