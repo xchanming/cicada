@@ -90,9 +90,9 @@
       "message": "The Cicada Account is your main hub for interaction with all Cicada services.",
       "registerAccountText": "You don't have a Cicada Account yet? Sign up right",
       "registerAccountHere": "here",
-      "registerAccountUrl": "https://account.cicada.com/register?lang=en",
+      "registerAccountUrl": "https://account.xchanming.com/register?lang=en",
       "forgotPasswordText": "Did you forget your password?",
-      "forgotPasswordUrl": "https://account.cicada.com/recovery?lang=en"
+      "forgotPasswordUrl": "https://account.xchanming.com/recovery?lang=en"
     },
     "error": {
       "messageLoginDataInvalid": "Login credentials incorrect, please try again."
@@ -125,11 +125,11 @@
       "headlineUsefulLinks": "Useful links",
       "loadingMessage": "Restarting application<br>This may take a while...",
       "documentationLabel": "Documentation",
-      "documentationUrl": "https://docs.cicada.com/en",
+      "documentationUrl": "https://docs.xchanming.com/en",
       "forumLabel": "Forum",
-      "forumUrl": "https://forum.cicada.com/",
+      "forumUrl": "https://forum.xchanming.com/",
       "roadmapLabel": "Roadmap",
-      "roadmapUrl": "https://www.cicada.com/en/roadmap/",
+      "roadmapUrl": "https://www.xchanming.com/en/roadmap/",
       "modalTitle": "Done"
     },
     "stepItemTitle": {

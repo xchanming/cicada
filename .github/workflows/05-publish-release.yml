@@ -30,7 +30,7 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
         - name: AWS Deploy
-          run: aws s3 sync generated s3://releases.s3.cicada.com/changelog
+          run: aws s3 sync generated s3://releases.s3.xchanming.com/changelog
           env:
             AWS_ACCESS_KEY_ID: ${{ secrets.RELEASE_INFO_KEY }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.RELEASE_INFO_SECRET }}

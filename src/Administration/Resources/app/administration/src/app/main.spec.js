@@ -233,7 +233,6 @@ describe('src/app/main.ts', () => {
             'language',
             'userInformation',
             'worker',
-            'usageData',
             'inAppPurchaseCheckout',
             'store',
             'topbarButton',

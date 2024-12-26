@@ -124,7 +124,7 @@ describe('module/sw-cms/elements/manufacturer-logo/config', () => {
                 },
                 data: {
                     media: {
-                        url: 'http://cicada.com/image.jpg',
+                        url: 'http://xchanming.com/image.jpg',
                         id: '1',
                     },
                 },

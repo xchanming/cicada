@@ -7,17 +7,17 @@ import { reactive } from 'vue';
 const entityMediaItems = [
     {
         id: '1',
-        url: 'http://cicada.com/image1.jpg',
+        url: 'http://xchanming.com/image1.jpg',
         position: 3,
     },
     {
         id: '2',
-        url: 'http://cicada.com/image2.jpg',
+        url: 'http://xchanming.com/image2.jpg',
         position: 1,
     },
     {
         id: '3',
-        url: 'http://cicada.com/image3.jpg',
+        url: 'http://xchanming.com/image3.jpg',
         position: 2,
     },
 ];
@@ -105,17 +105,17 @@ describe('components/media/sw-media-list-selection-v2', () => {
             entityMediaItems: [
                 {
                     id: 'newId',
-                    url: 'http://cicada.com/image1-updated.jpg',
+                    url: 'http://xchanming.com/image1-updated.jpg',
                     position: 3,
                 },
                 {
                     id: '2',
-                    url: 'http://cicada.com/image2.jpg',
+                    url: 'http://xchanming.com/image2.jpg',
                     position: 1,
                 },
                 {
                     id: '3',
-                    url: 'http://cicada.com/image3.jpg',
+                    url: 'http://xchanming.com/image3.jpg',
                     position: 2,
                 },
             ],

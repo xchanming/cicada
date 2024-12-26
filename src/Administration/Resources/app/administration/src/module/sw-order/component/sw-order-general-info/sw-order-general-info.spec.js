@@ -184,7 +184,7 @@ describe('src/module/sw-order/component/sw-order-general-info', () => {
         expect(summary.exists()).toBeTruthy();
         expect(link.exists()).toBeTruthy();
         expect(summary.text()).toContain('10000');
-        expect(summary.text()).toContain('John Doe');
+        expect(summary.text()).toContain('John');
         expect(summary.text()).toContain('john@doe.dev');
     });
 

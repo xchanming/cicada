@@ -44,10 +44,10 @@ const linkDataProvider = [
     },
     {
         buttonConfig: {
-            value: 'mailto:test@cicada.com',
+            value: 'mailto:test@xchanming.com',
             type: 'email',
         },
-        value: 'test@cicada.com',
+        value: 'test@xchanming.com',
         type: 'email',
         prefix: 'mailto:',
         selector: '.sw-field--email input',

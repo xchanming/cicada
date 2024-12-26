@@ -100,7 +100,7 @@ describe('module/sw-cms/elements/manufacturer-logo/component', () => {
                 },
                 data: {
                     media: {
-                        url: 'http://cicada.com/image.jpg',
+                        url: 'http://xchanming.com/image.jpg',
                         id: '1',
                     },
                 },

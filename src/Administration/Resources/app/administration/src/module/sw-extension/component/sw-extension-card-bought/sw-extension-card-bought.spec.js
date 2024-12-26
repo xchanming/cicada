@@ -474,7 +474,7 @@ describe('src/module/sw-extension/component/sw-extension-card-bought', () => {
                                 code: 'FRAMEWORK__STORE_ERROR',
                                 detail: 'The download of the extension is not allowed, please purchase a corresponding license or contact the customer service',
                                 meta: {
-                                    documentationLink: 'https://docs.cicada.com/en/cicada-6-en',
+                                    documentationLink: 'https://docs.xchanming.com/en/cicada-6-en',
                                 },
                                 status: '500',
                                 title: 'Download not allowed',
@@ -518,7 +518,7 @@ describe('src/module/sw-extension/component/sw-extension-card-bought', () => {
                 'The download of the extension is not allowed, please purchase a corresponding license or contact the customer service',
             details: null,
             parameters: {
-                documentationLink: 'https://docs.cicada.com/en/cicada-6-en',
+                documentationLink: 'https://docs.xchanming.com/en/cicada-6-en',
             },
         });
 
@@ -527,7 +527,7 @@ describe('src/module/sw-extension/component/sw-extension-card-bought', () => {
             'The download of the extension is not allowed, please purchase a corresponding license or contact the customer service',
         );
         expect(wrapper.find('.sw-extension-card-bought__installation-failed-modal p > a').text()).toBe(
-            'https://docs.cicada.com/en/cicada-6-en',
+            'https://docs.xchanming.com/en/cicada-6-en',
         );
     });
 

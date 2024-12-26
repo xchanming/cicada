@@ -43,7 +43,7 @@ async function createWrapper(privileges = []) {
                                             username: 'admin',
                                             name: 'admin',
                                             phone: '18000000000',
-                                            email: 'info@cicada.com',
+                                            email: 'info@xchanming.com',
                                         });
                                     },
                                     create: () => {

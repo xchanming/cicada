@@ -261,20 +261,20 @@ function createConfig() {
             name: 'ConfigRenderer.config.urlField',
             type: 'url',
             config: {
-                defaultValue: 'https://www.cicada.com',
+                defaultValue: 'https://www.xchanming.com',
                 label: {
                     'en-GB': 'url field',
                 },
             },
             _test: {
-                defaultValueDom: 'www.cicada.com',
+                defaultValueDom: 'www.xchanming.com',
                 domValueCheck: (field, domValue) => {
                     expect(field.find('input').element.value).toBe(domValue);
                 },
                 afterValue: 'https://www.cicada.de',
                 afterValueDom: 'www.cicada.de',
-                childValue: 'https://www.child.cicada.com',
-                childValueDom: 'www.child.cicada.com',
+                childValue: 'https://www.child.xchanming.com',
+                childValueDom: 'www.child.xchanming.com',
                 changeValueFunction: async (field, afterValue) => {
                     // change input value
                     await field.find('input').setValue(afterValue);

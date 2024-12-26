@@ -7,7 +7,7 @@
             <float name="price" store-api-aware="true" default="10.99" />
             <bool name="active" store-api-aware="true" default="true" />
             <date name="releaseDate" store-api-aware="true" default="2021-01-01T00:00:00" />
-            <email name="email" store-api-aware="true" default="example@cicada.com" />
+            <email name="email" store-api-aware="true" default="example@xchanming.com" />
             <text name="description" store-api-aware="true" default="default product description" />
         </fields>
     </entity>

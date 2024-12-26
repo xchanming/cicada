@@ -47,10 +47,10 @@ class ServiceRegistryClientTest extends TestCase
             $response = new MockResponse($response),
         ]);
 
-        $registryClient = new ServiceRegistryClient('https://www.cicada.com/services.json', $client);
+        $registryClient = new ServiceRegistryClient('https://www.xchanming.com/services.json', $client);
 
         static::assertEquals([], $registryClient->getAll());
-        static::assertEquals('https://www.cicada.com/services.json', $response->getRequestUrl());
+        static::assertEquals('https://www.xchanming.com/services.json', $response->getRequestUrl());
     }
 
     public function testFailRequestReturnsEmptyListOfServices(): void
@@ -59,10 +59,10 @@ class ServiceRegistryClientTest extends TestCase
             $response = new MockResponse('', ['http_code' => 503]),
         ]);
 
-        $registryClient = new ServiceRegistryClient('https://www.cicada.com/services.json', $client);
+        $registryClient = new ServiceRegistryClient('https://www.xchanming.com/services.json', $client);
 
         static::assertEquals([], $registryClient->getAll());
-        static::assertEquals('https://www.cicada.com/services.json', $response->getRequestUrl());
+        static::assertEquals('https://www.xchanming.com/services.json', $response->getRequestUrl());
     }
 
     public function testSuccessfulRequestReturnsListOfServices(): void
@@ -78,7 +78,7 @@ class ServiceRegistryClientTest extends TestCase
             $response = new MockResponse((string) json_encode($service)),
         ]);
 
-        $registryClient = new ServiceRegistryClient('https://www.cicada.com/services.json', $client);
+        $registryClient = new ServiceRegistryClient('https://www.xchanming.com/services.json', $client);
 
         $entries = $registryClient->getAll();
 
@@ -93,7 +93,7 @@ class ServiceRegistryClientTest extends TestCase
         static::assertEquals('My Cool Service 2', $entries[1]->description);
         static::assertEquals('https://coolservice2.com', $entries[1]->host);
         static::assertEquals('/app-endpoint', $entries[1]->appEndpoint);
-        static::assertEquals('https://www.cicada.com/services.json', $response->getRequestUrl());
+        static::assertEquals('https://www.xchanming.com/services.json', $response->getRequestUrl());
         static::assertEquals('/license-sync-endpoint', $entries[1]->licenseSyncEndPoint);
     }
 
@@ -110,7 +110,7 @@ class ServiceRegistryClientTest extends TestCase
             new MockResponse((string) json_encode($service)),
         ]);
 
-        $registryClient = new ServiceRegistryClient('https://www.cicada.com/services.json', $client);
+        $registryClient = new ServiceRegistryClient('https://www.xchanming.com/services.json', $client);
 
         $entries1 = $registryClient->getAll();
         static::assertCount(2, $entries1);
@@ -145,7 +145,7 @@ class ServiceRegistryClientTest extends TestCase
             new MockResponse((string) json_encode($services2)),
         ]);
 
-        $registryClient = new ServiceRegistryClient('https://www.cicada.com/services.json', $client);
+        $registryClient = new ServiceRegistryClient('https://www.xchanming.com/services.json', $client);
 
         $entries1 = $registryClient->getAll();
         static::assertCount(2, $entries1);

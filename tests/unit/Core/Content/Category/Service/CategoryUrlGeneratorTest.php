@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(CategoryUrlGenerator::class)]
 class CategoryUrlGeneratorTest extends TestCase
 {
-    private const EXTERNAL_URL = 'https://cicada.com/';
+    private const EXTERNAL_URL = 'https://xchanming.com/';
 
     private CategoryUrlGenerator $urlGenerator;
 

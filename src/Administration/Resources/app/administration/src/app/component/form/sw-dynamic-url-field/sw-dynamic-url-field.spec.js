@@ -27,8 +27,8 @@ const linkDataProvider = [
         placeholder: 'sw-text-editor-toolbar.link.placeholderPhoneNumber',
     },
     {
-        URL: 'mailto:test@cicada.com',
-        value: 'test@cicada.com',
+        URL: 'mailto:test@xchanming.com',
+        value: 'test@xchanming.com',
         type: 'email',
         prefix: 'mailto:',
         selector: '.sw-email-field',

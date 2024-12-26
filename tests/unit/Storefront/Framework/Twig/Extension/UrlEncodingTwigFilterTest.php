@@ -23,7 +23,7 @@ class UrlEncodingTwigFilterTest extends TestCase
     public function testHappyPath(): void
     {
         $filter = new UrlEncodingTwigFilter();
-        $url = 'https://cicada.com:80/some/thing';
+        $url = 'https://xchanming.com:80/some/thing';
         static::assertEquals($url, $filter->encodeUrl($url));
     }
 
@@ -36,14 +36,14 @@ class UrlEncodingTwigFilterTest extends TestCase
     public function testItEncodesWithoutPort(): void
     {
         $filter = new UrlEncodingTwigFilter();
-        $url = 'https://cicada.com/some/thing';
+        $url = 'https://xchanming.com/some/thing';
         static::assertEquals($url, $filter->encodeUrl($url));
     }
 
     public function testRespectsQueryParameter(): void
     {
         $filter = new UrlEncodingTwigFilter();
-        $url = 'https://cicada.com/some/thing?a=3&b=25';
+        $url = 'https://xchanming.com/some/thing?a=3&b=25';
         static::assertEquals($url, $filter->encodeUrl($url));
     }
 
@@ -51,8 +51,8 @@ class UrlEncodingTwigFilterTest extends TestCase
     {
         $filter = new UrlEncodingTwigFilter();
         static::assertEquals(
-            'cicada.com/some/thing',
-            $filter->encodeUrl('cicada.com/some/thing')
+            'xchanming.com/some/thing',
+            $filter->encodeUrl('xchanming.com/some/thing')
         );
     }
 
@@ -60,8 +60,8 @@ class UrlEncodingTwigFilterTest extends TestCase
     {
         $filter = new UrlEncodingTwigFilter();
         static::assertEquals(
-            'https://cicada.com:80/so%20me/thing%20new.jpg',
-            $filter->encodeUrl('https://cicada.com:80/so me/thing new.jpg')
+            'https://xchanming.com:80/so%20me/thing%20new.jpg',
+            $filter->encodeUrl('https://xchanming.com:80/so me/thing new.jpg')
         );
     }
 
@@ -69,8 +69,8 @@ class UrlEncodingTwigFilterTest extends TestCase
     {
         $filter = new UrlEncodingTwigFilter();
         static::assertEquals(
-            'https://cicada.com:80/so%20me/thing%20new.jpg',
-            $filter->encodeUrl('https://cicada.com:80/so me/thing new.jpg')
+            'https://xchanming.com:80/so%20me/thing%20new.jpg',
+            $filter->encodeUrl('https://xchanming.com:80/so me/thing new.jpg')
         );
     }
 

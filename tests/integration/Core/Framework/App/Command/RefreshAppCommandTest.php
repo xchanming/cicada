@@ -140,7 +140,7 @@ class RefreshAppCommandTest extends TestCase
         // header domains
         static::assertMatchesRegularExpression('/.*Domain\s+\n.*/', $display);
         // content domains
-        static::assertMatchesRegularExpression('/.*cicada.com\s+\n.*/', $display);
+        static::assertMatchesRegularExpression('/.*xchanming.com\s+\n.*/', $display);
         static::assertMatchesRegularExpression('/.*example.com\s+\n.*/', $display);
 
         // header app list
@@ -163,7 +163,7 @@ class RefreshAppCommandTest extends TestCase
         // header domains
         static::assertMatchesRegularExpression('/.*Domain\s+\n.*/', $display);
         // content domains
-        static::assertMatchesRegularExpression('/.*cicada.com\s+\n.*/', $display);
+        static::assertMatchesRegularExpression('/.*xchanming.com\s+\n.*/', $display);
         static::assertMatchesRegularExpression('/.*example.com\s+\n.*/', $display);
 
         static::assertStringContainsString('Aborting due to user input.', $commandTester->getDisplay());

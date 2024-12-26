@@ -7,7 +7,7 @@ import { setupCmsEnvironment } from 'src/module/sw-cms/test-utils';
 
 const mediaDataMock = {
     id: '1',
-    url: 'http://cicada.com/image1.jpg',
+    url: 'http://xchanming.com/image1.jpg',
 };
 
 async function createWrapper() {

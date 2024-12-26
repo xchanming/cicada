@@ -34,15 +34,15 @@ async function createWrapper() {
                     'sw-one-to-many-grid': {
                         props: ['collection'],
                         template: `
-                    <div>
-                        <tbody>
-                            <td v-for="item in collection">
-                                <slot name="column-lastName" v-bind="{ item }"></slot>
-                                <slot name="actions" v-bind="{ item }"></slot>
-                            </td>
-                        </tbody>
-                    </div>
-                `,
+                            <div>
+                                <tbody>
+                                <td v-for="item in collection">
+                                    <slot name="column-name" v-bind="{ item }"></slot>
+                                    <slot name="actions" v-bind="{ item }"></slot>
+                                </td>
+                                </tbody>
+                            </div>
+                        `,
                     },
                     'sw-context-menu-item': {
                         emits: ['click'],
@@ -69,8 +69,7 @@ async function createWrapper() {
                                     if (id === 'clone-address-id') {
                                         return Promise.resolve({
                                             id: 'clone-address-id',
-                                            lastName: 'Thu',
-                                            name: 'Vo',
+                                            name: 'Thu',
                                             city: 'Berlin',
                                             street: 'Legiendamm',
                                             zipcode: '550000',
@@ -92,7 +91,7 @@ async function createWrapper() {
                     addresses: [
                         {
                             id: '1',
-                            name: 'Quynh',
+                            name: 'Nguyen',
                             city: 'Berlin',
                             street: 'Legiendamm',
                             zipcode: '550000',
@@ -154,7 +153,8 @@ describe('module/sw-customer/view/sw-customer-detail-addresses.spec.js', () => {
         await wrapper.setData({
             currentAddress: {
                 id: '1',
-                name: 'Daisha',
+                lastName: 'Wiegand',
+                firstName: 'Daisha',
                 city: 'Lake Waldo',
                 customerId: '1',
             },

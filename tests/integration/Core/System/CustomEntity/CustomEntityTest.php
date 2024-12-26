@@ -245,7 +245,7 @@ class CustomEntityTest extends TestCase
             'price' => 10.99,
             'active' => true,
             'releaseDate' => '2021-01-01 00:00:00',
-            'email' => 'example@cicada.com',
+            'email' => 'example@xchanming.com',
             'description' => 'default product description',
         ];
 

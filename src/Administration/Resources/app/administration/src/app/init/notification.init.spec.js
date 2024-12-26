@@ -27,7 +27,7 @@ describe('src/app/init/notification.init.ts', () => {
                 },
                 {
                     label: 'Cancel',
-                    route: 'https://www.cicada.com',
+                    route: 'https://www.xchanming.com',
                     disabled: false,
                 },
             ],

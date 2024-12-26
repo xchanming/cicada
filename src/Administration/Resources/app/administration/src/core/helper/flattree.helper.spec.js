@@ -107,13 +107,13 @@ describe('core/helper/flattree.helper.js', () => {
     it('automatically sets target to _self if a link is specified', async () => {
         flatTree.add({
             id: 'foo.bar',
-            link: 'https://cicada.com',
+            link: 'https://xchanming.com',
         });
 
         expect(flatTree.convertToTree()).toEqual([
             expect.objectContaining({
                 id: 'foo.bar',
-                link: 'https://cicada.com',
+                link: 'https://xchanming.com',
                 target: '_self',
             }),
         ]);

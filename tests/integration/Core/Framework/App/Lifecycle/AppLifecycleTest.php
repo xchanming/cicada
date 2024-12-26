@@ -1262,7 +1262,7 @@ class AppLifecycleTest extends TestCase
         $allowedHosts = $app->getAllowedHosts();
         static::assertIsArray($allowedHosts);
         static::assertCount(2, $allowedHosts);
-        static::assertContains('cicada.com', $allowedHosts);
+        static::assertContains('xchanming.com', $allowedHosts);
         static::assertContains('example.com', $allowedHosts);
     }
 

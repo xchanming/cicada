@@ -55,8 +55,7 @@ import Feature from 'src/core/feature';
 import 'src/app/decorator';
 
 /** Import Meteor Component Library styles */
-import '@cicada-ag/meteor-component-library/styles.css';
-import '@cicada-ag/meteor-component-library/font.css';
+import '@cicada-ag/meteor-component-library/dist/style.css';
 
 import ChangesetGenerator from '../core/data/changeset-generator.data';
 import ErrorResolver from '../core/data/error-resolver.data';

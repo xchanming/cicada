@@ -42,7 +42,7 @@
         <read>order</read>
     </permissions>
     <allowed-hosts>
-        <host>cicada.com</host>
+        <host>xchanming.com</host>
         <host>example.com</host>
     </allowed-hosts>
 </manifest>

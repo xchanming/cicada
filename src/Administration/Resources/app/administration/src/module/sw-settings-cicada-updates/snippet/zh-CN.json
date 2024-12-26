@@ -43,7 +43,7 @@
         "writeableCheckValid": "The following directories and files are writable:<br/>{checkedDirectories}",
         "writeableCheckFailed": "The following directories and files are not writable:<br>{failedDirectories}",
         "validCicadaLicense": "Your current Cicada version is out of date. You may want to consider updating to the latest version.",
-        "invalidCicadaLicense": "No active Cicada subscription found.<br>Automatic updates cannot be performed.<br>You may want to purchase a Cicada subscription via the <a target=\"_blank\" href=\"https://account.cicada.com\">Cicada account page.</a>"
+        "invalidCicadaLicense": "No active Cicada subscription found.<br>Automatic updates cannot be performed.<br>You may want to purchase a Cicada subscription via the <a target=\"_blank\" href=\"https://account.xchanming.com\">Cicada account page.</a>"
       },
       "ready": "Ready",
       "notReady": "Not ready"

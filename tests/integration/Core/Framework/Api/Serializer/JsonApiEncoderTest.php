@@ -230,7 +230,7 @@ class JsonApiEncoderTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
                 'toOne' => [
                     'name' => 'test',
@@ -273,7 +273,7 @@ class JsonApiEncoderTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
                 'oneToMany' => [
                     [

@@ -66,7 +66,7 @@ describe('src/module/sw-settings-store/page/sw-settings-store', () => {
             'String with many spaces at the beginning',
         );
 
-        setTrimAndCompare(' https://www.cicada.com/de/ ', 'https://www.cicada.com/de/');
+        setTrimAndCompare(' https://www.xchanming.com/de/ ', 'https://www.xchanming.com/de/');
 
         // sets the licenseHost to the String 'set', then calls the trimHost method and compares the trimmed licenseHost
         // with the expected string

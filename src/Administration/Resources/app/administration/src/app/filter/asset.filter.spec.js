@@ -25,9 +25,9 @@ describe('src/app/filter/asset.filter.ts', () => {
     });
 
     it('should use the assetsPath from the Context API', () => {
-        Cicada.Context.api.assetsPath = 'https://www.cicada.com/';
+        Cicada.Context.api.assetsPath = 'https://www.xchanming.com/';
         const result = assetFilter('/test.jpg');
 
-        expect(result).toBe('https://www.cicada.com/test.jpg');
+        expect(result).toBe('https://www.xchanming.com/test.jpg');
     });
 });

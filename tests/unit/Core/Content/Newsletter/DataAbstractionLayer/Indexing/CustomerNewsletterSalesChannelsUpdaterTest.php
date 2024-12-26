@@ -24,7 +24,7 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
         $connection = $this->createMock(Connection::class);
         $connection->method('fetchAllAssociative')->willReturn([
             [
-                'email' => 'y.tran@cicada.com',
+                'email' => 'y.tran@xchanming.com',
                 'name' => 'Y',
                 'newsletter_sales_channel_ids' => $newsletterIds,
             ],
@@ -50,7 +50,7 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
                     static::assertNotNull($ids);
                     static::assertSame([
                         'ids' => Uuid::fromHexToBytesList($ids),
-                        'email' => 'y.tran@cicada.com',
+                        'email' => 'y.tran@xchanming.com',
                         'name' => 'Y',
                     ], $params);
                 });
@@ -66,7 +66,7 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
                     static::assertNotNull($ids);
                     static::assertSame([
                         'ids' => Uuid::fromHexToBytesList($ids),
-                        'email' => 'y.tran@cicada.com',
+                        'email' => 'y.tran@xchanming.com',
                         'name' => 'Y',
                     ], $params);
                 });

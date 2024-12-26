@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 #[Package('checkout')]
 class TestPaymentHandler extends AbstractPaymentHandler
 {
-    final public const REDIRECT_URL = 'https://cicada.com';
+    final public const REDIRECT_URL = 'https://xchanming.com';
 
     public function __construct(private readonly OrderTransactionStateHandler $transactionStateHandler)
     {

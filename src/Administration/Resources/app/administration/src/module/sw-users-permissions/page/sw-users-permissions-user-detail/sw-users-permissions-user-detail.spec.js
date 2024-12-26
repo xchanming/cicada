@@ -68,7 +68,7 @@ async function createWrapper(
                                             username: 'admin',
                                             name: '',
                                             phone: '18000000000',
-                                            email: 'info@cicada.com',
+                                            email: 'info@xchanming.com',
                                             accessKeys: {
                                                 entity: 'product',
                                             },
@@ -226,8 +226,8 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
         expect(fieldLanguage.exists()).toBeTruthy();
 
         expect(fieldFirstName.attributes('value')).toBe('');
-        expect(fieldLastName.attributes('value')).toBe('admin');
-        expect(fieldEmail.attributes('value')).toBe('info@cicada.com');
+        expect(fieldLastName.attributes('value')).toBe('18000000000');
+        expect(fieldEmail.attributes('value')).toBe('info@xchanming.com');
         expect(fieldUsername.attributes('value')).toBe('admin');
         expect(fieldProfilePicture.attributes('value')).toBeUndefined();
         expect(fieldPassword.attributes('value')).toBeUndefined();
@@ -247,24 +247,24 @@ describe('modules/sw-users-permissions/page/sw-users-permissions-user-detail', (
         });
         await flushPromises();
 
-        const fieldFirstName = wrapper.findComponent('.sw-settings-user-detail__grid-name');
-        const fieldLastName = wrapper.findComponent('.sw-settings-user-detail__grid-phone');
+        const fieldName = wrapper.findComponent('.sw-settings-user-detail__grid-name');
+        const fieldPhone = wrapper.findComponent('.sw-settings-user-detail__grid-phone');
         const fieldEmail = wrapper.findComponent('.sw-settings-user-detail__grid-eMail');
         const fieldUsername = wrapper.findComponent('.sw-settings-user-detail__grid-username');
         const fieldProfilePicture = wrapper.findComponent('.sw-settings-user-detail__grid-profile-picture');
         const fieldPassword = wrapper.findComponent('.sw-settings-user-detail__grid-password');
         const fieldLanguage = wrapper.findComponent('.sw-settings-user-detail__grid-language');
 
-        expect(fieldFirstName.exists()).toBeTruthy();
-        expect(fieldLastName.exists()).toBeTruthy();
+        expect(fieldName.exists()).toBeTruthy();
+        expect(fieldPhone.exists()).toBeTruthy();
         expect(fieldEmail.exists()).toBeTruthy();
         expect(fieldUsername.exists()).toBeTruthy();
         expect(fieldProfilePicture.exists()).toBeTruthy();
         expect(fieldPassword.exists()).toBeTruthy();
         expect(fieldLanguage.exists()).toBeTruthy();
 
-        expect(fieldFirstName.attributes('value')).toBe('Max');
-        expect(fieldLastName.attributes('value')).toBe('Mustermann');
+        expect(fieldName.attributes('value')).toBe('Max');
+        expect(fieldPhone.attributes('value')).toBe('18000000000');
         expect(fieldEmail.attributes('value')).toBe('max@mustermann.com');
         expect(fieldUsername.attributes('value')).toBe('maxmuster');
         expect(fieldProfilePicture.attributes('value')).toBeUndefined();

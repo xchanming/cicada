@@ -10,15 +10,15 @@ Cicada.Context.api.assetsPath = MOCK_ASSET_PATH;
 const sliderItemsConfigMock = [
     {
         mediaId: '1',
-        mediaUrl: 'http://cicada.com/image1.jpg',
+        mediaUrl: 'http://xchanming.com/image1.jpg',
     },
     {
         mediaId: '2',
-        mediaUrl: 'http://cicada.com/image2.jpg',
+        mediaUrl: 'http://xchanming.com/image2.jpg',
     },
     {
         mediaId: '3',
-        mediaUrl: 'http://cicada.com/image3.jpg',
+        mediaUrl: 'http://xchanming.com/image3.jpg',
     },
 ];
 
@@ -26,19 +26,19 @@ const sliderItemsDataMock = [
     {
         media: {
             id: '1',
-            url: 'http://cicada.com/image1.jpg',
+            url: 'http://xchanming.com/image1.jpg',
         },
     },
     {
         media: {
             id: '2',
-            url: 'http://cicada.com/image2.jpg',
+            url: 'http://xchanming.com/image2.jpg',
         },
     },
     {
         media: {
             id: '3',
-            url: 'http://cicada.com/image3.jpg',
+            url: 'http://xchanming.com/image3.jpg',
         },
     },
 ];
@@ -124,28 +124,28 @@ describe('src/module/sw-cms/elements/image-slider/component', () => {
 
         // Initial state
         expect(wrapper.vm.sliderPos).toBe(0);
-        expect(wrapper.vm.imgSrc).toBe('http://cicada.com/image1.jpg');
+        expect(wrapper.vm.imgSrc).toBe('http://xchanming.com/image1.jpg');
 
         // Click on back arrow
         wrapper.vm.setSliderArrowItem(-1);
 
         // Navigate to last item provided that first item is active
         expect(wrapper.vm.sliderPos).toBe(2);
-        expect(wrapper.vm.imgSrc).toBe('http://cicada.com/image3.jpg');
+        expect(wrapper.vm.imgSrc).toBe('http://xchanming.com/image3.jpg');
 
         // Click on next arrow
         wrapper.vm.setSliderArrowItem(1);
 
         // Navigate to first item provided that last item is active
         expect(wrapper.vm.sliderPos).toBe(0);
-        expect(wrapper.vm.imgSrc).toBe('http://cicada.com/image1.jpg');
+        expect(wrapper.vm.imgSrc).toBe('http://xchanming.com/image1.jpg');
 
         // Click on next arrow
         wrapper.vm.setSliderArrowItem(1);
 
         // Navigate to next item
         expect(wrapper.vm.sliderPos).toBe(1);
-        expect(wrapper.vm.imgSrc).toBe('http://cicada.com/image2.jpg');
+        expect(wrapper.vm.imgSrc).toBe('http://xchanming.com/image2.jpg');
     });
 
     it('should render number of navigation dots correctly', async () => {

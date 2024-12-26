@@ -47,8 +47,8 @@ class UserListCommandTest extends TestCase
         /** @var StaticEntityRepository<UserCollection> $repo */
         $repo = new StaticEntityRepository([
             new UserCollection([
-                $this->createUser($ids->get('user1'), 'guy@cicada.com', 'guy', 'Guy'),
-                $this->createUser($ids->get('user2'), 'jen@cicada.com', 'jen', 'Jen', ['Moderator', 'CS']),
+                $this->createUser($ids->get('user1'), 'guy@xchanming.com', 'guy', 'Guy'),
+                $this->createUser($ids->get('user2'), 'jen@xchanming.com', 'jen', 'Jen', ['Moderator', 'CS']),
             ]),
         ]);
 
@@ -71,8 +71,8 @@ class UserListCommandTest extends TestCase
         /** @var StaticEntityRepository<UserCollection> $repo */
         $repo = new StaticEntityRepository([
             new UserCollection([
-                $this->createUser($ids->get('user1'), 'guy@cicada.com', 'guy', 'Guy'),
-                $this->createUser($ids->get('user2'), 'jen@cicada.com', 'jen', 'Jen', ['Moderator', 'CS']),
+                $this->createUser($ids->get('user1'), 'guy@xchanming.com', 'guy', 'Guy'),
+                $this->createUser($ids->get('user2'), 'jen@xchanming.com', 'jen', 'Jen', ['Moderator', 'CS']),
             ]),
         ]);
 

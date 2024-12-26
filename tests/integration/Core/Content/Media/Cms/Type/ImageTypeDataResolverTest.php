@@ -114,19 +114,19 @@ class ImageTypeDataResolverTest extends TestCase
         $result = new ElementDataCollection();
 
         $fieldConfig = new FieldConfigCollection();
-        $fieldConfig->add(new FieldConfig('url', FieldConfig::SOURCE_STATIC, 'http://cicada.com/image.jpg'));
+        $fieldConfig->add(new FieldConfig('url', FieldConfig::SOURCE_STATIC, 'http://xchanming.com/image.jpg'));
 
         $slot = new CmsSlotEntity();
         $slot->setUniqueIdentifier('id');
         $slot->setType('image');
-        $slot->setConfig(['url' => 'http://cicada.com/image.jpg']);
+        $slot->setConfig(['url' => 'http://xchanming.com/image.jpg']);
         $slot->setFieldConfig($fieldConfig);
 
         $this->imageResolver->enrich($slot, $resolverContext, $result);
 
         $imageStruct = $slot->getData();
         static::assertInstanceOf(ImageStruct::class, $imageStruct);
-        static::assertSame('http://cicada.com/image.jpg', $imageStruct->getUrl());
+        static::assertSame('http://xchanming.com/image.jpg', $imageStruct->getUrl());
         static::assertEmpty($imageStruct->getMedia());
         static::assertEmpty($imageStruct->getMediaId());
     }
@@ -137,20 +137,20 @@ class ImageTypeDataResolverTest extends TestCase
         $result = new ElementDataCollection();
 
         $fieldConfig = new FieldConfigCollection();
-        $fieldConfig->add(new FieldConfig('url', FieldConfig::SOURCE_STATIC, 'http://cicada.com/image.jpg'));
+        $fieldConfig->add(new FieldConfig('url', FieldConfig::SOURCE_STATIC, 'http://xchanming.com/image.jpg'));
         $fieldConfig->add(new FieldConfig('newTab', FieldConfig::SOURCE_STATIC, true));
 
         $slot = new CmsSlotEntity();
         $slot->setUniqueIdentifier('id');
         $slot->setType('image');
-        $slot->setConfig(['url' => 'http://cicada.com/image.jpg']);
+        $slot->setConfig(['url' => 'http://xchanming.com/image.jpg']);
         $slot->setFieldConfig($fieldConfig);
 
         $this->imageResolver->enrich($slot, $resolverContext, $result);
 
         $imageStruct = $slot->getData();
         static::assertInstanceOf(ImageStruct::class, $imageStruct);
-        static::assertSame('http://cicada.com/image.jpg', $imageStruct->getUrl());
+        static::assertSame('http://xchanming.com/image.jpg', $imageStruct->getUrl());
         static::assertTrue($imageStruct->getNewTab());
         static::assertEmpty($imageStruct->getMedia());
         static::assertEmpty($imageStruct->getMediaId());
@@ -215,19 +215,19 @@ class ImageTypeDataResolverTest extends TestCase
 
         $fieldConfig = new FieldConfigCollection();
         $fieldConfig->add(new FieldConfig('media', FieldConfig::SOURCE_STATIC, 'media123'));
-        $fieldConfig->add(new FieldConfig('url', FieldConfig::SOURCE_STATIC, 'http://cicada.com/image.jpg'));
+        $fieldConfig->add(new FieldConfig('url', FieldConfig::SOURCE_STATIC, 'http://xchanming.com/image.jpg'));
 
         $slot = new CmsSlotEntity();
         $slot->setUniqueIdentifier('id');
         $slot->setType('image');
-        $slot->setConfig(['mediaId' => 'media123', 'url' => 'http://cicada.com/image.jpg']);
+        $slot->setConfig(['mediaId' => 'media123', 'url' => 'http://xchanming.com/image.jpg']);
         $slot->setFieldConfig($fieldConfig);
 
         $this->imageResolver->enrich($slot, $resolverContext, $result);
 
         $imageStruct = $slot->getData();
         static::assertInstanceOf(ImageStruct::class, $imageStruct);
-        static::assertSame('http://cicada.com/image.jpg', $imageStruct->getUrl());
+        static::assertSame('http://xchanming.com/image.jpg', $imageStruct->getUrl());
         static::assertInstanceOf(MediaEntity::class, $imageStruct->getMedia());
         static::assertSame('media123', $imageStruct->getMediaId());
         static::assertSame($media, $imageStruct->getMedia());
@@ -376,7 +376,7 @@ class ImageTypeDataResolverTest extends TestCase
     public function testUrlWithLocal(): void
     {
         $manufacturer = new ProductManufacturerEntity();
-        $manufacturer->setLink('http://cicada.com');
+        $manufacturer->setLink('http://xchanming.com');
 
         $product = new ProductEntity();
         $product->setManufacturer($manufacturer);

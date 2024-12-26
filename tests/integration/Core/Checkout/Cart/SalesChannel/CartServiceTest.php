@@ -429,7 +429,7 @@ class CartServiceTest extends TestCase
 
         $addressId = Uuid::randomHex();
 
-        $mail = 'test@cicada.com';
+        $mail = 'test@xchanming.com';
         $password = 'cicada';
 
         $this->createCustomer($addressId, $mail, $password, $context->getContext());

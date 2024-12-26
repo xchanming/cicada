@@ -48,7 +48,7 @@ describe('src/module/sw-extension/page/sw-extension-config.spec', () => {
                     systemConfigApiService: {
                         getValues: () => {
                             return Promise.resolve({
-                                'core.store.apiUri': 'https://api.cicada.com',
+                                'core.store.apiUri': 'https://api.xchanming.com',
                                 'core.store.licenseHost': 'sw6.test.cicada.in',
                                 'core.store.shopSecret': 'very.s3cret',
                                 'core.store.cicadaId': 'max@muster.com',
@@ -181,7 +181,7 @@ describe('src/module/sw-extension/page/sw-extension-config.spec', () => {
 
         wrapper.vm.extension = {
             producerName: 'cicada AG',
-            producerWebsite: 'https://www.cicada.com/',
+            producerWebsite: 'https://www.xchanming.com/',
         };
 
         await wrapper.vm.$nextTick();
@@ -189,7 +189,7 @@ describe('src/module/sw-extension/page/sw-extension-config.spec', () => {
         expect(meta.text()).toContain('sw-extension-store.component.sw-extension-config.labelBy');
 
         const metaLink = wrapper.get('.sw-extension-config__producer-link');
-        expect(metaLink.attributes().href).toBe('https://www.cicada.com/');
+        expect(metaLink.attributes().href).toBe('https://www.xchanming.com/');
         expect(metaLink.text()).toBe('cicada AG');
     });
 

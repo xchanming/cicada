@@ -22,7 +22,7 @@ current_major_alias() {
     return
   fi
 
-  curl -fsSL "https://releases.cicada.com/changelog/index.json" | jq -r '[.[] | select(test("[a-zA-Z]") | not)] | first | split(".") | [.[0], .[1], "x-dev"] | join(".")'
+  curl -fsSL "https://releases.xchanming.com/changelog/index.json" | jq -r '[.[] | select(test("[a-zA-Z]") | not)] | first | split(".") | [.[0], .[1], "x-dev"] | join(".")'
 }
 
 # custom_version_core returns the custom version for the core repositories.
@@ -39,7 +39,7 @@ custom_version_extensions() {
   set -eu
   tmpdir="$(mktemp -d)"
 
-  git clone --depth=1 "https://gitlab-ci-token:${GITLAB_SAAS_TOKEN}@gitlab.cicada.com/cicada/6/product/saas.git" "${tmpdir}"
+  git clone --depth=1 "https://gitlab-ci-token:${GITLAB_SAAS_TOKEN}@gitlab.xchanming.com/cicada/6/product/saas.git" "${tmpdir}"
   composer -d "${tmpdir}" show --locked --outdated --direct --format=json >"${tmpdir}/outdated.json"
 
   jq -r \

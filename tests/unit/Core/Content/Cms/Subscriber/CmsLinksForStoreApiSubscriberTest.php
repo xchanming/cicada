@@ -93,12 +93,12 @@ class CmsLinksForStoreApiSubscriberTest extends TestCase
 
     private function getOriginalStaticContent(): string
     {
-        return '<h2>This page content is testing links in CMS</h2><p>- <a target=\"_self\" href=\"124c71d524604ccbad6042edce3ac799/navigation/01920590471d70e59cdd73d38223d192#\" rel=\"noreferrer noopener\">Category Link</a></p><p>- <a target=\"_self\" href=\"124c71d524604ccbad6042edce3ac799/detail/0192059054e1713ebbb66d1c13cf90ab#\" rel=\"noreferrer noopener\">Product Link</a></p><p>- <a target=\"_self\" href=\"124c71d524604ccbad6042edce3ac799/mediaId/0192058ec7c971ea8069a1f3ba7b3f76#\" rel=\"noreferrer noopener\">File Link</a></p><p>- <a target=\"_self\" href=\"mailto:b.meyer@cicada.com\" rel=\"noreferrer noopener\">E-Mail</a></p><p>- <a target=\"_self\" href=\"tel:+49725133445566\" rel=\"noreferrer noopener\">Phone Number</a></p>';
+        return '<h2>This page content is testing links in CMS</h2><p>- <a target=\"_self\" href=\"124c71d524604ccbad6042edce3ac799/navigation/01920590471d70e59cdd73d38223d192#\" rel=\"noreferrer noopener\">Category Link</a></p><p>- <a target=\"_self\" href=\"124c71d524604ccbad6042edce3ac799/detail/0192059054e1713ebbb66d1c13cf90ab#\" rel=\"noreferrer noopener\">Product Link</a></p><p>- <a target=\"_self\" href=\"124c71d524604ccbad6042edce3ac799/mediaId/0192058ec7c971ea8069a1f3ba7b3f76#\" rel=\"noreferrer noopener\">File Link</a></p><p>- <a target=\"_self\" href=\"mailto:b.meyer@xchanming.com\" rel=\"noreferrer noopener\">E-Mail</a></p><p>- <a target=\"_self\" href=\"tel:+49725133445566\" rel=\"noreferrer noopener\">Phone Number</a></p>';
     }
 
     private function getTransformedContent(): string
     {
-        return '<h2>This page content is testing links in CMS</h2><p>- <a target=\"_self\" href=\"/Garden/Games/\">Category Link</a></p><p>- <a target=\"_self\" href=\"/Enormous-Plastic-Bedder/SW-0192059054e1713ebbb66d1c14858de1\">Product Link</a></p><p>- <a target=\"_self\" href=\"/media/e9/96/12/1726670096/demostore-logo.png?ts=1726670096\">File Link</a></p><p>- <a target=\"_self\" href=\"mailto:b.meyer@cicada.com\">E-Mail</a></p><p>- <a target=\"_self\" href=\"tel:+49725133445566\">Phone Number</a></p>';
+        return '<h2>This page content is testing links in CMS</h2><p>- <a target=\"_self\" href=\"/Garden/Games/\">Category Link</a></p><p>- <a target=\"_self\" href=\"/Enormous-Plastic-Bedder/SW-0192059054e1713ebbb66d1c14858de1\">Product Link</a></p><p>- <a target=\"_self\" href=\"/media/e9/96/12/1726670096/demostore-logo.png?ts=1726670096\">File Link</a></p><p>- <a target=\"_self\" href=\"mailto:b.meyer@xchanming.com\">E-Mail</a></p><p>- <a target=\"_self\" href=\"tel:+49725133445566\">Phone Number</a></p>';
     }
 
     private function getCmsPagesWithTestData(): CmsPageCollection

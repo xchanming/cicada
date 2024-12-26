@@ -156,7 +156,7 @@ describe('src/module/sw-order/component/sw-order-details-state-card', () => {
 
         const summary = wrapper.get('.sw-order-detail-state-card__state-history-text');
 
-        expect(summary.text()).toBe('John Doe');
+        expect(summary.text()).toBe('John');
         expect(summary.findComponent('.sw-time-ago').props('date')).toEqual(new Date(170363865609544));
     });
 });

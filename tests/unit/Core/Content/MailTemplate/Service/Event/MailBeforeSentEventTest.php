@@ -47,8 +47,8 @@ class MailBeforeSentEventTest extends TestCase
         $email = (new Email())->subject('test subject')
             ->html('content html')
             ->text('content plain')
-            ->to('test@cicada.com')
-            ->from(new Address('test@cicada.com'));
+            ->to('test@xchanming.com')
+            ->from(new Address('test@xchanming.com'));
 
         $event = new MailBeforeSentEvent(
             [

@@ -279,8 +279,8 @@ class SendMailActionTest extends TestCase
             'recipient' => [
                 'type' => 'admin',
                 'data' => [
-                    'phuoc.cao@cicada.com' => 'cicada',
-                    'phuoc.cao.x@cicada.com' => 'cicada',
+                    'phuoc.cao@xchanming.com' => 'cicada',
+                    'phuoc.cao.x@xchanming.com' => 'cicada',
                 ],
             ],
         ];
@@ -534,8 +534,8 @@ class SendMailActionTest extends TestCase
             'recipient' => [
                 'type' => 'admin',
                 'data' => [
-                    'phuoc.cao@cicada.com' => 'cicada',
-                    'phuoc.cao.x@cicada.com' => 'cicada',
+                    'phuoc.cao@xchanming.com' => 'cicada',
+                    'phuoc.cao.x@xchanming.com' => 'cicada',
                 ],
             ],
         ]);
@@ -604,8 +604,8 @@ class SendMailActionTest extends TestCase
             'recipient' => [
                 'type' => 'admin',
                 'data' => [
-                    'phuoc.cao@cicada.com' => 'cicada',
-                    'phuoc.cao.x@cicada.com' => 'cicada',
+                    'phuoc.cao@xchanming.com' => 'cicada',
+                    'phuoc.cao.x@xchanming.com' => 'cicada',
                 ],
             ],
         ]);

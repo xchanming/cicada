@@ -38,7 +38,7 @@ class ViteFileAccessorDecoratorTest extends TestCase
         $this->filesystemMock = $this->createMock(FilesystemOperator::class);
         $this->packagesMock = $this->createMock(Packages::class);
         $this->packagesMock->method('getUrl')
-            ->willReturn('https:://cicada.com/bundles/administration/');
+            ->willReturn('https:://xchanming.com/bundles/administration/');
 
         $this->decorator = new ViteFileAccessorDecorator(
             $this->configs,
@@ -74,7 +74,7 @@ class ViteFileAccessorDecoratorTest extends TestCase
         static::assertArrayHasKey('entryPoints', $result);
         static::assertArrayHasKey('administration', $result['entryPoints']);
         static::assertArrayHasKey('app', $result['entryPoints']['administration']);
-        static::assertEquals('https:://cicada.com/bundles/administration/app.js', $result['entryPoints']['administration']['app'][0]);
+        static::assertEquals('https:://xchanming.com/bundles/administration/app.js', $result['entryPoints']['administration']['app'][0]);
     }
 
     /**

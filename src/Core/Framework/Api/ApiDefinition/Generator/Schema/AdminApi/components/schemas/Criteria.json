@@ -430,7 +430,7 @@
             },
             "AggregationRange": {
                 "title": "AggregationRange",
-                "description": "For more information, see [Aggregations Reference > Range Aggregation](https://developer.cicada.com/docs/resources/references/core-reference/dal-reference/aggregations-reference.html#range-aggregations)",
+                "description": "For more information, see [Aggregations Reference > Range Aggregation](https://developer.xchanming.com/docs/resources/references/core-reference/dal-reference/aggregations-reference.html#range-aggregations)",
                 "type": "object",
                 "properties": {
                     "name": {

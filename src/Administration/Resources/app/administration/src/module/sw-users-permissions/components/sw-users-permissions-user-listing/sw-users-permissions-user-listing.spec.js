@@ -118,7 +118,7 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
                     username: 'admin',
                     name: 'admin',
                     phone: null,
-                    email: 'info@cicada.com',
+                    email: 'info@xchanming.com',
                 },
             ],
         });
@@ -135,8 +135,8 @@ describe('module/sw-users-permissions/components/sw-users-permissions-user-listi
                 localeId: '7dc07b43229843d387bb5f59233c2d66',
                 username: 'admin',
                 name: 'admin',
-                phone: '',
-                email: 'info@cicada.com',
+                phone: null,
+                email: 'info@xchanming.com',
             },
         ]);
     });

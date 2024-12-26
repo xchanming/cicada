@@ -95,7 +95,7 @@ class ContextController extends StorefrontController
          * http://cicada.de/fr
          *
          * http://cicada.fr
-         * http://cicada.com
+         * http://xchanming.com
          * http://cicada.de
          *
          * http://color.com

@@ -60,7 +60,7 @@ class StoreControllerTest extends TestCase
     public function testLoginWithCorrectCredentials(): void
     {
         $request = new Request([], [
-            'cicadaId' => 'j.doe@cicada.com',
+            'cicadaId' => 'j.doe@xchanming.com',
             'password' => 'v3rys3cr3t',
         ]);
 
@@ -72,7 +72,7 @@ class StoreControllerTest extends TestCase
         $storeClientMock = $this->createMock(StoreClient::class);
         $storeClientMock->expects(static::once())
             ->method('loginWithCicadaId')
-            ->with('j.doe@cicada.com', 'v3rys3cr3t');
+            ->with('j.doe@xchanming.com', 'v3rys3cr3t');
 
         $storeController = $this->getStoreController($storeClientMock);
 
@@ -84,7 +84,7 @@ class StoreControllerTest extends TestCase
     public function testLoginWithInvalidCredentials(): void
     {
         $request = new Request([], [
-            'cicadaId' => 'j.doe@cicada.com',
+            'cicadaId' => 'j.doe@xchanming.com',
             'password' => 'v3rys3cr3t',
         ]);
 
@@ -149,7 +149,7 @@ class StoreControllerTest extends TestCase
         $response = json_decode($response, true, 512, \JSON_THROW_ON_ERROR);
         static::assertEquals($response['userInfo'], [
             'name' => 'John Doe',
-            'email' => 'john.doe@cicada.com',
+            'email' => 'john.doe@xchanming.com',
         ]);
     }
 
@@ -172,7 +172,7 @@ class StoreControllerTest extends TestCase
             'localeId' => $adminUser->getLocaleId(),
             'username' => 'admin-two',
             'password' => 's3cr3t12345',
-            'email' => 'jane.doe@cicada.com',
+            'email' => 'jane.doe@xchanming.com',
         ]], $this->defaultContext);
 
         $storeController = $this->getStoreController();
@@ -184,7 +184,7 @@ class StoreControllerTest extends TestCase
         $response = json_decode($response, true, 512, \JSON_THROW_ON_ERROR);
         static::assertEquals($response['userInfo'], [
             'name' => 'John Doe',
-            'email' => 'john.doe@cicada.com',
+            'email' => 'john.doe@xchanming.com',
         ]);
     }
 
@@ -214,7 +214,7 @@ class StoreControllerTest extends TestCase
         $storeClient->method('userInfo')
             ->willReturn([
                 'name' => 'John Doe',
-                'email' => 'john.doe@cicada.com',
+                'email' => 'john.doe@xchanming.com',
             ]);
 
         return $storeClient;

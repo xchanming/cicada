@@ -261,19 +261,19 @@ describe('src/module/sw-cms/elements/image-slider/config', () => {
         // Simulate the upload of the first media item
         wrapper.vm.onImageUpload({
             id: '1',
-            url: 'http://cicada.com/image1.jpg',
+            url: 'http://xchanming.com/image1.jpg',
         });
         expect(wrapper.vm.element.config.sliderItems.value).toHaveLength(1);
-        expect(wrapper.vm.element.config.sliderItems.value[0].mediaUrl).toBe('http://cicada.com/image1.jpg');
+        expect(wrapper.vm.element.config.sliderItems.value[0].mediaUrl).toBe('http://xchanming.com/image1.jpg');
 
         // Simulate the upload of the same media item with different URL and same ID (replacement)
         wrapper.vm.onImageUpload({
             id: '1',
-            url: 'http://cicada.com/image1-updated.jpg',
+            url: 'http://xchanming.com/image1-updated.jpg',
         });
 
         // Should still only have one item and the URL should be updated
         expect(wrapper.vm.element.config.sliderItems.value).toHaveLength(1);
-        expect(wrapper.vm.element.config.sliderItems.value[0].mediaUrl).toBe('http://cicada.com/image1-updated.jpg');
+        expect(wrapper.vm.element.config.sliderItems.value[0].mediaUrl).toBe('http://xchanming.com/image1-updated.jpg');
     });
 });

@@ -122,7 +122,7 @@ class MailServiceTest extends TestCase
         $data = [
             'recipients' => [],
             'senderName' => 'me',
-            'senderEmail' => 'me@cicada.com',
+            'senderEmail' => 'me@xchanming.com',
             'subject' => 'Test email',
             'contentPlain' => 'Content plain',
             'contentHtml' => 'Content html',
@@ -132,7 +132,7 @@ class MailServiceTest extends TestCase
         $email = (new Email())->subject($data['subject'])
             ->html($data['contentHtml'])
             ->text($data['contentPlain'])
-            ->to('me@cicada.com')
+            ->to('me@xchanming.com')
             ->from(new Address($data['senderEmail']));
 
         $this->mailFactory->expects(static::once())->method('create')->willReturn($email);
@@ -169,7 +169,7 @@ class MailServiceTest extends TestCase
         $data = [
             'recipients' => [],
             'senderName' => 'me',
-            'senderEmail' => 'me@cicada.com',
+            'senderEmail' => 'me@xchanming.com',
             'subject' => 'Test email',
             'contentPlain' => 'Content plain',
             'contentHtml' => 'Content html',
@@ -242,7 +242,7 @@ class MailServiceTest extends TestCase
         $data = [
             'recipients' => [],
             'subject' => 'Test email',
-            'senderName' => 'me@cicada.com',
+            'senderName' => 'me@xchanming.com',
             'contentPlain' => 'Content plain',
             'contentHtml' => 'Content html',
             'salesChannelId' => $salesChannelId,
@@ -259,8 +259,8 @@ class MailServiceTest extends TestCase
         $email = (new Email())->subject($data['subject'])
             ->html($data['contentHtml'])
             ->text($data['contentPlain'])
-            ->to('test@cicada.com')
-            ->from(new Address('test@cicada.com'));
+            ->to('test@xchanming.com')
+            ->from(new Address('test@xchanming.com'));
 
         $this->mailFactory->expects(static::once())->method('create')->willReturn($email);
 

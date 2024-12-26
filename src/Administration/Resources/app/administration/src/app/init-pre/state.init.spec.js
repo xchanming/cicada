@@ -21,7 +21,7 @@ describe('src/app/init-pre/state.init.ts', () => {
     });
 
     it('should initialized all state modules', () => {
-        expect(Cicada.State.list()).toHaveLength(22);
+        expect(Cicada.State.list()).toHaveLength(21);
 
         expect(Cicada.State.get('notification')).toBeDefined();
         expect(Cicada.State.get('session')).toBeDefined();

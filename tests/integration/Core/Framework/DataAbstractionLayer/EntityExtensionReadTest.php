@@ -232,7 +232,7 @@ class EntityExtensionReadTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
                 'toOne' => [
                     'name' => 'test',
@@ -267,7 +267,7 @@ class EntityExtensionReadTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
                 'oneToMany' => [
                     ['name' => 'test 1', 'languageId' => Defaults::LANGUAGE_SYSTEM],
@@ -308,7 +308,7 @@ class EntityExtensionReadTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
             ],
         ], Context::createDefaultContext());
@@ -326,7 +326,7 @@ class EntityExtensionReadTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
                 'linkedProductId' => $linkedProductId,
             ],

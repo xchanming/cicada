@@ -54,7 +54,7 @@ class ContactFormRouteTest extends TestCase
         $eventDidRun = false;
         $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit): void {
             $eventDidRun = true;
-            $phpunit->assertStringContainsString('Contact email address: test@cicada.com', $event->getContents()['text/html']);
+            $phpunit->assertStringContainsString('Contact email address: test@xchanming.com', $event->getContents()['text/html']);
             $phpunit->assertStringContainsString('essage: Lorem ipsum dolor sit amet', $event->getContents()['text/html']);
         };
 
@@ -103,7 +103,7 @@ class ContactFormRouteTest extends TestCase
         $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, &$recipients, $phpunit): void {
             $eventDidRun = true;
             $recipients = $event->getRecipients();
-            $phpunit->assertStringContainsString('Contact email address: test@cicada.com', $event->getContents()['text/html']);
+            $phpunit->assertStringContainsString('Contact email address: test@xchanming.com', $event->getContents()['text/html']);
             $phpunit->assertStringContainsString('essage: Lorem ipsum dolor sit amet', $event->getContents()['text/html']);
         };
 
@@ -120,7 +120,7 @@ class ContactFormRouteTest extends TestCase
                     'entityName' => $entityName,
                     'firstName' => 'Firstname',
                     'lastName' => 'Lastname',
-                    'email' => 'test@cicada.com',
+                    'email' => 'test@xchanming.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
                     'comment' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
@@ -158,7 +158,7 @@ class ContactFormRouteTest extends TestCase
         $eventDidRun = false;
         $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit): void {
             $eventDidRun = true;
-            $phpunit->assertStringContainsString('Contact email address: test@cicada.com', $event->getContents()['text/html']);
+            $phpunit->assertStringContainsString('Contact email address: test@xchanming.com', $event->getContents()['text/html']);
             $phpunit->assertStringContainsString('essage: Lorem ipsum dolor sit amet', $event->getContents()['text/html']);
         };
 
@@ -174,7 +174,7 @@ class ContactFormRouteTest extends TestCase
                     'slotId' => $formSlotId,
                     'firstName' => 'Firstname',
                     'lastName' => 'Lastname',
-                    'email' => 'test@cicada.com',
+                    'email' => 'test@xchanming.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
                     'comment' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
@@ -202,7 +202,7 @@ class ContactFormRouteTest extends TestCase
                     'salutationId' => $this->getValidSalutationId(),
                     'firstName' => $firstName,
                     'lastName' => $lastName,
-                    'email' => 'test@cicada.com',
+                    'email' => 'test@xchanming.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
                     'comment' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',

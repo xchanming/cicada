@@ -15,7 +15,7 @@
         <privacy>https://test.com/privacy</privacy>
     </meta>
     <allowed-hosts>
-        <host>cicada.com</host>
+        <host>xchanming.com</host>
         <host>example.com</host>
     </allowed-hosts>
 </manifest>

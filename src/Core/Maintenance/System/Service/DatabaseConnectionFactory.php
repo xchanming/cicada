@@ -34,7 +34,7 @@ class DatabaseConnectionFactory
 
     private static function checkVersion(Connection $connection): void
     {
-        // https://developer.cicada.com/docs/guides/installation/requirements.html#sql
+        // https://developer.xchanming.com/docs/guides/installation/requirements.html#sql
         $mysqlRequiredVersion = '8.0.17';
         $mariaDBRequiredVersion = '10.11';
 

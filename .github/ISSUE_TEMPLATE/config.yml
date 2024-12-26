@@ -1,12 +1,12 @@
 blank_issues_enabled: false
 contact_links:
     - name: Feature Request
-      url: https://feedback.cicada.com
+      url: https://feedback.xchanming.com
     - name: RFC for new features
       url: https://github.com/cicada/proposal
     - name: Ask a question
       url: https://stackoverflow.com/questions/tagged/cicada6
       about: Get answers from a global community on all the technical questions that help you develop with Cicada.
     - name: Join us on community Slack
-      url: https://slack.cicada.com
+      url: https://slack.xchanming.com
       about: You may want to reach the community chat

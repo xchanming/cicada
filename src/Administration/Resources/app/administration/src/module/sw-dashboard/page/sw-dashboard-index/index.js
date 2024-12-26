@@ -11,9 +11,7 @@ export default Cicada.Component.wrapComponentConfig({
 
     compatConfig: Cicada.compatConfig,
 
-    data() {
-
-    },
+    data() {},
 
     metaInfo() {
         return {

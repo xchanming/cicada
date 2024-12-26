@@ -182,5 +182,4 @@ describe('src/app/init/tabs.init', () => {
             }),
         );
     });
-
 });

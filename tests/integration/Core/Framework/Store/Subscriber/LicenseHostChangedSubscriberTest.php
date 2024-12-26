@@ -42,7 +42,7 @@ class LicenseHostChangedSubscriberTest extends TestCase
                 'password' => TestDefaults::HASHED_PASSWORD,
                 'firstName' => 'admin2',
                 'lastName' => 'admin2',
-                'email' => 'admin2@cicada.com',
+                'email' => 'admin2@xchanming.com',
                 'storeToken' => null,
             ],
             [
@@ -51,7 +51,7 @@ class LicenseHostChangedSubscriberTest extends TestCase
                 'password' => TestDefaults::HASHED_PASSWORD,
                 'firstName' => 'admin3',
                 'lastName' => 'admin3',
-                'email' => 'admin3@cicada.com',
+                'email' => 'admin3@xchanming.com',
                 'storeToken' => null,
             ],
         ], $context);

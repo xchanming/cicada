@@ -334,7 +334,7 @@ class EntityWriterTest extends TestCase
                     'price' => [['currencyId' => Defaults::CURRENCY, 'gross' => 10, 'net' => 8.10, 'linked' => false]],
                     'the_unknown_field' => 'do nothing?',
                     'tax' => ['name' => 'test', 'taxRate' => 5],
-                    'manufacturer' => ['id' => Uuid::randomHex(), 'link' => 'https://cicada.com', 'name' => 'cicada AG'],
+                    'manufacturer' => ['id' => Uuid::randomHex(), 'link' => 'https://xchanming.com', 'name' => 'cicada AG'],
                     'mode' => 0,
                     'lastStock' => true,
                     'crossbundlelook' => 1,
@@ -369,7 +369,7 @@ class EntityWriterTest extends TestCase
                     'name' => 'foo',
                     'stock' => 1,
                     'price' => [['currencyId' => Defaults::CURRENCY, 'gross' => 10, 'net' => 8.10, 'linked' => false]],
-                    'manufacturer' => ['id' => Uuid::randomHex(), 'link' => 'https://cicada.com', 'name' => 'cicada AG'],
+                    'manufacturer' => ['id' => Uuid::randomHex(), 'link' => 'https://xchanming.com', 'name' => 'cicada AG'],
                 ],
             ],
             $this->createWriteContext()
@@ -393,7 +393,7 @@ class EntityWriterTest extends TestCase
                     'stock' => 1,
                     'descriptionLong' => '<p>I\'m a <b>test article</b></p>',
                     'tax' => ['name' => 'test', 'taxRate' => 5],
-                    'manufacturer' => ['id' => Uuid::randomHex(), 'link' => 'https://cicada.com', 'name' => 'cicada AG'],
+                    'manufacturer' => ['id' => Uuid::randomHex(), 'link' => 'https://xchanming.com', 'name' => 'cicada AG'],
                     'updatedAt' => new \DateTime(),
                     'mode' => 0,
                     'lastStock' => true,
@@ -441,7 +441,7 @@ class EntityWriterTest extends TestCase
                     'price' => [['currencyId' => Defaults::CURRENCY, 'gross' => 10, 'net' => 8.10, 'linked' => false]],
                     'manufacturer' => [
                         'id' => $productManufacturerId,
-                        'link' => 'http://www.cicada.com',
+                        'link' => 'http://www.xchanming.com',
                         'name' => 'Another Company',
                     ],
                 ],
@@ -459,7 +459,7 @@ class EntityWriterTest extends TestCase
         static::assertSame('_THE_TITLE_', $productTranslation['name'], print_r($productTranslation, true));
         static::assertSame('<p>html</p>', $productTranslation['description']);
         static::assertSame('Another Company', $productManufacturerTranslation['name']);
-        static::assertSame('http://www.cicada.com', $productManufacturer['link']);
+        static::assertSame('http://www.xchanming.com', $productManufacturer['link']);
     }
 
     public function testUpdateWritesDefaultColumnsIfOmmitted(): void
@@ -951,7 +951,7 @@ class EntityWriterTest extends TestCase
                     'manufacturer' => [
                         'id' => Uuid::randomHex(),
                         'name' => 'cicada AG',
-                        'link' => 'https://cicada.com',
+                        'link' => 'https://xchanming.com',
                     ],
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                     'updated_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),

@@ -36,7 +36,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                     apiResourcePath: 'api_resource_path',
                 },
                 bearerAuth: 'bearer_auth',
-                host: 'http://www.cicada.com',
+                host: 'http://www.xchanming.com',
                 transports: ['default'],
             },
         });
@@ -54,7 +54,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                     apiResourcePath: 'api_resource_path',
                 },
                 bearerAuth: 'bearer_auth',
-                host: 'http://www.cicada.com',
+                host: 'http://www.xchanming.com',
                 transports: ['default'],
             },
         });
@@ -68,7 +68,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                     apiResourcePath: 'api_resource_path',
                 },
                 bearerAuth: 'bearer_auth',
-                host: 'http://www.cicada.com',
+                host: 'http://www.xchanming.com',
                 transports: ['default'],
             },
         });
@@ -94,7 +94,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                     apiResourcePath: 'api_resource_path',
                 },
                 bearerAuth: 'bearer_auth',
-                host: 'http://www.cicada.com',
+                host: 'http://www.xchanming.com',
                 transports: ['default'],
             },
         }); // start AdminWorker
@@ -128,7 +128,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                     apiResourcePath: 'api_resource_path',
                 },
                 bearerAuth: 'bearer_auth',
-                host: 'http://www.cicada.com',
+                host: 'http://www.xchanming.com',
                 transports: ['default'],
             },
         }); // start AdminWorker
@@ -159,7 +159,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                 apiResourcePath: 'api_resource_path',
             },
             bearerAuth: 'bearer_auth',
-            host: 'http://www.cicada.com',
+            host: 'http://www.xchanming.com',
             transports: ['default'],
         };
 
@@ -211,7 +211,7 @@ describe('core/worker/admin-worker.worker.js', () => {
                 apiResourcePath: 'api_resource_path',
             },
             bearerAuth: 'bearer_auth',
-            host: 'http://www.cicada.com',
+            host: 'http://www.xchanming.com',
             transports: ['default'],
         };
 

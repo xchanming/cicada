@@ -169,7 +169,7 @@ class WriterExtensionTest extends TestCase
                 'manufacturer' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'cicada AG',
-                    'link' => 'https://cicada.com',
+                    'link' => 'https://xchanming.com',
                 ],
             ],
         ], Context::createDefaultContext());

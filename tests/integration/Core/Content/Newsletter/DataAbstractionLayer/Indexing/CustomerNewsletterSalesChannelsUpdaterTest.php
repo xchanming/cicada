@@ -181,7 +181,7 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
         }
 
         static::getContainer()->get('customer.repository')->upsert(
-            [['id' => $customerId, 'email' => 'ytn@cicada.com']],
+            [['id' => $customerId, 'email' => 'ytn@xchanming.com']],
             $context
         );
 
@@ -190,10 +190,10 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
         $newsletterRecipients = $newsletterRecipientRepository->search($criteria, $context)->getEntities();
 
         static::assertCount($newsletterRecipients->count(), $newsletterRecipientIds);
-        static::assertSame($customer->getEmail(), 'ytn@cicada.com');
+        static::assertSame($customer->getEmail(), 'ytn@xchanming.com');
 
         foreach ($newsletterRecipients as $newsletterRecipient) {
-            static::assertSame($newsletterRecipient->getEmail(), 'ytn@cicada.com');
+            static::assertSame($newsletterRecipient->getEmail(), 'ytn@xchanming.com');
             static::assertSame($newsletterRecipient->getEmail(), $customer->getEmail());
         }
     }
@@ -204,7 +204,7 @@ class CustomerNewsletterSalesChannelsUpdaterTest extends TestCase
             fn (Context $context, string $email): array => [],
             fn (Criteria $criteria, string $email): Criteria => $criteria->addFilter(new MultiFilter(MultiFilter::CONNECTION_OR, [
                 new EqualsFilter('email', $email),
-                new EqualsFilter('email', 'ytn@cicada.com'),
+                new EqualsFilter('email', 'ytn@xchanming.com'),
             ])),
         ];
 

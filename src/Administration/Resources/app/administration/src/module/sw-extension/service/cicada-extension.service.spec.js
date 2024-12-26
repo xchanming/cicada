@@ -163,7 +163,7 @@ describe('src/module/sw-extension/service/cicada-extension.service', () => {
         });
 
         it.each([
-            [{ userInfo: { email: 'user@cicada.com' } }],
+            [{ userInfo: { email: 'user@xchanming.com' } }],
             [{ userInfo: null }],
         ])('sets login status depending on checkLogin response', async (loginResponse) => {
             checkLoginSpy.mockImplementationOnce(() => loginResponse);

@@ -138,7 +138,7 @@ class RequestTransformer implements RequestTransformerInterface
          *
          * same host, different location
          * http://cicada.fr
-         * http://cicada.com
+         * http://xchanming.com
          * http://cicada.de
          *
          * complete different host and location

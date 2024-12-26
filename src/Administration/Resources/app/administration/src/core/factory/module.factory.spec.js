@@ -183,7 +183,7 @@ describe('core/factory/module.factory.js', () => {
                     label: 'FooIndex',
                 },
                 {
-                    link: 'http://de.cicada.com',
+                    link: 'http://de.xchanming.com',
                     label: 'ExternalLink',
                     parent: 'sw.foo.index',
                 },
@@ -201,7 +201,7 @@ describe('core/factory/module.factory.js', () => {
         expect(routerNavigationEntry.label).toBe('FooIndex');
 
         expect(typeof externalLinkNavigation).toBe('object');
-        expect(externalLinkNavigation.link).toBe('http://de.cicada.com');
+        expect(externalLinkNavigation.link).toBe('http://de.xchanming.com');
     });
 
     it('should be possible to get all registered modules', () => {

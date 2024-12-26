@@ -204,7 +204,7 @@
     "sw-gtc-checkbox": {
       "label": "I accept the",
       "link": "terms and conditions.",
-      "url": "https://www.cicada.com/en/gtc"
+      "url": "https://www.xchanming.com/en/gtc"
     },
     "sw-price-field": {
       "labelPriceGross": "Price (gross)",
@@ -1188,13 +1188,13 @@
       "documentation": {
         "headline": "Do you need help?",
         "linkText": "See documentation",
-        "linkUrl": "https://docs.cicada.com/en/cicada-6-en"
+        "linkUrl": "https://docs.xchanming.com/en/cicada-6-en"
       },
       "support": {
         "headline": "We’re here for you!",
         "paragraph": "Found nothing helpful in our documentation? Contact the Cicada support and we’ll take a look at your problem.",
         "linkText": "Create support request",
-        "linkUrl": "https://account.cicada.com/shops/support"
+        "linkUrl": "https://account.xchanming.com/shops/support"
       }
     },
     "sw-page": {
@@ -1555,7 +1555,7 @@
         "textGetSupport": "Try contacting your hoster to get support.",
         "textDetails": "Technical details: Wrong APP_URL configuration.",
         "labelLearnMoreButton": "Learn more",
-        "linkToDocsArticle": "https://docs.cicada.com/en/cicada-6-en/tutorials-and-faq/notes-to-the-APP-URL"
+        "linkToDocsArticle": "https://docs.xchanming.com/en/cicada-6-en/tutorials-and-faq/notes-to-the-APP-URL"
       }
     }
   },
@@ -1644,11 +1644,11 @@
         "title": "Support",
         "documentation": {
           "text": "Documentation",
-          "href": "https://docs.cicada.com/en"
+          "href": "https://docs.xchanming.com/en"
         },
         "createSupportRequest": {
           "text": "Create support request",
-          "href": "https://account.cicada.com/"
+          "href": "https://account.xchanming.com/"
         }
       }
     }

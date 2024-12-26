@@ -48,7 +48,7 @@ services:
 
     cicada:
         <<: *service
-        image: gitlab.cicada.com:5005/cicada/6/product/platform/ci-e2e:trunk
+        image: gitlab.xchanming.com:5005/cicada/6/product/platform/ci-e2e:trunk
         depends_on: [ database ]
         ports:
             - '8000:8000'

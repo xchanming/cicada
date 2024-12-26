@@ -96,9 +96,9 @@ export default function initializeContext(): void {
             email: currentUser.email ?? '',
             name: currentUser.name ?? '',
             id: currentUser.id ?? '',
-            lastName: currentUser.lastName ?? '',
             localeId: currentUser.localeId ?? '',
             title: currentUser.title ?? '',
+            phone: currentUser.phone ?? '',
             // @ts-expect-error - type is not defined in entity directly
             type: (currentUser.type as unknown as string) ?? '',
             username: currentUser.username ?? '',

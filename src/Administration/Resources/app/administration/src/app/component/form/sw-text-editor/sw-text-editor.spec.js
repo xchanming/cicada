@@ -536,14 +536,14 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No Link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://cicada.com" target="_self">Cicada</a>
+                <a id="linkText" href="http://xchanming.com" target="_self">Cicada</a>
             </p>
         `,
         );
 
         // select "Cicada"
         const linkText = document.getElementById('linkText');
-        await addAndCheckSelection(wrapper, linkText, 0, 8, 'Cicada');
+        await addAndCheckSelection(wrapper, linkText, 0, 6, 'Cicada');
         document.dispatchEvent(new Event('mouseup'));
 
         // click on link button
@@ -560,7 +560,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         const linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://cicada.com');
+        expect(linkInput.element.value).toBe('http://xchanming.com');
 
         // switch field should contain correct newTab value
         const newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -577,14 +577,14 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No Link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://cicada.com" target="_blank">Cicada</a>
+                <a id="linkText" href="http://xchanming.com" target="_blank">Cicada</a>
             </p>
         `,
         );
 
         // select "Cicada"
         const linkText = document.getElementById('linkText');
-        await addAndCheckSelection(wrapper, linkText, 0, 8, 'Cicada');
+        await addAndCheckSelection(wrapper, linkText, 0, 6, 'Cicada');
         document.dispatchEvent(new Event('mouseup'));
 
         // click on link button
@@ -601,7 +601,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         const linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://cicada.com');
+        expect(linkInput.element.value).toBe('http://xchanming.com');
 
         // switch field should contain correct newTab value
         const newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -618,7 +618,7 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://cicada.com" target="_blank">Cicada</a>
+                <a id="linkText" href="http://xchanming.com" target="_blank">Cicada</a>
             </p>
         `,
         );
@@ -659,14 +659,14 @@ describe('src/app/component/form/sw-text-editor', () => {
             <p id="paragraphWithoutLink">No link</p>
 
             <p id="paragraphWithLink">
-                <a id="linkText" href="http://cicada.com" target="_blank">Cicada</a>
+                <a id="linkText" href="http://xchanming.com" target="_blank">Cicada</a>
             </p>
         `,
         );
 
         // select "Cicada"
         const linkText = document.getElementById('linkText');
-        await addAndCheckSelection(wrapper, linkText, 0, 8, 'Cicada');
+        await addAndCheckSelection(wrapper, linkText, 0, 6, 'Cicada');
         document.dispatchEvent(new Event('mouseup'));
 
         // click on link button
@@ -681,7 +681,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         let linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://cicada.com');
+        expect(linkInput.element.value).toBe('http://xchanming.com');
 
         // switch field should contain correct newTab value
         let newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -718,14 +718,14 @@ describe('src/app/component/form/sw-text-editor', () => {
         await addTextToEditor(
             wrapper,
             `
-            <a id="linkOne" href="http://cicada.com" target="_self">Cicada</a>
+            <a id="linkOne" href="http://xchanming.com" target="_self">Cicada</a>
             <a id="linkTwo" href="http://google.com" target="_blank">Google</a>
         `,
         );
 
         // select "Cicada"
         const linkOne = document.getElementById('linkOne');
-        await addAndCheckSelection(wrapper, linkOne, 0, 8, 'Cicada');
+        await addAndCheckSelection(wrapper, linkOne, 0, 6, 'Cicada');
         document.dispatchEvent(new Event('mouseup'));
 
         // click on link button
@@ -740,7 +740,7 @@ describe('src/app/component/form/sw-text-editor', () => {
         // input field should contain the correct url value
         let linkInput = linkMenu.find('#sw-field--linkTarget');
         expect(linkInput.exists()).toBe(true);
-        expect(linkInput.element.value).toBe('http://cicada.com');
+        expect(linkInput.element.value).toBe('http://xchanming.com');
 
         // switch field should contain correct newTab value
         let newTabSwitch = wrapper.find('.sw-text-editor-toolbar-button__link-menu-new-tab input');
@@ -777,7 +777,7 @@ describe('src/app/component/form/sw-text-editor', () => {
 
         await addTextToEditor(
             wrapper,
-            '<a href="http://cicada.com" target="_blank"><bold><u>Shop<strike id="anchor">ware</strike></u></bold></a>',
+            '<a href="http://xchanming.com" target="_blank"><bold><u>Shop<strike id="anchor">ware</strike></u></bold></a>',
         );
 
         // select "ware"
@@ -808,12 +808,12 @@ describe('src/app/component/form/sw-text-editor', () => {
 
         await addTextToEditor(
             wrapper,
-            '<a href="http://cicada.com" target="_blank"><bold><u id="content">Cicada</u></bold></a>',
+            '<a href="http://xchanming.com" target="_blank"><bold><u id="content">Cicada</u></bold></a>',
         );
 
         // select anything to trigger the toolbar
         const content = document.getElementById('content');
-        await addAndCheckSelection(wrapper, content, 0, 4, 'Shop');
+        await addAndCheckSelection(wrapper, content, 0, 4, 'Cica');
         document.dispatchEvent(new Event('mouseup'));
 
         // click on link button

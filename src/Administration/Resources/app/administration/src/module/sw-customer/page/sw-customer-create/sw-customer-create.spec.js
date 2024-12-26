@@ -223,7 +223,7 @@ describe('module/sw-customer/page/sw-customer-create', () => {
         await wrapper.setData({
             customer: {
                 id: '1',
-                email: 'ytn@cicada.com',
+                email: 'ytn@xchanming.com',
                 boundSalesChannelId: null,
             },
         });

@@ -469,7 +469,7 @@ describe('core/service/extension-api-data.service.ts', () => {
                 null,
                 [
                     new Entity('image1', 'media', {
-                        url: 'https://cicada.com/image1.jpg',
+                        url: 'https://xchanming.com/image1.jpg',
                         tags: new EntityCollection('image1/tags', 'tag', {}, null, [
                             new Entity('tag1', 'tag', {
                                 name: 'Cicada',
@@ -483,7 +483,7 @@ describe('core/service/extension-api-data.service.ts', () => {
                         ]),
                     }),
                     new Entity('image2', 'media', {
-                        url: 'https://cicada.com/image2.jpg',
+                        url: 'https://xchanming.com/image2.jpg',
                         tags: new EntityCollection('image2/tags', 'tag', {}, null, [
                             new Entity('tag4', 'tag', {
                                 name: 'Cicada',

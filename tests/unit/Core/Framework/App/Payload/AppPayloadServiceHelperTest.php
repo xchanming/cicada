@@ -55,12 +55,12 @@ class AppPayloadServiceHelperTest extends TestCase
             $this->createMock(JsonEntityEncoder::class),
             $shopIdProvider,
             $inAppPurchase,
-            'https://cicada.com'
+            'https://xchanming.com'
         );
 
         $source = $appPayloadServiceHelper->buildSource('1.0.0', 'TestApp');
 
-        static::assertSame('https://cicada.com', $source->getUrl());
+        static::assertSame('https://xchanming.com', $source->getUrl());
         static::assertSame($this->ids->get('shop-id'), $source->getShopId());
         static::assertSame('1.0.0', $source->getAppVersion());
         static::assertSame('a6a4063ffda65516983ad40e8dc91db6', $source->getInAppPurchases());
@@ -75,7 +75,7 @@ class AppPayloadServiceHelperTest extends TestCase
             ->willReturn($context);
 
         $cart = new Cart($this->ids->get('cart'));
-        $source = new Source('https://cicada.com', $this->ids->get('shop-id'), '1.0.0');
+        $source = new Source('https://xchanming.com', $this->ids->get('shop-id'), '1.0.0');
         $payload = new TaxProviderPayload($cart, $salesChannelContext);
         $payload->setSource($source);
 
@@ -93,7 +93,7 @@ class AppPayloadServiceHelperTest extends TestCase
             $entityEncoder,
             $this->createMock(ShopIdProvider::class),
             StaticInAppPurchaseFactory::createWithFeatures(),
-            'https://cicada.com'
+            'https://xchanming.com'
         );
 
         $array = $appPayloadServiceHelper->encode($payload);
@@ -116,7 +116,7 @@ class AppPayloadServiceHelperTest extends TestCase
             $entityEncoder,
             $shopIdProvider,
             StaticInAppPurchaseFactory::createWithFeatures(),
-            'https://cicada.com'
+            'https://xchanming.com'
         );
 
         $app = new AppEntity();
@@ -157,7 +157,7 @@ class AppPayloadServiceHelperTest extends TestCase
             $entityEncoder,
             $shopIdProvider,
             StaticInAppPurchaseFactory::createWithFeatures(),
-            'https://cicada.com'
+            'https://xchanming.com'
         );
 
         $app = new AppEntity();
@@ -200,7 +200,7 @@ class AppPayloadServiceHelperTest extends TestCase
             $entityEncoder,
             $shopIdProvider,
             StaticInAppPurchaseFactory::createWithFeatures(),
-            'https://cicada.com'
+            'https://xchanming.com'
         );
 
         $app = new AppEntity();

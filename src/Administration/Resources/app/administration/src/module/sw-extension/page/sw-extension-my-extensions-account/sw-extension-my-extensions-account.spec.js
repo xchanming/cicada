@@ -47,7 +47,7 @@ async function createWrapper() {
                     systemConfigApiService: {
                         getValues: () => {
                             return Promise.resolve({
-                                'core.store.apiUri': 'https://api.cicada.com',
+                                'core.store.apiUri': 'https://api.xchanming.com',
                                 'core.store.licenseHost': 'sw6.test.cicada.in',
                                 'core.store.shopSecret': 'very.s3cret',
                             });

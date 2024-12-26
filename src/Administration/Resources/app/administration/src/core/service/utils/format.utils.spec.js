@@ -50,7 +50,7 @@ describe('src/core/service/utils/format.utils.js', () => {
             setLocale('zh-CN');
             setTimeZone('UTC');
 
-            expect(date('2000-06-18T08:30:00.000+00:00')).toBe('18. Juni 2000 um 08:30');
+            expect(date('2000-06-18T08:30:00.000+00:00')).toBe('2000年6月18日 08:30');
         });
 
         it('should convert the date correctly with timezone America/New_York in en-GB', async () => {
@@ -71,7 +71,7 @@ describe('src/core/service/utils/format.utils.js', () => {
             setLocale('zh-CN');
             setTimeZone('America/New_York');
 
-            expect(date('2000-06-18T08:30:00.000+00:00')).toBe('18. Juni 2000 um 04:30');
+            expect(date('2000-06-18T08:30:00.000+00:00')).toBe('2000年6月18日 04:30');
         });
 
         it('should not convert the date correctly with timezone America/New_York in zh-CN', async () => {
@@ -82,7 +82,7 @@ describe('src/core/service/utils/format.utils.js', () => {
                 date('2000-06-18T08:30:00.000+00:00', {
                     skipTimezoneConversion: true,
                 }),
-            ).toBe('18. Juni 2000 um 08:30');
+            ).toBe('2000年6月18日 08:30');
         });
     });
 
@@ -126,19 +126,19 @@ describe('src/core/service/utils/format.utils.js', () => {
         const precision = 0;
 
         it('should handle integers', async () => {
-            expect(currencyFilter(42, 'EUR', precision)).toBe('€42');
+            expect(currencyFilter(42, 'CNY', precision)).toBe('CN¥42');
         });
 
         it('should handle big int', async () => {
-            expect(currencyFilter(42n, 'EUR', precision)).toBe('€42');
+            expect(currencyFilter(42n, 'CNY', precision)).toBe('CN¥42');
         });
 
         it('should handle floats', async () => {
-            expect(currencyFilter(42.2, 'EUR', 2)).toBe('€42.20');
+            expect(currencyFilter(42.2, 'CNY', 2)).toBe('CN¥42.20');
         });
 
         it('should use the provided language', async () => {
-            expect(currencyFilter(42, 'EUR', 0, { language: 'en-US' })).toBe('€42');
+            expect(currencyFilter(42, 'CNY', 0, { language: 'en-US' })).toBe('CN¥42');
         });
 
         it('should use a different fallback language', async () => {
@@ -148,7 +148,7 @@ describe('src/core/service/utils/format.utils.js', () => {
                 languageId: '2fbb5fe2e29a4d70aa5854ce7ce3e20b',
             });
 
-            expect(currencyFilter(42, 'EUR', 0)).toBe('42 €');
+            expect(currencyFilter(42, 'CNY', 0)).toBe('¥42');
 
             Cicada.State.commit('setAdminLocale', {
                 locales: ['en-GB'],
@@ -158,9 +158,9 @@ describe('src/core/service/utils/format.utils.js', () => {
         });
 
         it('should fallback to the system currency', async () => {
-            Cicada.Context.app.systemCurrencyISOCode = 'EUR';
+            Cicada.Context.app.systemCurrencyISOCode = 'CNY';
 
-            expect(currencyFilter(42, undefined, 0)).toBe('€42');
+            expect(currencyFilter(42, undefined, 0)).toBe('CN¥42');
         });
 
         it('should fallback to a different system currency', async () => {
@@ -168,7 +168,7 @@ describe('src/core/service/utils/format.utils.js', () => {
 
             expect(currencyFilter(42, undefined, 0)).toBe('US$42');
 
-            Cicada.Context.app.systemCurrencyISOCode = 'EUR';
+            Cicada.Context.app.systemCurrencyISOCode = 'CNY';
         });
 
         it('should fallback to decimal when the currency ISO code is invalid', async () => {
@@ -182,7 +182,7 @@ describe('src/core/service/utils/format.utils.js', () => {
                 new RangeError('Invalid currency code : INVALID_EXAMPLE_CURRENCY_CODE'),
             );
 
-            Cicada.Context.app.systemCurrencyISOCode = 'EUR';
+            Cicada.Context.app.systemCurrencyISOCode = 'CNY';
         });
     });
 

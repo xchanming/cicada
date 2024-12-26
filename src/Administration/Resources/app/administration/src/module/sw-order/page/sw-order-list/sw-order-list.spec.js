@@ -199,7 +199,7 @@ describe('src/module/sw-order/page/sw-order-list', () => {
         expect(warningSpy).toHaveBeenCalledWith('[[sw-data-grid] Can not resolve accessor: orderCustomer.name]');
 
         expect(firstRow.find('.sw-data-grid__cell--orderCustomer-name').exists()).toBeTruthy();
-        expect(firstRow.find('.sw-data-grid__cell--orderCustomer-name').text()).toBe('bar');
+        expect(firstRow.find('.sw-data-grid__cell--orderCustomer-name').text()).toBe('foo');
 
         expect(secondRow.find('.sw-data-grid__cell--orderCustomer-name').exists()).toBeTruthy();
         expect(secondRow.find('.sw-data-grid__cell--orderCustomer-name').text()).toBe('');

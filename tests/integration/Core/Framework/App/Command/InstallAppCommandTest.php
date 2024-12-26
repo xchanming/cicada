@@ -91,7 +91,7 @@ class InstallAppCommandTest extends TestCase
         // header domain
         static::assertMatchesRegularExpression('/.*Domain\s+\n.*/', $display);
         // content domains
-        static::assertMatchesRegularExpression('/.*cicada.com\s+\n.*/', $display);
+        static::assertMatchesRegularExpression('/.*xchanming.com\s+\n.*/', $display);
         static::assertMatchesRegularExpression('/.*example.com\s+\n.*/', $display);
 
         static::assertStringContainsString('[OK] App withAllowedHosts has been successfully installed.', $display);

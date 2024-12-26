@@ -54,7 +54,7 @@ class RequestTransformerTest extends TestCase
         $registeredApiPrefixes = [];
         $requestTransformer = new RequestTransformer($decorated, $resolver, $registeredApiPrefixes, $domainLoader);
 
-        $originalRequest = Request::create('http://cicada.com/api');
+        $originalRequest = Request::create('http://xchanming.com/api');
 
         static::expectException(SalesChannelMappingException::class);
         $requestTransformer->transform($originalRequest);
@@ -67,58 +67,58 @@ class RequestTransformerTest extends TestCase
     {
         yield 'Default case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/api',
+            'requestUri' => 'http://xchanming.com/api',
         ];
 
         yield 'Case with trailing slash' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/api/',
+            'requestUri' => 'http://xchanming.com/api/',
         ];
 
         yield 'Case with double leading slashes' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com//api',
+            'requestUri' => 'http://xchanming.com//api',
         ];
 
         yield 'Case with double trailing slashes' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/api//',
+            'requestUri' => 'http://xchanming.com/api//',
         ];
 
         yield 'Case with double leading and trailing slashes' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com//api//',
+            'requestUri' => 'http://xchanming.com//api//',
         ];
 
         // Allowedlist paths:
         yield '_wdt case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/_wdt/',
+            'requestUri' => 'http://xchanming.com/_wdt/',
         ];
 
         yield '_profiler case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/_profiler/',
+            'requestUri' => 'http://xchanming.com/_profiler/',
         ];
 
         yield '_error case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/_error/',
+            'requestUri' => 'http://xchanming.com/_error/',
         ];
 
         yield 'payment finalize-transaction case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/payment/finalize-transaction/',
+            'requestUri' => 'http://xchanming.com/payment/finalize-transaction/',
         ];
 
         yield 'installer case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/installer',
+            'requestUri' => 'http://xchanming.com/installer',
         ];
 
         yield '_fragment case' => [
             'registeredApiPrefixes' => ['api'],
-            'requestUri' => 'http://cicada.com/_fragment/',
+            'requestUri' => 'http://xchanming.com/_fragment/',
         ];
     }
 }

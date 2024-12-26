@@ -15,14 +15,14 @@ describe('src/app/filter/truncate.filter.ts', () => {
     [
         [
             [
-                'Hello World, welcome to Shopwware.',
+                'Hello World, welcome to Cicada.',
                 10,
             ],
             'Hello W...',
         ],
         [
             [
-                'Hello World, welcome to Shopwware.',
+                'Hello World, welcome to Cicada.',
                 20,
             ],
             'Hello World, welc...',
@@ -32,7 +32,7 @@ describe('src/app/filter/truncate.filter.ts', () => {
                 'Hello World, welcome to <h1>Cicada</h1> guys.',
                 33,
             ],
-            'Hello World, welcome to Shopwa...',
+            'Hello World, welcome to Cicada...',
         ],
         [
             [
@@ -41,7 +41,7 @@ describe('src/app/filter/truncate.filter.ts', () => {
                 true,
                 '***',
             ],
-            'Hello World, welcome to Shopwa***',
+            'Hello World, welcome to Cicada***',
         ],
         [
             [
@@ -49,7 +49,7 @@ describe('src/app/filter/truncate.filter.ts', () => {
                 33,
                 false,
             ],
-            'Hello World, welcome to <h1>Sh...',
+            'Hello World, welcome to <h1>Ci...',
         ],
         [
             [

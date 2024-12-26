@@ -4,7 +4,7 @@
       "mainMenuItemGeneral": "Mailer",
       "textHeadline": "Mailer",
       "buttonSave": "Save",
-      "helpText": "For more information look at <a href='https://docs.cicada.com/en/cicada-6-en'>documentation</a>"
+      "helpText": "For more information look at <a href='https://docs.xchanming.com/en/cicada-6-en'>documentation</a>"
     },
     "mailer-configuration": {
       "card-title": "Mailer configuration",
@@ -57,7 +57,7 @@
       "ssl": "SSL",
       "tls": "TLS"
     },
-    "helpText": "For more information please check out the <a target=\"_blank\", href=\"https://docs.cicada.com/en/cicada-6-en\">documentation.</a>"
+    "helpText": "For more information please check out the <a target=\"_blank\", href=\"https://docs.xchanming.com/en/cicada-6-en\">documentation.</a>"
   }
 }
 

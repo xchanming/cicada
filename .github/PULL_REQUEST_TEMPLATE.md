@@ -1,7 +1,7 @@
 <!--
 Thank you for contributing to Cicada! Please fill out this description template to help us to process your pull request.
 
-Please make sure to fulfill our contribution guideline (https://developer.cicada.com/docs/resources/guidelines/code/contribution?category=cicada-platform-dev-en/contribution).
+Please make sure to fulfill our contribution guideline (https://developer.xchanming.com/docs/resources/guidelines/code/contribution?category=cicada-platform-dev-en/contribution).
 
 Do your changes need to be mentioned in the documentation?
 Please create a second pull request at https://github.com/cicada/docs

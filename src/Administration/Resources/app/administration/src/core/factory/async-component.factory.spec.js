@@ -2842,11 +2842,11 @@ describe('core/factory/async-component.factory.ts', () => {
         ComponentFactory.register('sw-order-list', () =>
             Promise.resolve({
                 template: `
-                <div class="sw-order-list">
-                    <button id="next" @click="page++">Next Page</button>
-                    <button id="previous" @click="page--">Previous Page</button>
-                </div>
-            `,
+                    <div class="sw-order-list">
+                        <button id="next" @click="page++">Next Page</button>
+                        <button id="previous" @click="page--">Previous Page</button>
+                    </div>
+                `,
                 data() {
                     return {
                         page: 1,

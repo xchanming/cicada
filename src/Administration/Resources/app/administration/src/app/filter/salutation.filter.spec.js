@@ -25,7 +25,7 @@ describe('src/app/filter/salutation.filter.ts', () => {
                     displayName: 'Mr.',
                 },
                 title: 'Dr.',
-                name: 'Max'
+                name: 'Max',
             }),
         ).toBe('Mr. Dr. Max');
     });

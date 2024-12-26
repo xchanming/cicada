@@ -7,11 +7,11 @@ import { setupCmsEnvironment } from 'src/module/sw-cms/test-utils';
 const sliderItemsConfigMock = [
     {
         mediaId: '1',
-        mediaUrl: 'http://cicada.com/image1.jpg',
+        mediaUrl: 'http://xchanming.com/image1.jpg',
     },
     {
         mediaId: '2',
-        mediaUrl: 'http://cicada.com/image2.jpg',
+        mediaUrl: 'http://xchanming.com/image2.jpg',
     },
 ];
 
@@ -19,13 +19,13 @@ const sliderItemsDataMock = [
     {
         media: {
             id: '1',
-            url: 'http://cicada.com/image1.jpg',
+            url: 'http://xchanming.com/image1.jpg',
         },
     },
     {
         media: {
             id: '2',
-            url: 'http://cicada.com/image2.jpg',
+            url: 'http://xchanming.com/image2.jpg',
         },
     },
 ];

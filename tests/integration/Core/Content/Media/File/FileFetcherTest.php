@@ -190,7 +190,7 @@ class FileFetcherTest extends TestCase
 
     public function testFetchFileFromUrlWithMalformedUrl(): void
     {
-        $invalidUrl = 'ssh://de.cicada.com/press/company/Cicada_Jamaica.jpg';
+        $invalidUrl = 'ssh://de.xchanming.com/press/company/Cicada_Jamaica.jpg';
         $this->expectException(MediaException::class);
         $this->expectExceptionMessage(\sprintf('Provided URL "%s" is invalid.', $invalidUrl));
 

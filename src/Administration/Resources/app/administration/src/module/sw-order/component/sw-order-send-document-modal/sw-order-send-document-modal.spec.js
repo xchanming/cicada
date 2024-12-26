@@ -8,7 +8,7 @@ import EntityCollection from 'src/core/data/entity-collection.data';
 
 const mockOrderWithMailHeaderFooter = {
     orderCustomer: {
-        email: 'test@cicada.com',
+        email: 'test@xchanming.com',
         name: 'Test',
     },
     salesChannel: {
@@ -19,7 +19,7 @@ const mockOrderWithMailHeaderFooter = {
 
 const mockOrderWithoutMailHeaderFooter = {
     orderCustomer: {
-        email: 'test@cicada.com',
+        email: 'test@xchanming.com',
     },
     salesChannel: {
         mailHeaderFooterId: null,

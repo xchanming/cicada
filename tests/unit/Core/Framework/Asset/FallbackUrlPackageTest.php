@@ -30,9 +30,9 @@ class FallbackUrlPackageTest extends TestCase
 
     public function testCliUrlGiven(): void
     {
-        $url = $this->createPackage('https://cicada.com')->getUrl('test');
+        $url = $this->createPackage('https://xchanming.com')->getUrl('test');
 
-        static::assertSame('https://cicada.com/test', $url);
+        static::assertSame('https://xchanming.com/test', $url);
     }
 
     public function testWebFallbackToRequest(): void

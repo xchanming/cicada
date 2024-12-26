@@ -45,7 +45,7 @@ class FirstRunWizardClientTest extends TestCase
                 '/swplatform/firstrunwizard/login',
                 [
                     'json' => [
-                        'cicadaId' => 'j.doe@cicada.com',
+                        'cicadaId' => 'j.doe@xchanming.com',
                         'password' => 'p4ssw0rd',
                     ],
                     'query' => [],
@@ -56,7 +56,7 @@ class FirstRunWizardClientTest extends TestCase
 
         static::assertEquals(
             $firstRunWizardUserToken,
-            $frwClient->frwLogin('j.doe@cicada.com', 'p4ssw0rd', $this->context)
+            $frwClient->frwLogin('j.doe@xchanming.com', 'p4ssw0rd', $this->context)
         );
     }
 

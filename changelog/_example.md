@@ -3,7 +3,7 @@ title:              New CMS components for 3D content       # Required
 issue:              NEXT-12345                              # Required
 flag:               FEATURE_NEXT_12345                      # Required, when feature is behind feature flag
 author:             Philipp Schuch                          # Optional for cicada employees, Required for external developers
-author_email:       p.schuch@cicada.com                   # Optional for cicada employees, Required for external developers
+author_email:       p.schuch@xchanming.com                   # Optional for cicada employees, Required for external developers
 author_github:      @Phil23                                 # Optional
 ---
 # Core
