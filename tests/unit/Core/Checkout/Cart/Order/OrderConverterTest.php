@@ -1341,7 +1341,6 @@ class OrderConverterTest extends TestCase
                 'customerNumber' => 'customer-number',
                 'email' => 'customer-email',
                 'name' => 'customer-name',
-                'username' => 'customer-user-name',
                 'nickname' => 'customer-nick-name',
                 'remoteAddress' => null,
                 'salutationId' => 'customer-salutation-id',

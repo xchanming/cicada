@@ -62,7 +62,6 @@ class Migration1663402950SetDoubleOptinCustomerActiveTest extends TestCase
             'default_shipping_address_id' => $customerAddressId,
             'customer_number' => '123',
             'name' => 'Bar',
-            'username' => 'Foo',
             'nickname' => 'Foo',
             'email' => 'foo@bar.com',
             'active' => 0,
