@@ -60,7 +60,7 @@
                                 "type": "object",
                                 "required": [
                                     "salutationId",
-                                    "name",
+                                    "name"
                                 ],
                                 "properties": {
                                     "salutationId": {

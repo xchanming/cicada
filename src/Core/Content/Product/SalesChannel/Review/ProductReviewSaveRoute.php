@@ -102,7 +102,7 @@ class ProductReviewSaveRoute extends AbstractProductReviewSaveRoute
         $event = new ReviewFormEvent(
             $context->getContext(),
             $context->getSalesChannel()->getId(),
-            new MailRecipientStruct([$mail => $review['externalUser'] . $data->get('name')]),
+            new MailRecipientStruct([$mail => $review['externalUser']]),
             $data,
             $productId,
             $customerId
