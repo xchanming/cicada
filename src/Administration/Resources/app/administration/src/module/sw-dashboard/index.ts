@@ -4,12 +4,6 @@ Cicada.Component.register('sw-dashboard-statistics', () => import('./component/s
 Cicada.Component.register('sw-dashboard-index', () => import('./page/sw-dashboard-index'));
 /* eslint-enable max-len, sw-deprecation-rules/private-feature-declarations */
 
-// eslint-disable-next-line max-len,sw-deprecation-rules/private-feature-declarations
-Cicada.Component.register(
-    'sw-usage-data-consent-banner',
-    () => import('src/module/sw-settings-usage-data/component/sw-usage-data-consent-banner'),
-);
-
 /**
  * @package services-settings
  *

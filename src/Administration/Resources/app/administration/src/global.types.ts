@@ -64,7 +64,6 @@ import type FilterFactory from './core/factory/filter.factory';
 import type StateStyleService from './app/service/state-style.service';
 import type RuleConditionService from './app/service/rule-condition.service';
 import type SystemConfigApiService from './core/service/api/system-config.api.service';
-import type { UsageDataApiService } from './core/service/api/usage-data.api.service';
 import type ConfigApiService from './core/service/api/config.api.service';
 import type ImportExportService from './module/sw-import-export/service/importExport.service';
 import type WorkerNotificationFactory from './core/factory/worker-notification.factory';
@@ -86,7 +85,6 @@ import type GenericConditionMixin from './app/mixin/generic-condition.mixin';
 import type SwFormFieldMixin from './app/mixin/form-field.mixin';
 import type DiscardDetailPageChangesMixin from './app/mixin/discard-detail-page-changes.mixin';
 import type PrivilegesService from './app/service/privileges.service';
-import type { UsageDataModuleState } from './app/state/usage-data.store';
 import type { FileValidationService } from './app/service/file-validation.service';
 import type { AdminHelpCenterState } from './app/state/admin-help-center.store';
 import type { DevtoolComponent } from './app/adapter/view/sw-vue-devtools';
@@ -229,7 +227,6 @@ declare global {
         userActivityService: UserActivityService;
         filterFactory: FilterFactoryData;
         systemConfigApiService: SystemConfigApiService;
-        usageDataService: UsageDataApiService;
         configService: ConfigApiService;
         importExport: ImportExportService;
         fileValidationService: FileValidationService;
@@ -339,7 +336,6 @@ declare global {
         extensionEntryRoutes: $TSFixMe;
         cicadaApps: CicadaAppsState;
         sdkLocation: SdkLocationState;
-        usageData: UsageDataModuleState;
         adminHelpCenter: AdminHelpCenterState;
     }
 

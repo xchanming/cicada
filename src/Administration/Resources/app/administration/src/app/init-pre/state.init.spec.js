@@ -43,7 +43,6 @@ describe('src/app/init-pre/state.init.ts', () => {
         expect(Cicada.State.get('actionButtons')).toBeDefined();
         expect(Cicada.State.get('ruleConditionsConfig')).toBeDefined();
         expect(Cicada.State.get('sdkLocation')).toBeDefined();
-        expect(Cicada.State.get('usageData')).toBeDefined();
         expect(Cicada.State.get('adminHelpCenter')).toBeDefined();
     });
 

@@ -83,42 +83,6 @@ describe('src/app/init/tabs.init', () => {
             },
         });
 
-        Cicada.Module.register('sw-settings-usage-data', {
-            type: 'core',
-            name: 'usage-data',
-            title: 'sw-settings-usage-data.general.mainMenuItemGeneral',
-            description: 'sw-settings-usage-data.general.description',
-            version: '1.0.0',
-            targetVersion: '1.0.0',
-            color: '#9AA8B5',
-            icon: 'regular-cog',
-            favicon: 'icon-module-settings.png',
-            entity: 'store_settings',
-            routes: {
-                index: {
-                    component: 'sw-settings-usage-data',
-                    path: 'index',
-                    meta: {
-                        // Do not use parentPath here to test the fallback
-                        privilege: 'system.system_config',
-                    },
-                    redirect: {
-                        name: 'sw.settings.usage.data.index.general',
-                    },
-                    children: {
-                        general: {
-                            component: 'sw-settings-usage-data-general',
-                            path: 'general',
-                            meta: {
-                                parentPath: 'sw.settings.index.system',
-                                privilege: 'system.system_config',
-                            },
-                        },
-                    },
-                },
-            },
-        });
-
         // start handler for extensionAPI
         initTabs();
     });
@@ -219,38 +183,4 @@ describe('src/app/init/tabs.init', () => {
         );
     });
 
-    it('should add the correct meta data to the route (static)', async () => {
-        // add tab
-        await ui.tabs('route-position-example-id').addTabItem({
-            label: 'My tab item with route',
-            componentSectionId: 'route-example-component-section-id',
-        });
-
-        // initialize view
-        await Cicada.Application._resolveViewInitialized();
-
-        // Visit the route and expect that the interceptor redirects the route
-        await routerMock.push('/sw/settings/usage/data/index/route-example-component-section-id');
-
-        // Check if route was created correctly
-        expect(routerMock.resolve('/sw/settings/usage/data/index/route-example-component-section-id').matched[1]).toEqual(
-            expect.objectContaining({
-                meta: expect.objectContaining({
-                    parentPath: 'sw.settings.usage.data.index',
-                    $module: expect.objectContaining({
-                        type: 'core',
-                        name: 'usage-data',
-                        title: 'sw-settings-usage-data.general.mainMenuItemGeneral',
-                        description: 'sw-settings-usage-data.general.description',
-                        version: '1.0.0',
-                        targetVersion: '1.0.0',
-                        color: '#9AA8B5',
-                        icon: 'regular-cog',
-                        favicon: 'icon-module-settings.png',
-                        entity: 'store_settings',
-                    }),
-                }),
-            }),
-        );
-    });
 });

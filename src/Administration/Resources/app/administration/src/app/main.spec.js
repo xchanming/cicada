@@ -39,7 +39,6 @@ describe('src/app/main.ts', () => {
         UserActivityService: undefined,
         EntityValidationService: undefined,
         CustomEntityDefinitionService: undefined,
-        addUsageDataConsentListener: undefined,
         FileValidationService: undefined,
     };
 
@@ -171,11 +170,6 @@ describe('src/app/main.ts', () => {
         jest.mock('src/app/service/custom-entity-definition.service');
         serviceMocks.CustomEntityDefinitionService = (
             await import('src/app/service/custom-entity-definition.service')
-        ).default;
-
-        jest.mock('src/core/service/usage-data-consent-listener.service');
-        serviceMocks.addUsageDataConsentListener = (
-            await import('src/core/service/usage-data-consent-listener.service')
         ).default;
 
         jest.mock('src/app/service/file-validation.service');

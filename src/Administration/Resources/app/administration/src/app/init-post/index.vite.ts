@@ -8,12 +8,10 @@
 import initUserInformation from './user-information.init';
 import initLanguage from './language.init';
 import initWorker from './worker.init.vite';
-import initUsageData from './usage-data.init';
 
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {
     language: initLanguage,
     userInformation: initUserInformation,
     worker: initWorker,
-    usageData: initUsageData,
 };
