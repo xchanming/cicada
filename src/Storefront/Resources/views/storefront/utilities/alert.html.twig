@@ -120,6 +120,22 @@ To display a dismissible button set the value of "dismissible" to true.
                     {% endif %}
                 {% endblock %}
 
+                {% block utilities_alert_content %}
+                    {% if list|length > 1 %}
+                        <ul class="alert-list">
+                            {% for entry in list %}
+                                <li>{{ entry|sw_sanitize }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% elseif list|length == 1 %}
+                        {% for entry in list %}
+                            {{ entry|sw_sanitize }}
+                        {% endfor %}
+                    {% else %}
+                        {{ content|sw_sanitize }}
+                    {% endif %}
+                {% endblock %}
+
                 {% block utilities_alert_dismissible %}
                     {% if dismissible %}
                         <button type="button"
