@@ -386,7 +386,7 @@
                 },
                 "rate_limiter": {
                     "$ref": "#/definitions/rate_limiter"
-                },
+                }
             },
             "title": "API"
         },
