@@ -17,7 +17,6 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextRestorer;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -144,33 +143,6 @@ class CustomerFlowEventsSubscriberTest extends TestCase
 
         $this->connection->expects(static::never())
             ->method('delete');
-
-        $this->customerFlowEventsSubscriber->onCustomerWritten($event);
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    #[DisabledFeatures(['v6.7.0.0'])]
-    public function testOnCustomerUpdateWithoutCustomerInContext(): void
-    {
-        $event = $this->createMock(EntityWrittenEvent::class);
-        $event->expects(static::exactly(2))
-            ->method('getContext')
-            ->willReturn(Context::createDefaultContext());
-
-        $payloads = [
-            [
-                'defaultPaymentMethodId' => $this->ids->get('defaultPaymentMethod'),
-                'id' => $this->ids->get('newPaymentMethod'),
-            ],
-        ];
-
-        $event->expects(static::once())
-            ->method('getPayloads')
-            ->willReturn($payloads);
-
-        $this->dispatcher->expects(static::never())->method('dispatch');
 
         $this->customerFlowEventsSubscriber->onCustomerWritten($event);
     }

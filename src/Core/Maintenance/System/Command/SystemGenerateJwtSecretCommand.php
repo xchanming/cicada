@@ -36,7 +36,7 @@ class SystemGenerateJwtSecretCommand extends Command
     {
         $this->addOption('private-key-path', null, InputOption::VALUE_OPTIONAL, 'JWT public key path')
             ->addOption('public-key-path', null, InputOption::VALUE_OPTIONAL, 'JWT public key path')
-            ->addOption('jwt-passphrase', null, InputOption::VALUE_OPTIONAL, 'JWT private key passphrase', 'shopware')
+            ->addOption('jwt-passphrase', null, InputOption::VALUE_OPTIONAL, 'JWT private key passphrase', 'xchanming')
             ->addOption('force', 'f', InputOption::VALUE_NONE, 'Force recreation')
             ->addOption('use-env', null, InputOption::VALUE_NONE, 'Print JWT secret to console to use it as environment variable')
         ;
