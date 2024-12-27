@@ -3,7 +3,6 @@
 namespace Cicada\Core\Checkout\Payment;
 
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 

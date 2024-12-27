@@ -4,7 +4,6 @@ namespace Cicada\Core\Checkout\Shipping;
 
 use Cicada\Core\Checkout\Shipping\Aggregate\ShippingMethodPrice\ShippingMethodPriceCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
