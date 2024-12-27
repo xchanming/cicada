@@ -229,7 +229,6 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
      */
     private function loadCustomer(array $options, Context $context): ?CustomerEntity
     {
-        $addressIds = [];
         $customerId = $options[SalesChannelContextService::CUSTOMER_ID];
 
         $criteria = new Criteria([$customerId]);
@@ -258,44 +257,57 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $activeBillingAddressId = $options[SalesChannelContextService::BILLING_ADDRESS_ID] ?? $customer->getDefaultBillingAddressId();
         $activeShippingAddressId = $options[SalesChannelContextService::SHIPPING_ADDRESS_ID] ?? $customer->getDefaultShippingAddressId();
 
-        $addressIds[] = $activeBillingAddressId;
-        $addressIds[] = $activeShippingAddressId;
-        $addressIds[] = $customer->getDefaultBillingAddressId();
-        $addressIds[] = $customer->getDefaultShippingAddressId();
+        $addressIds = [];
 
-        $criteria = new Criteria(\array_unique($addressIds));
-        $criteria->setTitle('context-factory::addresses');
-        $criteria->addAssociation('salutation');
-        $criteria->addAssociation('country');
-        $criteria->addAssociation('countryState');
+        if ($activeBillingAddressId) {
+            $addressIds[] = $activeBillingAddressId;
+        }
+        if ($activeShippingAddressId) {
+            $addressIds[] = $activeShippingAddressId;
+        }
 
-        $addresses = $this->addressRepository->search($criteria, $context);
-        if ($addresses->getTotal() > 0) {
-            $activeBillingAddressId = $activeBillingAddressId ?? $customer->getDefaultBillingAddressId();
-            if ($activeBillingAddressId !== null) {
-                /** @var CustomerAddressEntity|null $activeBillingAddress */
-                $activeBillingAddress = $addresses->get($activeBillingAddressId);
-                $customer->setDefaultBillingAddress($activeBillingAddress);
-            }
-            $activeShippingAddressId = $activeShippingAddressId ?? $customer->getDefaultShippingAddressId();
-            if ($activeShippingAddressId !== null) {
-                /** @var CustomerAddressEntity|null $activeShippingAddress */
-                $activeShippingAddress = $addresses->get($activeShippingAddressId);
-                $customer->setActiveShippingAddress($activeShippingAddress);
-            }
-            /** @var string $defaultBillingAddressId */
-            $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
-            if ($defaultBillingAddressId !== null) {
-                /** @var CustomerAddressEntity|null $defaultBillingAddress */
-                $defaultBillingAddress = $addresses->get($defaultBillingAddressId);
-                $customer->setDefaultBillingAddress($defaultBillingAddress);
-            }
+        if ($defaultBillingAddressId = $customer->getDefaultBillingAddressId()) {
+            $addressIds[] = $defaultBillingAddressId;
+        }
+        if ($defaultShippingAddressId = $customer->getDefaultShippingAddressId()) {
+            $addressIds[] = $defaultShippingAddressId;
+        }
 
-            $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
-            if ($defaultShippingAddressId !== null) {
-                /** @var CustomerAddressEntity|null $defaultShippingAddress */
-                $defaultShippingAddress = $addresses->get($defaultShippingAddressId);
-                $customer->setDefaultShippingAddress($defaultShippingAddress);
+        if (!empty($addressIds)) {
+            $criteria = new Criteria(\array_unique($addressIds));
+            $criteria->setTitle('context-factory::addresses');
+            $criteria->addAssociation('salutation');
+            $criteria->addAssociation('country');
+            $criteria->addAssociation('countryState');
+
+            $addresses = $this->addressRepository->search($criteria, $context);
+            if ($addresses->getTotal() > 0) {
+                $activeBillingAddressId = $activeBillingAddressId ?? $customer->getDefaultBillingAddressId();
+                if ($activeBillingAddressId !== null) {
+                    /** @var CustomerAddressEntity|null $activeBillingAddress */
+                    $activeBillingAddress = $addresses->get($activeBillingAddressId);
+                    $customer->setDefaultBillingAddress($activeBillingAddress);
+                }
+                $activeShippingAddressId = $activeShippingAddressId ?? $customer->getDefaultShippingAddressId();
+                if ($activeShippingAddressId !== null) {
+                    /** @var CustomerAddressEntity|null $activeShippingAddress */
+                    $activeShippingAddress = $addresses->get($activeShippingAddressId);
+                    $customer->setActiveShippingAddress($activeShippingAddress);
+                }
+                /** @var string $defaultBillingAddressId */
+                $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
+                if ($defaultBillingAddressId !== null) {
+                    /** @var CustomerAddressEntity|null $defaultBillingAddress */
+                    $defaultBillingAddress = $addresses->get($defaultBillingAddressId);
+                    $customer->setDefaultBillingAddress($defaultBillingAddress);
+                }
+
+                $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
+                if ($defaultShippingAddressId !== null) {
+                    /** @var CustomerAddressEntity|null $defaultShippingAddress */
+                    $defaultShippingAddress = $addresses->get($defaultShippingAddressId);
+                    $customer->setDefaultShippingAddress($defaultShippingAddress);
+                }
             }
         }
 

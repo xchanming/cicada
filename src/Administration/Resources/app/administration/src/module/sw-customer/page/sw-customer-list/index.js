@@ -321,25 +321,6 @@ export default {
                     useCustomSort: true,
                 },
                 {
-                    property: 'defaultBillingAddress.street',
-                    label: 'sw-customer.list.columnStreet',
-                    allowResize: true,
-                    useCustomSort: true,
-                },
-                {
-                    property: 'defaultBillingAddress.zipcode',
-                    label: 'sw-customer.list.columnZip',
-                    align: 'right',
-                    allowResize: true,
-                    useCustomSort: true,
-                },
-                {
-                    property: 'defaultBillingAddress.city',
-                    label: 'sw-customer.list.columnCity',
-                    allowResize: true,
-                    useCustomSort: true,
-                },
-                {
                     property: 'customerNumber',
                     dataIndex: 'customerNumber',
                     naturalSorting: true,
@@ -364,6 +345,28 @@ export default {
                     inlineEdit: 'string',
                     label: 'sw-customer.list.columnEmail',
                     allowResize: true,
+                    useCustomSort: true,
+                },
+                {
+                    property: 'defaultBillingAddress.street',
+                    label: 'sw-customer.list.columnStreet',
+                    allowResize: true,
+                    visible: false,
+                    useCustomSort: true,
+                },
+                {
+                    property: 'defaultBillingAddress.zipcode',
+                    label: 'sw-customer.list.columnZip',
+                    align: 'right',
+                    allowResize: true,
+                    visible: false,
+                    useCustomSort: true,
+                },
+                {
+                    property: 'defaultBillingAddress.city',
+                    label: 'sw-customer.list.columnCity',
+                    allowResize: true,
+                    visible: false,
                     useCustomSort: true,
                 },
                 {
@@ -394,7 +397,7 @@ export default {
                     inlineEdit: 'boolean',
                     label: 'sw-customer.list.columnActive',
                     allowResize: true,
-                    visible: false,
+                    visible: true,
                     useCustomSort: true,
                 },
             ];
