@@ -4,7 +4,6 @@ namespace Cicada\Core\Checkout\Customer\Validation;
 
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Validation\EntityExists;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataValidationDefinition;
 use Cicada\Core\Framework\Validation\DataValidationFactoryInterface;
@@ -75,15 +74,10 @@ class AddressValidationFactory implements DataValidationFactoryInterface
             $definition->add('phoneNumber', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_PHONE_NUMBER], null, null, null, null, null, 'VIOLATION::PHONE_NUMBER_IS_TOO_LONG'));
         }
 
-        /**
-         * @deprecated tag:v6.7.0 - fields "name", "title", "zipcode" will have a maximum length.
-         */
-        if (Feature::isActive('v6.7.0.0')) {
-            $definition
-                ->add('name', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_NAME], null, null, null, null, null, 'VIOLATION::FIRST_NAME_IS_TOO_LONG'))
-                ->add('title', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_TITLE], null, null, null, null, null, 'VIOLATION::TITLE_IS_TOO_LONG'))
-                ->add('zipcode', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_ZIPCODE], null, null, null, null, null, 'VIOLATION::ZIPCODE_IS_TOO_LONG'));
-        }
+        $definition
+            ->add('name', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_NAME], null, null, null, null, null, 'VIOLATION::FIRST_NAME_IS_TOO_LONG'))
+            ->add('title', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_TITLE], null, null, null, null, null, 'VIOLATION::TITLE_IS_TOO_LONG'))
+            ->add('zipcode', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_ZIPCODE], null, null, null, null, null, 'VIOLATION::ZIPCODE_IS_TOO_LONG'));
 
         return $definition;
     }

@@ -104,13 +104,7 @@ class RegisterRouteTest extends TestCase
 
         $data = [
             'email' => 'test@test.de',
-            'billingAddress' => [
-                'countryId' => Uuid::randomHex(),
-            ],
             'accountType' => CustomerEntity::ACCOUNT_TYPE_PRIVATE,
-            'shippingAddress' => [
-                'countryId' => Uuid::randomHex(),
-            ],
         ];
 
         $salesChannelContext = $this->createMock(SalesChannelContext::class);

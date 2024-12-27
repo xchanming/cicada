@@ -350,7 +350,7 @@ class RegisterControllerTest extends TestCase
     private function getMailRecipientStruct(array $customerData): MailRecipientStruct
     {
         return new MailRecipientStruct([
-            (string) $customerData['email'] => $customerData['firstName'] . ' ' . $customerData['lastName'],
+            (string) $customerData['email'] => $customerData['name'],
         ]);
     }
 
@@ -374,12 +374,10 @@ class RegisterControllerTest extends TestCase
             'email' => 'max.mustermann@example.com',
             'emailConfirmation' => 'max.mustermann@example.com',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'storefrontUrl' => 'http://localhost',
             'billingAddress' => [
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'countryId' => $this->getValidCountryId(),
                 'street' => 'Musterstrasse 13',
                 'zipcode' => '48599',

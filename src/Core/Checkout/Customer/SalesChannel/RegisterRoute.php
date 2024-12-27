@@ -67,11 +67,11 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 class RegisterRoute extends AbstractRegisterRoute
 {
     /**
-     * @internal
-     *
      * @param EntityRepository<CustomerCollection> $customerRepository
      * @param SalesChannelRepository<CountryCollection> $countryRepository
      * @param EntityRepository<SalutationCollection> $salutationRepository
+     *
+     * @internal
      */
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher,
@@ -114,20 +114,28 @@ class RegisterRoute extends AbstractRegisterRoute
         $shipping = $data->get('shippingAddress');
 
         if ($billing instanceof DataBag) {
-            if (Feature::isActive('v6.7.0.0')) {
-                if ($billing->has('name') && !$data->has('name')) {
-                    $data->set('name', $billing->get('name'));
-                }
+            if ($billing->has('name') && !$data->has('name')) {
+                $data->set('name', $billing->get('name'));
             }
-
             if ($data->has('title')) {
                 $billing->set('title', $data->get('title'));
             }
         }
 
+        $customerNumber = $this->numberRangeValueGenerator->getValue(
+            $this->customerRepository->getDefinition()->getEntityName(),
+            $context->getContext(),
+            $context->getSalesChannel()->getId()
+        );
+
+        if (!$data->has('name')) {
+            $data->set('name', $customerNumber);
+        }
+
         $this->validateRegistrationData($data, $isGuest, $context, $additionalValidationDefinitions, $validateStorefrontUrl);
 
         $customer = $this->mapCustomerData($data, $isGuest, $context);
+        $customer['customerNumber'] = $customerNumber;
 
         if ($billing instanceof DataBag) {
             $billingAddress = $this->mapAddressData($billing, $context->getContext(), CustomerEvents::MAPPING_REGISTER_ADDRESS_BILLING);
@@ -420,11 +428,6 @@ class RegisterRoute extends AbstractRegisterRoute
     private function mapCustomerData(DataBag $data, bool $isGuest, SalesChannelContext $context): array
     {
         $customer = [
-            'customerNumber' => $this->numberRangeValueGenerator->getValue(
-                $this->customerRepository->getDefinition()->getEntityName(),
-                $context->getContext(),
-                $context->getSalesChannel()->getId()
-            ),
             'salesChannelId' => $context->getSalesChannel()->getId(),
             'languageId' => $context->getContext()->getLanguageId(),
             'groupId' => $context->getCurrentCustomerGroup()->getId(),
