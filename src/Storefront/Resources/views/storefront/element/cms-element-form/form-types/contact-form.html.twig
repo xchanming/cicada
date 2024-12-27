@@ -7,49 +7,44 @@
           id="{{ formPrefix }}"
           aria-label="{{ element.config.title.value ? element.config.title.value : 'contact.headline'|trans }}">
         <div class="form-content">
-        <div class="row g-2">
-            {% block cms_form_contact_select_salutation %}
-                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
-                    with {
-                    additionalClass: 'col-md-6',
-                    required: true
-                }
-                %}
-            {% endblock %}
+            <div class="row g-2">
+                {% block cms_form_contact_select_salutation %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
+                        with {
+                        additionalClass: 'col-md-6',
+                        required: true
+                    } %}
+                {% endblock %}
 
-            {% block cms_form_contact_input_first_name %}
-                {% set nameFieldRequired = config('core.basicInformation.nameFieldRequired') == true %}
-                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
-                    with {
-                    fieldName: 'name',
-                    autocomplete: 'section-personal given-name',
-                    required: nameFieldRequired,
-                    additionalClass: 'col-md-6',
-                    label: 'account.personalNameLabel',
-                    placeholder: 'account.personalNamePlaceholder'
-                }
-                %}
-            {% endblock %}
-        </div>
+                {% block cms_form_contact_input_first_name %}
+                    {% set nameFieldRequired = config('core.basicInformation.nameFieldRequired') == true %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                        with {
+                        fieldName: 'name',
+                        autocomplete: 'section-personal given-name',
+                        required: nameFieldRequired,
+                        additionalClass: 'col-md-6',
+                        label: 'account.personalNameLabel',
+                        placeholder: 'account.personalNamePlaceholder'
+                    } %}
+                {% endblock %}
+            </div>
 
-        <div class="row g-2">
-            {% block cms_form_contact_input_email %}
-                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
-                    with {
-                    fieldName: 'email',
-                    autocomplete: 'email',
-                    type: 'email',
-                    required: true,
-                    additionalClass: 'col-md-6',
-                    label: 'account.loginMailLabel',
-                    placeholder: 'account.loginMailPlaceholder'
-                }
-                %}
-            {% endblock %}
+            <div class="row g-2">
+                {% block cms_form_contact_input_email %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                        with {
+                        fieldName: 'email',
+                        autocomplete: 'email',
+                        type: 'email',
+                        required: true,
+                        additionalClass: 'col-md-6',
+                        label: 'account.loginMailLabel',
+                        placeholder: 'account.loginMailPlaceholder'
+                    } %}
+                {% endblock %}
 
-            {% block cms_form_contact_input_phone %}
-                {# @deprecated tag:v6.7.0 - Block will be renamed because of a typo. Use outer `cms_form_contact_input_phone` instead. #}
-                {% block cms_form_contact_input_phome %}
+                {% block cms_form_contact_input_phone %}
                     {% set phoneNumberFieldRequired = config('core.basicInformation.phoneNumberFieldRequired') == true %}
                     {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
                         with {
@@ -59,68 +54,67 @@
                         additionalClass: 'col-md-6',
                         label: 'account.personalPhoneLabel',
                         placeholder: 'account.personalPhonePlaceholder'
-                    }
-                    %}
+                    } %}
                 {% endblock %}
+            </div>
+
+            <div class="row g-2">
+                {% block cms_form_contact_input_subject %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
+                        with {
+                        required: true,
+                        fieldName: 'subject',
+                        additionalClass: 'col-12',
+                        label: 'contact.subjectLabel',
+                        placeholder: 'contact.subjectPlaceholder'
+                    } %}
+                {% endblock %}
+            </div>
+
+            <div class="row g-2">
+                {% block cms_form_contact_comment_textarea %}
+                    {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-textarea.html.twig'
+                        with {
+                        rows: 5,
+                        required: true,
+                        fieldName: 'comment',
+                        additionalClass: 'col-12',
+                        label: 'contact.commentLabel',
+                        placeholder: 'contact.commentPlaceholder'
+                    } %}
+                {% endblock %}
+            </div>
+
+            {% block cms_form_contact_required_fields_info %}
+                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-info-required.html.twig' %}
             {% endblock %}
-        </div>
 
-        <div class="row g-2">
-            {% block cms_form_contact_input_subject %}
-                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
-                    with {
-                    required: true,
-                    fieldName: 'subject',
-                    additionalClass: 'col-12',
-                    label: 'contact.subjectLabel',
-                    placeholder: 'contact.subjectPlaceholder'
-                }
-                %}
+            {% block cms_form_contact_captcha %}
+                {% sw_include '@Storefront/storefront/component/captcha/base.html.twig' with { additionalClass : 'col-md-12' } %}
             {% endblock %}
-        </div>
 
-        <div class="row g-2">
-            {% block cms_form_contact_comment_textarea %}
-                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-textarea.html.twig'
-                    with {
-                    rows: 5,
-                    required: true,
-                    fieldName: 'comment',
-                    additionalClass: 'col-12',
-                    label: 'contact.commentLabel',
-                    placeholder: 'contact.commentPlaceholder'
-                }
-                %}
+            {% block cms_form_contact_privacy %}
+                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-privacy.html.twig' with {
+                    requiresTermsOfService: false,
+                    prevUrl: app.request.isXmlHttpRequest() ? path('frontend.cms.page', { id: config('core.basicInformation.contactPage') }) : '',
+                } %}
             {% endblock %}
-        </div>
 
-        {% block cms_form_contact_required_fields_info %}
-            {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-info-required.html.twig' %}
-        {% endblock %}
-
-        {% block cms_form_contact_captcha %}
-            {% sw_include '@Storefront/storefront/component/captcha/base.html.twig' with { additionalClass : 'col-md-12' } %}
-        {% endblock %}
-
-        {% block cms_form_contact_privacy %}
-            {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-privacy.html.twig' with {
-                requiresTermsOfService: false,
-                prevUrl: app.request.isXmlHttpRequest() ? path('frontend.cms.page', { id: config('core.basicInformation.contactPage') }) : '',
-            } %}
-        {% endblock %}
-
-        {% block cms_form_contact_submit %}
-            {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-submit.html.twig' %}
-        {% endblock %}
+            {% block cms_form_contact_submit %}
+                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-submit.html.twig' %}
+            {% endblock %}
         </div>
 
         {% block cms_form_contact_hidden_fields %}
             <div class="form-hidden-fields">
                 {% if page.navigationId and page.entityName %}
-                    <input type="hidden" id="{{ formPrefix }}-navigationId" name="navigationId" value="{{ page.navigationId }}">
-                    <input type="hidden" id="{{ formPrefix }}-entityName" name="entityName" value="{{ page.entityName }}">
+                    <input type="hidden" id="{{ formPrefix }}-navigationId" name="navigationId"
+                           value="{{ page.navigationId }}">
+                    <input type="hidden" id="{{ formPrefix }}-entityName" name="entityName"
+                           value="{{ page.entityName }}">
                 {% else %}
-                    <input type="hidden" id="{{ formPrefix }}-navigationId" name="navigationId" value="{{ page.header.navigation.active.id }}">
+                    <input type="hidden" id="{{ formPrefix }}-navigationId" name="navigationId"
+                           value="{{ page.header.navigation.active.id }}">
                 {% endif %}
 
                 <input type="hidden" id="{{ formPrefix }}-slotId" name="slotId" value="{{ element.id }}">

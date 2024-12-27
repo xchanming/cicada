@@ -53,15 +53,8 @@ PluginManager.register('AccountGuestAbortButton', () => import('src/plugin/heade
 PluginManager.register('OffCanvasCart', () => import('src/plugin/offcanvas-cart/offcanvas-cart.plugin'), '[data-off-canvas-cart]');
 PluginManager.register('AddToCart', () => import('src/plugin/add-to-cart/add-to-cart.plugin'), '[data-add-to-cart]');
 PluginManager.register('CollapseFooterColumns', () => import('src/plugin/collapse/collapse-footer-columns.plugin'), '[data-collapse-footer-columns]');
-if (!Feature.isActive('v6.7.0.0')) {
-    PluginManager.register('CollapseCheckoutConfirmMethods', () => import('src/plugin/collapse/collapse-checkout-confirm-methods.plugin'), '[data-collapse-checkout-confirm-methods]');
-}
-if (Feature.isActive('v6.7.0.0')) {
-    PluginManager.register('Navbar', () => import('src/plugin/navbar/navbar.plugin'), '[data-navbar]');
-} else {
-    /** @deprecated tag:v6.7.0 - FlyoutMenu will be removed, see Navbar for the new implementation. */
-    PluginManager.register('FlyoutMenu', () => import('src/plugin/main-menu/flyout-menu.plugin'), '[data-flyout-menu]');
-}
+PluginManager.register('Navbar', () => import('src/plugin/navbar/navbar.plugin'), '[data-navbar]');
+
 PluginManager.register('OffCanvasMenu', () => import('src/plugin/main-menu/offcanvas-menu.plugin'), '[data-off-canvas-menu]');
 PluginManager.register('FormValidation', () => import('src/plugin/forms/form-validation.plugin'), '[data-form-validation]');
 PluginManager.register('FormScrollToInvalidField', () => import('src/plugin/forms/form-scroll-to-invalid-field.plugin'), 'form');
@@ -71,9 +64,8 @@ PluginManager.register('FormAutoSubmit', () => import('src/plugin/forms/form-aut
 PluginManager.register('FormAjaxSubmit', () => import('src/plugin/forms/form-ajax-submit.plugin'), '[data-form-ajax-submit]');
 PluginManager.register('FormAddHistory', () => import('src/plugin/forms/form-add-history.plugin'), '[data-form-add-history]');
 PluginManager.register('FormPreserver', () => import('src/plugin/forms/form-preserver.plugin'), '[data-form-preserver]');
-if (Feature.isActive('ACCESSIBILITY_TWEAKS')) {
-    PluginManager.register('FormAjaxPagination', () => import('src/plugin/forms/form-ajax-pagination.plugin'), '[data-form-ajax-pagination]');
-}
+PluginManager.register('FormAjaxPagination', () => import('src/plugin/forms/form-ajax-pagination.plugin'), '[data-form-ajax-pagination]');
+
 PluginManager.register('AccountMenu', () => import('src/plugin/header/account-menu.plugin'), '[data-account-menu]');
 PluginManager.register('OffCanvasTabs', () => import('src/plugin/offcanvas-tabs/offcanvas-tabs.plugin'), '[data-off-canvas-tabs]');
 PluginManager.register('BaseSlider', () => import('src/plugin/slider/base-slider.plugin'), '[data-base-slider]');

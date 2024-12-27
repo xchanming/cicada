@@ -1,7 +1,7 @@
 {% block cms_element_form_textarea %}
     <div class="form-group {{ additionalClass }}">
         {% block cms_element_form_textarea_label %}
-            <label class="form-label" for="{% if feature('ACCESSIBILITY_TWEAKS') %}{{ formPrefix }}-{% endif %}form-{{ fieldName }}">
+            <label class="form-label" for="{{ formPrefix }}-form-{{ fieldName }}">
                 {{- label|trans -}}{% if required %} {{- 'general.required'|trans -}}{% endif %}
             </label>
         {% endblock %}
@@ -9,7 +9,7 @@
         {% block cms_element_form_textarea_textarea %}
             {% apply spaceless %}
                 <textarea name="{{ fieldName }}"
-                          id="{% if feature('ACCESSIBILITY_TWEAKS') %}{{ formPrefix }}-{% endif %}form-{{ fieldName }}"
+                          id="{{ formPrefix }}-form-{{ fieldName }}"
                           placeholder="{{ placeholder|trans }}"
                           {% if rows %}rows="{{ rows }}"{% endif %}
                           {% if required %}required="required"{% endif %}

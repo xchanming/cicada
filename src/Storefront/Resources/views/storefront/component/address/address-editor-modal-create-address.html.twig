@@ -1,15 +1,8 @@
 {% block component_address_address_editor_modal_create_address %}
-    {% if not feature('v6.7.0.0') %}
-        <div
-            id="{{ typePrefix }}{% if address %}address-create-edit{% else %}address-create-new{% endif %}"
-            class="collapse"
-            data-bs-parent="#{{ typePrefix }}addressEditorAccordion"
-        >
-    {% endif %}
     {% block component_address_address_editor_modal_create_address_wrapper %}
         <div class="card address-editor-create-address-wrapper">
             {% block component_address_address_editor_modal_create_address_title %}
-                <div class="card-title create-address-title{% if feature('v6.7.0.0') %} border-0{% endif %}">
+                <div class="card-title create-address-title border-0">
                     {% block component_address_address_editor_modal_create_address_title_text %}
                         {% if address %}
                             {{ "account.addressEditWelcome"|trans|sw_sanitize }}
@@ -78,20 +71,18 @@
                             {% endblock %}
 
                             {% block component_address_address_editor_modal_create_address_form_actions %}
-                                <div class="address-form-actions{% if feature('v6.7.0.0') %} text-end{% endif %}">
-                                    {% if feature('v6.7.0.0') %}
-                                        {% block component_address_address_editor_modal_create_address_form_actions_cancel %}
-                                            <button
-                                                type="button"
-                                                class="btn btn-light"
-                                                title="{{ "global.default.cancel"|trans|sw_sanitize }}"
-                                                data-bs-toggle="collapse"
-                                                data-bs-target="#{{ typePrefix }}address-list"
-                                            >
-                                                {{ "global.default.cancel"|trans|sw_sanitize }}
-                                            </button>
-                                        {% endblock %}
-                                    {% endif %}
+                                <div class="address-form-actions text-end">
+                                    {% block component_address_address_editor_modal_create_address_form_actions_cancel %}
+                                        <button
+                                            type="button"
+                                            class="btn btn-light"
+                                            title="{{ "global.default.cancel"|trans|sw_sanitize }}"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#{{ typePrefix }}address-list"
+                                        >
+                                            {{ "global.default.cancel"|trans|sw_sanitize }}
+                                        </button>
+                                    {% endblock %}
                                     {% block component_address_address_editor_modal_create_address_form_actions_submit %}
                                         <button
                                             type="submit"
@@ -111,7 +102,4 @@
             {% endblock %}
         </div>
     {% endblock %}
-    {% if not feature('v6.7.0.0') %}
-        </div>
-    {% endif %}
 {% endblock %}

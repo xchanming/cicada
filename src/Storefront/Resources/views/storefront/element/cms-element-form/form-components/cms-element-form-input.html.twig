@@ -1,7 +1,7 @@
 {% block cms_element_form_input %}
     <div class="form-group {{ additionalClass }}">
         {% block cms_element_form_input_label %}
-            <label class="form-label" for="{% if feature('ACCESSIBILITY_TWEAKS') %}{{ formPrefix }}-{% endif %}form-{{ fieldName }}">
+            <label class="form-label" for="{{ formPrefix }}-form-{{ fieldName }}">
                 {{- label|trans -}}{% if required %} {{- 'general.required'|trans -}}{% endif %}
             </label>
         {% endblock %}
@@ -9,7 +9,7 @@
         {% block cms_element_form_input_input %}
             <input name="{{ fieldName }}"
                    type="{{ type ?? 'text'}}"
-                   id="{% if feature('ACCESSIBILITY_TWEAKS') %}{{ formPrefix }}-{% endif %}form-{{ fieldName }}"
+                   id="{{ formPrefix }}-form-{{ fieldName }}"
                    {% if autocomplete %}autocomplete="{{ autocomplete }}"{% endif %}
                    value="{{ data.get( fieldName ) }}"
                    placeholder="{{ placeholder|trans }}"

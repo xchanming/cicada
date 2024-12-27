@@ -192,17 +192,6 @@
             {% endblock %}
         {% endif %}
 
-        {# jQuery is removed from the default Storefront since tag:v6.5.0 - This block should be used to add jQuery as a `<script>` if needed. #}
-        {% block layout_head_javascript_jquery %}
-        {% endblock %}
-
-        {# @deprecated tag:v6.7.0 - This block will be removed #}
-        {% block layout_head_javascript_assets_public_path %}
-            <script>
-                window.themeAssetsPublicPath = '{{ asset('assets/', 'theme') }}';
-            </script>
-        {% endblock %}
-
         {% block layout_head_javascript_hmr_mode %}
             {% if isHMRMode %}
                 {% block layout_head_javascript_hmr_dev %}
