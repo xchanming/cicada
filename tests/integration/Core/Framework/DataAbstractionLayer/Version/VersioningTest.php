@@ -40,7 +40,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntityAggregatorInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\VersionManager;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
@@ -54,7 +53,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\Tax\TaxDefinition;
-use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
 use Cicada\Core\Test\TestDefaults;
@@ -1996,8 +1995,7 @@ class VersioningTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -2011,18 +2009,13 @@ class VersioningTest extends TestCase
                     'customerId' => $customerId,
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
                     'city' => 'Schöppingen',
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->upsert([$customer], Context::createDefaultContext());
 
@@ -2127,7 +2120,7 @@ class VersioningTest extends TestCase
 
         $data = [
             'id' => $paymentMethodId,
-            'handlerIdentifier' => SyncTestPaymentHandler::class,
+            'handlerIdentifier' => TestPaymentHandler::class,
             'name' => 'Payment',
             'technicalName' => 'payment_test',
             'active' => true,

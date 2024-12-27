@@ -7,7 +7,6 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTran
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerRegistry;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerType;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\RefundPaymentHandlerInterface;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
@@ -54,18 +53,6 @@ class PaymentRefundProcessor
         $orderTransactionId = Uuid::fromBytesToHex($result['transaction_id']);
         $paymentMethodId = Uuid::fromBytesToHex($result['payment_method_id']);
         $refundHandler = $this->paymentHandlerRegistry->getPaymentMethodHandler($paymentMethodId);
-
-        if ($refundHandler instanceof RefundPaymentHandlerInterface) {
-            try {
-                $refundHandler->refund($refundId, $context);
-
-                return;
-            } catch (PaymentException $e) {
-                $this->stateHandler->fail($refundId, $context);
-
-                throw $e;
-            }
-        }
 
         if (!$refundHandler instanceof AbstractPaymentHandler || !$refundHandler->supports(PaymentHandlerType::REFUND, $paymentMethodId, $context)) {
             throw PaymentException::unknownRefundHandler($refundId);

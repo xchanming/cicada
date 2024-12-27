@@ -14,8 +14,6 @@ use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Checkout\Payment\Cart\PaymentRefundProcessor;
 use Cicada\Core\Checkout\Payment\PaymentProcessor;
-use Cicada\Core\Checkout\Payment\PaymentService;
-use Cicada\Core\Checkout\Payment\PreparedPaymentService;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\App\AppCollection;
 use Cicada\Core\Framework\App\AppEntity;
@@ -54,10 +52,6 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
     use GuzzleTestClientBehaviour;
 
     final public const ERROR_MESSAGE = 'testError';
-
-    protected PaymentService $paymentService;
-
-    protected PreparedPaymentService $preparedPaymentService;
 
     protected PaymentProcessor $paymentProcessor;
 
@@ -113,9 +107,7 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
         $this->salesChannelContextFactory = static::getContainer()->get(SalesChannelContextFactory::class);
         $this->shopUrl = $_SERVER['APP_URL'];
         $this->shopIdProvider = static::getContainer()->get(ShopIdProvider::class);
-        $this->paymentService = static::getContainer()->get(PaymentService::class);
         $this->paymentProcessor = static::getContainer()->get(PaymentProcessor::class);
-        $this->preparedPaymentService = static::getContainer()->get(PreparedPaymentService::class);
         $this->paymentRefundProcessor = static::getContainer()->get(PaymentRefundProcessor::class);
         $this->context = Context::createDefaultContext();
 

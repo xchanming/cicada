@@ -109,7 +109,7 @@
                                 v-model:value="paymentMethod.technicalName"
                                 name="sw-field--paymentMethod-technicalName"
                                 class="sw-settings-payment-detail__field-technical-name"
-                                :required="feature.isActive('v6.7.0.0')"
+                                :required="true"
                                 :disabled="!acl.can('payment.editor') || technicalNameIsProvided || undefined"
                                 :label="$tc('sw-settings-payment.detail.labelTechnicalName')"
                                 :placeholder="placeholder(paymentMethod, 'technicalName', $tc('sw-settings-payment.detail.placeholderTechnicalName'))"

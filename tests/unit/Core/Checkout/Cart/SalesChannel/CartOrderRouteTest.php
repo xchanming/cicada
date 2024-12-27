@@ -19,7 +19,6 @@ use Cicada\Core\Checkout\Cart\TaxProvider\TaxProviderProcessor;
 use Cicada\Core\Checkout\Gateway\SalesChannel\AbstractCheckoutGatewayRoute;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Payment\PaymentProcessor;
-use Cicada\Core\Checkout\Payment\PreparedPaymentService;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
@@ -68,7 +67,6 @@ class CartOrderRouteTest extends TestCase
             $this->orderPersister,
             $this->createMock(AbstractCartPersister::class),
             $this->eventDispatcher,
-            $this->createMock(PreparedPaymentService::class),
             $this->createMock(PaymentProcessor::class),
             $this->createMock(TaxProviderProcessor::class),
             $this->createMock(AbstractCheckoutGatewayRoute::class),

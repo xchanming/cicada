@@ -36,7 +36,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Tax\TaxCollection;
 use Cicada\Core\System\Tax\TaxEntity;
-use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -118,7 +118,7 @@ class Generator extends TestCase
             $paymentMethod = (new PaymentMethodEntity())->assign(
                 [
                     'id' => '19d144ffe15f4772860d59fca7f207c1',
-                    'handlerIdentifier' => SyncTestPaymentHandler::class,
+                    'handlerIdentifier' => TestPaymentHandler::class,
                     'name' => 'Generated Payment',
                     'active' => true,
                 ]

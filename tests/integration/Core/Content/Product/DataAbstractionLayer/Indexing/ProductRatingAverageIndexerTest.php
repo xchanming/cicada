@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
-use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\TestDefaults;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\Group;
@@ -380,8 +380,7 @@ SQL;
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $addressId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schoöppingen',
                 'zipcode' => '12345',
@@ -392,8 +391,7 @@ SQL;
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
@@ -403,7 +401,7 @@ SQL;
                 'name' => 'Invoice',
                 'technicalName' => Uuid::randomHex(),
                 'description' => 'Default payment method',
-                'handlerIdentifier' => SyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
             ];
         }
 

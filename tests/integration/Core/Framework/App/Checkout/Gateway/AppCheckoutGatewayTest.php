@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Test\AppSystemTestBehaviour;
-use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Tests\Integration\Core\Framework\App\GuzzleTestClientBehaviour;
 use GuzzleHttp\Psr7\Response;
@@ -210,14 +210,14 @@ class AppCheckoutGatewayTest extends TestCase
                 'name' => 'Payment 1',
                 'technicalName' => 'payment_test',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
             ],
             [
                 'id' => $this->ids->create('new-payment'),
                 'name' => 'Payment 2',
                 'technicalName' => 'payment_new-test',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
             ],
         ];
 

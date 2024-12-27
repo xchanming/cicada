@@ -7,14 +7,12 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTran
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerRegistry;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerType;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\RefundPaymentHandlerInterface;
 use Cicada\Core\Checkout\Payment\Cart\PaymentRefundProcessor;
 use Cicada\Core\Checkout\Payment\Cart\PaymentTransactionStructFactory;
 use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Test\Integration\Builder\Order\OrderBuilder;
@@ -160,69 +158,6 @@ class PaymentRefundProcessorTest extends TestCase
             ->method('supports')
             ->with(PaymentHandlerType::REFUND, $this->ids->get('payment_method'), Context::createDefaultContext())
             ->willReturn(true);
-
-        $handlerRegistryMock = $this->createMock(PaymentHandlerRegistry::class);
-        $handlerRegistryMock
-            ->method('getPaymentMethodHandler')
-            ->willReturn($handlerMock);
-
-        $processor = new PaymentRefundProcessor(
-            static::getContainer()->get(Connection::class),
-            static::getContainer()->get(OrderTransactionCaptureRefundStateHandler::class),
-            $handlerRegistryMock,
-            static::getContainer()->get(PaymentTransactionStructFactory::class),
-        );
-
-        $refund = (new OrderTransactionCaptureRefundBuilder(
-            $this->ids,
-            'refund',
-            $this->ids->get('capture')
-        ))
-            ->add('stateId', $this->getStateMachineState(
-                OrderTransactionCaptureRefundStates::STATE_MACHINE,
-                OrderTransactionCaptureRefundStates::STATE_OPEN
-            ))
-            ->build();
-
-        $capture = (new OrderTransactionCaptureBuilder($this->ids, 'capture', $this->ids->get('transaction')))
-            ->addRefund('refund', $refund)
-            ->build();
-
-        $transaction = (new OrderTransactionBuilder($this->ids, '10000'))
-            ->addCapture('capture', $capture)
-            ->add('paymentMethod', [
-                'id' => $this->ids->get('payment_method'),
-                // this enables refund handling for the payment method
-                'technicalName' => 'payment_test',
-                'handlerIdentifier' => AbstractPaymentHandler::class,
-                'translations' => [
-                    Defaults::LANGUAGE_SYSTEM => [
-                        'name' => 'foo',
-                    ],
-                ],
-            ])
-            ->build();
-
-        $order = (new OrderBuilder($this->ids, '10000'))
-            ->addTransaction('transaction', $transaction)
-            ->build();
-
-        $this->orderRepository->upsert([$order], Context::createDefaultContext());
-
-        $processor->processRefund(
-            $this->ids->get('refund'),
-            Context::createDefaultContext()
-        );
-    }
-
-    public function testItCallsOldRefundHandler(): void
-    {
-        Feature::skipTestIfActive('v6.7.0.0', $this);
-
-        $handlerMock = $this->createMock(RefundPaymentHandlerInterface::class);
-        $handlerMock
-            ->expects(static::once())
-            ->method('refund');
 
         $handlerRegistryMock = $this->createMock(PaymentHandlerRegistry::class);
         $handlerRegistryMock

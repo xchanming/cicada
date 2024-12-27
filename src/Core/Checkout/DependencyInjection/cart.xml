@@ -120,7 +120,6 @@
             <argument type="service" id="Cicada\Core\Checkout\Cart\Order\OrderPersister"/>
             <argument type="service" id="Cicada\Core\Checkout\Cart\CartPersister"/>
             <argument type="service" id="event_dispatcher"/>
-            <argument type="service" id="Cicada\Core\Checkout\Payment\PreparedPaymentService"/>
             <argument type="service" id="Cicada\Core\Checkout\Payment\PaymentProcessor"/>
             <argument type="service" id="Cicada\Core\Checkout\Cart\TaxProvider\TaxProviderProcessor"/>
             <argument type="service" id="Cicada\Core\Checkout\Gateway\SalesChannel\CheckoutGatewayRoute"/>

@@ -30,7 +30,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginDefinition;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelPaymentMethod\SalesChannelPaymentMethodDefinition;
@@ -93,20 +92,12 @@ class PaymentMethodDefinition extends EntityDefinition
             (new OneToManyAssociationField('customers', CustomerDefinition::class, 'last_payment_method_id', 'id'))->addFlags(new RestrictDelete()),
             (new OneToManyAssociationField('orderTransactions', OrderTransactionDefinition::class, 'payment_method_id', 'id'))->addFlags(new RestrictDelete()),
             new ManyToManyAssociationField('salesChannels', SalesChannelDefinition::class, SalesChannelPaymentMethodDefinition::class, 'payment_method_id', 'sales_channel_id'),
-            (new OneToOneAssociationField('appPaymentMethod', 'id', 'payment_method_id', AppPaymentMethodDefinition::class, !Feature::isActive('v6.7.0.0')))->addFlags(new CascadeDelete()),
+            (new OneToOneAssociationField('appPaymentMethod', 'id', 'payment_method_id', AppPaymentMethodDefinition::class, false))->addFlags(new CascadeDelete()),
 
             // runtime fields
             (new StringField('short_name', 'shortName'))->addFlags(new ApiAware(), new Runtime()),
-            /** @deprecated tag:v6.7.0 - will be required */
-            (new StringField('technical_name', 'technicalName'))->addFlags(new ApiAware()),
+            (new StringField('technical_name', 'technicalName'))->addFlags(new ApiAware(), new Required()),
         ]);
-
-        if (Feature::isActive('v6.7.0.0')) {
-            $fields->add((new StringField('technical_name', 'technicalName'))->addFlags(new ApiAware(), new Required()));
-        } else {
-            $fields->add((new StringField('technical_name', 'technicalName'))->addFlags(new ApiAware()));
-            $fields->add((new OneToManyAssociationField('customers', CustomerDefinition::class, 'default_payment_method_id', 'id'))->addFlags(new RestrictDelete()));
-        }
 
         return $fields;
     }

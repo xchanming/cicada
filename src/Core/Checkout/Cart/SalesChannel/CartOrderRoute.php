@@ -14,13 +14,10 @@ use Cicada\Core\Checkout\Cart\TaxProvider\TaxProviderProcessor;
 use Cicada\Core\Checkout\Gateway\SalesChannel\AbstractCheckoutGatewayRoute;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Order\SalesChannel\OrderService;
-use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Checkout\Payment\PaymentProcessor;
-use Cicada\Core\Checkout\Payment\PreparedPaymentService;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
@@ -44,7 +41,6 @@ class CartOrderRoute extends AbstractCartOrderRoute
         private readonly OrderPersisterInterface $orderPersister,
         private readonly AbstractCartPersister $cartPersister,
         private readonly EventDispatcherInterface $eventDispatcher,
-        private readonly PreparedPaymentService $preparedPaymentService,
         private readonly PaymentProcessor $paymentProcessor,
         private readonly TaxProviderProcessor $taxProviderProcessor,
         private readonly AbstractCheckoutGatewayRoute $checkoutGatewayRoute,
@@ -118,17 +114,6 @@ class CartOrderRoute extends AbstractCartOrderRoute
         });
 
         $this->cartPersister->delete($context->getToken(), $context);
-
-        // @deprecated tag:v6.7.0 - remove post payment completely
-        Feature::callSilentIfInactive('v6.7.0.0', function () use ($orderEntity, $data, $context, $orderId, $preOrderPayment): void {
-            try {
-                Profiler::trace('checkout-order::post-payment', function () use ($orderEntity, $data, $context, $preOrderPayment): void {
-                    $this->preparedPaymentService->handlePostOrderPayment($orderEntity, $data, $context, $preOrderPayment);
-                });
-            } catch (PaymentException) {
-                throw CartException::invalidPaymentButOrderStored($orderId);
-            }
-        });
 
         return new CartOrderRouteResponse($orderEntity);
     }

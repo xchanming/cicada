@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\Salutation\SalutationDefinition;
-use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
@@ -634,7 +634,7 @@ class ChangeProfileRouteTest extends TestCase
                 'name' => $this->ids->get('payment'),
                 'technicalName' => 'payment_test',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
                 'availabilityRule' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'asd',
@@ -646,7 +646,7 @@ class ChangeProfileRouteTest extends TestCase
                 'name' => $this->ids->get('payment2'),
                 'technicalName' => 'payment_test2',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
                 'availabilityRule' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'asd',

@@ -431,11 +431,6 @@ parameters:
 			path: src/Core/Checkout/Order/SalesChannel/SetPaymentOrderRoute.php
 
 		-
-			message: "#^Expected domain exception class Cicada\\\\Core\\\\Checkout\\\\Payment\\\\PaymentException, got Cicada\\\\Core\\\\Checkout\\\\Order\\\\OrderException$#"
-			count: 2
-			path: src/Core/Checkout/Payment/Cart/PaymentRecurringProcessor.php
-
-		-
 			message: "#^Expected domain exception class Cicada\\\\Core\\\\Checkout\\\\Payment\\\\PaymentException, got Cicada\\\\Core\\\\Framework\\\\Routing\\\\RoutingException$#"
 			count: 1
 			path: src/Core/Checkout/Payment/Controller/PaymentController.php

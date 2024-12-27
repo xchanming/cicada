@@ -55,7 +55,7 @@ use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
-use Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Stub\Rule\TrueRule;
 use Cicada\Core\Test\TestDefaults;
 use Doctrine\DBAL\Connection;
@@ -2265,7 +2265,7 @@ class RecalculationServiceTest extends TestCase
 
         $data = [
             'id' => $paymentMethodId,
-            'handlerIdentifier' => SyncTestPaymentHandler::class,
+            'handlerIdentifier' => TestPaymentHandler::class,
             'name' => 'Payment',
             'technicalName' => 'payment_test',
             'active' => true,

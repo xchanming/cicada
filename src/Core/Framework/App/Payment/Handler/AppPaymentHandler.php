@@ -12,9 +12,7 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTran
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerType;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PreparedPaymentHandlerInterface;
 use Cicada\Core\Checkout\Payment\Cart\PaymentTransactionStruct;
-use Cicada\Core\Checkout\Payment\Cart\PreparedPaymentTransactionStruct;
 use Cicada\Core\Checkout\Payment\Cart\Recurring\RecurringDataStruct;
 use Cicada\Core\Checkout\Payment\Cart\RefundPaymentTransactionStruct;
 use Cicada\Core\Checkout\Payment\PaymentException;
@@ -24,12 +22,10 @@ use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\AppException;
 use Cicada\Core\Framework\App\Payload\SourcedPayloadInterface;
 use Cicada\Core\Framework\App\Payment\Payload\PaymentPayloadService;
-use Cicada\Core\Framework\App\Payment\Payload\Struct\CapturePayload;
 use Cicada\Core\Framework\App\Payment\Payload\Struct\PaymentPayload;
 use Cicada\Core\Framework\App\Payment\Payload\Struct\RefundPayload;
 use Cicada\Core\Framework\App\Payment\Payload\Struct\ValidatePayload;
 use Cicada\Core\Framework\App\Payment\Response\AbstractResponse;
-use Cicada\Core\Framework\App\Payment\Response\CaptureResponse;
 use Cicada\Core\Framework\App\Payment\Response\PaymentResponse;
 use Cicada\Core\Framework\App\Payment\Response\RefundResponse;
 use Cicada\Core\Framework\App\Payment\Response\ValidateResponse;
@@ -52,12 +48,10 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * @deprecated tag:v6.7.0 - reason:class-hierarchy-change - will no longer implement `PreparedPaymentHandlerInterface` (just implemented for compatibility reasons with `capture` call)
- *
  * @internal only for use by the app-system
  */
 #[Package('checkout')]
-class AppPaymentHandler extends AbstractPaymentHandler implements PreparedPaymentHandlerInterface
+class AppPaymentHandler extends AbstractPaymentHandler
 {
     /**
      * @param EntityRepository<OrderTransactionCaptureRefundCollection> $refundRepository
@@ -228,39 +222,6 @@ class AppPaymentHandler extends AbstractPaymentHandler implements PreparedPaymen
     }
 
     /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    public function capture(PreparedPaymentTransactionStruct $transaction, RequestDataBag $requestDataBag, SalesChannelContext $context, Struct $preOrderPaymentStruct): void
-    {
-        Feature::triggerDeprecationOrThrow(
-            'v6.7.0.0',
-            'Capture payments are no longer supported, use `pay` instead'
-        );
-
-        $orderTransaction = $this->getOrderTransaction($transaction->getOrderTransaction()->getId(), $context->getContext());
-        $appPaymentMethod = $this->getAppPaymentMethod($orderTransaction);
-        $app = $this->getApp($appPaymentMethod);
-
-        $payload = $this->buildCapturePayload($transaction, $preOrderPaymentStruct);
-
-        $captureUrl = $appPaymentMethod->getCaptureUrl();
-        if ($captureUrl) {
-            $response = $this->requestAppServer($captureUrl, CaptureResponse::class, $payload, $app, $context->getContext());
-            $this->transitionState($orderTransaction->getId(), $response, $context->getContext());
-        }
-    }
-
-    protected function buildCapturePayload(PreparedPaymentTransactionStruct $transaction, Struct $preOrderPaymentStruct): CapturePayload
-    {
-        return new CapturePayload(
-            $transaction->getOrderTransaction(),
-            $transaction->getOrder(),
-            $preOrderPaymentStruct,
-            $transaction->getRecurring()
-        );
-    }
-
-    /**
      * @template T of AbstractResponse
      *
      * @param class-string<T> $responseClass
@@ -285,7 +246,7 @@ class AppPaymentHandler extends AbstractPaymentHandler implements PreparedPaymen
 
     private function transitionState(string $entityId, AbstractResponse $response, Context $context, string $entityName = OrderTransactionDefinition::ENTITY_NAME): void
     {
-        if (!$response instanceof PaymentResponse && !$response instanceof RefundResponse && !$response instanceof CaptureResponse) {
+        if (!$response instanceof PaymentResponse && !$response instanceof RefundResponse) {
             return;
         }
 

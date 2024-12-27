@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
-use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use PHPUnit\Framework\Attributes\Group;
@@ -169,7 +169,7 @@ class PaymentMethodRouteTest extends TestCase
                 'name' => 'Payment 1',
                 'technicalName' => 'payment_test',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
                 'availabilityRule' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'asd',
@@ -191,7 +191,7 @@ class PaymentMethodRouteTest extends TestCase
                 'name' => 'Payment 2',
                 'technicalName' => 'payment_test2',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
                 'availabilityRule' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'asd',
@@ -213,7 +213,7 @@ class PaymentMethodRouteTest extends TestCase
                 'name' => 'Payment 3',
                 'technicalName' => 'payment_test3',
                 'active' => true,
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
                 'availabilityRule' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'asd',

@@ -24,34 +24,6 @@
             <tag name="cicada.payment.method"/>
         </service>
 
-        <service id="Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler">
-            <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
-            <tag name="cicada.payment.method.async"/>
-        </service>
-
-        <service id="Cicada\Core\Test\Integration\PaymentHandler\PreparedTestPaymentHandler">
-            <tag name="cicada.payment.method.prepared"/>
-        </service>
-
-        <service id="Cicada\Core\Test\Integration\PaymentHandler\MultipleTestPaymentHandler">
-            <tag name="cicada.payment.method.sync"/>
-            <tag name="cicada.payment.method.prepared"/>
-        </service>
-
-        <service id="Cicada\Core\Test\Integration\PaymentHandler\RefundTestPaymentHandler">
-            <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransactionCaptureRefund\OrderTransactionCaptureRefundStateHandler"/>
-            <tag name="cicada.payment.method.refund"/>
-        </service>
-
-        <service id="Cicada\Core\Test\Integration\PaymentHandler\SyncTestFailedPaymentHandler">
-            <tag name="cicada.payment.method.sync"/>
-        </service>
-
-        <service id="Cicada\Core\Test\Integration\PaymentHandler\SyncTestPaymentHandler">
-            <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
-            <tag name="cicada.payment.method.sync"/>
-        </service>
-
         <service id="Cicada\Core\Framework\Test\Filesystem\Adapter\MemoryAdapterFactory">
             <tag name="cicada.filesystem.factory"/>
         </service>

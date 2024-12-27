@@ -3,36 +3,21 @@
 namespace Cicada\Core\Checkout\Payment\Cart\PaymentHandler;
 
 use Cicada\Core\Checkout\Payment\Cart\PaymentTransactionStruct;
-use Cicada\Core\Checkout\Payment\Cart\RecurringPaymentTransactionStruct;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 
-if (Feature::isActive('v6.7.0.0')) {
-    /**
-     * @internal
-     */
-    #[Package('checkout')]
-    class PrePayment extends DefaultPayment
+/**
+ * @internal
+ */
+#[Package('checkout')]
+class PrePayment extends DefaultPayment
+{
+    public function supports(PaymentHandlerType $type, string $paymentMethodId, Context $context): bool
     {
-        public function supports(PaymentHandlerType $type, string $paymentMethodId, Context $context): bool
-        {
-            return $type === PaymentHandlerType::RECURRING;
-        }
-
-        public function recurring(PaymentTransactionStruct $transaction, Context $context): void
-        {
-        }
+        return $type === PaymentHandlerType::RECURRING;
     }
-} else {
-    /**
-     * @deprecated tag:v6.7.0 - reason:becomes-internal
-     */
-    #[Package('checkout')]
-    class PrePayment extends DefaultPayment implements RecurringPaymentHandlerInterface
+
+    public function recurring(PaymentTransactionStruct $transaction, Context $context): void
     {
-        public function captureRecurring(RecurringPaymentTransactionStruct $transaction, Context $context): void
-        {
-        }
     }
 }

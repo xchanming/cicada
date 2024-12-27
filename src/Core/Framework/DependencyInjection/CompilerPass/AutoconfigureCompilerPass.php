@@ -12,7 +12,6 @@ use Cicada\Core\Checkout\Cart\TaxProvider\AbstractTaxProvider;
 use Cicada\Core\Checkout\Customer\Password\LegacyEncoder\LegacyEncoderInterface;
 use Cicada\Core\Checkout\Document\Renderer\AbstractDocumentRenderer;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\SynchronousPaymentHandlerInterface;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterPickerInterface;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterSorterInterface;
 use Cicada\Core\Content\Cms\DataResolver\Element\CmsElementResolverInterface;
@@ -28,7 +27,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FieldSerializerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexer;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 use Cicada\Core\Framework\Routing\AbstractRouteScope;
@@ -104,12 +102,6 @@ class AutoconfigureCompilerPass implements CompilerPassInterface
         $container
             ->registerForAutoconfiguration(AbstractDocumentRenderer::class)
             ->addTag('document.renderer');
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $container
-                ->registerForAutoconfiguration(SynchronousPaymentHandlerInterface::class)
-                ->addTag('cicada.payment.method.sync');
-        }
 
         $container
             ->registerForAutoconfiguration(AbstractPaymentHandler::class)

@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
-use Cicada\Core\Test\Integration\PaymentHandler\AsyncTestPaymentHandler;
+use Cicada\Core\Test\Integration\PaymentHandler\TestPaymentHandler;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -59,7 +59,7 @@ class PaymentMethodRepositoryTest extends TestCase
             $firstPaymentMethod->getAvailabilityRule()->getId()
         );
         static::assertSame(
-            'handler_cicada_asynctestpaymenthandler',
+            'handler_cicada_testpaymenthandler',
             $firstPaymentMethod->getFormattedHandlerIdentifier()
         );
         static::assertFalse($firstPaymentMethod->getAfterOrderEnabled());
@@ -242,7 +242,7 @@ class PaymentMethodRepositoryTest extends TestCase
                 'id' => $this->paymentMethodId,
                 'name' => 'test',
                 'technicalName' => 'test_payment',
-                'handlerIdentifier' => AsyncTestPaymentHandler::class,
+                'handlerIdentifier' => TestPaymentHandler::class,
                 'availabilityRule' => [
                     'id' => Uuid::randomHex(),
                     'name' => 'asd',
