@@ -6,7 +6,6 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Database\BlueGreenDeploymentService;
 use Cicada\Core\Maintenance\System\Exception\DatabaseSetupException;
 use Cicada\Core\Maintenance\System\Service\DatabaseConnectionFactory;
-use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use Cicada\Core\Maintenance\System\Service\SetupDatabaseAdapter;
 use Cicada\Core\Maintenance\System\Struct\DatabaseConnectionInformation;
 use Doctrine\DBAL\Exception\DriverException;
@@ -22,17 +21,12 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 #[Package('core')]
 class DatabaseConfigurationController extends InstallerController
 {
-    private readonly string $jwtDir;
-
     public function __construct(
         private readonly TranslatorInterface $translator,
         private readonly BlueGreenDeploymentService $blueGreenDeploymentService,
-        private readonly JwtCertificateGenerator $jwtCertificateGenerator,
         private readonly SetupDatabaseAdapter $setupDatabaseAdapter,
-        private readonly DatabaseConnectionFactory $connectionFactory,
-        string $projectDir
+        private readonly DatabaseConnectionFactory $connectionFactory
     ) {
-        $this->jwtDir = $projectDir . '/config/jwt';
     }
 
     #[Route(path: '/installer/database-configuration', name: 'installer.database-configuration', methods: ['POST', 'GET'])]
@@ -79,11 +73,6 @@ class DatabaseConfigurationController extends InstallerController
                     'error' => $this->translator->trans('cicada.installer.database-configuration_non_empty_database'),
                 ]);
             }
-
-            $this->jwtCertificateGenerator->generate(
-                $this->jwtDir . '/private.pem',
-                $this->jwtDir . '/public.pem'
-            );
         } catch (DatabaseSetupException) {
             return $this->renderInstaller('@Installer/installer/database-configuration.html.twig', [
                 'connectionInfo' => $connectionInfo,

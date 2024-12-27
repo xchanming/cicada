@@ -7,7 +7,6 @@ use Cicada\Core\Installer\Requirements\RequirementsValidatorInterface;
 use Cicada\Core\Installer\Requirements\Struct\PathCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementCheck;
 use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
-use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -47,10 +46,7 @@ class RequirementsControllerTest extends TestCase
             )
             ->willReturn('checks');
 
-        $jwtCertificateGenerator = $this->createMock(JwtCertificateGenerator::class);
-        $jwtCertificateGenerator->expects(static::never())->method('generate');
-
-        $controller = new RequirementsController([$validator], $jwtCertificateGenerator, __DIR__);
+        $controller = new RequirementsController([$validator]);
         $controller->setContainer($this->getInstallerContainer($twig));
 
         $response = $controller->requirements($request);
@@ -78,11 +74,7 @@ class RequirementsControllerTest extends TestCase
             ->with('installer.database-configuration', [], UrlGeneratorInterface::ABSOLUTE_PATH)
             ->willReturn('/installer/database-configuration');
 
-        $jwtCertificateGenerator = $this->createMock(JwtCertificateGenerator::class);
-        $jwtCertificateGenerator->expects(static::once())->method('generate')
-            ->with(__DIR__ . '/config/jwt/private.pem', __DIR__ . '/config/jwt/public.pem');
-
-        $controller = new RequirementsController([$validator], $jwtCertificateGenerator, __DIR__);
+        $controller = new RequirementsController([$validator]);
         $controller->setContainer($this->getInstallerContainer($twig, ['router' => $router]));
 
         $response = $controller->requirements($request);
@@ -113,10 +105,7 @@ class RequirementsControllerTest extends TestCase
             )
             ->willReturn('checks');
 
-        $jwtCertificateGenerator = $this->createMock(JwtCertificateGenerator::class);
-        $jwtCertificateGenerator->expects(static::never())->method('generate');
-
-        $controller = new RequirementsController([$validator], $jwtCertificateGenerator, __DIR__);
+        $controller = new RequirementsController([$validator]);
         $controller->setContainer($this->getInstallerContainer($twig));
 
         $response = $controller->requirements($request);

@@ -5,7 +5,6 @@ namespace Cicada\Core\Installer\Controller;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Installer\Requirements\RequirementsValidatorInterface;
 use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
-use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -16,17 +15,12 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Package('core')]
 class RequirementsController extends InstallerController
 {
-    private readonly string $jwtDir;
-
     /**
      * @param iterable|RequirementsValidatorInterface[] $validators
      */
     public function __construct(
-        private readonly iterable $validators,
-        private readonly JwtCertificateGenerator $jwtCertificateGenerator,
-        string $projectDir
+        private readonly iterable $validators
     ) {
-        $this->jwtDir = $projectDir . '/config/jwt';
     }
 
     #[Route(path: '/installer/requirements', name: 'installer.requirements', methods: ['GET', 'POST'])]
@@ -39,12 +33,6 @@ class RequirementsController extends InstallerController
         }
 
         if ($request->isMethod('POST') && !$checks->hasError()) {
-            // The JWT dir exist and is writable, so we generate a new key pair
-            $this->jwtCertificateGenerator->generate(
-                $this->jwtDir . '/private.pem',
-                $this->jwtDir . '/public.pem'
-            );
-
             return $this->redirectToRoute('installer.database-configuration');
         }
 

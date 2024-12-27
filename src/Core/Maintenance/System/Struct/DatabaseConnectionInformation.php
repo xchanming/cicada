@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\Maintenance\MaintenanceException;
 
 /**
- * @deprecated tag:v6.7.0 - reason:becomes-internal
+ * @internal
  */
 #[Package('core')]
 class DatabaseConnectionInformation extends Struct

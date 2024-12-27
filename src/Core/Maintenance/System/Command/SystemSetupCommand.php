@@ -7,7 +7,6 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Maintenance\MaintenanceException;
-use Cicada\Core\Maintenance\System\Service\JwtCertificateGenerator;
 use Doctrine\DBAL\Configuration;
 use Doctrine\DBAL\DriverManager;
 use Symfony\Component\Console\Application;
@@ -37,7 +36,6 @@ class SystemSetupCommand extends Command
 {
     public function __construct(
         private readonly string $projectDir,
-        private readonly JwtCertificateGenerator $jwtCertificateGenerator,
         private readonly DotenvDumpCommand $dumpEnvCommand
     ) {
         parent::__construct();
@@ -308,12 +306,6 @@ class SystemSetupCommand extends Command
         if (!$input->getOption('generate-jwt-keys') && !$input->getOption('jwt-passphrase')) {
             return;
         }
-
-        $this->jwtCertificateGenerator->generate(
-            $jwtDir . '/private.pem',
-            $jwtDir . '/public.pem',
-            $input->getOption('jwt-passphrase')
-        );
     }
 
     private function generateInstanceId(): string

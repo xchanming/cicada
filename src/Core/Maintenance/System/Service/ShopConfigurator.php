@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 use Symfony\Component\Intl\Currencies;
 
 /**
- * @deprecated tag:v6.7.0 - reason:becomes-internal
+ * @internal
  */
 #[Package('core')]
 class ShopConfigurator

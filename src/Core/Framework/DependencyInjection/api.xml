@@ -245,11 +245,6 @@
         <service id="cicada.jwt_config" class="Lcobucci\JWT\Configuration">
             <factory class="Cicada\Core\Framework\Api\OAuth\JWTConfigurationFactory"
                      method="createJWTConfiguration"/>
-
-            <argument>%cicada.api.jwt_key.use_app_secret%</argument>
-            <argument>%cicada.api.jwt_key.private_key_path%</argument>
-            <argument>%cicada.api.jwt_key.private_key_passphrase%</argument>
-            <argument>%cicada.api.jwt_key.public_key_path%</argument>
         </service>
 
 
