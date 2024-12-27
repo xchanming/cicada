@@ -41,10 +41,6 @@ export default {
 
     data() {
         return {
-            /**
-             * @deprecated tag:v6.7.0 - will be removed, use customer.orderTotalValue instead
-             */
-            orderAmount: 0,
             orderCount: 0,
             customerLanguage: null,
             currencyCode: Cicada.Context.app.systemCurrencyISOCode,

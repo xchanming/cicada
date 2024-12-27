@@ -33,11 +33,6 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected string $groupId;
 
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    protected string $defaultPaymentMethodId;
-
     protected string $salesChannelId;
 
     protected string $languageId;
@@ -194,26 +189,6 @@ class CustomerEntity extends Entity implements \Stringable
     public function setGroupId(string $groupId): void
     {
         $this->groupId = $groupId;
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    public function getDefaultPaymentMethodId(): string
-    {
-        Feature::triggerDeprecationOrThrow('v6.7.0.0', 'The default payment method of a customer will be removed.');
-
-        return $this->defaultPaymentMethodId;
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    public function setDefaultPaymentMethodId(string $defaultPaymentMethodId): void
-    {
-        Feature::triggerDeprecationOrThrow('v6.7.0.0', 'The default payment method of a customer will be removed.');
-
-        $this->defaultPaymentMethodId = $defaultPaymentMethodId;
     }
 
     public function getSalesChannelId(): string

@@ -4,16 +4,13 @@ namespace Cicada\Core\Checkout\Customer\Subscriber;
 
 use Cicada\Core\Checkout\Customer\CustomerEvents;
 use Cicada\Core\Checkout\Customer\DataAbstractionLayer\CustomerIndexingMessage;
-use Cicada\Core\Checkout\Customer\Event\CustomerChangedPaymentMethodEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerRegisterEvent;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexer;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextRestorer;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
 use Doctrine\DBAL\Connection;
@@ -57,12 +54,6 @@ class CustomerFlowEventsSubscriber implements EventSubscriberInterface
         $payloads = $event->getPayloads();
 
         foreach ($payloads as $payload) {
-            if (!Feature::isActive('v6.7.0.0') && !empty($payload['defaultPaymentMethodId']) && empty($payload['createdAt'])) {
-                $this->dispatchCustomerChangePaymentMethodEvent($payload['id'], $event);
-
-                continue;
-            }
-
             try {
                 if (!empty($payload['createdAt'])) {
                     $this->dispatchCustomerRegisterEvent($payload['id'], $event);
@@ -98,26 +89,5 @@ class CustomerFlowEventsSubscriber implements EventSubscriberInterface
         );
 
         $this->dispatcher->dispatch($customerCreated);
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed, customer has no default payment method anymore
-     */
-    private function dispatchCustomerChangePaymentMethodEvent(string $customerId, EntityWrittenEvent $event): void
-    {
-        $context = $event->getContext();
-        $salesChannelContext = $this->restorer->restoreByCustomer($customerId, $context);
-
-        if (!$customer = $salesChannelContext->getCustomer()) {
-            return;
-        }
-
-        $customerChangePaymentMethodEvent = new CustomerChangedPaymentMethodEvent(
-            $salesChannelContext,
-            $customer,
-            new RequestDataBag()
-        );
-
-        $this->dispatcher->dispatch($customerChangePaymentMethodEvent);
     }
 }

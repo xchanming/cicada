@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Storefront\Page\Account;
 
-use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
@@ -162,12 +161,6 @@ class EditOrderPageTest extends TestCase
         $paymentMethods = \array_values($page->getPaymentMethods()->getElements());
 
         static::assertSame($primaryMethod->getId(), $paymentMethods[0]->getId());
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            // default payment method of customer should be second
-            static::assertInstanceOf(CustomerEntity::class, $context->getCustomer());
-            static::assertSame($context->getCustomer()->getDefaultPaymentMethodId(), $paymentMethods[1]->getId());
-        }
     }
 
     public function testShouldNotAllowPaymentMethodChangeOnCertainTransactionStates(): void

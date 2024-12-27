@@ -196,12 +196,6 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
 
         $id = $customer->getLastPaymentMethodId();
 
-        if ($id === null) {
-            Feature::callSilentIfInactive('v6.7.0.0', function () use ($customer, &$id): void {
-                $id = $customer->getDefaultPaymentMethodId();
-            });
-        }
-
         if ($id === null || $id === $context->getPaymentMethod()->getId()) {
             // NEXT-21735 - does not execute on every test run
             return $context->getPaymentMethod();

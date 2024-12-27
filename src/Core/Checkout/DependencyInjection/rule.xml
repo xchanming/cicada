@@ -352,10 +352,6 @@
             <tag name="cicada.rule.definition"/>
         </service>
 
-        <service id="Cicada\Core\Checkout\Customer\Rule\CustomerDefaultPaymentMethodRule">
-            <tag name="cicada.rule.definition" />
-        </service>
-
         <service id="Cicada\Core\Checkout\Cart\Rule\LineItemPropertyValueRule">
             <tag name="cicada.rule.definition"/>
         </service>

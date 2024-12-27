@@ -5,7 +5,6 @@ namespace Cicada\Core\Framework\Event;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerAccountRecoverRequestEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerBeforeLoginEvent;
-use Cicada\Core\Checkout\Customer\Event\CustomerChangedPaymentMethodEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerDeletedEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerDoubleOptInRegistrationEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerGroupRegistrationAccepted;
@@ -25,7 +24,6 @@ use Cicada\Core\Content\Newsletter\Event\NewsletterRegisterEvent;
 use Cicada\Core\Content\Newsletter\Event\NewsletterUnsubscribeEvent;
 use Cicada\Core\Content\Product\SalesChannel\Review\Event\ReviewFormEvent;
 use Cicada\Core\Content\ProductExport\Event\ProductExportLoggingEvent;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\Recovery\UserRecoveryRequestEvent;
 
@@ -66,10 +64,6 @@ class BusinessEventRegistry
      */
     public function __construct()
     {
-        // @deprecated tag:v6.7.0 - whole constructor can be removed again
-        if (!Feature::isActive('v6.7.0.0')) {
-            $this->classes[] = CustomerChangedPaymentMethodEvent::class;
-        }
     }
 
     /**

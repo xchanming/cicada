@@ -5,7 +5,6 @@ namespace Cicada\Core\Framework\Event;
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerAccountRecoverRequestEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerBeforeLoginEvent;
-use Cicada\Core\Checkout\Customer\Event\CustomerChangedPaymentMethodEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerDeletedEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerDoubleOptInRegistrationEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerGroupRegistrationAccepted;
@@ -40,11 +39,6 @@ final class BusinessEvents
     public const CHECKOUT_CUSTOMER_DELETED = CustomerDeletedEvent::EVENT_NAME;
 
     public const USER_RECOVERY_REQUEST = UserRecoveryRequestEvent::EVENT_NAME;
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed, customer has no default payment method anymore
-     */
-    public const CHECKOUT_CUSTOMER_CHANGED_PAYMENT_METHOD = CustomerChangedPaymentMethodEvent::EVENT_NAME;
 
     public const CHECKOUT_ORDER_PLACED = CheckoutOrderPlacedEvent::EVENT_NAME;
 

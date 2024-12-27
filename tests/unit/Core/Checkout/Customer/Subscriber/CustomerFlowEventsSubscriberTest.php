@@ -6,7 +6,6 @@ use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\CustomerEvents;
 use Cicada\Core\Checkout\Customer\DataAbstractionLayer\CustomerIndexer;
 use Cicada\Core\Checkout\Customer\DataAbstractionLayer\CustomerIndexingMessage;
-use Cicada\Core\Checkout\Customer\Event\CustomerChangedPaymentMethodEvent;
 use Cicada\Core\Checkout\Customer\Event\CustomerRegisterEvent;
 use Cicada\Core\Checkout\Customer\Subscriber\CustomerFlowEventsSubscriber;
 use Cicada\Core\Defaults;
@@ -15,7 +14,6 @@ use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextRestorer;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
@@ -173,51 +171,6 @@ class CustomerFlowEventsSubscriberTest extends TestCase
             ->willReturn($payloads);
 
         $this->dispatcher->expects(static::never())->method('dispatch');
-
-        $this->customerFlowEventsSubscriber->onCustomerWritten($event);
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    #[DisabledFeatures(['v6.7.0.0'])]
-    public function testOnCustomerUpdateWithCustomer(): void
-    {
-        $event = $this->createMock(EntityWrittenEvent::class);
-        $event->expects(static::exactly(2))
-            ->method('getContext')
-            ->willReturn(Context::createDefaultContext());
-
-        $payloads = [
-            [
-                'defaultPaymentMethodId' => $this->ids->get('defaultPaymentMethod'),
-                'id' => $this->ids->get('newPaymentMethod'),
-            ],
-        ];
-
-        $event->expects(static::once())
-            ->method('getPayloads')
-            ->willReturn($payloads);
-
-        $customer = new CustomerEntity();
-        $salesChannelContext = $this->createMock(SalesChannelContext::class);
-        $salesChannelContext->expects(static::once())
-            ->method('getCustomer')
-            ->willReturn($customer);
-
-        $this->restorer->expects(static::once())
-            ->method('restoreByCustomer')
-            ->willReturn($salesChannelContext);
-
-        $customerChangePaymentMethodEvent = new CustomerChangedPaymentMethodEvent(
-            $salesChannelContext,
-            $customer,
-            new RequestDataBag()
-        );
-
-        $this->dispatcher->expects(static::once())
-            ->method('dispatch')
-            ->with($customerChangePaymentMethodEvent);
 
         $this->customerFlowEventsSubscriber->onCustomerWritten($event);
     }

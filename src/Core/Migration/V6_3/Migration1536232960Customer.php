@@ -26,7 +26,6 @@ class Migration1536232960Customer extends MigrationStep
               `id` BINARY(16) NOT NULL,
               `auto_increment` BIGINT unsigned NOT NULL AUTO_INCREMENT,
               `customer_group_id` BINARY(16) NOT NULL,
-              `default_payment_method_id` BINARY(16) NOT NULL,
               `sales_channel_id` BINARY(16) NOT NULL,
               `language_id` BINARY(16) NOT NULL,
               `last_payment_method_id` BINARY(16) NULL,
@@ -62,8 +61,6 @@ class Migration1536232960Customer extends MigrationStep
               CONSTRAINT `json.customer.custom_fields` CHECK (JSON_VALID(`custom_fields`)),
               CONSTRAINT `fk.customer.customer_group_id` FOREIGN KEY (`customer_group_id`)
                 REFERENCES `customer_group` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
-              CONSTRAINT `fk.customer.default_payment_method_id` FOREIGN KEY (`default_payment_method_id`)
-                REFERENCES `payment_method` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
               CONSTRAINT `fk.customer.last_payment_method_id` FOREIGN KEY (`last_payment_method_id`)
                 REFERENCES `payment_method` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
               CONSTRAINT `fk.customer.sales_channel_id` FOREIGN KEY (`sales_channel_id`)

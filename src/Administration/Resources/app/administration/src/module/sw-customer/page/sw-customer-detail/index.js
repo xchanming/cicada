@@ -105,10 +105,6 @@ export default {
                 .addAssociation('requestedGroup')
                 .addAssociation('boundSalesChannel');
 
-            if (!this.feature.isActive('v6.7.0.0')) {
-                criteria.addAssociation('defaultPaymentMethod');
-            }
-
             criteria.getAssociation('addresses').addSorting(Criteria.sort('name'), 'ASC', false);
 
             return criteria;

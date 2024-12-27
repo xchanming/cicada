@@ -92,7 +92,6 @@
       "labelCompany": "Company",
       "labelCustomerGroup": "Customer group",
       "labelSalesChannel": "Sales Channel",
-      "labelPaymentMethod": "Payment method",
       "labelCustomerNumber": "Customer number",
       "labelBirthday": "Date of birth",
       "labelPassword": "Password",
@@ -105,7 +104,6 @@
       "placeholderCustomerNumber": "Enter customer number...",
       "placeholderCustomerGroup": "Select a customer group...",
       "placeholderSalesChannel": "Select a Sales Channel...",
-      "placeholderPaymentMethod": "Select a payment method...",
       "labelTags": "Tags",
       "placeholderTags": "Select tags..."
     },
