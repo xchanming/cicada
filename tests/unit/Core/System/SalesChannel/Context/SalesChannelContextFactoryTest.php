@@ -65,12 +65,28 @@ class SalesChannelContextFactoryTest extends TestCase
         $currency->setId(Uuid::randomHex());
         $currency->setFactor(1);
 
-        $billingAddress = new CustomerAddressEntity();
-        $billingAddress->setId($customer->getDefaultBillingAddressId());
-        $shippingAddress = new CustomerAddressEntity();
-        $shippingAddress->setId($customer->getDefaultShippingAddressId());
-        $shippingAddress->setCountry($country);
-        $addresses = new CustomerAddressCollection([$billingAddress, $shippingAddress]);
+        $billingAddress = null;
+        $shippingAddress = null;
+        $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
+        $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
+
+        if ($defaultBillingAddressId) {
+            $billingAddress = new CustomerAddressEntity();
+            $billingAddress->setId($defaultBillingAddressId);
+        }
+        if ($defaultShippingAddressId) {
+            $shippingAddress = new CustomerAddressEntity();
+            $shippingAddress->setId($defaultShippingAddressId);
+            $shippingAddress->setCountry($country);
+        }
+
+        $addresses = new CustomerAddressCollection();
+        if ($billingAddress) {
+            $addresses->add($billingAddress);
+        }
+        if ($shippingAddress) {
+            $addresses->add($shippingAddress);
+        }
 
         $baseContext = new BaseContext(
             Context::createDefaultContext(new SalesChannelApiSource($salesChannel->getId())),

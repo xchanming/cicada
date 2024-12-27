@@ -33,9 +33,9 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
 {
     /**
-     * @internal
-     *
      * @param iterable<TaxRuleTypeFilterInterface> $taxRuleTypeFilter
+     *
+     * @internal
      */
     public function __construct(
         private readonly EntityRepository $customerRepository,
@@ -71,7 +71,9 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         if ($customer) {
             /** @var CustomerAddressEntity $activeShippingAddress */
             $activeShippingAddress = $customer->getActiveShippingAddress();
-            $shippingLocation = ShippingLocation::createFromAddress($activeShippingAddress);
+            if ($activeShippingAddress) {
+                $shippingLocation = ShippingLocation::createFromAddress($activeShippingAddress);
+            }
         }
 
         $customerGroup = $base->getCurrentCustomerGroup();
@@ -268,19 +270,34 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $criteria->addAssociation('countryState');
 
         $addresses = $this->addressRepository->search($criteria, $context);
+        if ($addresses->getTotal() > 0) {
+            $activeBillingAddressId = $activeBillingAddressId ?? $customer->getDefaultBillingAddressId();
+            if ($activeBillingAddressId !== null) {
+                /** @var CustomerAddressEntity|null $activeBillingAddress */
+                $activeBillingAddress = $addresses->get($activeBillingAddressId);
+                $customer->setDefaultBillingAddress($activeBillingAddress);
+            }
+            $activeShippingAddressId = $activeShippingAddressId ?? $customer->getDefaultShippingAddressId();
+            if ($activeShippingAddressId !== null) {
+                /** @var CustomerAddressEntity|null $activeShippingAddress */
+                $activeShippingAddress = $addresses->get($activeShippingAddressId);
+                $customer->setActiveShippingAddress($activeShippingAddress);
+            }
+            /** @var string $defaultBillingAddressId */
+            $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
+            if ($defaultBillingAddressId !== null) {
+                /** @var CustomerAddressEntity|null $defaultBillingAddress */
+                $defaultBillingAddress = $addresses->get($defaultBillingAddressId);
+                $customer->setDefaultBillingAddress($defaultBillingAddress);
+            }
 
-        /** @var CustomerAddressEntity $activeBillingAddress */
-        $activeBillingAddress = $addresses->get($activeBillingAddressId) ?? $addresses->get($customer->getDefaultBillingAddressId());
-        $customer->setActiveBillingAddress($activeBillingAddress);
-        /** @var CustomerAddressEntity $activeShippingAddress */
-        $activeShippingAddress = $addresses->get($activeShippingAddressId) ?? $addresses->get($customer->getDefaultShippingAddressId());
-        $customer->setActiveShippingAddress($activeShippingAddress);
-        /** @var CustomerAddressEntity $defaultBillingAddress */
-        $defaultBillingAddress = $addresses->get($customer->getDefaultBillingAddressId());
-        $customer->setDefaultBillingAddress($defaultBillingAddress);
-        /** @var CustomerAddressEntity $defaultShippingAddress */
-        $defaultShippingAddress = $addresses->get($customer->getDefaultShippingAddressId());
-        $customer->setDefaultShippingAddress($defaultShippingAddress);
+            $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
+            if ($defaultShippingAddressId !== null) {
+                /** @var CustomerAddressEntity|null $defaultShippingAddress */
+                $defaultShippingAddress = $addresses->get($defaultShippingAddressId);
+                $customer->setDefaultShippingAddress($defaultShippingAddress);
+            }
+        }
 
         return $customer;
     }

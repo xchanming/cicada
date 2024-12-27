@@ -44,9 +44,9 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected ?string $lastPaymentMethodId = null;
 
-    protected string $defaultBillingAddressId;
+    protected ?string $defaultBillingAddressId = null;
 
-    protected string $defaultShippingAddressId;
+    protected ?string $defaultShippingAddressId = null;
 
     protected string $customerNumber;
 
@@ -246,22 +246,22 @@ class CustomerEntity extends Entity implements \Stringable
         $this->lastPaymentMethodId = $lastPaymentMethodId;
     }
 
-    public function getDefaultBillingAddressId(): string
+    public function getDefaultBillingAddressId(): ?string
     {
         return $this->defaultBillingAddressId;
     }
 
-    public function setDefaultBillingAddressId(string $defaultBillingAddressId): void
+    public function setDefaultBillingAddressId(?string $defaultBillingAddressId): void
     {
         $this->defaultBillingAddressId = $defaultBillingAddressId;
     }
 
-    public function getDefaultShippingAddressId(): string
+    public function getDefaultShippingAddressId(): ?string
     {
         return $this->defaultShippingAddressId;
     }
 
-    public function setDefaultShippingAddressId(string $defaultShippingAddressId): void
+    public function setDefaultShippingAddressId(?string $defaultShippingAddressId): void
     {
         $this->defaultShippingAddressId = $defaultShippingAddressId;
     }
@@ -628,7 +628,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->defaultBillingAddress;
     }
 
-    public function setDefaultBillingAddress(CustomerAddressEntity $defaultBillingAddress): void
+    public function setDefaultBillingAddress(?CustomerAddressEntity $defaultBillingAddress): void
     {
         $this->defaultBillingAddress = $defaultBillingAddress;
     }
@@ -638,7 +638,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->defaultShippingAddress;
     }
 
-    public function setDefaultShippingAddress(CustomerAddressEntity $defaultShippingAddress): void
+    public function setDefaultShippingAddress(?CustomerAddressEntity $defaultShippingAddress): void
     {
         $this->defaultShippingAddress = $defaultShippingAddress;
     }
@@ -648,7 +648,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->activeBillingAddress ?? $this->defaultBillingAddress;
     }
 
-    public function setActiveBillingAddress(CustomerAddressEntity $activeBillingAddress): void
+    public function setActiveBillingAddress(?CustomerAddressEntity $activeBillingAddress): void
     {
         $this->activeBillingAddress = $activeBillingAddress;
     }
@@ -658,7 +658,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->activeShippingAddress ?? $this->defaultShippingAddress;
     }
 
-    public function setActiveShippingAddress(CustomerAddressEntity $activeShippingAddress): void
+    public function setActiveShippingAddress(?CustomerAddressEntity $activeShippingAddress): void
     {
         $this->activeShippingAddress = $activeShippingAddress;
     }
@@ -668,7 +668,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->addresses;
     }
 
-    public function setAddresses(CustomerAddressCollection $addresses): void
+    public function setAddresses(?CustomerAddressCollection $addresses): void
     {
         $this->addresses = $addresses;
     }
