@@ -11,7 +11,7 @@
             {% block cms_form_contact_select_salutation %}
                 {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig'
                     with {
-                    additionalClass: 'col-md-4',
+                    additionalClass: 'col-md-6',
                     required: true
                 }
                 %}
@@ -24,23 +24,9 @@
                     fieldName: 'name',
                     autocomplete: 'section-personal given-name',
                     required: nameFieldRequired,
-                    additionalClass: 'col-md-4',
+                    additionalClass: 'col-md-6',
                     label: 'account.personalNameLabel',
                     placeholder: 'account.personalNamePlaceholder'
-                }
-                %}
-            {% endblock %}
-
-            {% block cms_form_contact_input_last_name %}
-                {% set lastNameFieldRequired = config('core.basicInformation.lastNameFieldRequired') == true %}
-                {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
-                    with {
-                    fieldName: 'lastName',
-                    autocomplete: 'section-personal family-name',
-                    required: lastNameFieldRequired,
-                    additionalClass: 'col-md-4',
-                    label: 'account.personalLastNameLabel',
-                    placeholder: 'account.personalLastNamePlaceholder'
                 }
                 %}
             {% endblock %}
