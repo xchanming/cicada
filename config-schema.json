@@ -387,9 +387,6 @@
                 "rate_limiter": {
                     "$ref": "#/definitions/rate_limiter"
                 },
-                "jwt_key": {
-                    "$ref": "#/definitions/jwt_key"
-                }
             },
             "title": "API"
         },
