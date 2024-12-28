@@ -47,7 +47,7 @@
                                         <strong>{{ paymentName }}</strong>
                                     {% endblock %}
 
-                                    {% if payment.translated.description and (payment.id is same as(selectedPaymentMethodId) %}
+                                    {% if payment.translated.description and (payment.id is same as(selectedPaymentMethodId)) %}
                                         {% set paymentDescription = payment.translated.description|raw %}
                                         {% set paymentDescriptionTitle = payment.translated.description|striptags|raw %}
 

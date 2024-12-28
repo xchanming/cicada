@@ -39,7 +39,7 @@
                             {% block component_shipping_method_description %}
                                 <div class="shipping-method-description">
                                     <strong>{{ shipping.translated.name }}</strong>
-                                    {% if shipping.translated.description and (shipping.id is same as(selectedShippingMethodId) %}
+                                    {% if shipping.translated.description and (shipping.id is same as(selectedShippingMethodId)) %}
                                         {% set shippingDescription = shipping.translated.description|raw %}
 
                                         <p class="mb-0" title="{{ shipping.translated.description|raw }}">{{ shippingDescription }}</p>
