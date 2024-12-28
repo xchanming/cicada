@@ -126,7 +126,7 @@ class NewsletterControllerTest extends TestCase
             $_SERVER['APP_URL'] . '/account/login',
             $this->tokenize('frontend.account.login', [
                 'username' => $customer->getEmail(),
-                'password' => 'cicada',
+                'password' => '12345678',
             ])
         );
         $response = $browser->getResponse();

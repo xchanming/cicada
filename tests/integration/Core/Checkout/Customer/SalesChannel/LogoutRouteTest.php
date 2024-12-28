@@ -82,7 +82,7 @@ class LogoutRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -127,7 +127,7 @@ class LogoutRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -170,7 +170,7 @@ class LogoutRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -208,7 +208,7 @@ class LogoutRouteTest extends TestCase
             []
         );
 
-        $request = new RequestDataBag(['email' => $email, 'password' => 'cicada']);
+        $request = new RequestDataBag(['email' => $email, 'password' => '12345678']);
         $loginResponse = static::getContainer()->get(LoginRoute::class)->login($request, $salesChannelContext);
 
         $customerId = $this->createCustomer();
@@ -244,7 +244,7 @@ class LogoutRouteTest extends TestCase
             ->get(SalesChannelContextFactory::class)
             ->create(Uuid::randomHex(), TestDefaults::SALES_CHANNEL, []);
 
-        $request = new RequestDataBag(['email' => $email, 'password' => 'cicada']);
+        $request = new RequestDataBag(['email' => $email, 'password' => '12345678']);
         $login = static::getContainer()
             ->get(LoginRoute::class)
             ->login($request, $context);

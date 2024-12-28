@@ -56,7 +56,7 @@
             <group>misc</group>
             <script>mock.twig</script>
             <constraints>
-                <text name="firstName">
+                <text name="name">
                     <required>true</required>
                 </text>
             </constraints>
@@ -155,7 +155,7 @@
             <group>misc</group>
             <script>mock.twig</script>
             <constraints>
-                <text-area name="firstName">
+                <text-area name="name">
                     <required>true</required>
                 </text-area>
             </constraints>

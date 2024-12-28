@@ -102,8 +102,7 @@ class NewsletterRecipientServiceTest extends TestCase
             'salutationId' => 'ad165c1faac14059832b6258ac0a7339',
             'baseUrl' => '',
             'option' => 'subscribe',
-            'firstName' => 'max',
-            'lastName' => 'mustermann',
+            'name' => 'max',
         ]);
 
         $id = Uuid::randomHex();

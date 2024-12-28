@@ -167,9 +167,7 @@
 
         <service id="Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entity\CustomerSerializer">
             <argument type="service" id="customer_group.repository"/>
-            <argument type="service" id="payment_method.repository"/>
             <argument type="service" id="sales_channel.repository"/>
-
             <tag name="cicada.import_export.entity_serializer" priority="-400"/>
             <tag name="kernel.reset" method="reset"/>
         </service>

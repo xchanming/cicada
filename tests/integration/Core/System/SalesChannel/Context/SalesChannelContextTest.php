@@ -797,8 +797,7 @@ class SalesChannelContextTest extends TestCase
         $salutationId = $this->getValidSalutationId();
 
         $billingAddress = [
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'street' => 'Musterstraße 1',
             'city' => 'Schöppingen',
             'zipcode' => '12345',
@@ -807,8 +806,7 @@ class SalesChannelContextTest extends TestCase
         ];
 
         $shippingAddress = [
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'street' => 'Musterstraße 1',
             'city' => 'Schöppingen',
             'zipcode' => '12345',
@@ -830,8 +828,7 @@ class SalesChannelContextTest extends TestCase
             'email' => Uuid::randomHex() . '@example.com',
             'guest' => $isGuest,
             'password' => '$password',
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];

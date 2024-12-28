@@ -70,7 +70,7 @@ class AccountServiceEventTest extends TestCase
         $dataBag = new DataBag();
         $dataBag->add([
             'username' => '',
-            'password' => 'cicada',
+            'password' => '12345678',
         ]);
 
         try {

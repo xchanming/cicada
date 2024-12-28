@@ -599,8 +599,7 @@ class MediaRepositoryTest extends TestCase
                     'shippingDateLatest' => date(\DATE_ATOM),
                     'shippingOrderAddress' => [
                         'salutationId' => $salutation,
-                        'firstName' => 'Floy',
-                        'lastName' => 'Glover',
+                        'name' => 'Floy',
                         'zipcode' => '59438-0403',
                         'city' => 'Stellaberg',
                         'street' => 'street',
@@ -633,15 +632,13 @@ class MediaRepositoryTest extends TestCase
             'deepLinkCode' => 'BwvdEInxOHBbwfRw6oHF1Q_orfYeo9RY',
             'orderCustomer' => [
                 'email' => 'test@example.com',
-                'firstName' => 'Noe',
-                'lastName' => 'Hill',
+                'name' => 'Noe',
                 'salutationId' => $salutation,
                 'title' => 'Doc',
                 'customerNumber' => 'Test',
                 'customer' => [
                     'email' => 'test@example.com',
-                    'firstName' => 'Noe',
-                    'lastName' => 'Hill',
+                    'name' => 'Noe',
                     'salutationId' => $salutation,
                     'title' => 'Doc',
                     'customerNumber' => 'Test',
@@ -654,8 +651,7 @@ class MediaRepositoryTest extends TestCase
                         [
                             'id' => $addressId,
                             'salutationId' => $salutation,
-                            'firstName' => 'Floy',
-                            'lastName' => 'Glover',
+                            'name' => 'Floy',
                             'zipcode' => '59438-0403',
                             'city' => 'Stellaberg',
                             'street' => 'street',
@@ -679,8 +675,7 @@ class MediaRepositoryTest extends TestCase
             'addresses' => [
                 [
                     'salutationId' => $salutation,
-                    'firstName' => 'Floy',
-                    'lastName' => 'Glover',
+                    'name' => 'Floy',
                     'zipcode' => '59438-0403',
                     'city' => 'Stellaberg',
                     'street' => 'street',

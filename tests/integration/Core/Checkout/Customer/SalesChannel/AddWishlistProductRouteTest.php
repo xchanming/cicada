@@ -60,7 +60,7 @@ class AddWishlistProductRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 

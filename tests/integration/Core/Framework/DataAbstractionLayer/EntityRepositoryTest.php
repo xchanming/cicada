@@ -975,8 +975,7 @@ class EntityRepositoryTest extends TestCase
 
         $salutation = $this->getValidSalutationId();
         $address = [
-            'firstName' => 'not',
-            'lastName' => 'not',
+            'name' => 'not',
             'city' => 'not',
             'street' => 'not',
             'zipcode' => 'not',
@@ -984,8 +983,7 @@ class EntityRepositoryTest extends TestCase
             'country' => ['name' => 'not'],
         ];
         $address2 = [
-            'firstName' => 'not',
-            'lastName' => 'not',
+            'name' => 'not',
             'city' => 'not',
             'street' => 'not',
             'zipcode' => 'not',
@@ -1002,8 +1000,7 @@ class EntityRepositoryTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
-            'lastName' => 'not',
-            'firstName' => $matchTerm,
+            'name' => $matchTerm,
             'salutationId' => $salutation,
             'customerNumber' => 'not',
             'addresses' => [

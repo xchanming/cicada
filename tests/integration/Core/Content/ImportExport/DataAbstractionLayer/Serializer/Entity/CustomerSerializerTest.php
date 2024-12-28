@@ -9,7 +9,6 @@ use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
@@ -50,7 +49,6 @@ class CustomerSerializerTest extends TestCase
 
         $this->serializer = new CustomerSerializer(
             $this->customerGroupRepository,
-            $this->paymentMethodRepository,
             $this->salesChannelRepository
         );
         $this->serializer->setRegistry($serializerRegistry);
@@ -101,9 +99,7 @@ class CustomerSerializerTest extends TestCase
         $deserialized = \iterator_to_array($deserialized);
 
         static::assertSame($this->customerGroupId, $deserialized['group']['id']);
-        if (!Feature::isActive('v6.7.0.0')) {
-            static::assertSame($this->paymentMethodId, $deserialized['defaultPaymentMethod']['id']);
-        }
+
         static::assertSame($salesChannel['id'], $deserialized['salesChannel']['id']);
         static::assertSame($salesChannel['id'], $deserialized['boundSalesChannel']['id']);
     }
@@ -112,7 +108,6 @@ class CustomerSerializerTest extends TestCase
     {
         $serializer = new CustomerSerializer(
             $this->customerGroupRepository,
-            $this->paymentMethodRepository,
             $this->salesChannelRepository
         );
 

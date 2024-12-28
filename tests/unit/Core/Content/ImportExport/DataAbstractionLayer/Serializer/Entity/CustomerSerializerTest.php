@@ -35,9 +35,7 @@ class CustomerSerializerTest extends TestCase
         $serializer = new CustomerSerializer(
             $repositoryMock,
             $repositoryMock,
-            $repositoryMock,
             $cacheEntities['cacheCustomerGroups'],
-            $cacheEntities['cachePaymentMethods'],
             $cacheEntities['cacheSalesChannels'],
         );
 

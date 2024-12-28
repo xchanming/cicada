@@ -50,7 +50,7 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
                     </options>
                     <required>true</required>
                 </single-select>
-                <text name="firstName">
+                <text name="name">
                     <placeholder>Enter first name</placeholder>
                     <placeholder lang="zh-CN">Bitte Vornamen eingeben</placeholder>
                     <required>true</required>

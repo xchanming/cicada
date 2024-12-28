@@ -102,7 +102,7 @@ class ChangeCustomerGroupActionTest extends TestCase
             ],
         ]], Context::createDefaultContext());
 
-        $this->login($email, 'cicada');
+        $this->login($email, '12345678');
 
         $criteria = new Criteria();
         $criteria->addFilter(new EqualsFilter('name', 'Test group'));
@@ -143,8 +143,7 @@ class ChangeCustomerGroupActionTest extends TestCase
             'salesChannelId' => $this->ids->get('sales-channel'),
             'defaultShippingAddress' => [
                 'id' => $this->ids->create('address'),
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schöppingen',
                 'zipcode' => '12345',
@@ -155,8 +154,7 @@ class ChangeCustomerGroupActionTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
             'vatIds' => ['DE123456789'],

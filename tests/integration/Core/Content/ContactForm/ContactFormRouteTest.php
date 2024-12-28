@@ -66,8 +66,7 @@ class ContactFormRouteTest extends TestCase
                 '/store-api/contact-form',
                 [
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Firstname',
-                    'lastName' => 'Lastname',
+                    'name' => 'Firstname',
                     'email' => 'test@shäpware.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
@@ -118,8 +117,7 @@ class ContactFormRouteTest extends TestCase
                     'navigationId' => $navigationId,
                     'slotId' => $slotId,
                     'entityName' => $entityName,
-                    'firstName' => 'Firstname',
-                    'lastName' => 'Lastname',
+                    'name' => 'Firstname',
                     'email' => 'test@xchanming.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
@@ -172,8 +170,7 @@ class ContactFormRouteTest extends TestCase
                     'salutationId' => $this->getValidSalutationId(),
                     'navigationId' => $categoryId,
                     'slotId' => $formSlotId,
-                    'firstName' => 'Firstname',
-                    'lastName' => 'Lastname',
+                    'name' => 'Firstname',
                     'email' => 'test@xchanming.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
@@ -192,7 +189,7 @@ class ContactFormRouteTest extends TestCase
     }
 
     #[DataProvider('contactFormWithDomainProvider')]
-    public function testContactFormWithInvalid(string $firstName, string $lastName, \Closure $expectClosure): void
+    public function testContactFormWithInvalid(string $name, \Closure $expectClosure): void
     {
         $this->browser
             ->request(
@@ -200,8 +197,7 @@ class ContactFormRouteTest extends TestCase
                 '/store-api/contact-form',
                 [
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => $firstName,
-                    'lastName' => $lastName,
+                    'name' => $name,
                     'email' => 'test@xchanming.com',
                     'phone' => '12345/6789',
                     'subject' => 'Subject',
@@ -218,40 +214,37 @@ class ContactFormRouteTest extends TestCase
     {
         yield 'subscribe with URL protocol HTTPS' => [
             'Y https://cicada.test',
-            'Tran',
             function (array $response): void {
                 static::assertArrayHasKey('errors', $response);
                 static::assertCount(1, $response['errors']);
 
                 $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
 
-                static::assertContains('/firstName', $errors);
+                static::assertContains('/name', $errors);
             },
         ];
 
         yield 'subscribe with URL protocol HTTP' => [
             'Y http://cicada.test',
-            'Tran',
             function (array $response): void {
                 static::assertArrayHasKey('errors', $response);
                 static::assertCount(1, $response['errors']);
 
                 $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
 
-                static::assertContains('/firstName', $errors);
+                static::assertContains('/name', $errors);
             },
         ];
 
         yield 'subscribe with URL localhost' => [
             'Y http://localhost:8080',
-            'Tran',
             function (array $response): void {
                 static::assertArrayHasKey('errors', $response);
                 static::assertCount(1, $response['errors']);
 
                 $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
 
-                static::assertContains('/firstName', $errors);
+                static::assertContains('/name', $errors);
             },
         ];
     }

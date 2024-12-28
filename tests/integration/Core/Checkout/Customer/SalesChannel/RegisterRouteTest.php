@@ -973,8 +973,7 @@ class RegisterRouteTest extends TestCase
         $additionalData = [
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             'billingAddress' => [
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'company' => 'Test Company',
                 'department' => 'Test Department',
             ],
@@ -1140,8 +1139,7 @@ class RegisterRouteTest extends TestCase
         $additionalData = [
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             'billingAddress' => [
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'company' => 'Test Company 1',
                 'department' => 'Test Department 1',
             ],
@@ -1356,8 +1354,7 @@ class RegisterRouteTest extends TestCase
     {
         return [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'password' => '12345678',
             'email' => 'teg-reg@example.com',
             'title' => 'Phd',
@@ -1367,8 +1364,7 @@ class RegisterRouteTest extends TestCase
             'birthdayDay' => 22,
             'storefrontUrl' => $storefrontUrl,
             'billingAddress' => [
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'countryId' => $this->getValidCountryId($this->ids->get('sales-channel')),
                 'street' => 'Examplestreet 11',
                 'zipcode' => '48441',
@@ -1380,8 +1376,7 @@ class RegisterRouteTest extends TestCase
             'shippingAddress' => [
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId($this->ids->get('sales-channel')),
-                'firstName' => 'Test 2',
-                'lastName' => 'Example 2',
+                'name' => 'Test 2',
                 'title' => 'Prof.',
                 'street' => 'Examplestreet 111',
                 'zipcode' => '12341',
@@ -1402,11 +1397,10 @@ class RegisterRouteTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'customerNumber' => '1337',
             'email' => $email,
-            'password' => 'cicada',
+            'password' => '12345678',
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'salesChannelId' => $salesChannelId,
             'boundSalesChannelId' => $boundSalesChannel ? $salesChannelId : null,
@@ -1418,8 +1412,7 @@ class RegisterRouteTest extends TestCase
                     'customerId' => $customerId,
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
                     'city' => 'Schöppingen',

@@ -50,8 +50,7 @@ class UserControllerTest extends TestCase
         $client = $this->getBrowser();
         $data = [
             'email' => 'foo@bar.com',
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => 'Firstname',
             'password' => TestDefaults::HASHED_PASSWORD,
             'username' => 'foobar',
             'localeId' => static::getContainer()->get(Connection::class)->fetchOne('SELECT LOWER(HEX(id)) FROM locale LIMIT 1'),
@@ -84,8 +83,7 @@ class UserControllerTest extends TestCase
         $user = [
             'id' => $ids->get('user'),
             'email' => 'foo@bar.com',
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => 'Firstname',
             'password' => TestDefaults::HASHED_PASSWORD,
             'username' => 'foobar',
             'localeId' => static::getContainer()->get(Connection::class)->fetchOne('SELECT LOWER(HEX(id)) FROM locale LIMIT 1'),
@@ -122,8 +120,7 @@ class UserControllerTest extends TestCase
         $user = [
             'id' => $ids->get('user'),
             'email' => 'foo@bar.com',
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => 'Firstname',
             'password' => TestDefaults::HASHED_PASSWORD,
             'username' => 'foobar',
             'localeId' => static::getContainer()->get(Connection::class)->fetchOne('SELECT LOWER(HEX(id)) FROM locale LIMIT 1'),
@@ -168,8 +165,7 @@ class UserControllerTest extends TestCase
         $data = [
             'id' => $id,
             'email' => 'foo@bar.com',
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => 'Firstname',
             'password' => TestDefaults::HASHED_PASSWORD,
             'username' => 'foobar',
             'localeId' => static::getContainer()->get(Connection::class)->fetchOne('SELECT LOWER(HEX(id)) FROM locale LIMIT 1'),
@@ -202,7 +198,7 @@ class UserControllerTest extends TestCase
     public function testSetOwnProfileWithPermission(): void
     {
         $this->authorizeBrowser($this->getBrowser(), [UserVerifiedScope::IDENTIFIER], ['user_change_me']);
-        $this->getBrowser()->request('PATCH', '/api/_info/me', ['firstName' => 'newName']);
+        $this->getBrowser()->request('PATCH', '/api/_info/me', ['name' => 'newName']);
         $responsePatch = $this->getBrowser()->getResponse();
 
         static::assertEquals(Response::HTTP_NO_CONTENT, $responsePatch->getStatusCode(), (string) $responsePatch->getContent());
@@ -211,7 +207,7 @@ class UserControllerTest extends TestCase
         $response = $this->getBrowser()->getResponse();
 
         static::assertEquals(Response::HTTP_OK, $response->getStatusCode(), (string) $response->getContent());
-        static::assertEquals('newName', json_decode((string) $response->getContent(), true)['data']['attributes']['firstName']);
+        static::assertEquals('newName', json_decode((string) $response->getContent(), true)['data']['attributes']['name']);
     }
 
     public function testSetOwnProfileNoPermission(): void
@@ -247,8 +243,7 @@ class UserControllerTest extends TestCase
         $user = [
             'id' => $ids->get('user'),
             'email' => 'foo@bar.com',
-            'firstName' => 'Firstname',
-            'lastName' => 'Lastname',
+            'name' => 'Firstname',
             'password' => TestDefaults::HASHED_PASSWORD,
             'username' => 'foobar',
             'localeId' => static::getContainer()->get(Connection::class)->fetchOne('SELECT LOWER(HEX(id)) FROM locale LIMIT 1'),
@@ -260,7 +255,7 @@ class UserControllerTest extends TestCase
 
         $this->authorizeBrowser($this->getBrowser(), [UserVerifiedScope::IDENTIFIER], ['user_change_me']);
 
-        $this->getBrowser()->request('PATCH', '/api/_info/me', ['firstName' => 'newName', 'id' => $ids->get('user')]);
+        $this->getBrowser()->request('PATCH', '/api/_info/me', ['name' => 'newName', 'id' => $ids->get('user')]);
         $response = $this->getBrowser()->getResponse();
 
         static::assertSame(Response::HTTP_FORBIDDEN, $response->getStatusCode());

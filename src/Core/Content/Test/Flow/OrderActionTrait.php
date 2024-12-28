@@ -27,7 +27,7 @@ use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 
 /**
- * @deprecated tag:v6.7.0 - reason:becomes-internal - Will be internal in v6.7.0
+ * @internal
  */
 #[Package('services-settings')]
 trait OrderActionTrait
@@ -47,7 +47,7 @@ trait OrderActionTrait
         $email = Uuid::randomHex() . '@example.com';
         $this->prepareCustomer($email);
 
-        $this->login($email, 'cicada');
+        $this->login($email, '12345678');
     }
 
     /**

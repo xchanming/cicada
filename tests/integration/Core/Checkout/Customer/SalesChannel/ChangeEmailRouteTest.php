@@ -50,7 +50,7 @@ class ChangeEmailRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -104,7 +104,7 @@ class ChangeEmailRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-email',
                 [
-                    'password' => 'cicada',
+                    'password' => '12345678',
                     'email' => 'test@fooware.de',
                     'emailConfirmation' => 'test@fooware.de',
                 ]
@@ -152,7 +152,7 @@ class ChangeEmailRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-email',
                 [
-                    'password' => 'cicada',
+                    'password' => '12345678',
                     'email' => $newEmail,
                     'emailConfirmation' => $newEmail,
                 ]
@@ -187,7 +187,7 @@ class ChangeEmailRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-email',
                 [
-                    'password' => 'cicada',
+                    'password' => '12345678',
                     'email' => $newEmail,
                     'emailConfirmation' => $newEmail,
                 ]
@@ -245,7 +245,7 @@ class ChangeEmailRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-email',
                 [
-                    'password' => 'cicada',
+                    'password' => '12345678',
                     'email' => 'test@fooware.de',
                     'emailConfirmation' => 'test@fooware.de',
                 ]
@@ -270,8 +270,7 @@ class ChangeEmailRouteTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $addressId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schoöppingen',
                 'zipcode' => '12345',
@@ -283,8 +282,7 @@ class ChangeEmailRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => $password,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
@@ -307,11 +305,10 @@ class ChangeEmailRouteTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'customerNumber' => '1337',
             'email' => $email,
-            'password' => 'cicada',
+            'password' => '12345678',
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'salesChannelId' => $salesChannelId,
             'defaultBillingAddressId' => $addressId,
@@ -322,8 +319,7 @@ class ChangeEmailRouteTest extends TestCase
                     'customerId' => $customerId,
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
                     'city' => 'Schöppingen',

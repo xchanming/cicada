@@ -238,8 +238,7 @@ class ScriptControllerTest extends TestCase
             'email' => 'max.mustermann@example.com',
             'emailConfirmation' => 'max.mustermann@example.com',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'storefrontUrl' => 'http://localhost',
 
             'billingAddress' => [

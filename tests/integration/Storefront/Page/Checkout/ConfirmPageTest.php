@@ -132,11 +132,6 @@ class ConfirmPageTest extends TestCase
         static::assertInstanceOf(AddressValidationError::class, $billingAddressViolation);
         $violation = $billingAddressViolation->getViolations()->get(0);
         static::assertSame('/name', $violation->getPropertyPath());
-
-        $shippingAddressViolation = $errors['shipping-address-invalid'];
-        static::assertInstanceOf(AddressValidationError::class, $shippingAddressViolation);
-        $violation = $shippingAddressViolation->getViolations()->get(0);
-        static::assertSame('/lastName', $violation->getPropertyPath());
     }
 
     protected function getPageLoader(): CheckoutConfirmPageLoader

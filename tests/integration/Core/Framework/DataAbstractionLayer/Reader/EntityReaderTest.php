@@ -1021,15 +1021,13 @@ class EntityReaderTest extends TestCase
             'zipcode' => 'A',
             'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'A',
-            'lastName' => 'a',
+            'name' => 'A',
             'countryId' => $this->getValidCountryId(),
         ];
 
         $customer = [
             'id' => $id,
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1075,15 +1073,13 @@ class EntityReaderTest extends TestCase
             'zipcode' => 'A',
             'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'A',
-            'lastName' => 'a',
+            'name' => 'A',
             'countryId' => $this->getValidCountryId(),
         ];
 
         $customer = [
             'id' => $id,
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1136,13 +1132,11 @@ class EntityReaderTest extends TestCase
             'zipcode' => 'A',
             'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'A',
-            'lastName' => 'a',
+            'name' => 'A',
             'countryId' => $this->getValidCountryId(),
         ];
         $customer = [
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1241,14 +1235,12 @@ class EntityReaderTest extends TestCase
             'zipcode' => 'A',
             'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'A',
-            'lastName' => 'a',
+            'name' => 'A',
             'countryId' => $this->getValidCountryId(),
         ];
         $customer = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'customerNumber' => 'A',
             'password' => TestDefaults::HASHED_PASSWORD,
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
@@ -1369,15 +1361,13 @@ class EntityReaderTest extends TestCase
             'zipcode' => 'A',
             'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'A',
-            'lastName' => 'a',
+            'name' => 'A',
             'countryId' => $this->getValidCountryId(),
         ];
 
         $customer = [
             'id' => $id,
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1444,15 +1434,13 @@ class EntityReaderTest extends TestCase
             'zipcode' => 'A',
             'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'A',
-            'lastName' => 'a',
+            'name' => 'A',
             'countryId' => $this->getValidCountryId(),
         ];
 
         $customer = [
             'id' => $id,
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,

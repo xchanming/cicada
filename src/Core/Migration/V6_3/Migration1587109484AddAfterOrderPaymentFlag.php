@@ -29,10 +29,7 @@ class Migration1587109484AddAfterOrderPaymentFlag extends MigrationStep
         $connection->executeStatement(
             'UPDATE `payment_method`
             SET `after_order_enabled` = 1 WHERE `handler_identifier` IN (
-                "Cicada\\\Core\\\Checkout\\\Payment\\\Cart\\\PaymentHandler\\\DebitPayment",
-                "Cicada\\\Core\\\Checkout\\\Payment\\\Cart\\\PaymentHandler\\\CashPayment",
-                "Cicada\\\Core\\\Checkout\\\Payment\\\Cart\\\PaymentHandler\\\PrePayment",
-                "Cicada\\\Core\\\Checkout\\\Payment\\\Cart\\\PaymentHandler\\\InvoicePayment"
+                "Cicada\\\Core\\\Checkout\\\Payment\\\Cart\\\PaymentHandler\\\CashPayment"
             )'
         );
     }

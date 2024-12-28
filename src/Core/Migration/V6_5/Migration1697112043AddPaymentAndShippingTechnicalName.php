@@ -3,9 +3,6 @@
 namespace Cicada\Core\Migration\V6_5;
 
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\DebitPayment;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\InvoicePayment;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PrePayment;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Checkout\Shipping\ShippingMethodDefinition;
 use Cicada\Core\Defaults;
@@ -61,7 +58,7 @@ class Migration1697112043AddPaymentAndShippingTechnicalName extends MigrationSte
                 WHERE `payment_method`.`technical_name` IS NULL
                 AND (`app_payment_method`.`identifier` IS NOT NULL OR `payment_method`.`handler_identifier` IN (:handlers))
             ',
-            ['handlers' => [DebitPayment::class, InvoicePayment::class, CashPayment::class, PrePayment::class], 'slash' => '\\'],
+            ['handlers' => [CashPayment::class], 'slash' => '\\'],
             ['handlers' => ArrayParameterType::STRING]
         );
 

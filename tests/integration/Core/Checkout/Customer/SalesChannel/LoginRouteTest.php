@@ -104,7 +104,7 @@ class LoginRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -125,7 +125,7 @@ class LoginRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ],
             );
 
@@ -152,7 +152,7 @@ class LoginRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -179,7 +179,7 @@ class LoginRouteTest extends TestCase
 
         $loginRoute = static::getContainer()->get(LoginRoute::class);
 
-        $requestDataBag = new RequestDataBag(['email' => $email, 'password' => 'cicada']);
+        $requestDataBag = new RequestDataBag(['email' => $email, 'password' => '12345678']);
 
         $success = $loginRoute->login($requestDataBag, $salesChannelContext);
         static::assertInstanceOf(ContextTokenResponse::class, $success);
@@ -198,7 +198,7 @@ class LoginRouteTest extends TestCase
 
         $loginRoute = static::getContainer()->get(LoginRoute::class);
 
-        $request = new RequestDataBag(['email' => $email, 'password' => 'cicada']);
+        $request = new RequestDataBag(['email' => $email, 'password' => '12345678']);
 
         $response = $loginRoute->login($request, $salesChannelContext);
 
@@ -259,7 +259,7 @@ class LoginRouteTest extends TestCase
 
         $loginRoute = static::getContainer()->get(LoginRoute::class);
 
-        $request = new RequestDataBag(['email' => $email, 'password' => 'cicada']);
+        $request = new RequestDataBag(['email' => $email, 'password' => '12345678']);
 
         $responseSalesChannel1 = $loginRoute->login($request, $salesChannelContext1);
 
@@ -308,8 +308,7 @@ class LoginRouteTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $addressId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schoöppingen',
                 'zipcode' => '12345',
@@ -320,8 +319,7 @@ class LoginRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
             'boundSalesChannelId' => $boundSalesChannelId,

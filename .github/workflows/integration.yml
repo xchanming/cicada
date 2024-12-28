@@ -51,7 +51,7 @@ jobs:
           echo "ADMIN_VITE=1" >> $GITHUB_ENV
 
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           mysql-version: 'skip'
           cicada-version: ${{ github.ref }}
@@ -164,7 +164,7 @@ jobs:
 
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           mysql-version: 'skip'
           cicada-version: ${{ github.ref }}
@@ -254,7 +254,7 @@ jobs:
       COMPOSER_ROOT_VERSION: 6.6.9999999-dev
     steps:
       - name: Setup Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           cicada-version: ${{ github.ref }}
           cicada-repository: ${{ github.repository }}
@@ -325,7 +325,7 @@ jobs:
       - name: Create cicada dirs
         run: mkdir -p old-cicada new-cicada
       - name: Setup new Cicada
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         env:
           COMPOSER_ROOT_VERSION: 6.6.9999999-dev
         with:
@@ -428,7 +428,7 @@ jobs:
 
     steps:
       - name: Setup previous major version
-        uses: cicada/setup-cicada@main
+        uses: xchanming/setup-cicada@main
         with:
           install: "false"
           cicada-version: ${{ github.ref }}

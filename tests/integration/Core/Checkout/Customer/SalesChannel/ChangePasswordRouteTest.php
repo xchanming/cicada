@@ -51,7 +51,7 @@ class ChangePasswordRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $this->email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -104,7 +104,7 @@ class ChangePasswordRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-password',
                 [
-                    'password' => 'cicada',
+                    'password' => '12345678',
                     'newPassword' => 'foooware',
                     'newPasswordConfirm' => 'foooware',
                 ]
@@ -144,7 +144,7 @@ class ChangePasswordRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-password',
                 [
-                    'password' => 'cicada',
+                    'password' => '12345678',
                     'newPassword' => 'foooware',
                     'newPasswordConfirm' => 'foooware',
                 ]

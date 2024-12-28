@@ -13,7 +13,7 @@ use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PrePayment;
+use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -21,7 +21,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -181,8 +180,7 @@ class SalesChannelContextRestorerTest extends TestCase
                 'id' => $ids->get('customer'),
                 'salutationId' => $this->getValidSalutationId(),
                 'email' => 'test',
-                'firstName' => 'test',
-                'lastName' => 'test',
+                'name' => 'test',
                 'customer' => $customer,
             ],
             'addresses' => [
@@ -190,8 +188,7 @@ class SalesChannelContextRestorerTest extends TestCase
                     'id' => $ids->create('billing-address'),
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'asd',
-                    'lastName' => 'asd',
+                    'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
                     'city' => 'asd',
@@ -200,8 +197,7 @@ class SalesChannelContextRestorerTest extends TestCase
                     'id' => $ids->create('shipping-address'),
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'asd',
-                    'lastName' => 'asd',
+                    'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
                     'city' => 'asd',
@@ -240,7 +236,7 @@ class SalesChannelContextRestorerTest extends TestCase
             'transactions' => [
                 [
                     'id' => $ids->create('transaction'),
-                    'paymentMethodId' => $this->getPrePaymentMethodId(),
+                    'paymentMethodId' => $this->getCashPaymentMethodId(),
                     'stateId' => $this->getStateId('open', 'order_transaction.state'),
                     'amount' => new CalculatedPrice(200, 200, new CalculatedTaxCollection(), new TaxRuleCollection()),
                 ],
@@ -270,7 +266,7 @@ class SalesChannelContextRestorerTest extends TestCase
             );
     }
 
-    private function getPrePaymentMethodId(): string
+    private function getCashPaymentMethodId(): string
     {
         /** @var EntityRepository<PaymentMethodCollection> $repository */
         $repository = static::getContainer()->get('payment_method.repository');
@@ -278,7 +274,7 @@ class SalesChannelContextRestorerTest extends TestCase
         $criteria = (new Criteria())
             ->setLimit(1)
             ->addFilter(new EqualsFilter('active', true))
-            ->addFilter(new EqualsFilter('handlerIdentifier', PrePayment::class));
+            ->addFilter(new EqualsFilter('handlerIdentifier', CashPayment::class));
 
         $id = $repository->searchIds($criteria, Context::createDefaultContext())->getIds()[0];
         static::assertIsString($id);
@@ -296,8 +292,7 @@ class SalesChannelContextRestorerTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $addressId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schöppingen',
                 'zipcode' => '12345',
@@ -308,15 +303,10 @@ class SalesChannelContextRestorerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => 'foo@bar.de',
             'password' => TestDefaults::HASHED_PASSWORD,
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         /** @var EntityRepository<CustomerCollection> $repo */
         $repo = static::getContainer()->get('customer.repository');

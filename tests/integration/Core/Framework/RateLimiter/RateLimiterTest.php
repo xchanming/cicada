@@ -136,12 +136,12 @@ class RateLimiterTest extends TestCase
 
         static::getContainer()->get('request_stack')->push(new Request([
             'email' => 'loginTest@example.com',
-            'password' => 'cicada',
+            'password' => '12345678',
         ]));
 
         $route->login(new RequestDataBag([
             'email' => 'loginTest@example.com',
-            'password' => 'cicada',
+            'password' => '12345678',
         ]), $this->salesChannelContextFactory->create(Uuid::randomHex(), TestDefaults::SALES_CHANNEL));
     }
 
@@ -204,8 +204,7 @@ class RateLimiterTest extends TestCase
                     '/store-api/contact-form',
                     [
                         'salutationId' => $this->getValidSalutationId(),
-                        'firstName' => 'John',
-                        'lastName' => 'Doe',
+                        'name' => 'John',
                         'email' => 'test@example.com',
                         'phone' => '+49123456789',
                         'subject' => 'Test contact request',

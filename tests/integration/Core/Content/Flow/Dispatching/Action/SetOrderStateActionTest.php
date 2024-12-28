@@ -13,7 +13,7 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Checkout\Order\SalesChannel\OrderService;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PrePayment;
+use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
 use Cicada\Core\Content\Flow\Dispatching\Action\SetOrderStateAction;
 use Cicada\Core\Content\Flow\Dispatching\FlowFactory;
 use Cicada\Core\Content\Flow\Dispatching\TransactionFailedException;
@@ -24,7 +24,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
@@ -398,7 +397,7 @@ class SetOrderStateActionTest extends TestCase
                 'transactions' => [
                     [
                         'id' => Uuid::randomHex(),
-                        'paymentMethodId' => $this->getPrePaymentMethodId(),
+                        'paymentMethodId' => $this->getCashPaymentMethodId(),
                         'stateId' => $this->getStateMachineState(OrderTransactionStates::STATE_MACHINE, OrderTransactionStates::STATE_OPEN),
                         'amount' => [
                             'unitPrice' => 5.0,
@@ -418,8 +417,7 @@ class SetOrderStateActionTest extends TestCase
                         'shippingDateLatest' => date(\DATE_ATOM),
                         'shippingOrderAddress' => [
                             'salutationId' => $salutation,
-                            'firstName' => 'Floy',
-                            'lastName' => 'Glover',
+                            'name' => 'Floy',
                             'zipcode' => '59438-0403',
                             'city' => 'Stellaberg',
                             'street' => 'street',
@@ -434,15 +432,13 @@ class SetOrderStateActionTest extends TestCase
                 'deepLinkCode' => 'BwvdEInxOHBbwfRw6oHF1Q_orfYeo9RY',
                 'orderCustomer' => [
                     'email' => 'test@example.com',
-                    'firstName' => 'Noe',
-                    'lastName' => 'Hill',
+                    'name' => 'Noe',
                     'salutationId' => $salutation,
                     'title' => 'Doc',
                     'customerNumber' => 'Test',
                     'customer' => [
                         'email' => 'test@example.com',
-                        'firstName' => 'Noe',
-                        'lastName' => 'Hill',
+                        'name' => 'Noe',
                         'salutationId' => $salutation,
                         'title' => 'Doc',
                         'customerNumber' => 'Test',
@@ -455,8 +451,7 @@ class SetOrderStateActionTest extends TestCase
                             [
                                 'id' => $addressId,
                                 'salutationId' => $salutation,
-                                'firstName' => 'Floy',
-                                'lastName' => 'Glover',
+                                'name' => 'Floy',
                                 'zipcode' => '59438-0403',
                                 'city' => 'Stellaberg',
                                 'street' => 'street',
@@ -480,8 +475,7 @@ class SetOrderStateActionTest extends TestCase
                 'addresses' => [
                     [
                         'salutationId' => $salutation,
-                        'firstName' => 'Floy',
-                        'lastName' => 'Glover',
+                        'name' => 'Floy',
                         'zipcode' => '59438-0403',
                         'city' => 'Stellaberg',
                         'street' => 'street',
@@ -492,14 +486,10 @@ class SetOrderStateActionTest extends TestCase
             ],
         ];
 
-        if (!Feature::isActive('v6.7.0.0')) {
-            $order[0]['orderCustomer']['customer']['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         return $order;
     }
 
-    private function getPrePaymentMethodId(): string
+    private function getCashPaymentMethodId(): string
     {
         /** @var EntityRepository $repository */
         $repository = static::getContainer()->get('payment_method.repository');
@@ -507,7 +497,7 @@ class SetOrderStateActionTest extends TestCase
         $criteria = (new Criteria())
             ->setLimit(1)
             ->addFilter(new EqualsFilter('active', true))
-            ->addFilter(new EqualsFilter('handlerIdentifier', PrePayment::class));
+            ->addFilter(new EqualsFilter('handlerIdentifier', CashPayment::class));
 
         return $repository->searchIds($criteria, Context::createDefaultContext())->firstId() ?: '';
     }

@@ -2,7 +2,7 @@
 
 namespace Cicada\Tests\Integration\Core\Checkout\Payment\Handler;
 
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\InvoicePayment;
+use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PaymentHandlerRegistry;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
 use Cicada\Core\Defaults;
@@ -45,9 +45,9 @@ class PaymentHandlerRegistryTest extends TestCase
 
     public function testGetHandler(): void
     {
-        $paymentMethod = $this->getPaymentMethod(InvoicePayment::class);
+        $paymentMethod = $this->getPaymentMethod(CashPayment::class);
         $handler = $this->paymentHandlerRegistry->getPaymentMethodHandler($paymentMethod->getId());
-        static::assertInstanceOf(InvoicePayment::class, $handler);
+        static::assertInstanceOf(CashPayment::class, $handler);
     }
 
     public function testAppResolve(): void

@@ -79,7 +79,7 @@ class SetPaymentOrderRouteTest extends TestCase
             '/store-api/account/login',
             [
                 'email' => $email,
-                'password' => 'cicada',
+                'password' => '12345678',
             ]
         );
         $response = $this->browser->getResponse();
@@ -341,8 +341,7 @@ class SetPaymentOrderRouteTest extends TestCase
                     'customerId' => $customerId,
                     'email' => 'test@example.com',
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                 ],
                 'orderNumber' => 'anOrderNumber',
                 'stateId' => $this->getStateMachineState(),
@@ -354,8 +353,7 @@ class SetPaymentOrderRouteTest extends TestCase
                     [
                         'id' => $billingAddressId,
                         'salutationId' => $this->getValidSalutationId(),
-                        'firstName' => 'Max',
-                        'lastName' => 'Mustermann',
+                        'name' => 'Max',
                         'street' => 'Ebbinghoff 10',
                         'zipcode' => '48624',
                         'city' => 'Schöppingen',

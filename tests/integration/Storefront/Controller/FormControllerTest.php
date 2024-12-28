@@ -31,8 +31,7 @@ class FormControllerTest extends TestCase
         $data = [
             'option' => 'subscribe',
             'email' => 'test@example.com',
-            'firstName' => 'John',
-            'lastName' => 'Doe',
+            'name' => 'John',
         ];
 
         $response = $this->request(
@@ -103,8 +102,7 @@ class FormControllerTest extends TestCase
         $data = [
             'salutationId' => $salutation->getId(),
             'email' => 'test@example.com',
-            'firstName' => 'John',
-            'lastName' => 'Doe',
+            'name' => 'John',
             'subject' => 'Lorem ipsum',
             'comment' => 'Lorem ipsum dolor',
             'phone' => '+4920 3920173',
@@ -138,8 +136,7 @@ class FormControllerTest extends TestCase
         // without salutationId and with incorrect email
         $data = [
             'email' => 'test@example',
-            'firstName' => 'John',
-            'lastName' => 'Doe',
+            'name' => 'John',
             'subject' => 'Lorem ipsum',
             'comment' => 'Lorem ipsum dolor',
             'phone' => '+4920 3920173',

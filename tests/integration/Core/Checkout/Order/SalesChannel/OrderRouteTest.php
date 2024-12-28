@@ -126,7 +126,7 @@ class OrderRouteTest extends TestCase
                 ['CONTENT_TYPE' => 'application/json'],
                 \json_encode([
                     'email' => $this->email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ], \JSON_THROW_ON_ERROR) ?: ''
             );
 
@@ -642,8 +642,7 @@ class OrderRouteTest extends TestCase
             [
                 'id' => $this->customerId,
                 'defaultBillingAddress' => [
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Musterstraße 1',
                     'city' => 'Schöppingen',
                     'zipcode' => '12345',
@@ -752,8 +751,7 @@ class OrderRouteTest extends TestCase
                         'shippingDateLatest' => date(\DATE_ATOM),
                         'shippingOrderAddress' => [
                             'salutationId' => $salutation,
-                            'firstName' => 'Floy',
-                            'lastName' => 'Glover',
+                            'name' => 'Floy',
                             'zipcode' => '59438-0403',
                             'city' => 'Stellaberg',
                             'street' => 'street',
@@ -785,8 +783,7 @@ class OrderRouteTest extends TestCase
                 'deepLinkCode' => $this->deepLinkCode = Uuid::randomHex(),
                 'orderCustomer' => [
                     'email' => 'test@example.com',
-                    'firstName' => 'Noe',
-                    'lastName' => 'Hill',
+                    'name' => 'Noe',
                     'salutationId' => $salutation,
                     'title' => 'Doc',
                     'customerNumber' => 'Test',
@@ -795,8 +792,7 @@ class OrderRouteTest extends TestCase
                         'salesChannelId' => TestDefaults::SALES_CHANNEL,
                         'defaultShippingAddress' => [
                             'id' => $addressId,
-                            'firstName' => 'Max',
-                            'lastName' => 'Mustermann',
+                            'name' => 'Max',
                             'street' => 'Musterstraße 1',
                             'city' => 'Schoöppingen',
                             'zipcode' => '12345',
@@ -807,8 +803,7 @@ class OrderRouteTest extends TestCase
                         'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                         'email' => $email,
                         'password' => TestDefaults::HASHED_PASSWORD,
-                        'firstName' => 'Max',
-                        'lastName' => 'Mustermann',
+                        'name' => 'Max',
                         'salutationId' => $this->getValidSalutationId(),
                         'customerNumber' => '12345',
                     ],
@@ -817,8 +812,7 @@ class OrderRouteTest extends TestCase
                 'addresses' => [
                     [
                         'salutationId' => $salutation,
-                        'firstName' => 'Floy',
-                        'lastName' => 'Glover',
+                        'name' => 'Floy',
                         'zipcode' => '59438-0403',
                         'city' => 'Stellaberg',
                         'street' => 'street',

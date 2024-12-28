@@ -52,10 +52,9 @@ class AppLocaleProviderTest extends TestCase
         $this->userRepository->create([[
             'id' => $userId,
             'username' => 'testUser',
-            'firstName' => 'first',
-            'lastName' => 'last',
+            'name' => 'first',
             'email' => 'first@last.de',
-            'password' => 'cicada',
+            'password' => '12345678',
             'locale' => [
                 'code' => $userLocale,
                 'name' => 'testLocale',

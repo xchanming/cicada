@@ -77,28 +77,7 @@
             <argument type="service" id="Doctrine\DBAL\Connection"/>
         </service>
 
-        <service id="Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PrePayment">
-            <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
-
-            <tag name="cicada.payment.method.sync"/>
-            <tag name="cicada.payment.method"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Payment\Cart\PaymentHandler\DebitPayment">
-            <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
-
-            <tag name="cicada.payment.method.sync"/>
-            <tag name="cicada.payment.method"/>
-        </service>
-
         <service id="Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment">
-            <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
-
-            <tag name="cicada.payment.method.sync"/>
-            <tag name="cicada.payment.method"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Payment\Cart\PaymentHandler\InvoicePayment">
             <argument type="service" id="Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStateHandler"/>
 
             <tag name="cicada.payment.method.sync"/>

@@ -172,7 +172,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'scopes' => [],
         ];
 
@@ -217,7 +217,7 @@ class AuthControllerTest extends TestCase
 
         static::getContainer()->get(Connection::class)->insert('user', [
             'id' => Uuid::randomBytes(),
-            'first_name' => $username,
+            'name' => $username,
             'last_name' => '',
             'email' => 'test@example.com',
             'username' => $username,
@@ -237,7 +237,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => $username,
-            'password' => 'cicada',
+            'password' => '12345678',
         ];
 
         $client->request('POST', '/api/oauth/token', $authPayload, [], [], json_encode($authPayload, \JSON_THROW_ON_ERROR));
@@ -311,7 +311,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'scope' => [],
         ];
 
@@ -336,7 +336,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'scope' => ['admin', 'write', 'admin', 'admin', 'write', 'write', 'admin'],
         ];
 
@@ -361,7 +361,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'scope' => ['admin', 'write'],
         ];
 
@@ -398,7 +398,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'scope' => ['admin', 'write', UserVerifiedScope::IDENTIFIER],
         ];
 
@@ -439,7 +439,7 @@ class AuthControllerTest extends TestCase
             'grant_type' => 'password',
             'client_id' => 'administration',
             'username' => 'admin',
-            'password' => 'cicada',
+            'password' => '12345678',
             'scope' => ['admin', 'write'],
         ];
 

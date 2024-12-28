@@ -49,7 +49,7 @@ class UpsertAddressTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -64,8 +64,7 @@ class UpsertAddressTest extends TestCase
     public function testUpsertAddressWithExistingNotSpecifiedSalutation(): void
     {
         $data = [
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',
@@ -90,8 +89,7 @@ class UpsertAddressTest extends TestCase
     public function testUpsertAddressToNotSpecifiedWithoutExistingSalutation(): void
     {
         $data = [
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',

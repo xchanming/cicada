@@ -459,8 +459,7 @@ class SendMailActionTest extends TestCase
     {
         yield 'Test send mail has data valid' => [true, true, true];
         yield 'Test send mail contact form without email' => [false, true, true];
-        yield 'Test send mail contact form without firstName' => [true, false, true];
-        yield 'Test send mail contact form without lastName' => [true, false, true];
+        yield 'Test send mail contact form without name' => [true, false, true];
     }
 
     public function testSendMailWithConfigIsNull(): void

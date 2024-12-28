@@ -12,7 +12,7 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
 use Cicada\Core\Checkout\Order\Event\OrderStateMachineStateChangeEvent;
 use Cicada\Core\Checkout\Order\OrderDefinition;
-use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PrePayment;
+use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -138,8 +138,7 @@ class OrderStateChangeEventListenerTest extends TestCase
                 'id' => $ids->get('order_customer'),
                 'salutationId' => $this->getValidSalutationId(),
                 'email' => 'test',
-                'firstName' => 'test',
-                'lastName' => 'test',
+                'name' => 'test',
                 'customerId' => $ids->get('customer'),
             ],
             'addresses' => [
@@ -147,8 +146,7 @@ class OrderStateChangeEventListenerTest extends TestCase
                     'id' => $ids->create('billing-address'),
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'asd',
-                    'lastName' => 'asd',
+                    'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
                     'city' => 'asd',
@@ -157,8 +155,7 @@ class OrderStateChangeEventListenerTest extends TestCase
                     'id' => $ids->create('shipping-address'),
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'asd',
-                    'lastName' => 'asd',
+                    'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
                     'city' => 'asd',
@@ -197,7 +194,7 @@ class OrderStateChangeEventListenerTest extends TestCase
             'transactions' => [
                 [
                     'id' => $ids->create('transaction'),
-                    'paymentMethodId' => $this->getPrePaymentMethodId(),
+                    'paymentMethodId' => $this->getCashPaymentMethodId(),
                     'stateId' => $this->getStateId('open', 'order_transaction.state'),
                     'amount' => new CalculatedPrice(200, 200, new CalculatedTaxCollection(), new TaxRuleCollection()),
                 ],
@@ -216,8 +213,7 @@ class OrderStateChangeEventListenerTest extends TestCase
             'id' => $ids->get('customer'),
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -231,8 +227,7 @@ class OrderStateChangeEventListenerTest extends TestCase
                     'customerId' => $ids->get('customer'),
                     'countryId' => $this->getValidCountryId(),
                     'salutationId' => $this->getValidSalutationId(),
-                    'firstName' => 'Max',
-                    'lastName' => 'Mustermann',
+                    'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
                     'city' => 'Schöppingen',
@@ -251,7 +246,7 @@ class OrderStateChangeEventListenerTest extends TestCase
         return $ids->get('customer');
     }
 
-    private function getPrePaymentMethodId(): string
+    private function getCashPaymentMethodId(): string
     {
         /** @var EntityRepository $repository */
         $repository = static::getContainer()->get('payment_method.repository');
@@ -259,7 +254,7 @@ class OrderStateChangeEventListenerTest extends TestCase
         $criteria = (new Criteria())
             ->setLimit(1)
             ->addFilter(new EqualsFilter('active', true))
-            ->addFilter(new EqualsFilter('handlerIdentifier', PrePayment::class));
+            ->addFilter(new EqualsFilter('handlerIdentifier', CashPayment::class));
 
         $id = $repository->searchIds($criteria, Context::createDefaultContext())->getIds()[0];
         static::assertIsString($id);

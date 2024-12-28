@@ -44,7 +44,7 @@ class DeleteAddressRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -61,8 +61,7 @@ class DeleteAddressRouteTest extends TestCase
         // Create
         $data = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',
@@ -150,8 +149,7 @@ class DeleteAddressRouteTest extends TestCase
     {
         $data = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',
@@ -207,8 +205,7 @@ class DeleteAddressRouteTest extends TestCase
         // Create
         $data = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',

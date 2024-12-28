@@ -8,7 +8,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
@@ -94,7 +93,7 @@ class CustomerChangePasswordSubscriberTest extends TestCase
         $this->getBrowser()->request(
             'PATCH',
             '/api/customer/' . $customerId,
-            ['firstName' => 'Test']
+            ['name' => 'Test']
         );
 
         $response = $this->getBrowser()->getResponse();
@@ -143,8 +142,7 @@ class CustomerChangePasswordSubscriberTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $addressId,
-                'firstName' => 'Max',
-                'lastName' => 'Mustermann',
+                'name' => 'Max',
                 'street' => 'Musterstraße 1',
                 'city' => 'Schoöppingen',
                 'zipcode' => '12345',
@@ -157,15 +155,10 @@ class CustomerChangePasswordSubscriberTest extends TestCase
             'password' => null,
             'legacyPassword' => Hasher::hash($password, 'md5'),
             'legacyEncoder' => 'Md5',
-            'firstName' => 'encryption',
-            'lastName' => 'Mustermann',
+            'name' => 'encryption',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')->create([$customer], Context::createDefaultContext());
 

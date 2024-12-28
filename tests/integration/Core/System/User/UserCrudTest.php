@@ -31,8 +31,7 @@ class UserCrudTest extends TestCase
             'username' => 'dummy',
             'password' => 'i am safe',
             'email' => 'some-guy@xchanming.com',
-            'firstName' => 'first',
-            'lastName' => 'last',
+            'name' => 'first',
             'active' => true,
             'admin' => false,
             'locale' => [

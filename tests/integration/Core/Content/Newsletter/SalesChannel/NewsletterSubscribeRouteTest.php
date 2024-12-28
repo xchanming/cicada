@@ -66,8 +66,7 @@ class NewsletterSubscribeRouteTest extends TestCase
                     'email' => 'test@example.com',
                     'option' => 'direct',
                     'storefrontUrl' => 'http://localhost',
-                    'firstName' => 'Foo',
-                    'lastName' => 'Bar',
+                    'name' => 'Foo',
                 ]
             );
 
@@ -91,8 +90,7 @@ class NewsletterSubscribeRouteTest extends TestCase
                     'email' => 'test@example.com',
                     'option' => 'direct',
                     'storefrontUrl' => 'http://test.localhost',
-                    'firstName' => 'Foo',
-                    'lastName' => 'Bar',
+                    'name' => 'Foo',
                 ],
             );
 
@@ -241,8 +239,7 @@ class NewsletterSubscribeRouteTest extends TestCase
             'hash' => Uuid::randomHex(),
             'option' => 'subscribe',
             'email' => 'test@example.com',
-            'firstName' => 'John',
-            'lastName' => 'Doe',
+            'name' => 'John',
             'confirmedAt' => '2020-07-16 08:14:39.603',
         ];
 
@@ -378,7 +375,7 @@ class NewsletterSubscribeRouteTest extends TestCase
     }
 
     #[DataProvider('subscribeWithDomainProvider')]
-    public function testSubscribeWithInvalid(string $firstName, string $lastName, \Closure $expectClosure): void
+    public function testSubscribeWithInvalid(string $name, \Closure $expectClosure): void
     {
         $this->browser
             ->request(
@@ -388,8 +385,7 @@ class NewsletterSubscribeRouteTest extends TestCase
                     'email' => 'test@example.com',
                     'option' => 'direct',
                     'storefrontUrl' => 'http://localhost',
-                    'firstName' => $firstName,
-                    'lastName' => $lastName,
+                    'name' => $name,
                 ]
             );
 
@@ -408,8 +404,7 @@ class NewsletterSubscribeRouteTest extends TestCase
                     'email' => 'test@exämple.com',
                     'option' => 'direct',
                     'storefrontUrl' => 'http://localhost',
-                    'firstName' => 'Y',
-                    'lastName' => 'Tran',
+                    'name' => 'Y',
                 ]
             );
 
@@ -421,55 +416,37 @@ class NewsletterSubscribeRouteTest extends TestCase
     {
         yield 'invalid with first name' => [
             'Y http:/cicada.test',
-            'Tran',
             function (array $response): void {
                 static::assertArrayHasKey('errors', $response);
                 static::assertCount(1, $response['errors']);
 
                 $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
 
-                static::assertContains('/firstName', $errors);
-            },
-        ];
-
-        yield 'invalid with last name' => [
-            'Y',
-            'Tran https:/cicada.test',
-            function (array $response): void {
-                static::assertArrayHasKey('errors', $response);
-                static::assertCount(1, $response['errors']);
-
-                $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
-
-                static::assertContains('/lastName', $errors);
+                static::assertContains('/name', $errors);
             },
         ];
 
         yield 'invalid with domain name *://' => [
-            'Y http://cicada.test',
             'Tran https://cicada.test',
             function (array $response): void {
                 static::assertArrayHasKey('errors', $response);
-                static::assertCount(2, $response['errors']);
+                static::assertCount(1, $response['errors']);
 
                 $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
 
-                static::assertContains('/firstName', $errors);
-                static::assertContains('/lastName', $errors);
+                static::assertContains('/name', $errors);
             },
         ];
 
         yield 'invalid with domain name *:/' => [
-            'Y http:/cicada.test',
             'Tran https:/cicada.test',
             function (array $response): void {
                 static::assertArrayHasKey('errors', $response);
-                static::assertCount(2, $response['errors']);
+                static::assertCount(1, $response['errors']);
 
                 $errors = array_column(array_column($response['errors'], 'source'), 'pointer');
 
-                static::assertContains('/firstName', $errors);
-                static::assertContains('/lastName', $errors);
+                static::assertContains('/name', $errors);
             },
         ];
     }

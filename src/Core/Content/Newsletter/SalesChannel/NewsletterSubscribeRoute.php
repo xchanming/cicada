@@ -196,13 +196,6 @@ class NewsletterSubscribeRoute extends AbstractNewsletterSubscribeRoute
             ]));
         }
 
-        if (!empty($dataBag->get('lastName'))) {
-            $definition->add('lastName', new NotBlank(), new Regex([
-                'pattern' => self::DOMAIN_NAME_REGEX,
-                'match' => false,
-            ]));
-        }
-
         if ($validateStorefrontUrl) {
             $definition
                 ->add('storefrontUrl', new NotBlank(), new Choice(array_values($this->getDomainUrls($context))));

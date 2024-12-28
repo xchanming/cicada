@@ -69,7 +69,7 @@ class UpsertAddressRouteTest extends TestCase
                 ['CONTENT_TYPE' => 'application/json'],
                 \json_encode([
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ], \JSON_THROW_ON_ERROR)
             );
 
@@ -157,7 +157,7 @@ class UpsertAddressRouteTest extends TestCase
             );
 
         $address = \json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR)['elements'][0];
-        $address['firstName'] = __FUNCTION__;
+        $address['name'] = __FUNCTION__;
 
         // Update
         $this->browser
@@ -193,8 +193,7 @@ class UpsertAddressRouteTest extends TestCase
 
         $data = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',
@@ -248,8 +247,7 @@ class UpsertAddressRouteTest extends TestCase
             ->with([
                 [
                     'salutationId' => '1',
-                    'firstName' => null,
-                    'lastName' => null,
+                    'name' => null,
                     'street' => null,
                     'city' => null,
                     'zipcode' => null,
@@ -301,8 +299,7 @@ class UpsertAddressRouteTest extends TestCase
         yield 'salutation' => [
             [
                 'salutationId' => '',
-                'firstName' => 'Test',
-                'lastName' => 'Test',
+                'name' => 'Test',
                 'street' => 'Test',
                 'city' => 'Test',
                 'zipcode' => 'Test',
@@ -311,8 +308,7 @@ class UpsertAddressRouteTest extends TestCase
 
         yield 'no-salutation' => [
             [
-                'firstName' => 'Test',
-                'lastName' => 'Test',
+                'name' => 'Test',
                 'street' => 'Test',
                 'city' => 'Test',
                 'zipcode' => 'Test',
@@ -322,8 +318,7 @@ class UpsertAddressRouteTest extends TestCase
         yield 'empty-salutation' => [
             [
                 'salutationId' => null,
-                'firstName' => 'Test',
-                'lastName' => 'Test',
+                'name' => 'Test',
                 'street' => 'Test',
                 'city' => 'Test',
                 'zipcode' => 'Test',

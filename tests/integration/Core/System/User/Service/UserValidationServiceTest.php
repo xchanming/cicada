@@ -45,8 +45,7 @@ class UserValidationServiceTest extends TestCase
             [
                 'id' => $userId,
                 'username' => 'some User',
-                'firstName' => 'first',
-                'lastName' => 'last',
+                'name' => 'first',
                 'localeId' => $firstLocale,
                 'email' => 'user@xchanming.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
@@ -71,8 +70,7 @@ class UserValidationServiceTest extends TestCase
             [
                 'id' => $userId,
                 'username' => 'some User',
-                'firstName' => 'first',
-                'lastName' => 'last',
+                'name' => 'first',
                 'localeId' => $firstLocale,
                 'email' => 'user@xchanming.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
@@ -95,8 +93,7 @@ class UserValidationServiceTest extends TestCase
             [
                 'id' => $userId,
                 'username' => 'some User',
-                'firstName' => 'first',
-                'lastName' => 'last',
+                'name' => 'first',
                 'localeId' => $firstLocale,
                 'email' => 'user@xchanming.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
@@ -120,8 +117,7 @@ class UserValidationServiceTest extends TestCase
             [
                 'id' => $userId,
                 'username' => 'some User',
-                'firstName' => 'first',
-                'lastName' => 'last',
+                'name' => 'first',
                 'localeId' => $firstLocale,
                 'email' => 'user@xchanming.com',
                 'password' => TestDefaults::HASHED_PASSWORD,

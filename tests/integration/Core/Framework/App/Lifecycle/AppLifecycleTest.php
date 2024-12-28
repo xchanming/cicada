@@ -2092,7 +2092,7 @@ class AppLifecycleTest extends TestCase
     {
         static::getContainer()->get(Connection::class)->insert('user', [
             'id' => Uuid::fromHexToBytes($userId),
-            'first_name' => 'test',
+            'name' => 'test',
             'last_name' => '',
             'email' => 'test@example.com',
             'username' => 'userTest',
@@ -2158,7 +2158,7 @@ class AppLifecycleTest extends TestCase
 
                 break;
             case 'app\withRuleConditions_testcondition2':
-                static::assertArrayHasKey('firstName', $constraints);
+                static::assertArrayHasKey('name', $constraints);
                 static::assertIsArray($scriptCondition->getConfig());
                 static::assertArrayHasKey(0, $scriptCondition->getConfig());
                 static::assertIsArray($scriptCondition->getConfig()[0]);
@@ -2239,7 +2239,7 @@ class AppLifecycleTest extends TestCase
 
                 break;
             case 'app\withRuleConditions_testcondition11':
-                static::assertArrayHasKey('firstName', $constraints);
+                static::assertArrayHasKey('name', $constraints);
                 static::assertIsArray($scriptCondition->getConfig());
                 static::assertArrayHasKey(0, $scriptCondition->getConfig());
                 static::assertIsArray($scriptCondition->getConfig()[0]);

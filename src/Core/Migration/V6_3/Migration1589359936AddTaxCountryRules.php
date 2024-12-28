@@ -32,9 +32,8 @@ class Migration1589359936AddTaxCountryRules extends MigrationStep
         if (!$this->isMigrationAllowed($connection)) {
             return;
         }
-
-        $this->updateTaxNames($connection);
         $this->createNewTax($connection);
+        $this->updateTaxNames($connection);
         $this->addCountryTaxRules($connection);
     }
 

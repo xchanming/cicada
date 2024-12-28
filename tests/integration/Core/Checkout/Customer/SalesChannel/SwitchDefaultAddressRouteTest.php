@@ -46,7 +46,7 @@ class SwitchDefaultAddressRouteTest extends TestCase
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -125,8 +125,7 @@ class SwitchDefaultAddressRouteTest extends TestCase
         // Create
         $data = [
             'salutationId' => $this->getValidSalutationId(),
-            'firstName' => 'Test',
-            'lastName' => 'Test',
+            'name' => 'Test',
             'street' => 'Test',
             'city' => 'Test',
             'zipcode' => 'Test',
