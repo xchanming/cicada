@@ -399,7 +399,7 @@ export default {
                     property: 'salesChannel.name',
                     label: 'sw-order.list.columnSalesChannel',
                     allowResize: true,
-                    visible: false,
+                    visible: true,
                 },
                 {
                     property: 'orderCustomer.name',
