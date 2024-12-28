@@ -24,7 +24,6 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
-use Cicada\Core\Checkout\Order\Exception\DeliveryWithoutAddressException;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Order\OrderException;
@@ -93,8 +92,6 @@ class OrderConverter
     }
 
     /**
-     * @throws DeliveryWithoutAddressException
-     *
      * @return array<string, mixed|float|string|array<int, array<string, string|int|bool|mixed>>|null>
      */
     public function convertToOrder(Cart $cart, SalesChannelContext $context, OrderConversionContext $conversionContext): array

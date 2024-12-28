@@ -18,7 +18,6 @@ use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntit
 use Cicada\Core\Checkout\Customer\Exception\AddressNotFoundException;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemEntity;
-use Cicada\Core\Checkout\Order\Exception\DeliveryWithoutAddressException;
 use Cicada\Core\Checkout\Order\Exception\EmptyCartException;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderEntity;
@@ -64,7 +63,6 @@ class RecalculationService
      *
      * @throws CustomerNotLoggedInException
      * @throws CartException
-     * @throws DeliveryWithoutAddressException
      * @throws EmptyCartException
      * @throws InconsistentCriteriaIdsException
      */
@@ -113,7 +111,6 @@ class RecalculationService
     }
 
     /**
-     * @throws DeliveryWithoutAddressException
      * @throws InconsistentCriteriaIdsException
      * @throws CartException
      * @throws ProductNotFoundException
@@ -162,7 +159,6 @@ class RecalculationService
     }
 
     /**
-     * @throws DeliveryWithoutAddressException
      * @throws InconsistentCriteriaIdsException
      * @throws CartException
      */

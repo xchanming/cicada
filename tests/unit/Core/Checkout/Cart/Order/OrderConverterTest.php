@@ -36,7 +36,6 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderLineItemDownload\OrderLineItemDown
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItemDownload\OrderLineItemDownloadEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
-use Cicada\Core\Checkout\Order\Exception\DeliveryWithoutAddressException;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Order\OrderException;
@@ -345,9 +344,6 @@ class OrderConverterTest extends TestCase
         return [
             [
                 AddressNotFoundException::class,
-            ],
-            [
-                DeliveryWithoutAddressException::class,
             ],
             [
                 CartException::class,

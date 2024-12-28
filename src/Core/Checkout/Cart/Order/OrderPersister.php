@@ -7,7 +7,6 @@ use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\CartSerializationCleaner;
 use Cicada\Core\Checkout\Cart\Exception\CustomerNotLoggedInException;
 use Cicada\Core\Checkout\Cart\Exception\InvalidCartException;
-use Cicada\Core\Checkout\Order\Exception\DeliveryWithoutAddressException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\InconsistentCriteriaIdsException;
@@ -29,7 +28,6 @@ class OrderPersister implements OrderPersisterInterface
 
     /**
      * @throws CustomerNotLoggedInException
-     * @throws DeliveryWithoutAddressException
      * @throws InvalidCartException
      * @throws InconsistentCriteriaIdsException
      */

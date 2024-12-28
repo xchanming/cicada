@@ -3,10 +3,8 @@
 namespace Cicada\Core\Checkout\Order;
 
 use Cicada\Core\Checkout\Customer\Exception\CustomerAuthThrottledException;
-use Cicada\Core\Checkout\Order\Exception\DeliveryWithoutAddressException;
 use Cicada\Core\Content\Flow\Exception\CustomerDeletedException;
 use Cicada\Core\Framework\CicadaHttpException;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
@@ -170,10 +168,6 @@ class OrderException extends HttpException
      */
     public static function deliveryWithoutAddress(): self|CicadaHttpException
     {
-        if (!Feature::isActive('v6.7.0.0')) {
-            return new DeliveryWithoutAddressException();
-        }
-
         return new self(
             Response::HTTP_BAD_REQUEST,
             self::ORDER_DELIVERY_WITHOUT_ADDRESS,

@@ -210,11 +210,6 @@ class InternalClassRule implements Rule
         return null;
     }
 
-    private function isInNamespace(InClassNode $node, string $namespace): bool
-    {
-        return \str_contains($node->getClassReflection()->getName(), $namespace);
-    }
-
     private function isMigrationStep(InClassNode $node): bool
     {
         $class = $node->getClassReflection();
