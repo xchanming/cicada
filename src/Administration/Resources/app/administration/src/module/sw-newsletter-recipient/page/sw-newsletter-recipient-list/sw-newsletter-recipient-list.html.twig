@@ -79,26 +79,17 @@
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
             {% block sw_newsletter_recipientlist_list_grid_name %}
             <template
-                #column-firstName="{ item, compact, isInlineEdit }"
+                #column-name="{ item, compact, isInlineEdit }"
             >
 
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                 {% block sw_newsletter_recipientlist_list_grid_inline_edit_name %}
                 <template v-if="isInlineEdit">
                     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                    {% block sw_newsletter_recipientlist_list_grid_inline_edit_first_name %}
+                    {% block sw_newsletter_recipientlist_list_grid_inline_edit_name %}
                     <sw-text-field
-                        v-model:value="item.firstName"
-                        class="sw-newsletter-recipient-list__inline-edit-first-name"
-                        :size="compact ? 'small' : 'default'"
-                    />
-                    {% endblock %}
-
-                    <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                    {% block sw_newsletter_recipientlist_list_grid_inline_edit_last_name %}
-                    <sw-text-field
-                        v-model:value="item.lastName"
-                        class="sw-newsletter-recipient-list__inline-edit-last-name"
+                        v-model:value="item.name"
+                        class="sw-newsletter-recipient-list__inline-edit-name"
                         :size="compact ? 'small' : 'default'"
                     />
                     {% endblock %}
@@ -108,7 +99,7 @@
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                 {% block sw_newsletter_recipientlist_list_grid_name_link %}
                 <template v-else>
-                    {{ item.firstName }} {{ item.lastName }}
+                    {{ item.name }}
                 </template>
                 {% endblock %}
             </template>

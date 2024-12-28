@@ -203,8 +203,7 @@ export default {
                     inlineEdit: 'string',
                 },
                 {
-                    property: 'firstName',
-                    dataIndex: 'firstName,lastName',
+                    property: 'name',
                     inlineEdit: 'string',
                     label: 'sw-newsletter-recipient.list.name',
                     allowResize: true,
@@ -215,7 +214,7 @@ export default {
                     label: 'sw-newsletter-recipient.list.salesChannel',
                     allowResize: true,
                     primary: false,
-                    visible: false,
+                    visible: true,
                 },
                 {
                     property: 'status',
@@ -227,11 +226,13 @@ export default {
                     label: 'sw-newsletter-recipient.list.zipCode',
                     allowResize: true,
                     align: 'right',
+                    visible: false,
                 },
                 {
                     property: 'city',
                     label: 'sw-newsletter-recipient.list.city',
                     allowResize: true,
+                    visible: false,
                 },
                 {
                     property: 'street',
@@ -243,13 +244,13 @@ export default {
                     property: 'updatedAt',
                     label: 'sw-newsletter-recipient.list.updatedAt',
                     allowResize: true,
-                    visible: false,
+                    visible: true,
                 },
                 {
                     property: 'createdAt',
                     label: 'sw-newsletter-recipient.list.createdAt',
                     allowResize: true,
-                    visible: false,
+                    visible: true,
                 },
             ];
         },
