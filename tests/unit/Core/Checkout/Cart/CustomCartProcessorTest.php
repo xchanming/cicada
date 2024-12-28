@@ -67,7 +67,7 @@ class CustomCartProcessorTest extends TestCase
         $original = $this->getCart();
         $item1 = new LineItem('custom-3', 'custom', 'custom-1', 1);
         $item1->setPriceDefinition(new QuantityPriceDefinition(5.0, new TaxRuleCollection(), 1));
-        $item1->setStates([State::IS_DOWNLOAD]);
+        $item1->setStates([State::IS_PHYSICAL]);
         $original->add($item1);
 
         $toCalculate = new Cart('toCalculate');
@@ -89,10 +89,10 @@ class CustomCartProcessorTest extends TestCase
 
         static::assertCount(2, $toCalculate->getLineItems());
         static::assertEquals(5.0, $toCalculate->getLineItems()->get('custom-1')?->getPrice()?->getTotalPrice());
-        static::assertTrue($toCalculate->getLineItems()->get('custom-1')?->isShippingCostAware());
+        static::assertFalse($toCalculate->getLineItems()->get('custom-1')?->isShippingCostAware());
 
         static::assertEquals(5.0, $toCalculate->getLineItems()->get('custom-3')?->getPrice()?->getTotalPrice());
-        static::assertFalse($toCalculate->getLineItems()->get('custom-3')?->isShippingCostAware());
+        static::assertTrue($toCalculate->getLineItems()->get('custom-3')?->isShippingCostAware());
     }
 
     private function getCart(): Cart

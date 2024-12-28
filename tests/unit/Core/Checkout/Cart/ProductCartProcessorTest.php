@@ -280,7 +280,7 @@ class ProductCartProcessorTest extends TestCase
             1
         );
 
-        $calculator->expects(static::exactly(2))->method('calculate')->willReturn($calculatedPrice);
+        $calculator->expects(static::exactly(3))->method('calculate')->willReturn($calculatedPrice);
 
         $cartProcessor = new ProductCartProcessor(
             $this->createMock(ProductGateway::class),
@@ -298,6 +298,11 @@ class ProductCartProcessorTest extends TestCase
             ->setPriceDefinition(new QuantityPriceDefinition(10, new TaxRuleCollection()))
             ->setStates([State::IS_DOWNLOAD])
         );
+        $originalCart->add(
+            (new LineItem('C', 'product', 'C', 3))
+                ->setPriceDefinition(new QuantityPriceDefinition(10, new TaxRuleCollection()))
+                ->setStates([State::IS_PHYSICAL])
+        );
         $toCalculateCart = new Cart('test');
 
         $context = $this->createMock(SalesChannelContext::class);
@@ -305,14 +310,17 @@ class ProductCartProcessorTest extends TestCase
 
         $cartProcessor->process(new CartDataCollection(), $originalCart, $toCalculateCart, $context, $behavior);
 
-        static::assertCount(2, $toCalculateCart->getLineItems());
+        static::assertCount(3, $toCalculateCart->getLineItems());
         static::assertNotNull($toCalculateCart->get('A'));
         static::assertNotNull($toCalculateCart->get('B'));
+        static::assertNotNull($toCalculateCart->get('C'));
         static::assertEquals(200, $toCalculateCart->get('A')->getPrice()?->getTotalPrice());
         static::assertEquals(200, $toCalculateCart->get('B')->getPrice()?->getTotalPrice());
+        static::assertEquals(200, $toCalculateCart->get('C')->getPrice()?->getTotalPrice());
 
-        static::assertTrue($toCalculateCart->get('A')->isShippingCostAware());
+        static::assertFalse($toCalculateCart->get('A')->isShippingCostAware());
         static::assertFalse($toCalculateCart->get('B')->isShippingCostAware());
+        static::assertTrue($toCalculateCart->get('C')->isShippingCostAware());
     }
 
     public function testCoverIsRemovedIfProductMediaIsMissing(): void
