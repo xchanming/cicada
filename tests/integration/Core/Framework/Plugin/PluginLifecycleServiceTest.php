@@ -75,7 +75,7 @@ class PluginLifecycleServiceTest extends TestCase
 
     private SystemConfigService $systemConfigService;
 
-    private string $iso = 'sv-SE';
+    private string $iso = 'en-GB';
 
     private string $fixturePath;
 

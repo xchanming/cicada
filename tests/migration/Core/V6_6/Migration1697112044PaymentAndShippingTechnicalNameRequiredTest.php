@@ -1,13 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Cicada\Tests\Migration\Core\V6_7;
+namespace Cicada\Tests\Migration\Core\V6_6;
 
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Checkout\Shipping\ShippingMethodDefinition;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
-use Cicada\Core\Migration\V6_7\Migration1697112044PaymentAndShippingTechnicalNameRequired;
+use Cicada\Core\Migration\V6_6\Migration1697112044PaymentAndShippingTechnicalNameRequired;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -25,8 +24,6 @@ class Migration1697112044PaymentAndShippingTechnicalNameRequiredTest extends Tes
 
     protected function setUp(): void
     {
-        Feature::skipTestIfInActive('v6.7.0.0', $this);
-
         $this->connection = static::getContainer()->get(Connection::class);
     }
 

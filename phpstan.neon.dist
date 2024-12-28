@@ -133,7 +133,6 @@ parameters:
             message: '#Use explicit names over dynamic ones#'
             paths:
                 - src/Core/Checkout/Cart/LineItem/LineItem.php
-                - src/Core/Checkout/Document/DocumentConfiguration.php
                 - src/Core/Content/Product/Hook/Pricing/ProductProxy.php
                 - src/Core/Framework/Api/ApiDefinition/Generator/StoreApiGenerator.php
                 - src/Core/Framework/Struct/AssignArrayTrait.php

@@ -218,7 +218,6 @@ class AuthControllerTest extends TestCase
         static::getContainer()->get(Connection::class)->insert('user', [
             'id' => Uuid::randomBytes(),
             'name' => $username,
-            'last_name' => '',
             'email' => 'test@example.com',
             'username' => $username,
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -488,7 +487,7 @@ class AuthControllerTest extends TestCase
         $authPayload = [
             'grant_type' => 'client_credentials',
             'client_id' => $accessKey,
-            'client_secret' => 'cicada',
+            'client_secret' => '12345678',
         ];
 
         $client->request('POST', '/api/oauth/token', $authPayload, [], [], json_encode($authPayload, \JSON_THROW_ON_ERROR));

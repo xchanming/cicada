@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Cicada\Core\Migration\V6_7;
+namespace Cicada\Core\Migration\V6_6;
 
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Framework\Log\Package;

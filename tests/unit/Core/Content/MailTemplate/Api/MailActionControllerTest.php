@@ -3,7 +3,6 @@
 namespace Cicada\Tests\Unit\Core\Content\MailTemplate\Api;
 
 use Cicada\Core\Content\Mail\Service\AbstractMailService;
-use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
 use Cicada\Core\Content\MailTemplate\Api\MailActionController;
 use Cicada\Core\Content\MailTemplate\MailTemplateException;
 use Cicada\Core\Framework\Adapter\Twig\StringTemplateRenderer;
@@ -41,16 +40,12 @@ class MailActionControllerTest extends TestCase
                     'id' => Uuid::randomHex(),
                 ],
             ],
-            'documentIds' => ['1'],
         ]);
 
         $this->mailService->expects(static::once())
             ->method('send')
             ->with(
                 static::callback(function (array $data) {
-                    static::assertArrayHasKey('attachmentsConfig', $data);
-                    static::assertInstanceOf(MailAttachmentsConfig::class, $data['attachmentsConfig']);
-
                     return true;
                 }),
                 static::anything(),

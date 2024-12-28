@@ -32,9 +32,9 @@ class Migration1701688920FixDownloadLinkMailTest extends TestCase
         $migration = new Migration1701688920FixDownloadLinkMail();
         $migration->update($connection);
 
-        $deLangId = $this->fetchLanguageId($connection, 'zh-CN');
+        $zhLangId = $this->fetchLanguageId($connection, 'zh-CN');
         $enLangId = $this->fetchLanguageId($connection, 'en-GB');
-        static::assertNotNull($deLangId);
+        static::assertNotNull($zhLangId);
         static::assertNotNull($enLangId);
 
         $template = [
@@ -42,8 +42,8 @@ class Migration1701688920FixDownloadLinkMailTest extends TestCase
                 $connection,
                 MailTemplateTypes::MAILTYPE_DOWNLOADS_DELIVERY
             ),
-            'htmlDe' => (string) file_get_contents(__DIR__ . '/../../../../src/Core/Migration/Fixtures/mails/downloads_delivery/de-html.html.twig'),
-            'plainDe' => (string) file_get_contents(__DIR__ . '/../../../../src/Core/Migration/Fixtures/mails/downloads_delivery/de-plain.html.twig'),
+            'htmlZh' => (string) file_get_contents(__DIR__ . '/../../../../src/Core/Migration/Fixtures/mails/downloads_delivery/de-html.html.twig'),
+            'plainZh' => (string) file_get_contents(__DIR__ . '/../../../../src/Core/Migration/Fixtures/mails/downloads_delivery/de-plain.html.twig'),
             'htmlEn' => (string) file_get_contents(__DIR__ . '/../../../../src/Core/Migration/Fixtures/mails/downloads_delivery/en-html.html.twig'),
             'plainEn' => (string) file_get_contents(__DIR__ . '/../../../../src/Core/Migration/Fixtures/mails/downloads_delivery/en-plain.html.twig'),
         ];
@@ -51,11 +51,11 @@ class Migration1701688920FixDownloadLinkMailTest extends TestCase
         $mailTemplateTranslationDe = $this->getMailTemplateTranslation(
             $connection,
             $template,
-            $deLangId
+            $zhLangId
         );
 
-        static::assertEquals($mailTemplateTranslationDe['htmlDe'], $mailTemplateTranslationDe['content_html']);
-        static::assertEquals($mailTemplateTranslationDe['plainDe'], $mailTemplateTranslationDe['content_plain']);
+        static::assertEquals($mailTemplateTranslationDe['htmlZh'], $mailTemplateTranslationDe['content_html']);
+        static::assertEquals($mailTemplateTranslationDe['plainZh'], $mailTemplateTranslationDe['content_plain']);
 
         $mailTemplateTranslationEn = $this->getMailTemplateTranslation(
             $connection,

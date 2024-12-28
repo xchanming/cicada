@@ -105,7 +105,6 @@
         <!-- controller -->
         <service id="Cicada\Core\Checkout\Order\Api\OrderActionController" public="true">
             <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderService" />
-            <argument type="service" id="Doctrine\DBAL\Connection"/>
             <argument type="service" id="Cicada\Core\Checkout\Payment\Cart\PaymentRefundProcessor"/>
             <call method="setContainer">
                 <argument type="service" id="service_container"/>

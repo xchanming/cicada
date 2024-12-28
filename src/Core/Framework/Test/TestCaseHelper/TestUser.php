@@ -22,7 +22,7 @@ class TestUser
 
     public static function getAdmin(): TestUser
     {
-        return new TestUser('cicada', 'admin', Uuid::randomHex());
+        return new TestUser('12345678', 'admin', Uuid::randomHex());
     }
 
     /**
@@ -46,8 +46,7 @@ class TestUser
 
         $connection->insert('user', [
             'id' => $userId,
-            'first_name' => $username,
-            'last_name' => '',
+            'name' => $username,
             'email' => "{$email}@example.com",
             'username' => $username,
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -70,7 +69,7 @@ class TestUser
             );
         }
 
-        return new TestUser('cicada', $username, Uuid::fromBytesToHex($userId));
+        return new TestUser('12345678', $username, Uuid::fromBytesToHex($userId));
     }
 
     public function authorizeBrowser(KernelBrowser $browser): void

@@ -9,10 +9,6 @@ use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\Rule\BillingCountryRule;
-use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
-use Cicada\Core\Checkout\Document\Renderer\DeliveryNoteRenderer;
-use Cicada\Core\Checkout\Document\Service\DocumentGenerator;
-use Cicada\Core\Checkout\Document\Struct\DocumentGenerateOperation;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Order\OrderCollection;
@@ -271,69 +267,6 @@ class OrderRouteTest extends TestCase
             );
 
         static::assertSame(Response::HTTP_FORBIDDEN, $this->browser->getResponse()->getStatusCode());
-    }
-
-    public function testGetOrderShowsValidDocuments(): void
-    {
-        $this->createDocument($this->orderId);
-
-        $criteria = new Criteria([$this->orderId]);
-
-        $this->browser
-            ->request(
-                'GET',
-                '/store-api/order',
-                $this->requestCriteriaBuilder->toArray($criteria)
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertArrayHasKey('orders', $response);
-        static::assertArrayHasKey('elements', $response['orders']);
-        static::assertArrayHasKey('documents', $response['orders']['elements'][0]);
-        static::assertCount(1, $response['orders']['elements'][0]['documents']);
-    }
-
-    public function testGetOrderDoesNotShowUnAvailableDocuments(): void
-    {
-        $this->createDocument($this->orderId, false);
-
-        $criteria = new Criteria([$this->orderId]);
-
-        $this->browser
-            ->request(
-                'GET',
-                '/store-api/order',
-                $this->requestCriteriaBuilder->toArray($criteria)
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertArrayHasKey('orders', $response);
-        static::assertArrayHasKey('elements', $response['orders']);
-        static::assertArrayHasKey('documents', $response['orders']['elements'][0]);
-        static::assertCount(0, $response['orders']['elements'][0]['documents']);
-    }
-
-    public function testGetOrderDoesNotShowHasNotSentDocument(): void
-    {
-        $this->createDocument($this->orderId, true, false);
-
-        $criteria = new Criteria([$this->orderId]);
-
-        $this->browser
-            ->request(
-                'GET',
-                '/store-api/order',
-                $this->requestCriteriaBuilder->toArray($criteria)
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertArrayHasKey('orders', $response);
-        static::assertArrayHasKey('elements', $response['orders']);
-        static::assertArrayHasKey('documents', $response['orders']['elements'][0]);
-        static::assertCount(0, $response['orders']['elements'][0]['documents']);
     }
 
     public function testGetOrderCheckPromotion(): void
@@ -828,30 +761,6 @@ class OrderRouteTest extends TestCase
         }
 
         return $order;
-    }
-
-    private function createDocument(string $orderId, bool $showInCustomerAccount = true, bool $sent = true): void
-    {
-        $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('technicalName', DeliveryNoteRenderer::TYPE));
-
-        $operation = new DocumentGenerateOperation(
-            $orderId,
-            FileTypes::PDF,
-            ['documentNumber' => '1001', 'displayInCustomerAccount' => $showInCustomerAccount],
-        );
-
-        $document = static::getContainer()->get(DocumentGenerator::class)
-            ->generate(DeliveryNoteRenderer::TYPE, [$orderId => $operation], Context::createDefaultContext())->getSuccess()->first();
-
-        static::assertNotNull($document);
-
-        static::getContainer()->get('document.repository')->update([
-            [
-                'id' => $document->getId(),
-                'sent' => $sent,
-            ],
-        ], Context::createDefaultContext());
     }
 
     private function createCustomPaymentWithRule(string $ruleId): string

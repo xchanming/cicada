@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Checkout\Order;
 
-use Cicada\Core\Checkout\Document\DocumentDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryDefinition;
@@ -124,7 +123,6 @@ class OrderDefinition extends EntityDefinition
             (new OneToManyAssociationField('deliveries', OrderDeliveryDefinition::class, 'order_id'))->addFlags(new ApiAware(), new CascadeDelete(), new SearchRanking(SearchRanking::ASSOCIATION_SEARCH_RANKING)),
             (new OneToManyAssociationField('lineItems', OrderLineItemDefinition::class, 'order_id'))->addFlags(new ApiAware(), new CascadeDelete()),
             (new OneToManyAssociationField('transactions', OrderTransactionDefinition::class, 'order_id'))->addFlags(new ApiAware(), new CascadeDelete()),
-            (new OneToManyAssociationField('documents', DocumentDefinition::class, 'order_id'))->addFlags(new ApiAware()),
             (new ManyToManyAssociationField('tags', TagDefinition::class, OrderTagDefinition::class, 'order_id', 'tag_id'))->addFlags(new ApiAware(), new SearchRanking(SearchRanking::ASSOCIATION_SEARCH_RANKING)),
             new ManyToOneAssociationField('createdBy', 'created_by_id', UserDefinition::class, 'id', false),
             new ManyToOneAssociationField('updatedBy', 'updated_by_id', UserDefinition::class, 'id', false),

@@ -2,19 +2,14 @@
 
 namespace Cicada\Core\Content\Mail\Service;
 
-use Cicada\Core\Checkout\Document\Service\DocumentGenerator;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Content\Media\MediaService;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
 
 /**
  * @internal
@@ -30,22 +25,16 @@ class MailAttachmentsBuilder
     public function __construct(
         private readonly MediaService $mediaService,
         private readonly EntityRepository $mediaRepository,
-        private readonly DocumentGenerator $documentGenerator,
-        private readonly Connection $connection
     ) {
     }
 
     /**
-     * @param array<string, mixed> $eventConfig
-     *
      * @return MailAttachments
      */
     public function buildAttachments(
         Context $context,
         MailTemplateEntity $mailTemplate,
         MailSendSubscriberConfig $extensions,
-        array $eventConfig,
-        ?string $orderId
     ): array {
         $attachments = [];
 
@@ -60,19 +49,6 @@ class MailAttachmentsBuilder
             );
         }
 
-        $documentIds = $extensions->getDocumentIds();
-
-        if (!empty($eventConfig['documentTypeIds']) && \is_array($eventConfig['documentTypeIds']) && $orderId) {
-            $latestDocuments = $this->getLatestDocumentsOfTypes($orderId, $eventConfig['documentTypeIds']);
-
-            $documentIds = array_unique(array_merge($documentIds, $latestDocuments));
-        }
-
-        if (!empty($documentIds)) {
-            $extensions->setDocumentIds($documentIds);
-            $attachments = $this->mappingAttachments($documentIds, $attachments, $context);
-        }
-
         if (empty($extensions->getMediaIds())) {
             return $attachments;
         }
@@ -83,62 +59,6 @@ class MailAttachmentsBuilder
         $entities = $this->mediaRepository->search($criteria, $context)->getEntities();
         foreach ($entities as $media) {
             $attachments[] = $this->mediaService->getAttachment($media, $context);
-        }
-
-        return $attachments;
-    }
-
-    /**
-     * @param array<string> $documentTypeIds
-     *
-     * @return array<string>
-     */
-    private function getLatestDocumentsOfTypes(string $orderId, array $documentTypeIds): array
-    {
-        $documents = $this->connection->fetchAllAssociative(
-            'SELECT
-                LOWER(hex(`document`.`document_type_id`)) as doc_type,
-                LOWER(hex(`document`.`id`)) as doc_id
-            FROM `document`
-            WHERE `document`.`order_id` = :orderId
-            AND `document`.`document_type_id` IN (:documentTypeIds)
-            ORDER BY `document`.`created_at` ASC',
-            [
-                'orderId' => Uuid::fromHexToBytes($orderId),
-                'documentTypeIds' => Uuid::fromHexToBytesList($documentTypeIds),
-            ],
-            [
-                'documentTypeIds' => ArrayParameterType::BINARY,
-            ]
-        );
-
-        /** @var array<string, array{doc_type: string, doc_id: string}> $unique */
-        $unique = FetchModeHelper::groupUnique($documents);
-
-        return array_column($unique, 'doc_id');
-    }
-
-    /**
-     * @param array<string> $documentIds
-     * @param MailAttachments $attachments
-     *
-     * @return MailAttachments
-     */
-    private function mappingAttachments(array $documentIds, array $attachments, Context $context): array
-    {
-        foreach ($documentIds as $documentId) {
-            $document = $this->documentGenerator->readDocument($documentId, $context);
-
-            if ($document === null) {
-                continue;
-            }
-
-            $attachments[] = [
-                'id' => $documentId,
-                'content' => $document->getContent(),
-                'fileName' => $document->getName(),
-                'mimeType' => $document->getContentType(),
-            ];
         }
 
         return $attachments;

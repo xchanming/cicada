@@ -10,7 +10,6 @@ use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Adapter\Filesystem\MemoryFilesystemAdapter;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Uuid\Uuid;
 use League\Flysystem\Filesystem;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -32,8 +31,6 @@ class MailerTransportDecoratorTest extends TestCase
 
     private Filesystem $filesystem;
 
-    private MockObject&EntityRepository $documentRepository;
-
     private MailerTransportDecorator $decorator;
 
     protected function setUp(): void
@@ -41,13 +38,11 @@ class MailerTransportDecoratorTest extends TestCase
         $this->decorated = $this->createMock(TransportInterface::class);
         $this->attachmentsBuilder = $this->createMock(MailAttachmentsBuilder::class);
         $this->filesystem = new Filesystem(new MemoryFilesystemAdapter());
-        $this->documentRepository = $this->createMock(EntityRepository::class);
 
         $this->decorator = new MailerTransportDecorator(
             $this->decorated,
             $this->attachmentsBuilder,
             $this->filesystem,
-            $this->documentRepository
         );
     }
 
@@ -103,22 +98,12 @@ class MailerTransportDecoratorTest extends TestCase
             ->with(
                 $mailAttachmentsConfig->getContext(),
                 $mailAttachmentsConfig->getMailTemplate(),
-                $mailAttachmentsConfig->getExtension(),
-                $mailAttachmentsConfig->getEventConfig(),
-                $mailAttachmentsConfig->getOrderId()
+                $mailAttachmentsConfig->getExtension()
             )
             ->willReturn([
-                ['id' => 'foo', 'content' => 'foo', 'fileName' => 'bar', 'mimeType' => 'baz/asd'],
-                ['id' => 'bar', 'content' => 'bar', 'fileName' => 'bar', 'mimeType' => 'baz/asd'],
+                ['id' => 'foo', 'content' => 'foo', 'name' => 'bar', 'mimeType' => 'baz/asd'],
+                ['id' => 'bar', 'content' => 'bar', 'name' => 'bar', 'mimeType' => 'baz/asd'],
             ]);
-
-        $this->documentRepository
-            ->expects(static::once())
-            ->method('update')
-            ->with([
-                ['id' => 'foo', 'sent' => true],
-                ['id' => 'bar', 'sent' => true],
-            ], Context::createDefaultContext());
 
         $this->decorator->send($mail, $envelope);
 
@@ -127,7 +112,5 @@ class MailerTransportDecoratorTest extends TestCase
 
         static::assertSame('foo', $attachments[0]->getBody());
         static::assertSame('bar', $attachments[1]->getBody());
-
-        static::assertSame([], $mailAttachmentsConfig->getExtension()->getDocumentIds());
     }
 }

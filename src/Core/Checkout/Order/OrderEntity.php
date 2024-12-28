@@ -4,7 +4,6 @@ namespace Cicada\Core\Checkout\Order;
 
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
-use Cicada\Core\Checkout\Document\DocumentCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerEntity;
@@ -231,13 +230,6 @@ class OrderEntity extends Entity
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
     protected $stateId;
-
-    /**
-     * @var DocumentCollection|null
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $documents;
 
     /**
      * @var TagCollection|null
@@ -585,16 +577,6 @@ class OrderEntity extends Entity
     public function setShippingTotal(float $shippingTotal): void
     {
         $this->shippingTotal = $shippingTotal;
-    }
-
-    public function getDocuments(): ?DocumentCollection
-    {
-        return $this->documents;
-    }
-
-    public function setDocuments(DocumentCollection $documents): void
-    {
-        $this->documents = $documents;
     }
 
     public function getOrderNumber(): ?string

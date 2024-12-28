@@ -6,7 +6,6 @@ use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupCollectio
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerWishlist\CustomerWishlistCollection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
-use Cicada\Core\Checkout\Document\Aggregate\DocumentBaseConfig\DocumentBaseConfigDefinition;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
@@ -446,13 +445,6 @@ class SalesChannelEntity extends Entity
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
     protected $promotionSalesChannels;
-
-    /**
-     * @var DocumentBaseConfigDefinition|null
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $documentBaseConfigSalesChannels;
 
     /**
      * @var ProductReviewCollection|null
@@ -1085,16 +1077,6 @@ class SalesChannelEntity extends Entity
     public function setServiceCategory(CategoryEntity $serviceCategory): void
     {
         $this->serviceCategory = $serviceCategory;
-    }
-
-    public function getDocumentBaseConfigSalesChannels(): ?DocumentBaseConfigDefinition
-    {
-        return $this->documentBaseConfigSalesChannels;
-    }
-
-    public function setDocumentBaseConfigSalesChannels(DocumentBaseConfigDefinition $documentBaseConfigSalesChannels): void
-    {
-        $this->documentBaseConfigSalesChannels = $documentBaseConfigSalesChannels;
     }
 
     public function getProductReviews(): ?ProductReviewCollection

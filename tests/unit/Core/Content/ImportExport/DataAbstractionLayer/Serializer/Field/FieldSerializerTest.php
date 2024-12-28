@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field;
 
-use Cicada\Core\Checkout\Document\DocumentCollection;
-use Cicada\Core\Checkout\Document\DocumentDefinition;
-use Cicada\Core\Checkout\Document\DocumentEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryEntity;
+use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
+use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
+use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionEntity;
@@ -198,7 +198,7 @@ class FieldSerializerTest extends TestCase
 
         $config = new Config([], [], []);
 
-        $field = new OneToManyAssociationField('documents', DocumentDefinition::class, 'order_id');
+        $field = new OneToManyAssociationField('lineItems', OrderLineItemDefinition::class, 'order_id');
 
         $definitionRegistry = $this->createMock(DefinitionInstanceRegistry::class);
 
@@ -209,9 +209,9 @@ class FieldSerializerTest extends TestCase
 
         $field->compile($definitionRegistry);
 
-        $documents = new DocumentCollection([(new DocumentEntity())->assign(['id' => Uuid::randomHex()])]);
+        $orderLineItems = new OrderLineItemCollection([(new OrderLineItemEntity())->assign(['id' => Uuid::randomHex()])]);
 
-        static::assertNull($this->first($fieldSerializer->serialize($config, $field, $documents)));
+        static::assertNull($this->first($fieldSerializer->serialize($config, $field, $orderLineItems)));
     }
 
     /**

@@ -2,17 +2,12 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Twig;
 
-use Cicada\Core\Checkout\Document\Event\DocumentTemplateRendererParameterEvent;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
-use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\SalesChannelRequest;
-use Cicada\Core\Test\Generator;
-use Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader;
 use Cicada\Storefront\Theme\Twig\ThemeInheritanceBuilderInterface;
 use Cicada\Storefront\Theme\Twig\ThemeNamespaceHierarchyBuilder;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
@@ -31,9 +26,8 @@ class ThemeNamespaceHierarchyBuilderTest extends TestCase
     protected function setUp(): void
     {
         $connectionMock = $this->createMock(Connection::class);
-        $cachedThemeLoader = new DatabaseSalesChannelThemeLoader($connectionMock);
 
-        $this->builder = new ThemeNamespaceHierarchyBuilder(new TestInheritanceBuilder(), $cachedThemeLoader);
+        $this->builder = new ThemeNamespaceHierarchyBuilder(new TestInheritanceBuilder());
     }
 
     public function testThemeNamespaceHierarchyBuilderSubscribesToRequestAndExceptionEvents(): void
@@ -43,7 +37,6 @@ class ThemeNamespaceHierarchyBuilderTest extends TestCase
         static::assertEquals([
             KernelEvents::REQUEST,
             KernelEvents::EXCEPTION,
-            DocumentTemplateRendererParameterEvent::class,
         ], array_keys($events));
     }
 
@@ -67,40 +60,6 @@ class ThemeNamespaceHierarchyBuilderTest extends TestCase
             'Storefront' => true,
             'TestTheme' => true,
         ], $this->builder);
-    }
-
-    /**
-     * @param array<string, mixed> $parameters
-     * @param array<string, bool> $expectedThemes
-     */
-    #[DataProvider('onRenderingDocumentProvider')]
-    public function testOnRenderingDocument(array $parameters, array $expectedThemes, ?string $usingTheme): void
-    {
-        $request = Request::createFromGlobals();
-        $event = new DocumentTemplateRendererParameterEvent($parameters);
-
-        $expectedDB = [
-            'themeName' => $usingTheme,
-            'parentThemeName' => null,
-            'themeId' => Uuid::randomHex(),
-        ];
-        $connectionMock = $this->createMock(Connection::class);
-        if (\array_key_exists('context', $parameters)) {
-            $connectionMock->expects(static::exactly(1))->method('fetchAssociative')->willReturn($expectedDB);
-        }
-        $cachedThemeLoader = new DatabaseSalesChannelThemeLoader($connectionMock);
-
-        $builder = new ThemeNamespaceHierarchyBuilder(new TestInheritanceBuilder(), $cachedThemeLoader);
-
-        $builder->onDocumentRendering($event);
-
-        $this->assertThemes($expectedThemes, $builder);
-
-        $builder = new ThemeNamespaceHierarchyBuilder(new TestInheritanceBuilder(), $cachedThemeLoader);
-
-        $builder->requestEvent(new ExceptionEvent($this->createMock(HttpKernelInterface::class), $request, HttpKernelInterface::MAIN_REQUEST, new \RuntimeException()));
-
-        $this->assertThemes([], $builder);
     }
 
     public function testRequestEventWithExceptionEvent(): void
@@ -167,39 +126,6 @@ class ThemeNamespaceHierarchyBuilderTest extends TestCase
             'Storefront' => true,
             'TestTheme' => true,
         ], $hierarchy);
-    }
-
-    /**
-     * @return iterable<string, array<mixed>>
-     */
-    public static function onRenderingDocumentProvider(): iterable
-    {
-        $context = Generator::createSalesChannelContext();
-
-        yield 'no theme is using' => [
-            [
-                'context' => $context,
-            ],
-            [],
-            null,
-        ];
-
-        yield 'no context in parameters' => [
-            [],
-            [],
-            'SwagTheme',
-        ];
-
-        yield 'theme is using' => [
-            [
-                'context' => $context,
-            ],
-            [
-                'SwagTheme' => true,
-                'Storefront' => true,
-            ],
-            'SwagTheme',
-        ];
     }
 
     /**

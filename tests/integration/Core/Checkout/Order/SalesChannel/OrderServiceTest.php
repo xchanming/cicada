@@ -21,9 +21,6 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -121,61 +118,6 @@ class OrderServiceTest extends TestCase
         static::assertSame('shipped', $updatedDeliveryState);
     }
 
-    public function testOrderDeliveryStateTransitionSendsMail(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $orderId = $this->performOrder();
-
-        // getting the id of the order delivery
-        $criteria = new Criteria([$orderId]);
-
-        $criteria->addAssociations([
-            'stateMachineState',
-            'deliveries.stateMachineState',
-            'deliveries.shippingOrderAddress',
-        ]);
-
-        /** @var OrderEntity $order */
-        $order = $this->orderRepository->search($criteria, $this->salesChannelContext->getContext())->first();
-        $deliveries = $order->getDeliveries();
-        static::assertNotNull($deliveries);
-        $delivery = $deliveries->first();
-        static::assertNotNull($delivery);
-        $orderDeliveryId = $delivery->getId();
-
-        $domain = 'http://cicada.' . Uuid::randomHex();
-        $this->setDomainForSalesChannel($domain, Defaults::LANGUAGE_SYSTEM);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $url = $domain . '/account/order/' . $order->getDeepLinkCode();
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit, $url): void {
-            $phpunit->assertStringContainsString('The new status is as follows: Cancelled.', $event->getContents()['text/html']);
-            $phpunit->assertStringContainsString($url, $event->getContents()['text/html']);
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->orderDeliveryStateTransition(
-            $orderDeliveryId,
-            'cancel',
-            new RequestDataBag(),
-            $this->salesChannelContext->getContext()
-        );
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
-    }
-
     public function testSkipOrderDeliveryStateTransitionSendsMail(): void
     {
         if (!static::getContainer()->has(AccountOrderController::class)) {
@@ -219,7 +161,7 @@ class OrderServiceTest extends TestCase
 
         $this->salesChannelContext
             ->getContext()
-            ->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(true, [], []));
+            ->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(true, []));
 
         $this->orderService->orderDeliveryStateTransition(
             $orderDeliveryId,
@@ -231,74 +173,6 @@ class OrderServiceTest extends TestCase
         $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
 
         static::assertFalse($eventDidRun, 'The mail.sent Event did run');
-    }
-
-    public function testOrderDeliveryStateTransitionSendsMailDe(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $contextFactory = static::getContainer()->get(SalesChannelContextFactory::class);
-        $previousContext = $this->salesChannelContext;
-        $this->salesChannelContext = $contextFactory->create(
-            '',
-            TestDefaults::SALES_CHANNEL,
-            [
-                SalesChannelContextService::CUSTOMER_ID => $this->createCustomer('Jon'),
-                SalesChannelContextService::LANGUAGE_ID => $this->getDeDeLanguageId(),
-            ]
-        );
-        $orderId = $this->performOrder();
-
-        // getting the id of the order delivery
-        $criteria = new Criteria([$orderId]);
-
-        $criteria->addAssociations([
-            'stateMachineState',
-            'deliveries.stateMachineState',
-            'deliveries.shippingOrderAddress',
-        ]);
-
-        /** @var OrderEntity $order */
-        $order = $this->orderRepository->search($criteria, $this->salesChannelContext->getContext())->first();
-        static::assertNotNull($deliveries = $order->getDeliveries());
-        static::assertNotNull($delivery = $deliveries->first());
-        $orderDeliveryId = $delivery->getId();
-
-        $domain = 'http://cicada.' . Uuid::randomHex();
-        $this->setDomainForSalesChannel($domain, $this->getDeDeLanguageId());
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $url = $domain . '/account/order/' . $order->getDeepLinkCode();
-        $eventDidRun = false;
-        $innerEvent = null;
-
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, &$innerEvent): void {
-            $innerEvent = $event;
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->orderDeliveryStateTransition(
-            $orderDeliveryId,
-            'cancel',
-            new RequestDataBag(),
-            Context::createDefaultContext() // DefaultContext is intended to test if the language of the order is used
-        );
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertNotNull($innerEvent);
-        static::assertStringContainsString('Die Bestellung hat jetzt den Lieferstatus: Abgebrochen.', $innerEvent->getContents()['text/html']);
-        static::assertStringContainsString($url, $innerEvent->getContents()['text/html']);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
-        $this->salesChannelContext = $previousContext;
     }
 
     public function testOrderTransactionStateTransition(): void
@@ -331,58 +205,6 @@ class OrderServiceTest extends TestCase
         $updatedTransactionState = $transaction->getStateMachineState()->getTechnicalName();
 
         static::assertSame('reminded', $updatedTransactionState);
-    }
-
-    public function testOrderTransactionStateTransitionSendsMail(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $orderId = $this->performOrder();
-
-        // getting the id of the order transaction
-        $criteria = new Criteria([$orderId]);
-
-        $criteria->addAssociations([
-            'stateMachineState',
-            'transactions.stateMachineState',
-        ]);
-
-        /** @var OrderEntity $order */
-        $order = $this->orderRepository->search($criteria, $this->salesChannelContext->getContext())->first();
-        static::assertNotNull($transactions = $order->getTransactions());
-        static::assertNotNull($transaction = $transactions->first());
-        $orderTransactionId = $transaction->getId();
-
-        $domain = 'http://cicada.' . Uuid::randomHex();
-        $this->setDomainForSalesChannel($domain, Defaults::LANGUAGE_SYSTEM);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $url = $domain . '/account/order/' . $order->getDeepLinkCode();
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit, $url): void {
-            $phpunit->assertStringContainsString('The new status is as follows: Paid (partially).', $event->getContents()['text/html']);
-            $phpunit->assertStringContainsString($url, $event->getContents()['text/html']);
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->orderTransactionStateTransition(
-            $orderTransactionId,
-            'pay_partially',
-            new RequestDataBag(),
-            $this->salesChannelContext->getContext()
-        );
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
     }
 
     public function testSkipOrderTransactionStateTransitionSendsMail(): void
@@ -427,7 +249,7 @@ class OrderServiceTest extends TestCase
 
         $this->salesChannelContext
             ->getContext()
-            ->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(true, [], []));
+            ->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(true, []));
 
         $this->orderService->orderTransactionStateTransition(
             $orderTransactionId,
@@ -494,36 +316,6 @@ class OrderServiceTest extends TestCase
         static::assertSame($vatIds, $orderCustomer->getVatIds());
     }
 
-    public function testCreateOrderSendsMail(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $data = new RequestDataBag(['tos' => true]);
-        $this->fillCart($this->salesChannelContext->getToken());
-
-        $domain = 'http://cicada.' . Uuid::randomHex();
-        $this->setDomainForSalesChannel($domain, Defaults::LANGUAGE_SYSTEM);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $eventDidRun = false;
-        $listenerClosure = function () use (&$eventDidRun): void {
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->createOrder($data, $this->salesChannelContext);
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
-    }
-
     public function testOrderStateTransition(): void
     {
         $orderId = $this->performOrder();
@@ -540,130 +332,6 @@ class OrderServiceTest extends TestCase
 
         static::assertNotNull($state);
         static::assertSame('cancelled', $state->getTechnicalName());
-    }
-
-    public function testOrderStateTransitionSendsMail(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $orderId = $this->performOrder();
-
-        $domain = 'http://cicada.' . Uuid::randomHex();
-        $this->setDomainForSalesChannel($domain, Defaults::LANGUAGE_SYSTEM);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $criteria = new Criteria([$orderId]);
-
-        $criteria->addAssociation('stateMachineState');
-
-        /** @var OrderEntity $order */
-        $order = $this->orderRepository->search($criteria, $this->salesChannelContext->getContext())->first();
-
-        $url = $domain . '/account/order/' . $order->getDeepLinkCode();
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit, $url): void {
-            $phpunit->assertStringContainsString('The new status is as follows: Cancelled.', $event->getContents()['text/html']);
-            $phpunit->assertStringContainsString($url, $event->getContents()['text/html']);
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->orderStateTransition($orderId, 'cancel', new ParameterBag(), $this->salesChannelContext->getContext());
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
-    }
-
-    public function testMailTemplateHasCorrectDomain(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $data = new RequestDataBag(['tos' => true]);
-        $this->fillCart($this->salesChannelContext->getToken());
-
-        $firstDomain = 'http://cicada.first-domain';
-        $this->setDomainForSalesChannel($firstDomain, Defaults::LANGUAGE_SYSTEM);
-
-        /** @var EntityRepository $languageRepository */
-        $languageRepository = static::getContainer()->get('language.repository');
-
-        $criteria = new Criteria();
-        $criteria->addFilter(
-            new NotFilter(
-                NotFilter::CONNECTION_AND,
-                [
-                    new EqualsFilter('id', Defaults::LANGUAGE_SYSTEM),
-                ]
-            )
-        );
-
-        $languageId = $languageRepository->searchIds($criteria, $this->salesChannelContext->getContext())->firstId();
-        static::assertNotNull($languageId);
-        $secondDomain = 'http://cicada.second-domain';
-        $this->setDomainForSalesChannel($secondDomain, $languageId);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit, $firstDomain, $secondDomain): void {
-            $phpunit->assertStringContainsString($firstDomain, $event->getContents()['text/html']);
-            $phpunit->assertThat($event->getContents()['text/html'], $this->logicalNot($this->stringContains($secondDomain)));
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->createOrder($data, $this->salesChannelContext);
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
-    }
-
-    public function testMailTemplateHandlesVirtualDomains(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $data = new RequestDataBag(['tos' => true]);
-        $this->fillCart($this->salesChannelContext->getToken());
-
-        $domain = 'http://cicada.test/virtual-domain';
-        $this->setDomainForSalesChannel($domain, Defaults::LANGUAGE_SYSTEM);
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $url = $domain . '/account/order';
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit, $url): void {
-            $phpunit->assertStringContainsString($url, $event->getContents()['text/html']);
-            $eventDidRun = true;
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $this->orderService->createOrder($data, $this->salesChannelContext);
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
     }
 
     private function performOrder(): string
@@ -702,11 +370,6 @@ class OrderServiceTest extends TestCase
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $customer = array_merge_recursive($customer, $options);
 
         static::getContainer()->get('customer.repository')->create([$customer], Context::createDefaultContext());

@@ -10,7 +10,6 @@ use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupSorterInterface;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\LineItemFactoryInterface;
 use Cicada\Core\Checkout\Cart\TaxProvider\AbstractTaxProvider;
 use Cicada\Core\Checkout\Customer\Password\LegacyEncoder\LegacyEncoderInterface;
-use Cicada\Core\Checkout\Document\Renderer\AbstractDocumentRenderer;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\AbstractPaymentHandler;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterPickerInterface;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterSorterInterface;
@@ -98,10 +97,6 @@ class AutoconfigureCompilerPass implements CompilerPassInterface
         $container
             ->registerForAutoconfiguration(ExceptionHandlerInterface::class)
             ->addTag('cicada.dal.exception_handler');
-
-        $container
-            ->registerForAutoconfiguration(AbstractDocumentRenderer::class)
-            ->addTag('document.renderer');
 
         $container
             ->registerForAutoconfiguration(AbstractPaymentHandler::class)

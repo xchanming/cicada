@@ -215,16 +215,6 @@ framework:
             log_level: notice
         Cicada\Core\Content\Seo\Exception\InvalidTemplateException:
             log_level: notice
-        Cicada\Core\Checkout\Document\Exception\InvalidDocumentException:
-            log_level: notice
-        Cicada\Core\Checkout\Document\Exception\DocumentGenerationException:
-            log_level: notice
-        Cicada\Core\Checkout\Document\Exception\DocumentNumberAlreadyExistsException:
-            log_level: notice
-        Cicada\Core\Checkout\Document\Exception\InvalidDocumentRendererException:
-            log_level: notice
-        Cicada\Core\Checkout\Document\Exception\InvalidFileGeneratorTypeException:
-            log_level: notice
         Cicada\Core\Content\Product\Exception\VariantNotFoundException:
             log_level: notice
         Cicada\Core\Framework\DataAbstractionLayer\Exception\EntityRepositoryNotFoundException:

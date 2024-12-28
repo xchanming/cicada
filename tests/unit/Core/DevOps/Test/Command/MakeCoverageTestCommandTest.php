@@ -3,7 +3,6 @@
 namespace Cicada\Tests\Unit\Core\DevOps\Test\Command;
 
 use Cicada\Core\Checkout\Cart\Event\CheckoutOrderPlacedEvent;
-use Cicada\Core\Checkout\Document\Struct\DocumentGenerateOperation;
 use Cicada\Core\Content\Cms\Subscriber\UnusedMediaSubscriber;
 use Cicada\Core\Content\Product\ProductCollection;
 use Cicada\Core\Content\Product\ProductDefinition;
@@ -96,7 +95,6 @@ class MakeCoverageTestCommandTest extends TestCase
                 ProductCollection::class, // code coverage ignore because its a collection, mentioned in phpunit.xml.dist
                 ProductDefinition::class, // code coverage ignore because its a definition, mentioned in phpunit.xml.dist
                 ProductEntity::class, // code coverage ignore because its an entity, mentioned in phpunit.xml.dist
-                DocumentGenerateOperation::class, // code coverage ignore because its a struct, mentioned in phpunit.xml.dist
                 StringField::class, // code coverage ignore because its a field, mentioned in phpunit.xml.dist
                 CheckoutOrderPlacedEvent::class, // code coverage ignore because its a field, mentioned in phpunit.xml.dist
                 'src/Core/Framework/Adapter/Twig/functions.php', // code coverage ignore because its a excluded file, mentioned in phpunit.xml.dist

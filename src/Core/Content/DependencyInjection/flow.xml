@@ -88,13 +88,6 @@
             <tag name="flow.action" priority="500" key="action.mail.send"/>
         </service>
 
-        <service id="Cicada\Core\Content\Flow\Dispatching\Action\GenerateDocumentAction">
-            <argument type="service" id="Cicada\Core\Checkout\Document\Service\DocumentGenerator"/>
-            <argument type="service" id="logger"/>
-
-            <tag name="flow.action" priority="620" key="action.generate.document" />
-        </service>
-
         <service id="Cicada\Core\Content\Flow\Dispatching\Action\SetOrderStateAction">
             <argument type="service" id="Doctrine\DBAL\Connection"/>
             <argument type="service" id="Cicada\Core\Checkout\Order\SalesChannel\OrderService"/>
@@ -283,14 +276,6 @@
         </service>
 
         <service id="Cicada\Core\Content\Flow\Rule\OrderCustomFieldRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Content\Flow\Rule\OrderDocumentTypeRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Content\Flow\Rule\OrderDocumentTypeSentRule">
             <tag name="cicada.rule.definition"/>
         </service>
 

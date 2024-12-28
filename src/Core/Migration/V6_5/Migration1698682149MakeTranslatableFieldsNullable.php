@@ -55,9 +55,6 @@ class Migration1698682149MakeTranslatableFieldsNullable extends MigrationStep
         'mail_template_type_translation' => [
             'name',
         ],
-        'document_type_translation' => [
-            'name',
-        ],
     ];
 
     public function getCreationTimestamp(): int

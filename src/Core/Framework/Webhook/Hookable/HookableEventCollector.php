@@ -4,7 +4,6 @@ namespace Cicada\Core\Framework\Webhook\Hookable;
 
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressDefinition;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
-use Cicada\Core\Checkout\Document\DocumentDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressDefinition;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Content\Category\CategoryDefinition;
@@ -37,7 +36,6 @@ class HookableEventCollector
         CustomerAddressDefinition::ENTITY_NAME,
         OrderDefinition::ENTITY_NAME,
         OrderAddressDefinition::ENTITY_NAME,
-        DocumentDefinition::ENTITY_NAME,
         MediaDefinition::ENTITY_NAME,
     ];
 

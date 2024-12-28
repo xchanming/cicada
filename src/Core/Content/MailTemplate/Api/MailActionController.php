@@ -3,8 +3,6 @@
 namespace Cicada\Core\Content\MailTemplate\Api;
 
 use Cicada\Core\Content\Mail\Service\AbstractMailService;
-use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
-use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Content\MailTemplate\MailTemplateException;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Adapter\Twig\StringTemplateRenderer;
@@ -43,16 +41,7 @@ class MailActionController extends AbstractController
         $mailTemplateData = $data['mailTemplateData'] ?? [];
         $extension = new MailSendSubscriberConfig(
             false,
-            $data['documentIds'] ?? [],
             $data['mediaIds'] ?? [],
-        );
-
-        $data['attachmentsConfig'] = new MailAttachmentsConfig(
-            $context,
-            new MailTemplateEntity(),
-            $extension,
-            [],
-            $mailTemplateData['order']['id'] ?? null,
         );
 
         $message = $this->mailService->send($data, $context, $mailTemplateData);

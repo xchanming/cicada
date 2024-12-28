@@ -268,14 +268,6 @@
             </call>
         </service>
 
-        <service id="Cicada\Storefront\Controller\DocumentController" public="true">
-            <argument type="service" id="Cicada\Core\Checkout\Document\SalesChannel\DocumentRoute"/>
-
-            <call method="setContainer">
-                <argument type="service" id="service_container"/>
-            </call>
-        </service>
-
         <service id="Cicada\Storefront\Controller\DownloadController" public="true">
             <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\DownloadRoute"/>
 

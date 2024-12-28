@@ -9,11 +9,6 @@ use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroupTranslation\CustomerGro
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerRecovery\CustomerRecoveryDefinition;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerTag\CustomerTagDefinition;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
-use Cicada\Core\Checkout\Document\Aggregate\DocumentBaseConfig\DocumentBaseConfigDefinition;
-use Cicada\Core\Checkout\Document\Aggregate\DocumentBaseConfigSalesChannel\DocumentBaseConfigSalesChannelDefinition;
-use Cicada\Core\Checkout\Document\Aggregate\DocumentType\DocumentTypeDefinition;
-use Cicada\Core\Checkout\Document\Aggregate\DocumentTypeTranslation\DocumentTypeTranslationDefinition;
-use Cicada\Core\Checkout\Document\DocumentDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderAddress\OrderAddressDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerDefinition;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryDefinition;
@@ -162,7 +157,6 @@ class PermissionCategorization
     private const CATEGORY_CMS = 'cms';
     private const CATEGORY_CUSTOMER = 'customer';
     private const CATEGORY_CUSTOM_FIELDS = 'custom_fields';
-    private const CATEGORY_DOCUMENTS = 'documents';
     private const CATEGORY_GOOGLE_SHOPPING = 'google_shopping';
     private const CATEGORY_IMPORT_EXPORT = 'import_export';
     private const CATEGORY_MAIL_TEMPLATES = 'mail_templates';
@@ -238,13 +232,6 @@ class PermissionCategorization
             CustomFieldDefinition::ENTITY_NAME,
             CustomFieldSetDefinition::ENTITY_NAME,
             CustomFieldSetRelationDefinition::ENTITY_NAME,
-        ],
-        self::CATEGORY_DOCUMENTS => [
-            DocumentDefinition::ENTITY_NAME,
-            DocumentBaseConfigDefinition::ENTITY_NAME,
-            DocumentBaseConfigSalesChannelDefinition::ENTITY_NAME,
-            DocumentTypeDefinition::ENTITY_NAME,
-            DocumentTypeTranslationDefinition::ENTITY_NAME,
         ],
         self::CATEGORY_GOOGLE_SHOPPING => [
             'swag_google_shopping_account',

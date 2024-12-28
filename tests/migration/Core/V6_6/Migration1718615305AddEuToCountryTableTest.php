@@ -49,19 +49,6 @@ class Migration1718615305AddEuToCountryTableTest extends TestCase
         static::assertEquals('0', $columns[$isEuColumnKey]['Default']);
     }
 
-    public function testEuCountriesAreMarkedAsEu(): void
-    {
-        $this->rollback();
-        $this->executeMigration();
-        $euCountryIsoCodes = $this->connection->executeQuery(
-            'SELECT `iso` FROM `country` WHERE `is_eu` = 1;'
-        )->fetchFirstColumn();
-
-        foreach ($this->getEuCountryCodes() as $euCountryCode) {
-            static::assertContains($euCountryCode, $euCountryIsoCodes);
-        }
-    }
-
     public function executeMigration(): void
     {
         (new Migration1718615305AddEuToCountryTable())->update($this->connection);
@@ -70,41 +57,5 @@ class Migration1718615305AddEuToCountryTableTest extends TestCase
     public function rollback(): void
     {
         $this->connection->executeStatement('ALTER TABLE `country` DROP COLUMN `is_eu`');
-    }
-
-    /**
-     * @return string[]
-     */
-    private function getEuCountryCodes(): array
-    {
-        return [
-            'AT', // Austria
-            'BE', // Belgium
-            'BG', // Bulgaria
-            'CY', // Cyprus
-            'CZ', // Czech Republic
-            'DE', // Germany
-            'DK', // Denmark
-            'EE', // Estonia
-            'ES', // Spain
-            'FI', // Finland
-            'FR', // France
-            'GR', // Greece
-            'HR', // Croatia
-            'HU', // Hungary
-            'IE', // Ireland
-            'IT', // Italy
-            'LT', // Lithuania
-            'LU', // Luxembourg
-            'LV', // Latvia
-            'MT', // Malta
-            'NL', // Netherlands
-            'PL', // Poland
-            'PT', // Portugal
-            'RO', // Romania
-            'SE', // Sweden
-            'SI', // Slovenia
-            'SK', // Slovakia
-        ];
     }
 }

@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Content\Media;
 
-use Cicada\Core\Checkout\Document\Aggregate\DocumentBaseConfig\DocumentBaseConfigCollection;
-use Cicada\Core\Checkout\Document\DocumentCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItemDownload\OrderLineItemDownloadCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
@@ -245,13 +243,6 @@ class MediaEntity extends Entity
     protected ?string $path = null;
 
     /**
-     * @var DocumentBaseConfigCollection|null
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $documentBaseConfigs;
-
-    /**
      * @var ShippingMethodCollection|null
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
@@ -299,13 +290,6 @@ class MediaEntity extends Entity
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
     protected $cmsPages;
-
-    /**
-     * @var DocumentCollection|null
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $documents;
 
     /**
      * @var AppPaymentMethodCollection|null
@@ -637,16 +621,6 @@ class MediaEntity extends Entity
         $this->thumbnailsRo = $thumbnailsRo;
     }
 
-    public function getDocumentBaseConfigs(): ?DocumentBaseConfigCollection
-    {
-        return $this->documentBaseConfigs;
-    }
-
-    public function setDocumentBaseConfigs(DocumentBaseConfigCollection $documentBaseConfigs): void
-    {
-        $this->documentBaseConfigs = $documentBaseConfigs;
-    }
-
     public function getShippingMethods(): ?ShippingMethodCollection
     {
         return $this->shippingMethods;
@@ -737,16 +711,6 @@ class MediaEntity extends Entity
     public function setPrivate(bool $private): void
     {
         $this->private = $private;
-    }
-
-    public function getDocuments(): ?DocumentCollection
-    {
-        return $this->documents;
-    }
-
-    public function setDocuments(DocumentCollection $documents): void
-    {
-        $this->documents = $documents;
     }
 
     public function getAppPaymentMethods(): ?AppPaymentMethodCollection

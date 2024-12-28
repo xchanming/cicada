@@ -4,9 +4,6 @@ namespace Cicada\Core\Content\Mail\Transport;
 
 use Cicada\Core\Content\Mail\Service\Mail;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsBuilder;
-use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
-use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\UnableToRetrieveMetadata;
@@ -25,7 +22,6 @@ class MailerTransportDecorator implements TransportInterface, \Stringable
         private readonly TransportInterface $decorated,
         private readonly MailAttachmentsBuilder $attachmentsBuilder,
         private readonly FilesystemOperator $filesystem,
-        private readonly EntityRepository $documentRepository
     ) {
     }
 
@@ -58,9 +54,7 @@ class MailerTransportDecorator implements TransportInterface, \Stringable
         $attachments = $this->attachmentsBuilder->buildAttachments(
             $config->getContext(),
             $config->getMailTemplate(),
-            $config->getExtension(),
-            $config->getEventConfig(),
-            $config->getOrderId()
+            $config->getExtension()
         );
 
         foreach ($attachments as $attachment) {
@@ -71,32 +65,6 @@ class MailerTransportDecorator implements TransportInterface, \Stringable
             );
         }
 
-        $sentMessage = $this->decorated->send($message, $envelope);
-
-        $this->setDocumentsSent($attachments, $config->getExtension(), $config->getContext());
-        $config->getExtension()->setDocumentIds([]);
-
-        return $sentMessage;
-    }
-
-    /**
-     * @param array<int, array{id?: string, content: string, fileName: string, mimeType: string|null}> $attachments
-     */
-    private function setDocumentsSent(array $attachments, MailSendSubscriberConfig $extension, Context $context): void
-    {
-        $documentAttachments = array_filter($attachments, fn (array $attachment) => \in_array($attachment['id'] ?? null, $extension->getDocumentIds(), true));
-
-        $documentAttachments = array_column($documentAttachments, 'id');
-
-        if (empty($documentAttachments)) {
-            return;
-        }
-
-        $payload = array_map(static fn (string $documentId) => [
-            'id' => $documentId,
-            'sent' => true,
-        ], $documentAttachments);
-
-        $this->documentRepository->update($payload, $context);
+        return $this->decorated->send($message, $envelope);
     }
 }

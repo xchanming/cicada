@@ -4,7 +4,6 @@ namespace Cicada\Core\Content\Mail\Transport;
 
 use Cicada\Core\Content\Mail\MailException;
 use Cicada\Core\Content\Mail\Service\MailAttachmentsBuilder;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Doctrine\DBAL\Exception\DriverException;
@@ -30,7 +29,6 @@ class MailerTransportLoader
         private readonly SystemConfigService $configService,
         private readonly MailAttachmentsBuilder $attachmentsBuilder,
         private readonly FilesystemOperator $filesystem,
-        private readonly EntityRepository $documentRepository
     ) {
     }
 
@@ -68,7 +66,6 @@ class MailerTransportLoader
             $this->create(),
             $this->attachmentsBuilder,
             $this->filesystem,
-            $this->documentRepository
         );
     }
 
@@ -78,7 +75,6 @@ class MailerTransportLoader
             $this->envBasedTransport->fromString($dsn),
             $this->attachmentsBuilder,
             $this->filesystem,
-            $this->documentRepository
         );
     }
 

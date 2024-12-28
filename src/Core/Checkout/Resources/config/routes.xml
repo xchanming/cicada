@@ -8,7 +8,6 @@
     <import resource="../../Payment/**/*Controller.php" type="attribute" />
     <import resource="../../Cart/SalesChannel/**/*Controller.php" type="attribute" />
     <import resource="../../Customer/SalesChannel/**/*Controller.php" type="attribute" />
-    <import resource="../../Document/**/*Controller.php" type="attribute" />
     <import resource="../../Promotion/**/*Controller.php" type="attribute" />
     <import resource="../../Order/Api/**/*Controller.php" type="attribute" />
     <import resource="../../Customer/SalesChannel/**/*Route.php" type="attribute" />
@@ -18,6 +17,5 @@
     <import resource="../../Customer/SalesChannel/**/*Route.php" type="attribute" />
     <import resource="../../Order/SalesChannel/**/*Route.php" type="attribute" />
     <import resource="../../Cart/SalesChannel/**/*Route.php" type="attribute" />
-    <import resource="../../Document/SalesChannel/**/*Route.php" type="attribute" />
     <import resource="../../Gateway/SalesChannel/**/*Route.php" type="attribute" />
 </routes>

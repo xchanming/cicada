@@ -79,7 +79,7 @@ class SendMailAction extends FlowAction implements DelayableAction
     {
         $extension = $flow->getContext()->getExtension(self::MAIL_CONFIG_EXTENSION);
         if (!$extension instanceof MailSendSubscriberConfig) {
-            $extension = new MailSendSubscriberConfig(false, [], []);
+            $extension = new MailSendSubscriberConfig(false, []);
         }
 
         if ($extension->skip()) {

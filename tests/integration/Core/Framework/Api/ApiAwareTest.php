@@ -7,7 +7,6 @@ use Cicada\Administration\Snippet\AppAdministrationSnippetDefinition;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
@@ -116,16 +115,6 @@ class ApiAwareTest extends TestCase
                     'app_administration_snippet.localeId',
                     'app_administration_snippet.createdAt',
                     'app_administration_snippet.updatedAt',
-                ]
-            );
-        }
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $expected = array_merge(
-                $expected,
-                [
-                    'customer.defaultPaymentMethodId',
-                    'customer.defaultPaymentMethod',
                 ]
             );
         }

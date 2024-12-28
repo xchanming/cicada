@@ -262,7 +262,7 @@ class AppLifecycleTest extends TestCase
 
     public function testInstallWithSystemDefaultLanguageNotProvidedByApp(): void
     {
-        $this->setNewSystemLanguage('nl-NL');
+        $this->setNewSystemLanguage('zh-CN');
         $this->setNewSystemLanguage('en-GB');
         $manifest = Manifest::createFromXmlFile(__DIR__ . '/../Manifest/_fixtures/test/manifest.xml');
 
@@ -2093,10 +2093,9 @@ class AppLifecycleTest extends TestCase
         static::getContainer()->get(Connection::class)->insert('user', [
             'id' => Uuid::fromHexToBytes($userId),
             'name' => 'test',
-            'last_name' => '',
             'email' => 'test@example.com',
             'username' => 'userTest',
-            'password' => password_hash('123456', \PASSWORD_BCRYPT),
+            'password' => password_hash('12345678', \PASSWORD_BCRYPT),
             'locale_id' => Uuid::fromHexToBytes($this->getLocaleIdOfSystemLanguage()),
             'active' => 1,
             'admin' => 1,

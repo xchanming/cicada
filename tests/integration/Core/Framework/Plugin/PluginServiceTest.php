@@ -44,7 +44,7 @@ class PluginServiceTest extends TestCase
 
     private Context $context;
 
-    private string $iso = 'nl-NL';
+    private string $iso = 'en-US';
 
     private string $fixturePath;
 

@@ -52,14 +52,14 @@ class Migration1638514913RemovedUnusedVarsInMailTemplates extends MigrationStep
         $update = new MailSubjectUpdate(
             MailTemplateTypes::MAILTYPE_USER_RECOVERY_REQUEST,
             null,
-            'Password-Wiederherstellung'
+            '密码恢复'
         );
         $this->updateDeMailSubject($connection, $update);
 
         $update = new MailSubjectUpdate(
             MailTemplateTypes::MAILTYPE_CUSTOMER_RECOVERY_REQUEST,
             null,
-            'Password-Wiederherstellung'
+            '密码恢复'
         );
         $this->updateDeMailSubject($connection, $update);
     }

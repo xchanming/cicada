@@ -4,7 +4,6 @@ namespace Cicada\Core\Migration\V6_6;
 
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
-use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
 /**
@@ -25,48 +24,6 @@ class Migration1718615305AddEuToCountryTable extends MigrationStep
             ALTER TABLE `country`
             ADD COLUMN `is_eu` BOOLEAN NOT NULL DEFAULT 0;
             SQL,
-        );
-
-        $connection->executeStatement(
-            <<<SQL
-            UPDATE `country`
-            SET `is_eu` = 1
-            WHERE `iso` IN (:euCountryIsoCodes);
-            SQL,
-            [
-                'euCountryIsoCodes' => [
-                    'AT', // Austria
-                    'BE', // Belgium
-                    'BG', // Bulgaria
-                    'CY', // Cyprus
-                    'CZ', // Czech Republic
-                    'DE', // Germany
-                    'DK', // Denmark
-                    'EE', // Estonia
-                    'ES', // Spain
-                    'FI', // Finland
-                    'FR', // France
-                    'GR', // Greece
-                    'HR', // Croatia
-                    'HU', // Hungary
-                    'IE', // Ireland
-                    'IT', // Italy
-                    'LT', // Lithuania
-                    'LU', // Luxembourg
-                    'LV', // Latvia
-                    'MT', // Malta
-                    'NL', // Netherlands
-                    'PL', // Poland
-                    'PT', // Portugal
-                    'RO', // Romania
-                    'SE', // Sweden
-                    'SI', // Slovenia
-                    'SK', // Slovakia
-                ],
-            ],
-            [
-                'euCountryIsoCodes' => ArrayParameterType::STRING,
-            ],
         );
     }
 

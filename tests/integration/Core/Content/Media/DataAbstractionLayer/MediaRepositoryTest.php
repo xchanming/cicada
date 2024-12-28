@@ -7,8 +7,6 @@ use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
-use Cicada\Core\Checkout\Document\DocumentCollection;
-use Cicada\Core\Checkout\Document\DocumentEntity;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Checkout\Order\OrderCollection;
@@ -24,7 +22,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\Validation\RestrictDeleteViolationException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -54,11 +51,6 @@ class MediaRepositoryTest extends TestCase
     private EntityRepository $mediaRepository;
 
     /**
-     * @var EntityRepository<DocumentCollection>
-     */
-    private EntityRepository $documentRepository;
-
-    /**
      * @var EntityRepository<OrderCollection>
      */
     private EntityRepository $orderRepository;
@@ -68,7 +60,6 @@ class MediaRepositoryTest extends TestCase
     protected function setUp(): void
     {
         $this->mediaRepository = static::getContainer()->get('media.repository');
-        $this->documentRepository = static::getContainer()->get('document.repository');
         $this->orderRepository = static::getContainer()->get('order.repository');
         $this->context = Context::createDefaultContext();
     }
@@ -148,87 +139,6 @@ class MediaRepositoryTest extends TestCase
 
         // after deleting the entity, the file should be deleted too
         static::assertFalse($fileSystem->has($path));
-    }
-
-    public function testPrivateMediaReadableThroughAssociation(): void
-    {
-        $documentId = Uuid::randomHex();
-        $documentTypeId = Uuid::randomHex();
-        $mediaId = Uuid::randomHex();
-        $orderId = Uuid::randomHex();
-        $folderId = Uuid::randomHex();
-        $configId = Uuid::randomHex();
-
-        $this->documentRepository->create(
-            [
-                [
-                    'documentType' => [
-                        'id' => $documentTypeId,
-                        'technicalName' => 'testType',
-                        'name' => 'test',
-                    ],
-                    'id' => $documentId,
-                    'order' => $this->getOrderData($orderId),
-                    'fileType' => 'pdf',
-                    'config' => [],
-                    'deepLinkCode' => 'deeplink',
-
-                    'documentMediaFile' => [
-                        'thumbnails' => [
-                            [
-                                'id' => Uuid::randomHex(),
-                                'width' => 100,
-                                'height' => 200,
-                                'highDpi' => true,
-                            ],
-                        ],
-                        'mediaFolder' => [
-                            'id' => $folderId,
-                            'name' => 'testFolder',
-                            'configuration' => [
-                                'id' => $configId,
-                                'private' => true,
-                            ],
-                        ],
-
-                        'id' => $mediaId,
-                        'name' => 'test media',
-                        'mimeType' => 'image/png',
-                        'fileExtension' => 'png',
-                        'fileName' => $mediaId . '-' . (new \DateTime())->getTimestamp(),
-                        'private' => true,
-                    ],
-                ],
-            ],
-            $this->context
-        );
-        $mediaRepository = $this->mediaRepository;
-        $media = $this->context->scope(Context::USER_SCOPE, fn (Context $context) => $mediaRepository->search(new Criteria([$mediaId]), $context));
-
-        static::assertInstanceOf(EntitySearchResult::class, $media);
-        static::assertCount(0, $media);
-
-        $documentRepository = $this->documentRepository;
-        $document = null;
-        $this->context->scope(Context::USER_SCOPE, function (Context $context) use (&$document, $documentId, $documentRepository): void {
-            $criteria = new Criteria([$documentId]);
-            $criteria->addAssociation('documentMediaFile');
-            $document = $documentRepository->search($criteria, $context);
-        });
-        static::assertNotNull($document);
-        static::assertCount(1, $document);
-        $document = $document->get($documentId);
-        static::assertInstanceOf(DocumentEntity::class, $document);
-        $media = $document->getDocumentMediaFile();
-        static::assertInstanceOf(MediaEntity::class, $media);
-        static::assertSame($mediaId, $media->getId());
-        static::assertSame('', $media->getUrl());
-        // currently there shouldn't be loaded any thumbnails for private media, but if, the urls should be blank
-        $thumbnails = $media->getThumbnails();
-        static::assertNotNull($thumbnails);
-        foreach ($thumbnails as $thumbnail) {
-            static::assertSame('', $thumbnail->getUrl());
-        }
     }
 
     public function testPublicMediaIsReadable(): void

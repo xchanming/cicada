@@ -300,8 +300,6 @@
         <!-- Twig -->
         <service id="Cicada\Storefront\Theme\Twig\ThemeNamespaceHierarchyBuilder">
             <argument type="service" id="Cicada\Storefront\Theme\Twig\ThemeInheritanceBuilderInterface"/>
-            <argument type="service" id="Cicada\Storefront\Theme\DatabaseSalesChannelThemeLoader"/>
-
             <tag name="kernel.event_subscriber" />
             <tag name="kernel.reset" method="reset"/>
 

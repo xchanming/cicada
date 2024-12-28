@@ -170,8 +170,8 @@ class ExtensionLoaderTest extends TestCase
         );
 
         static::assertEquals([
-            'German',
             'British English',
+            'Chinese',
         ], $extensions->first()?->getLanguages());
 
         static::assertSame($installedApp->getUpdatedAt(), $extensions->first()?->getUpdatedAt());

@@ -29,8 +29,8 @@ class MigrationForeignDefaultLanguageTest extends TestCase
     use MigrationUntouchedDbTestTrait;
 
     /**
-     * No en-GB as language, de-LI as Default language and zh-CN as second language
-     * All en-GB contents should be written in de-LI and de-De contents will be written in zh-CN
+     * No en-GB as language, zh-CN as Default language and zh-CN as second language
+     * All en-GB contents should be written in en-US contents will be written in zh-CN
      */
     public function testMigrationWithoutEnGb(): void
     {
@@ -49,20 +49,20 @@ class MigrationForeignDefaultLanguageTest extends TestCase
             }
 
             if ($this->isBasicDataMigration($_className)) {
-                $deLiLocale = $connection->fetchAssociative(
+                $enUsLocale = $connection->fetchAssociative(
                     'SELECT * FROM `locale` WHERE `code` = :code',
                     [
-                        'code' => 'de-LI',
+                        'code' => 'en-US',
                     ]
                 );
-                static::assertIsArray($deLiLocale);
+                static::assertIsArray($enUsLocale);
 
                 $connection->update(
                     'language',
                     [
                         'name' => 'ForeignLang',
-                        'locale_id' => $deLiLocale['id'],
-                        'translation_code_id' => $deLiLocale['id'],
+                        'locale_id' => $enUsLocale['id'],
+                        'translation_code_id' => $enUsLocale['id'],
                     ],
                     ['id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)]
                 );
@@ -87,33 +87,33 @@ class MigrationForeignDefaultLanguageTest extends TestCase
         static::assertIsArray($templateDefault);
         static::assertEquals('Password recovery', $templateDefault['subject']);
 
-        $deDeLanguage = $connection->fetchAssociative(
+        $zhCnLanguage = $connection->fetchAssociative(
             'SELECT * FROM `language` WHERE `name` = :name',
             [
-                'name' => 'Deutsch',
+                'name' => '中文',
             ]
         );
-        static::assertIsArray($deDeLanguage);
+        static::assertIsArray($zhCnLanguage);
 
         $templateDeDe = $connection->fetchAssociative(
             'SELECT subject FROM mail_template_translation
                 WHERE subject = :subject AND language_id = :languageId',
             [
-                'subject' => 'Password-Wiederherstellung',
-                'languageId' => $deDeLanguage['id'],
+                'subject' => '密码恢复',
+                'languageId' => $zhCnLanguage['id'],
             ]
         );
 
         static::assertIsArray($templateDeDe);
-        static::assertEquals('Password-Wiederherstellung', $templateDeDe['subject']);
+        static::assertEquals('密码恢复', $templateDeDe['subject']);
 
         $orgConnection->beginTransaction();
     }
 
     /**
-     * No En-GB and no zh-CN as language, de-LI as Default language and de-LU as second language
-     * All en-GV contents should be written in de-LI and zh-CN contents will not be written
-     * de-LI will be left empty
+     * No En-GB and no zh-CN as language, en-US as Default language and de-LU as second language
+     * All en-GV contents should be written in en-US and zh-CN contents will not be written
+     * en-US will be left empty
      */
     public function testMigrationWithoutEnGbOrDe(): void
     {
@@ -124,7 +124,7 @@ class MigrationForeignDefaultLanguageTest extends TestCase
 
         $migrationCollection = $this->collectMigrations();
 
-        $deLuLanguage = [];
+        $enGbLocale = [];
 
         foreach ($migrationCollection->getMigrationSteps() as $_className => $migration) {
             try {
@@ -134,46 +134,46 @@ class MigrationForeignDefaultLanguageTest extends TestCase
             }
 
             if ($this->isBasicDataMigration($_className)) {
-                $deLiLocale = $connection->fetchAssociative(
+                $enUsLocale = $connection->fetchAssociative(
                     'SELECT * FROM `locale` WHERE `code` = :code',
                     [
-                        'code' => 'de-LI',
+                        'code' => 'en-US',
                     ]
                 );
-                static::assertIsArray($deLiLocale);
+                static::assertIsArray($enUsLocale);
                 $connection->update(
                     'language',
                     [
                         'name' => 'ForeignLang',
-                        'locale_id' => $deLiLocale['id'],
-                        'translation_code_id' => $deLiLocale['id'],
+                        'locale_id' => $enUsLocale['id'],
+                        'translation_code_id' => $enUsLocale['id'],
                     ],
                     ['id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)]
                 );
-                $deLuLocale = $connection->fetchAssociative(
+                $enGbLocale = $connection->fetchAssociative(
                     'SELECT * FROM `locale` WHERE `code` = :code',
                     [
-                        'code' => 'de-LU',
+                        'code' => 'en-GB',
                     ]
                 );
-                static::assertIsArray($deLuLocale);
+                static::assertIsArray($enGbLocale);
 
-                $deLuLanguage = $connection->fetchAssociative(
+                $zhCnLanguage = $connection->fetchAssociative(
                     'SELECT * FROM `language` WHERE `name` = :name',
                     [
-                        'name' => 'Deutsch',
+                        'name' => '中文',
                     ]
                 );
-                static::assertIsArray($deLuLanguage);
+                static::assertIsArray($zhCnLanguage);
 
                 $connection->update(
                     'language',
                     [
                         'name' => 'OtherForeignLang',
-                        'locale_id' => $deLuLocale['id'],
-                        'translation_code_id' => $deLuLocale['id'],
+                        'locale_id' => $enGbLocale['id'],
+                        'translation_code_id' => $enGbLocale['id'],
                     ],
-                    ['name' => 'Deutsch']
+                    ['name' => '中文']
                 );
             }
         }
@@ -197,22 +197,22 @@ class MigrationForeignDefaultLanguageTest extends TestCase
         static::assertIsArray($templateDefault);
         static::assertEquals('Password recovery', $templateDefault['subject']);
 
-        $templateDeLu = $connection->fetchAssociative(
+        $templateEnGb = $connection->fetchAssociative(
             'SELECT subject FROM mail_template_translation
                 WHERE subject = :subject AND language_id = :languageId',
             [
                 'subject' => 'Password recovery',
-                'languageId' => $deLuLanguage['id'],
+                'languageId' => $enGbLocale['id'],
             ]
         );
-        static::assertFalse($templateDeLu);
+        static::assertFalse($templateEnGb);
 
         $orgConnection->beginTransaction();
     }
 
     /**
-     * En-GB and zh-CN as language, but de-LI as Default language
-     * All en-GB contents should be written in En-GB and de-LI and zh-CN should be filled with zh-CN contents
+     * En-GB and zh-CN as language, but en-US as Default language
+     * All en-GB contents should be written in En-GB and en-US and zh-CN should be filled with zh-CN contents
      */
     public function testMigrationWithEnGbAndDeButDifferentDefault(): void
     {
@@ -232,19 +232,19 @@ class MigrationForeignDefaultLanguageTest extends TestCase
             }
 
             if ($this->isBasicDataMigration($_className)) {
-                $deLiLocale = $connection->fetchAssociative(
+                $enUsLocale = $connection->fetchAssociative(
                     'SELECT * FROM `locale` WHERE `code` = :code',
                     [
-                        'code' => 'de-LI',
+                        'code' => 'en-US',
                     ]
                 );
-                static::assertIsArray($deLiLocale);
+                static::assertIsArray($enUsLocale);
                 $connection->update(
                     'language',
                     [
                         'name' => 'ForeignLang',
-                        'locale_id' => $deLiLocale['id'],
-                        'translation_code_id' => $deLiLocale['id'],
+                        'locale_id' => $enUsLocale['id'],
+                        'translation_code_id' => $enUsLocale['id'],
                     ],
                     ['id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)]
                 );

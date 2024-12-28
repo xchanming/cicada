@@ -7,14 +7,6 @@ use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
-use Cicada\Core\Checkout\Document\DocumentCollection;
-use Cicada\Core\Checkout\Document\DocumentEntity;
-use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
-use Cicada\Core\Checkout\Document\Renderer\DeliveryNoteRenderer;
-use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
-use Cicada\Core\Checkout\Document\Service\DocumentGenerator;
-use Cicada\Core\Checkout\Document\Struct\DocumentGenerateOperation;
-use Cicada\Core\Checkout\Order\Event\OrderStateMachineStateChangeEvent;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Order\OrderStates;
@@ -30,7 +22,6 @@ use Cicada\Core\Content\MailTemplate\Exception\MailEventConfigurationException;
 use Cicada\Core\Content\MailTemplate\MailTemplateCollection;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
-use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Context;
@@ -41,7 +32,6 @@ use Cicada\Core\Framework\Event\EventData\MailRecipientStruct;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
-use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
@@ -53,7 +43,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Mailer\Transport\TransportInterface;
 use Symfony\Component\Mime\Email;
-use Symfony\Component\Mime\Part\DataPart;
 
 /**
  * @internal
@@ -68,13 +57,6 @@ class SendMailActionTest extends TestCase
      */
     private EntityRepository $orderRepository;
 
-    private Connection $connection;
-
-    /**
-     * @var EntityRepository<DocumentCollection>
-     */
-    private EntityRepository $documentRepository;
-
     /**
      * @var EntityRepository<MailTemplateCollection>
      */
@@ -83,8 +65,6 @@ class SendMailActionTest extends TestCase
     protected function setUp(): void
     {
         $this->orderRepository = static::getContainer()->get('order.repository');
-        $this->connection = static::getContainer()->get(Connection::class);
-        $this->documentRepository = static::getContainer()->get('document.repository');
         $this->mailTemplateRepository = static::getContainer()->get('mail_template.repository');
     }
 
@@ -95,7 +75,6 @@ class SendMailActionTest extends TestCase
     #[DataProvider('sendMailProvider')]
     public function testEmailSend(array $recipients, ?array $documentTypeIds = [], ?bool $hasOrderSettingAttachment = true): void
     {
-        $documentRepository = static::getContainer()->get('document.repository');
         $orderRepository = static::getContainer()->get('order.repository');
 
         $criteria = new Criteria();
@@ -120,22 +99,11 @@ class SendMailActionTest extends TestCase
         $order = $orderRepository->search($criteria, $context->getContext())->first();
         $event = new CheckoutOrderPlacedEvent($context, $order);
 
-        $documentIdOlder = null;
-        $documentIdNewer = null;
-        $documentIds = [];
-
-        if ($documentTypeIds !== null && $documentTypeIds !== [] || $hasOrderSettingAttachment) {
-            $documentIdOlder = $this->createDocumentWithFile($orderId, $context->getContext());
-            $documentIdNewer = $this->createDocumentWithFile($orderId, $context->getContext());
-            $documentIds[] = $documentIdNewer;
-        }
-
         if ($hasOrderSettingAttachment) {
             $event->getContext()->addExtension(
                 SendMailAction::MAIL_CONFIG_EXTENSION,
                 new MailSendSubscriberConfig(
-                    false,
-                    $documentIds,
+                    false
                 )
             );
         }
@@ -144,7 +112,6 @@ class SendMailActionTest extends TestCase
             $this->createMock(TransportInterface::class),
             static::getContainer()->get(MailAttachmentsBuilder::class),
             static::getContainer()->get('cicada.filesystem.public'),
-            static::getContainer()->get('document.repository')
         );
         $mailService = new TestEmailService(static::getContainer()->get(MailFactory::class), $transportDecorator);
         $subscriber = new SendMailAction(
@@ -163,26 +130,6 @@ class SendMailActionTest extends TestCase
         static::getContainer()->get('event_dispatcher')->addListener(FlowSendMailActionEvent::class, static function ($event) use (&$mailFilterEvent): void {
             $mailFilterEvent = $event;
         });
-
-        static::assertIsString($documentIdNewer);
-        static::assertIsString($documentIdOlder);
-        $criteria = new Criteria(array_filter([$documentIdOlder, $documentIdNewer]));
-        $documents = $documentRepository->search($criteria, $context->getContext());
-
-        $newDocument = $documents->get($documentIdNewer);
-        static::assertNotNull($newDocument);
-        static::assertInstanceOf(DocumentEntity::class, $newDocument);
-        static::assertFalse($newDocument->getSent());
-        $newDocumentOrderVersionId = $newDocument->getOrderVersionId();
-
-        $oldDocument = $documents->get($documentIdOlder);
-        static::assertInstanceOf(DocumentEntity::class, $oldDocument);
-        static::assertFalse($oldDocument->getSent());
-        $oldDocumentOrderVersionId = $oldDocument->getOrderVersionId();
-
-        // new version is created
-        static::assertNotEquals($newDocumentOrderVersionId, Defaults::LIVE_VERSION);
-        static::assertNotEquals($oldDocumentOrderVersionId, Defaults::LIVE_VERSION);
 
         $flowFactory = static::getContainer()->get(FlowFactory::class);
         $flow = $flowFactory->create($event);
@@ -211,25 +158,6 @@ class SendMailActionTest extends TestCase
             default:
                 static::assertEquals($mailService->data['recipients'], [$order->getOrderCustomer()?->getEmail() => $order->getOrderCustomer()?->getName()]);
         }
-
-        if ($documentTypeIds !== null && $documentTypeIds !== []) {
-            $criteria = new Criteria(array_filter([$documentIdOlder, $documentIdNewer]));
-            $documents = $documentRepository->search($criteria, $context->getContext());
-
-            $newDocument = $documents->get($documentIdNewer);
-            static::assertNotNull($newDocument);
-            static::assertInstanceOf(DocumentEntity::class, $newDocument);
-            static::assertTrue($newDocument->getSent());
-
-            $oldDocument = $documents->get($documentIdOlder);
-            static::assertNotNull($oldDocument);
-            static::assertInstanceOf(DocumentEntity::class, $oldDocument);
-            static::assertFalse($oldDocument->getSent());
-
-            // new document with new version id, old document with old version id
-            static::assertEquals($newDocumentOrderVersionId, $newDocument->getOrderVersionId());
-            static::assertEquals($oldDocumentOrderVersionId, $oldDocument->getOrderVersionId());
-        }
     }
 
     /**
@@ -247,11 +175,6 @@ class SendMailActionTest extends TestCase
         ]];
         yield 'Test send mail without attachments' => [['type' => 'customer'], []];
         yield 'Test send mail with attachments from order setting' => [['type' => 'customer'], [], true];
-        yield 'Test send mail with attachments from order setting and flow setting ' => [
-            ['type' => 'customer'],
-            [self::getDocIdByType(DeliveryNoteRenderer::TYPE)],
-            true,
-        ];
     }
 
     public function testUpdateMailTemplateTypeWithMailTemplateTypeIdIsNull(): void
@@ -261,7 +184,7 @@ class SendMailActionTest extends TestCase
 
         $context = Context::createDefaultContext();
 
-        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, [], []));
+        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, []));
 
         $mailTemplateId = $this->retrieveMailTemplateId();
 
@@ -323,7 +246,7 @@ class SendMailActionTest extends TestCase
 
         $context = Context::createDefaultContext();
 
-        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, [], []));
+        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, []));
 
         $mailTemplateId = $this->retrieveMailTemplateId();
 
@@ -395,7 +318,7 @@ class SendMailActionTest extends TestCase
 
         $context = Generator::createSalesChannelContext();
 
-        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, [], []));
+        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, []));
 
         $mailTemplateId = $this->retrieveMailTemplateId();
 
@@ -469,7 +392,7 @@ class SendMailActionTest extends TestCase
 
         $context = Context::createDefaultContext();
 
-        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, [], []));
+        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, []));
 
         $mailTemplateId = $this->retrieveMailTemplateId();
 
@@ -594,7 +517,7 @@ class SendMailActionTest extends TestCase
 
         $context = Context::createDefaultContext();
 
-        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, [], []));
+        $context->addExtension(SendMailAction::MAIL_CONFIG_EXTENSION, new MailSendSubscriberConfig(false, []));
 
         $mailTemplateId = $this->retrieveMailTemplateId();
 
@@ -643,98 +566,6 @@ class SendMailActionTest extends TestCase
         static::assertIsObject($mailFilterEvent);
         static::assertEmpty($translator->getSnippetSetId());
         static::assertNotNull($snippetSetId);
-    }
-
-    public function testNumberOfDocumentAttachmentsInCaseFlowSequencesAttachDifferentDocuments(): void
-    {
-        $context = Context::createDefaultContext();
-        $customerId = $this->createCustomer($context);
-        $orderId = $this->createOrder($customerId, $context);
-        $order = $this->orderRepository->search(new Criteria([$orderId]), $context)->getEntities()->first();
-        static::assertInstanceOf(OrderEntity::class, $order);
-
-        $documentTypes = $this->connection->fetchAllAssociative(
-            'SELECT HEX(`id`) AS `id`, `technical_name` FROM document_type WHERE `technical_name` IN (:type1, :type2);',
-            [
-                'type1' => InvoiceRenderer::TYPE,
-                'type2' => DeliveryNoteRenderer::TYPE,
-            ]
-        );
-        static::assertCount(2, $documentTypes);
-
-        foreach ($documentTypes as $index => $documentType) {
-            $generatedDocumentId = $this->createDocumentWithFile($orderId, $context, $documentType['technical_name']);
-            $documentTypes[$index]['documentId'] = $generatedDocumentId;
-
-            $criteria = new Criteria([$generatedDocumentId]);
-            $criteria->addAssociation('documentMediaFile');
-            $document = $this->documentRepository->search($criteria, $context)->getEntities()->first();
-            static::assertInstanceOf(DocumentEntity::class, $document);
-
-            $documentMediaFile = $document->getDocumentMediaFile();
-            static::assertInstanceOf(MediaEntity::class, $documentMediaFile);
-            $documentTypes[$index]['filename'] = $documentMediaFile->getFileName() . '.' . $documentMediaFile->getFileExtension();
-        }
-
-        $mailTemplateId = $this->retrieveMailTemplateId();
-
-        $context->addExtension(
-            SendMailAction::MAIL_CONFIG_EXTENSION,
-            new MailSendSubscriberConfig(
-                false,
-                [],
-                []
-            )
-        );
-
-        $event = new OrderStateMachineStateChangeEvent('state_enter.order.state.in_progress', $order, $context);
-        $flowFactory = static::getContainer()->get(FlowFactory::class);
-        $flow = $flowFactory->create($event);
-
-        $sequencesConfig = $this->createFlowSequencesConfig($mailTemplateId, $documentTypes);
-
-        foreach ($sequencesConfig as $config) {
-            $flow->setConfig($config);
-
-            $transportDecorator = new MailerTransportDecorator(
-                $this->createMock(TransportInterface::class),
-                static::getContainer()->get(MailAttachmentsBuilder::class),
-                static::getContainer()->get('cicada.filesystem.public'),
-                $this->documentRepository
-            );
-
-            $mailService = new TestEmailService(static::getContainer()->get(MailFactory::class), $transportDecorator);
-
-            $sendMailAction = new SendMailAction(
-                $mailService,
-                $this->mailTemplateRepository,
-                static::getContainer()->get('logger'),
-                static::getContainer()->get('event_dispatcher'),
-                static::getContainer()->get('mail_template_type.repository'),
-                static::getContainer()->get(Translator::class),
-                $this->connection,
-                static::getContainer()->get(LanguageLocaleCodeProvider::class),
-                true
-            );
-
-            $sendMailAction->handleFlow($flow);
-
-            static::assertInstanceOf(Email::class, $mailService->mail);
-            $attachments = $mailService->mail->getAttachments();
-
-            static::assertCount(\count($config['documentTypeIds']), $attachments);
-
-            foreach ($config['documentTypeIds'] as $sequenzDocumentTypeId) {
-                $documentInfos = $this->getMatchingDocument($sequenzDocumentTypeId, $documentTypes);
-                static::assertNotEmpty($documentInfos);
-
-                $found = $this->isDocumentPartOfAttachments($attachments, $documentInfos['filename']);
-                static::assertTrue($found, 'Attachment not found for document type: ' . $documentInfos['technical_name']);
-
-                $markedAsSent = $this->isDocumentMarkedAsSent($documentInfos['documentId'], $context);
-                static::assertTrue($markedAsSent, 'Successfully sent document with id ' . $documentInfos['documentId'] . ' was not marked as sent.');
-            }
-        }
     }
 
     private function createCustomer(Context $context): string
@@ -835,31 +666,6 @@ class SendMailActionTest extends TestCase
         return $orderId;
     }
 
-    private function createDocumentWithFile(string $orderId, Context $context, string $documentType = InvoiceRenderer::TYPE): string
-    {
-        $documentGenerator = static::getContainer()->get(DocumentGenerator::class);
-
-        $operation = new DocumentGenerateOperation($orderId, FileTypes::PDF, []);
-        /** @var DocumentEntity $document */
-        $document = $documentGenerator->generate($documentType, [$orderId => $operation], $context)->getSuccess()->first();
-
-        static::assertNotNull($document);
-
-        return $document->getId();
-    }
-
-    private static function getDocIdByType(string $documentType): ?string
-    {
-        $document = KernelLifecycleManager::getConnection()->fetchFirstColumn(
-            'SELECT LOWER(HEX(`id`)) FROM `document_type` WHERE `technical_name` = :documentType',
-            [
-                'documentType' => $documentType,
-            ]
-        );
-
-        return $document !== [] ? $document[0] : '';
-    }
-
     private function retrieveMailTemplateId(): string
     {
         $criteria = new Criteria();
@@ -872,92 +678,6 @@ class SendMailActionTest extends TestCase
         static::assertIsString($id);
 
         return $id;
-    }
-
-    /**
-     * @param array<int, array<string, string>> $documentTypes
-     *
-     * @return array<array{mailTemplateId: string, documentTypeIds: array<int, string>, recipient: array<string, string|array<string, string>>}>
-     */
-    private function createFlowSequencesConfig(string $mailTemplateId, array $documentTypes): array
-    {
-        return [
-            [
-                'mailTemplateId' => $mailTemplateId,
-                'documentTypeIds' => [
-                    $documentTypes[0]['id'],
-                    $documentTypes[1]['id'],
-                ],
-                'recipient' => [
-                    'type' => 'custom',
-                    'data' => [
-                        'first@test.com' => 'first recipient',
-                    ],
-                ],
-            ],
-            [
-                'mailTemplateId' => $mailTemplateId,
-                'documentTypeIds' => [
-                    $documentTypes[0]['id'],
-                ],
-                'recipient' => [
-                    'type' => 'custom',
-                    'data' => [
-                        'second@test.com' => 'second recipient',
-                    ],
-                ],
-            ],
-            [
-                'mailTemplateId' => $mailTemplateId,
-                'documentTypeIds' => [
-                    $documentTypes[1]['id'],
-                ],
-                'recipient' => [
-                    'type' => 'custom',
-                    'data' => [
-                        'third@test.com' => 'third recipient',
-                    ],
-                ],
-            ],
-        ];
-    }
-
-    /**
-     * @param array<array<string, string>> $documentTypes
-     *
-     * @return array{id: string, technical_name: string, documentId: string, filename: string}|array{}
-     */
-    private function getMatchingDocument(string $sequenzDocumentTypeId, array $documentTypes): array
-    {
-        foreach ($documentTypes as $documentType) {
-            if ($documentType['id'] === $sequenzDocumentTypeId) {
-                return $documentType;
-            }
-        }
-
-        return [];
-    }
-
-    /**
-     * @param array<DataPart> $attachments
-     */
-    private function isDocumentPartOfAttachments(array $attachments, string $documentName): bool
-    {
-        foreach ($attachments as $attachment) {
-            if ($attachment->getFilename() === $documentName) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    private function isDocumentMarkedAsSent(string $documentId, Context $context): bool
-    {
-        $document = $this->documentRepository->search(new Criteria([$documentId]), $context)->getEntities()->first();
-        static::assertInstanceOf(DocumentEntity::class, $document);
-
-        return $document->getSent();
     }
 }
 

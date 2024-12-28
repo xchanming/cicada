@@ -2,16 +2,17 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver;
 
-use Cicada\Core\Checkout\Document\Aggregate\DocumentType\DocumentTypeDefinition;
-use Cicada\Core\Checkout\Document\DocumentDefinition;
-use Cicada\Core\Checkout\Document\DocumentEntity;
+use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerDefinition;
+use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemDefinition;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderDefinition;
-use Cicada\Core\Checkout\Order\OrderEntity;
+use Cicada\Core\Checkout\Promotion\PromotionDefinition;
+use Cicada\Core\Content\Product\Aggregate\ProductMedia\ProductMediaDefinition;
 use Cicada\Core\Content\Product\ProductCollection;
+use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Content\Product\ProductEntity;
+use Cicada\Core\Content\Test\Flow\OrderActionTrait;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
-use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver\FieldResolverContext;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver\ManyToOneAssociationFieldResolver;
@@ -19,15 +20,14 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\QueryBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
+use Cicada\Core\Framework\Test\TestCaseBase\TaxAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
-use Cicada\Tests\Integration\Core\Checkout\Document\DocumentTrait;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\TestCase;
 
@@ -36,8 +36,9 @@ use PHPUnit\Framework\TestCase;
  */
 class ManyToOneAssociationFieldResolverTest extends TestCase
 {
-    use DocumentTrait;
     use KernelTestBehaviour;
+    use OrderActionTrait;
+    use TaxAddToSalesChannelTestBehaviour;
 
     protected ManyToOneAssociationFieldResolver $resolver;
 
@@ -55,7 +56,7 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
      */
     protected EntityRepository $productRepository;
 
-    protected EntityRepository $documentRepository;
+    protected EntityRepository $orderLineItemRepository;
 
     protected Connection $connection;
 
@@ -70,7 +71,7 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
         $this->definitionInstanceRegistry = static::getContainer()->get(DefinitionInstanceRegistry::class);
         $this->orderRepository = static::getContainer()->get('order.repository');
         $this->productRepository = static::getContainer()->get('product.repository');
-        $this->documentRepository = static::getContainer()->get('document.repository');
+        $this->orderLineItemRepository = static::getContainer()->get('order_line_item.repository');
         $this->connection = static::getContainer()->get(Connection::class);
         $this->context = Context::createDefaultContext();
         $this->salesChannelContext = static::getContainer()->get(SalesChannelContextFactory::class)->create(
@@ -83,16 +84,16 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
     public function testVersionConstraintWithVersionedReferenceToVersionedEntity(): void
     {
         // Document itself is not versioned, but has a versioned reference on the versioned order
-        $documentDefinition = $this->definitionInstanceRegistry->get(DocumentDefinition::class);
+        $orderLineItemDefinition = $this->definitionInstanceRegistry->get(OrderLineItemDefinition::class);
         $orderDefinition = $this->definitionInstanceRegistry->get(OrderDefinition::class);
-        $documentAssociationField = $documentDefinition->getField('order');
+        $documentAssociationField = $orderLineItemDefinition->getField('order');
 
         static::assertNotNull($documentAssociationField);
         $resolverContext = new FieldResolverContext(
             '',
-            'document',
+            'order_line_item',
             $documentAssociationField,
-            $documentDefinition,
+            $orderLineItemDefinition,
             $orderDefinition,
             $this->queryBuilder,
             $this->context,
@@ -102,12 +103,12 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
         $this->resolver->join($resolverContext);
 
         static::assertSame([
-            '`document`' => [
+            '`order_line_item`' => [
                 [
                     'joinType' => 'left',
                     'joinTable' => '`order`',
-                    'joinAlias' => '`document.order`',
-                    'joinCondition' => '`document`.`order_id` = `document.order`.`id` AND `document`.`order_version_id` = `document.order`.`version_id`',
+                    'joinAlias' => '`order_line_item.order`',
+                    'joinCondition' => '`order_line_item`.`order_id` = `order_line_item.order`.`id` AND `order_line_item`.`order_version_id` = `order_line_item.order`.`version_id`',
                 ],
             ],
         ], $this->queryBuilder->getQueryPart('join'));
@@ -116,17 +117,17 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
     public function testVersionConstraintWithReferenceToNonVersionedEntity(): void
     {
         // Document and document type are not versioned, thus also document cannot have a versioned reference to its type
-        $documentDefinition = $this->definitionInstanceRegistry->get(DocumentDefinition::class);
-        $documentTypeDefinition = $this->definitionInstanceRegistry->get(DocumentTypeDefinition::class);
-        $documentAssociationField = $documentDefinition->getField('documentType');
+        $orderLineItemDefinition = $this->definitionInstanceRegistry->get(OrderLineItemDefinition::class);
+        $promotionDefinition = $this->definitionInstanceRegistry->get(PromotionDefinition::class);
+        $orderLineItemAssociationField = $orderLineItemDefinition->getField('promotion');
 
-        static::assertNotNull($documentAssociationField);
+        static::assertNotNull($orderLineItemAssociationField);
         $resolverContext = new FieldResolverContext(
             '',
-            'document',
-            $documentAssociationField,
-            $documentDefinition,
-            $documentTypeDefinition,
+            'order_line_item',
+            $orderLineItemAssociationField,
+            $orderLineItemDefinition,
+            $promotionDefinition,
             $this->queryBuilder,
             $this->context,
             null,
@@ -135,12 +136,12 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
         $this->resolver->join($resolverContext);
 
         static::assertSame([
-            '`document`' => [
+            '`order_line_item`' => [
                 [
                     'joinType' => 'left',
-                    'joinTable' => '`document_type`',
-                    'joinAlias' => '`document.documentType`',
-                    'joinCondition' => '`document`.`document_type_id` = `document.documentType`.`id`',
+                    'joinTable' => '`promotion`',
+                    'joinAlias' => '`order_line_item.promotion`',
+                    'joinCondition' => '`order_line_item`.`promotion_id` = `order_line_item.promotion`.`id`',
                 ],
             ],
         ], $this->queryBuilder->getQueryPart('join'));
@@ -149,17 +150,17 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
     public function testVersionConstraintWithReferenceToSelf(): void
     {
         // Document and document type are not versioned, thus also document cannot have a versioned reference to its type
-        $documentDefinition = $this->definitionInstanceRegistry->get(DocumentDefinition::class);
-        $documentTypeDefinition = $this->definitionInstanceRegistry->get(DocumentDefinition::class);
-        $documentAssociationField = $documentDefinition->getField('referencedDocument');
+        $productDefinition = $this->definitionInstanceRegistry->get(ProductDefinition::class);
+        $productMediaDefinition = $this->definitionInstanceRegistry->get(ProductMediaDefinition::class);
+        $productAssociationField = $productDefinition->getField('canonicalProduct');
 
-        static::assertNotNull($documentAssociationField);
+        static::assertNotNull($productAssociationField);
         $resolverContext = new FieldResolverContext(
             '',
             'document',
-            $documentAssociationField,
-            $documentDefinition,
-            $documentTypeDefinition,
+            $productAssociationField,
+            $productDefinition,
+            $productMediaDefinition,
             $this->queryBuilder,
             $this->context,
             null,
@@ -171,9 +172,9 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
             '`document`' => [
                 [
                     'joinType' => 'left',
-                    'joinTable' => '`document`',
-                    'joinAlias' => '`document.referencedDocument`',
-                    'joinCondition' => '`document`.`referenced_document_id` = `document.referencedDocument`.`id`',
+                    'joinTable' => '`product`',
+                    'joinAlias' => '`document.canonicalProduct`',
+                    'joinCondition' => '`document`.`canonical_product_id` = `document.canonicalProduct`.`id` AND `document`.`canonical_product_version_id` = `document.canonicalProduct`.`version_id`',
                 ],
             ],
         ], $this->queryBuilder->getQueryPart('join'));
@@ -183,7 +184,7 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
     {
         // Document itself is not versioned, but has a versioned reference on the versioned order
         $orderDefinition = $this->definitionInstanceRegistry->get(OrderDefinition::class);
-        $orderCustomerDefinition = $this->definitionInstanceRegistry->get(DocumentDefinition::class);
+        $orderCustomerDefinition = $this->definitionInstanceRegistry->get(OrderCustomerDefinition::class);
         $orderAssociationField = $orderDefinition->getField('orderCustomer');
 
         static::assertNotNull($orderAssociationField);
@@ -210,48 +211,6 @@ class ManyToOneAssociationFieldResolverTest extends TestCase
                 ],
             ],
         ], $this->queryBuilder->getQueryPart('join'));
-    }
-
-    public function testCorrectOrderVersionOverAssociationOverRepositorySearch(): void
-    {
-        // 1. Create a new order and extract order number
-        $cart = $this->generateDemoCart(2);
-        $orderId = $this->persistCart($cart);
-
-        $order = $this->orderRepository->search(new Criteria([$orderId]), $this->context)->first();
-        static::assertInstanceOf(OrderEntity::class, $order);
-
-        // 2. Generate a document attached to the order
-        $this->createDocument('invoice', $orderId, [], $this->context);
-
-        // 3. Set created order version to be lexicographically smaller than the live version
-        $this->connection->executeStatement(
-            'UPDATE `order`
-            SET `version_id` = :newVersionId
-            WHERE `version_id` != :liveVersionId AND `id` = :orderId',
-            [
-                'newVersionId' => hex2bin('00000000000000000000000000000000'),
-                'liveVersionId' => hex2bin(Defaults::LIVE_VERSION),
-                'orderId' => hex2bin($orderId),
-            ],
-        );
-
-        // 4. Search for the document over the order number of its attached order
-        $documents = $this->documentRepository->search(
-            (new Criteria())
-                ->addFilter(new EqualsFilter('order.orderNumber', $order->getOrderNumber()))
-                ->addAssociation('order')
-                ->setTotalCountMode(Criteria::TOTAL_COUNT_MODE_EXACT),
-            $this->context,
-        );
-
-        static::assertCount(1, $documents);
-        static::assertEquals(1, $documents->getTotal());
-
-        $document = $documents->getEntities()->first();
-        static::assertInstanceOf(DocumentEntity::class, $document);
-        static::assertNotNull($document->getOrder());
-        static::assertEquals('00000000000000000000000000000000', $document->getOrder()->getVersionId());
     }
 
     public function testManyToOneInheritedWorks(): void

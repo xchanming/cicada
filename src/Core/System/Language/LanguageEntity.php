@@ -4,7 +4,6 @@ namespace Cicada\Core\System\Language;
 
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroupTranslation\CustomerGroupTranslationCollection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
-use Cicada\Core\Checkout\Document\Aggregate\DocumentTypeTranslation\DocumentTypeTranslationCollection;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Payment\Aggregate\PaymentMethodTranslation\PaymentMethodTranslationCollection;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionTranslation\PromotionTranslationCollection;
@@ -327,13 +326,6 @@ class LanguageEntity extends Entity
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
     protected $mailHeaderFooterTranslations;
-
-    /**
-     * @var DocumentTypeTranslationCollection|null
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $documentTypeTranslations;
 
     /**
      * @var DeliveryTimeCollection|null
@@ -890,16 +882,6 @@ class LanguageEntity extends Entity
     public function setMailTemplateTranslations(MailTemplateCollection $mailTemplateTranslations): void
     {
         $this->mailTemplateTranslations = $mailTemplateTranslations;
-    }
-
-    public function getDocumentTypeTranslations(): ?DocumentTypeTranslationCollection
-    {
-        return $this->documentTypeTranslations;
-    }
-
-    public function setDocumentTypeTranslations(DocumentTypeTranslationCollection $documentTypeTranslations): void
-    {
-        $this->documentTypeTranslations = $documentTypeTranslations;
     }
 
     public function getDeliveryTimeTranslations(): ?DeliveryTimeCollection

@@ -8,7 +8,6 @@ use Cicada\Core\Content\Mail\Transport\MailerTransportDecorator;
 use Cicada\Core\Content\Mail\Transport\MailerTransportLoader;
 use Cicada\Core\Content\Mail\Transport\SmtpOauthAuthenticator;
 use Cicada\Core\Content\Mail\Transport\SmtpOauthTransportFactoryDecorator;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
@@ -43,7 +42,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         $trans = $loader->fromString('smtp://localhost:25');
@@ -65,7 +63,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         $mailer = $factory->fromString('null://null');
@@ -95,7 +92,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         $mailer = $loader->fromString('null://null');
@@ -136,7 +132,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class),
         );
 
         $mailer = $loader->fromString('null://null');
@@ -158,7 +153,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         static::expectException(MailException::class);
@@ -177,7 +171,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         $res = $loader->fromString('null://null');
@@ -193,7 +186,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         static::expectException(MailException::class);
@@ -212,7 +204,6 @@ class MailerTransportLoaderTest extends TestCase
             $config,
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         $mailer = $loader->fromString('null://null');
@@ -239,7 +230,6 @@ class MailerTransportLoaderTest extends TestCase
             ]),
             $this->createMock(MailAttachmentsBuilder::class),
             $this->createMock(FilesystemOperator::class),
-            $this->createMock(EntityRepository::class)
         );
 
         $dsns = [

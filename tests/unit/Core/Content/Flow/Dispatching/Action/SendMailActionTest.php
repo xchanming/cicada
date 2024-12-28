@@ -8,11 +8,9 @@ use Cicada\Core\Content\Flow\Dispatching\FlowState;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Struct\Sequence;
 use Cicada\Core\Content\Mail\Service\AbstractMailService;
-use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
 use Cicada\Core\Content\MailTemplate\Exception\MailEventConfigurationException;
 use Cicada\Core\Content\MailTemplate\MailTemplateCollection;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
-use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Adapter\Translation\AbstractTranslator;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Context;
@@ -267,13 +265,6 @@ class SendMailActionTest extends TestCase
                 'mediaIds' => [],
                 'senderName' => null,
                 'languageId' => null,
-                'attachmentsConfig' => new MailAttachmentsConfig(
-                    Context::createDefaultContext(),
-                    $this->mailTemplate,
-                    new MailSendSubscriberConfig(false, [], []),
-                    $config,
-                    $orderId
-                ),
             ],
             'context' => Context::createDefaultContext(),
         ];
@@ -441,13 +432,6 @@ class SendMailActionTest extends TestCase
                 'mediaIds' => [],
                 'senderName' => null,
                 'languageId' => $languageId,
-                'attachmentsConfig' => new MailAttachmentsConfig(
-                    Context::createDefaultContext(),
-                    $this->mailTemplate,
-                    new MailSendSubscriberConfig(false, [], []),
-                    $config,
-                    $orderId
-                ),
             ],
             'context' => Context::createDefaultContext(),
         ];

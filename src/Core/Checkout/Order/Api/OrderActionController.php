@@ -8,17 +8,11 @@ use Cicada\Core\Checkout\Payment\PaymentException;
 use Cicada\Core\Content\Flow\Dispatching\Action\SendMailAction;
 use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Doctrine\DBAL\ArrayParameterType;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Driver\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route(defaults: ['_routeScope' => ['api']])]
@@ -30,7 +24,6 @@ class OrderActionController extends AbstractController
      */
     public function __construct(
         private readonly OrderService $orderService,
-        private readonly Connection $connection,
         private readonly PaymentRefundProcessor $paymentRefundProcessor
     ) {
     }
@@ -42,21 +35,12 @@ class OrderActionController extends AbstractController
         Request $request,
         Context $context
     ): JsonResponse {
-        $documentTypes = $request->request->all('documentTypes');
-        if (\count($documentTypes) > 0) {
-            $skipSentDocuments = (bool) $request->request->get('skipSentDocuments', false);
-            $documentIds = $this->getDocumentIds('order', $orderId, $documentTypes, $skipSentDocuments);
-        } else {
-            $documentIds = $request->request->all('documentIds');
-        }
-
         $mediaIds = $request->request->all('mediaIds');
 
         $context->addExtension(
             SendMailAction::MAIL_CONFIG_EXTENSION,
             new MailSendSubscriberConfig(
                 $request->request->get('sendMail', true) === false,
-                $documentIds,
                 $mediaIds
             )
         );
@@ -78,21 +62,12 @@ class OrderActionController extends AbstractController
         Request $request,
         Context $context
     ): JsonResponse {
-        $documentTypes = $request->request->all('documentTypes');
-        if (\count($documentTypes) > 0) {
-            $skipSentDocuments = (bool) $request->request->get('skipSentDocuments', false);
-            $documentIds = $this->getDocumentIds('order_transaction', $orderTransactionId, $documentTypes, $skipSentDocuments);
-        } else {
-            $documentIds = $request->request->all('documentIds');
-        }
-
         $mediaIds = $request->request->all('mediaIds');
 
         $context->addExtension(
-            MailSendSubscriberConfig::MAIL_CONFIG_EXTENSION,
+            SendMailAction::MAIL_CONFIG_EXTENSION,
             new MailSendSubscriberConfig(
                 $request->request->get('sendMail', true) === false,
-                $documentIds,
                 $mediaIds
             )
         );
@@ -114,21 +89,12 @@ class OrderActionController extends AbstractController
         Request $request,
         Context $context
     ): JsonResponse {
-        $documentTypes = $request->request->all('documentTypes');
-        if (\count($documentTypes) > 0) {
-            $skipSentDocuments = (bool) $request->request->get('skipSentDocuments', false);
-            $documentIds = $this->getDocumentIds('order_delivery', $orderDeliveryId, $documentTypes, $skipSentDocuments);
-        } else {
-            $documentIds = $request->request->all('documentIds');
-        }
-
         $mediaIds = $request->request->all('mediaIds');
 
         $context->addExtension(
-            MailSendSubscriberConfig::MAIL_CONFIG_EXTENSION,
+            SendMailAction::MAIL_CONFIG_EXTENSION,
             new MailSendSubscriberConfig(
                 $request->request->get('sendMail', true) === false,
-                $documentIds,
                 $mediaIds
             )
         );
@@ -152,67 +118,5 @@ class OrderActionController extends AbstractController
         $this->paymentRefundProcessor->processRefund($refundId, $context);
 
         return new JsonResponse(null, Response::HTTP_NO_CONTENT);
-    }
-
-    /**
-     * @param array<string> $documentTypes
-     *
-     * @throws Exception
-     * @throws \Doctrine\DBAL\Exception
-     *
-     * @return array<string>
-     */
-    private function getDocumentIds(string $entity, string $referencedId, array $documentTypes, bool $skipSentDocuments): array
-    {
-        if (!\in_array($entity, ['order', 'order_transaction', 'order_delivery'], true)) {
-            throw new NotFoundHttpException();
-        }
-
-        $query = $this->connection->createQueryBuilder();
-        $query->select(
-            'LOWER(hex(document.document_type_id)) as doc_type',
-            'LOWER(hex(document.id)) as doc_id',
-            'document.created_at as newest_date',
-            'document.sent as sent',
-        );
-        $query->from('document', 'document');
-        $query->innerJoin('document', 'document_type', 'document_type', 'document.document_type_id = document_type.id');
-        $query->where('document.order_id = :orderId');
-
-        if ($entity === 'order') {
-            $query->setParameter('orderId', Uuid::fromHexToBytes($referencedId));
-        } else {
-            $fetchOrder = $this->connection->createQueryBuilder();
-            $fetchOrder->select('order_id')->from($entity)->where('id = :id');
-
-            $fetchOrder->setParameter('id', Uuid::fromHexToBytes($referencedId));
-
-            $orderId = $fetchOrder->executeQuery()->fetchOne();
-
-            $query->setParameter('orderId', $orderId);
-        }
-
-        $query->andWhere('document_type.technical_name IN (:documentTypes)');
-        $query->orderBy('document.created_at', 'DESC');
-
-        $query->setParameter('documentTypes', $documentTypes, ArrayParameterType::STRING);
-
-        $documents = $query->executeQuery()->fetchAllAssociative();
-
-        $documentsGroupByType = FetchModeHelper::group($documents);
-        /** @var array<string, array<array{sent: int, doc_id: string}>> $documentsGroupByType */
-        $documentIds = [];
-        foreach ($documentsGroupByType as $documents) {
-            // Latest document of type
-            $document = $documents[0];
-
-            if ($skipSentDocuments && $document['sent']) {
-                continue;
-            }
-
-            $documentIds[] = $document['doc_id'];
-        }
-
-        return $documentIds;
     }
 }

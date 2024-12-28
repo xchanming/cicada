@@ -6,10 +6,6 @@ use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
-use Cicada\Core\Checkout\Document\FileGenerator\FileTypes;
-use Cicada\Core\Checkout\Document\Renderer\InvoiceRenderer;
-use Cicada\Core\Checkout\Document\Service\DocumentGenerator;
-use Cicada\Core\Checkout\Document\Struct\DocumentGenerateOperation;
 use Cicada\Core\Checkout\Order\OrderDefinition;
 use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Checkout\Order\OrderStates;
@@ -56,9 +52,6 @@ class MailActionControllerTest extends TestCase
         $criteria->addAssociation('orderCustomer');
         $order = static::getContainer()->get('order.repository')->search($criteria, $context)->get($orderId);
         static::assertInstanceOf(OrderEntity::class, $order);
-
-        $documentId = $this->createDocumentWithFile($orderId, $context);
-        $documentIds = [$documentId];
 
         $criteria = new Criteria();
         $criteria->setLimit(1);
@@ -107,7 +100,6 @@ class MailActionControllerTest extends TestCase
                         'order' => $orderDecode,
                         'salesChannel' => $salesChannelDecode,
                     ],
-                    'documentIds' => $documentIds,
                     'recipients' => ['d.dinh@xchanming.com' => 'Duy'],
                     'salesChannelId' => $salesChannel->getId(),
                     'senderName' => $salesChannel->getName(),
@@ -213,17 +205,5 @@ class MailActionControllerTest extends TestCase
         $orderRepository->upsert([$order], $context);
 
         return $orderId;
-    }
-
-    private function createDocumentWithFile(string $orderId, Context $context, string $documentType = InvoiceRenderer::TYPE): string
-    {
-        $documentGenerator = static::getContainer()->get(DocumentGenerator::class);
-
-        $operation = new DocumentGenerateOperation($orderId, FileTypes::PDF, []);
-        $document = $documentGenerator->generate($documentType, [$orderId => $operation], $context)->getSuccess()->first();
-
-        static::assertNotNull($document);
-
-        return $document->getId();
     }
 }
