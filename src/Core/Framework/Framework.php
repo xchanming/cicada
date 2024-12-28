@@ -14,7 +14,6 @@ use Cicada\Core\Framework\DependencyInjection\CompilerPass\AttributeEntityCompil
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\AutoconfigureCompilerPass;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\CreateGeneratorScaffoldingCommandPass;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\DefaultTransportCompilerPass;
-use Cicada\Core\Framework\DependencyInjection\CompilerPass\DemodataCompilerPass;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\DisableTwigCacheWarmerCompilerPass;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\EntityCompilerPass;
 use Cicada\Core\Framework\DependencyInjection\CompilerPass\FeatureFlagCompilerPass;
@@ -74,7 +73,6 @@ class Framework extends Bundle
         $loader->load('app.xml');
         $loader->load('custom-field.xml');
         $loader->load('data-abstraction-layer.xml');
-        $loader->load('demodata.xml');
         $loader->load('event.xml');
         $loader->load('hydrator.xml');
         $loader->load('filesystem.xml');
@@ -130,8 +128,6 @@ class Framework extends Bundle
         }
 
         $container->addCompilerPass(new FrameworkMigrationReplacementCompilerPass());
-
-        $container->addCompilerPass(new DemodataCompilerPass());
 
         parent::build($container);
         $this->buildDefaultConfig($container);

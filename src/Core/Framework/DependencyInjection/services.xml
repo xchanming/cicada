@@ -159,13 +159,6 @@ frame-ancestors 'none';
             <tag name="console.command"/>
         </service>
 
-        <service id="Cicada\Core\Framework\Demodata\PersonalData\CleanPersonalDataCommand">
-            <argument type="service" id="Doctrine\DBAL\Connection"/>
-            <argument type="service" id="customer.repository"/>
-
-            <tag name="console.command"/>
-        </service>
-
         <service id="Cicada\Core\Framework\Migration\Command\MigrationDestructiveCommand">
             <argument type="service" id="Cicada\Core\Framework\Migration\MigrationCollectionLoader"/>
             <argument type="service" id="cache.object"/>

@@ -5,12 +5,6 @@ namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules\Internal;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\DataAbstractionLayer\Command\RefreshIndexCommand;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexerRegistry;
-use Cicada\Core\Framework\Demodata\Command\DemodataCommand;
-use Cicada\Core\Framework\Demodata\DemodataContext;
-use Cicada\Core\Framework\Demodata\DemodataGeneratorInterface;
-use Cicada\Core\Framework\Demodata\DemodataRequest;
-use Cicada\Core\Framework\Demodata\DemodataService;
-use Cicada\Core\Framework\Demodata\Event\DemodataRequestCreatedEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Plugin;
@@ -43,14 +37,6 @@ class InternalClassRule implements Rule
     ];
     private const MESSAGE_HANDLER_EXCEPTIONS = [
         EntityIndexerRegistry::class,
-    ];
-    private const DEMO_DATA_EXCEPTIONS = [
-        DemodataContext::class,
-        DemodataGeneratorInterface::class,
-        DemodataRequest::class,
-        DemodataService::class,
-        DemodataCommand::class,
-        DemodataRequestCreatedEvent::class,
     ];
 
     public function getNodeType(): string
@@ -114,14 +100,6 @@ class InternalClassRule implements Rule
         if ($namespace = $this->isInInternalNamespace($node)) {
             return [
                 RuleErrorBuilder::message('Classes in `' . $namespace . '` namespace must be flagged @internal to not be captured by the BC checker.')
-                    ->identifier('cicada.internalClass')
-                    ->build(),
-            ];
-        }
-
-        if ($this->isInNamespace($node, '\\Framework\\Demodata') && !\in_array($class, self::DEMO_DATA_EXCEPTIONS, true)) {
-            return [
-                RuleErrorBuilder::message('Classes in `Framework\\Demodata` namespace must be flagged @internal to not be captured by the BC checker.')
                     ->identifier('cicada.internalClass')
                     ->build(),
             ];
