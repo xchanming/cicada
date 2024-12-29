@@ -44,7 +44,7 @@ class CountryStateControllerTest extends TestCase
         $this->connection = static::getContainer()->get(Connection::class);
 
         $this->countryIdDE = Uuid::fromBytesToHex(
-            $this->connection->fetchAllAssociative('SELECT id FROM country WHERE iso = \'DE\'')[0]['id']
+            $this->connection->fetchAllAssociative('SELECT id FROM country WHERE iso = \'CN\'')[0]['id']
         );
 
         $this->countryStateController = static::getContainer()->get(CountryStateController::class);
@@ -57,7 +57,7 @@ class CountryStateControllerTest extends TestCase
     {
         $response = $this->countryStateController->getCountryData(new Request([], ['countryId' => $this->countryIdDE]), $this->salesChannelContext);
 
-        static::assertCount(16, \json_decode((string) $response->getContent(), true, 512, \JSON_THROW_ON_ERROR)['states']);
+        static::assertCount(34, \json_decode((string) $response->getContent(), true, 512, \JSON_THROW_ON_ERROR)['states']);
     }
 
     public function testEmptyCountryId(): void
@@ -133,7 +133,7 @@ class CountryStateControllerTest extends TestCase
 
         static::assertArrayHasKey(CountryStateDataPageletLoadedHook::HOOK_NAME, $traces);
 
-        static::assertEquals(['16'], $traces['country-state-data-pagelet-loaded'][0]['output']);
+        static::assertEquals(['34'], $traces['country-state-data-pagelet-loaded'][0]['output']);
     }
 }
 

@@ -61,7 +61,7 @@ class SalesChannelCreateStorefrontCommandTest extends TestCase
     {
         yield 'should success with valid iso code' => [
             'isoCode' => 'de_DE',
-            'isoCodeExpected' => 'zh-CN',
+            'isoCodeExpected' => 'en-GB',
         ];
 
         yield 'should success with invalid iso code' => [

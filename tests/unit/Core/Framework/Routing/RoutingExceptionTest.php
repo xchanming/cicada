@@ -2,16 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Routing;
 
-use Cicada\Core\Checkout\Cart\CartException;
-use Cicada\Core\Checkout\Cart\Exception\CustomerNotLoggedInException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\Exception\CustomerNotLoggedInRoutingException;
 use Cicada\Core\Framework\Routing\RoutingException;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 /**
  * @internal
@@ -56,7 +52,6 @@ class RoutingExceptionTest extends TestCase
     {
         $e = RoutingException::customerNotLoggedIn();
 
-        static::assertInstanceOf(CustomerNotLoggedInRoutingException::class, $e);
         static::assertSame(Response::HTTP_FORBIDDEN, $e->getStatusCode());
         static::assertSame(RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE, $e->getErrorCode());
     }

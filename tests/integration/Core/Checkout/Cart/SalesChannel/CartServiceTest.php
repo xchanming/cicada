@@ -13,12 +13,9 @@ use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\PriceDefinitionFactory;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
-use Cicada\Core\Checkout\Customer\SalesChannel\AccountService;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -29,7 +26,6 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\TestDefaults;
-use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,15 +39,12 @@ class CartServiceTest extends TestCase
     use MailTemplateTestBehaviour;
     use TaxAddToSalesChannelTestBehaviour;
 
-    private Connection $connection;
-
     private string $productId;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->connection = static::getContainer()->get(Connection::class);
         $context = Context::createDefaultContext();
         $this->productId = Uuid::randomHex();
         $product = [

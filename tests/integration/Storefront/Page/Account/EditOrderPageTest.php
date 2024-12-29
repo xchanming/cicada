@@ -14,7 +14,6 @@ use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
@@ -119,7 +118,7 @@ class EditOrderPageTest extends TestCase
 
         // Get customer from USA rule
         $ruleCriteria = new Criteria();
-        $ruleCriteria->addFilter(new EqualsFilter('name', 'Customers from USA'));
+        $ruleCriteria->addFilter(new EqualsFilter('name', 'All customers'));
 
         /** @var EntityRepository<RuleCollection> $ruleRepository */
         $ruleRepository = static::getContainer()->get('rule.repository');
@@ -135,7 +134,7 @@ class EditOrderPageTest extends TestCase
         $page = $this->getPageLoader()->load($request, $context);
 
         static::assertSame($orderId, $page->getOrder()->getId());
-        static::assertCount(1, $page->getPaymentMethods());
+        static::assertCount(2, $page->getPaymentMethods());
     }
 
     public function testShouldSortAvailablePaymentMethodsByPreference(): void
@@ -150,12 +149,7 @@ class EditOrderPageTest extends TestCase
         $this->createCustomPaymentMethod($context, ['position' => 0]);
         $this->createCustomPaymentMethod($context, ['position' => 4]);
 
-        if (Feature::isActive('ACCESSIBILITY_TWEAKS')) {
-            $context->getSalesChannel()->setPaymentMethodId($primaryMethod->getId());
-        } else {
-            // replace active payment method with a new one
-            $context->assign(['paymentMethod' => $primaryMethod]);
-        }
+        $context->getSalesChannel()->setPaymentMethodId($primaryMethod->getId());
 
         $page = $this->getPageLoader()->load($request, $context);
         $paymentMethods = \array_values($page->getPaymentMethods()->getElements());

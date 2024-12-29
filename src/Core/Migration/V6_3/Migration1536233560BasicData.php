@@ -7,6 +7,7 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\CashPayment;
+use Cicada\Core\Checkout\Payment\Cart\PaymentHandler\PrePayment;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Flow\Dispatching\Action\SendMailAction;
 use Cicada\Core\Content\MailTemplate\MailTemplateTypes;
@@ -364,6 +365,11 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('payment_method', ['id' => $cash, 'handler_identifier' => CashPayment::class, 'position' => 1, 'active' => 1, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('payment_method_translation', ['payment_method_id' => $cash, 'language_id' => $languageEN, 'name' => 'Cash on delivery', 'description' => 'Pay when you get the order', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('payment_method_translation', ['payment_method_id' => $cash, 'language_id' => $languageZH, 'name' => '货到付款', 'description' => '货到付款是指顾客在商品送达后支付货款的一种支付方式', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+
+        $pre = Uuid::randomBytes();
+        $connection->insert('payment_method', ['id' => $pre, 'handler_identifier' => PrePayment::class, 'position' => 2, 'active' => 1, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('payment_method_translation', ['payment_method_id' => $pre, 'language_id' => $languageEN, 'name' => 'Paid in advance', 'description' => 'Pay in advance and get your order afterwards', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('payment_method_translation', ['payment_method_id' => $pre, 'language_id' => $languageZH, 'name' => '预付', 'description' => '商品或服务交付之前，买方提前支付款项。', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
     }
 
     private function createShippingMethod(Connection $connection): void

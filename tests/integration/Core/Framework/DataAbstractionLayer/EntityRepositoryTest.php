@@ -38,7 +38,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\VersionManager;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\CloneBehavior;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteException;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;

@@ -367,9 +367,7 @@ class CheckoutControllerTest extends TestCase
             [
                 new ErrorCollection(
                     [
-                        new PaymentMethodChangedError('Paid in advance', 'Direct Debit'),
-                        new PaymentMethodChangedError('Direct Debit', 'Invoice'),
-                        new PaymentMethodChangedError('Invoice', 'Cash On Delivery'),
+                        new PaymentMethodChangedError('Paid in advance', 'Cash On Delivery'),
                         new PaymentMethodChangedError('Cash On Delivery', 'Paid in advance'),
                     ]
                 ),
@@ -397,12 +395,12 @@ class CheckoutControllerTest extends TestCase
                 new ErrorCollection(
                     [
                         new ShippingMethodChangedError('Express', 'Standard'),
-                        new PaymentMethodChangedError('Invoice', 'Paid in advance'),
+                        new PaymentMethodChangedError('Cash on delivery', 'Paid in advance'),
                     ]
                 ),
                 [
                     \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, 'Express', 'Standard'),
-                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, 'Invoice', 'Paid in advance'),
+                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, 'Cash on delivery', 'Paid in advance'),
                 ],
                 true,
             ],
@@ -692,7 +690,7 @@ class CheckoutControllerTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'id' => $this->customerId,
-                'name' => 'Test',
+                'name' => self::CUSTOMER_NAME,
                 'city' => 'Schöppingen',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
@@ -703,7 +701,7 @@ class CheckoutControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
-            'name' => 'Test',
+            'name' => self::CUSTOMER_NAME,
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];

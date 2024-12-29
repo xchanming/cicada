@@ -256,14 +256,10 @@ class AddressControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
-            'name' => 'First name',
+            'name' => 'Name',
             'salutationId' => $salutationId,
             'customerNumber' => 'not',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->create([$customer], Context::createDefaultContext());
 
@@ -516,13 +512,6 @@ class AddressControllerTest extends TestCase
                 'customerNumber' => 'not',
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $paymentMethodId = $this->getValidPaymentMethodId();
-            foreach ($customers as &$customer) {
-                $customer['defaultPaymentMethodId'] = $paymentMethodId;
-            }
-        }
 
         $this->customerRepository->create($customers, Context::createDefaultContext());
 

@@ -25,7 +25,6 @@ class Migration1580218617RefactorShippingMethodPrice extends MigrationStep
         $this->updateSchema($connection);
         $this->createUpdateTrigger($connection);
         $this->createInsertTrigger($connection);
-        $this->migrateData($connection);
     }
 
     public function updateDestructive(Connection $connection): void
@@ -112,29 +111,5 @@ class Migration1580218617RefactorShippingMethodPrice extends MigrationStep
             END;';
 
         $this->createTrigger($connection, $query);
-    }
-
-    private function migrateData(Connection $connection): void
-    {
-        $shippingPrices = $connection->fetchAllAssociative('SELECT * FROM `shipping_method_price`');
-
-        foreach ($shippingPrices as $shippingPrice) {
-            $id = Uuid::fromBytesToHex($shippingPrice['currency_id']);
-            $key = 'c' . $id;
-            $currencyPrice = [
-                $key => [
-                    'currencyId' => Uuid::fromBytesToHex($shippingPrice['currency_id']),
-                    'net' => $shippingPrice['price'],
-                    'gross' => $shippingPrice['price'],
-                    'linked' => false,
-                ],
-            ];
-            $currencyPrice = json_encode($currencyPrice, \JSON_THROW_ON_ERROR);
-
-            $connection->executeStatement(
-                'UPDATE `shipping_method_price` SET `currency_price` = :currencyPrice WHERE `id` = :id',
-                ['currencyPrice' => $currencyPrice, 'id' => $shippingPrice['id']]
-            );
-        }
     }
 }

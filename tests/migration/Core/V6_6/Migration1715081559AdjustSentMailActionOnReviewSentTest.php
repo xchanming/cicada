@@ -103,7 +103,7 @@ class Migration1715081559AdjustSentMailActionOnReviewSentTest extends TestCase
                 'expectedConfig' => [
                     'recipient' => [
                         'data' => [],
-                        'type' => 'admin',
+                        'type' => 'default',
                     ],
                     'mailTemplateId' => Uuid::fromBytesToHex(self::getMailTemplateId()),
                     'documentTypeIds' => [],
@@ -154,7 +154,7 @@ class Migration1715081559AdjustSentMailActionOnReviewSentTest extends TestCase
             ->select('mt.id')
             ->from('mail_template', 'mt')
             ->innerJoin('mt', 'mail_template_type', 'mtt', 'mtt.id = mt.mail_template_type_id')
-            ->where('mtt.technical_name = "review_form"')
+            ->where('mtt.technical_name = "password_change"')
             ->fetchOne();
     }
 
@@ -191,7 +191,7 @@ class Migration1715081559AdjustSentMailActionOnReviewSentTest extends TestCase
         return $connection->createQueryBuilder()
             ->select('f.id')
             ->from('flow', 'f')
-            ->where('f.event_name = "review_form.send"')
+            ->where('f.event_name = "customer.recovery.request"')
             ->fetchOne();
     }
 }

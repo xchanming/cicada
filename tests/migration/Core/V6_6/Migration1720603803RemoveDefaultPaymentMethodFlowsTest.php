@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Cicada\Tests\Migration\Core\V6_7;
+namespace Cicada\Tests\Migration\Core\V6_6;
 
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Migration\V6_7\Migration1720603803RemoveDefaultPaymentMethodFlows;
+use Cicada\Core\Migration\V6_6\Migration1720603803RemoveDefaultPaymentMethodFlows;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;

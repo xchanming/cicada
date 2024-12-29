@@ -75,7 +75,7 @@ class AddressValidationFactory implements DataValidationFactoryInterface
         }
 
         $definition
-            ->add('name', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_NAME], null, null, null, null, null, 'VIOLATION::FIRST_NAME_IS_TOO_LONG'))
+            ->add('name', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_NAME], null, null, null, null, null, 'VIOLATION::NAME_IS_TOO_LONG'))
             ->add('title', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_TITLE], null, null, null, null, null, 'VIOLATION::TITLE_IS_TOO_LONG'))
             ->add('zipcode', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_ZIPCODE], null, null, null, null, null, 'VIOLATION::ZIPCODE_IS_TOO_LONG'));
 
