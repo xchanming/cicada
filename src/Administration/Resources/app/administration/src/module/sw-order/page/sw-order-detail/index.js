@@ -104,7 +104,7 @@ export default {
         },
 
         showWarningTabStyle() {
-            return this.isOrderEditing && this.$route.name === 'sw.order.detail.documents';
+            return this.isOrderEditing;
         },
 
         isOrderEditing() {
@@ -143,7 +143,6 @@ export default {
                 .addAssociation('deliveries.shippingMethod')
                 .addAssociation('deliveries.shippingOrderAddress')
                 .addAssociation('transactions.paymentMethod')
-                .addAssociation('documents.documentType')
                 .addAssociation('tags');
 
             criteria.addAssociation('stateMachineState');
@@ -498,7 +497,7 @@ export default {
             return this.orderRepository
                 .get(this.orderId, this.versionContext, this.orderCriteria)
                 .then((response) => {
-                    if (this.$route.name !== 'sw.order.detail.documents' && isSaved) {
+                    if (isSaved) {
                         this.hasOrderDeepEdit = true;
                     }
 

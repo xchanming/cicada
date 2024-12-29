@@ -126,19 +126,19 @@ describe('src/core/service/utils/format.utils.js', () => {
         const precision = 0;
 
         it('should handle integers', async () => {
-            expect(currencyFilter(42, 'CNY', precision)).toBe('CN¥42');
+            expect(currencyFilter(42, 'CNY', precision)).toBe('¥42');
         });
 
         it('should handle big int', async () => {
-            expect(currencyFilter(42n, 'CNY', precision)).toBe('CN¥42');
+            expect(currencyFilter(42n, 'CNY', precision)).toBe('¥42');
         });
 
         it('should handle floats', async () => {
-            expect(currencyFilter(42.2, 'CNY', 2)).toBe('CN¥42.20');
+            expect(currencyFilter(42.2, 'CNY', 2)).toBe('¥42.20');
         });
 
         it('should use the provided language', async () => {
-            expect(currencyFilter(42, 'CNY', 0, { language: 'en-US' })).toBe('CN¥42');
+            expect(currencyFilter(42, 'CNY', 0, { language: 'en-US' })).toBe('¥42');
         });
 
         it('should use a different fallback language', async () => {
@@ -160,13 +160,13 @@ describe('src/core/service/utils/format.utils.js', () => {
         it('should fallback to the system currency', async () => {
             Cicada.Context.app.systemCurrencyISOCode = 'CNY';
 
-            expect(currencyFilter(42, undefined, 0)).toBe('CN¥42');
+            expect(currencyFilter(42, undefined, 0)).toBe('¥42');
         });
 
         it('should fallback to a different system currency', async () => {
             Cicada.Context.app.systemCurrencyISOCode = 'USD';
 
-            expect(currencyFilter(42, undefined, 0)).toBe('US$42');
+            expect(currencyFilter(42, undefined, 0)).toBe('$42');
 
             Cicada.Context.app.systemCurrencyISOCode = 'CNY';
         });

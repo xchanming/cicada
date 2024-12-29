@@ -183,26 +183,6 @@
                 {% endblock %}
 
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                {% block sw_order_detail_content_tabs_documents %}
-                <sw-tabs-item
-                    class="sw-order-detail__tabs-tab-documents"
-                    :class="{ 'has-warning': isOrderEditing }"
-                    :route="{ name: 'sw.order.detail.documents', params: { id: $route.params.id } }"
-                    :title="$tc('sw-order.detail.tabDocuments')"
-                >
-                    {{ $tc('sw-order.detail.tabDocuments') }}
-
-                    <sw-icon
-                        v-if="isOrderEditing"
-                        v-tooltip="{ message: $tc('sw-order.documentTab.tooltipSaveBeforeCreateDocument') }"
-                        class="sw-order-detail__tab-warning-badge"
-                        name="solid-exclamation-circle"
-                        size="12px"
-                    />
-                </sw-tabs-item>
-                {% endblock %}
-
-                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
                 {% block sw_order_detail_content_tabs_extension %}{% endblock %}
             </sw-tabs>
             {% endblock %}

@@ -16,7 +16,7 @@
                     } %}
                 {% endblock %}
 
-                {% block cms_form_contact_input_first_name %}
+                {% block cms_form_contact_input_name %}
                     {% set nameFieldRequired = config('core.basicInformation.nameFieldRequired') == true %}
                     {% sw_include '@Storefront/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig'
                         with {

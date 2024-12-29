@@ -12,7 +12,7 @@ class Translations
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
-    protected $german;
+    protected $chinese;
 
     /**
      * @var array<string, string|null>
@@ -22,23 +22,23 @@ class Translations
     protected $english;
 
     /**
-     * @param array<string, string|null> $german
+     * @param array<string, string|null> $chinese
      * @param array<string, string|null> $english
      */
     public function __construct(
-        array $german,
+        array $chinese,
         array $english
     ) {
-        $this->german = $german;
+        $this->chinese = $chinese;
         $this->english = $english;
     }
 
     /**
      * @return array<string, string|null>
      */
-    public function getGerman(): array
+    public function getChinese(): array
     {
-        return $this->german;
+        return $this->chinese;
     }
 
     /**

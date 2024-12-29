@@ -6,7 +6,7 @@ const { Filter } = Cicada;
 
 describe('filter/currency.filter', () => {
     let currencyFilter;
-    const currency = 'EUR';
+    const currency = 'CNY';
     const precision = 0;
 
     beforeAll(() => {
@@ -14,20 +14,20 @@ describe('filter/currency.filter', () => {
     });
 
     it('should handle integers', async () => {
-        expect(currencyFilter(42, currency, precision)).toBe('€42');
+        expect(currencyFilter(42, currency, precision)).toBe('¥42');
     });
 
     it('should handle big int', async () => {
-        expect(currencyFilter(42n, currency, precision)).toBe('€42');
+        expect(currencyFilter(42n, currency, precision)).toBe('¥42');
     });
 
     it('should handle floats', async () => {
-        expect(currencyFilter(42.2, currency, 2)).toBe('€42.20');
+        expect(currencyFilter(42.2, currency, 2)).toBe('¥42.20');
     });
 
     it('should handle strings', async () => {
         expect(currencyFilter('foo bar', currency, precision)).toBe('foo bar');
-        expect(currencyFilter('42', currency, precision)).toBe('€42');
+        expect(currencyFilter('42', currency, precision)).toBe('¥42');
     });
 
     it('should handle empty strings', async () => {

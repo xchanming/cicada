@@ -10,7 +10,6 @@ export const ACTION = Object.freeze({
     REMOVE_ORDER_TAG: 'action.remove.order.tag',
     REMOVE_CUSTOMER_TAG: 'action.remove.customer.tag',
     SET_ORDER_STATE: 'action.set.order.state',
-    GENERATE_DOCUMENT: 'action.generate.document',
     GRANT_DOWNLOAD_ACCESS: 'action.grant.download.access',
     MAIL_SEND: 'action.mail.send',
     STOP_FLOW: 'action.stop.flow',

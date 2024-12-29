@@ -109,7 +109,6 @@ export default {
             criteria.addAssociation('salesChannel');
             criteria.addAssociation('orderCustomer');
             criteria.addAssociation('currency');
-            criteria.addAssociation('documents');
 
             criteria.addAssociation('stateMachineState');
 
@@ -229,13 +228,6 @@ export default {
                     valueProperty: 'key',
                     labelProperty: 'key',
                     options: this.availablePromotionCodes,
-                },
-                'document-filter': {
-                    property: 'documents',
-                    label: this.$tc('sw-order.filters.documentFilter.label'),
-                    placeholder: this.$tc('sw-order.filters.documentFilter.placeholder'),
-                    optionHasCriteria: this.$tc('sw-order.filters.documentFilter.textHasCriteria'),
-                    optionNoCriteria: this.$tc('sw-order.filters.documentFilter.textNoCriteria'),
                 },
                 'payment-method-filter': {
                     property: 'transactions.paymentMethod',

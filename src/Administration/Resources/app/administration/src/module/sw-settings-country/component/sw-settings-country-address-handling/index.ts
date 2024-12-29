@@ -29,8 +29,7 @@ const DefaultAddressFormat = [
         'address/department',
     ],
     [
-        'address/first_name',
-        'address/last_name',
+        'address/name',
     ],
     ['address/street'],
     [

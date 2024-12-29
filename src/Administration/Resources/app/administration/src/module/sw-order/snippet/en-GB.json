@@ -320,8 +320,8 @@
       "labelNoTransactionState": "No transactions yet",
       "labelNoDeliveryState": "No deliveries yet"
     },
-    "assignMailTemplateCard": {
-      "cardTitle": "Assign email template",
+    "changeStateCard": {
+      "cardTitle": "Change state",
       "headline": "No email template assigned to this order status, please assign one.",
       "placeholderAssignMailTemplate": "Assign an email template...",
       "alertHeadline": "Hint",
@@ -383,40 +383,6 @@
         "automaticPromotion":  "automatically applied",
         "labelToggleAutomaticPromotions": "Disable automatically applied promotions"
       }
-    },
-    "documentTab": {
-      "tooltipSaveBeforeCreateDocument": "Order is unsaved. Please save the order before creating a document"
-    },
-    "documentModal": {
-      "modalTitle": "Create document",
-      "labelDocumentDate": "Date",
-      "labelDeliveryDate": "Delivery date",
-      "labelDocumentNumber": "Number",
-      "labelDocumentStornoNumber": "Cancellation number",
-      "labelInvoiceNumber": "Invoice number",
-      "selectInvoiceNumber": "Select invoice number",
-      "labelDeliveryNoteNumber": "Delivery note number",
-      "labelDocumentComment": "Comment",
-      "labelCreateDownloadPdf": "Create and download PDF",
-      "labelCreateSend": "Create and send",
-      "labelCreate": "Create",
-      "labelCancel": "Close",
-      "labelPreview": "Preview",
-      "labelHighlightedItemsHeader": "Name",
-      "labelHighlightedItemsEntry": "Total",
-      "labelNoItems": "No credit shown",
-      "fileInputLabel": "Upload custom document"
-    },
-    "documentSendModal": {
-      "labelNumber": "Number",
-      "labelType": "Type",
-      "labelDate": "Date",
-      "labelMailTemplate": "Email template",
-      "labelRecipient": "Email address",
-      "labelContent": "Email content",
-      "labelSubject": "Subject",
-      "labelClose": "Close",
-      "errorMessage": "Something went wrong while sending the Email."
     },
     "stateModal": {
       "modalTitle": "Add documents"

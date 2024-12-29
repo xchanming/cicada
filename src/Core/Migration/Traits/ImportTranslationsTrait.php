@@ -47,7 +47,7 @@ trait ImportTranslationsTrait
         }
 
         foreach ($germanIds as $id) {
-            $data = array_merge($translations->getGerman(), [
+            $data = array_merge($translations->getChinese(), [
                 'language_id' => Uuid::fromHexToBytes($id),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
             ]);

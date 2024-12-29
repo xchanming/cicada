@@ -55,8 +55,7 @@ export function currency(val: number, sign: string, decimalPlaces: number, addit
 
     try {
         result = val.toLocaleString(
-            additionalOptions.language ?? Cicada.State.get('session').currentLocale ?? 'en-US',
-            // @ts-expect-error - style "currency" is allowed in the options
+            additionalOptions.language ?? Cicada.State.get('session').currentLocale ?? 'zh-CN',
             opts,
         );
     } catch (e) {
@@ -75,14 +74,13 @@ export function currency(val: number, sign: string, decimalPlaces: number, addit
             delete opts.currency;
 
             result = val.toLocaleString(
-                additionalOptions.language ?? Cicada.State.get('session').currentLocale ?? 'en-US',
-                // @ts-expect-error - style "decimal" is allowed in the options
+                additionalOptions.language ?? Cicada.State.get('session').currentLocale ?? 'zh-CN',
                 opts,
             );
         }
     }
 
-    return result;
+    return result.replace(/^[A-Za-z]+(?=\p{Sc})/gu, '').trim();
 }
 
 interface DateFilterOptions extends Intl.DateTimeFormatOptions {

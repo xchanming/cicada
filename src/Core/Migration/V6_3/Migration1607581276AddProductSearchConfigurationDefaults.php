@@ -50,14 +50,14 @@ class Migration1607581276AddProductSearchConfigurationDefaults extends Migration
             ?: Uuid::randomBytes();
 
         $enStopwords = require __DIR__ . '/../Fixtures/stopwords/en.php';
-        $deStopwords = require __DIR__ . '/../Fixtures/stopwords/de.php';
+        $zhStopwords = require __DIR__ . '/../Fixtures/stopwords/zh.php';
 
         $translations = new Translations(
             [
                 'id' => $searchConfigDeId,
                 'and_logic' => '1',
                 'min_search_length' => '2',
-                'excluded_terms' => json_encode($deStopwords, \JSON_THROW_ON_ERROR),
+                'excluded_terms' => json_encode($zhStopwords, \JSON_THROW_ON_ERROR),
             ],
             [
                 'id' => $searchConfigEnId,

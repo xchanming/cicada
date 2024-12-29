@@ -43,11 +43,6 @@ class Migration1620634856UpdateRolePrivileges extends MigrationStep
             'custom_field:read',
             'custom_field_set_relation:read',
         ],
-        'document.viewer' => [
-            'custom_field_set:read',
-            'custom_field:read',
-            'custom_field_set_relation:read',
-        ],
         'event_action.viewer' => [
             'custom_field_set:read',
             'custom_field:read',

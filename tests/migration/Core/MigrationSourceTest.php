@@ -9,7 +9,6 @@ use Cicada\Core\Migration\V6_3\Migration1565346846Promotion;
 use Cicada\Core\Migration\V6_3\Migration1566293076AddAutoIncrement;
 use Cicada\Core\Migration\V6_3\Migration1566460168UpdateTexts;
 use Cicada\Core\Migration\V6_3\Migration1566817701AddDisplayGroup;
-use Cicada\Core\Migration\V6_3\Migration1567431050ContactFormTemplate;
 use Cicada\Core\Migration\V6_3\Migration1568120239CmsSection;
 use Cicada\Core\Migration\V6_3\Migration1568120302CmsBlockUpdate;
 use Cicada\Core\Migration\V6_3\Migration1568645037AddEnqueueDbal;
@@ -17,7 +16,6 @@ use Cicada\Core\Migration\V6_3\Migration1568901713PromotionDiscount;
 use Cicada\Core\Migration\V6_3\Migration1569403146ProductVisibilityUnique;
 use Cicada\Core\Migration\V6_3\Migration1570187167AddedAppConfig;
 use Cicada\Core\Migration\V6_3\Migration1570459127AddCmsSidebarLayout;
-use Cicada\Core\Migration\V6_3\Migration1570621541UpdateDefaultMailTemplates;
 use Cicada\Core\Migration\V6_3\Migration1570622696CustomerPasswordRecovery;
 use Cicada\Core\Migration\V6_3\Migration1570629862ClearCategoryBreadcrumbs;
 use Cicada\Core\Migration\V6_3\Migration1570684913ScheduleIndexer;
@@ -125,7 +123,6 @@ class MigrationSourceTest extends TestCase
             [Migration1566293076AddAutoIncrement::class, true],
             [Migration1566460168UpdateTexts::class, true],
             [Migration1566817701AddDisplayGroup::class, true],
-            [Migration1567431050ContactFormTemplate::class, true],
             [Migration1568120239CmsSection::class, true],
             [Migration1568120302CmsBlockUpdate::class, true],
             [Migration1568645037AddEnqueueDbal::class, true],
@@ -133,7 +130,6 @@ class MigrationSourceTest extends TestCase
             [Migration1569403146ProductVisibilityUnique::class, true],
             [Migration1570187167AddedAppConfig::class, true],
             [Migration1570459127AddCmsSidebarLayout::class, true],
-            [Migration1570621541UpdateDefaultMailTemplates::class, true],
             [Migration1570622696CustomerPasswordRecovery::class, true],
             [Migration1570629862ClearCategoryBreadcrumbs::class, true],
             [Migration1570684913ScheduleIndexer::class, true],

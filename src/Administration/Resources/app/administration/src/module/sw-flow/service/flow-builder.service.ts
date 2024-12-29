@@ -51,7 +51,6 @@ type ActionData = {
     customFields: EntityCollection<'custom_field'>;
     customFieldSets: EntityCollection<'custom_field_set'>;
     stateMachineState: EntityCollection<'state_machine_state'>;
-    documentTypes: EntityCollection<'document_type'>;
     mailTemplates: EntityCollection<'mail_template'>;
 };
 
@@ -85,9 +84,6 @@ type ActionSequence = Entity<'flow_sequence'> & {
             upsert?: boolean;
             value?: string;
         };
-        documentTypes?: Array<{
-            documentType: string;
-        }>;
     };
 };
 
@@ -142,7 +138,6 @@ export default class FlowBuilderService {
         [this.$actionNames.MAIL_SEND]: (context: ActionContext) => this.getMailSendDescription(context),
         [this.$actionNames.STOP_FLOW]: (context: ActionContext) => this.getStopFlowActionDescription(context),
         [this.$actionNames.SET_ORDER_STATE]: (context: ActionContext) => this.getSetOrderStateDescription(context),
-        [this.$actionNames.GENERATE_DOCUMENT]: (context: ActionContext) => this.getGenerateDocumentDescription(context),
         [this.$actionNames.CHANGE_CUSTOMER_GROUP]: (context: ActionContext) => this.getCustomerGroupDescription(context),
         [this.$actionNames.GRANT_DOWNLOAD_ACCESS]: (context: ActionContext) => this.getDownloadAccessDescription(context),
         [this.$actionNames.SET_CUSTOMER_CUSTOM_FIELD]: (context: ActionContext) => this.getCustomFieldDescription(context),
@@ -621,29 +616,6 @@ export default class FlowBuilderService {
         description.push(`${translator.$tc('sw-flow.modals.status.forceTransition')}: ${forceTransition}`);
 
         return description.join('<br>');
-    }
-
-    public getGenerateDocumentDescription(context: ActionContext) {
-        const {
-            sequence: { config },
-            data,
-        } = context;
-
-        if (config.documentType) {
-            Object.assign(config, {
-                documentType: [config],
-            });
-        }
-
-        const documentType = config.documentTypes?.map((type) => {
-            return data.documentTypes.find((item) => item.technicalName === type.documentType)?.translated?.name || '';
-        });
-
-        if (!documentType) {
-            return '';
-        }
-
-        return this.convertTagString(documentType);
     }
 
     public convertTagString(tagsString: string[]) {

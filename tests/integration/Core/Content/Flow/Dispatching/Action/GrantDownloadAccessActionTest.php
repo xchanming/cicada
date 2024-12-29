@@ -16,7 +16,6 @@ use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Content\Flow\Dispatching\Struct\ActionSequence;
 use Cicada\Core\Content\Flow\Events\FlowSendMailActionEvent;
 use Cicada\Core\Content\MailTemplate\Aggregate\MailTemplateType\MailTemplateTypeEntity;
-use Cicada\Core\Content\MailTemplate\MailTemplateTypes;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailBeforeSentEvent;
 use Cicada\Core\Content\Media\File\FileFetcher;
 use Cicada\Core\Content\Media\File\FileSaver;
@@ -213,7 +212,7 @@ class GrantDownloadAccessActionTest extends TestCase
 
         $type = static::getContainer()->get('mail_template_type.repository')->search($criteria, $event->getContext())->first();
 
-        if (!$type instanceof MailTemplateTypeEntity || $type->getTechnicalName() !== MailTemplateTypes::MAILTYPE_DOWNLOADS_DELIVERY) {
+        if (!$type instanceof MailTemplateTypeEntity) {
             return null;
         }
 
