@@ -56,7 +56,8 @@ export function currency(val: number, sign: string, decimalPlaces: number, addit
     try {
         result = val.toLocaleString(
             additionalOptions.language ?? Cicada.State.get('session').currentLocale ?? 'zh-CN',
-            opts
+            // @ts-expect-error - style "currency" is allowed in the options
+            opts,
         );
     } catch (e) {
         // Throw the error to the console because this is still a technical error
@@ -75,6 +76,7 @@ export function currency(val: number, sign: string, decimalPlaces: number, addit
 
             result = val.toLocaleString(
                 additionalOptions.language ?? Cicada.State.get('session').currentLocale ?? 'zh-CN',
+                // @ts-expect-error - style "currency" is allowed in the options
                 opts,
             );
         }
