@@ -295,7 +295,7 @@ class ContextSwitchRouteTest extends TestCase
         );
     }
 
-    private function createCustomerAndLogin(?string $email = null, string $password = 'cicada'): string
+    private function createCustomerAndLogin(?string $email = null, string $password = '12345678'): string
     {
         $email ??= Uuid::randomHex() . '@example.com';
         $customerId = $this->createCustomer($password, $email);

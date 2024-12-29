@@ -14,7 +14,6 @@ use Cicada\Core\Checkout\Cart\LineItemFactoryHandler\ProductLineItemFactory;
 use Cicada\Core\Checkout\Cart\PriceDefinitionFactory;
 use Cicada\Core\Checkout\Cart\SalesChannel\CartService;
 use Cicada\Core\Checkout\Customer\SalesChannel\AccountService;
-use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
@@ -27,17 +26,11 @@ use Cicada\Core\Framework\Test\TestCaseBase\MailTemplateTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\TaxAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
-use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
-use Cicada\Core\System\SalesChannel\Context\SalesChannelContextServiceParameters;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
-use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\Test\TestDefaults;
-use Cicada\Storefront\Controller\AccountOrderController;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
  * @internal
@@ -50,10 +43,6 @@ class CartServiceTest extends TestCase
     use MailTemplateTestBehaviour;
     use TaxAddToSalesChannelTestBehaviour;
 
-    private EntityRepository $customerRepository;
-
-    private AccountService $accountService;
-
     private Connection $connection;
 
     private string $productId;
@@ -63,9 +52,6 @@ class CartServiceTest extends TestCase
         parent::setUp();
 
         $this->connection = static::getContainer()->get(Connection::class);
-        $this->customerRepository = static::getContainer()->get('customer.repository');
-        $this->accountService = static::getContainer()->get(AccountService::class);
-
         $context = Context::createDefaultContext();
         $this->productId = Uuid::randomHex();
         $product = [
@@ -416,61 +402,6 @@ class CartServiceTest extends TestCase
         static::assertEquals(0, $calculatedTaxes->getAmount());
     }
 
-    public function testOrderCartSendMail(): void
-    {
-        if (!static::getContainer()->has(AccountOrderController::class)) {
-            // ToDo: NEXT-16882 - Reactivate tests again
-            static::markTestSkipped('Order mail tests should be fixed without storefront in NEXT-16882');
-        }
-
-        $context = $this->getSalesChannelContext();
-
-        $contextService = static::getContainer()->get(SalesChannelContextService::class);
-
-        $addressId = Uuid::randomHex();
-
-        $mail = 'test@xchanming.com';
-        $password = 'cicada';
-
-        $this->createCustomer($addressId, $mail, $password, $context->getContext());
-
-        $newtoken = $this->accountService->loginByCredentials($mail, $password, $context);
-
-        $context = $contextService->get(new SalesChannelContextServiceParameters(TestDefaults::SALES_CHANNEL, $newtoken));
-
-        $lineItem = (new ProductLineItemFactory(new PriceDefinitionFactory()))->create(['id' => $this->productId, 'referencedId' => $this->productId], $context);
-
-        $cartService = static::getContainer()->get(CartService::class);
-
-        $cart = $cartService->getCart($context->getToken(), $context);
-
-        $cart = $cartService->add($cart, $lineItem, $context);
-
-        $this->setDomainForSalesChannel('http://cicada.local', Defaults::LANGUAGE_SYSTEM, $context->getContext());
-
-        $systemConfigService = static::getContainer()->get(SystemConfigService::class);
-
-        $systemConfigService->set('core.basicInformation.email', 'test@example.org');
-
-        /** @var EventDispatcher $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-
-        $phpunit = $this;
-        $eventDidRun = false;
-        $listenerClosure = function (MailSentEvent $event) use (&$eventDidRun, $phpunit): void {
-            $eventDidRun = true;
-            $phpunit->assertStringContainsString('Shipping costs: €0.00', $event->getContents()['text/html']);
-        };
-
-        $this->addEventListener($dispatcher, MailSentEvent::class, $listenerClosure);
-
-        $cartService->order($cart, $context, new RequestDataBag());
-
-        $dispatcher->removeListener(MailSentEvent::class, $listenerClosure);
-
-        static::assertTrue($eventDidRun, 'The mail.sent Event did not run');
-    }
-
     public function testCartCreatedWithGivenToken(): void
     {
         $salesChannelContextFactory = static::getContainer()->get(SalesChannelContextFactory::class);
@@ -483,68 +414,11 @@ class CartServiceTest extends TestCase
         static::assertSame($token, $cart->getToken());
     }
 
-    private function createCustomer(string $addressId, string $mail, string $password, Context $context): void
-    {
-        $this->connection->executeStatement('DELETE FROM customer WHERE email = :mail', [
-            'mail' => $mail,
-        ]);
-
-        $customer = [
-            'salesChannelId' => TestDefaults::SALES_CHANNEL,
-            'defaultShippingAddress' => [
-                'id' => $addressId,
-                'name' => 'not',
-                'street' => 'test',
-                'city' => 'not',
-                'zipcode' => 'not',
-                'salutationId' => $this->getValidSalutationId(),
-                'countryId' => $this->getValidCountryId(),
-            ],
-            'defaultBillingAddressId' => $addressId,
-            'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
-            'email' => $mail,
-            'password' => $password,
-            'name' => 'match',
-            'salutationId' => $this->getValidSalutationId(),
-            'customerNumber' => 'not',
-        ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
-        $this->customerRepository->create([$customer], $context);
-    }
-
     private function getSalesChannelContext(): SalesChannelContext
     {
         $this->addCountriesToSalesChannel();
 
         return static::getContainer()->get(SalesChannelContextFactory::class)
             ->create(Uuid::randomHex(), TestDefaults::SALES_CHANNEL);
-    }
-
-    private function setDomainForSalesChannel(string $domain, string $languageId, Context $context): void
-    {
-        /** @var EntityRepository $salesChannelRepository */
-        $salesChannelRepository = static::getContainer()->get('sales_channel.repository');
-
-        try {
-            $data = [
-                'id' => TestDefaults::SALES_CHANNEL,
-                'domains' => [
-                    [
-                        'languageId' => $languageId,
-                        'currencyId' => Defaults::CURRENCY,
-                        'snippetSetId' => $this->getSnippetSetIdForLocale('en-GB'),
-                        'url' => $domain,
-                    ],
-                ],
-            ];
-
-            $salesChannelRepository->update([$data], $context);
-        } catch (\Exception) {
-            // ignore if domain already exists
-        }
     }
 }

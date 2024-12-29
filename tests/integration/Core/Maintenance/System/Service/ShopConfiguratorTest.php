@@ -59,14 +59,14 @@ class ShopConfiguratorTest extends TestCase
 
     public function testSwitchLanguageWithNewLanguage(): void
     {
-        $this->shopConfigurator->setDefaultLanguage('es-ES');
+        $this->shopConfigurator->setDefaultLanguage('en-US');
 
         $lang = $this->langRepo->search(new Criteria([Defaults::LANGUAGE_SYSTEM]), Context::createDefaultContext())
             ->getEntities()
             ->first();
 
         static::assertNotNull($lang);
-        static::assertSame('Spanish', $lang->getName());
+        static::assertSame('English (US)', $lang->getName());
     }
 
     public function testSwitchLanguageWithDefaultLocale(): void
@@ -90,7 +90,7 @@ class ShopConfiguratorTest extends TestCase
             ->first();
 
         static::assertNotNull($lang);
-        static::assertSame('Deutsch', $lang->getName());
+        static::assertSame('中文', $lang->getName());
     }
 
     public function testSwitchDefaultCurrencyWithNewCurrency(): void
@@ -136,18 +136,18 @@ class ShopConfiguratorTest extends TestCase
             ->first();
 
         static::assertNotNull($currency);
-        static::assertSame('Pound', $currency->getName());
+        static::assertSame('British Pound', $currency->getName());
         static::assertSame(1.0, $currency->getFactor());
 
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('isoCode', 'EUR'));
+        $criteria->addFilter(new EqualsFilter('isoCode', 'CNY'));
 
         $oldDefault = $this->currencyRepo->search($criteria, Context::createDefaultContext())
             ->getEntities()
             ->first();
 
         static::assertNotNull($oldDefault);
-        static::assertSame('Euro', $oldDefault->getName());
-        static::assertSame(1.1216169229561337, $oldDefault->getFactor());
+        static::assertSame('CNY', $oldDefault->getName());
+        static::assertSame(1.0, $oldDefault->getFactor());
     }
 }

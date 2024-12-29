@@ -2,7 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\Routing;
 
-use Cicada\Core\Checkout\Cart\Exception\CustomerNotLoggedInException;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\AdminSalesChannelApiSource;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
@@ -10,7 +9,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Routing\Event\SalesChannelContextResolvedEvent;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Routing\SalesChannelRequestContextResolver;
@@ -107,8 +105,8 @@ class SalesChannelRequestContextResolverTest extends TestCase
         return [
             [
                 'http://test.store/en-eur',
-                'EUR',
-                'EUR',
+                'CNY',
+                'CNY',
             ],
             [
                 'http://test.store/en-usd',
@@ -152,11 +150,7 @@ class SalesChannelRequestContextResolverTest extends TestCase
         if ($pass) {
             static::assertNull($exception, 'Exception: ' . ($exception !== null ? \print_r($exception->getMessage(), true) : 'No Exception'));
         } else {
-            if (Feature::isActive('v6.7.0.0')) {
-                static::assertInstanceOf(RoutingException::class, $exception, 'Exception: ' . ($exception !== null ? \print_r($exception->getMessage(), true) : 'No Exception'));
-            } else {
-                static::assertInstanceOf(CustomerNotLoggedInException::class, $exception, 'Exception: ' . ($exception !== null ? \print_r($exception->getMessage(), true) : 'No Exception'));
-            }
+            static::assertInstanceOf(RoutingException::class, $exception, 'Exception: ' . ($exception !== null ? \print_r($exception->getMessage(), true) : 'No Exception'));
         }
     }
 

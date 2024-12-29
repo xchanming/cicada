@@ -169,12 +169,12 @@ class AdministrationController extends AbstractController
             throw RoutingException::languageNotFound($context->getLanguageId());
         }
 
-        $deLanguageId = $this->fetchLanguageIdByName('zh-CN', $this->connection);
+        $zhLanguageId = $this->fetchLanguageIdByName('zh-CN', $this->connection);
         $enLanguageId = $this->fetchLanguageIdByName('en-GB', $this->connection);
 
         switch ($context->getLanguageId()) {
-            case $deLanguageId:
-                $defaultExcludedTerm = require $this->cicadaCoreDir . '/Migration/Fixtures/stopwords/de.php';
+            case $zhLanguageId:
+                $defaultExcludedTerm = require $this->cicadaCoreDir . '/Migration/Fixtures/stopwords/zh.php';
 
                 break;
             case $enLanguageId:

@@ -126,12 +126,6 @@ class TestBasicStruct extends SerializationFixture
                             'related' => \sprintf('%s/media/1d23c1b015bf43fb97e89008cf42d6fe/mail-template-media', $baseUrl),
                         ],
                     ],
-                    'documentBaseConfigs' => [
-                        'data' => [],
-                        'links' => [
-                            'related' => \sprintf('%s/media/1d23c1b015bf43fb97e89008cf42d6fe/document-base-configs', $baseUrl),
-                        ],
-                    ],
                     'shippingMethods' => [
                         'data' => [],
                         'links' => [
@@ -172,12 +166,6 @@ class TestBasicStruct extends SerializationFixture
                         'data' => [],
                         'links' => [
                             'related' => \sprintf('%s/media/1d23c1b015bf43fb97e89008cf42d6fe/cms-pages', $baseUrl),
-                        ],
-                    ],
-                    'documents' => [
-                        'data' => [],
-                        'links' => [
-                            'related' => \sprintf('%s/media/1d23c1b015bf43fb97e89008cf42d6fe/documents', $baseUrl),
                         ],
                     ],
                 ],
@@ -223,7 +211,6 @@ class TestBasicStruct extends SerializationFixture
             'propertyGroupOptions' => null,
             'mailTemplateMedia' => null,
             'tags' => null,
-            'documentBaseConfigs' => null,
             'shippingMethods' => null,
             'paymentMethods' => null,
             'productConfiguratorSettings' => null,
@@ -231,7 +218,6 @@ class TestBasicStruct extends SerializationFixture
             'cmsBlocks' => null,
             'cmsSections' => null,
             'cmsPages' => null,
-            'documents' => null,
             '_uniqueIdentifier' => '1d23c1b015bf43fb97e89008cf42d6fe',
             'versionId' => null,
             'extensions' => [],
@@ -259,7 +245,6 @@ class TestBasicStruct extends SerializationFixture
             $fixtures['data']['relationships']['mediaFolder'],
             $fixtures['data']['relationships']['propertyGroupOptions'],
             $fixtures['data']['relationships']['mailTemplateMedia'],
-            $fixtures['data']['relationships']['documentBaseConfigs'],
             $fixtures['data']['relationships']['shippingMethods'],
             $fixtures['data']['relationships']['paymentMethods'],
             $fixtures['data']['relationships']['productConfiguratorSettings'],
@@ -267,7 +252,6 @@ class TestBasicStruct extends SerializationFixture
             $fixtures['data']['relationships']['cmsBlocks'],
             $fixtures['data']['relationships']['cmsSections'],
             $fixtures['data']['relationships']['cmsPages'],
-            $fixtures['data']['relationships']['documents'],
             $fixtures['data']['relationships']['mediaFolderId']
         );
 
@@ -293,7 +277,6 @@ class TestBasicStruct extends SerializationFixture
             $fixtures['mediaFolder'],
             $fixtures['propertyGroupOptions'],
             $fixtures['mailTemplateMedia'],
-            $fixtures['documentBaseConfigs'],
             $fixtures['shippingMethods'],
             $fixtures['paymentMethods'],
             $fixtures['productConfiguratorSettings'],
@@ -301,7 +284,6 @@ class TestBasicStruct extends SerializationFixture
             $fixtures['cmsBlocks'],
             $fixtures['cmsSections'],
             $fixtures['cmsPages'],
-            $fixtures['documents'],
             $fixtures['mediaFolderId']
         );
 

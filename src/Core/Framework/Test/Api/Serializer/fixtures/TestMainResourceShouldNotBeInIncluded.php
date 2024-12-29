@@ -227,12 +227,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
                                 'related' => \sprintf('%s/media/3e352be2d85846dd97529c0f6b544870/mail-template-media', $baseUrl),
                             ],
                         ],
-                        'documentBaseConfigs' => [
-                            'data' => [],
-                            'links' => [
-                                'related' => \sprintf('%s/media/3e352be2d85846dd97529c0f6b544870/document-base-configs', $baseUrl),
-                            ],
-                        ],
                         'shippingMethods' => [
                             'data' => [],
                             'links' => [
@@ -273,12 +267,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
                             'data' => [],
                             'links' => [
                                 'related' => \sprintf('%s/media/3e352be2d85846dd97529c0f6b544870/cms-pages', $baseUrl),
-                            ],
-                        ],
-                        'documents' => [
-                            'data' => [],
-                            'links' => [
-                                'related' => \sprintf('%s/media/3e352be2d85846dd97529c0f6b544870/documents', $baseUrl),
                             ],
                         ],
                     ],
@@ -359,7 +347,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
                     'mailTemplateMedia' => null,
                     'customFields' => null,
                     'tags' => null,
-                    'documentBaseConfigs' => null,
                     'shippingMethods' => null,
                     'paymentMethods' => null,
                     'productConfiguratorSettings' => null,
@@ -367,7 +354,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
                     'cmsBlocks' => null,
                     'cmsSections' => null,
                     'cmsPages' => null,
-                    'documents' => null,
                     '_uniqueIdentifier' => '3e352be2d85846dd97529c0f6b544870',
                     'versionId' => null,
                     'translated' => [],
@@ -418,7 +404,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
             $fixtures['included'][0]['relationships']['mediaFolder'],
             $fixtures['included'][0]['relationships']['propertyGroupOptions'],
             $fixtures['included'][0]['relationships']['mailTemplateMedia'],
-            $fixtures['included'][0]['relationships']['documentBaseConfigs'],
             $fixtures['included'][0]['relationships']['shippingMethods'],
             $fixtures['included'][0]['relationships']['paymentMethods'],
             $fixtures['included'][0]['relationships']['productConfiguratorSettings'],
@@ -426,7 +411,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
             $fixtures['included'][0]['relationships']['cmsBlocks'],
             $fixtures['included'][0]['relationships']['cmsSections'],
             $fixtures['included'][0]['relationships']['cmsPages'],
-            $fixtures['included'][0]['relationships']['documents']
         );
 
         return $fixtures;
@@ -453,7 +437,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
             $fixtures['media'][0]['mediaFolder'],
             $fixtures['media'][0]['propertyGroupOptions'],
             $fixtures['media'][0]['mailTemplateMedia'],
-            $fixtures['media'][0]['documentBaseConfigs'],
             $fixtures['media'][0]['shippingMethods'],
             $fixtures['media'][0]['paymentMethods'],
             $fixtures['media'][0]['productConfiguratorSettings'],
@@ -461,7 +444,6 @@ class TestMainResourceShouldNotBeInIncluded extends SerializationFixture
             $fixtures['media'][0]['cmsBlocks'],
             $fixtures['media'][0]['cmsSections'],
             $fixtures['media'][0]['cmsPages'],
-            $fixtures['media'][0]['documents']
         );
 
         return $fixtures;

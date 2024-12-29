@@ -16,7 +16,6 @@ describe('components/media/sw-media-modal-delete', () => {
             productManufacturers: [],
             productMedia: [],
             mailTemplateMedia: [],
-            documentBaseConfigs: [],
             paymentMethods: [],
             shippingMethods: [],
             cmsBlocks: [],
@@ -113,7 +112,6 @@ describe('components/media/sw-media-modal-delete', () => {
                 productManufacturers: [productManufacturer],
                 productMedia: [productMedia],
                 mailTemplateMedia: [mailTemplateMedia],
-                documentBaseConfigs: [documentBaseConfig],
                 paymentMethods: [paymentMethod],
                 shippingMethods: [shippingMethod],
                 cmsBlocks: [cmsBlock],
@@ -132,9 +130,6 @@ describe('components/media/sw-media-modal-delete', () => {
         expect(wrapper.vm.mediaQuickInfo.productMedia).toEqual([productMedia]);
         expect(wrapper.vm.mediaQuickInfo.mailTemplateMedia).toEqual([
             mailTemplateMedia,
-        ]);
-        expect(wrapper.vm.mediaQuickInfo.documentBaseConfigs).toEqual([
-            documentBaseConfig,
         ]);
         expect(wrapper.vm.mediaQuickInfo.paymentMethods).toEqual([
             paymentMethod,

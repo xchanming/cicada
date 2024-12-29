@@ -5,7 +5,7 @@
     "components": {
         "schemas": {
             "Order": {
-                "required": ["documents", "orderDate", "stateMachineState"]
+                "required": ["orderDate", "stateMachineState"]
             }
         }
     }

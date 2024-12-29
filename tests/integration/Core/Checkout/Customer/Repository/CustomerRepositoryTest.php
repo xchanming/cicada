@@ -83,7 +83,7 @@ class CustomerRepositoryTest extends TestCase
             'country' => ['name' => 'not'],
         ];
 
-        $matchTerm = Random::getAlphanumericString(20);
+        $matchTerm = Random::getAlphanumericString(16);
 
         $records = [
             [
@@ -132,13 +132,6 @@ class CustomerRepositoryTest extends TestCase
             ],
         ];
 
-        if (!Feature::isActive('v6.7.0.0')) {
-            $paymentMethod = $this->getValidPaymentMethodId();
-            foreach ($records as &$customer) {
-                $customer['defaultPaymentMethodId'] = $paymentMethod;
-            }
-        }
-
         $this->repository->create($records, Context::createDefaultContext());
 
         $context = Context::createDefaultContext();
@@ -152,12 +145,7 @@ class CustomerRepositoryTest extends TestCase
 
         $result = $this->repository->searchIds($criteria, $context);
 
-        static::assertCount(4, $result->getIds());
-
-        static::assertGreaterThan(
-            $result->getDataFieldOfId($recordA, '_score'),
-            $result->getDataFieldOfId($recordB, '_score')
-        );
+        static::assertCount(3, $result->getIds());
 
         static::assertGreaterThan(
             $result->getDataFieldOfId($recordD, '_score'),

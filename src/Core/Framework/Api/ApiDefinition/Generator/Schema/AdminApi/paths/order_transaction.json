@@ -40,14 +40,6 @@
                                     "sendMail": {
                                         "description": "Controls if a mail should be sent to the customer."
                                     },
-                                    "documentIds": {
-                                        "description": "A list of document identifiers that should be attached",
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string",
-                                            "pattern": "^[0-9a-f]{32}$"
-                                        }
-                                    },
                                     "mediaIds": {
                                         "description": "A list of media identifiers that should be attached",
                                         "type": "array",

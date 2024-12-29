@@ -172,7 +172,7 @@ class TranslatorTest extends TestCase
         $catalogue = $this->translator->getCatalogue('en-GB');
         $fallback = $catalogue->getFallbackCatalogue();
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('de', $fallback->getLocale());
+        static::assertEquals('zh', $fallback->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
         static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
@@ -200,7 +200,7 @@ class TranslatorTest extends TestCase
         $catalogue = $this->translator->getCatalogue('zh-CN');
         $fallback = $catalogue->getFallbackCatalogue();
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('de', $fallback->getLocale());
+        static::assertEquals('zh', $fallback->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
         static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());

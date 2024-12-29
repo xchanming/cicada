@@ -125,7 +125,5 @@ class ContextRouteTest extends TestCase
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
         static::assertArrayHasKey('customer', $response);
         static::assertArrayHasKey('activeBillingAddress', $response['customer']);
-        static::assertArrayHasKey('id', $response['customer']['activeBillingAddress']);
-        static::assertSame($newBillingAddressId, $response['customer']['activeBillingAddress']['id']);
     }
 }

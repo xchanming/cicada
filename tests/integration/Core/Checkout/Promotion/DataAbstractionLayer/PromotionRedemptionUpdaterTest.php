@@ -167,7 +167,7 @@ class PromotionRedemptionUpdaterTest extends TestCase
         );
 
         $customer = $connection->fetchAllAssociative(
-            'SELECT `id`, `name`, `last_name` FROM customer WHERE `id` = :id',
+            'SELECT `id`, `name` FROM customer WHERE `id` = :id',
             ['id' => Uuid::fromHexToBytes($this->ids->get('customer'))]
         );
 
@@ -250,7 +250,7 @@ class PromotionRedemptionUpdaterTest extends TestCase
         return [
             'orderId' => $orderId,
             'customerId' => Uuid::fromBytesToHex($customer['id']),
-            'customerName' => $customer['name'] . ' ' . $customer['last_name'],
+            'customerName' => $customer['name'],
         ];
     }
 

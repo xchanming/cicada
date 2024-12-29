@@ -68,28 +68,6 @@ class AccountService
     }
 
     /**
-     * @deprecated tag:v6.7.0 - Method will be removed, use `AccountService::loginById` or `AccountService::loginByCredentials` instead
-     *
-     * @throws BadCredentialsException
-     * @throws CustomerNotFoundException
-     */
-    public function login(string $email, SalesChannelContext $context, bool $includeGuest = false): string
-    {
-        Feature::triggerDeprecationOrThrow('v6.7.0.0', 'Method `AccountService::login` will be removed, use `AccountService::loginById` or `AccountService::loginByCredentials` instead');
-
-        if (empty($email)) {
-            throw CustomerException::badCredentials();
-        }
-
-        $event = new CustomerBeforeLoginEvent($context, $email);
-        $this->eventDispatcher->dispatch($event);
-
-        $customer = $this->getCustomerByEmail($email, $context, $includeGuest);
-
-        return $this->loginByCustomer($customer, $context);
-    }
-
-    /**
      * @throws BadCredentialsException
      * @throws CustomerNotFoundByIdException
      */
@@ -191,16 +169,14 @@ class AccountService
     }
 
     /**
-     * @deprecated tag:v6.7.0 - Parameter $includeGuest is unused and will be removed
-     *
      * @throws CustomerNotFoundException
      */
-    private function getCustomerByEmail(string $email, SalesChannelContext $context, bool $includeGuest = false): CustomerEntity
+    private function getCustomerByEmail(string $email, SalesChannelContext $context): CustomerEntity
     {
         $criteria = new Criteria();
         $criteria->addFilter(new EqualsFilter('email', $email));
 
-        $customer = $this->fetchCustomer($criteria, $context, $includeGuest);
+        $customer = $this->fetchCustomer($criteria, $context);
         if ($customer === null) {
             throw CustomerException::customerNotFound($email);
         }

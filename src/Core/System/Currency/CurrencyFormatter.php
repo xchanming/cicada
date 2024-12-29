@@ -11,6 +11,8 @@ use Symfony\Contracts\Service\ResetInterface;
 #[Package('buyers-experience')]
 class CurrencyFormatter implements ResetInterface
 {
+    private const REGEX_REMOVE_COUNTRY_CODE = '/^[A-Za-z]+/';
+
     /**
      * @var \NumberFormatter[]
      */
@@ -35,7 +37,7 @@ class CurrencyFormatter implements ResetInterface
         );
         $formatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $decimals);
 
-        return (string) $formatter->formatCurrency($price, $currency);
+        return (string) preg_replace(self::REGEX_REMOVE_COUNTRY_CODE, '', (string) $formatter->formatCurrency($price, $currency));
     }
 
     public function reset(): void

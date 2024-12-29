@@ -39,7 +39,6 @@ export default {
             categories: [],
             manufacturers: [],
             mailTemplates: [],
-            documentBaseConfigs: [],
             avatarUsers: [],
             paymentMethods: [],
             shippingMethods: [],
@@ -108,10 +107,6 @@ export default {
                 if (!usages.some((usage) => usage.link.id === mailTemplate.id)) {
                     usages.push(this.getMailTemplateUsage(mailTemplate));
                 }
-            });
-
-            this.documentBaseConfigs.forEach((documentBaseConfig) => {
-                usages.push(this.getDocumentBaseConfigUsage(documentBaseConfig));
             });
 
             this.paymentMethods.forEach((paymentMethod) => {
@@ -220,10 +215,6 @@ export default {
 
         loadMailTemplateAssociations() {
             this.mailTemplates = this.item.mailTemplateMedia;
-        },
-
-        loadDocumentBaseConfigAssociations() {
-            this.documentBaseConfigs = this.item.documentBaseConfigs;
         },
 
         loadAvatarUserAssociations() {

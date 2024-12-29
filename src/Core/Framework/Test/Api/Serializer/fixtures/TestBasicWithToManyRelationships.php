@@ -225,12 +225,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
                                 'related' => \sprintf('%s/media/548faa1f7846436c85944f4aea792d96/mail-template-media', $baseUrl),
                             ],
                         ],
-                        'documentBaseConfigs' => [
-                            'data' => [],
-                            'links' => [
-                                'related' => \sprintf('%s/media/548faa1f7846436c85944f4aea792d96/document-base-configs', $baseUrl),
-                            ],
-                        ],
                         'shippingMethods' => [
                             'data' => [],
                             'links' => [
@@ -271,12 +265,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
                             'data' => [],
                             'links' => [
                                 'related' => \sprintf('%s/media/548faa1f7846436c85944f4aea792d96/cms-pages', $baseUrl),
-                            ],
-                        ],
-                        'documents' => [
-                            'data' => [],
-                            'links' => [
-                                'related' => \sprintf('%s/media/548faa1f7846436c85944f4aea792d96/documents', $baseUrl),
                             ],
                         ],
                     ],
@@ -360,7 +348,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
                     'propertyGroupOptions' => null,
                     'mailTemplateMedia' => null,
                     'tags' => null,
-                    'documentBaseConfigs' => null,
                     'shippingMethods' => null,
                     'paymentMethods' => null,
                     'productConfiguratorSettings' => null,
@@ -368,7 +355,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
                     'cmsBlocks' => null,
                     'cmsSections' => null,
                     'cmsPages' => null,
-                    'documents' => null,
                     '_uniqueIdentifier' => '548faa1f7846436c85944f4aea792d96',
                     'versionId' => null,
                     'extensions' => [],
@@ -414,7 +400,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
             $fixtures['included'][0]['relationships']['mediaFolder'],
             $fixtures['included'][0]['relationships']['propertyGroupOptions'],
             $fixtures['included'][0]['relationships']['mailTemplateMedia'],
-            $fixtures['included'][0]['relationships']['documentBaseConfigs'],
             $fixtures['included'][0]['relationships']['shippingMethods'],
             $fixtures['included'][0]['relationships']['paymentMethods'],
             $fixtures['included'][0]['relationships']['productConfiguratorSettings'],
@@ -422,7 +407,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
             $fixtures['included'][0]['relationships']['cmsBlocks'],
             $fixtures['included'][0]['relationships']['cmsSections'],
             $fixtures['included'][0]['relationships']['cmsPages'],
-            $fixtures['included'][0]['relationships']['documents']
         );
 
         return $fixtures;
@@ -449,7 +433,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
             $fixtures['media'][0]['mediaFolder'],
             $fixtures['media'][0]['propertyGroupOptions'],
             $fixtures['media'][0]['mailTemplateMedia'],
-            $fixtures['media'][0]['documentBaseConfigs'],
             $fixtures['media'][0]['shippingMethods'],
             $fixtures['media'][0]['paymentMethods'],
             $fixtures['media'][0]['productConfiguratorSettings'],
@@ -457,7 +440,6 @@ class TestBasicWithToManyRelationships extends SerializationFixture
             $fixtures['media'][0]['cmsBlocks'],
             $fixtures['media'][0]['cmsSections'],
             $fixtures['media'][0]['cmsPages'],
-            $fixtures['media'][0]['documents']
         );
 
         return $fixtures;

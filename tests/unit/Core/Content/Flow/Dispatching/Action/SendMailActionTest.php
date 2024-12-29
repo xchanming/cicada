@@ -8,9 +8,11 @@ use Cicada\Core\Content\Flow\Dispatching\FlowState;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Content\Flow\Dispatching\Struct\Sequence;
 use Cicada\Core\Content\Mail\Service\AbstractMailService;
+use Cicada\Core\Content\Mail\Service\MailAttachmentsConfig;
 use Cicada\Core\Content\MailTemplate\Exception\MailEventConfigurationException;
 use Cicada\Core\Content\MailTemplate\MailTemplateCollection;
 use Cicada\Core\Content\MailTemplate\MailTemplateEntity;
+use Cicada\Core\Content\MailTemplate\Subscriber\MailSendSubscriberConfig;
 use Cicada\Core\Framework\Adapter\Translation\AbstractTranslator;
 use Cicada\Core\Framework\Adapter\Translation\Translator;
 use Cicada\Core\Framework\Context;
@@ -149,7 +151,7 @@ class SendMailActionTest extends TestCase
         $expected = [
             'data' => [
                 'recipients' => [
-                    'email' => 'firstName lastName',
+                    'email' => 'name',
                 ],
                 'salesChannelId' => TestDefaults::SALES_CHANNEL,
                 'templateId' => $mailTemplateId,
@@ -254,7 +256,7 @@ class SendMailActionTest extends TestCase
         $expected = [
             'data' => [
                 'recipients' => [
-                    'email' => 'firstName lastName',
+                    'email' => 'name',
                 ],
                 'salesChannelId' => TestDefaults::SALES_CHANNEL,
                 'templateId' => $mailTemplateId,
@@ -265,6 +267,13 @@ class SendMailActionTest extends TestCase
                 'mediaIds' => [],
                 'senderName' => null,
                 'languageId' => null,
+                'attachmentsConfig' => new MailAttachmentsConfig(
+                    Context::createDefaultContext(),
+                    $this->mailTemplate,
+                    new MailSendSubscriberConfig(false, []),
+                    $config,
+                    $orderId
+                ),
             ],
             'context' => Context::createDefaultContext(),
         ];
@@ -279,7 +288,7 @@ class SendMailActionTest extends TestCase
             [
                 MailAware::MAIL_STRUCT => [
                     'recipients' => [
-                        'email' => 'firstName lastName',
+                        'email' => 'name',
                     ],
                 ],
                 MailAware::SALES_CHANNEL_ID => TestDefaults::SALES_CHANNEL,
@@ -291,8 +300,7 @@ class SendMailActionTest extends TestCase
         $flow->setData(OrderAware::ORDER_ID, $orderId);
         $flow->setData(FlowMailVariables::CONTACT_FORM_DATA, [
             'email' => 'customer@example.com',
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
         ]);
 
         $flow->setConfig($config);
@@ -325,8 +333,7 @@ class SendMailActionTest extends TestCase
                     'orderId' => $orderId,
                     'contactFormData' => [
                         'email' => 'customer@example.com',
-                        'firstName' => 'Max',
-                        'lastName' => 'Mustermann',
+                        'name' => 'Max',
                     ],
                 ],
             );
@@ -421,7 +428,7 @@ class SendMailActionTest extends TestCase
         $expected = [
             'data' => [
                 'recipients' => [
-                    'email' => 'firstName lastName',
+                    'email' => 'name',
                 ],
                 'salesChannelId' => TestDefaults::SALES_CHANNEL,
                 'templateId' => $mailTemplateId,
@@ -432,6 +439,13 @@ class SendMailActionTest extends TestCase
                 'mediaIds' => [],
                 'senderName' => null,
                 'languageId' => $languageId,
+                'attachmentsConfig' => new MailAttachmentsConfig(
+                    Context::createDefaultContext(),
+                    $this->mailTemplate,
+                    new MailSendSubscriberConfig(false, []),
+                    $config,
+                    $orderId
+                ),
             ],
             'context' => Context::createDefaultContext(),
         ];
@@ -445,7 +459,7 @@ class SendMailActionTest extends TestCase
             [
                 MailAware::MAIL_STRUCT => [
                     'recipients' => [
-                        'email' => 'firstName lastName',
+                        'email' => 'name',
                     ],
                 ],
                 MailAware::SALES_CHANNEL_ID => TestDefaults::SALES_CHANNEL,
@@ -458,8 +472,7 @@ class SendMailActionTest extends TestCase
         $flow->setData(LanguageAware::LANGUAGE_ID, $languageId);
         $flow->setData(FlowMailVariables::CONTACT_FORM_DATA, [
             'email' => 'customer@example.com',
-            'firstName' => 'Max',
-            'lastName' => 'Mustermann',
+            'name' => 'Max',
         ]);
 
         $flow->setConfig($config);
@@ -492,8 +505,7 @@ class SendMailActionTest extends TestCase
                     'orderId' => $orderId,
                     'contactFormData' => [
                         'email' => 'customer@example.com',
-                        'firstName' => 'Max',
-                        'lastName' => 'Mustermann',
+                        'name' => 'Max',
                     ],
                     'languageId' => $languageId,
                 ]

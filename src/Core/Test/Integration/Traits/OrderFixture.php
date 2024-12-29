@@ -24,7 +24,7 @@ use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\TestDefaults;
 
 /**
- * @deprecated tag:v6.7.0 - reason:becomes-internal - Will be internal in v6.7.0
+ * @internal
  */
 #[Package('services-settings')]
 trait OrderFixture

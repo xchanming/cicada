@@ -59,10 +59,6 @@ class OrderRoute extends AbstractOrderRoute
 
         $criteria->addFilter(new EqualsFilter('order.salesChannelId', $context->getSalesChannel()->getId()));
 
-        $criteria->getAssociation('documents')
-            ->addFilter(new EqualsFilter('config.displayInCustomerAccount', 'true'))
-            ->addFilter(new EqualsFilter('sent', true));
-
         $criteria->addAssociation('billingAddress');
         $criteria->addAssociation('orderCustomer.customer');
 

@@ -248,7 +248,6 @@ export default {
                 'productMedia',
                 'productManufacturers',
                 'mailTemplateMedia',
-                'documentBaseConfigs',
                 'paymentMethods',
                 'shippingMethods',
                 'cmsBlocks',

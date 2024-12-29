@@ -1008,10 +1008,6 @@ class EntityRepositoryTest extends TestCase
             ],
         ];
 
-        if (!Feature::isActive('v6.7.0.0')) {
-            $record['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $repository = $this->createRepository(CustomerDefinition::class);
         $context = Context::createDefaultContext();
 

@@ -268,15 +268,8 @@ class CustomerException extends HttpException
         return self::customerOptinNotCompleted($id);
     }
 
-    /**
-     * @deprecated tag:v6.7.0 - Parameter $message will be removed as it is unused
-     */
-    public static function customerOptinNotCompleted(string $id, ?string $message = null): CustomerOptinNotCompletedException
+    public static function customerOptinNotCompleted(string $id): CustomerOptinNotCompletedException
     {
-        if ($message !== null) {
-            Feature::triggerDeprecationOrThrow('v6.7.0.0', 'The parameter $message is unused and will be removed.');
-        }
-
         return new CustomerOptinNotCompletedException($id);
     }
 

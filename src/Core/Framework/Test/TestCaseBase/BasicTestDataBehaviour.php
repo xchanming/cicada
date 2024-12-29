@@ -205,13 +205,13 @@ trait BasicTestDataBehaviour
         return $id;
     }
 
-    protected function getDeCountryId(): string
+    protected function getCnCountryId(): string
     {
         /** @var EntityRepository $repository */
         $repository = static::getContainer()->get('country.repository');
 
         $criteria = (new Criteria())->setLimit(1)
-            ->addFilter(new EqualsFilter('iso', 'DE'));
+            ->addFilter(new EqualsFilter('iso', 'CN'));
 
         /** @var string $id */
         $id = $repository->searchIds($criteria, Context::createDefaultContext())->firstId();
@@ -281,7 +281,7 @@ trait BasicTestDataBehaviour
         return $id;
     }
 
-    protected function getCurrencyIdByIso(string $iso = 'EUR'): string
+    protected function getCurrencyIdByIso(string $iso = 'CNY'): string
     {
         $connection = static::getContainer()->get(Connection::class);
 

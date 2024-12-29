@@ -9,7 +9,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Util\Random;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
@@ -111,7 +110,7 @@ trait SalesChannelApiTestBehaviour
                 '/store-api/account/login',
                 [
                     'email' => $email,
-                    'password' => 'cicada',
+                    'password' => '12345678',
                 ]
             );
 
@@ -246,10 +245,6 @@ trait SalesChannelApiTestBehaviour
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ], $customerOverride);
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $customerId = $customer['id'];
 

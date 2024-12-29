@@ -20,7 +20,6 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
             productManufacturers: [],
             productMedia: [],
             mailTemplateMedia: [],
-            documentBaseConfigs: [],
             paymentMethods: [],
             shippingMethods: [],
             cmsBlocks: [],
@@ -140,9 +139,6 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
             },
         };
 
-        register('sw-settings-document', moduleMock);
-        const documentBaseConfigMock = { name: 'document test' };
-
         register('sw-settings-payment', moduleMock);
         const paymentMock = {
             translated: { distinguishableName: 'payment test' },
@@ -174,7 +170,6 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
                 categories: [categoryMock],
                 productManufacturers: [manufacturerMock],
                 mailTemplateMedia: [mailTemplateMediaMock],
-                documentBaseConfigs: [documentBaseConfigMock],
                 paymentMethods: [paymentMock],
                 shippingMethods: [shippingMock],
                 cmsBlocks: [cmsBlockMock],

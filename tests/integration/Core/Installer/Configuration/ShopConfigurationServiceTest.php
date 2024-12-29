@@ -26,8 +26,8 @@ class ShopConfigurationServiceTest extends TestCase
             'name' => 'test-shop',
             'locale' => 'zh-CN',
             'currency' => 'USD',
-            'additionalCurrencies' => ['EUR', 'CHF'],
-            'country' => 'DEU',
+            'additionalCurrencies' => ['CNY'],
+            'country' => 'CHN',
             'email' => 'test@test.com',
             'host' => 'localhost',
             'schema' => 'https',
@@ -36,13 +36,13 @@ class ShopConfigurationServiceTest extends TestCase
         ], $connection);
 
         // assert that system language was updated
-        static::assertSame('Deutsch', $connection->fetchOne('SELECT `name` from `language` WHERE `id` = ?', [Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)]));
+        static::assertSame('中文', $connection->fetchOne('SELECT `name` from `language` WHERE `id` = ?', [Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)]));
         // assert that default currency was updated
         static::assertSame('USD', $connection->fetchOne('SELECT `iso_code` from `currency` WHERE `id` = ?', [Uuid::fromHexToBytes(Defaults::CURRENCY)]));
 
         $currencies = $connection->fetchAllKeyValue('SELECT `id`, `iso_code` from `currency`');
         // assert that not configured currencies are deleted
-        static::assertEqualsCanonicalizing(['USD', 'EUR', 'CHF'], array_values($currencies));
+        static::assertEqualsCanonicalizing(['USD', 'CNY'], array_values($currencies));
 
         // assert that sales channel was created
         $id = $connection->fetchOne('SELECT `sales_channel_id` FROM `sales_channel_translation` WHERE `name` = ?', ['test-shop']);
@@ -53,7 +53,7 @@ class ShopConfigurationServiceTest extends TestCase
         static::assertSame(Uuid::fromHexToBytes(Defaults::CURRENCY), $salesChannel['currency_id']);
         static::assertSame(Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), $salesChannel['language_id']);
 
-        static::assertSame('DE', $connection->fetchOne('SELECT `iso` FROM `country` WHERE `id` = ?', [$salesChannel['country_id']]));
+        static::assertSame('CN', $connection->fetchOne('SELECT `iso` FROM `country` WHERE `id` = ?', [$salesChannel['country_id']]));
 
         static::assertEqualsCanonicalizing(array_keys($currencies), $connection->fetchFirstColumn('SELECT `currency_id` FROM `sales_channel_currency` WHERE `sales_channel_id` = ?', [$id]));
 

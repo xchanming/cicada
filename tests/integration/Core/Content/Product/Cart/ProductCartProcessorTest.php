@@ -803,18 +803,18 @@ class ProductCartProcessorTest extends TestCase
         );
 
         $lineItem = $cart->get($this->ids->get('product'));
-        static::assertSame(19.0, $lineItem?->getPrice()?->getTaxRules()?->first()?->getTaxRate());
+        static::assertSame(0.0, $lineItem?->getPrice()?->getTaxRules()?->first()?->getTaxRate());
 
         $upsert = [
             'id' => $context->getCustomer()?->getDefaultShippingAddress()?->getId(),
-            'countryId' => static::getContainer()->get('country.repository')->searchIds((new Criteria())->addFilter(new EqualsFilter('iso', 'NL')), $context->getContext())->firstId(),
+            'countryId' => static::getContainer()->get('country.repository')->searchIds((new Criteria())->addFilter(new EqualsFilter('iso', 'CN')), $context->getContext())->firstId(),
         ];
         static::getContainer()->get('customer_address.repository')->upsert([$upsert], $context->getContext());
 
         $context = static::getContainer()->get(SalesChannelContextService::class)->get($parameters);
         $cart = $this->cartService->getCart($context->getToken(), $context, false);
         $lineItem = $cart->get($this->ids->get('product'));
-        static::assertSame(21.0, $lineItem?->getPrice()?->getTaxRules()?->first()?->getTaxRate());
+        static::assertSame(0.0, $lineItem?->getPrice()?->getTaxRules()?->first()?->getTaxRate());
     }
 
     public function testProducePriceChangeAfterContextRuleChange(): void
@@ -838,7 +838,7 @@ class ProductCartProcessorTest extends TestCase
                                 'type' => 'customerShippingCountry',
                                 'value' => [
                                     'operator' => '=',
-                                    'countryIds' => [$countryIds[1]],
+                                    'countryIds' => [$countryIds[0]],
                                 ],
                             ],
                         ],
@@ -868,12 +868,12 @@ class ProductCartProcessorTest extends TestCase
 
         $actualProduct = $cart->get($product->getId());
 
-        static::assertSame(15.0, $actualProduct?->getPrice()?->getTotalPrice());
+        static::assertSame(50.0, $actualProduct?->getPrice()?->getTotalPrice());
 
         static::getContainer()->get('customer_address.repository')->update([
             [
                 'id' => $context->getCustomer()->getDefaultBillingAddressId(),
-                'countryId' => $countryIds[1],
+                'countryId' => $countryIds[0],
             ],
         ], Context::createDefaultContext());
 
@@ -932,10 +932,6 @@ class ProductCartProcessorTest extends TestCase
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')->upsert([$customer], Context::createDefaultContext());
 

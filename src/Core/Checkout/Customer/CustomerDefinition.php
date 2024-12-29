@@ -61,7 +61,7 @@ class CustomerDefinition extends EntityDefinition
 {
     public const ENTITY_NAME = 'customer';
 
-    public const MAX_LENGTH_NAME = 16;
+    public const MAX_LENGTH_NAME = 20;
     public const MAX_LENGTH_TITLE = 100;
 
     public function getEntityName(): string

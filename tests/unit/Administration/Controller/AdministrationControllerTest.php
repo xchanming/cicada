@@ -308,7 +308,7 @@ class AdministrationControllerTest extends TestCase
     #[DataProvider('excludedTerms')]
     public function testResetExcludedSearchTerm(
         ?string $sourceLanguage,
-        string|false $deLanguageId,
+        string|false $zhLanguageId,
         string|false $enLanguageId,
         Context $context
     ): void {
@@ -316,7 +316,7 @@ class AdministrationControllerTest extends TestCase
         $searchConfigId = Uuid::randomHex();
 
         $this->connection->expects(static::any())->method('fetchOne')
-            ->willReturnOnConsecutiveCalls($searchConfigId, $deLanguageId, $enLanguageId);
+            ->willReturnOnConsecutiveCalls($searchConfigId, $zhLanguageId, $enLanguageId);
 
         if ($sourceLanguage === null) {
             $this->eventDispatcher->expects(static::once())->method('dispatch')
@@ -454,7 +454,7 @@ class AdministrationControllerTest extends TestCase
         ];
 
         yield 'german excluded terms' => [
-            'de',
+            'zh',
             Uuid::fromHexToBytes($languageId),
             false,
             new Context(new SystemSource(), [], Defaults::CURRENCY, [$languageId]),
@@ -502,7 +502,7 @@ class AdministrationControllerTest extends TestCase
      */
     private function getExcludedTerms(?string $language): array
     {
-        if (!\in_array($language, ['de', 'en'], true)) {
+        if (!\in_array($language, ['zh', 'en'], true)) {
             return [];
         }
 

@@ -541,7 +541,6 @@ class OrderSerializerTest extends TestCase
             'autoIncrement' => null,
             'stateMachineState' => null,
             'stateId' => null,
-            'documents' => null,
             'tags' => null,
             'createdById' => null,
             'createdBy' => null,

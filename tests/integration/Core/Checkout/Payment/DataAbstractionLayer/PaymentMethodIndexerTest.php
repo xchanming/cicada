@@ -151,7 +151,7 @@ class PaymentMethodIndexerTest extends TestCase
 
         /** @var PaymentMethodEntity $paidInAdvance */
         $paidInAdvance = $payments
-            ->filterByProperty('name', 'Paid in advance')
+            ->filterByProperty('name', 'Cash on delivery')
             ->first();
 
         static::assertEquals($paidInAdvance->getTranslation('name'), $paidInAdvance->getTranslation('distinguishableName'));

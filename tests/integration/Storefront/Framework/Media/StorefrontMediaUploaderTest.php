@@ -29,29 +29,6 @@ class StorefrontMediaUploaderTest extends TestCase
 
     final public const FIXTURE_DIR = __DIR__ . '/fixtures';
 
-    public function testUploadDocument(): void
-    {
-        $file = $this->getUploadFixture('empty.pdf');
-        $result = $this->getUploadService()->upload($file, 'test', 'documents', Context::createDefaultContext());
-
-        $repo = static::getContainer()->get('media.repository');
-        static::assertEquals(1, $repo->search(new Criteria([$result]), Context::createDefaultContext())->getTotal());
-        $this->removeMedia($result);
-    }
-
-    public function testUploadDocumentFailIllegalFileType(): void
-    {
-        if (!Feature::isActive('v6.7.0.0')) {
-            $this->expectException(FileTypeNotAllowedException::class);
-        } else {
-            $this->expectException(StorefrontFrameworkException::class);
-        }
-        $this->expectExceptionMessage('Type "application/vnd.ms-excel" of provided file is not allowed for documents');
-
-        $file = $this->getUploadFixture('empty.xls');
-        $this->getUploadService()->upload($file, 'test', 'documents', Context::createDefaultContext());
-    }
-
     public function testUploadDocumentFailFilenameContainsPhp(): void
     {
         $this->expectException(MediaException::class);
@@ -73,11 +50,7 @@ class StorefrontMediaUploaderTest extends TestCase
 
     public function testUploadDocumentFailIllegalImageType(): void
     {
-        if (!Feature::isActive('v6.7.0.0')) {
-            $this->expectException(FileTypeNotAllowedException::class);
-        } else {
-            $this->expectException(StorefrontFrameworkException::class);
-        }
+        $this->expectException(StorefrontFrameworkException::class);
         $this->expectExceptionMessage('Type "image/webp" of provided file is not allowed for images');
 
         $file = $this->getUploadFixture('image.webp');

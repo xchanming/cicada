@@ -12,7 +12,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -121,11 +120,7 @@ class CartOrderRouteTest extends TestCase
         $response = \json_decode($this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
         static::assertArrayHasKey('errors', $response);
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertSame(RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE, $response['errors'][0]['code']);
-        } else {
-            static::assertSame('CHECKOUT__CUSTOMER_NOT_LOGGED_IN', $response['errors'][0]['code']);
-        }
+        static::assertSame(RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE, $response['errors'][0]['code']);
     }
 
     public function testOrderEmptyCart(): void
@@ -412,7 +407,7 @@ class CartOrderRouteTest extends TestCase
         ], Context::createDefaultContext());
 
         $email = Uuid::randomHex() . '@example.com';
-        $password = 'cicada';
+        $password = '12345678';
         $this->createCustomerAndLogin($email, $password);
 
         $this->browser
@@ -641,7 +636,7 @@ class CartOrderRouteTest extends TestCase
     public function testOrderWithExistingNotSpecifiedSalutation(): void
     {
         $email = Uuid::randomHex() . '@example.com';
-        $password = 'cicada';
+        $password = '12345678';
 
         $this->createCustomerAndLogin($email, $password, true);
 
@@ -683,7 +678,7 @@ class CartOrderRouteTest extends TestCase
         $connection = static::getContainer()->get(Connection::class);
 
         $email = Uuid::randomHex() . '@example.com';
-        $password = 'cicada';
+        $password = '12345678';
 
         $connection->executeStatement(
             '
@@ -763,7 +758,7 @@ class CartOrderRouteTest extends TestCase
         bool $invalidSalutationId = false
     ): void {
         $email ??= Uuid::randomHex() . '@example.com';
-        $password ??= 'cicada';
+        $password ??= '12345678';
         $this->createCustomer(
             $password,
             $email,

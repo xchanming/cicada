@@ -320,8 +320,8 @@
       "labelNoTransactionState": "No transactions yet",
       "labelNoDeliveryState": "No deliveries yet"
     },
-    "assignMailTemplateCard": {
-      "cardTitle": "Assign email template",
+    "changeStateCard": {
+      "cardTitle": "Change state",
       "headline": "No email template assigned to this order status, please assign one.",
       "placeholderAssignMailTemplate": "Assign an email template...",
       "alertHeadline": "Hint",

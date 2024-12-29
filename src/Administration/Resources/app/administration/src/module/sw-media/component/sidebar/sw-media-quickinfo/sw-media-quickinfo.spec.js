@@ -16,7 +16,6 @@ const itemMock = (options = {}) => {
         productManufacturers: [],
         productMedia: [],
         mailTemplateMedia: [],
-        documentBaseConfigs: [],
         paymentMethods: [],
         shippingMethods: [],
         ...options,

@@ -270,10 +270,8 @@ class ProductExportGeneratorTest extends TestCase
 
     public static function isoCodeProvider(): \Generator
     {
-        yield 'Polish zloty iso code' => ['PLN'];
-        yield 'Euro iso code' => ['EUR'];
+        yield 'CNY iso code' => ['CNY'];
         yield 'US dollar iso code' => ['USD'];
-        yield 'British pound iso code' => ['GBP'];
     }
 
     private function createProductExportCriteria(string $id): Criteria

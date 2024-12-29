@@ -68,7 +68,6 @@ const createItems = (itemNames = defaultNames) => {
             productManufacturers: [],
             productMedia: [],
             mailTemplateMedia: [],
-            documentBaseConfigs: [],
             paymentMethods: [],
             shippingMethods: [],
         };

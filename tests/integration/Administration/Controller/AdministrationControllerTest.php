@@ -268,14 +268,14 @@ class AdministrationControllerTest extends TestCase
         $langId = $this->connection->executeQuery(
             'SELECT id FROM `language` WHERE `name` = :langName',
             [
-                'langName' => 'Vietnamese',
+                'langName' => 'English',
             ]
         )->fetchFirstColumn();
 
         $localeId = $this->connection->executeQuery(
             'SELECT id FROM `locale` WHERE `code` = :code',
             [
-                'code' => 'vi-VN',
+                'code' => 'en-US',
             ]
         )->fetchFirstColumn();
 
