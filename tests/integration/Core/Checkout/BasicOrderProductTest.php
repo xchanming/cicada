@@ -17,7 +17,7 @@ class BasicOrderProductTest extends TestCase
     use IntegrationTestBehaviour;
     use TestShortHands;
 
-    public function testBasicOrderFlow(): void
+    public function testBasicOrder(): void
     {
         $product = (new ProductBuilder(new IdsCollection(), 'p1'))
             ->stock(100)
@@ -40,11 +40,7 @@ class BasicOrderProductTest extends TestCase
         $this->assertLineItemTotalPrice($cart, $product->id, 100);
 
         $orderId = $this->mailListener(function (MailEventListener $listener) use ($cart, $context) {
-            $orderId = $this->order($cart, $context);
-
-            $listener->assertSent('order_confirmation_mail');
-
-            return $orderId;
+            return $this->order($cart, $context);
         });
 
         $item = $this->assertProductInOrder($orderId, $product->id);

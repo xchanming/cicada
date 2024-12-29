@@ -55,7 +55,7 @@ class Context extends Struct
         /**
          * @see CartPrice::TAX_STATE_GROSS, CartPrice::TAX_STATE_NET, CartPrice::TAX_STATE_FREE
          */
-        protected string $taxState = CartPrice::TAX_STATE_FREE,
+        protected string $taxState = CartPrice::TAX_STATE_GROSS,
         protected CashRoundingConfig $rounding = new CashRoundingConfig(2, 0.01, true)
     ) {
         if ($source instanceof SystemSource) {
