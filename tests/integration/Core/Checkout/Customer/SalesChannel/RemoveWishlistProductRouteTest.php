@@ -6,7 +6,6 @@ use Cicada\Core\Checkout\Customer\Event\WishlistProductRemovedEvent;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\Random;
@@ -134,11 +133,7 @@ class RemoveWishlistProductRouteTest extends TestCase
 
         $errors = $response['errors'][0];
         static::assertSame(403, $this->browser->getResponse()->getStatusCode());
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertSame(RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE, $errors['code']);
-        } else {
-            static::assertSame('CHECKOUT__CUSTOMER_NOT_LOGGED_IN', $errors['code']);
-        }
+        static::assertSame(RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE, $errors['code']);
         static::assertSame('Forbidden', $errors['title']);
         static::assertSame('Customer is not logged in.', $errors['detail']);
     }

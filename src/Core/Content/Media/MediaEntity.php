@@ -176,7 +176,7 @@ class MediaEntity extends Entity
      */
     protected $avatarUsers;
 
-    protected ?CustomerCollection $avatarCustomers;
+    protected ?CustomerCollection $avatarCustomers = null;
 
     /**
      * @var MediaThumbnailCollection|null

@@ -42,7 +42,7 @@ class ChangeEmailRouteTest extends TestCase
         $this->customerRepository = static::getContainer()->get('customer.repository');
 
         $email = Uuid::randomHex() . '@example.com';
-        $this->createCustomer('cicada', $email);
+        $this->createCustomer('12345678', $email);
 
         $this->browser
             ->request(

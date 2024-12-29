@@ -59,7 +59,7 @@ class CustomCartProcessor implements CartProcessorInterface, CartDataCollectorIn
                 )
             );
 
-            $lineItem->setShippingCostAware($lineItem->hasState(State::IS_PHYSICAL));
+            $lineItem->setShippingCostAware(!$lineItem->hasState(State::IS_DOWNLOAD));
 
             $toCalculate->add($lineItem);
         }

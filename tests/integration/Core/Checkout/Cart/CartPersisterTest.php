@@ -202,6 +202,8 @@ class CartPersisterTest extends TestCase
         $firstLineItem = $caughtEvent->getCart()->getLineItems()->first();
         static::assertInstanceOf(LineItem::class, $firstLineItem);
         static::assertSame('test', $firstLineItem->getLabel());
+        $serializedCart = serialize($cart);
+        file_put_contents('cart.blob', $serializedCart);
     }
 
     public function testCartCanBeUnserialized(): void

@@ -63,7 +63,10 @@ class CartException extends HttpException
     public const INVALID_COMPRESSION_METHOD = 'CHECKOUT__CART_INVALID_COMPRESSION_METHOD';
     public const CART_MIGRATION_INVALID_SOURCE = 'CHECKOUT_CART_MIGRATION_INVALID_SOURCE';
     public const CART_MIGRATION_MISSING_REDIS_CONNECTION = 'CHECKOUT__CART_MIGRATION_MISSING_REDIS_CONNECTION';
-
+    /**
+     * @deprecated tag:v6.7.0 - Constant SALES_CHANNEL_NOT_SET will be removed, as it is not used anymore in the future
+     */
+    public const SALES_CHANNEL_NOT_SET = 'CHECKOUT__SALES_CHANNEL_NOT_SET';
     public const CART_EMPTY = 'CHECKOUT__CART_EMPTY';
 
     public static function shippingMethodNotFound(string $id, ?\Throwable $e = null): self
@@ -510,6 +513,20 @@ class CartException extends HttpException
             Response::HTTP_BAD_REQUEST,
             self::CART_MIGRATION_MISSING_REDIS_CONNECTION,
             'Redis connection is missing. Please check if "%cicada.cart.storage.config.dsn%" container parameter is correctly configured'
+        );
+    }
+
+    /**
+     * @deprecated tag:v6.7.0 - Will be removed, as it is not used anymore in the future
+     */
+    public static function missingSalesChannelContext(): self
+    {
+        Feature::triggerDeprecationOrThrow('v6.7.0.0', Feature::deprecatedMethodMessage(self::class, __FUNCTION__, 'v6.7.0.0'));
+
+        return new self(
+            Response::HTTP_BAD_REQUEST,
+            self::SALES_CHANNEL_NOT_SET,
+            'The sales channel context is missing.'
         );
     }
 

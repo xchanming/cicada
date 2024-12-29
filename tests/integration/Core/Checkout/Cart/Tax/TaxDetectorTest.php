@@ -71,7 +71,7 @@ class TaxDetectorTest extends TestCase
         /** @var EntityRepository<CountryCollection> $countryRepository */
         $countryRepository = static::getContainer()->get('country.repository');
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('iso', 'DE'));
+        $criteria->addFilter(new EqualsFilter('iso', 'CN'));
         $criteria->setLimit(1);
 
         $country = $countryRepository->search($criteria, Context::createDefaultContext())->getEntities()->first();
@@ -119,7 +119,7 @@ class TaxDetectorTest extends TestCase
         /** @var EntityRepository<CountryCollection> $countryRepository */
         $countryRepository = static::getContainer()->get('country.repository');
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('iso', 'DE'));
+        $criteria->addFilter(new EqualsFilter('iso', 'CN'));
         $criteria->setLimit(1);
 
         $country = $countryRepository->search($criteria, Context::createDefaultContext())->getEntities()->first();
@@ -151,7 +151,7 @@ class TaxDetectorTest extends TestCase
         /** @var EntityRepository<CountryCollection> $countryRepository */
         $countryRepository = static::getContainer()->get('country.repository');
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('iso', 'DE'));
+        $criteria->addFilter(new EqualsFilter('iso', 'CN'));
         $criteria->setLimit(1);
 
         $deCountry = $countryRepository->search($criteria, Context::createDefaultContext())->getEntities()->first();
@@ -227,7 +227,7 @@ class TaxDetectorTest extends TestCase
         /** @var EntityRepository<CountryCollection> $countryRepository */
         $countryRepository = static::getContainer()->get('country.repository');
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('iso', 'DE'));
+        $criteria->addFilter(new EqualsFilter('iso', 'CN'));
         $criteria->setLimit(1);
 
         $deCountry = $countryRepository->search($criteria, Context::createDefaultContext())->getEntities()->first();
@@ -275,7 +275,7 @@ class TaxDetectorTest extends TestCase
         /** @var EntityRepository<CountryCollection> $countryRepository */
         $countryRepository = static::getContainer()->get('country.repository');
         $criteria = new Criteria();
-        $criteria->addFilter(new EqualsFilter('iso', 'DE'));
+        $criteria->addFilter(new EqualsFilter('iso', 'CN'));
         $criteria->setLimit(1);
 
         $country = $countryRepository->search($criteria, Context::createDefaultContext())->getEntities()->first();
