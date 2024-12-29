@@ -11,6 +11,7 @@ use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerDefinition;
 use Cicada\Core\Checkout\Payment\PaymentMethodDefinition;
 use Cicada\Core\Checkout\Promotion\Aggregate\PromotionPersonaCustomer\PromotionPersonaCustomerDefinition;
 use Cicada\Core\Checkout\Promotion\PromotionDefinition;
+use Cicada\Core\Content\Media\MediaDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewDefinition;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Context;
@@ -152,6 +153,8 @@ class CustomerDefinition extends EntityDefinition
             new RemoteAddressField('remote_address', 'remoteAddress'),
             (new ManyToManyIdField('tag_ids', 'tagIds', 'tags'))->addFlags(new ApiAware()),
             new FkField('requested_customer_group_id', 'requestedGroupId', CustomerGroupDefinition::class),
+            new FkField('avatar_id', 'avatarId', MediaDefinition::class),
+            new ManyToOneAssociationField('avatarMedia', 'avatar_id', MediaDefinition::class),
             new ManyToOneAssociationField('requestedGroup', 'requested_customer_group_id', CustomerGroupDefinition::class, 'id', false),
             new FkField('bound_sales_channel_id', 'boundSalesChannelId', SalesChannelDefinition::class),
             (new StringField('account_type', 'accountType'))->addFlags(new ApiAware(), new Required(), new IgnoreInOpenapiSchema()),

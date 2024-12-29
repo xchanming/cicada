@@ -9,7 +9,6 @@ use Cicada\Core\Checkout\Cart\Exception\InvalidCartException;
 use Cicada\Core\Checkout\Cart\Exception\LineItemNotFoundException;
 use Cicada\Core\Checkout\Customer\Exception\AddressNotFoundException;
 use Cicada\Core\Checkout\Order\Exception\EmptyCartException;
-use Cicada\Core\Checkout\Shipping\ShippingException;
 use Cicada\Core\Content\Flow\Exception\CustomerDeletedException;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
 use Cicada\Core\Framework\CicadaHttpException;
@@ -64,28 +63,18 @@ class CartException extends HttpException
     public const INVALID_COMPRESSION_METHOD = 'CHECKOUT__CART_INVALID_COMPRESSION_METHOD';
     public const CART_MIGRATION_INVALID_SOURCE = 'CHECKOUT_CART_MIGRATION_INVALID_SOURCE';
     public const CART_MIGRATION_MISSING_REDIS_CONNECTION = 'CHECKOUT__CART_MIGRATION_MISSING_REDIS_CONNECTION';
-    /**
-     * @deprecated tag:v6.7.0 - Constant SALES_CHANNEL_NOT_SET will be removed, as it is not used anymore in the future
-     */
-    public const SALES_CHANNEL_NOT_SET = 'CHECKOUT__SALES_CHANNEL_NOT_SET';
+
     public const CART_EMPTY = 'CHECKOUT__CART_EMPTY';
 
-    /**
-     * @deprecated tag:v6.7.0 - reason:return-type-change - Will only return `self` in the future
-     */
-    public static function shippingMethodNotFound(string $id, ?\Throwable $e = null): self|ShippingException
+    public static function shippingMethodNotFound(string $id, ?\Throwable $e = null): self
     {
-        if (Feature::isActive('v6.7.0.0')) {
-            return new self(
-                Response::HTTP_BAD_REQUEST,
-                self::SHIPPING_METHOD_NOT_FOUND,
-                self::$couldNotFindMessage,
-                ['entity' => 'shipping method', 'field' => 'id', 'value' => $id],
-                $e
-            );
-        }
-
-        return ShippingException::shippingMethodNotFound($id, $e);
+        return new self(
+            Response::HTTP_BAD_REQUEST,
+            self::SHIPPING_METHOD_NOT_FOUND,
+            self::$couldNotFindMessage,
+            ['entity' => 'shipping method', 'field' => 'id', 'value' => $id],
+            $e
+        );
     }
 
     public static function deserializeFailed(): self
@@ -521,20 +510,6 @@ class CartException extends HttpException
             Response::HTTP_BAD_REQUEST,
             self::CART_MIGRATION_MISSING_REDIS_CONNECTION,
             'Redis connection is missing. Please check if "%cicada.cart.storage.config.dsn%" container parameter is correctly configured'
-        );
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - Will be removed, as it is not used anymore in the future
-     */
-    public static function missingSalesChannelContext(): self
-    {
-        Feature::triggerDeprecationOrThrow('v6.7.0.0', Feature::deprecatedMethodMessage(self::class, __FUNCTION__, 'v6.7.0.0'));
-
-        return new self(
-            Response::HTTP_BAD_REQUEST,
-            self::SALES_CHANNEL_NOT_SET,
-            'The sales channel context is missing.'
         );
     }
 

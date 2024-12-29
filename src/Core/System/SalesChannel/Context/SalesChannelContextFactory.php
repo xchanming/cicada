@@ -280,27 +280,35 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
                 if ($activeBillingAddressId !== null) {
                     /** @var CustomerAddressEntity|null $activeBillingAddress */
                     $activeBillingAddress = $addresses->get($activeBillingAddressId);
-                    $customer->setDefaultBillingAddress($activeBillingAddress);
+                    if ($activeBillingAddress) {
+                        $customer->setDefaultBillingAddress($activeBillingAddress);
+                    }
                 }
                 $activeShippingAddressId = $activeShippingAddressId ?? $customer->getDefaultShippingAddressId();
                 if ($activeShippingAddressId !== null) {
                     /** @var CustomerAddressEntity|null $activeShippingAddress */
                     $activeShippingAddress = $addresses->get($activeShippingAddressId);
-                    $customer->setActiveShippingAddress($activeShippingAddress);
+                    if ($activeShippingAddress) {
+                        $customer->setActiveShippingAddress($activeShippingAddress);
+                    }
                 }
                 /** @var string $defaultBillingAddressId */
                 $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
                 if ($defaultBillingAddressId !== null) {
                     /** @var CustomerAddressEntity|null $defaultBillingAddress */
                     $defaultBillingAddress = $addresses->get($defaultBillingAddressId);
-                    $customer->setDefaultBillingAddress($defaultBillingAddress);
+                    if ($defaultBillingAddress) {
+                        $customer->setDefaultBillingAddress($defaultBillingAddress);
+                    }
                 }
 
                 $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
                 if ($defaultShippingAddressId !== null) {
                     /** @var CustomerAddressEntity|null $defaultShippingAddress */
                     $defaultShippingAddress = $addresses->get($defaultShippingAddressId);
-                    $customer->setDefaultShippingAddress($defaultShippingAddress);
+                    if ($defaultShippingAddress) {
+                        $customer->setDefaultShippingAddress($defaultShippingAddress);
+                    }
                 }
             }
         }

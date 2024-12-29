@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Content\Media;
 
+use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItem\OrderLineItemCollection;
 use Cicada\Core\Checkout\Order\Aggregate\OrderLineItemDownload\OrderLineItemDownloadCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
@@ -174,6 +175,8 @@ class MediaEntity extends Entity
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
     protected $avatarUsers;
+
+    protected ?CustomerCollection $avatarCustomers;
 
     /**
      * @var MediaThumbnailCollection|null
@@ -800,5 +803,15 @@ class MediaEntity extends Entity
     public function isSpatialObject(): bool
     {
         return $this->mediaType instanceof SpatialObjectType;
+    }
+
+    public function getAvatarCustomers(): ?CustomerCollection
+    {
+        return $this->avatarCustomers;
+    }
+
+    public function setAvatarCustomers(CustomerCollection $avatarCustomers): void
+    {
+        $this->avatarCustomers = $avatarCustomers;
     }
 }

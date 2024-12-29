@@ -10,11 +10,11 @@ use Cicada\Core\Checkout\Customer\Aggregate\CustomerWishlist\CustomerWishlistCol
 use Cicada\Core\Checkout\Order\Aggregate\OrderCustomer\OrderCustomerCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
 use Cicada\Core\Checkout\Promotion\PromotionCollection;
+use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCustomFieldsTrait;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
@@ -87,6 +87,10 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected string $accountType;
 
+    protected ?string $avatarId = null;
+
+    protected ?MediaEntity $avatarMedia;
+
     /**
      * @var array<string>|null
      *
@@ -115,11 +119,6 @@ class CustomerEntity extends Entity implements \Stringable
     protected ?string $legacyPassword = null;
 
     protected ?CustomerGroupEntity $group = null;
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    protected ?PaymentMethodEntity $defaultPaymentMethod = null;
 
     protected ?SalesChannelEntity $salesChannel = null;
 
@@ -538,26 +537,6 @@ class CustomerEntity extends Entity implements \Stringable
         $this->group = $group;
     }
 
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    public function getDefaultPaymentMethod(): ?PaymentMethodEntity
-    {
-        Feature::triggerDeprecationOrThrow('v6.7.0.0', 'The default payment method of a customer will be removed.');
-
-        return $this->defaultPaymentMethod;
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    public function setDefaultPaymentMethod(PaymentMethodEntity $defaultPaymentMethod): void
-    {
-        Feature::triggerDeprecationOrThrow('v6.7.0.0', 'The default payment method of a customer will be removed.');
-
-        $this->defaultPaymentMethod = $defaultPaymentMethod;
-    }
-
     public function getSalesChannel(): ?SalesChannelEntity
     {
         return $this->salesChannel;
@@ -603,7 +582,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->defaultBillingAddress;
     }
 
-    public function setDefaultBillingAddress(?CustomerAddressEntity $defaultBillingAddress): void
+    public function setDefaultBillingAddress(CustomerAddressEntity $defaultBillingAddress): void
     {
         $this->defaultBillingAddress = $defaultBillingAddress;
     }
@@ -613,7 +592,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->defaultShippingAddress;
     }
 
-    public function setDefaultShippingAddress(?CustomerAddressEntity $defaultShippingAddress): void
+    public function setDefaultShippingAddress(CustomerAddressEntity $defaultShippingAddress): void
     {
         $this->defaultShippingAddress = $defaultShippingAddress;
     }
@@ -623,7 +602,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->activeBillingAddress ?? $this->defaultBillingAddress;
     }
 
-    public function setActiveBillingAddress(?CustomerAddressEntity $activeBillingAddress): void
+    public function setActiveBillingAddress(CustomerAddressEntity $activeBillingAddress): void
     {
         $this->activeBillingAddress = $activeBillingAddress;
     }
@@ -633,7 +612,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->activeShippingAddress ?? $this->defaultShippingAddress;
     }
 
-    public function setActiveShippingAddress(?CustomerAddressEntity $activeShippingAddress): void
+    public function setActiveShippingAddress(CustomerAddressEntity $activeShippingAddress): void
     {
         $this->activeShippingAddress = $activeShippingAddress;
     }
@@ -643,7 +622,7 @@ class CustomerEntity extends Entity implements \Stringable
         return $this->addresses;
     }
 
-    public function setAddresses(?CustomerAddressCollection $addresses): void
+    public function setAddresses(CustomerAddressCollection $addresses): void
     {
         $this->addresses = $addresses;
     }
@@ -860,5 +839,25 @@ class CustomerEntity extends Entity implements \Stringable
     public function setUpdatedBy(UserEntity $updatedBy): void
     {
         $this->updatedBy = $updatedBy;
+    }
+
+    public function getAvatarId(): ?string
+    {
+        return $this->avatarId;
+    }
+
+    public function setAvatarId(?string $avatarId): void
+    {
+        $this->avatarId = $avatarId;
+    }
+
+    public function getAvatarMedia(): ?MediaEntity
+    {
+        return $this->avatarMedia;
+    }
+
+    public function setAvatarMedia(MediaEntity $avatarMedia): void
+    {
+        $this->avatarMedia = $avatarMedia;
     }
 }
