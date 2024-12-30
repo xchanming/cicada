@@ -9,7 +9,6 @@ use Cicada\Core\Content\Flow\Dispatching\Action\ChangeCustomerStatusAction;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -100,7 +99,7 @@ class ChangeCustomerStatusActionTest extends TestCase
             ],
         ], Context::createDefaultContext());
 
-        $this->login($email, 'cicada');
+        $this->login($email, '12345678');
 
         /** @var CustomerEntity $customer */
         $customer = $this->customerRepository->search(
@@ -157,10 +156,6 @@ class ChangeCustomerStatusActionTest extends TestCase
             'company' => 'Test',
             'active' => true,
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->create([$customer], Context::createDefaultContext());
     }

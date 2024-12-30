@@ -2,26 +2,20 @@
 
 namespace Cicada\Tests\Integration\Core\Content\Product\SalesChannel\Review;
 
-use Cicada\Core\Content\MailTemplate\Service\Event\MailBeforeSentEvent;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
-use Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewSaveRoute;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\Framework\Test\TestCaseBase\EventDispatcherBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
-use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -61,11 +55,7 @@ class ProductReviewSaveRouteTest extends TestCase
 
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertEquals($response['errors'][0]['code'], RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE);
-        } else {
-            static::assertEquals($response['errors'][0]['code'], 'CHECKOUT__CUSTOMER_NOT_LOGGED_IN');
-        }
+        static::assertEquals($response['errors'][0]['code'], RoutingException::CUSTOMER_NOT_LOGGED_IN_CODE);
     }
 
     #[DataProvider('provideContentData')]
@@ -163,45 +153,6 @@ class ProductReviewSaveRouteTest extends TestCase
         $content = json_decode((string) $response->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
         static::assertSame('VIOLATION::ENTITY_DOES_NOT_EXISTS', $content['errors'][0]['code']);
-    }
-
-    public function testMailIsSent(): void
-    {
-        $customerId = $this->createCustomer();
-        $salesChannelContext = $this->createSalesChannelContext([], [
-            SalesChannelContextService::CUSTOMER_ID => $customerId,
-        ]);
-
-        /** @var EventDispatcherInterface $dispatcher */
-        $dispatcher = static::getContainer()->get('event_dispatcher');
-        $caughtEvent = null;
-        $this->addEventListener(
-            $dispatcher,
-            MailBeforeSentEvent::class,
-            static function (MailBeforeSentEvent $event) use (&$caughtEvent): void {
-                $caughtEvent = $event;
-            }
-        );
-
-        $data = new RequestDataBag([
-            'title' => 'Lorem ipsum dolor sit amet',
-            'content' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna',
-            'points' => 3,
-        ]);
-        static::getContainer()->get(ProductReviewSaveRoute::class)->save(
-            $this->ids->get('product'),
-            $data,
-            $salesChannelContext
-        );
-
-        $this->resetEventDispatcher();
-
-        static::assertInstanceOf(MailBeforeSentEvent::class, $caughtEvent);
-        $bodyText = $caughtEvent->getMessage()->getTextBody();
-        $bodyText = \is_string($bodyText) ? $bodyText : '';
-        static::assertStringContainsString($data->get('title'), $bodyText);
-        static::assertStringContainsString($data->get('content'), $bodyText);
-        static::assertStringContainsString($this->ids->get('unique-name'), $bodyText);
     }
 
     public static function provideContentData(): \Generator

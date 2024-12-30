@@ -14,4 +14,6 @@ class MailTemplateTypes
     final public const MAILTYPE_CUSTOMER_RECOVERY_REQUEST = 'customer.recovery.request';
 
     final public const MAILTYPE_CUSTOMER_REGISTER = 'customer_register';
+
+    final public const MAILTYPE_DOWNLOADS_DELIVERY = 'downloads_delivery';
 }

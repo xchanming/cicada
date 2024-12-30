@@ -114,7 +114,7 @@ class RemoteAddressFieldTest extends TestCase
         $customerId = $this->createCustomer();
 
         static::getContainer()->get(AccountService::class)
-            ->loginByCredentials('test@example.com', 'cicada', $this->createSalesChannelContext());
+            ->loginByCredentials('test@example.com', '12345678', $this->createSalesChannelContext());
 
         $criteria = new Criteria([$customerId]);
 

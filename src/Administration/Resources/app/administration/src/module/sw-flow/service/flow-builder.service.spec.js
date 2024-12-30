@@ -133,8 +133,8 @@ describe('module/sw-flow/service/flow-builder.service.js', () => {
     };
 
     it('should have the correct modal name for action name', async () => {
-        const expected = 'sw-flow-generate-document-modal';
-        const modalName = service.getActionModalName(ACTION.GENERATE_DOCUMENT);
+        const expected = 'sw-flow-stop-flow-modal';
+        const modalName = service.getActionModalName(ACTION.STOP_FLOW);
 
         expect(modalName).toEqual(expected);
     });
@@ -412,21 +412,6 @@ describe('module/sw-flow/service/flow-builder.service.js', () => {
             <br>sw-flow.modals.status.labelPaymentStatus: translated<br>sw-flow.modals.status.forceTransition: global.default.no`;
         const description = service.getActionDescriptions(data, sequence, translator);
         expect(description).toContain(render);
-    });
-
-    it('should be able to show generate document description', () => {
-        const sequence = {
-            actionName: 'action.generate.document',
-            config: {
-                documentTypes: [
-                    {
-                        documentType: 'mail',
-                    },
-                ],
-            },
-        };
-        const description = service.getActionDescriptions(data, sequence, translator);
-        expect(description).toBe('translated');
     });
 
     it('should be able to send mail flow description', () => {

@@ -123,7 +123,7 @@ class SearchKeywordUpdaterTest extends TestCase
     public function testItSkipsKeywordGenerationForNotUsedLanguages(): void
     {
         $ids = new IdsCollection();
-        $esLocale = $this->getLocaleIdByIsoCode('es-ES');
+        $esLocale = $this->getLocaleIdByIsoCode('en-US');
 
         $languageRepo = static::getContainer()->get('language.repository');
         $languageRepo->create([

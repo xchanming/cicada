@@ -135,10 +135,6 @@ class Migration1659257296GenerateFlowTemplateDataFromEventAction extends Migrati
     {
         return [
             [
-                'event_name' => 'contact_form.send',
-                'mail_template_type' => 'contact_form',
-            ],
-            [
                 'event_name' => 'newsletter.register',
                 'mail_template_type' => 'newsletterRegister',
             ],
@@ -147,96 +143,12 @@ class Migration1659257296GenerateFlowTemplateDataFromEventAction extends Migrati
                 'mail_template_type' => 'user.recovery.request',
             ],
             [
-                'event_name' => 'checkout.customer.double_opt_in_guest_order',
-                'mail_template_type' => 'guest_order.double_opt_in',
-            ],
-            [
-                'event_name' => 'checkout.customer.double_opt_in_registration',
-                'mail_template_type' => 'customer_register.double_opt_in',
-            ],
-            [
-                'event_name' => 'checkout.order.placed',
-                'mail_template_type' => 'order_confirmation_mail',
-            ],
-            [
-                'event_name' => 'customer.group.registration.declined',
-                'mail_template_type' => 'customer.group.registration.declined',
-            ],
-            [
-                'event_name' => 'customer.group.registration.accepted',
-                'mail_template_type' => 'customer.group.registration.accepted',
-            ],
-            [
-                'event_name' => 'newsletter.confirm',
-                'mail_template_type' => 'newsletterRegister',
-            ],
-            [
                 'event_name' => 'customer.recovery.request',
                 'mail_template_type' => 'customer.recovery.request',
             ],
             [
                 'event_name' => 'checkout.customer.register',
                 'mail_template_type' => 'customer_register',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.paid_partially',
-                'mail_template_type' => 'order_transaction.state.paid_partially',
-            ],
-            [
-                'event_name' => 'state_enter.order_delivery.state.returned',
-                'mail_template_type' => 'order_delivery.state.returned',
-            ],
-            [
-                'event_name' => 'state_enter.order_delivery.state.returned_partially',
-                'mail_template_type' => 'order_delivery.state.returned_partially',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.refunded',
-                'mail_template_type' => 'order_transaction.state.refunded',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.paid',
-                'mail_template_type' => 'order_transaction.state.paid',
-            ],
-            [
-                'event_name' => 'state_enter.order.state.in_progress',
-                'mail_template_type' => 'order.state.in_progress',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.refunded_partially',
-                'mail_template_type' => 'order_transaction.state.refunded_partially',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.open',
-                'mail_template_type' => 'order_transaction.state.open',
-            ],
-            [
-                'event_name' => 'state_enter.order_delivery.state.shipped',
-                'mail_template_type' => 'order_delivery.state.shipped',
-            ],
-            [
-                'event_name' => 'state_enter.order_delivery.state.shipped_partially',
-                'mail_template_type' => 'order_delivery.state.shipped_partially',
-            ],
-            [
-                'event_name' => 'state_enter.order_delivery.state.cancelled',
-                'mail_template_type' => 'order_delivery.state.cancelled',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.cancelled',
-                'mail_template_type' => 'order_transaction.state.cancelled',
-            ],
-            [
-                'event_name' => 'state_enter.order.state.cancelled',
-                'mail_template_type' => 'order.state.cancelled',
-            ],
-            [
-                'event_name' => 'state_enter.order_transaction.state.reminded',
-                'mail_template_type' => 'order_transaction.state.reminded',
-            ],
-            [
-                'event_name' => 'state_enter.order.state.completed',
-                'mail_template_type' => 'order.state.completed',
             ],
         ];
     }

@@ -71,7 +71,7 @@ class AddCustomerAffiliateAndCampaignCodeActionTest extends TestCase
             ],
         ]], Context::createDefaultContext());
 
-        $this->login($email, 'cicada');
+        $this->login($email, '12345678');
 
         static::assertNotNull($this->customerRepository);
         /** @var CustomerEntity $customer */

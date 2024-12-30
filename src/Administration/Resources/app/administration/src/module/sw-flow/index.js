@@ -24,10 +24,6 @@ Cicada.Component.register('sw-flow-rule-modal', () => import('./component/modals
 Cicada.Component.register('sw-flow-tag-modal', () => import('./component/modals/sw-flow-tag-modal'));
 Cicada.Component.register('sw-flow-set-order-state-modal', () => import('./component/modals/sw-flow-set-order-state-modal'));
 Cicada.Component.register(
-    'sw-flow-generate-document-modal',
-    () => import('./component/modals/sw-flow-generate-document-modal'),
-);
-Cicada.Component.register(
     'sw-flow-grant-download-access-modal',
     () => import('./component/modals/sw-flow-grant-download-access-modal'),
 );
