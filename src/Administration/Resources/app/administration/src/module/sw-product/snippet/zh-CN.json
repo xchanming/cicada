@@ -14,11 +14,11 @@
       "errorMessage": "Unable to load default Sales Channel configuration."
     },
     "general": {
-      "mainMenuItemGeneral": "Products",
+      "mainMenuItemGeneral": "商品",
       "mainMenuItemList": "Products",
-      "mainMenuItemAdd": "Add product",
+      "mainMenuItemAdd": "添加商品",
       "descriptionTextModule": "Manage products here.",
-      "placeholderSearchBar": "Search products...",
+      "placeholderSearchBar": "搜索商品...",
       "inheritanceModuleName": "This product",
       "backToParent": "Go back to variant overview",
       "backToGeneralOverview": "Go back to general overview",

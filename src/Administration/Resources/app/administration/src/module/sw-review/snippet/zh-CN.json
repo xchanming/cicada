@@ -1,14 +1,14 @@
 {
   "sw-review": {
     "general": {
-      "mainMenuItemList": "Reviews",
-      "mainMenuItemGeneral": "Reviews",
-      "placeholderSearchBar": "Search reviews...",
+      "mainMenuItemList": "评价",
+      "mainMenuItemGeneral": "评价",
+      "placeholderSearchBar": "搜索评价...",
       "descriptionTextModule": "Manage reviews here."
     },
     "list": {
-      "textReviewOverview": "Reviews",
-      "columnProduct": "Product",
+      "textReviewOverview": "评价",
+      "columnProduct": "商品",
       "columnPoints": "Stars",
       "columnUser": "Customer",
       "columnStatus": "Approved",
@@ -18,10 +18,10 @@
       "placeholderSearchBar": "Search reviews...",
       "messageEmpty": "No reviews yet",
       "messageEmptySubline": "Manage reviews here",
-      "titleSidebarItemRefresh": "Refresh"
+      "titleSidebarItemRefresh": "刷新"
     },
     "detail": {
-      "textHeadline": "Review",
+      "textHeadline": "评价",
       "cardTitleReviewInfo": "Review",
       "cardTitleReviewProperties": "Properties",
       "labelTitle": "Title",

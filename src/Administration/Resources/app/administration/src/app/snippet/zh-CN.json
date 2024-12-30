@@ -148,15 +148,15 @@
     },
     "sw-admin-menu": {
       "linkLogout": "Logout",
-      "linkMinimizeMenu": "Collapse menu",
+      "linkMinimizeMenu": "折叠菜单",
       "textCicadaAdmin": "Cicada Administration",
       "textProjectName": "Administration",
       "administrator": "Administrator",
       "navigation": {
         "label": "Main navigation",
-        "mainMenuItemCatalogue": "Catalogues",
-        "mainMenuItemContent": "Content",
-        "mainMenuItemMarketing": "Marketing"
+        "mainMenuItemCatalogue": "商品",
+        "mainMenuItemContent": "内容",
+        "mainMenuItemMarketing": "营销"
       }
     },
     "entity-components": {
@@ -595,14 +595,14 @@
     "sw-search-bar": {
       "messageNoResults": "No results found for \"{term}\".",
       "messageNoTypeResults": "No type found.",
-      "placeholderSearchField": "Find products, customers, orders...",
+      "placeholderSearchField": "搜索 商品, 客户, 订单...",
       "placeholderTypeSearchField": "Search \"{entity}\"...",
       "placeholderShortcutInfo": "Hint: Press the \"f\" key to get to the search bar faster.",
       "placeholderSearchShortcutInfo": "<strong>Tip:</strong> Press <span>f</span> to open the search from anywhere.",
       "placeholderESSearchShortcutInfo": "<strong>Tip:</strong> You can use Elasticsearch's <a href=\"https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-simple-query-string-query.html#simple-query-string-syntax\" target=\"_blank\">simple query string</a> to get a more precise result.",
       "moduleFiltersHeadline": "Module filters",
       "placeholderFilterShortcutInfo": "Type <span>#products</span> in the search to set the module filter.",
-      "searchTypeAll": "All",
+      "searchTypeAll": "全部",
       "moduleFilter": "Module filter",
       "messageNoResultsV2": "No exact matches found for \"{term}\".",
       "messageNoResultsDetailV2": "Try using different keywords or check your search configuration.",
@@ -751,7 +751,7 @@
         },
         "lineItemCondition": {
           "any": "At least one",
-          "all": "All"
+          "all": "全部"
         },
         "AddAndCondition": "Add AND condition",
         "AddOrCondition": "Add OR condition",
@@ -1013,7 +1013,7 @@
       "tooltipTabHasWarnings": "This page contains warnings."
     },
     "entities": {
-      "all": "All",
+      "all": "全部",
       "custom_field": "Custom field | Custom fields",
       "cart": "Cart | Carts",
       "category": "Category | Categories",

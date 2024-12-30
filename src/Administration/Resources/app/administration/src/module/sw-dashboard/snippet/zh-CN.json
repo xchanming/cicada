@@ -1,7 +1,7 @@
 {
   "sw-dashboard": {
     "general": {
-      "mainMenuItemGeneral": "Dashboard",
+      "mainMenuItemGeneral": "首页",
       "descriptionTextModule": "The Administration's front page, displaying statistics and system information"
     },
     "todayStats": {

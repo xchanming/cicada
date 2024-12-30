@@ -1,8 +1,8 @@
 {
   "sw-order": {
     "general": {
-      "mainMenuItemGeneral": "Orders",
-      "mainMenuItemList": "Overview",
+      "mainMenuItemGeneral": "订单",
+      "mainMenuItemList": "销售订单",
       "descriptionTextModule": "Manage received orders here.",
       "placeholderSearchBar": "Search all orders..."
     },

@@ -7,7 +7,7 @@
   "sw-sales-channel": {
     "general": {
       "tooltipOpenStorefront": "Open storefront",
-      "titleMenuItems": "Sales Channels",
+      "titleMenuItems": "销售渠道",
       "titleMenuMoreItems": "More",
       "manageSalesChannels": "Manage Sales Channels",
       "addSalesChannel": "Add Sales Channel"

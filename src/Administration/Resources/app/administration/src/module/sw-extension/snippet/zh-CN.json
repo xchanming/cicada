@@ -89,9 +89,9 @@
       }
     },
     "mainMenu": {
-      "mainMenuItemExtensionStore": "Extensions",
-      "store": "Store",
-      "purchased": "My extensions",
+      "mainMenuItemExtensionStore": "扩展",
+      "store": "商城",
+      "purchased": "我的扩展",
       "support": "Support"
     },
     "sw-extension-app-module-error-page": {

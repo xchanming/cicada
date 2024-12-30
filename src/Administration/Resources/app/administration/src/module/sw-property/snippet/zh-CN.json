@@ -1,14 +1,14 @@
 {
   "sw-property": {
     "general": {
-      "placeholderSearchBar": "Search properties...",
-      "mainMenuItemGeneral": "Properties",
+      "placeholderSearchBar": "搜索属性...",
+      "mainMenuItemGeneral": "属性",
       "descriptionTextModule": "Manage properties here."
     },
     "list": {
-      "textProperties": "Properties",
-      "buttonAddProperty": "Add property",
-      "columnName": "Property",
+      "textProperties": "属性",
+      "buttonAddProperty": "添加属性",
+      "columnName": "属性",
       "columnOptions": "Property values",
       "columnFilterable": "Display in product filter",
       "contextMenuView": "Edit",

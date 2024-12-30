@@ -19,7 +19,7 @@ const adminMenuStore = Cicada.Store.register({
         /**
          * The expanded state of the sidebar menu
          */
-        isExpanded: true,
+        isExpanded: false,
         /**
          * The entries that are currently expanded in the sidebar menu
          */

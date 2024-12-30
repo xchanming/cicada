@@ -1,12 +1,12 @@
 {
   "sw-manufacturer": {
     "general": {
-      "mainMenuItemList": "Manufacturers",
-      "mainMenuItemGeneral": "Manufacturers",
-      "placeholderSearchBar": "Search manufacturers..."
+      "mainMenuItemList": "生产商",
+      "mainMenuItemGeneral": "生产商",
+      "placeholderSearchBar": "搜索生产商..."
     },
     "list": {
-      "textManufacturerOverview": "Manufacturers",
+      "textManufacturerOverview": "生产商",
       "textTotalManufacturer": "No manufacturers | One manufacturer | {count} manufacturers",
       "buttonAddManufacturer": "Add manufacturer",
       "columnName": "Manufacturer",
@@ -31,7 +31,7 @@
   "sw-privileges": {
     "permissions": {
       "product_manufacturer": {
-        "label": "Manufacturers"
+        "label": "生产商"
       }
     }
   }

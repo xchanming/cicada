@@ -1,11 +1,11 @@
 {
   "sw-category": {
     "general": {
-      "mainMenuItemIndex": "Categories",
-      "mainMenuItemList": "Overview",
+      "mainMenuItemIndex": "类目",
+      "mainMenuItemList": "类目",
       "descriptionTextModule": "Manage categories here.",
-      "headlineCategories": "Categories",
-      "placeholderSearchBar": "Search categories...",
+      "headlineCategories": "类目",
+      "placeholderSearchBar": "搜索类目...",
       "buttonCreate": "Create category",
       "buttonSafeCategory": "Save",
       "descriptionLabel": "Description",

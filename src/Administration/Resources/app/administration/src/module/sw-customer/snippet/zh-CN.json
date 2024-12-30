@@ -8,8 +8,8 @@
       "requiredFields": "Please fill in all required fields."
     },
     "general": {
-      "mainMenuItemGeneral": "Customers",
-      "mainMenuItemList": "Overview",
+      "mainMenuItemGeneral": "客户",
+      "mainMenuItemList": "客户管理",
       "mainMenuItemAdd": "Add customer",
       "descriptionTextModule": "Manage customers here.",
       "placeholderSearchBar": "Search customers...",

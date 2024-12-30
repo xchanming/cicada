@@ -6,6 +6,7 @@
 import { createPinia, setActivePinia } from 'pinia';
 import type { AdminMenuStore } from './admin-menu.store';
 import type { AppModuleDefinition } from '../../core/service/api/app-modules.service';
+import fa from "apexcharts/dist/locales/fa.json";
 
 describe('admin-menu.store', () => {
     let store: AdminMenuStore;
@@ -24,7 +25,7 @@ describe('admin-menu.store', () => {
     });
 
     it('has initial state', () => {
-        expect(store.isExpanded).toBe(true);
+        expect(store.isExpanded).toBe(false);
         expect(store.expandedEntries).toStrictEqual([]);
         expect(store.adminModuleNavigation).toStrictEqual([]);
     });
@@ -58,7 +59,7 @@ describe('admin-menu.store', () => {
     });
 
     it('collapses the sidebar with `collapseSidebar`', () => {
-        expect(store.isExpanded).toBe(true);
+        expect(store.isExpanded).toBe(false);
 
         store.collapseSidebar();
         expect(store.isExpanded).toBe(false);

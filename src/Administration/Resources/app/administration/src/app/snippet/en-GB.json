@@ -154,7 +154,7 @@
       "administrator": "Administrator",
       "navigation": {
         "label": "Main navigation",
-        "mainMenuItemCatalogue": "Catalogues",
+        "mainMenuItemCatalogue": "Products",
         "mainMenuItemContent": "Content",
         "mainMenuItemMarketing": "Marketing"
       }
@@ -595,7 +595,7 @@
     "sw-search-bar": {
       "messageNoResults": "No results found for \"{term}\".",
       "messageNoTypeResults": "No type found.",
-      "placeholderSearchField": "Find products, customers, orders...",
+      "placeholderSearchField": "差 products, customers, orders...",
       "placeholderTypeSearchField": "Search \"{entity}\"...",
       "placeholderShortcutInfo": "Hint: Press the \"f\" key to get to the search bar faster.",
       "placeholderSearchShortcutInfo": "<strong>Tip:</strong> Press <span>f</span> to open the search from anywhere.",
