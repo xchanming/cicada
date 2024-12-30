@@ -146,7 +146,7 @@ jobs:
     steps:
       - name: Generate versions
         id: versions
-        uses: cicada/github-actions/versions@main
+        uses: xchanming/github-actions/versions@main
 
   blue-green-66-67:
     name: "PHP blue green 6.6 -> 6.7 -> 6.6"
