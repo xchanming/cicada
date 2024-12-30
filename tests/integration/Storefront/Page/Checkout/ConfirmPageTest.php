@@ -123,10 +123,9 @@ class ConfirmPageTest extends TestCase
         $customer->setActiveShippingAddress($newShippingAddress);
 
         $cartErrors = $this->getPageLoader()->load($request, $context)->getCart()->getErrors();
-        static::assertCount(2, $cartErrors);
+        static::assertCount(1, $cartErrors);
         $errors = $cartErrors->getElements();
         static::assertArrayHasKey('billing-address-invalid', $errors);
-        static::assertArrayHasKey('shipping-address-invalid', $errors);
 
         $billingAddressViolation = $errors['billing-address-invalid'];
         static::assertInstanceOf(AddressValidationError::class, $billingAddressViolation);

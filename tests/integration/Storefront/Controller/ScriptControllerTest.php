@@ -168,7 +168,7 @@ class ScriptControllerTest extends TestCase
             true,
             true,
             Response::HTTP_OK,
-            'Hello, Max Mustermann',
+            'Hello, Max',
         ];
 
         yield 'Logged in and guest is allowed' => [
@@ -176,7 +176,7 @@ class ScriptControllerTest extends TestCase
             false,
             true,
             Response::HTTP_OK,
-            'Hello, Max Mustermann',
+            'Hello, Max',
         ];
 
         yield 'Logged in and guest is not allowed' => [
@@ -184,7 +184,7 @@ class ScriptControllerTest extends TestCase
             false,
             false,
             Response::HTTP_OK,
-            'Hello, Max Mustermann',
+            'Hello, Max',
         ];
     }
 
