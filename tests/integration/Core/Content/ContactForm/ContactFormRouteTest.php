@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Content\ContactForm;
 
-use Cicada\Core\Defaults;
-use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\MailTemplateTestBehaviour;
