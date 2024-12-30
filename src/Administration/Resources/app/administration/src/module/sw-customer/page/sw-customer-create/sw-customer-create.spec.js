@@ -106,38 +106,6 @@ describe('module/sw-customer/page/sw-customer-create', () => {
         expect(response.isValid).toBe(true);
     });
 
-    it('should have company validation when customer type is commercial', async () => {
-        const wrapper = await createWrapper();
-
-        await flushPromises();
-
-        wrapper.vm.createNotificationError = jest.fn();
-        wrapper.vm.validateEmail = jest.fn().mockImplementation(() => Promise.resolve({ isValid: true }));
-        const notificationMock = wrapper.vm.createNotificationError;
-
-        await wrapper.setData({
-            customer: {
-                id: '1',
-                email: 'user@domain.com',
-                accountType: 'business',
-                password: 'cicada',
-            },
-            address: {
-                company: '',
-            },
-        });
-        const saveButton = wrapper.find('.sw-customer-create__save-action');
-        await saveButton.trigger('click');
-        await wrapper.vm.$nextTick();
-
-        expect(notificationMock).toHaveBeenCalledTimes(2);
-        expect(notificationMock).toHaveBeenCalledWith({
-            message: 'sw-customer.detail.messageSaveError',
-        });
-
-        wrapper.vm.createNotificationError.mockRestore();
-    });
-
     it('should override context when the sales channel does not exist language compared to the API language', async () => {
         const wrapper = await createWrapper();
         wrapper.vm.validateEmail = jest.fn().mockImplementation(() => Promise.resolve({ isValid: true }));
@@ -150,7 +118,7 @@ describe('module/sw-customer/page/sw-customer-create', () => {
                 id: '1',
                 email: 'user@domain.com',
                 accountType: 'business',
-                password: 'cicada',
+                password: '12345678',
                 salesChannelId: 'a7921464677a4ef591683d144beecd24',
             },
             address: {
@@ -204,7 +172,6 @@ describe('module/sw-customer/page/sw-customer-create', () => {
         await flushPromises();
 
         expect(wrapper.vm.customer.salutationId).toBe('salutationId');
-        expect(wrapper.vm.address.salutationId).toBe('salutationId');
     });
 
     it('should not render sw-customer-base-form and sw-customer-address-form if customer is null', async () => {

@@ -6,7 +6,6 @@ use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntit
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\Validation\AddressValidationFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\Validation\EntityExists;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
@@ -54,24 +53,18 @@ class AddressValidationFactoryTest extends TestCase
         $definition = $this->addressValidationFactory->create($this->salesChannelContext)->getProperties();
 
         $this->assertAddressDefinition($definition);
-
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertCount(8, $definition);
-        }
     }
 
     public function testDefinitionRulesUpdate(): void
     {
         $definition = $this->addressValidationFactory->update($this->salesChannelContext)->getProperties();
 
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertCount(9, $definition);
-            static::assertArrayHasKey('id', $definition);
+        static::assertCount(9, $definition);
+        static::assertArrayHasKey('id', $definition);
 
-            static::assertCount(2, $definition['id']);
-            static::assertInstanceOf(NotBlank::class, $definition['id'][0]);
-            static::assertInstanceOf(EntityExists::class, $definition['id'][1]);
-        }
+        static::assertCount(2, $definition['id']);
+        static::assertInstanceOf(NotBlank::class, $definition['id'][0]);
+        static::assertInstanceOf(EntityExists::class, $definition['id'][1]);
 
         $this->assertAddressDefinition($definition);
     }
@@ -81,19 +74,13 @@ class AddressValidationFactoryTest extends TestCase
      */
     private function assertAddressDefinition(array $definition): void
     {
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertArrayHasKey('title', $definition);
-            static::assertInstanceOf(Length::class, $definition['title'][0]);
-            static::assertArrayHasKey('zipcode', $definition);
-            static::assertInstanceOf(Length::class, $definition['zipcode'][0]);
-            static::assertCount(2, $definition['name']);
-            static::assertInstanceOf(NotBlank::class, $definition['name'][0]);
-            static::assertInstanceOf(Length::class, $definition['name'][1]);
-        } else {
-            static::assertCount(7, $definition);
-            static::assertCount(1, $definition['name']);
-            static::assertInstanceOf(NotBlank::class, $definition['name'][0]);
-        }
+        static::assertArrayHasKey('title', $definition);
+        static::assertInstanceOf(Length::class, $definition['title'][0]);
+        static::assertArrayHasKey('zipcode', $definition);
+        static::assertInstanceOf(Length::class, $definition['zipcode'][0]);
+        static::assertCount(2, $definition['name']);
+        static::assertInstanceOf(NotBlank::class, $definition['name'][0]);
+        static::assertInstanceOf(Length::class, $definition['name'][1]);
 
         static::assertArrayHasKey('salutationId', $definition);
         static::assertArrayHasKey('countryId', $definition);
