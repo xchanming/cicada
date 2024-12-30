@@ -7,8 +7,8 @@
       "salutation": "Salutation",
       "salesChannel": "Sales Channel",
       "buttonSave": "Save",
-      "mainMenuItemGeneral": "Newsletter recipients",
-      "placeholderSearchBarSnippets": "Search all newsletter recipients...",
+      "mainMenuItemGeneral": "邮件订阅",
+      "placeholderSearchBarSnippets": "搜索全部邮件订阅...",
       "tags": "Tags"
     },
     "detail": {

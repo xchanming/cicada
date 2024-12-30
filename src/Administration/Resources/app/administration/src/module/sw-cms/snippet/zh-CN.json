@@ -1,10 +1,10 @@
 {
   "sw-cms": {
     "general": {
-      "placeholderSearchBar": "Search layouts...",
-      "mainMenuItemGeneral": "Shopping Experiences",
-      "moduleTitle": "Shopping Experiences",
-      "greeting": "Layouts",
+      "placeholderSearchBar": "搜索布局...",
+      "mainMenuItemGeneral": "布局",
+      "moduleTitle": "布局",
+      "greeting": "布局",
       "createNewLayout": "Create new layout",
       "deleteDisabledToolTip": "The layout you want to delete is still assigned to at least one category.",
       "deleteDisabledProductToolTip": "The layout you want to delete is still assigned to at least one product.",

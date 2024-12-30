@@ -1,12 +1,12 @@
 {
   "sw-promotion-v2": {
     "general": {
-      "mainMenuItemGeneral": "Promotions",
+      "mainMenuItemGeneral": "促销",
       "mainMenuItemList": "Overview",
       "description": "Manage promotions here."
     },
     "list": {
-      "textTitle": "Promotions",
+      "textTitle": "促销",
       "buttonAddPromotion": "Add promotion",
       "columnActive": "Active",
       "columnName": "Name",

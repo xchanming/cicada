@@ -1,10 +1,10 @@
 {
   "sw-theme-manager": {
     "general": {
-      "mainMenuItemGeneral": "Themes",
-      "placeholderSearchBar": "Search for available themes...",
+      "mainMenuItemGeneral": "主题",
+      "placeholderSearchBar": "搜索激活的主题...",
       "descriptionTextModule": "Manage themes here.",
-      "mainMenuHeader": "Your themes",
+      "mainMenuHeader": "主题",
       "captionMediaUpload": "Upload an image",
       "lockedToolTip": "Themes installed via plugin are locked and can not be deleted",
       "titleError": "Error",

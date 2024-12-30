@@ -63,6 +63,7 @@
       "columnZip": "Postal code",
       "columnCity": "City",
       "columnEmail": "Email address",
+      "columnAccountType": "Account type",
       "columnLastLogin": "Last login",
       "columnActions": "Action(s)",
       "columnAffiliateCode": "Affiliate code",

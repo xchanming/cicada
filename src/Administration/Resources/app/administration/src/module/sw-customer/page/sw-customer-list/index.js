@@ -327,6 +327,13 @@ export default {
                     useCustomSort: true,
                 },
                 {
+                    property: 'accountType',
+                    inlineEdit: 'string',
+                    label: 'sw-customer.list.columnAccountType',
+                    allowResize: false,
+                    useCustomSort: true,
+                },
+                {
                     property: 'email',
                     inlineEdit: 'string',
                     label: 'sw-customer.list.columnEmail',
@@ -375,7 +382,7 @@ export default {
                     property: 'boundSalesChannelId',
                     label: 'sw-customer.list.columnBoundSalesChannel',
                     allowResize: true,
-                    visible: false,
+                    visible: true,
                     useCustomSort: true,
                 },
                 {
