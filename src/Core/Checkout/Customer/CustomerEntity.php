@@ -89,7 +89,7 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected ?string $avatarId = null;
 
-    protected ?MediaEntity $avatarMedia;
+    protected ?MediaEntity $avatarMedia = null;
 
     /**
      * @var array<string>|null
