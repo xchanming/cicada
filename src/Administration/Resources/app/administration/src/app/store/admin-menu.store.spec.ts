@@ -6,7 +6,6 @@
 import { createPinia, setActivePinia } from 'pinia';
 import type { AdminMenuStore } from './admin-menu.store';
 import type { AppModuleDefinition } from '../../core/service/api/app-modules.service';
-import fa from "apexcharts/dist/locales/fa.json";
 
 describe('admin-menu.store', () => {
     let store: AdminMenuStore;
