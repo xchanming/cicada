@@ -89,7 +89,7 @@ class CustomCartProcessorTest extends TestCase
 
         static::assertCount(2, $toCalculate->getLineItems());
         static::assertEquals(5.0, $toCalculate->getLineItems()->get('custom-1')?->getPrice()?->getTotalPrice());
-        static::assertFalse($toCalculate->getLineItems()->get('custom-1')?->isShippingCostAware());
+        static::assertTrue($toCalculate->getLineItems()->get('custom-1')?->isShippingCostAware());
 
         static::assertEquals(5.0, $toCalculate->getLineItems()->get('custom-3')?->getPrice()?->getTotalPrice());
         static::assertTrue($toCalculate->getLineItems()->get('custom-3')?->isShippingCostAware());

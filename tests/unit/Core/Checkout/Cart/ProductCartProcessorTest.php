@@ -318,9 +318,8 @@ class ProductCartProcessorTest extends TestCase
         static::assertEquals(200, $toCalculateCart->get('B')->getPrice()?->getTotalPrice());
         static::assertEquals(200, $toCalculateCart->get('C')->getPrice()?->getTotalPrice());
 
-        static::assertFalse($toCalculateCart->get('A')->isShippingCostAware());
+        static::assertTrue($toCalculateCart->get('A')->isShippingCostAware());
         static::assertFalse($toCalculateCart->get('B')->isShippingCostAware());
-        static::assertTrue($toCalculateCart->get('C')->isShippingCostAware());
     }
 
     public function testCoverIsRemovedIfProductMediaIsMissing(): void

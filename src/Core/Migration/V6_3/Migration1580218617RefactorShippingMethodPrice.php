@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Migration\V6_3;
 
+use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -119,11 +120,10 @@ class Migration1580218617RefactorShippingMethodPrice extends MigrationStep
         $shippingPrices = $connection->fetchAllAssociative('SELECT * FROM `shipping_method_price`');
 
         foreach ($shippingPrices as $shippingPrice) {
-            $id = Uuid::fromBytesToHex($shippingPrice['currency_id']);
-            $key = 'c' . $id;
+            $key = 'c' . Defaults::CURRENCY;
             $currencyPrice = [
                 $key => [
-                    'currencyId' => Uuid::fromBytesToHex($shippingPrice['currency_id']),
+                    'currencyId' => Defaults::CURRENCY,
                     'net' => $shippingPrice['price'],
                     'gross' => $shippingPrice['price'],
                     'linked' => false,
