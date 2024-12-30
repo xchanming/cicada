@@ -148,109 +148,6 @@ jobs:
         id: versions
         uses: cicada/github-actions/versions@main
 
-  acceptance-update:
-    needs: tested-update-versions
-    runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false
-      matrix:
-        update:
-          - version: ${{ needs.tested-update-versions.outputs.lts-latest-version }}
-          - version: ${{ needs.tested-update-versions.outputs.first-version }}
-          - version: ${{ needs.tested-update-versions.outputs.latest-version }}
-    env:
-      CICADA_HTTP_CACHE_ENABLED: 0
-      BLUE_GREEN_DEPLOYMENT: 1
-      CICADA_DISABLE_UPDATE_CHECK: "0"
-      CICADA_UPDATE_FROM: ${{ matrix.update.version }}
-      SW_RECOVERY_NEXT_VERSION: "6.6.9999999.9999999"
-      SW_RECOVERY_NEXT_BRANCH: "6.6.9999999.9999999"
-      SW_RECOVERY_REPOSITORY: '{"type": "path", "url": "${{ github.workspace }}/new-cicada/src/*", "options": { "symlink": true } }'
-    steps:
-      - name: Create cicada dirs
-        run: mkdir -p old-cicada new-cicada
-      - name: Setup new Cicada
-        uses: xchanming/setup-cicada@main
-        env:
-          COMPOSER_ROOT_VERSION: 6.6.9999999-dev
-        with:
-          cicada-version: ${{ github.ref }}
-          cicada-repository: ${{ github.repository }}
-          install-admin: true
-          env: dev
-          path: new-cicada
-
-      - name: Build new cicada
-        working-directory: new-cicada
-        run: |
-          composer run npm:storefront ci
-          composer run npm:storefront run production
-          (cd src/Storefront/Resources/app/storefront && node copy-to-vendor.js)
-
-          composer -d src/Core config version ${SW_RECOVERY_NEXT_VERSION}
-          composer -d src/Administration config version ${SW_RECOVERY_NEXT_VERSION}
-          composer -d src/Storefront config version ${SW_RECOVERY_NEXT_VERSION}
-          composer -d src/Elasticsearch config version ${SW_RECOVERY_NEXT_VERSION}
-
-      - name: Build updater
-        working-directory: new-cicada/src/WebInstaller
-        run: |
-          composer config platform.php 8.2
-          composer install
-          composer build-phar
-
-      - name: Checkout template
-        uses: actions/checkout@v4
-        with:
-          repository: cicada/production
-          path: old-cicada
-
-      - name: Configure project root
-        run: |
-          echo "PROJECT_ROOT=${{ github.workspace }}/old-cicada" >> "$GITHUB_ENV"
-
-      - name: Require cicada
-        working-directory: old-cicada
-        run: composer require cicada-ag/core:${{ matrix.update.version }}
-
-      - name: Install
-        working-directory: old-cicada
-        run: |
-          sed -i -e "s/cicada.store.frw: '1'/cicada.store.frw: '0'"/ config/services.yaml
-          bin/console system:install --basic-setup --drop-database --create-database
-
-      - name: Copy WebInstaller
-        run: cp new-cicada/src/WebInstaller/cicada-installer.phar.php old-cicada/public/cicada-installer.phar.php
-
-      - name: Start web server
-        working-directory: old-cicada
-        run: symfony server:start -d
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        working-directory: new-cicada/tests/acceptance
-        run: npm ci
-      - name: Install Playwright Browsers
-        working-directory: new-cicada/tests/acceptance
-        run: npx playwright install --with-deps chromium
-      - name: Run update tests with reporting
-        if: ${{ contains(github.workflow_ref, 'nightly') }}
-        working-directory: new-cicada/tests/acceptance
-        run: npx pwc --project-id ${{ secrets.CURRENTS_PROJECT_ID }} --key ${{ secrets.CURRENTS_RECORD_KEY }} -- --project=Update --trace=on
-      - name: Run update tests
-        if: ${{ !contains(github.workflow_ref, 'nightly') }}
-        working-directory: new-cicada/tests/acceptance
-        run: npx playwright test --project=Update --trace=on
-
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report-update-${{ matrix.update.version }}
-          path: new-cicada/tests/acceptance/test-results/
-          retention-days: 3
-
   blue-green-66-67:
     name: "PHP blue green 6.6 -> 6.7 -> 6.6"
     runs-on: ubuntu-24.04
@@ -305,3 +202,21 @@ jobs:
       - name: Run blue-green check
         if: ${{ !contains(github.workflow_ref, 'nightly') }}
         run: php .github/bin/blue-green-check.php # TODO: Move script to .github after migration
+  # this allows us to specifiy just one required job/check
+  # this is not practical with matrix jobs directly, because you've to specify all permutations
+  check:
+    if: always()
+    needs:
+      - phpunit
+      - win-checkout
+      - code-ql
+      - blue-green-66-67
+
+    runs-on: Ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          # allowed-failures: docs, linters
+          # allowed-skips: non-voting-flaky-job
+          jobs: ${{ toJSON(needs) }}
