@@ -328,7 +328,6 @@ export default {
                 },
                 {
                     property: 'accountType',
-                    inlineEdit: 'string',
                     label: 'sw-customer.list.columnAccountType',
                     allowResize: false,
                     useCustomSort: true,
@@ -389,7 +388,7 @@ export default {
                     property: 'active',
                     inlineEdit: 'boolean',
                     label: 'sw-customer.list.columnActive',
-                    allowResize: true,
+                    allowResize: false,
                     visible: true,
                     useCustomSort: true,
                 },
