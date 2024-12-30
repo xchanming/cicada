@@ -16,7 +16,6 @@ Cicada.Component.register('sw-order-detail', () => import('./page/sw-order-detai
 Cicada.Component.register('sw-order-create', () => import('./page/sw-order-create'));
 Cicada.Component.register('sw-order-detail-general', () => import('./view/sw-order-detail-general'));
 Cicada.Component.register('sw-order-detail-details', () => import('./view/sw-order-detail-details'));
-Cicada.Component.register('sw-order-detail-documents', () => import('./view/sw-order-detail-documents'));
 Cicada.Component.register('sw-order-create-base', () => import('./view/sw-order-create-base'));
 Cicada.Component.register('sw-order-create-initial', () => import('./view/sw-order-create-initial'));
 Cicada.Component.register('sw-order-create-general', () => import('./view/sw-order-create-general'));

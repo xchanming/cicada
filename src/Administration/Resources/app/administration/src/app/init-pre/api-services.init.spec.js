@@ -20,7 +20,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
      *         'customSnippetApiService',
      *         'customerGroupRegistrationService',
      *         'customerValidationService',
-     *         'documentService',
      *         'excludedSearchTermService',
      *         'extensionSdkService',
      *         'firstRunWizardService',
@@ -81,7 +80,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Cicada.Service('customSnippetApiService')).toBeUndefined();
         expect(Cicada.Service('customerGroupRegistrationService')).toBeUndefined();
         expect(Cicada.Service('customerValidationService')).toBeUndefined();
-        expect(Cicada.Service('documentService')).toBeUndefined();
         expect(Cicada.Service('excludedSearchTermService')).toBeUndefined();
         expect(Cicada.Service('extensionSdkService')).toBeUndefined();
         expect(Cicada.Service('firstRunWizardService')).toBeUndefined();
@@ -141,7 +139,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Cicada.Service('customSnippetApiService')).toBeDefined();
         expect(Cicada.Service('customerGroupRegistrationService')).toBeDefined();
         expect(Cicada.Service('customerValidationService')).toBeDefined();
-        expect(Cicada.Service('documentService')).toBeDefined();
         expect(Cicada.Service('excludedSearchTermService')).toBeDefined();
         expect(Cicada.Service('extensionSdkService')).toBeDefined();
         expect(Cicada.Service('firstRunWizardService')).toBeDefined();
@@ -156,7 +153,6 @@ describe('src/app/init-pre/api-services.init.ts', () => {
         expect(Cicada.Service('messageQueueService')).toBeDefined();
         expect(Cicada.Service('notificationsService')).toBeDefined();
         expect(Cicada.Service('numberRangeService')).toBeDefined();
-        expect(Cicada.Service('orderDocumentApiService')).toBeDefined();
         expect(Cicada.Service('orderStateMachineService')).toBeDefined();
         expect(Cicada.Service('orderService')).toBeDefined();
         expect(Cicada.Service('productExportService')).toBeDefined();

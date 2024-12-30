@@ -114,7 +114,7 @@ describe('src/module/sw-newsletter-recipient/page/sw-newsletter-recipient-detail
         expect(wrapper.getComponent('#save-btn').props('disabled')).toBe(true);
 
         const fields = wrapper.findAllComponents('.sw-field');
-        expect(fields).toHaveLength(11);
+        expect(fields).toHaveLength(10);
 
         // check that they are all disabled
         expect(fields.every((field) => field.props('disabled'))).toBe(true);
@@ -130,10 +130,10 @@ describe('src/module/sw-newsletter-recipient/page/sw-newsletter-recipient-detail
         expect(wrapper.getComponent('#save-btn').props('disabled')).toBeFalsy();
 
         const fields = wrapper.findAllComponents('.sw-field');
-        expect(fields).toHaveLength(11);
+        expect(fields).toHaveLength(10);
 
         // check that they are all enabled minus the saleschannel select which is always disabled
-        expect(fields.filter((field) => !field.props('disabled'))).toHaveLength(10);
+        expect(fields.filter((field) => !field.props('disabled'))).toHaveLength(9);
 
         // now check that the salechannel is disabled
         expect(wrapper.getComponent('[label="sw-newsletter-recipient.general.salesChannel"]').props('disabled')).toBe(true);

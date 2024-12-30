@@ -173,7 +173,6 @@ describe('src/module/sw-order/page/sw-order-detail', () => {
             'addresses',
             'deliveries',
             'transactions',
-            'documents',
             'tags',
             'billingAddress',
         ].forEach((association) => expect(criteria.hasAssociation(association)).toBe(true));

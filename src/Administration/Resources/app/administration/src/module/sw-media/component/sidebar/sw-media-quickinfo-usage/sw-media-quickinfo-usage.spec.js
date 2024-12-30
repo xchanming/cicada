@@ -192,7 +192,6 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
         expect(usages.some((usage) => usage.name === cmsBlockMock.section.page.translated.name)).toBeTruthy();
         expect(usages.some((usage) => usage.name === cmsSectionMock.page.translated.name)).toBeTruthy();
         expect(usages.some((usage) => usage.name === cmsPageMock.translated.name)).toBeTruthy();
-        expect(usages.some((usage) => usage.name === documentBaseConfigMock.name)).toBeTruthy();
         expect(usages.some((usage) => usage.name === 'Product Media Test')).toBeTruthy();
         expect(usages.some((usage) => usage.name === 'Category Media Test')).toBeTruthy();
         expect(usages.some((usage) => usage.name === 'Landing Page Media Test')).toBeTruthy();

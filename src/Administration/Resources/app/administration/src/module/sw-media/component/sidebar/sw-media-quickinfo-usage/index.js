@@ -313,18 +313,6 @@ export default {
             };
         },
 
-        getDocumentBaseConfigUsage(document) {
-            return {
-                name: document.name,
-                tooltip: this.$tc('sw-media.sidebar.usage.tooltipFoundInDocument'),
-                link: {
-                    name: 'sw.settings.document.detail',
-                    id: document.id,
-                },
-                icon: this.getIconForModule('sw-settings-document'),
-            };
-        },
-
         getAvatarUserUsage(user) {
             return {
                 name: user.username,

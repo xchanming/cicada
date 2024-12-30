@@ -90,15 +90,4 @@ describe('src/module/sw-order/component/sw-order-state-history-card', () => {
 
         expect(deliveryState.attributes().disabled).toBeUndefined();
     });
-
-    it('should always render order change modal with document selection', async () => {
-        global.activeAclRoles = [];
-        wrapper = await createWrapper();
-        await wrapper.setData({ showModal: true });
-
-        await wrapper.vm.$nextTick();
-
-        // Document selection should be visible
-        expect(wrapper.find('sw-order-state-change-modal-attach-documents-stub').exists()).toBeTruthy();
-    });
 });
