@@ -25,11 +25,6 @@ use Symfony\Component\HttpFoundation\Response;
 #[Package('checkout')]
 class CustomerException extends HttpException
 {
-    /**
-     * @deprecated tag:v6.7.0 - Constant CUSTOMER_IS_INACTIVE will be removed as it is unused
-     */
-    public const CUSTOMER_IS_INACTIVE = 'CHECKOUT__CUSTOMER_IS_INACTIVE';
-
     public const CUSTOMERS_NOT_FOUND = 'CHECKOUT__CUSTOMERS_NOT_FOUND';
     public const CUSTOMER_NOT_FOUND = 'CHECKOUT__CUSTOMER_NOT_FOUND';
     public const CUSTOMER_GROUP_NOT_FOUND = 'CHECKOUT__CUSTOMER_GROUP_NOT_FOUND';

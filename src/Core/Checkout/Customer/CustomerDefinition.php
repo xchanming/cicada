@@ -61,7 +61,7 @@ use Cicada\Core\System\User\UserDefinition;
 class CustomerDefinition extends EntityDefinition
 {
     public const ENTITY_NAME = 'customer';
-
+    public const MAX_LENGTH_PHONE_NUMBER = 40;
     public const MAX_LENGTH_NAME = 20;
     public const MAX_LENGTH_TITLE = 100;
 
@@ -111,6 +111,7 @@ class CustomerDefinition extends EntityDefinition
             (new NumberRangeField('customer_number', 'customerNumber', 255))->addFlags(new ApiAware(), new Required(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
             (new FkField('salutation_id', 'salutationId', SalutationDefinition::class))->addFlags(new ApiAware()),
             (new StringField('name', 'name', self::MAX_LENGTH_NAME))->addFlags(new ApiAware(), new Required(), new SearchRanking(SearchRanking::MIDDLE_SEARCH_RANKING)),
+            (new StringField('phone_number', 'phoneNumber', self::MAX_LENGTH_PHONE_NUMBER))->addFlags(new ApiAware()),
             (new StringField('company', 'company'))->addFlags(new ApiAware(), new IgnoreInOpenapiSchema(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
             (new PasswordField('password', 'password', \PASSWORD_DEFAULT, [], PasswordField::FOR_CUSTOMER))->removeFlag(ApiAware::class),
             (new EmailField('email', 'email'))->addFlags(new ApiAware(), new Required(), new SearchRanking(SearchRanking::MIDDLE_SEARCH_RANKING, false)),

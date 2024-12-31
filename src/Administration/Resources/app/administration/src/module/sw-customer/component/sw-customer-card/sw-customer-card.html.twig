@@ -164,20 +164,34 @@
                                 />
                                 {% endblock %}
                             </sw-container>
+                            <sw-container
+                                columns="1fr 1fr"
+                                gap="10px"
+                            >
+                                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+                            {% block sw_customer_base_form_phone_number_editor %}
+                                <sw-text-field
+                                    v-model:value="customer.phoneNumber"
+                                    name="sw-field--customer-phoneNumber"
+                                    :label="$tc('sw-customer.card.labelPhoneNumber')"
+                                    :placeholder="$tc('sw-customer.card.placeholderPhoneNumber')"
+                                    :error="customerPhoneNumberError"
+                                />
+                            {% endblock %}
+                                <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+                            {% block sw_customer_card_vat_ids %}
+                                <sw-text-field
+                                    v-if="editMode && isBusinessAccountType"
+                                    v-model:value="customer.vatIds[0]"
+                                    name="vatId"
+                                    :label="$tc('sw-customer.card.labelVatId')"
+                                    :placeholder="$tc('sw-customer.card.placeholderVatId')"
+                                    :error="customerVatIdsError"
+                                />
+                            {% endblock %}
+                            </sw-container>
                         </div>
                         {% endblock %}
-                        {% endblock %}
-
-                        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_customer_card_vat_ids %}
-                        <sw-text-field
-                            v-if="editMode && isBusinessAccountType"
-                            v-model:value="customer.vatIds[0]"
-                            name="vatId"
-                            :label="$tc('sw-customer.card.labelVatId')"
-                            :placeholder="$tc('sw-customer.card.placeholderVatId')"
-                            :error="customerVatIdsError"
-                        />
                         {% endblock %}
 
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->

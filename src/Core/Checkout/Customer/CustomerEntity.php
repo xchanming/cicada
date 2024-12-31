@@ -142,6 +142,8 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected int $autoIncrement;
 
+    protected ?string $phoneNumber;
+
     protected ?TagCollection $tags = null;
 
     /**
@@ -860,4 +862,15 @@ class CustomerEntity extends Entity implements \Stringable
     {
         $this->avatarMedia = $avatarMedia;
     }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(?string $phoneNumber): void
+    {
+        $this->phoneNumber = $phoneNumber;
+    }
+
 }
