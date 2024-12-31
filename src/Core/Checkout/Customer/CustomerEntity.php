@@ -872,5 +872,4 @@ class CustomerEntity extends Entity implements \Stringable
     {
         $this->phoneNumber = $phoneNumber;
     }
-
 }
