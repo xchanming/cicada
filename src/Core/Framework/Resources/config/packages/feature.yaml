@@ -1,10 +1,6 @@
 cicada:
   feature:
     flags:
-      - name: v6.5.0.0
-        default: true
-        major: true
-        toggleable: false
       - name: v6.6.0.0
         default: true
         major: true

@@ -592,10 +592,10 @@ class Migration1536233560BasicData extends MigrationStep
         $inProgressId = Uuid::randomBytes();
         $canceledId = Uuid::randomBytes();
 
-        $germanId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $chineseId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
         $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
-        $translationZH = ['language_id' => $germanId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
+        $translationZH = ['language_id' => $chineseId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
         $translationEN = ['language_id' => $englishId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
 
         // state machine
@@ -1497,7 +1497,7 @@ class Migration1536233560BasicData extends MigrationStep
         ];
 
         $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
 
         foreach ($definitionNumberRangeTypes as $typeName => $numberRangeType) {
             $connection->insert(
@@ -1523,7 +1523,7 @@ class Migration1536233560BasicData extends MigrationStep
                 [
                     'number_range_type_id' => Uuid::fromHexToBytes($numberRangeType['id']),
                     'type_name' => $numberRangeType['nameZh'],
-                    'language_id' => $languageDe,
+                    'language_id' => $languageZh,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
             );
@@ -1555,7 +1555,7 @@ class Migration1536233560BasicData extends MigrationStep
                 [
                     'number_range_id' => Uuid::fromHexToBytes($numberRange['id']),
                     'name' => $numberRange['nameZh'],
-                    'language_id' => $languageDe,
+                    'language_id' => $languageZh,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
             );
