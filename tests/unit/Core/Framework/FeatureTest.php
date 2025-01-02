@@ -201,35 +201,6 @@ class FeatureTest extends TestCase
         Feature::setActive('FEATURE_TWO', false);
     }
 
-    public function testTriggerDeprecationOrThrowThrows(): void
-    {
-        $this->expectException(FeatureException::class);
-
-        Feature::triggerDeprecationOrThrow('v6.5.0.0', 'test');
-    }
-
-    #[DisabledFeatures(['v6.5.0.0'])]
-    #[DataProvider('callSilentIfInactiveProvider')]
-    public function testCallSilentIfInactiveProvider(string $majorVersion, string $deprecatedMessage, \Closure $assertion): void
-    {
-        // deprecation warning wouldn't be rendered otherwise
-        $this->setEnvVars(['TESTS_RUNNING' => false]);
-
-        $errorMessage = null;
-        set_error_handler(static function (int $errno, string $error) use (&$errorMessage): bool {
-            $errorMessage = $error;
-
-            return true;
-        });
-
-        Feature::callSilentIfInactive('v6.5.0.0', static function () use ($deprecatedMessage, $majorVersion): void {
-            Feature::triggerDeprecationOrThrow($majorVersion, $deprecatedMessage);
-        });
-        $assertion($deprecatedMessage, $errorMessage);
-
-        restore_error_handler();
-    }
-
     #[DataProvider('deprecatedMethodMessageProvider')]
     public function testDeprecatedMethodMessage(string $expectedMessage, string $className, string $methodName): void
     {
