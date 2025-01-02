@@ -24,7 +24,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\AbstractSalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
@@ -152,10 +151,6 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
                 'city' => 'Schöppingen',
             ])
             ->customerGroup(TestDefaults::FALLBACK_CUSTOMER_GROUP);
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer->add('defaultPaymentMethodId', $this->getValidPaymentMethodId());
-        }
 
         $this->customerRepository->upsert([$customer->build()], $this->context);
 

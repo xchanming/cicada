@@ -4,6 +4,7 @@ import './sw-condition-line-item-custom-field.scss';
 const { Component, Mixin } = Cicada;
 const { mapPropertyErrors } = Component.getComponentHelper();
 const { Criteria } = Cicada.Data;
+const { Filter } = Cicada;
 
 /**
  * @package services-settings
@@ -120,6 +121,9 @@ Component.extend('sw-condition-line-item-custom-field', 'sw-condition-base-line-
                 this.conditionValueOperatorError ||
                 this.conditionValueRenderedFieldValueError
             );
+        },
+        truncateFilter() {
+            return Filter.getByName('truncate');
         },
     },
 
