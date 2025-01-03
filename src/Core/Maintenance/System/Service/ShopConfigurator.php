@@ -8,6 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\MaintenanceException;
 use Doctrine\DBAL\Connection;
+use Psr\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Intl\Currencies;
 
 /**
@@ -19,8 +20,10 @@ class ShopConfigurator
     /**
      * @internal
      */
-    public function __construct(private readonly Connection $connection)
-    {
+    public function __construct(
+        private readonly Connection $connection,
+        private readonly EventDispatcherInterface $eventDispatcher
+    ) {
     }
 
     public function updateBasicInformation(?string $shopName, ?string $email): void
@@ -99,6 +102,7 @@ class ShopConfigurator
         } else {
             $this->changeDefaultLanguageData($newDefaultLanguageId, $currentLocale, $locale);
         }
+        $this->eventDispatcher->dispatch(new SystemLanguageChangeEvent($newDefaultLanguageId));
     }
 
     public function setDefaultCurrency(string $currencyCode): void

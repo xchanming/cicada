@@ -6,6 +6,8 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Maintenance\MaintenanceException;
 use Cicada\Core\Maintenance\System\Service\ShopConfigurator;
+use Cicada\Core\Maintenance\System\Service\SystemLanguageChangeEvent;
+use Cicada\Core\Test\Stub\EventDispatcher\CollectingEventDispatcher;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -20,15 +22,15 @@ class ShopConfiguratorTest extends TestCase
 {
     private ShopConfigurator $shopConfigurator;
 
-    /**
-     * @var Connection&MockObject
-     */
-    private Connection $connection;
+    private Connection&MockObject $connection;
+
+    private CollectingEventDispatcher $eventDispatcher;
 
     protected function setUp(): void
     {
         $this->connection = $this->createMock(Connection::class);
-        $this->shopConfigurator = new ShopConfigurator($this->connection);
+        $this->eventDispatcher = new CollectingEventDispatcher();
+        $this->shopConfigurator = new ShopConfigurator($this->connection, $this->eventDispatcher);
     }
 
     public function testUpdateBasicInformation(): void
@@ -79,6 +81,8 @@ class ShopConfiguratorTest extends TestCase
         });
 
         $this->shopConfigurator->setDefaultLanguage('vi-VN');
+        static::assertCount(1, $this->eventDispatcher->getEvents());
+        static::assertInstanceOf(SystemLanguageChangeEvent::class, $this->eventDispatcher->getEvents()[0]);
     }
 
     public function testSetDefaultLanguageMatchCurrentLocale(): void

@@ -141,8 +141,9 @@
             <argument type="service" id="Cicada\Core\Installer\Finish\UniqueIdGenerator"/>
         </service>
 
-        <service id="Cicada\Core\Installer\Configuration\ShopConfigurationService"/>
-
+        <service id="Cicada\Core\Installer\Configuration\ShopConfigurationService">
+            <argument type="service" id="event_dispatcher"/>
+        </service>
         <service id="Cicada\Core\Installer\Configuration\AdminConfigurationService"/>
 
         <service id="Cicada\Core\Installer\Finish\SystemLocker">
