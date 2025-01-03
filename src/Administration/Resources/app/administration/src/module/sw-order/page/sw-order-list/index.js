@@ -53,7 +53,6 @@ export default {
                 'affiliate-code-filter',
                 'campaign-code-filter',
                 'promotion-code-filter',
-                'document-filter',
                 'order-date-filter',
                 'order-value-filter',
                 'status-filter',
@@ -375,7 +374,7 @@ export default {
                 return true;
             }
 
-            return order.documents.length > 0;
+            return false;
         },
 
         getOrderColumns() {
