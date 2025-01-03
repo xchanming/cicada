@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Test\Integration\Builder\Customer;
 
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -43,11 +42,6 @@ class CustomerBuilder
     protected string $defaultShippingAddressId;
 
     /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    protected string $defaultPaymentMethodId;
-
-    /**
      * @var array<string, mixed>
      */
     protected array $addresses = [];
@@ -56,13 +50,6 @@ class CustomerBuilder
      * @var array<string, mixed>
      */
     protected array $group = [];
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     *
-     * @var array<string, mixed>
-     */
-    protected array $defaultPaymentMethod = [];
 
     /**
      * @var array<string, mixed>
@@ -86,16 +73,6 @@ class CustomerBuilder
         $this->customerGroup($customerGroup);
         $this->defaultBillingAddress($billingAddress);
         $this->defaultShippingAddress($shippingAddress);
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $this->defaultPaymentMethodId = self::connection()->fetchOne(
-                'SELECT LOWER(HEX(payment_method_id))
-                   FROM sales_channel_payment_method
-                   JOIN payment_method ON sales_channel_payment_method.payment_method_id = payment_method.id
-                   WHERE sales_channel_id = :id AND payment_method.active = true LIMIT 1',
-                ['id' => Uuid::fromHexToBytes($salesChannelId)]
-            );
-        }
     }
 
     public function customerNumber(string $customerNumber): self
@@ -145,19 +122,6 @@ class CustomerBuilder
     {
         $this->addAddress($key, $customParams);
         $this->defaultShippingAddressId = $this->ids->get($key);
-
-        return $this;
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - will be removed
-     */
-    public function defaultPaymentMethod(string $key): self
-    {
-        $this->defaultPaymentMethod = [
-            'id' => $this->ids->get($key),
-            'name' => $key,
-        ];
 
         return $this;
     }

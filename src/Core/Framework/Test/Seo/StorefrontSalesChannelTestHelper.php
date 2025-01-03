@@ -9,7 +9,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\PlatformRequest;
@@ -157,10 +156,6 @@ trait StorefrontSalesChannelTestHelper
             'defaultShippingAddressId' => $defaultBillingAddress,
             'customerNumber' => 'asdf',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $salesChannel->getPaymentMethodId();
-        }
 
         $customerRepository = $container->get('customer.repository');
         $customerRepository->upsert([$customer], Context::createDefaultContext());

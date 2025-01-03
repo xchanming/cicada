@@ -70,11 +70,6 @@ async function createWrapper() {
                         name: 'Group test',
                     },
                 },
-                defaultPaymentMethod: {
-                    translated: {
-                        distinguishableName: 'Payment test',
-                    },
-                },
                 orderTotalAmount: 29.68,
             },
             customerEditMode: false,

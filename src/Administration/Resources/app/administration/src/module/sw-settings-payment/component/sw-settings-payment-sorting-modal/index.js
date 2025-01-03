@@ -92,8 +92,6 @@ export default {
 
         isCicadaDefaultPaymentMethod(paymentMethod) {
             const defaultPaymentMethods = [
-                'Cicada\\Core\\Checkout\\Payment\\Cart\\PaymentHandler\\DebitPayment',
-                'Cicada\\Core\\Checkout\\Payment\\Cart\\PaymentHandler\\InvoicePayment',
                 'Cicada\\Core\\Checkout\\Payment\\Cart\\PaymentHandler\\CashPayment',
                 'Cicada\\Core\\Checkout\\Payment\\Cart\\PaymentHandler\\PrePayment',
             ];

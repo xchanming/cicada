@@ -49,7 +49,6 @@ export default {
                     'email',
                     'salesChannelId',
                     'customerNumber',
-                    'defaultPaymentMethodId',
                     'groupId',
                 ],
             },

@@ -16,7 +16,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingEntity;
@@ -228,10 +227,6 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $criteria = new Criteria([$customerId]);
         $criteria->setTitle('context-factory::customer');
         $criteria->addAssociation('salutation');
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $criteria->addAssociation('defaultPaymentMethod');
-        }
 
         /** @var SalesChannelApiSource $source */
         $source = $context->getSource();
