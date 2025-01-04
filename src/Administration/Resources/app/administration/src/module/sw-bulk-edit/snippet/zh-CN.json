@@ -1,395 +1,395 @@
 {
   "sw-bulk-edit": {
     "general": {
-      "mainMenuTitle": "Bulk edit",
-      "descriptionTextModule": "Module to bulk edit data",
-      "defaultChangeLabel": "Change:"
+      "mainMenuTitle": "批量编辑",
+      "descriptionTextModule": "用于批量编辑数据的模块",
+      "defaultChangeLabel": "更改："
     },
     "changeTypes": {
-      "overwrite": "Overwrite",
-      "clear": "Clear"
+      "overwrite": "概览",
+      "clear": "清除"
     },
     "product": {
-      "textTitle": "Bulk edit: {productTotal} product | Bulk edit: {productTotal} products",
-      "messageEmptyTitle": "No products selected for bulk edit",
-      "messageEmptySubline": "Please go back and select some products",
+      "textTitle": "批量编辑：{productTotal} 个产品 | 批量编辑：{productTotal} 个产品",
+      "messageEmptyTitle": "未选择产品进行批量编辑",
+      "messageEmptySubline": "请返回并选择一些产品",
       "alertInheritance": {
-        "message": "These variants have inherited fields. The contents of inherited fields are drawn form the respective parent product. You can activate and deactivate inheritances by clicking on the chain symbol."
+        "message": "这些变体有继承字段。继承字段的内容来自相应的父产品。您可以通过点击链式符号来激活或停用继承。"
       },
       "alertRestrictedFields": {
-        "title": "Restricted bulk edit",
-        "message": "Bulk edit can only be applied to fields that are available for all selected products.<br><br>Not available for all selected products:",
-        "stock": "Stock",
-        "isCloseout": "On clearance sale",
-        "restockTime": "Restock time",
-        "maxPurchase": "Max. order quantity",
-        "purchaseSteps": "Purchase steps",
-        "minPurchase": "Min. order quantity",
-        "shippingFree": "Free shipping"
+        "title": "限制批量编辑",
+        "message": "批量编辑只能应用于所有选定产品均可用的字段。<br><br>不适用于所有选定产品：",
+        "stock": "库存",
+        "isCloseout": "清仓销售",
+        "restockTime": "补货时间",
+        "maxPurchase": "最大购买量",
+        "purchaseSteps": "购买步骤",
+        "minPurchase": "最小购买量",
+        "shippingFree": "免费送货"
       },
       "generalInformation": {
-        "cardTitle": "General information",
+        "cardTitle": "常规信息",
         "description": {
-          "changeLabel": "Change: Description"
+          "changeLabel": "更改：描述"
         },
         "manufacturer": {
-          "changeLabel": "Change: Manufacturer",
-          "placeholderManufacturer": "Select manufacturer..."
+          "changeLabel": "更改：生产商",
+          "placeholderManufacturer": "选择生产商..."
         },
         "active": {
-          "changeLabel": "Change: Active",
-          "switchLabel": "Active"
+          "changeLabel": "更改：激活",
+          "switchLabel": "激活"
         },
         "productPromotion": {
-          "changeLabel": "Change: Product promotion",
-          "switchLabel": "Product promotion"
+          "changeLabel": "更改：产品促销",
+          "switchLabel": "产品促销"
         }
       },
       "prices": {
-        "cardTitle": "Prices",
+        "cardTitle": "价格",
         "taxRate": {
-          "changeLabel": "Change: Tax rate",
-          "placeholderTax": "Select tax rate..."
+          "changeLabel": "更改：税率",
+          "placeholderTax": "选择税率..."
         },
         "isPriceInherited": {
-          "changeLabel": "Change: Price inheritance"
+          "changeLabel": "更改：价格继承"
         },
         "price": {
-          "label": "Price",
-          "changeLabel": "Change: Price",
-          "placeholderPrice": "Enter price..."
+          "label": "价格",
+          "changeLabel": "更改：价格",
+          "placeholderPrice": "输入价格..."
         },
         "purchasePrices": {
-          "label": "Purchase price",
-          "changeLabel": "Change: Purchase price",
-          "placeholderPurchasePrices": "Enter purchase price..."
+          "label": "购买价格",
+          "changeLabel": "更改：购买价格",
+          "placeholderPurchasePrices": "输入购买价格..."
         },
         "listPrice": {
-          "label": "List price",
-          "changeLabel": "Change: List price",
-          "placeholderListPrice": "Enter list price..."
+          "label": "标价",
+          "changeLabel": "更改：标价",
+          "placeholderListPrice": "输入标价..."
         },
         "regulationPrice": {
-          "label": "Cheapest price (last 30 days)",
-          "changeLabel": "Change: Cheapest price (last 30 days)",
-          "placeholderRegulationPrice": "Enter Cheapest price..."
+          "label": "最便宜的价格（最近30天）",
+          "changeLabel": "更改：最便宜的价格（最近30天）",
+          "placeholderRegulationPrice": "输入最便宜的价格..."
         }
       },
       "advancedPrices": {
-        "cardTitle": "Advanced pricing",
-        "changeLabel": "Change: Advanced pricing",
-        "selectRule": "Select pricing rule ...",
-        "newAdvancedPrices": "Create new Advanced Prices ({count})"
+        "cardTitle": "高级定价",
+        "changeLabel": "更改：高级定价",
+        "selectRule": "选择定价规则...",
+        "newAdvancedPrices": "创建新的高级价格（{count}）"
       },
       "property": {
-        "cardTitle": "Properties",
-        "changeLabel": "Change: Properties"
+        "cardTitle": "属性",
+        "changeLabel": "更改：属性"
       },
       "deliverability": {
-        "cardTitle": "Deliverability",
+        "cardTitle": "可交付性",
         "stock": {
-          "changeLabel": "Change: Stock",
-          "placeholderStock": "Enter quantity in stock... "
+          "changeLabel": "更改：库存",
+          "placeholderStock": "输入库存数量..."
         },
         "isCloseout": {
-          "changeLabel": "Change: Clearance sale",
-          "switchLabel": "Clearance sale"
+          "changeLabel": "更改：清仓销售",
+          "switchLabel": "清仓销售"
         },
         "deliveryTime": {
-          "changeLabel": "Change: Delivery time",
-          "placeholderDeliveryTime": "Select delivery time..."
+          "changeLabel": "更改：交货时间",
+          "placeholderDeliveryTime": "选择交货时间..."
         },
         "restockTime": {
-          "changeLabel": "Change: Restock time",
-          "placeholderRestockTime": "Enter restock time in days..."
+          "changeLabel": "更改：补货时间",
+          "placeholderRestockTime": "输入补货时间（天数）..."
         },
         "freeShipping": {
-          "changeLabel": "Change: Free shipping",
-          "switchLabel": "Free shipping"
+          "changeLabel": "更改：免费送货",
+          "switchLabel": "免费送货"
         },
         "minOrderQuantity": {
-          "changeLabel": "Change: Min order quantity",
-          "placeholderMinOrderQuantity": "Enter min order quantity..."
+          "changeLabel": "更改：最小订单数量",
+          "placeholderMinOrderQuantity": "输入最小订单数量..."
         },
         "purchaseSteps": {
-          "changeLabel": "Change: Purchase steps",
-          "placeholderPurchaseSteps": "Enter purchase step size..."
+          "changeLabel": "更改：购习步骤",
+          "placeholderPurchaseSteps": "输入购买步骤大小..."
         },
         "maxOrderQuantity": {
-          "changeLabel": "Change: Max order quantity",
-          "placeholderMaxOrderQuantity": "Enter max order quantity..."
+          "changeLabel": "更改：最大订单数量",
+          "placeholderMaxOrderQuantity": "输入最大订单数量..."
         }
       },
       "assignment": {
-        "cardTitle": "Visibility & structure",
+        "cardTitle": "可见性与结构",
         "categories": {
-          "changeLabel": "Change: Category",
-          "placeholder": "Select categories..."
+          "changeLabel": "更改：类别",
+          "placeholder": "选择类别..."
         },
         "tags": {
-          "changeLabel": "Change: Tags",
-          "placeholder": "Enter tags..."
+          "changeLabel": "更改：标签",
+          "placeholder": "输入标签..."
         },
         "visibilities": {
-          "changeLabel": "Change: Sales Channel",
-          "placeholder": "Select Sales Channels..."
+          "changeLabel": "更改：销售渠道",
+          "placeholder": "选择销售渠道..."
         },
         "searchKeywords": {
-          "changeLabel": "Change: Search keywords",
-          "placeholder": "Enter keywords..."
+          "changeLabel": "更改：搜索关键词",
+          "placeholder": "输入关键词..."
         }
       },
       "media": {
-        "cardTitle": "Media",
-        "changeLabel": "Change: Media"
+        "cardTitle": "媒体",
+        "changeLabel": "更改：媒体"
       },
       "labelling": {
-        "cardTitle": "Labelling",
+        "cardTitle": "标签",
         "releaseDate": {
-          "changeLabel": "Change: Release date",
-          "placeholderReleaseDate": "Enter release date..."
+          "changeLabel": "更改：发布日期",
+          "placeholderReleaseDate": "输入发布日期..."
         }
       },
       "seo": {
         "cardTitle": "SEO",
         "metaTitle": {
-          "changeLabel": "Change: Meta title",
-          "placeholderMetaTitle": "Enter meta title..."
+          "changeLabel": "更改：元标题",
+          "placeholderMetaTitle": "输入元标题..."
         },
         "metaDescription": {
-          "changeLabel": "Change: Meta description",
-          "placeholderMetaDescription": "Enter meta description..."
+          "changeLabel": "更改：元描述",
+          "placeholderMetaDescription": "输入元描述..."
         },
         "seoKeywords": {
-          "changeLabel": "Change: SEO keywords",
-          "placeholderSeoKeywords": "Enter keywords..."
+          "changeLabel": "更改：SEO关键词",
+          "placeholderSeoKeywords": "输入关键词..."
         }
       },
       "measuresAndPackaging": {
-        "cardTitle": "Measures & packaging",
+        "cardTitle": "尺寸与包装",
         "widthTitle": {
-          "changeLabel": "Change: Width",
-          "placeholder": "e.g. 500..."
+          "changeLabel": "更改：宽度",
+          "placeholder": "例如 500..."
         },
         "heightTitle": {
-          "changeLabel": "Change: Height",
-          "placeholder": "e.g. 200..."
+          "changeLabel": "更改：高度",
+          "placeholder": "例如 200..."
         },
         "lengthTitle": {
-          "changeLabel": "Change: Length",
-          "placeholder": "e.g. 100..."
+          "changeLabel": "更改：长度",
+          "placeholder": "例如 100..."
         },
         "weightTitle": {
-          "changeLabel": "Change: Weight",
-          "placeholder": "e.g. 0.4..."
+          "changeLabel": "更改：重量",
+          "placeholder": "例如 0.4..."
         },
         "sellingUnitTitle": {
-          "changeLabel": "Change: Selling unit",
-          "placeholder": "Enter selling unit..."
+          "changeLabel": "更改：销售单位",
+          "placeholder": "输入销售单位..."
         },
         "scaleUnitTitle": {
-          "changeLabel": "Change: Scale unit",
-          "placeholder": "Enter scale unit..."
+          "changeLabel": "更改：计量单位",
+          "placeholder": "输入计量单位..."
         },
         "packUnitTitle": {
-          "changeLabel": "Change: Packaging unit",
-          "placeholder": "Enter packaging unit..."
+          "changeLabel": "更改：包装单位",
+          "placeholder": "输入包装单位..."
         },
         "packUnitPluralTitle": {
-          "changeLabel": "Change: Packaging unit plural",
-          "placeholder": "Enter packaging unit plural..."
+          "changeLabel": "更改：包装单位复数形式",
+          "placeholder": "输入包装单位复数形式..."
         },
         "basicUnitTitle": {
-          "changeLabel": "Change: Basic unit",
-          "placeholder": "Enter basic unit..."
+          "changeLabel": "更改：基本单位",
+          "placeholder": "输入基本单位..."
         }
       },
       "featureSets": {
-        "cardTitle": "Essential Characteristics",
-        "changeLabel": "Change: Template",
-        "placeholder": "Select a template..."
+        "cardTitle": "基本特征",
+        "changeLabel": "更改：模板",
+        "placeholder": "选择模板..."
       },
       "customFields": {
-        "cardTitle": "Custom fields",
-        "changeLabel": "Change: {name}"
+        "cardTitle": "自定义字段",
+        "changeLabel": "更改：{name}"
       }
     },
     "variant": {
-      "textTitle": "Bulk edit: {variantTotal} variant | Bulk edit: {variantTotal} variants"
+      "textTitle": "批量编辑：{variantTotal} 变体 | 批量编辑：{variantTotal} 变体"
     },
     "modal": {
       "confirm": {
-        "title": "Bulk edit - Apply?",
-        "description": "Apply changes to {itemCount} selected item? This action cannot be undone. | Apply changes to {itemCount} selected items? This action cannot be undone.",
-        "switchLabel": "Trigger Flows with this bulk edit",
-        "switchHelpText": "If this action is active, all triggers created in the Flow Builder are executed for all changes of this bulk edit. Under certain circumstances, this can lead to Flows being executed twice.",
-        "alertTitle": "The following triggers/flows might be executed:",
+        "title": "批量编辑 - 应用？",
+        "description": "对 {itemCount} 选定项目应用更改？此操作无法撤销。| 对 {itemCount} 选定项目应用更改？此操作无法撤销。",
+        "switchLabel": "通过此批量编辑触发流程",
+        "switchHelpText": "如果此操作激活，所有在流程构建器中创建的触发器对此批量编辑的所有更改都将执行。在某些情况下，这可能导致流程被执行两次。",
+        "alertTitle": "以下触发器/流程可能会被执行：",
         "triggeredFlows": {
           "orderDeliveries": {
             "key": "orderDeliveries",
-            "label": "Delivery state changes"
+            "label": "交货状态变更"
           },
           "orderTransactions": {
             "key": "orderTransactions",
-            "label": "Payment state changes"
+            "label": "支付状态变更"
           },
           "orders": {
             "key": "orders",
-            "label": "Order state changes"
+            "label": "订单状态变更"
           },
           "requestedCustomerGroupId": {
             "key": "requestedCustomerGroupId",
-            "label": "Customer group registration request"
+            "label": "客户组注册请求"
           }
         },
         "buttons": {
-          "applyChanges": "Apply changes"
+          "applyChanges": "应用更改"
         }
       },
       "process": {
-        "title": "Bulk edit - In process",
-        "description": "Depending on the amount of changes, this may take a while.",
-        "helpText": "Please be aware that manual changes to one of the selected items during the bulk edit process may yield unwanted results."
+        "title": "批量编辑 - 进行中",
+        "description": "根据更改数量，这可能需要一段时间。",
+        "helpText": "请注意，批量编辑过程中对所选项手动更改可能产生不希望的结果。"
       },
       "success": {
-        "title": "Bulk edit - Success",
-        "description": "Bulk edit finished.",
-        "instruction": "The bulk edit has been finished successfully.",
-        "buttonDownload": "Download",
-        "messageNoDocumentsFound": "No documents found"
+        "title": "批量编辑 - 成功",
+        "description": "批量编辑完成。",
+        "instruction": "批量编辑已成功完成。",
+        "buttonDownload": "下载",
+        "messageNoDocumentsFound": "未找到文件"
       },
       "error": {
-        "title": "Bulk edit - Error",
-        "description": "Bulk edit finished with errors.",
+        "title": "批量编辑 - 错误",
+        "description": "批量编辑完成，但出现错误。",
         "buttons": {
-          "openLog": "Open log file"
+          "openLog": "打开日志文件"
         }
       },
-      "warningText": "Please wait for the bulk edit to complete. This may take a while. If you close the browser tab or cancel the process prematurely, not all changes will be applied. You can run the bulk edit again at any time.",
-      "messageBeforeTabLeave": "Bulk edits are being made. If you close the tab, not all changes may be applied."
+      "warningText": "请等待批量编辑完成。这可能需要一段时间。如果您提前关闭浏览器标签页或取消过程，可能不会应用所有更改。您可以随时再次运行批量编辑。",
+      "messageBeforeTabLeave": "正在进行批量编辑。如果关闭标签页，可能不会应用所有更改。"
     },
     "order": {
-      "textTitle": "Bulk edit: {orderTotal} order | Bulk edit: {orderTotal} orders",
-      "messageEmptyTitle": "No orders selected",
-      "messageEmptySubline": "Go back and select orders.",
+      "textTitle": "批量编辑：{orderTotal} 订单 | 批量编辑：{orderTotal} 订单",
+      "messageEmptyTitle": "未选择订单",
+      "messageEmptySubline": "返回并选择订单。",
       "alertRestrictedFields": {
-        "title": "Restricted bulk edit",
-        "message": "Bulk edit can only be applied to fields that are available for all selected orders.<br><br>Not available for all selected orders:",
-        "orderDeliveries": "Delivery status"
+        "title": "限制批量编辑",
+        "message": "批量编辑只能应用于所有选定订单均可用的字段。<br><br>不适用于所有选定订单：",
+        "orderDeliveries": "交货状态"
       },
       "status": {
-        "cardTitle": "Status",
+        "cardTitle": "状态",
         "payment": {
-          "label": "Change: Payment status",
-          "placeholder": "Select payment status..."
+          "label": "更改：支付状态",
+          "placeholder": "选择支付状态..."
         },
         "shipping": {
-          "label": "Change: Delivery status",
-          "placeholder": "Select Delivery status..."
+          "label": "更改：交货状态",
+          "placeholder": "选择交货状态..."
         },
         "order": {
-          "label": "Change: Order status",
-          "placeholder": "Select order status..."
+          "label": "更改：订单状态",
+          "placeholder": "选择订单状态..."
         },
         "statusMails": {
-          "label": "Send: Status emails",
-          "helpText": "Available only if status has been changed."
+          "label": "发送：状态电邮",
+          "helpText": "仅在状态发生更改时可用。"
         },
         "documents": {
-          "label": "Send: Documents",
-          "helpText": "Existing documents can be sent as attachments with the status mails. The most recent document is always used. If documents are generated via this bulk edit, they are used.",
+          "label": "发送：文件",
+          "helpText": "现有文件可作为状态邮件的附件发送。始终使用最新文件。如果通过这次批量编辑生成文件，则使用这些文件。",
           "options": {
-            "newest": "Newest",
-            "all": "All"
+            "newest": "最新",
+            "all": "全部"
           },
           "documentType": {
-            "invoices": "Invoices",
-            "deliveryNotes": "Delivery notes",
-            "creditNotes": "Credit notes",
-            "cancellationInvoices": "Cancellation notes"
+            "invoices": "发票",
+            "deliveryNotes": "送货单",
+            "creditNotes": "贷项通知单",
+            "cancellationInvoices": "取消发票"
           },
-          "skipSentDocuments": "Skip already sent documents"
+          "skipSentDocuments": "跳过已发送的文件"
         }
       },
       "documents": {
-        "cardTitle": "Documents",
-        "warning": "The bulk edit now uses an improved document creation. However, one or more extensions on your system may produce different results with the new document creation.\nTherefore, please check if your documents show differences with and without using the bulk edit.",
+        "cardTitle": "文件",
+        "warning": "批量编辑现在使用了改进的文件创建方式。然而，您系统中的一个或多个扩展可能会在使用新的文件创建时产生不同的结果。\n因此，请检查您的文件在使用和不使用批量编辑时是否有差异。",
         "generateInvoice": {
-          "label": "Generate: Invoice",
-          "helpText": "This action increases the value of the corresponding number range.",
-          "labelDatePicker": "Date",
-          "labelTextarea": "Comment",
+          "label": "生成：发票",
+          "helpText": "此操作将增加相应数字范围的值。",
+          "labelDatePicker": "日期",
+          "labelTextarea": "评论",
           "placeholderTextarea": ""
         },
         "generateCancellationInvoice": {
-          "label": "Generate: Cancellation invoice",
-          "helpText": "This action increases the value of the corresponding number range.",
-          "changeSubLabel": "The latest reference invoice number will  be used."
+          "label": "生成：取消发票",
+          "helpText": "此操作将增加相应数字范围的值。",
+          "changeSubLabel": "将使用最新的参考发票号码。"
         },
         "generateDeliveryNote": {
-          "label": "Generate: Delivery note",
-          "helpText": "This action increases the value of the corresponding number range.",
-          "labelDeliveryDatePicker": "Delivery date"
+          "label": "生成：送货单",
+          "helpText": "此操作将增加相应数字范围的值。",
+          "labelDeliveryDatePicker": "交货日期"
         },
         "generateCreditNote": {
-          "label": "Generate: Credit note",
-          "helpText": "Credit notes generally employ the latest corresponding invoice number for reference.",
-          "changeSubLabel": "This document is generated only if a credit position exists in the order."
+          "label": "生成：贷项通知单",
+          "helpText": "贷项通知单通常使用最新相应的发票号码作为参考。",
+          "changeSubLabel": "仅在订单中存在贷位时生成此文件。"
         },
         "downloadDocuments": {
-          "label": "Download: Documents",
-          "helpText": "With this option, the most recent documents available are offered for download. Multiple documents are merged into the same file. The download is available after the multiple change has been completed."
+          "label": "下载：文件",
+          "helpText": "使用此选项，可以提供最新可用的文件进行下载。多个文件合并成同一文件。多次更改完成后，将提供下载。"
         },
-        "forceDocumentCreation": "Force document creation",
-        "forceDocumentCreationHelpText": "The document is also generated if the order already contains a document of this type."
+        "forceDocumentCreation": "强制创建文档",
+        "forceDocumentCreationHelpText": "即使订单已包含该类型的文档，也会生成新文档。"
       },
       "customFields": {
-        "cardTitle": "Custom fields",
-        "changeLabel": "Change: {name}"
+        "cardTitle": "自定义字段",
+        "changeLabel": "更改：{name}"
       },
       "tags": {
-        "cardTitle": "Tags",
-        "changeLabel": "Change: Tags",
-        "placeholder": "Enter tags..."
+        "cardTitle": "标签",
+        "changeLabel": "更改：标签",
+        "placeholder": "添加标签..."
       }
     },
     "customer": {
-      "textTitle": "Bulk edit: {customerTotal} customer | Bulk edit: {customerTotal} customers",
-      "messageEmptyTitle": "No customers selected",
-      "messageEmptySubline": "Go back and select customers.",
+      "textTitle": "批量编辑：{customerTotal} 客户 | 批量编辑：{customerTotal} 客户",
+      "messageEmptyTitle": "未选择客户",
+      "messageEmptySubline": "返回并选择客户。",
       "account": {
-        "cardTitle": "Account",
+        "cardTitle": "账户",
         "customerGroup": {
-          "label": "Change: Customer group",
-          "placeholder": "Select customer group..."
+          "label": "更改：客户群组",
+          "placeholder": "选择客户群组..."
         },
         "status": {
-          "label": "Change: Account status"
+          "label": "更改：账户状态"
         },
         "language": {
-          "label": "Change: Language",
-          "placeholder": "Select language..."
+          "label": "更改：语言",
+          "placeholder": "选择语言..."
         },
         "customerGroupRequest": {
-          "label": "Reply to: Customer group request",
-          "helpText": "Please note that emails will be sent to the selected customers. Customers without requests will be skipped.",
-          "placeholder": "Select customer group request reply...",
+          "label": "回复：客户群组请求",
+          "helpText": "请注意，邮件将发送给选定的客户。未发出请求的客户将被跳过。",
+          "placeholder": "选择客户群组请求回复...",
           "options": {
-            "accept": "Accept",
-            "decline": "Decline"
+            "accept": "接受",
+            "decline": "拒绝"
           }
         }
       },
       "customFields": {
-        "cardTitle": "Custom fields",
-        "changeLabel": "Change: {name}"
+        "cardTitle": "自定义字段",
+        "changeLabel": "更改：{name}"
       },
       "tags": {
-        "cardTitle": "Tags",
-        "changeLabel": "Change: Tags",
-        "placeholder": "Add tags..."
+        "cardTitle": "标签",
+        "changeLabel": "更改：标签",
+        "placeholder": "添加标签..."
       }
     },
-    "applyChanges": "Apply changes"
+    "applyChanges": "应用更改"
   }
 }

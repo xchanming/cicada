@@ -1,25 +1,20 @@
 {
   "sw-settings-storefront": {
     "general": {
-      "mainMenuItemGeneral": "Storefront",
-      "textHeadline": "Storefront",
-      "description": "Settings for the storefront",
-      "helpText": "For more information look at <a target=\"_blank\" href='https://docs.xchanming.com/en/cicada-6-de'>documentation</a>"
+      "mainMenuItemGeneral": "店铺",
+      "textHeadline": "店铺",
+      "description": "店铺设置",
+      "helpText": "更多信息请参阅 <a target=\"_blank\" href='https://haokeyingxiao.com'>文档</a>"
     },
     "configuration": {
-      "cardTitle": "Storefront configuration",
-      "iconCache": "Activate icon cache",
-      "iconCacheToolTip": "Controls whether icons are only delivered once per storefront page and additional usages will only be referenced by the icons id.",
+      "cardTitle": "店铺配置",
+      "iconCache": "激活图标缓存",
+      "iconCacheToolTip": "控制图标是否只在每个店面页面交付一次，额外的使用将仅通过图标ID引用。",
       "theme": {
-        "async": "Compile theme in the background",
-        "asyncTooltip": "Controls whether theme compilation is handled via the message queue instead of directly on changes."
-      },
-      "speculationRules": {
-        "title": "Speculation rules API (Experimental)",
-        "description": "Activate pre-rendering with eagerness mode \"moderate\" for the Storefront. This can influence your analytics data."
+        "async": "在后台编译主题",
+        "asyncTooltip": "控制主题编译是否通过消息队列而不是直接在更改时处理。"
       }
     },
-    "helpText": "For more information please check out the <a target=\"_blank\", href=\"https://docs.xchanming.com/en/cicada-6-en\">documentation.</a>"
+    "helpText": "更多信息请参阅 <a target=\"_blank\" href=\"https://haokeyingxiao.com\">文档</a>。"
   }
 }
-

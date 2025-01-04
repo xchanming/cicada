@@ -7,25 +7,25 @@
     },
     "list": {
       "textManufacturerOverview": "生产商",
-      "textTotalManufacturer": "No manufacturers | One manufacturer | {count} manufacturers",
-      "buttonAddManufacturer": "Add manufacturer",
-      "columnName": "Manufacturer",
-      "columnLink": "Website"
+      "textTotalManufacturer": "无生产商 | 1 个生产商 | {count} 个生产商",
+      "buttonAddManufacturer": "添加",
+      "columnName": "生产商",
+      "columnLink": "网址"
     },
     "detail": {
-      "textHeadline": "New manufacturer",
-      "textMediaSelection": "Media selection",
-      "buttonSave": "Save",
-      "cardTitleManufacturerInfo": "Manufacturer information",
-      "labelName": "Name",
-      "labelDescription": "Description",
-      "labelLink": "Website",
-      "placeholderName": "Enter manufacturer name...",
-      "placeholderDescription": "Enter description...",
-      "placeholderLink": "Enter manufacturer website...",
-      "messageSaveSuccess": "Manufacturer \"{name}\" has been saved.",
+      "textHeadline": "新生产商",
+      "textMediaSelection": "媒体选择",
+      "buttonSave": "保存",
+      "cardTitleManufacturerInfo": "生产商信息",
+      "labelName": "名称",
+      "labelDescription": "描述",
+      "labelLink": "网址",
+      "placeholderName": "生产商名称...",
+      "placeholderDescription": "描述...",
+      "placeholderLink": "网址...",
+      "messageSaveSuccess": "生产商 \"{name}\" 保存成功。",
       "labelLogo": "Logo",
-      "labelUseAsLogo": "Use as Logo"
+      "labelUseAsLogo": "作为 Logo"
     }
   },
   "sw-privileges": {

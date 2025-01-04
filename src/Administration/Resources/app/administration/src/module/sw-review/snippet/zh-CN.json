@@ -1,56 +1,56 @@
 {
   "sw-review": {
     "general": {
-      "mainMenuItemList": "评价",
-      "mainMenuItemGeneral": "评价",
-      "placeholderSearchBar": "搜索评价...",
-      "descriptionTextModule": "Manage reviews here."
+      "mainMenuItemList": "评论",
+      "mainMenuItemGeneral": "评论",
+      "placeholderSearchBar": "搜索评论...",
+      "descriptionTextModule": "在这里管理评论。"
     },
     "list": {
-      "textReviewOverview": "评价",
-      "columnProduct": "商品",
-      "columnPoints": "Stars",
-      "columnUser": "Customer",
-      "columnStatus": "Approved",
-      "columnCreatedAt": "Created at",
-      "columnComment": "Commented on",
-      "columnTitle": "Review title",
-      "placeholderSearchBar": "Search reviews...",
-      "messageEmpty": "No reviews yet",
-      "messageEmptySubline": "Manage reviews here",
+      "textReviewOverview": "评论",
+      "columnProduct": "产品",
+      "columnPoints": "星级",
+      "columnUser": "客户",
+      "columnStatus": "已批准",
+      "columnCreatedAt": "创建于",
+      "columnComment": "评论时间",
+      "columnTitle": "评论标题",
+      "placeholderSearchBar": "搜索评论...",
+      "messageEmpty": "尚无评论",
+      "messageEmptySubline": "在这里管理评论",
       "titleSidebarItemRefresh": "刷新"
     },
     "detail": {
-      "textHeadline": "评价",
-      "cardTitleReviewInfo": "Review",
-      "cardTitleReviewProperties": "Properties",
-      "labelTitle": "Title",
-      "labelPoints": "Points",
-      "labelUser": "User",
-      "labelSalesChannel": "Sales Channel",
-      "labelCreatedAt": "Created at",
-      "labelProduct": "Product",
-      "labelEmail": "Email address",
-      "labelLanguage": "Language",
-      "labelPositive": "Positive votes",
-      "labelNegative": "Negative votes",
-      "labelStatus": "Approved",
-      "labelContent": "Content",
-      "labelComment": "Comment",
-      "labelCustomer": "Customer",
-      "titleCardComment": "Comment",
-      "placeholderComment": "Enter comment...",
-      "review1PointRatingText": "Unsatisfactory",
-      "review2PointRatingText": "Acceptable",
-      "review3PointRatingText": "Good",
-      "review4PointRatingText": "Very good",
-      "review5PointRatingText": "Excellent"
+      "textHeadline": "评论",
+      "cardTitleReviewInfo": "评论信息",
+      "cardTitleReviewProperties": "属性",
+      "labelTitle": "标题",
+      "labelPoints": "评分",
+      "labelUser": "用户",
+      "labelSalesChannel": "销售渠道",
+      "labelCreatedAt": "创建于",
+      "labelProduct": "产品",
+      "labelEmail": "电子邮件地址",
+      "labelLanguage": "语言",
+      "labelPositive": "点赞",
+      "labelNegative": "点踩",
+      "labelStatus": "已批准",
+      "labelContent": "内容",
+      "labelComment": "评论",
+      "labelCustomer": "客户",
+      "titleCardComment": "评论",
+      "placeholderComment": "输入评论...",
+      "review1PointRatingText": "不满意",
+      "review2PointRatingText": "可接受",
+      "review3PointRatingText": "良好",
+      "review4PointRatingText": "很好",
+      "review5PointRatingText": "优秀"
     }
   },
   "sw-privileges": {
     "permissions": {
       "review": {
-        "label": "Reviews"
+        "label": "评论"
       }
     }
   }

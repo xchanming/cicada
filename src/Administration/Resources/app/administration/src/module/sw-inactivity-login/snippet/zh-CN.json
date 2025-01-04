@@ -1,16 +1,16 @@
 {
   "sw-inactivity-login": {
     "general": {
-      "mainMenuItemIndex": "Session timeout",
-      "description": "Inactivity-Login"
+      "mainMenuItemIndex": "会话超时",
+      "description": "会话超时"
     },
     "modal": {
-      "title": "Just to be safe, we logged you out.",
+      "title": "处于安全考虑，长时间没有操作系统会自动注销.",
       "actions": {
-        "backToLogin": "Back to login"
+        "backToLogin": "返回登录"
       },
       "errors": {
-        "password": "Incorrect password"
+        "password": "密码不正确"
       }
     }
   }

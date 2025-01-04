@@ -14,7 +14,6 @@ Cicada.Filter.register(
         if ((!value || value === true) && (!Cicada.Utils.types.isNumber(value) || Cicada.Utils.types.isEqual(value, NaN))) {
             return '-';
         }
-
         if (Cicada.Utils.types.isEqual(parseInt(value, 10), NaN)) {
             return value;
         }

@@ -1,260 +1,260 @@
 {
   "sw-category": {
     "general": {
-      "mainMenuItemIndex": "类目",
-      "mainMenuItemList": "类目",
-      "descriptionTextModule": "Manage categories here.",
-      "headlineCategories": "类目",
-      "placeholderSearchBar": "搜索类目...",
-      "buttonCreate": "Create category",
-      "buttonSafeCategory": "Save",
-      "descriptionLabel": "Description",
-      "messageSaveSuccess": "Category \"{name}\" has been saved.",
-      "useAsLogo": "Use as display image",
-      "treeHeadline": "Categories",
-      "treeHeadSelected": "{count} selected",
-      "emptyStateHeadline": "No category selected",
-      "errorNavigationEntryPoint": "This category is defined as a {entryPointLabel} of at least one Sales Channel and can therefore not be deleted.",
-      "errorNavigationEntryPointMultiple": "One or more categories are defined as a main navigation of at least one Sales Channel and can therefore not be deleted.",
+      "mainMenuItemIndex": "分类",
+      "mainMenuItemList": "概览",
+      "descriptionTextModule": "在此管理分类。",
+      "headlineCategories": "分类",
+      "placeholderSearchBar": "搜索分类...",
+      "buttonCreate": "创建分类",
+      "buttonSafeCategory": "保存",
+      "descriptionLabel": "描述",
+      "messageSaveSuccess": "分类 \"{name}\" 已保存。",
+      "useAsLogo": "用作显示图片",
+      "treeHeadline": "分类",
+      "treeHeadSelected": "{count} 已选",
+      "emptyStateHeadline": "未选择分类",
+      "errorNavigationEntryPoint": "该分类被定义为至少一个销售渠道的 {entryPointLabel}，因此无法删除。",
+      "errorNavigationEntryPointMultiple": "一个或多个分类被定义为至少一个销售渠道的主导航，因此无法删除。",
       "actions": {
-        "actionsDisabledInLanguage": "Categories can only be created in the default language.",
-        "createSub": "New subcategory",
-        "createBefore": "New category before",
-        "createAfter": "New category after"
+        "actionsDisabledInLanguage": "分类只能在默认语言中创建。",
+        "createSub": "新建子分类",
+        "createBefore": "之前新建分类",
+        "createAfter": "之后新建分类"
       }
     },
     "view": {
-      "general": "General",
-      "cms": "Layout",
-      "products": "Products",
-      "customEntity": "Custom Entities",
+      "general": "常规",
+      "cms": "布局",
+      "products": "产品",
+      "customEntity": "自定义实体",
       "seo": "SEO",
-      "columnInfoHeader": "Footer element",
-      "columnInfo": "This category sets up a designated column in the footer. The category name will be displayed as a headline for the column. All categories on the first level below this category are displayed as rows below the column headline."
+      "columnInfoHeader": "页脚元素",
+      "columnInfo": "该分类在页脚设置了一个专用栏目。分类名称将作为栏目标题显示。此分类下第一级的所有分类将显示在栏目标题下方。"
     },
     "base": {
       "general": {
-        "categoryNameLabel": "Name",
-        "headlineInformationCard": "General",
-        "isCategoryActiveLabel": "Active",
-        "useAsLink": "Use as link",
-        "labelCategoryTags": "Tags",
-        "labelCategoryTagsPlaceholder": "Enter tags individually...",
+        "categoryNameLabel": "名称",
+        "headlineInformationCard": "常规",
+        "isCategoryActiveLabel": "激活",
+        "useAsLink": "用作链接",
+        "labelCategoryTags": "标签",
+        "labelCategoryTagsPlaceholder": "单独输入标签...",
         "types": {
-          "title": "Category type",
-          "page": "Page / List",
-          "folder": "Structuring element / Entry point",
-          "customEntity": "Custom Entity",
-          "link": "Link",
-          "linkUnavailable": "Link (not selectable if category is defined as entry point)",
-          "help": "A structure category is not callable by itself, but is only used for outlining purposes.",
+          "title": "分类类型",
+          "page": "页面 / 列表",
+          "folder": "结构元素 / 入口点",
+          "customEntity": "自定义实体",
+          "link": "链接",
+          "linkUnavailable": "链接（如果分类被定义为入口点则不可选）",
+          "help": "结构分类本身不可调用，仅用于结构目的。",
           "helpText": {
-            "page": "A page / list has associated products and can be accessed directly with the assigned layout.",
-            "folder": "A structuring element / entry point will only be displayed in the structure and is not directly accessible except it is assigned as an entry point of a Sales Channel.",
-            "link": "A link allows for reference to a product, another category, a landing page or an external site."
+            "page": "页面 / 列表拥有相关联的产品，并且可以直接通过分配的布局访问。",
+            "folder": "结构元素 / 入口点仅在结构中显示，并且除非被分配为销售渠道的入口点，否则不可直接访问。",
+            "link": "链接允许引用产品、其他分类、落地页或外部网站。"
           }
         }
       },
       "entry-point-card": {
-        "cardTitle": "Navigation",
-        "labelEntryPoint": "Entry point",
-        "placeholderEntryPoint": "Select entry point...",
-        "existingNavigationDescription": "You have assigned this category as an entry point for the main navigation in these Sales Channels:",
-        "labelSalesChannelsAdd": "Sales Channel assignment",
-        "placeholderSalesChannels": "Add Sales Channels...",
-        "buttonConfigureHome": "Configure home page",
+        "cardTitle": "导航",
+        "labelEntryPoint": "入口点",
+        "placeholderEntryPoint": "选择入口点...",
+        "existingNavigationDescription": "您已将此分类指定为这些销售渠道的主导航入口点：",
+        "labelSalesChannelsAdd": "销售渠道分配",
+        "placeholderSalesChannels": "添加销售渠道...",
+        "buttonConfigureHome": "配置首页",
         "types": {
-          "labelMainNavigation": "Main navigation",
-          "helpTextMainNavigation": "The entry point for the main navigation is a mandatory field for Sales Channels. If you assign this category as the entry point for the Main navigation to one or more Sales Channels, you can only change this assignment on the sales channel itself.",
-          "labelFooterNavigation": "Footer navigation",
-          "helpTextFooterNavigation": "If you assign this category as the entry point for the Footer navigation to one or more Sales Channels, the categories on the next level will be columns. This allows you to divide your footer navigation into several areas.",
-          "labelServiceNavigation": "Footer service navigation",
-          "helpTextServiceNavigation": "If you assign this category as the entry point for the Service navigation to one or more Sales Channels, the categories on the next level will be displayed as a second navigation in the footer area."
+          "labelMainNavigation": "主导航",
+          "helpTextMainNavigation": "主导航的入口点是销售渠道的必填字段。如果您将此分类分配为一个或多个销售渠道的主导航入口点，只能在销售渠道本身更改此分配。",
+          "labelFooterNavigation": "页脚导航",
+          "helpTextFooterNavigation": "如果您将此分类作为一个或多个销售渠道的页脚导航入口点，下一级的分类将作为栏目显示。这允许您将页脚导航分为几个区域。",
+          "labelServiceNavigation": "页脚服务导航",
+          "helpTextServiceNavigation": "如果您将此分类作为一个或多个销售渠道的服务导航入口点，下一级的分类将在页脚区域显示为第二导航。"
         }
       },
       "entry-point-modal": {
-        "modalTitle": "Configure home page",
-        "salesChannelSelection": "Sales Channel",
-        "showInMainNavigation": "Show in main navigation",
-        "mainNavigationName": "Display name",
-        "mainNavigationNamePlaceholder": "Enter alternative home page name...",
-        "mainNavigationNameHelpText": "By default this category is displayed as \"home\". Enter an alternative display name if the default configuration doesn't fit the current Sales Channel.",
-        "layoutHeadline": "Layout",
-        "seoSettingsHeadline": "SEO settings",
-        "metaTitleLabel": "Meta title",
-        "metaTitlePlaceholder": "Enter meta title...",
-        "metaDescriptionLabel": "Meta description",
-        "metaDescriptionPlaceholder": "Enter meta description...",
-        "seoKeywordsLabel": "SEO keywords",
-        "seoKeywordsPlaceholder": "Enter one or more keywords..."
+        "modalTitle": "配置首页",
+        "salesChannelSelection": "销售渠道",
+        "showInMainNavigation": "在主导航中显示",
+        "mainNavigationName": "显示名称",
+        "mainNavigationNamePlaceholder": "输入替代首页名称...",
+        "mainNavigationNameHelpText": "默认情况下，此分类显示为“首页”。如果默认配置不适合当前销售渠道，请输入替代显示名称。",
+        "layoutHeadline": "布局",
+        "seoSettingsHeadline": "SEO 设置",
+        "metaTitleLabel": "元标题",
+        "metaTitlePlaceholder": "输入元标题...",
+        "metaDescriptionLabel": "元描述",
+        "metaDescriptionPlaceholder": "输入元描述...",
+        "seoKeywordsLabel": "SEO 关键词",
+        "seoKeywordsPlaceholder": "输入一个或多个关键词..."
       },
       "seo": {
         "title": "SEO",
-        "labelMetaTitle": "Meta title",
-        "labelMetaDescription": "Description",
-        "labelKeywords": "Keywords",
-        "placeholderMetaTitle": "Enter meta title...",
-        "placeholderMetaDescription": "Enter a description...",
-        "placeholderKeywords": "Enter one or more keywords..."
+        "labelMetaTitle": "元标题",
+        "labelMetaDescription": "描述",
+        "labelKeywords": "关键词",
+        "placeholderMetaTitle": "输入元标题...",
+        "placeholderMetaDescription": "输入描述...",
+        "placeholderKeywords": "输入一个或多个关键词..."
       },
       "menu": {
-        "title": "Menu settings",
-        "visible": "Hide in navigation",
-        "imageLabel": "Display image",
-        "descriptionLabel": "Description",
-        "descriptionPlaceholder": "Enter description..."
+        "title": "菜单设置",
+        "visible": "在导航中隐藏",
+        "imageLabel": "显示图片",
+        "descriptionLabel": "描述",
+        "descriptionPlaceholder": "输入描述..."
       },
       "customEntity": {
-        "cardTitle": "Assigned articles",
+        "cardTitle": "分配的文章",
         "assignment": {
-          "label": "Entry type",
-          "helpText": "Select the post type to be displayed in this category."
+          "label": "条目类型",
+          "helpText": "选择要在此分类中显示的帖子类型。"
         },
         "instanceAssignment": {
-          "title": "Title",
-          "label": "Entries",
-          "placeholder": "Search and assign entries...",
+          "title": "标题",
+          "label": "条目",
+          "placeholder": "搜索并分配条目...",
           "emptyState": {
-            "title": "No entries assigned"
+            "title": "未分配条目"
           }
         }
       },
       "cms": {
-        "title": "Layout assignment",
-        "changeLayout": "Change layout",
-        "changeLayoutEmpty": "Assign layout",
-        "editInPagebuilder": "Edit in designer",
-        "editInPagebuilderEmpty": "Create new layout",
-        "editContent": "Edit content",
-        "defaultTitle": "Default layout",
-        "defaultDesc": "Category page"
+        "title": "布局分配",
+        "changeLayout": "更改布局",
+        "changeLayoutEmpty": "分配布局",
+        "editInPagebuilder": "在设计器中编辑",
+        "editInPagebuilderEmpty": "创建新布局",
+        "editContent": "编辑内容",
+        "defaultTitle": "默认布局",
+        "defaultDesc": "分类页面"
       },
       "link": {
-        "title": "Customisable link",
-        "mainTypeLabel": "Link type",
-        "mainTypePlaceholder": "Choose a link type...",
-        "internalTypeLabel": "Entity",
-        "internalTypePlaceholder": "Choose an entity...",
-        "categoryPlaceholder": "Choose a category...",
-        "productPlaceholder": "Choose a product...",
-        "landingPagePlaceholder": "Choose a landing page...",
-        "example": "Example:",
+        "title": "自定义链接",
+        "mainTypeLabel": "链接类型",
+        "mainTypePlaceholder": "选择链接类型...",
+        "internalTypeLabel": "实体",
+        "internalTypePlaceholder": "选择实体...",
+        "categoryPlaceholder": "选择分类...",
+        "productPlaceholder": "选择产品...",
+        "landingPagePlaceholder": "选择落地页...",
+        "example": "示例：",
         "internalExampleText": "/my-category",
-        "externalDesc": "To set external links, insert the complete web address:",
-        "internalDesc": "If you want to create an internal link, just add the path that follows the domain:",
-        "linkLabel": "Link destination",
-        "linkNewTabLabel": "Open in new tab",
+        "externalDesc": "设置外部链接，请插入完整的网址：",
+        "internalDesc": "如果您想创建一个内部链接，只需添加域名后的路径：",
+        "linkLabel": "链接目的地",
+        "linkNewTabLabel": "在新标签页中打开",
         "type": {
-          "internal": "Internal",
-          "external": "External"
+          "internal": "内部",
+          "external": "外部"
         }
       },
       "products": {
-        "productAssignmentHeadline": "Product assignment",
-        "productAssignmentPlaceholder": "Search and assign products...",
-        "productAssignmentLabel": "Products",
-        "productAssignmentEmptyStateDescription": "No products assigned",
-        "productStreamAssignmentEmptyStateDescription": "No dynamic product group assigned",
-        "columnNameLabel": "Name",
-        "columnManufacturerLabel": "Manufacturer",
-        "productAssignmentTypeLabel": "Type",
-        "productAssignmentTypeManualLabel": "Manual selection",
-        "productAssignmentTypeStreamLabel": "Dynamic product group",
-        "productAssignmentTypeStreamPlaceholder": "Search and assign dynamic product groups...",
-        "alertManualAssignedProductsOnAssignmentTypeStream": "There are still manually assigned products in this category. Those products will not be visible in this category but may be visible in parent categories.",
-        "dynamicProductGroupDetailLinkText": "Dynamic product group details",
-        "dynamicProductGroupInvalidMessage": "The selected dynamic product group is not valid. Please verify your dynamic product group details.",
+        "productAssignmentHeadline": "产品分配",
+        "productAssignmentPlaceholder": "搜索并分配产品...",
+        "productAssignmentLabel": "产品",
+        "productAssignmentEmptyStateDescription": "未分配产品",
+        "productStreamAssignmentEmptyStateDescription": "未分配动态产品组",
+        "columnNameLabel": "名称",
+        "columnManufacturerLabel": "制造商",
+        "productAssignmentTypeLabel": "类型",
+        "productAssignmentTypeManualLabel": "手动选择",
+        "productAssignmentTypeStreamLabel": "动态产品组",
+        "productAssignmentTypeStreamPlaceholder": "搜索并分配动态产品组...",
+        "alertManualAssignedProductsOnAssignmentTypeStream": "此分类中仍有手动分配的产品。这些产品在此分类中将不可见，但可能在父分类中可见。",
+        "dynamicProductGroupDetailLinkText": "动态产品组详情",
+        "dynamicProductGroupInvalidMessage": "选定的动态产品组无效。请验证您的动态产品组详情。",
         "dynamicProductGroupHelpText": {
-          "label": "Products belong to a dynamic product group if they meet the conditions of that product group. Conditions can be defined within the {link} module.",
-          "linkText": "dynamic product groups",
+          "label": "产品属于动态产品组，如果它们满足该产品组的条件。条件可以在 {link} 模块内定义。",
+          "linkText": "动态产品组",
           "videoUrl": "",
           "videoLink": ""
         }
       }
     },
     "modal": {
-      "textDeleteConfirm": "Are you sure you really want to delete the category \"{name}\"?",
-      "textDeleteChildrenConfirm": "All subcategories will be deleted too.",
-      "textDeleteMultipleConfirm": "Are you sure you want to delete the {count} selected categories?"
+      "textDeleteConfirm": "您确定真的要删除分类 \"{name}\" 吗？",
+      "textDeleteChildrenConfirm": "所有子分类也将被删除。",
+      "textDeleteMultipleConfirm": "您确定要删除 {count} 个选定的分类吗？"
     },
     "entry-point-overwrite-modal": {
-      "textBefore": "You already assigned an entry point to the following Sales Channel: | You already assigned entry points to the following Sales Channels:",
-      "textAfter": "Should this assignment be overwritten? | Should these assignments be overwritten?"
+      "textBefore": "您已将入口点分配给以下销售渠道：| 您已将入口点分配给以下销售渠道：",
+      "textAfter": "这个分配应该被覆盖吗？| 这些分配应该被覆盖吗？"
     }
   },
   "sw-landing-page": {
     "view": {
-      "general": "General",
-      "cms": "Layout"
+      "general": "常规",
+      "cms": "布局"
     },
     "general": {
-      "placeholderSearchBar": "Search landing pages...",
-      "treeHeadSelected": "{count} selected",
-      "buttonCreate": "Add landing page",
-      "treeHeadline": "Landing pages",
+      "placeholderSearchBar": "搜索落地页...",
+      "treeHeadSelected": "{count} 已选",
+      "buttonCreate": "添加落地页",
+      "treeHeadline": "落地页",
       "actions": {
-        "actionsDisabledInLanguage": "Landing pages can only be created in the system default language."
+        "actionsDisabledInLanguage": "落地页只能在系统默认语言中创建。"
       }
     },
     "base": {
       "general": {
-        "labelName": "Name",
-        "headlineInformationCard": "General",
-        "isActiveLabel": "Active",
-        "labelTags": "Tags",
-        "labelTagsPlaceholder": "Enter tags individually..."
+        "labelName": "名称",
+        "headlineInformationCard": "常规",
+        "isActiveLabel": "激活",
+        "labelTags": "标签",
+        "labelTagsPlaceholder": "单独输入标签..."
       },
       "seo": {
         "title": "SEO",
-        "titleGeneralInformation": "General information",
-        "titleSocialMedia": "Social Media",
-        "labelSalesChannel": "Sales Channels",
-        "labelMetaTitle": "Meta title",
-        "labelSocialMediaTitle": "Title",
-        "labelMetaDescription": "Meta description",
-        "labelSocialMediaDescription": "Description",
-        "labelKeywords": "SEO keywords",
+        "titleGeneralInformation": "常规信息",
+        "titleSocialMedia": "社交媒体",
+        "labelSalesChannel": "销售渠道",
+        "labelMetaTitle": "元标题",
+        "labelSocialMediaTitle": "标题",
+        "labelMetaDescription": "元描述",
+        "labelSocialMediaDescription": "描述",
+        "labelKeywords": "SEO 关键词",
         "labelUrl": "SEO URL",
-        "labelPreviewImage": "Preview image",
-        "placeholderSalesChannel": "Choose a Sales Channel...",
-        "placeholderMetaTitle": "Enter meta title...",
-        "placeholderSocialMediaTitle": "Enter social media title...",
-        "placeholderMetaDescription": "Enter a meta description...",
-        "placeholderSocialMediaDescription": "Enter description...",
-        "placeholderKeywords": "Enter one or more keywords...",
-        "placeholderUrl": "Enter URL...",
-        "socialMediaPreview": "Social media preview",
-        "searchResultPreview": "Search result preview",
-        "helpTextMetaTitle": "Meta titles should not be longer than 70 characters. Excess text will be truncated by Google and the title will not be fully displayed in the SERP snippet.",
-        "helpTextMetaDescription": "The possible length for meta descriptions on Google is about 175 characters and is trimmed according to pixel width. However, it is recommended to aim for a length of about 150 characters so that the description is not cut off in the SERP snippet. Cicada allows a maximum length of 255 characters.",
+        "labelPreviewImage": "预览图片",
+        "placeholderSalesChannel": "选择销售渠道...",
+        "placeholderMetaTitle": "输入元标题...",
+        "placeholderSocialMediaTitle": "输入社交媒体标题...",
+        "placeholderMetaDescription": "输入元描述...",
+        "placeholderSocialMediaDescription": "输入描述...",
+        "placeholderKeywords": "输入一个或多个关键词...",
+        "placeholderUrl": "输入 URL...",
+        "socialMediaPreview": "社交媒体预览",
+        "searchResultPreview": "搜索结果预览",
+        "helpTextMetaTitle": "元标题不应超过70个字符。超出的文本将被谷歌截断，标题将不会完全显示在SERP摘要中。",
+        "helpTextMetaDescription": "谷歌上元描述的可能长度约为175个字符，并根据像素宽度进行裁剪。然而，建议目标长度约为150个字符，以便描述不会在SERP摘要中被截断。Shopware允许的最大长度为255个字符。",
         "notification": {
-          "noLayoutAssigned": "For this landing page, no layout has been assigned. Without a layout, the landing page is not accessible via SEO."
+          "noLayoutAssigned": "这个落地页没有分配布局。没有布局，落地页无法通过SEO访问。"
         }
       },
       "cms": {
-        "title": "Layout assignment",
-        "changeLayout": "Change layout",
-        "changeLayoutEmpty": "Assign layout",
-        "editInPagebuilder": "Edit in designer",
-        "editInPagebuilderEmpty": "Create new layout",
-        "editContent": "Edit content",
-        "defaultTitle": "Default layout",
-        "defaultDesc": "Category page",
-        "cmsLayoutModalHeadline": "Landing page"
+        "title": "布局分配",
+        "changeLayout": "更改布局",
+        "changeLayoutEmpty": "分配布局",
+        "editInPagebuilder": "在设计器中编辑",
+        "editInPagebuilderEmpty": "创建新布局",
+        "editContent": "编辑内容",
+        "defaultTitle": "默认布局",
+        "defaultDesc": "分类页面",
+        "cmsLayoutModalHeadline": "落地页"
       }
     },
     "modal": {
-      "textDeleteConfirm": "Are you sure you really want to delete the landing page \"{name}\"?",
-      "textDeleteMultipleConfirm": "Are you sure you want to delete the {count} selected landing pages?"
+      "textDeleteConfirm": "您确定真的要删除落地页 \"{name}\" 吗？",
+      "textDeleteMultipleConfirm": "您确定要删除 {count} 个选定的落地页吗？"
     }
   },
   "sw-privileges": {
     "permissions": {
       "category": {
-        "label": "Categories"
+        "label": "类目"
       },
       "landing_page": {
-        "label": "Landing pages"
+        "label": "落地页"
       }
     }
   }

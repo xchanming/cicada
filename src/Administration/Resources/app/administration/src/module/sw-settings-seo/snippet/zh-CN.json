@@ -2,45 +2,45 @@
   "sw-settings-seo": {
     "general": {
       "mainMenuItemGeneral": "SEO",
-      "descriptionTextModule": "Manage SEO settings.",
+      "descriptionTextModule": "管理SEO设置。",
       "textHeadline": "SEO",
-      "buttonSave": "Save"
+      "buttonSave": "保存"
     }
   },
   "sw-settings-seo-entity-detail": {
-    "labelMetaTitle": "Meta title",
-    "labelAdditionalText": "Meta description"
+    "labelMetaTitle": "元标题",
+    "labelAdditionalText": "元描述"
   },
   "sw-seo-url-template-card": {
     "general": {
-      "titleCard": "SEO URL templates",
-      "labelPossibleValues": "Possible variables",
-      "tooltipValidTemplate": "Template valid",
-      "tooltipInvalidTemplate": "Invalid template",
-      "messageSaveError": "Not all templates are valid.",
-      "messageSaveSuccess": "SEO URL templates have been saved.",
-      "preview": "Preview:",
-      "placeholderSelectVariables": "Search and select...",
-      "labelSalesChannelSelect": "Sales Channel",
-      "textUrlPreviewNotPossible": "A preview for this template could not be generated.",
-      "textUrlNoEntitiesForPreview": "No {entity} available.",
-      "textUrlPreviewEmptyTemplate": "The template is empty, SEO URLs for {entity} won't be generated.",
-      "headlineInfoMessageBoxEmptyProperties": "Info",
-      "textInfoMessageBoxEmptyProperties": "When using variables, make sure that data is available in all respective fields of the entities (products, landing pages or categories). If variables refer to empty fields, no SEO URLs will be created for the corresponding entity."
+      "titleCard": "SEO URL 模板",
+      "labelPossibleValues": "可能的变量",
+      "tooltipValidTemplate": "模板有效",
+      "tooltipInvalidTemplate": "模板无效",
+      "messageSaveError": "并非所有模板都有效。",
+      "messageSaveSuccess": "SEO URL 模板已保存。",
+      "preview": "预览：",
+      "placeholderSelectVariables": "搜索并选择...",
+      "labelSalesChannelSelect": "销售渠道",
+      "textUrlPreviewNotPossible": "无法为此模板生成预览。",
+      "textUrlNoEntitiesForPreview": "没有可用的{entity}。",
+      "textUrlPreviewEmptyTemplate": "模板为空，将不会为{entity}生成SEO URL。",
+      "headlineInfoMessageBoxEmptyProperties": "信息",
+      "textInfoMessageBoxEmptyProperties": "使用变量时，请确保实体（产品、落地页面或类别）的所有相关字段中都有数据。如果变量引用了空字段，则不会为相应的实体创建SEO URL。"
     },
     "routeNames": {
-      "frontend-detail-page": "Product detail page",
-      "frontend-navigation-page": "Category page",
-      "frontend-landing-page": "Landing page"
+      "frontend-detail-page": "产品详情页",
+      "frontend-navigation-page": "类别页",
+      "frontend-landing-page": "落地页"
     }
   },
   "sw-seo-url": {
-    "titleCard": "SEO URLs",
-    "labelSalesChannelSelect": "Sales Channel",
-    "labelSeoPathInfo": "SEO path",
-    "textEmptySeoUrls": "There are no SEO URLs yet.",
-    "textSeoUrlsDisallowedForHeadless": "SEO URLs cannot be assigned to a headless Sales Channel.",
-    "labelMainCategory": "Main category",
-    "placeholderMainCategory": "Choose a main category..."
+    "titleCard": "SEO URL",
+    "labelSalesChannelSelect": "销售渠道",
+    "labelSeoPathInfo": "SEO 路径",
+    "textEmptySeoUrls": "尚无SEO URL。",
+    "textSeoUrlsDisallowedForHeadless": "SEO URL 不能分配给无头销售渠道。",
+    "labelMainCategory": "主类别",
+    "placeholderMainCategory": "选择一个主类别..."
   }
 }

@@ -1,61 +1,61 @@
 {
   "sw-settings-number-range": {
     "general": {
-      "mainMenuItemGeneral": "Number ranges",
-      "placeholderSearchBar": "Search number ranges...",
-      "infoGlobalType": "There can be only be one \"{typeName}\" number range. Changes to the number range of type \"{typeName}\" have to be made here and will globally affect all Sales Channels.",
-      "infoGlobalTypeTitle": "Global number range type \"{typeName}\"",
-      "infoGlobal": "You cannot change a global number range's type. But you can create additional number ranges for most types and particular Sales Channels back in the overview.",
-      "infoGlobalTitle": "Global number range \"{name}\"",
-      "infoSalesChannelBound": "To change a number range's type, remove all Sales Channel assignments first."
+      "mainMenuItemGeneral": "编号范围",
+      "placeholderSearchBar": "搜索编号范围...",
+      "infoGlobalType": "每种类型的编号范围只能有一个。更改类型为“{typeName}”的编号范围必须在此进行，并会全局影响所有销售渠道。",
+      "infoGlobalTypeTitle": "全局编号范围类型“{typeName}”",
+      "infoGlobal": "您不能更改全局编号范围的类型。但您可以在概览中为大多数类型和特定的销售渠道创建其他编号范围。",
+      "infoGlobalTitle": "全局编号范围“{name}”",
+      "infoSalesChannelBound": "要更改编号范围的类型，请先删除所有销售渠道分配。"
     },
     "list": {
-      "textHeadline": "Number ranges",
-      "textDeleteConfirm": "Are you sure you want to delete the number range \"{name}\"?",
-      "columnName": "Name",
-      "columnUsedIn": "Type",
-      "columnAssignment": "Assignment",
-      "buttonAddNumberRange": "Add number range",
-      "contextMenuEdit": "Edit",
-      "contextMenuDelete": "Delete",
-      "messageDeleteSuccess": "Number range \"{name}\" has been deleted.",
-      "buttonDelete": "Delete",
-      "global": "Global"
+      "textHeadline": "编号范围",
+      "textDeleteConfirm": "您确定要删除编号范围“{name}”吗？",
+      "columnName": "名称",
+      "columnUsedIn": "类型",
+      "columnAssignment": "分配",
+      "buttonAddNumberRange": "添加编号范围",
+      "contextMenuEdit": "编辑",
+      "contextMenuDelete": "删除",
+      "messageDeleteSuccess": "编号范围“{name}”已删除。",
+      "buttonDelete": "删除",
+      "global": "全局"
     },
     "detail": {
-      "textHeadline": "New number range",
-      "configCard": "Settings",
-      "assignmentCard": "Assignment",
-      "messageSaveSuccess": "Number range \"{name}\" has been saved.",
-      "messageSaveError": "Number range \"{name}\" has not been saved.",
-      "labelName": "Name",
-      "labelDescription": "Description",
-      "labelPrefix": "Prefix",
-      "labelSuffix": "Suffix",
-      "labelPattern": "Pattern",
-      "labelStart": "Start number",
-      "labelCurrentNumber": "Current number",
-      "labelPreview": "Preview",
-      "labelAdvanced": "Advanced mode",
-      "labelType": "Type",
-      "labelSalesChannel": "Sales Channel",
-      "placeholderName": "Enter name...",
-      "placeholderDescription": "Enter description...",
-      "placeholderPrefix": "Enter prefix...",
-      "placeholderSuffix": "Enter suffix...",
-      "placeholderPattern": "Enter pattern... \"prefix_{n}_suffix\"",
-      "placeholderStart": "Enter start number...",
-      "placeholderPleaseSelect": "Please select...",
-      "placeholderSimpleModeImpossible": "Advanced mode active",
-      "helpTextAdvancedField": "Advanced pattern definition: <br/>{'{prefix}_{n}_{suffix}'}<br/><li>'n' is the defined start number</li><li>('_' is an arbitrarily chosen separator)</li><br/>Use e.g. the PHP parameter 'date': <br/><li>{'{date}'}: International date format (YYYY-MM-DD)</li><li>{'{date_dmy}'}: User defined date format (DD-MM-YY)</li>",
-      "errorPatternNeededMessage": "No pattern defined. Please define at least a start value.",
-      "infoStartDecrementMessage": "Changes to the start number will only take effect when the start number is higher than the current number."
+      "textHeadline": "新编号范围",
+      "configCard": "设置",
+      "assignmentCard": "分配",
+      "messageSaveSuccess": "编号范围“{name}”已保存。",
+      "messageSaveError": "编号范围“{name}”未保存。",
+      "labelName": "名称",
+      "labelDescription": "描述",
+      "labelPrefix": "前缀",
+      "labelSuffix": "后缀",
+      "labelPattern": "模式",
+      "labelStart": "起始编号",
+      "labelCurrentNumber": "当前编号",
+      "labelPreview": "预览",
+      "labelAdvanced": "高级模式",
+      "labelType": "类型",
+      "labelSalesChannel": "销售渠道",
+      "placeholderName": "输入名称...",
+      "placeholderDescription": "输入描述...",
+      "placeholderPrefix": "输入前缀...",
+      "placeholderSuffix": "输入后缀...",
+      "placeholderPattern": "输入模式... \"prefix_{n}_suffix\"",
+      "placeholderStart": "输入起始编号...",
+      "placeholderPleaseSelect": "请选择...",
+      "placeholderSimpleModeImpossible": "高级模式激活",
+      "helpTextAdvancedField": "高级模式定义：<br/>{prefix}_{n}_{suffix}<br/>'n' 是定义的起始编号<br/>('_' 是任意选择的分隔符)<br/><br/>例如使用 PHP 参数 'date': <br/>{date}:<br/>国际日期格式 (YYYY-MM-DD)<br/>{date_dmy}:<br/>用户定义的日期格式 (DD-MM-YY)<br/><br/>",
+      "errorPatternNeededMessage": "未定义模式。请至少定义一个起始值。",
+      "infoStartDecrementMessage": "对起始编号的更改仅在起始编号大于当前编号时生效。"
     }
   },
   "sw-privileges": {
     "permissions": {
       "number_ranges": {
-        "label": "Number ranges"
+        "label": "编号范围"
       }
     }
   }

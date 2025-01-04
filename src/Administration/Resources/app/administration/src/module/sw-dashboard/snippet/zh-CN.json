@@ -2,30 +2,30 @@
   "sw-dashboard": {
     "general": {
       "mainMenuItemGeneral": "首页",
-      "descriptionTextModule": "The Administration's front page, displaying statistics and system information"
+      "descriptionTextModule": "管理后台的首页，显示统计数据和系统信息"
     },
     "todayStats": {
-      "headline": "Today's statistics",
-      "orders": "Orders",
-      "turnover": "Total value",
-      "orderTime": "Time"
+      "headline": "今日统计数据",
+      "orders": "订单",
+      "turnover": "销售额",
+      "orderTime": "时间"
     },
     "monthStats": {
-      "headline": "Statistics",
+      "headline": "统计",
       "dateRanges": {
-        "30Days": "Last 30 days",
-        "14Days": "Last 14 days",
-        "7Days": "Last 7 days",
-        "24Hours": "Last 24 hours",
-        "yesterday": "Since yesterday"
+        "30Days": "过去 30 天",
+        "14Days": "过去 14 天",
+        "7Days": "过去 7 天",
+        "24Hours": "过去 24 小时",
+        "yesterday": "从昨天开始"
       },
-      "orderNumber": "Orders",
-      "turnover": "Turnover",
-      "numberOfOrders": "Count",
-      "totalTurnover": "Total",
-      "helperText": "The turnover graph only displays orders in payment status \"paid\".",
-      "linkOrders": "View orders",
-      "linkPaidOrders": "View paid orders"
+      "orderNumber": "订单",
+      "turnover": "销售额",
+      "numberOfOrders": "数量",
+      "totalTurnover": "总金额",
+      "helperText": "营业额图表仅显示\"已支付\"状态的订单。",
+      "linkOrders": "查看订单",
+      "linkPaidOrders": "查看已支付订单"
     }
   }
 }

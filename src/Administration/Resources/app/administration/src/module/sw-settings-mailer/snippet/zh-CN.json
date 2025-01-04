@@ -1,63 +1,62 @@
 {
   "sw-settings-mailer": {
     "general": {
-      "mainMenuItemGeneral": "Mailer",
-      "textHeadline": "Mailer",
-      "buttonSave": "Save",
-      "helpText": "For more information look at <a href='https://docs.xchanming.com/en/cicada-6-en'>documentation</a>"
+      "mainMenuItemGeneral": "邮件设置",
+      "textHeadline": "邮件设置",
+      "buttonSave": "保存",
+      "helpText": "更多信息请查看 <a href='https://docs.haokeyingxiao.com/en/shopware-6-en'>文档</a>"
     },
     "mailer-configuration": {
-      "card-title": "Mailer configuration",
-      "agent": "Preferred email agent",
-      "local-agent": "Local email agent",
-      "local-helptext": "This option uses your system‘s default mailer (Sendmail). Make sure Sendmail works and is available in your own hosting environment.",
-      "smtp-server": "SMTP server",
-      "smtp-server-oauth": "SMTP server with OAuth 2",
-      "env-file": "Use environment's configuration"
+      "card-title": "邮件配置",
+      "agent": "首选邮件代理",
+      "local-agent": "本地邮件代理",
+      "local-helptext": "此选项使用您的系统默认邮件发送程序（Sendmail）。请确保 Sendmail 能正常工作并且在您的托管环境中可用。",
+      "smtp-server": "SMTP 服务器",
+      "smtp-server-oauth": "带有 OAuth 2 的 SMTP 服务器",
+      "env-file": "使用环境配置"
     },
     "first-configuration": {
-      "headline": "Establishing email communication",
-      "description": "Communicating with customers is a key factor in everyday ecommerce. Consequently, setting up a mailing scheme should be crossed out from your list as soon as possible."
+      "headline": "建立电子邮件通信",
+      "description": "与客户沟通是日常电子商务中的关键因素。因此，尽快设置邮件方案应该是您的首要任务。"
     },
     "sendmail": {
-      "sync": "Synchronous mail dispatch",
-      "async": "Asynchronous mail dispatch"
+      "sync": "同步邮件发送",
+      "async": "异步邮件发送"
     },
     "card-smtp": {
-      "host": "Host",
-      "host-placeholder": "Enter a host name...",
-      "port": "Port",
-      "port-placeholder": "Enter a port number...",
-      "username": "Username",
-      "username-placeholder": "Enter a your username...",
-      "password": "Password",
-      "password-placeholder": "Enter a password...",
+      "host": "主机",
+      "host-placeholder": "输入主机名...",
+      "port": "端口",
+      "port-placeholder": "输入端口号...",
+      "username": "用户名",
+      "username-placeholder": "输入用户名...",
+      "password": "密码",
+      "password-placeholder": "输入密码...",
       "oauth-url": "OAuth URL",
-      "oauth-url-placeholder": "Enter the OAuth URL...",
-      "oauth-scope": "OAuth Scope",
-      "oauth-scope-placeholder": "Enter the OAuth scope...",
-      "oauth-client-id": "Client ID",
-      "oauth-client-id-placeholder": "Enter the client ID...",
-      "oauth-client-secret": "Client Secret",
-      "oauth-client-secret-placeholder": "Enter the client secret...",
-      "encryption": "Encryption",
-      "encryption-placeholder": "Select encryption method...",
-      "sender-address": "Sender address",
-      "sender-address-placeholder": "Fill in an email address you have access to...",
-      "delivery-address": "Delivery address",
-      "delivery-address-placeholder": "Fill in an email address for testing purposes...",
-      "delivery-address-helptext": "All outgoing email will be sent to the targeted recipient address and also to this address. For testing purposes only.",
-      "disable-delivery": "Disable email delivery",
+      "oauth-url-placeholder": "请输入 OAuth URL...",
+      "oauth-scope": "OAuth 范围",
+      "oauth-scope-placeholder": "请输入 OAuth 范围...",
+      "oauth-client-id": "客户端 ID",
+      "oauth-client-id-placeholder": "请输入客户端 ID...",
+      "oauth-client-secret": "客户端密钥",
+      "oauth-client-secret-placeholder": "请输入客户端密钥...",
+      "encryption": "加密",
+      "encryption-placeholder": "选择加密方式...",
+      "sender-address": "发件人地址",
+      "sender-address-placeholder": "填写您可以访问的电子邮件地址...",
+      "delivery-address": "收件人地址",
+      "delivery-address-placeholder": "填写用于测试的电子邮件地址...",
+      "delivery-address-helptext": "所有外发邮件将发送到目标收件人地址，同时也发送到此地址。仅用于测试目的。",
+      "disable-delivery": "禁用电子邮件发送",
       "error": {
-        "notificationMessage": "The SMTP configuration you entered seems to be invalid."
+        "notificationMessage": "您输入的 SMTP 配置似乎无效。"
       }
     },
     "encryption": {
-      "no-encryption": "No encryption",
+      "no-encryption": "不加密",
       "ssl": "SSL",
       "tls": "TLS"
     },
-    "helpText": "For more information please check out the <a target=\"_blank\", href=\"https://docs.xchanming.com/en/cicada-6-en\">documentation.</a>"
+    "helpText": "更多信息请查看 <a target=\"_blank\", href=\"https://docs.haokeyingxiao.com/en/shopware-6-en\">文档</a>。"
   }
 }
-

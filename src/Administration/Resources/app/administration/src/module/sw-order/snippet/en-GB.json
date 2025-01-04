@@ -321,43 +321,7 @@
       "labelNoDeliveryState": "No deliveries yet"
     },
     "changeStateCard": {
-      "cardTitle": "Change state",
-      "headline": "No email template assigned to this order status, please assign one.",
-      "placeholderAssignMailTemplate": "Assign an email template...",
-      "alertHeadline": "Hint",
-      "alertMessage": "This assignment affects all following orders received through this sales channel.",
-      "buttonCreateMailTemplate": "Create email template",
-      "buttonAssignMailTemplate": "Assign email template",
-      "buttonNotAssignMailTemplate": "Don't assign an email template",
-      "gridColumnType": "Type",
-      "gridColumnDescription": "Description"
-    },
-    "documentCard": {
-      "searchBarPlaceholder": "Search all documents...",
-      "cardTitle": "Documents",
-      "modalTitle": "Status update",
-      "labelDate": "Date",
-      "labelNumber": "Number",
-      "labelType": "Type",
-      "labelSent": "Sent",
-      "labelAttach": "Attach",
-      "labelAmount": "Order value",
-      "labelOpenDocument": "Open document",
-      "labelDownloadPdf": "Download document",
-      "labelPrintDocument": "Print document",
-      "labelSendDocument": "Send document",
-      "labelMarkAsSent": "Mark as sent",
-      "labelMarkAsUnsent": "Mark as unsent",
-      "labelCreateNew": "Create new document",
-      "messageEmptyTitle": "No documents created yet",
-      "messageNoDocumentFound": "No documents found",
-      "messageEmptySubline": "Manage documents here.",
-      "error": {
-        "DOCUMENT__NUMBER_ALREADY_EXISTS": "Document number {number} has already been allocated."
-      },
-      "info": {
-        "DOCUMENT__NUMBER_WAS_CHANGED": "Duplicate document number. A consecutive number has automatically been drawn from the respective number range."
-      }
+      "cardTitle": "Change state"
     },
     "generalTab": {
       "info": {

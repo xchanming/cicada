@@ -1,8 +1,8 @@
 {
   "sw-extension-sdk": {
     "general": {
-      "mainMenuItemGeneral": "My extensions",
-      "moduleDescription": "Module to show extension content"
+      "mainMenuItemGeneral": "我的扩展",
+      "moduleDescription": "显示扩展内容的模块"
     }
   }
 }

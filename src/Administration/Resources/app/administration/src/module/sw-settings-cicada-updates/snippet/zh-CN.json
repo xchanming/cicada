@@ -1,86 +1,86 @@
 {
   "sw-settings-cicada-updates": {
     "general": {
-      "menuTitle": "Cicada updates",
-      "title": "Cicada update ({version})",
-      "emptyTitle": "Cicada updates",
-      "emptyState": "You are running the latest version.",
-      "checkForUpdates": "Check for updates",
-      "currentVersion": "Current version:"
+      "menuTitle": "系统更新",
+      "title": "系统更新 ({version})",
+      "emptyTitle": "系统更新",
+      "emptyState": "您正在运行最新版本。",
+      "checkForUpdates": "检查更新",
+      "currentVersion": "当前版本："
     },
     "cards": {
-      "info": "What's new?",
-      "requirements": "System requirements",
-      "extensions": "Extension compatibility",
-      "updating": "Updating..."
+      "info": "新功能介绍",
+      "requirements": "系统要求",
+      "extensions": "扩展兼容性",
+      "updating": "正在更新..."
     },
     "notifications": {
-      "updateStarted": "Update started.",
-      "updateStopped": "Update stopped.",
-      "downloadFailed": "Download has failed.",
-      "unpackFailed": "Unpacking has failed.",
-      "deactivationFailed": "Unable to deactivate extensions.",
-      "alreadyUpToDate": "You are running the latest version."
+      "updateStarted": "更新已开始。",
+      "updateStopped": "更新已停止。",
+      "downloadFailed": "下载失败。",
+      "unpackFailed": "解压失败。",
+      "deactivationFailed": "无法停用扩展。",
+      "alreadyUpToDate": "您正在运行最新版本。"
     },
     "infos": {
-      "backupCheckboxLabel": "I have created a backup and want to execute the update now.",
-      "startUpdate": "Start update",
-      "requirementsNotMet": "Not all system requirements are met.",
+      "backupCheckboxLabel": "我已经创建了备份，现在要执行更新。",
+      "startUpdate": "开始更新",
+      "requirementsNotMet": "并非所有系统要求都已满足。",
       "progress": {
-        "download": "Downloading update file...",
-        "deactivate": "Deactivating extensions...",
-        "unpack": "Extracting update file..."
+        "download": "正在下载更新文件...",
+        "deactivate": "正在停用扩展...",
+        "unpack": "正在解压更新文件..."
       }
     },
     "requirements": {
       "columns": {
-        "message": "Requirement",
-        "status": "Status"
+        "message": "要求",
+        "status": "状态"
       },
       "message": {
-        "phpVersion": "Minimum PHP version: {minVersion}. Currently installed PHP version: {currentVersion}.",
-        "mysqlVersion": "Minimum MySQL version: {minVersion}. Currently installed MySQL version {currentVersion}.",
-        "writeableCheckValid": "The following directories and files are writable:<br/>{checkedDirectories}",
-        "writeableCheckFailed": "The following directories and files are not writable:<br>{failedDirectories}",
-        "validCicadaLicense": "Your current Cicada version is out of date. You may want to consider updating to the latest version.",
-        "invalidCicadaLicense": "No active Cicada subscription found.<br>Automatic updates cannot be performed.<br>You may want to purchase a Cicada subscription via the <a target=\"_blank\" href=\"https://account.xchanming.com\">Cicada account page.</a>"
+        "phpVersion": "最低 PHP 版本：{minVersion}。当前安装的 PHP 版本：{currentVersion}。",
+        "mysqlVersion": "最低 MySQL 版本：{minVersion}。当前安装的 MySQL 版本 {currentVersion}。",
+        "writeableCheckValid": "以下目录和文件可写入：<br/>{checkedDirectories}",
+        "writeableCheckFailed": "以下目录和文件不可写入：<br>{failedDirectories}",
+        "validCicadaLicense": "您当前的 Cicada 版本已过期。您可能需要考虑更新到最新版本。",
+        "invalidCicadaLicense": "未找到有效的 Cicada 订阅。<br>无法执行自动更新。<br>您可以通过<a target=\"_blank\" href=\"https://account.haokeyingxiao.com\">Cicada 账户页面</a>购买 Cicada 订阅。"
       },
-      "ready": "Ready",
-      "notReady": "Not ready"
+      "ready": "准备就绪",
+      "notReady": "未准备好"
     },
     "plugins": {
       "columns": {
-        "name": "Extension",
-        "available": "Compatibility"
+        "name": "扩展",
+        "available": "兼容性"
       },
       "actions": {
-        "openMyExtensions": "To my extensions",
-        "deactivateAll": "Deactivate all extensions.",
-        "deactivateIncompatible": "Deactivate incompatible extensions.",
-        "deactivateNone": "I am aware of the implicit dangers and still want to update Cicada without deactivating incompatible extensions first. I am conscious, that Cicada cannot guarantee the functionality of my installation after an incompatible update.",
-        "recommended": "(Recommended)"
+        "openMyExtensions": "我的扩展",
+        "deactivateAll": "停用所有扩展。",
+        "deactivateIncompatible": "停用不兼容的扩展。",
+        "deactivateNone": "我了解隐含的风险，仍然希望在不先停用不兼容扩展的情况下更新 Cicada。我意识到，Cicada 不能保证更新后的安装功能。",
+        "recommended": "(推荐)"
       },
-      "pluginNotInStore": "This extension is not available in the store. Please contact the extension's authors.",
-      "pluginWillBeDeactivatedHint": "(This extension will be deactivated on update)"
+      "pluginNotInStore": "该扩展在商店中不可用。请联系扩展的作者。",
+      "pluginWillBeDeactivatedHint": "(此扩展将在更新时停用)"
     },
     "updateModal": {
       "actions": {
-        "install": "Install",
-        "goToUpdate": "Update now"
+        "install": "安装",
+        "goToUpdate": "立即更新"
       },
-      "messageIncompatible": "Some of the extensions installed are not compatible with the latest Cicada version. If you continue updating now, unknown issues could occur and gravely harm your system. Cicada is able to automatically deactivate incompatible extensions during the update process in order to ensures the continued functionality of your installation. After updating these extensions accordingly, you will have the possibility to re-activate them manually.",
-      "messageNotInStore": "There are extensions installed that could not successfully be tested for compatibility. Please contact the extension's authors for more information. In this case it is strongly recommended to create a backup before updating.",
-      "messageOkay": "All prerequisites fulfilled. Don't forget to create a backup before updating.",
-      "messageUpdateCheck": "Your current version can be updated to {version}. What do you want to do?",
-      "backupLabel": "Yes, I've created a backup."
+      "messageIncompatible": "安装的一些扩展与最新的 Cicada 版本不兼容。如果继续更新，现在可能会出现未知问题并严重损害您的系统。Cicada 能够在更新过程中自动停用不兼容的扩展，以确保安装的持续功能。更新这些扩展后，您将可以手动重新激活它们。",
+      "messageNotInStore": "安装了一些无法成功测试兼容性的扩展。有关更多信息，请联系扩展的作者。在这种情况下，强烈建议在更新前创建备份。",
+      "messageOkay": "所有前提条件已满足。更新前不要忘记创建备份。",
+      "messageUpdateCheck": "您的当前版本可以更新到 {version}。您想做什么？",
+      "backupLabel": "是的，我已创建备份。"
     }
   },
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "core_update": "Run updates",
-        "plugin_maintain": "Manage extensions",
-        "plugin_upload": "Upload extensions"
+        "core_update": "运行更新",
+        "plugin_maintain": "管理扩展",
+        "plugin_upload": "上传扩展"
       }
     }
   }

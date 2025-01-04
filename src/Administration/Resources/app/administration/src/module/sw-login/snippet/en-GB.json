@@ -57,6 +57,9 @@
   "global": {
     "sw-admin-menu": {
       "textCicadaAdmin": "Cicada Administration"
+    },
+    "default": {
+      "error": "Error"
     }
   }
 }

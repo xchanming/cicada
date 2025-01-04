@@ -1,13 +1,13 @@
 {
   "sw-custom-entity": {
     "general": {
-      "mainMenuItemGeneral": "Custom Entity",
-      "emptyState": "No Custom Entities yet",
-      "emptyStateSubline": "Manage Custom Entities here."
+      "mainMenuItemGeneral": "自定义实体",
+      "emptyState": "尚无自定义实体",
+      "emptyStateSubline": "在这里管理自定义实体。"
     },
     "detail": {
       "tabs": {
-        "layout": "Layout",
+        "layout": "布局",
         "seo": "SEO"
       }
     }

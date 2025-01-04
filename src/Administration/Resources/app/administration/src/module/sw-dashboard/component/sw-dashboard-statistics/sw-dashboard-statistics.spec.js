@@ -73,7 +73,7 @@ describe('module/sw-dashboard/component/sw-dashboard-statistics', () => {
     let wrapper;
 
     beforeAll(() => {
-        Cicada.Context.app.systemCurrencyISOCode = 'EUR';
+        Cicada.Context.app.systemCurrencyISOCode = 'CNY';
 
         if (Cicada.State.get('session')) {
             Cicada.State.unregisterModule('session');
@@ -186,7 +186,7 @@ describe('module/sw-dashboard/component/sw-dashboard-statistics', () => {
         const todaysTotalSum = wrapper
             .find('.sw-dashboard-statistics__intro-stats-today-single-stat:nth-of-type(2) span:nth-of-type(2)')
             .text();
-        expect(todaysTotalSum).toBe('€43,383.13');
+        expect(todaysTotalSum).toBe('¥43,383.13');
     });
 
     it('should allow the possibility to extend the date ranges', async () => {

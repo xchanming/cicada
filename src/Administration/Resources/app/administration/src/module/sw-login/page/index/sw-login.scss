@@ -29,7 +29,7 @@ $sw-login-error-animation-duration: 0.15s;
     .sw-login__container {
         background: $color-white;
         width: 1120px;
-        min-height: 590px;
+        min-height: 600px;
         display: grid;
         grid-template-columns: auto 480px;
         transition: all $sw-login-success-animation-duration ease-in-out;

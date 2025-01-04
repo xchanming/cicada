@@ -1,63 +1,63 @@
 {
   "sw-settings-cache": {
     "general": {
-      "mainMenuItemGeneral": "Caches & indexes"
+      "mainMenuItemGeneral": "缓存和索引"
     },
     "toolbar": {
-      "environment": "Environment",
-      "environmentDev": "Development",
-      "environmentProd": "Production",
-      "httpCache": "HTTP cache",
-      "httpCacheOff": "Off",
-      "httpCacheOn": "On",
-      "cacheAdapter": "Cache adapters"
+      "environment": "环境",
+      "environmentDev": "开发",
+      "environmentProd": "生产",
+      "httpCache": "HTTP 缓存",
+      "httpCacheOff": "关闭",
+      "httpCacheOn": "开启",
+      "cacheAdapter": "缓存适配器"
     },
     "section": {
-      "clearCachesHeadline": "Clear cache",
-      "clearCachesText": "Immediately clears all cached data synchronously for all adapters.",
-      "clearCachesButton": "Clear cache",
-      "clearDataCachesHeadline": "Refresh cache",
-      "clearDataCachesText": "Selectively clears only cached data that has recently been altered. Use this option to make changes to your shop data immediately visible without having to wait for the automatic cache refresh or needlessly having to delete all cached data at once.",
-      "clearDataCachesButton": "Refresh cache",
-      "indexesHeadline": "Indexes",
-      "indexesText": "All indexes are updated asynchronously. Keep track of the progress by monitoring the notifications.",
-      "indexesButton": "Update indexes",
-      "indexingModeLabel": "Method",
-      "indexingModeOptionSkipLabel": "Update all, but skip selected",
-      "indexingModeOptionOnlyLabel": "Only update selected",
-      "indexesSkipSelectLabel": "Indexers and/or updaters to skip",
-      "indexesOnlySelectLabel": "Indexers and/or updaters",
-      "indexesSkipSelectPlaceholder": "Select indexers and/or updaters to skip",
-      "indexesOnlySelectPlaceholder": "Select indexers and/or updaters"
+      "clearCachesHeadline": "清除缓存",
+      "clearCachesText": "缓存会立即同步清除所有使用的适配器。",
+      "clearCachesButton": "清除缓存",
+      "clearDataCachesHeadline": "清除数据缓存",
+      "clearDataCachesText": "对非必要商店数据（与价格计算无关的所有内容）的更改不会立即可见。清除数据缓存以查看您最近的更改。",
+      "clearDataCachesButton": "清除数据缓存",
+      "indexesHeadline": "索引",
+      "indexesText": "所有索引将异步更新。通过监控通知来跟踪进度。",
+      "indexesButton": "更新索引",
+      "indexingModeLabel": "方法",
+      "indexingModeOptionSkipLabel": "更新全部，但跳过选定的",
+      "indexingModeOptionOnlyLabel": "仅更新选定的",
+      "indexesSkipSelectLabel": "索引器和/或更新器跳过",
+      "indexesOnlySelectLabel": "索引器和/或更新器",
+      "indexesSkipSelectPlaceholder": "选择索引器和/或更新器跳过",
+      "indexesOnlySelectPlaceholder": "选择索引器和/或更新器"
     },
     "notifications": {
       "clearCache": {
-        "started": "Clearing caches.",
-        "success": "All caches cleared.",
-        "error": "Unable to clear caches ."
+        "started": "正在清除缓存。",
+        "success": "所有缓存已清除。",
+        "error": "无法清除缓存。"
       },
       "clearDataCache": {
-        "started": "Clearing data cache.",
-        "success": "All pending changes applied.",
-        "error": "Unable to clear data cache."
+        "started": "正在清除数据缓存。",
+        "success": "所有待处理的更改已应用。",
+        "error": "无法清除数据缓存。"
       },
       "index": {
-        "started": "Building indexes.",
-        "success": "All indexes built."
+        "started": "正在构建索引。",
+        "success": "所有索引已构建。"
       }
     },
     "modal": {
-      "title": "Clear caches",
-      "message": "Are you sure you want to clear all caches?",
+      "title": "清除缓存",
+      "message": "您确定要清除所有缓存吗？",
       "actions": {
-        "clear": "Clear"
+        "clear": "清除"
       }
     }
   },
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "clear_cache": "Clear cache"
+        "clear_cache": "清除缓存"
       }
     }
   }

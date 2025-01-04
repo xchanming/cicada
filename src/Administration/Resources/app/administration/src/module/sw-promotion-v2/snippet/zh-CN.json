@@ -2,290 +2,290 @@
   "sw-promotion-v2": {
     "general": {
       "mainMenuItemGeneral": "促销",
-      "mainMenuItemList": "Overview",
-      "description": "Manage promotions here."
+      "mainMenuItemList": "概览",
+      "description": "在这里管理促销活动。"
     },
     "list": {
       "textTitle": "促销",
-      "buttonAddPromotion": "Add promotion",
-      "columnActive": "Active",
-      "columnName": "Name",
-      "columnValidFrom": "Valid from",
-      "columnValidUntil": "Valid until",
-      "titleEmpty": "No promotions yet.",
-      "descriptionEmpty": "Boost your sales by discounting your products and services.",
-      "placeholderSearchBar": "Search promotions...",
-      "textDeleteConfirm": "Are you sure you want to delete the promotion \"{name}\"?",
-      "titleSidebarItemRefresh": "Refresh",
-      "duplicatePromotionInfo": "Promotion codes are not duplicated and need to be generated again."
+      "buttonAddPromotion": "添加促销",
+      "columnActive": "激活",
+      "columnName": "名称",
+      "columnValidFrom": "有效期开始",
+      "columnValidUntil": "有效期结束",
+      "titleEmpty": "尚无促销。",
+      "descriptionEmpty": "通过折扣产品和服务来提升销售。",
+      "placeholderSearchBar": "搜索促销...",
+      "textDeleteConfirm": "您确定要删除促销 \"{name}\" 吗？",
+      "titleSidebarItemRefresh": "刷新",
+      "duplicatePromotionInfo": "促销代码不可重复使用，需要重新生成。"
     },
     "detail": {
       "header": {
-        "titleCreate": "New promotion",
-        "titleEdit": "Promotion"
+        "titleCreate": "新促销",
+        "titleEdit": "促销"
       },
       "tabs": {
-        "tabGeneral": "General",
-        "tabConditions": "Conditions",
-        "tabDiscounts": "Discounts"
+        "tabGeneral": "常规",
+        "tabConditions": "条件",
+        "tabDiscounts": "折扣"
       },
       "codeChangeModal": {
-        "title": "Changing promotion code option",
-        "text": "Switching the promotion code option will delete all previously generated promotion codes."
+        "title": "更改促销代码选项",
+        "text": "切换促销代码选项将删除所有先前生成的促销代码。"
       },
       "base": {
         "general": {
-          "cardTitle": "General settings",
-          "nameLabel": "Name",
-          "namePlaceholder": "Enter name...",
-          "priorityLabel": "Priority",
-          "helpTextPriority": "The priority determines the order in which the promotions are applied. Promotions with higher priority are applied before promotions with lower priority.",
-          "validFromLabel": "Valid from",
-          "validFromPlaceholder": "Select start date...",
-          "validUntilLabel": "Valid until",
-          "validUntilPlaceholder": "Select end date...",
-          "maxUsesGlobalLabel": "Max. total uses",
-          "maxUsesGlobalPlaceholder": "Unlimited",
-          "maxUsesPerCustomerLabel": "Max. uses per customer",
-          "maxUsesPerCustomerPlaceholder": "Unlimited",
-          "activeLabel": "Active"
+          "cardTitle": "常规设置",
+          "nameLabel": "名称",
+          "namePlaceholder": "输入名称...",
+          "priorityLabel": "优先级",
+          "helpTextPriority": "优先级决定了促销活动的应用顺序。优先级较高的促销活动会优先于优先级较低的促销活动应用。",
+          "validFromLabel": "有效期开始",
+          "validFromPlaceholder": "选择开始日期...",
+          "validUntilLabel": "有效期结束",
+          "validUntilPlaceholder": "选择结束日期...",
+          "maxUsesGlobalLabel": "最大使用次数",
+          "maxUsesGlobalPlaceholder": "无限制",
+          "maxUsesPerCustomerLabel": "每位客户的最大使用次数",
+          "maxUsesPerCustomerPlaceholder": "无限制",
+          "activeLabel": "激活"
         },
         "codes": {
-          "cardTitle": "Promotion codes",
-          "codeTypeLabel": "Code options",
+          "cardTitle": "促销代码",
+          "codeTypeLabel": "代码选项",
           "none": {
-            "description": "No promotion code required"
+            "description": "不需要促销代码"
           },
           "fixed": {
-            "description": "Fixed promotion code",
-            "codeLabel": "Promotion code",
-            "codePlaceholder": "Enter promotion code...",
-            "generateButton": "Generate random code"
+            "description": "固定促销代码",
+            "codeLabel": "促销代码",
+            "codePlaceholder": "输入促销代码...",
+            "generateButton": "生成随机代码"
           },
           "individual": {
-            "description": "Individual promotion codes",
-            "emptyStateTitle": "No promotion codes generated yet.",
-            "generateButton": "Generate new codes",
-            "searchPlaceholder": "Search promotion codes...",
-            "addButton": "Add codes",
-            "columnCode": "Code",
-            "columnRedeemed": "Redeemed",
-            "columnCustomer": "Customer",
-            "columnCreatedAt": "Generated at",
-            "textDeleteConfirm": "Are you sure you want to delete the code \"{code}\"? | Are you sure cou want to delete these {count} codes?",
-            "openCustomer": "Open customer",
-            "routingError": "The customer \"{name}\" has not been found.",
+            "description": "个别促销代码",
+            "emptyStateTitle": "尚未生成促销代码。",
+            "generateButton": "生成新代码",
+            "searchPlaceholder": "搜索促销代码...",
+            "addButton": "添加代码",
+            "columnCode": "代码",
+            "columnRedeemed": "已兑换",
+            "columnCustomer": "客户",
+            "columnCreatedAt": "生成时间",
+            "textDeleteConfirm": "您确定要删除 \"{code}\" 吗？| 您确定要删除 {count} 个代码吗？",
+            "openCustomer": "打开客户",
+            "routingError": "未找到客户 \"{name}\"。",
             "addCodesModal": {
-              "title": "Add new codes",
-              "description": "New codes will use the same prefix, suffix and pattern that has been used to generate previous codes.",
-              "addCodesButton": "Add new codes",
-              "codeAmountLabel": "Number of new codes"
+              "title": "添加新代码",
+              "description": "新代码将使用与先前生成的代码相同的前缀、后缀和模式。",
+              "addCodesButton": "添加新代码",
+              "codeAmountLabel": "新代码数量"
             },
             "generateModal": {
-              "title": "Generate new promotion codes",
-              "buttonGenerate": "Generate new codes",
-              "warning": "Generating new codes will delete all existing codes for this promotion. Deleted codes are invalid and can't be used anymore.",
-              "description": "Promotion codes are generated randomly from capital letters and numbers. You may add fixed individual terms as a prefix and/or suffix or use a completely custom pattern and watch how your code pattern turns out in the promotion code preview.",
-              "labelPrefix": "Prefix",
-              "placeholderPrefix": "Enter a prefix...",
-              "labelCodeLength": "Code length",
-              "labelSuffix": "Suffix",
-              "placeholderSuffix": "Enter a suffix...",
-              "labelCustomPattern": "Custom pattern",
-              "placeholderCustomPattern": "Enter a custom pattern...",
-              "helpTextCustomPattern": "Note, that there can only be one consecutive string of variables, which will be converted.<br><br>Possible variables to use:<br>- %d - Digits (0-9)<br>- %s - Letters (A-Z)",
-              "labelUseCustomPattern": "Use custom pattern",
-              "labelPreview": "Promotion code preview",
-              "labelCodeAmount": "Number of promotion codes",
-              "notComplexEnoughException": "Cannot create the amount of promotions codes requested. Make sure your pattern is sufficiently complex. To ensure that the promotion codes are sufficiently random, no more than 50% of all possible codes will be generated.",
-              "alreadyInUseException": "The chosen code pattern already exists in another promotion. Please provide a different pattern.",
-              "unknownErrorCode": "Something went wrong, while generating promotion codes. Please use the developer tools for more information."
+              "title": "生成新促销代码",
+              "buttonGenerate": "生成新代码",
+              "warning": "生成新代码将删除此促销的所有现有代码。删除的代码无效，不能再使用。",
+              "description": "促销代码是由大写字母和数字随机生成的。您可以添加固定的个别术语作为前缀和/或后缀，或者使用完全自定义的模式，并查看促销代码预览中的代码模式结果。",
+              "labelPrefix": "前缀",
+              "placeholderPrefix": "输入前缀...",
+              "labelCodeLength": "代码长度",
+              "labelSuffix": "后缀",
+              "placeholderSuffix": "输入后缀...",
+              "labelCustomPattern": "自定义模式",
+              "placeholderCustomPattern": "输入自定义模式...",
+              "helpTextCustomPattern": "注意，只能有一个连续的变量字符串，将被转换。<br><br>可以使用的变量：<br>- %d - 数字（0-9）<br>- %s - 字母（A-Z）",
+              "labelUseCustomPattern": "使用自定义模式",
+              "labelPreview": "促销代码预览",
+              "labelCodeAmount": "促销代码数量",
+              "notComplexEnoughException": "无法创建请求的促销代码数量。确保您的模式足够复杂。为了确保促销代码足够随机，不会生成超过 50% 的所有可能代码。",
+              "alreadyInUseException": "选择的代码模式已在其他促销中存在。请提供不同的模式。",
+              "unknownErrorCode": "生成促销代码时出了些问题。请使用开发者工具获取更多信息。"
             }
           }
         }
       },
       "conditions": {
         "preConditions": {
-          "cardTitlePreConditions": "Pre-conditions",
-          "cardTitleRuleConditions": "Rule based conditions",
-          "labelPreventCombination": "Prevent combination with other promotions",
-          "helpTextPreventCombination": "Activating this option will exclude all other promotions, regardless of the combination selection.",
-          "labelPromotionExclusions": "Do not combine with",
-          "placeholderPromotionExclusions": "Add promotion...",
-          "labelPromotionSalesChannel": "Sales Channels",
-          "placeholderPromotionSalesChannel": "Add sales channel...",
-          "labelCustomerSelect": "Customer rules",
-          "placeholderCustomerSelect": "Select customer rules...",
-          "labelCartConditionSelect": "Shopping cart rules",
-          "placeholderCartConditionSelect": "Select shopping cart rules...",
-          "labelOrderConditionSelect": "Order rules",
-          "placeholderOrderConditionSelect": "Select order rules..."
+          "cardTitlePreConditions": "前置条件",
+          "cardTitleRuleConditions": "基于规则的条件",
+          "labelPreventCombination": "防止与其他促销组合",
+          "helpTextPreventCombination": "激活此选项将排除所有其他促销，无论组合选择如何。",
+          "labelPromotionExclusions": "不与以下促销组合",
+          "placeholderPromotionExclusions": "添加促销...",
+          "labelPromotionSalesChannel": "销售渠道",
+          "placeholderPromotionSalesChannel": "添加销售渠道...",
+          "labelCustomerSelect": "客户规则",
+          "placeholderCustomerSelect": "选择客户规则...",
+          "labelCartConditionSelect": "购物车规则",
+          "placeholderCartConditionSelect": "选择购物车规则...",
+          "labelOrderConditionSelect": "订单规则",
+          "placeholderOrderConditionSelect": "选择订单规则..."
         },
         "setgroups": {
-          "switchGroupsEnabled": "Promote sets of products",
-          "buttonAddGroup": "Add product set",
-          "titleName": "Group",
-          "labelMode": "Mode",
-          "labelValue": "Value",
-          "labelSorting": "Sorting",
-          "labelRules": "Product rules",
-          "placeholder": "Choose a product rule...",
+          "switchGroupsEnabled": "促销产品组",
+          "buttonAddGroup": "添加产品组",
+          "titleName": "组",
+          "labelMode": "模式",
+          "labelValue": "值",
+          "labelSorting": "排序",
+          "labelRules": "产品规则",
+          "placeholder": "选择产品规则...",
           "packager": {
-            "COUNT": "Quantity",
-            "PRICE_UNIT_GROSS": "Amount (gross)",
-            "PRICE_UNIT_NET": "Amount (net)"
+            "COUNT": "数量",
+            "PRICE_UNIT_GROSS": "金额（毛价）",
+            "PRICE_UNIT_NET": "金额（净价）"
           },
           "sorter": {
-            "PRICE_ASC": "Price, ascending",
-            "PRICE_DESC": "Price, descending"
+            "PRICE_ASC": "价格，升序",
+            "PRICE_DESC": "价格，降序"
           }
         },
         "filter": {
           "sorter": {
-            "PRICE_ASC": "Price, ascending",
-            "PRICE_DESC": "Price, descending"
+            "PRICE_ASC": "价格，升序",
+            "PRICE_DESC": "价格，降序"
           },
           "applier": {
-            "ALL": "All items",
-            "SELECT": "{count}. item"
+            "ALL": "所有项目",
+            "SELECT": "{count} 项"
           },
           "counter": {
-            "ALL": "Unlimited",
-            "SELECT": "{count} x"
+            "ALL": "无限制",
+            "SELECT": "{count} 次"
           },
           "picker": {
-            "VERTICAL": "Vertical",
-            "HORIZONTAL": "Horizontal"
+            "VERTICAL": "垂直",
+            "HORIZONTAL": "水平"
           }
         }
       },
       "discounts": {
-        "emptyStateTitle": "No discount yet.",
-        "addDiscountButton": "Add discount",
+        "emptyStateTitle": "尚无折扣。",
+        "addDiscountButton": "添加折扣",
         "wizard": {
           "basic": {
-            "prefixTitle": "Basic discount - {title}",
-            "titleDiscountType": "Discount type",
-            "titleProductRules": "Product rules",
-            "description": "Define the type of discount first. You may select triggers that activate this discount in the next step."
+            "prefixTitle": "基本折扣 - {title}",
+            "titleDiscountType": "折扣类型",
+            "titleProductRules": "产品规则",
+            "description": "首先定义折扣类型。您可以在下一步中选择激活此折扣的触发器。"
           },
           "shipping-discount": {
-            "prefixTitle": "Shipping discount - {title}",
-            "titleDiscountType": "Discount type",
-            "titleTriggerSelection": "Trigger (optional)",
-            "description": "You may use the Rule Builder to create individual discount triggers. Define thresholds, e.g. a certain number of products or a certain shopping cart value that trigger discounts. You may even create nested trigger cascades."
+            "prefixTitle": "运费折扣 - {title}",
+            "titleDiscountType": "折扣类型",
+            "titleTriggerSelection": "触发器（可选）",
+            "description": "您可以使用规则生成器创建个别折扣触发器。定义阈值，例如一定数量的产品或一定的购物车价值触发折扣。您甚至可以创建嵌套的触发级联。"
           },
           "buy-x-get-y": {
-            "prefixTitle": "Buy X get Y - {title}",
-            "titleDiscountType": "Discount type",
-            "titleTriggerSelection": "Trigger (optional)"
+            "prefixTitle": "买 X 送 Y - {title}",
+            "titleDiscountType": "折扣类型",
+            "titleTriggerSelection": "触发器（可选）"
           }
         },
         "settings": {
           "discountType": {
-            "labelDiscountType": "Discount type",
-            "labelValue": "Price | Percentage",
-            "labelMaxDiscountValue": "Max. discount value",
-            "labelApplyDiscountTo": "Apply discount to",
-            "labelApplyTo": "Apply to",
+            "labelDiscountType": "折扣类型",
+            "labelValue": "价格 | 百分比",
+            "labelMaxDiscountValue": "最大折扣值",
+            "labelApplyDiscountTo": "应用折扣到",
+            "labelApplyTo": "应用于",
             "discountTypeSelection": {
-              "displayFixedPrice": "Fixed price",
-              "displayFixedDiscount": "Absolute",
-              "displayPercentage": "Percentage",
-              "displayFree": "Free product"
+              "displayFixedPrice": "固定价格",
+              "displayFixedDiscount": "绝对值",
+              "displayPercentage": "百分比",
+              "displayFree": "免费产品"
             },
             "applyDiscountTo": {
-              "displayTotalPrice": "Total price",
-              "displayProductPrice": "Product price"
+              "displayTotalPrice": "总价",
+              "displayProductPrice": "产品价格"
             }
           },
           "ruleSelection": {
-            "description": "Select or create a rule to make products eligible for the discount.",
-            "labelSelection": "Rule select",
-            "placeholderSelection": "Select rule..."
+            "description": "选择或创建规则以使产品符合折扣条件。",
+            "labelSelection": "规则选择",
+            "placeholderSelection": "选择规则..."
           },
           "trigger": {
-            "labelUseTrigger": "Use trigger",
+            "labelUseTrigger": "使用触发器",
             "triggerType": {
-              "displaySingleTrigger": "Single product trigger",
-              "displayMultiTrigger": "Multi product triggers"
+              "displaySingleTrigger": "单一产品触发器",
+              "displayMultiTrigger": "多产品触发器"
             },
-            "labelNumberOfTriggers": "Trigger type"
+            "labelNumberOfTriggers": "触发器类型"
           }
         },
         "pricesModal": {
-          "advancedPricesHeader": "Advanced prices",
-          "closeModal": "Close",
-          "labelCurrency": "Currency",
-          "labelPrice": "Value",
-          "linkAdvancedPrices": "Open advanced prices view"
+          "advancedPricesHeader": "高级价格",
+          "closeModal": "关闭",
+          "labelCurrency": "货币",
+          "labelPrice": "值",
+          "linkAdvancedPrices": "打开高级价格视图"
         }
       },
       "discount-selection": {
-        "modalTitle": "New discount",
-        "description": "Discounts can be applied as gross or net values, as a fixed sum or as a percentage. It is possible to discount single products, a product range or shipping costs.",
+        "modalTitle": "新折扣",
+        "description": "折扣可以以毛价或净价的形式应用，作为固定金额或百分比。可以对单个产品、产品范围或运费进行折扣。",
         "basic": {
-          "name": "Basic discount",
-          "description": "Discount whole shopping carts or a selected group of products."
+          "name": "基本折扣",
+          "description": "对整个购物车或选定的产品组进行折扣。"
         },
         "buy-x-get-y": {
-          "name": "Buy X get Y",
-          "description": "Set a discount that gets activated when one or more certain products are added to the cart."
+          "name": "买 X 送 Y",
+          "description": "设置当添加一个或多个特定产品到购物车时激活的折扣。"
         },
         "shipping-discount": {
-          "name": "Shipping discount",
-          "description": "Discount shipping costs or provide free shipping using optional product triggers."
+          "name": "运费折扣",
+          "description": "使用可选产品触发器折扣运费或提供免费运送。"
         }
       },
       "shipping-discount-trigger": {
-        "modalTitle": "Shipping discount - Trigger (optional)",
-        "description": "You may use the Rule Builder to create individual discount triggers. Define thresholds, e.g. a certain number of products or a certain shopping cart value that trigger discounts. You may even create nested trigger cascades.",
-        "labelUseTrigger": "Use trigger"
+        "modalTitle": "运费折扣 - 触发器（可选）",
+        "description": "您可以使用规则生成器创建个别折扣触发器。定义阈值，例如一定数量的产品或一定的购物车价值触发折扣。您甚至可以创建嵌套的触发级联。",
+        "labelUseTrigger": "使用触发器"
       }
     },
     "ruleSelect": {
-      "labelAddNewRule": "Create new rule"
+      "labelAddNewRule": "创建新规则"
     }
   },
   "sw-promotion": {
     "detail": {
       "main": {
         "discounts": {
-          "card": "Discount",
-          "labelValue": "Value",
-          "labelMaxValue": "Maximum discount value",
-          "helpTextMaxValueAdvancedPrices": "Largest discount possible (absolute monetary value).",
-          "placeholderValue": "Enter either a percentage or an absolute value...",
-          "labelScope": "Apply to:",
-          "flagProductScopeLabel": "Apply to a specific range of products only.",
-          "labelRules": "Product rules",
-          "placeholder": "Assign product rules...",
-          "labelType": "Type",
-          "valueScopeCart": "Cart",
-          "valueTypeAbsolute": "Absolute",
-          "valueScopeDelivery": "Shipping costs",
-          "valueScopeSet": "Entire set",
-          "valueScopeSetGroup": "Set group",
-          "valueTypePercentage": "Percentage",
-          "valueTypeFixed": "Fixed price",
-          "valueTypeFixedUnit": "Fixed item price",
-          "buttonAddDiscount": "Add discount",
-          "buttonDeleteDiscount": "Delete discount",
+          "card": "折扣",
+          "labelValue": "值",
+          "labelMaxValue": "最大折扣值",
+          "helpTextMaxValueAdvancedPrices": "最大可能折扣（绝对货币值）。",
+          "placeholderValue": "输入百分比或绝对值...",
+          "labelScope": "应用于：",
+          "flagProductScopeLabel": "仅应用于特定产品范围。",
+          "labelRules": "产品规则",
+          "placeholder": "分配产品规则...",
+          "labelType": "类型",
+          "valueScopeCart": "购物车",
+          "valueTypeAbsolute": "绝对值",
+          "valueScopeDelivery": "运费",
+          "valueScopeSet": "整个设置",
+          "valueScopeSetGroup": "设置组",
+          "valueTypePercentage": "百分比",
+          "valueTypeFixed": "固定价格",
+          "valueTypeFixedUnit": "固定项目价格",
+          "buttonAddDiscount": "添加折扣",
+          "buttonDeleteDiscount": "删除折扣",
           "delete": {
-            "confirmTitle": "Delete discount",
-            "confirmText": "Do you really want to delete this discount from the promotion?",
-            "buttonDelete": "Delete discount"
+            "confirmTitle": "删除折扣",
+            "confirmText": "您确定要从促销中删除此折扣吗？",
+            "buttonDelete": "删除折扣"
           },
-          "labelSorting": "Sort by",
-          "labelPicking": "Item Picking Mode",
-          "labelApplyCount": "Apply to",
-          "labelMaxCount": "Maximum amount of usages",
-          "linkAdvancedPrices": "Open advanced prices view",
+          "labelSorting": "排序方式",
+          "labelPicking": "项目选择模式",
+          "labelApplyCount": "应用于",
+          "labelMaxCount": "最大使用次数",
+          "linkAdvancedPrices": "打开高级价格视图",
           "pricesModal": {
-            "advancedPricesHeader": "Advanced prices",
-            "closeModal": "Close",
-            "labelCurrency": "Currency",
-            "labelPrice": "Value"
+            "advancedPricesHeader": "高级价格",
+            "closeModal": "关闭",
+            "labelCurrency": "货币",
+            "labelPrice": "值"
           }
         }
       }
@@ -294,7 +294,7 @@
   "sw-privileges": {
     "permissions": {
       "promotion": {
-        "label": "Promotions"
+        "label": "促销"
       }
     }
   }

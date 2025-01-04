@@ -72,8 +72,8 @@ const SwOrderStore: Module<SwOrderState, VuexRootState> = {
                 },
             } as Entity<'shipping_method'>,
             currency: {
-                isoCode: 'EUR',
-                symbol: '€',
+                isoCode: 'CNY',
+                symbol: '¥',
                 totalRounding: {
                     decimals: 2,
                 },

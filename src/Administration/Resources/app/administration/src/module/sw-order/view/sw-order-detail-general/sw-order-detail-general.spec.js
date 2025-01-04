@@ -23,9 +23,9 @@ const orderMock = {
         totalPrice: 10,
     },
     currency: {
-        isoCode: 'EUR',
+        isoCode: 'CNY',
         translated: {
-            isoCode: 'EUR',
+            isoCode: 'CNY',
         },
     },
     deliveries: [
@@ -162,7 +162,7 @@ describe('src/module/sw-order/view/sw-order-detail-details', () => {
 
         const shippingCostField = wrapper.find('.sw-order-detail__summary div[role="button"]');
         expect(shippingCostField.attributes()['tooltip-message']).toBe(
-            'sw-order.detailBase.tax<br>sw-order.detailBase.shippingCostsTax{"taxRate":10,"tax":"€1.00"}<br>sw-order.detailBase.shippingCostsTax{"taxRate":19,"tax":"€1.90"}',
+            'sw-order.detailBase.tax<br>sw-order.detailBase.shippingCostsTax{"taxRate":10,"tax":"¥1.00"}<br>sw-order.detailBase.shippingCostsTax{"taxRate":19,"tax":"¥1.90"}',
         );
     });
 
@@ -173,10 +173,10 @@ describe('src/module/sw-order/view/sw-order-detail-details', () => {
         const descriptionInfos = wrapper.findAll('dd');
 
         expect(descriptionTitles[3].text()).toBe('sw-order.detailBase.summaryLabelTaxes{"taxRate":10}');
-        expect(descriptionInfos[3].text()).toBe('€10.00');
+        expect(descriptionInfos[3].text()).toBe('¥10.00');
 
         expect(descriptionTitles[4].text()).toBe('sw-order.detailBase.summaryLabelTaxes{"taxRate":19}');
-        expect(descriptionInfos[4].text()).toBe('€19.00');
+        expect(descriptionInfos[4].text()).toBe('¥19.00');
     });
 
     it('should able to edit shipping cost', async () => {
