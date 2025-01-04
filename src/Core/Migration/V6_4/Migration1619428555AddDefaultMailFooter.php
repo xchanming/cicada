@@ -44,8 +44,8 @@ class Migration1619428555AddDefaultMailFooter extends MigrationStep
                 'description' => 'Standard-E-Mail-Fußzeile basierend auf den Stammdaten',
                 'header_html' => null,
                 'header_plain' => null,
-                'footer_plain' => (string) \file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/de-plain.twig'),
-                'footer_html' => (string) \file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/de-html.twig'),
+                'footer_plain' => (string) \file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/zh-plain.twig'),
+                'footer_html' => (string) \file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/zh-html.twig'),
             ],
             [
                 'mail_header_footer_id' => $id,

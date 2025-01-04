@@ -52,7 +52,7 @@
         "buttonFileUpload": "上传扩展",
         "messageUploadSuccess": "上传扩展成功。",
         "titleWarningModal": "警告",
-        "descriptionWarningModal": "来自好客平台商店外部的扩展未经我们审核，可能会对您的商店构成风险。我们建议尽可能使用好客平台商店中的扩展。",
+        "descriptionWarningModal": "来自好客平台商城外部的扩展未经我们审核，可能会对您的商城构成风险。我们建议尽可能使用好客平台商城中的扩展。",
         "textHideWarning": "不再显示"
       }
     },
@@ -64,7 +64,7 @@
       "messageUploadFailureNoPluginFoundInZipFile": "ZIP 文件中未找到扩展。",
       "messageLoginDataInvalid": "登录数据不完整。",
       "messageStoreLicenseDomainMissing": "登录失败。您是否在“设置/平台账号”中提供了正确的许可证域名？",
-      "messageStoreNotAvailable": "好客平台商店不可用。",
+      "messageStoreNotAvailable": "好客平台商城不可用。",
       "messagePluginBaseClassNotFound": "无法加载扩展基类。请检查扩展的 composer.json 以了解类自动加载。",
       "messagePluginInstallationFailed": "无法安装扩展：“{message}”。",
       "messagePluginUninstallationFailed": "无法卸载扩展：“{message}”。",
@@ -90,7 +90,7 @@
     },
     "mainMenu": {
       "mainMenuItemExtensionStore": "扩展",
-      "store": "扩展商店",
+      "store": "扩展商城",
       "purchased": "我的扩展",
       "support": "帮助"
     },
@@ -105,20 +105,20 @@
   },
   "sw-extension-store": {
     "landing-page": {
-      "enablingCicadaStore": "激活官方扩展商店...",
+      "enablingCicadaStore": "激活官方扩展商城...",
       "takeMinutes": "需要几分钟。",
       "activationErrorTitle": "激活时发生错误",
       "activationErrorDescription": "请重试。如果仍然不起作用，请联系您的管理员。",
       "retryButton": "重试",
       "activationSuccessTitle": "激活成功",
-      "activationSuccessDescription": "享受并探索官方插件商店吧。",
+      "activationSuccessDescription": "享受并探索官方插件商城吧。",
       "label": "未激活",
       "activationDescriptionTitleFirst": "非常方便的浏览并购买扩展",
       "activationDescriptionTitleSecond": "",
-      "activationDescriptionTitleDescription": "激活好客平台商店并访问大量有用的扩展和现代主题，这些扩展和现代主题可以无缝集成到您的商店中 - 无需任何编程技能。",
+      "activationDescriptionTitleDescription": "激活好客平台商城并访问大量有用的扩展和现代主题，这些扩展和现代主题可以无缝集成到您的商城中 - 无需任何编程技能。",
       "activate": "激活"
     },
-    "title": "商店",
+    "title": "商城",
     "descriptionTextModule": "管理您的扩展",
     "general": {
       "labelPrice": "免费 | {price}/月 | {price}",
@@ -197,7 +197,7 @@
           "labelButtonBack": "返回详情"
         },
         "alertCanNotBuy": {
-          "text": "您需要登录好客平台商店才能执行此操作"
+          "text": "您需要登录好客平台商城才能执行此操作"
         }
       },
       "sw-extension-adding-failed": {
@@ -321,7 +321,7 @@
           "titleEmptyState": "未安装主题",
           "textEmptyState": "您安装的所有的主题都会在这里列出。"
         },
-        "btnOpenStore": "打开商店",
+        "btnOpenStore": "打开商城",
         "alertExtensionManagement": {
           "title": "运行时扩展管理已禁用",
           "description": "在此安装中，运行时扩展管理已被禁用。您只能在管理界面中更改扩展的设置。"
@@ -457,7 +457,7 @@
       }
     },
     "media": {
-      "title": "媒体库",
+      "title": "媒体",
       "entities": {
         "media": "媒体",
         "media_translation": "媒体翻译",
@@ -646,7 +646,7 @@
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "extension_store": "官方扩展商店"
+        "extension_store": "官方扩展商城"
       }
     }
   }

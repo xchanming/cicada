@@ -3,14 +3,14 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>3D Files</title>
-        <title lang="zh-CN">3D Dateien</title>
+        <title lang="zh-CN">3D 文件</title>
 
         <input-field type="bool">
             <name>defaultEnableAugmentedReality</name>
             <label>Enable AR by default</label>
-            <label lang="zh-CN">AR standardmäßig aktivieren</label>
+            <label lang="zh-CN">是否默认启用AR</label>
             <helpText>3D files will automatically have AR enabled when presented in the storefront.</helpText>
-            <helpText lang="zh-CN">3D Dateien wird AR automatisch aktiviert, wenn sie in der Storefront angezeigt werden.</helpText>
+            <helpText lang="zh-CN">当3D文件展示在商城前端时，AR功能将自动启用。</helpText>
         </input-field>
     </card>
 </config>

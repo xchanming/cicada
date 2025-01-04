@@ -58,7 +58,7 @@
       },
       "layoutAssignment": {
         "headline": "管理此布局的可见性",
-        "infoText": "您可以在商店中的多个类别中使用布局。在这里，您可以查看哪些类别已经使用此布局或将其分配给其他类别。",
+        "infoText": "您可以在商城中的多个类别中使用布局。在这里，您可以查看哪些类别已经使用此布局或将其分配给其他类别。",
         "actionAssignLayout": "分配布局"
       },
       "layoutSetAsDefault": {
@@ -728,7 +728,7 @@
           "label": "HTML"
         }
       },
-      "blockDisableState": "此块在任何设备上都不可见。您可以编辑该块，但更改不会在您的商店中显示。请在购物体验模块中编辑此布局以更改块可见性。"
+      "blockDisableState": "此块在任何设备上都不可见。您可以编辑该块，但更改不会在您的商城中显示。请在购物体验模块中编辑此布局以更改块可见性。"
     },
     "components": {
       "setDefaultLayoutModal": {
@@ -741,9 +741,9 @@
         "headline": "落地页 / 产品列表"
       },
       "cmsLayoutAssignmentModal": {
-        "infoText": "一旦将布局分配给活动类别，它将在您的商店中显示。",
-        "infoTextShopPages": "您可以将此布局用于类别和商店页面，例如TOS、印记、错误页面等。",
-        "infoTextProductDetailPages": "将布局分配给活动产品后，该布局才能在您的商店中看到。",
+        "infoText": "一旦将布局分配给活动类别，它将在您的商城中显示。",
+        "infoTextShopPages": "您可以将此布局用于类别和商城页面，例如TOS、印记、错误页面等。",
+        "infoTextProductDetailPages": "将布局分配给活动产品后，该布局才能在您的商城中看到。",
         "labelCategories": "类别",
         "placeholderCategories": "选择类别...",
         "placeholderLandingPages": "选择落地页...",
@@ -751,26 +751,25 @@
         "placeholderSalesChannel": "选择销售渠道...",
         "resetOptionSalesChannel": "所有销售渠道",
         "helpTextSalesChannel": "分配给特定销售渠道的布局将覆盖“所有销售渠道”中的布局分配。",
-        "labelShopPages": "商店页面",
+        "labelShopPages": "商城页面",
         "confirmChangesTextCategories": "您已从类别中删除了布局分配。如果确认这些更改，这些类别将不再分配布局。",
         "confirmChangesTextCategoriesAssignedLayouts": "一些选定的类别已经分配了布局。如果继续，这些先前的分配将被当前布局替换。",
         "confirmChangesTextLandingPages": "您已从落地页中删除了布局分配。如果确认这些更改，这些落地页将不再分配布局。",
         "confirmChangesTextLandingPagesAssignedLayouts": "一些选定的落地页已经分配了布局。如果继续，这些先前的分配将被当前布局替换。",
         "confirmChangesTextProducts": "您已从产品中删除了布局分配。如果确认这些更改，这些产品将不再分配布局。",
         "confirmChangesTextProductsAssignedLayouts": "一些选定的产品已经分配了布局。如果继续，先前的分配将被当前布局替换。",
-        "confirmChangesTextShopPages": "您已从商店页面中删除了布局分配。如果确认这些更改，这些商店页面将不再分配布局。",
+        "confirmChangesTextShopPages": "您已从商城页面中删除了布局分配。如果确认这些更改，这些商城页面将不再分配布局。",
         "confirmChangesText": "要应用您的更改吗？",
         "confirmChangesTitle": "确认分配",
-        "shopPagesLoadError": "无法加载商店页面",
-        "shopPagesSaveError": "无法保存商店页面",
+        "shopPagesLoadError": "无法加载商城页面",
+        "shopPagesSaveError": "无法保存商城页面",
         "tabCategories": "类别",
-        "tabShopPages": "商店页面",
+        "tabShopPages": "商城页面",
         "tabLandingPages": "落地页",
         "shopPages": {
           "tosPage": "服务条款页面",
-          "revocationPage": "撤销通知",
           "shippingPaymentInfoPage": "付款和运输信息",
-          "privacyPage": "隐私页面",
+          "privacyPage": "隐私协议页面",
           "imprintPage": "印记页面",
           "404Page": "404页面",
           "maintenancePage": "维护页面",

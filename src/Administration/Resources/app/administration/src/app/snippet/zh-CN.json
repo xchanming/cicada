@@ -59,7 +59,7 @@
       "notificationLoadingDataErrorMessage": "加载数据错误"
     },
     "sw-desktop": {
-      "stagingBarText": "商店处于暂存模式。"
+      "stagingBarText": "商城处于暂存模式。"
     },
     "sw-skip-link": {
       "label": "跳转到内容"
@@ -149,9 +149,9 @@
     "sw-admin-menu": {
       "linkLogout": "注销",
       "linkMinimizeMenu": "折叠菜单",
-      "textCicadaAdmin": "Cicada管理",
-      "textProjectName": "好客数字化营销管理平台",
-      "administrator": "管理员",
+      "textCicadaAdmin": "系统管理",
+      "textProjectName": "蝉鸣系统后台管理",
+      "administrator": "超级管理员",
       "navigation": {
         "label": "主导航",
         "mainMenuItemCatalogue": "产品",
@@ -216,7 +216,7 @@
       "helpTextListPriceGross": "挂牌价格表示折扣产品。挂牌价格表示为“原始”价格，用红色划线表示。实际和折扣价格将以默认文本颜色显示。",
       "labelListPriceNet": "挂牌价格（净）",
       "labelRegulationPriceGross": "最低价格（过去30天，毛）",
-      "helpTextRegulationPriceGross": "如果你想在欧盟的商店中宣传价格下降，必须填写此字段。此类信息应由客户验证。因此，除了当前价格的价格下降外，还必须指明价格下降前30天内商品的最低价格。这是《指令98/6/EC》第6条规定的。",
+      "helpTextRegulationPriceGross": "如果你想在欧盟的商城中宣传价格下降，必须填写此字段。此类信息应由客户验证。因此，除了当前价格的价格下降外，还必须指明价格下降前30天内商品的最低价格。这是《指令98/6/EC》第6条规定的。",
       "labelRegulationPriceNet": "最低价格（过去30天，净）"
     },
     "sw-text-editor": {
@@ -1513,7 +1513,7 @@
         "title": "检测到域名更改",
         "oldLabel": "旧域名：",
         "newLabel": "新域名：",
-        "explanationHeader": "我们注意到你的商店域名发生了变化。",
+        "explanationHeader": "我们注意到你的商城域名发生了变化。",
         "explanation": "已安装的应用仍然连接到旧域名，无法在新域名上工作。从这里开始有三个选项可以继续。",
         "confirmation": "确认",
         "success": "域名已更改。",
@@ -1522,7 +1522,7 @@
       "sw-app-wrong-app-url-modal": {
         "title": "配置错误的 APP_URL",
         "explanationHeader": "与扩展的连接错误。",
-        "explanation": "由于系统中的错误配置，扩展无法与商店建立连接。",
+        "explanation": "由于系统中的错误配置，扩展无法与商城建立连接。",
         "textGetSupport": "尝试联系你的主机提供商以获得支持。",
         "textDetails": "技术细节：APP_URL 配置错误。",
         "labelLearnMoreButton": "了解更多",

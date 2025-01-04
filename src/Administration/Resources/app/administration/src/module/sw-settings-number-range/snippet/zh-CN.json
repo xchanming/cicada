@@ -1,7 +1,7 @@
 {
   "sw-settings-number-range": {
     "general": {
-      "mainMenuItemGeneral": "编号范围",
+      "mainMenuItemGeneral": "编号",
       "placeholderSearchBar": "搜索编号范围...",
       "infoGlobalType": "每种类型的编号范围只能有一个。更改类型为“{typeName}”的编号范围必须在此进行，并会全局影响所有销售渠道。",
       "infoGlobalTypeTitle": "全局编号范围类型“{typeName}”",

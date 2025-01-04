@@ -4,7 +4,7 @@
       "INVALID_DATE_RANGE": "日期范围无效：开始日期必须早于结束日期。"
     },
     "general": {
-      "mainMenuItemGeneral": "规则构建器",
+      "mainMenuItemGeneral": "规则",
       "placeholderSearchBar": "搜索所有规则...",
       "descriptionTextModule": "在此管理规则。"
     },

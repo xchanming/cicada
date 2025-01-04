@@ -71,8 +71,8 @@
         "helpTextEntitySelect": "创建自定义字段后，实体类型不能更改。",
         "tooltipCustomFieldPosition": "控制此自定义字段在详情页上的位置。",
         "infoText": "创建自定义字段时，所有片段集的相应片段也将被创建。片段将被命名为 \"customFields.{name}\"。",
-        "labelAllowCustomerWrite": "可通过商店 API 修改",
-        "tooltipAllowCustomerWrite": "启用后，商店 API 可修改此字段。这可以用于在前端存储自定义数据。例如在注册表单中添加新字段。",
+        "labelAllowCustomerWrite": "可通过商城 API 修改",
+        "tooltipAllowCustomerWrite": "启用后，商城 API 可修改此字段。这可以用于在前端存储自定义数据。例如在注册表单中添加新字段。",
         "labelAllowCartExpose": "在购物车中可用",
         "tooltipAllowCartExpose": "启用此选项，可使自定义字段在购物车条目的有效载荷中可用。这对于在规则构建器或自定义模板中初次使用此自定义字段是必需的。",
         "tooltipCartExposeDisabled": "目前无法更改此设置，因为此自定义字段正在被一个或多个条件在规则构建器中使用。"

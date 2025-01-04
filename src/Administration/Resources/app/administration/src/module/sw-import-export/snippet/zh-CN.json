@@ -209,7 +209,7 @@
       "startImportLabel": "开始导入",
       "selectProfileLabel": "选择配置",
       "profileLabel": "配置",
-      "warningBlock": "<strong>警告：</strong>确保上传的 CSV 文件中链接到产品的属性和变体在您的商店中可用。如果不是这种情况，您可以将属性和变体作为单独的 CSV 文件导入并对应配置。如果两者都不适用，则必须在导入后手动在产品模块中维护产品变体。",
+      "warningBlock": "<strong>警告：</strong>确保上传的 CSV 文件中链接到产品的属性和变体在您的商城中可用。如果不是这种情况，您可以将属性和变体作为单独的 CSV 文件导入并对应配置。如果两者都不适用，则必须在导入后手动在产品模块中维护产品变体。",
       "importActivityLabel": "导入活动",
       "importLabel": "导入",
       "directImportVariantsLabel": "导入变体设置",

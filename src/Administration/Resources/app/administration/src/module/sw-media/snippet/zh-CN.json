@@ -1,7 +1,7 @@
 {
   "sw-media": {
     "general": {
-      "mainMenuItemGeneral": "媒体库",
+      "mainMenuItemGeneral": "媒体",
       "descriptionTextModule": "在这里管理系统所有媒体(图片、文件、视频等).",
       "placeholderSearchBar": "搜索当前文件夹...",
       "notification": {
@@ -64,7 +64,7 @@
     },
     "index": {
       "buttonCreateFolder": "新建文件夹",
-      "rootFolderName": "媒体库"
+      "rootFolderName": "媒体"
     },
     "mediaLibrary": {
       "labelButtonLoadMore": "加载更多",
@@ -88,14 +88,14 @@
       "labelPresentationList": "列表"
     },
     "sw-media-modal": {
-      "titleModal": "选择媒体库",
-      "labelTabItemLibrary": "媒体库",
+      "titleModal": "选择媒体",
+      "labelTabItemLibrary": "媒体",
       "labelTabItemUpload": "上传文件",
       "labelButtonSaveSelection": "添加"
     },
     "sw-media-modal-v2": {
-      "titleModal": "选择媒体库",
-      "labelTabItemLibrary": "媒体库",
+      "titleModal": "选择媒体",
+      "labelTabItemLibrary": "媒体",
       "labelTabItemUpload": "上传文件",
       "labelButtonSaveSelection": "添加"
     }
@@ -103,7 +103,7 @@
   "sw-privileges": {
     "permissions": {
       "media": {
-        "label": "媒体库"
+        "label": "媒体"
       }
     }
   }

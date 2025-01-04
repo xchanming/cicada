@@ -3,66 +3,66 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Cart</title>
-        <title lang="zh-CN">Warenkorb</title>
+        <title lang="zh-CN">购物车</title>
 
         <input-field type="int">
             <name>maxQuantity</name>
             <label>Maximum quantity</label>
-            <label lang="zh-CN">Maximale Auswahlmenge</label>
+            <label lang="zh-CN">最大数量</label>
         </input-field>
 
         <input-field type="bool">
             <name>showDeliveryTime</name>
             <label>Show delivery time in cart</label>
-            <label lang="zh-CN">Lieferzeit im Warenkorb anzeigen</label>
+            <label lang="zh-CN">在购物车中显示交货时间</label>
         </input-field>
 
         <input-field type="bool">
             <name>enableOrderRefunds</name>
             <label>Enable refunds</label>
-            <label lang="zh-CN">Stornierungen erlauben</label>
+            <label lang="zh-CN">允许退款</label>
         </input-field>
 
         <input-field type="int">
             <name>paymentFinalizeTransactionTime</name>
             <defaultValue>30</defaultValue>
             <label>Time in minutes for a customer to finalize a transaction</label>
-            <label lang="zh-CN">Zeit in Minuten, die ein Kunde Zeit hat eine Transaktion abzuschließen</label>
+            <label lang="zh-CN">客户完成交易的时间（分钟）</label>
         </input-field>
 
         <input-field type="int">
             <name>lineItemAddLimit</name>
             <defaultValue>0</defaultValue>
             <label>Maximum addable products to cart per minute through API</label>
-            <label lang="zh-CN">Maximal hinzufügbare Produkte pro Minute in den Warenkorb durch die API</label>
+            <label lang="zh-CN">通过 API 每分钟可添加到购物车的最大商品数量</label>
         </input-field>
     </card>
 
     <card>
         <title>Checkout</title>
-        <title lang="zh-CN">Bestellabschluss</title>
+        <title lang="zh-CN">结账</title>
 
         <input-field type="bool">
             <name>showCustomerComment</name>
             <label>Show comment field on checkout confirm page</label>
-            <label lang="zh-CN">Kommentarfeld auf der Bestellabschlussseite anzeigen</label>
+            <label lang="zh-CN">在结账确认页面显示附加信息字段</label>
         </input-field>
 
         <input-field type="bool">
             <name>logoutGuestAfterCheckout</name>
             <label>Automatically log out guest customers after order completion</label>
-            <label lang="zh-CN">Gastkunden nach dem Bestellabschluss automatisch ausloggen</label>
+            <label lang="zh-CN">订单完成后自动注销游客客户</label>
         </input-field>
     </card>
 
     <card>
         <title>Wishlist</title>
-        <title lang="zh-CN">Merkzettel</title>
+        <title lang="zh-CN">心愿单</title>
 
         <input-field type="bool">
             <name>wishlistEnabled</name>
             <label>Activate wishlist</label>
-            <label lang="zh-CN">Merkzettel aktivieren</label>
+            <label lang="zh-CN">激活</label>
         </input-field>
 
     </card>

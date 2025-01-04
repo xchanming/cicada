@@ -36,7 +36,7 @@
       "technicalUrl": "技术 URL",
       "technicalUrlHelpText": "技术 URL 可以用作类目模块中的“可定制链接”，并将提供自动语言映射。",
       "availabilitySalesChannel": "可用的销售渠道",
-      "infoText": "商店用户可以通过此自定义表单注册，但只有在您在客户模块中接受请求后，他们才会被分配到客户组。您可以使用下面的字段自定义此表单。",
+      "infoText": "商城用户可以通过此自定义表单注册，但只有在您在客户模块中接受请求后，他们才会被分配到客户组。您可以使用下面的字段自定义此表单。",
       "seoUrlLabel": "{salesChannelName} URL"
     },
     "modal": {

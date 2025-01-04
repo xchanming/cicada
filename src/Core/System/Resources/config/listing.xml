@@ -3,73 +3,73 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Product</title>
-        <title lang="zh-CN">Produkt</title>
+        <title lang="zh-CN">产品</title>
 
         <input-field type="bool">
             <name>allowBuyInListing</name>
             <label>Display buy buttons in listings</label>
-            <label lang="zh-CN">Kaufen-Buttons in Produktlistings anzeigen</label>
+            <label lang="zh-CN">在列表中显示购买按钮</label>
             <helpText>In product listings, buy buttons are displayed beneath every product. Deactivate to display detail buttons only.</helpText>
-            <helpText lang="zh-CN">In Produktlisten wird der Kaufen-Button unter jedem Produkt angezeigt. Deaktivieren, um nur den Detail-Button anzuzeigen.</helpText>
+            <helpText lang="zh-CN">在产品列表中，购买按钮显示在每个产品下方。禁用此选项将仅显示详情按钮。</helpText>
         </input-field>
 
         <input-field type="bool">
             <name>autoplayVideoInListing</name>
             <label>Autoplay videos in product listings</label>
-            <label lang="zh-CN">Videos in Produkt-Listings</label>
+            <label lang="zh-CN">在产品列表中自动播放视频</label>
             <helpText>Videos in product listings that are configured as product media covers are played automatically. Deactivate to display the first frame of video only.</helpText>
-            <helpText lang="zh-CN">Videos in Produkt-Listings, die als Cover von Produktmedien konfiguriert sind, werden automatisch abgespielt. Wenn deaktiviert, wird nur der erste Frame des Videos angezeigt.</helpText>
+            <helpText lang="zh-CN">在产品列表中，设置为产品媒体封面的 视频会自动播放。禁用此选项将只显示视频的第一帧。</helpText>
             <defaultValue>false</defaultValue>
         </input-field>
 
         <input-field type="bool">
             <name>hideCloseoutProductsWhenOutOfStock</name>
             <label>Hide products after clearance</label>
-            <label lang="zh-CN">Produkte nach Abverkaufende ausblenden</label>
+            <label lang="zh-CN">清仓后隐藏产品</label>
             <helpText>Products marked as on "clearance sale" are hidden, as soon as their stock depletes back to 0.</helpText>
-            <helpText lang="zh-CN">Produkte die mit "Abverkauf" markiert sind, werden nicht mehr angezeigt, sobald ihr Lagerbestand 0 erreicht.</helpText>
+            <helpText lang="zh-CN">标记为“清仓销售”的产品将在库存减少至 0 后被隐藏。</helpText>
         </input-field>
 
         <input-field type="bool">
             <name>showReview</name>
             <label>Show reviews</label>
-            <label lang="zh-CN">Bewertungen anzeigen</label>
+            <label lang="zh-CN">是否显示评价</label>
             <helpText>Activate to show reviews</helpText>
-            <helpText lang="zh-CN">Aktivieren um Bewertungen anzuzeigen</helpText>
+            <helpText lang="zh-CN">启用将在产品详情显示评价</helpText>
         </input-field>
 
         <input-field type="int">
             <name>reviewsPerPage</name>
             <defaultValue>10</defaultValue>
             <label>Number of reviews per page</label>
-            <label lang="zh-CN">Anzahl der Bewertungen pro Seite</label>
+            <label lang="zh-CN">每页显示的评论数量</label>
             <helpText>The number of reviews displayed on a product page in the storefront.</helpText>
-            <helpText lang="zh-CN">Die Anzahl der Bewertungen die auf einer Produktseite in der Storefront angezeigt werden.</helpText>
+            <helpText lang="zh-CN">在前端商品页面上显示的评论数量。</helpText>
             <min>1</min>
         </input-field>
 
         <input-field type="bool">
             <name>disableEmptyFilterOptions</name>
             <label>Disable filter options without results</label>
-            <label lang="zh-CN">Filteroptionen ohne Ergebnisse deaktivieren</label>
+            <label lang="zh-CN">禁用没有结果的筛选选项</label>
             <helpText>Filter options are deactivated and cannot be clicked if they provide no results</helpText>
-            <helpText lang="zh-CN">Filteroptionen sind deaktiviert und können nicht angeklickt werden, wenn sie keine Ergebnisse liefern</helpText>
+            <helpText lang="zh-CN">如果筛选选项没有结果，则该选项被禁用，无法点击</helpText>
         </input-field>
 
         <input-field type="int">
             <name>markAsNew</name>
             <label>Mark products as 'new', for ? days</label>
-            <label lang="zh-CN">Markiert Produkte als 'neu' markieren, für ? Tage</label>
+            <label lang="zh-CN">将产品标记为“新品”，持续 ? 天</label>
             <helpText>Products are marked as new, if their release date does not date back past the set number of days.</helpText>
-            <helpText lang="zh-CN">Produkte werden als neu markiert, wenn ihr Erscheinungsdatum nicht länger als die angegebene Anzahl an Tagen zurückliegt.</helpText>
+            <helpText lang="zh-CN">如果产品的发布日期距今未超过设定的天数，则该产品会被标记为“新品”。</helpText>
         </input-field>
 
         <input-field type="int">
             <name>productsPerPage</name>
             <label>Number of products per page</label>
-            <label lang="zh-CN">Anzahl der Produkte pro Seite</label>
+            <label lang="zh-CN">每页显示的产品数量</label>
             <helpText>The number of products displayed on a search page or in a product list per page in the storefront.</helpText>
-            <helpText lang="zh-CN">Die Anzahl der Produkte die auf einer Suchseite oder in einer Produktliste je Seite in der Storefront angezeigt werden.</helpText>
+            <helpText lang="zh-CN">在商城前端的搜索页面或产品列表中，每页显示的产品数量。</helpText>
             <min>1</min>
         </input-field>
     </card>

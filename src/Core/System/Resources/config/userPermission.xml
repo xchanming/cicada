@@ -3,12 +3,12 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Configuration</title>
-        <title lang="zh-CN">Konfiguration</title>
+        <title lang="zh-CN">配置</title>
 
         <input-field type="int">
             <name>passwordMinLength</name>
             <label>Minimum password length (log-in)</label>
-            <label lang="zh-CN">Passwort-Mindestlänge (Registrierung)</label>
+            <label lang="zh-CN">最小密码长度（登录）</label>
         </input-field>
     </card>
 

@@ -22,8 +22,8 @@ class Migration1711461580SetSystemDefaultForDefaultMailFooter extends MigrationS
 
     public function update(Connection $connection): void
     {
-        $germanHtml = file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/de-html.twig');
-        $germanPlain = file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/de-plain.twig');
+        $germanHtml = file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/zh-html.twig');
+        $germanPlain = file_get_contents(__DIR__ . '/../Fixtures/mails/defaultMailFooter/zh-plain.twig');
 
         // Check if a template contains the German default content.
         // The ID of the oldest one will be returned as this is the one, created during the installation.

@@ -71,14 +71,6 @@
                 <footer class="footer-main mt-5 w-75 mx-auto">
                     {% block error_maintenance_footer_content %}
                         <div class="container mt-3 text-center">
-                            {% if config('core.basicInformation.imprintPage') is not null %}
-                                <a href="{{ seoUrl('frontend.maintenance.singlepage', { id: config('core.basicInformation.imprintPage') }) }}"
-                                   title="{{ "general.imprintLink"|trans|sw_sanitize }}"
-                                   class="ps-2 pe-2">
-                                    {{ "general.imprintLink"|trans|sw_sanitize }}
-                                </a>
-                            {% endif %}
-
                             {% if config('core.basicInformation.privacyPage') is not null %}
                                 <a href="{{ seoUrl('frontend.maintenance.singlepage', { id: config('core.basicInformation.privacyPage') }) }}"
                                    title="{{ "general.privacyLink"|trans|sw_sanitize }}"

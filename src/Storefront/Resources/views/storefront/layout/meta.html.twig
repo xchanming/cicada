@@ -5,7 +5,6 @@
     {% set metaDescription = metaInformation.metaDescription|striptags|trim|u.truncate(maxLength ?? 255, '…') %}
     {% set metaTitle = metaInformation.metaTitle|striptags|trim %}
     {% set metaKeywords = metaInformation.metaKeywords|striptags|trim %}
-    {% set metaAuthor = (metaInformation.author != '') ? metaInformation.author : config('core.basicInformation.metaAuthor') %}
 
     <head>
         {% block layout_head_meta_tags %}
@@ -19,8 +18,6 @@
             {% endblock %}
 
             {% block layout_head_meta_tags_general %}
-                <meta name="author"
-                      content="{% block layout_head_meta_tags_general_author %}{{ metaAuthor|striptags }}{% endblock %}">
                 <meta name="robots"
                       content="{% block layout_head_meta_tags_robots %}{{ metaInformation.robots }}{% endblock %}">
                 <meta name="revisit-after"
@@ -64,8 +61,6 @@
                       content="{% block layout_head_meta_tags_copyright_holder %}{{ basicConfig.shopName }}{% endblock %}">
                 <meta itemprop="copyrightYear"
                       content="{% block layout_head_meta_tags_copyright_year %}{{ metaInformation.copyrightYear|striptags }}{% endblock %}">
-                <meta itemprop="isFamilyFriendly"
-                      content="{% block layout_head_meta_tags_family_friendly %}{% if basicConfig.familyFriendly %}true{% else %}false{% endif %}{% endblock %}">
                 <meta itemprop="image"
                       content="{% block layout_head_meta_tags_image_meta %}{{ theme_config('sw-logo-desktop') }}{% endblock %}">
             {% endblock %}

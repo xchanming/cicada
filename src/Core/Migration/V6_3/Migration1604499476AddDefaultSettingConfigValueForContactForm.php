@@ -18,7 +18,6 @@ class Migration1604499476AddDefaultSettingConfigValueForContactForm extends Migr
 {
     private const CONFIG_KEYS = [
         'core.basicInformation.nameFieldRequired',
-        'core.basicInformation.lastNameFieldRequired',
         'core.basicInformation.phoneNumberFieldRequired',
     ];
 

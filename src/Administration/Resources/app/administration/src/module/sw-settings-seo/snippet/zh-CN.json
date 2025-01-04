@@ -1,9 +1,9 @@
 {
   "sw-settings-seo": {
     "general": {
-      "mainMenuItemGeneral": "SEO",
-      "descriptionTextModule": "管理SEO设置。",
-      "textHeadline": "SEO",
+      "mainMenuItemGeneral": "搜索引擎优化",
+      "descriptionTextModule": "管理搜索引擎优化设置。",
+      "textHeadline": "搜索引擎优化",
       "buttonSave": "保存"
     }
   },

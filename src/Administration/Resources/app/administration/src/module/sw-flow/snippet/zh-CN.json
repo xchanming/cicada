@@ -5,7 +5,7 @@
       "labelTag": "标签"
     },
     "general": {
-      "mainMenuItemGeneral": "流程构造器",
+      "mainMenuItemGeneral": "流程",
       "descriptionTextModule": "流程构造器",
       "placeholderSearchBar": "搜索流程...",
       "tabMyFlows": "我的流程",
@@ -249,7 +249,7 @@
         "useDifferentReplyToLabel": "使用不同的回复地址",
         "labelReplyTo": "回复地址",
         "placeholderReplyTo": "输入电子邮件地址...",
-        "tooltipDifferentReplyTo": "电子邮件从商店所有者的电子邮件地址发送。 您可以在 <a href=\"{settingsLink}\">设置</a> 中编辑商店所有者的电子邮件地址。",
+        "tooltipDifferentReplyTo": "电子邮件从商城所有者的电子邮件地址发送。 您可以在 <a href=\"{settingsLink}\">设置</a> 中编辑商城所有者的电子邮件地址。",
         "labelLatestDocuments": "附加文档",
         "placeholderLatestDocuments": "选择文档...",
         "documentDescription": "如果所选文档不存在，则不会发送。 您必须在触发此操作之前生成文档。"

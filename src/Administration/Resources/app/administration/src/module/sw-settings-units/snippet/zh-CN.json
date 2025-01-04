@@ -2,18 +2,18 @@
   "sw-settings-units": {
     "detail": {
       "fieldLabels": {
-        "name": "度量单位名称",
+        "name": "单位名称",
         "shortCode": "缩写"
       }
     },
     "general": {
-      "mainMenuItemGeneral": "度量单位",
+      "mainMenuItemGeneral": "单位",
       "placeholderSearchBar": "搜索度量单位...",
       "createNewUnit": "添加度量单位",
       "disableAddNewUnitMessage": "只能在系统默认语言中添加新的度量单位。"
     },
     "grid": {
-      "columnName": "度量单位",
+      "columnName": "单位",
       "columnShortCode": "缩写",
       "contextMenuDelete": "删除"
     },
@@ -29,7 +29,7 @@
   "sw-privileges": {
     "permissions": {
       "scale_unit": {
-        "label": "度量单位"
+        "label": "单位"
       }
     }
   }

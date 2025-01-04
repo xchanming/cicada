@@ -3,8 +3,7 @@
     "general": {
       "mainMenuItemGeneral": "邮件设置",
       "textHeadline": "邮件设置",
-      "buttonSave": "保存",
-      "helpText": "更多信息请查看 <a href='https://docs.haokeyingxiao.com/en/shopware-6-en'>文档</a>"
+      "buttonSave": "保存"
     },
     "mailer-configuration": {
       "card-title": "邮件配置",

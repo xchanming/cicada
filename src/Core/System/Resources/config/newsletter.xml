@@ -3,39 +3,40 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Newsletter configuration</title>
-        <title lang="zh-CN">Newsletter-Konfiguration</title>
+        <title lang="zh-CN">邮件订阅</title>
 
         <input-field type="text">
             <name>subscribeUrl</name>
             <label>Subscription url</label>
-            <label lang="zh-CN">Anmelde-Url</label>
+            <label lang="zh-CN">订阅路径</label>
             <placeholder><![CDATA[/newsletter-subscribe?em=%%HASHEDEMAIL%%&hash=%%SUBSCRIBEHASH%%]]></placeholder>
             <helpText><![CDATA[Url to confirm the subscription to the newsletter.<br/>Available placeholders: <br/>%%HASHEDEMAIL%%<br/>%%SUBSCRIBEHASH%%]]></helpText>
-            <helpText lang="zh-CN"><![CDATA[Url um die Newsletteranmeldung zu bestätigen.<br/>Verfügbare Platzhalter: <br/>%%HASHEDEMAIL%%<br/>%%SUBSCRIBEHASH%%]]></helpText>
+            <helpText lang="zh-CN"><![CDATA[确认邮件订阅的URL.<br/>可用占位符: <br/>%%HASHEDEMAIL%%<br/>%%SUBSCRIBEHASH%%]]></helpText>
         </input-field>
 
         <input-field type="bool">
             <name>doubleOptIn</name>
             <label>Double Opt-in</label>
+            <label lang="zh-CN">是否启用双重确认</label>
             <helpText>Use Double Opt-in for newsletter subscriptions.</helpText>
-            <helpText lang="zh-CN">Nutze das Double Opt-In Verfahren für Newsletter Anmeldungen.</helpText>
+            <helpText lang="zh-CN">使用双重确认邮件订阅。</helpText>
         </input-field>
 
         <input-field type="bool">
             <name>doubleOptInRegistered</name>
             <label>Double opt-in for registered customers</label>
-            <label lang="zh-CN">Double Opt-in für registrierte Kunden</label>
+            <label lang="zh-CN">是否启用双重确认 (已注册客户)</label>
             <helpText>Use Double Opt-in for newsletter subscriptions for registered Customers.</helpText>
-            <helpText lang="zh-CN">Nutze das Double Opt-In Verfahren für Newsletter Anmeldungen für registrierte Kunden.</helpText>
+            <helpText lang="zh-CN">为已注册客户启用邮件订阅的双重确认</helpText>
         </input-field>
 
         <input-field type="text">
             <name>doubleOptInDomain</name>
             <label>Double opt-in Domain</label>
-            <label lang="zh-CN">Double Opt-In Domain</label>
+            <label lang="zh-CN">双重确认域名</label>
             <placeholder><![CDATA[https://localhost]]></placeholder>
             <helpText>Leave empty to use saleschannel domain.</helpText>
-            <helpText lang="zh-CN">Leer lassen um die Domain des Saleschannels zu nutzen.</helpText>
+            <helpText lang="zh-CN">为空使用销售渠道的域名</helpText>
         </input-field>
 
     </card>

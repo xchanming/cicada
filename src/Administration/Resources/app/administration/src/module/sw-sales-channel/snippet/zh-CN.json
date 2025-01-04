@@ -141,7 +141,7 @@
       "maintenanceModeDescription": "在维护模式下，销售渠道对访问者不可见。但是，您可以使用白名单中的 IP 访问它。这样，您可以安全地处理销售渠道数据，同时在维护模式屏幕上阻止访问者。",
       "labelMaintenanceActive": "维护",
       "ipAddressAllowlist": "IP 地址白名单",
-      "ipAddressAllowlistHelpText": "将 IP 地址添加到白名单以允许选择性访问您的商店。您可以根据需要添加 IPv4 和 IPv6 地址。",
+      "ipAddressAllowlistHelpText": "将 IP 地址添加到白名单以允许选择性访问您的商城。您可以根据需要添加 IPv4 和 IPv6 地址。",
       "basicinformationLink": "在此处更改默认维护布局",
       "columnDomainCurrency": "货币",
       "products": {
@@ -248,7 +248,7 @@
       "analytics": {
         "cardTitle": "Google Analytics",
         "headline": "Google Analytics 集成",
-        "description": "借助 Google Analytics，您可以收集和分析您的商店数据。要使用此功能，需要一个 Google 帐户。如果您还没有 Google Analytics 帐户，可以在这里注册：<a href=\"https://analytics.google.com/\" target=\"_blank\">Google Analytics</a>。注册成功后，您将收到一个跟踪 ID，填写在下方以激活集成。",
+        "description": "借助 Google Analytics，您可以收集和分析您的商城数据。要使用此功能，需要一个 Google 帐户。如果您还没有 Google Analytics 帐户，可以在这里注册：<a href=\"https://analytics.google.com/\" target=\"_blank\">Google Analytics</a>。注册成功后，您将收到一个跟踪 ID，填写在下方以激活集成。",
         "fields": {
           "trackingId": {
             "label": "跟踪 ID",

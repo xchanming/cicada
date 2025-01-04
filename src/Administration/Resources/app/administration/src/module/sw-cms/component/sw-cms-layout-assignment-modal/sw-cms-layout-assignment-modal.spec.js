@@ -175,8 +175,6 @@ async function createWrapper(layoutType = 'product_list', systemConfigApiService
                             if (salesChannelId === null) {
                                 return Promise.resolve({
                                     'core.basicInformation.contactPage': 'uuid007',
-                                    'core.basicInformation.imprintPage': 'uuid2',
-                                    'core.basicInformation.revocationPage': 'uuid3',
                                     'core.basicInformation.newsletterPage': 'uuid007',
                                 });
                             }
@@ -185,15 +183,12 @@ async function createWrapper(layoutType = 'product_list', systemConfigApiService
                                 return Promise.resolve({
                                     'core.basicInformation.contactPage': 'uuid007',
                                     'core.basicInformation.imprintPage': 'uuid2',
-                                    'core.basicInformation.revocationPage': 'uuid3',
                                 });
                             }
 
                             if (salesChannelId === 'headless_id') {
                                 return Promise.resolve({
                                     'core.basicInformation.contactPage': 'uuid1',
-                                    'core.basicInformation.imprintPage': 'uuid2',
-                                    'core.basicInformation.revocationPage': 'uuid3',
                                 });
                             }
 
@@ -679,7 +674,7 @@ describe('module/sw-cms/component/sw-cms-layout-assignment-modal', () => {
     it('should contain all available shop pages', async () => {
         const wrapper = await createWrapper();
 
-        expect(wrapper.vm.shopPages).toHaveLength(9);
+        expect(wrapper.vm.shopPages).toHaveLength(6);
 
         expect(wrapper.vm.shopPages).toEqual(
             expect.arrayContaining([
@@ -692,14 +687,6 @@ describe('module/sw-cms/component/sw-cms-layout-assignment-modal', () => {
                     label: expect.any(String),
                 }),
                 expect.objectContaining({
-                    value: 'core.basicInformation.shippingPaymentInfoPage',
-                    label: expect.any(String),
-                }),
-                expect.objectContaining({
-                    value: 'core.basicInformation.imprintPage',
-                    label: expect.any(String),
-                }),
-                expect.objectContaining({
                     value: 'core.basicInformation.tosPage',
                     label: expect.any(String),
                 }),
@@ -709,10 +696,6 @@ describe('module/sw-cms/component/sw-cms-layout-assignment-modal', () => {
                 }),
                 expect.objectContaining({
                     value: 'core.basicInformation.newsletterPage',
-                    label: expect.any(String),
-                }),
-                expect.objectContaining({
-                    value: 'core.basicInformation.revocationPage',
                     label: expect.any(String),
                 }),
                 expect.objectContaining({

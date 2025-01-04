@@ -32,34 +32,19 @@ class Migration1578042218DefaultPages extends MigrationStep
 
         $pages = [
             [
-                'key' => 'core.basicInformation.shippingPaymentInfoPage',
-                'de' => 'Versand und Zahlung',
-                'en' => 'Payment / Shipping',
-            ],
-            [
                 'key' => 'core.basicInformation.tosPage',
-                'de' => 'AGB',
+                'zh' => '服务条款',
                 'en' => 'Terms of service',
             ],
             [
-                'key' => 'core.basicInformation.revocationPage',
-                'de' => 'Widerrufsbelehrungen',
-                'en' => 'Right of rescission',
-            ],
-            [
                 'key' => 'core.basicInformation.privacyPage',
-                'de' => 'Datenschutz',
+                'zh' => '隐私协议',
                 'en' => 'Privacy',
-            ],
-            [
-                'key' => 'core.basicInformation.imprintPage',
-                'de' => 'Impressum',
-                'en' => 'Imprint',
             ],
         ];
 
         foreach ($pages as $page) {
-            $id = $this->createEmptyPage($page['en'], $page['de'], $connection);
+            $id = $this->createEmptyPage($page['en'], $page['zh'], $connection);
 
             $connection->insert('system_config', [
                 'id' => Uuid::randomBytes(),

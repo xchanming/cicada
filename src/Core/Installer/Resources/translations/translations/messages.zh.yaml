@@ -17,7 +17,7 @@ cicada.installer:
     language-selection_welcome_title: '欢迎使用蝉鸣系统'
     language-selection_select_language: '选择安装向导语言'
     language-selection_header: '安装'
-    language-selection_info_message: '此处选择的语言仅适用于本安装向导。如果需要，您可以稍后为您的商店指定其他语言。'
+    language-selection_info_message: '此处选择的语言仅适用于本安装向导。如果需要，您可以稍后为您的商城指定其他语言。'
     language-selection_welcome_message: '欢迎来到蝉鸣系统安装程序！我们很高兴能一步步引导您完成安装过程。如果您在此过程中遇到任何问题，可以随时查看我们的文档或访问论坛寻求帮助。让我们开始吧！'
     requirements_header: '系统要求'
     requirements_header_files: '文件和目录'
@@ -92,7 +92,7 @@ cicada.installer:
     configuration_admin_phone: '电话:'
     configuration_defaults_warning: '请注意！您的默认系统语言和默认货币设置是永久性的，之后无法再更改。'
     configuration_admin_currency_headline: '可用货币'
-    configuration_admin_currency_text: '向您的商店添加更多货币。如果您以后想添加货币，可以随时在管理后台创建它们。'
-    configuration_email_help_text: '此电子邮件地址将用于商店的外发电子邮件。'
+    configuration_admin_currency_text: '向您的商城添加更多货币。如果您以后想添加货币，可以随时在管理后台创建它们。'
+    configuration_email_help_text: '此电子邮件地址将用于商城的外发电子邮件。'
     configuration_admin_password: '管理员密码:'
 

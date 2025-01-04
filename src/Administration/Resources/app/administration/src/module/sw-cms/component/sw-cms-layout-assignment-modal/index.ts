@@ -76,20 +76,8 @@ export default Cicada.Component.wrapComponentConfig({
                     value: 'core.basicInformation.tosPage',
                 },
                 {
-                    label: this.$tc('sw-cms.components.cmsLayoutAssignmentModal.shopPages.revocationPage'),
-                    value: 'core.basicInformation.revocationPage',
-                },
-                {
-                    label: this.$tc('sw-cms.components.cmsLayoutAssignmentModal.shopPages.shippingPaymentInfoPage'),
-                    value: 'core.basicInformation.shippingPaymentInfoPage',
-                },
-                {
                     label: this.$tc('sw-cms.components.cmsLayoutAssignmentModal.shopPages.privacyPage'),
                     value: 'core.basicInformation.privacyPage',
-                },
-                {
-                    label: this.$tc('sw-cms.components.cmsLayoutAssignmentModal.shopPages.imprintPage'),
-                    value: 'core.basicInformation.imprintPage',
                 },
                 {
                     label: this.$tc('sw-cms.components.cmsLayoutAssignmentModal.shopPages.404Page'),
@@ -187,7 +175,7 @@ export default Cicada.Component.wrapComponentConfig({
                     return;
                 }
 
-                this.selectedShopPages[salesChannelId].forEach((name) => {
+                this.selectedShopPages[salesChannelId]?.forEach((name) => {
                     shopPages[salesChannelId][name] = this.page.id;
                 });
             });
@@ -198,7 +186,7 @@ export default Cicada.Component.wrapComponentConfig({
                     return;
                 }
 
-                this.previousShopPages[salesChannelId].forEach((name) => {
+                this.previousShopPages[salesChannelId]?.forEach((name) => {
                     if (shopPages[salesChannelId][name] === undefined) {
                         shopPages[salesChannelId][name] = null;
                         deletions += 1;

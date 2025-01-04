@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Privacy</title>
-        <title lang="zh-CN">Datenschutz</title>
+        <title lang="zh-CN">隐私协议</title>
 
 
     </card>

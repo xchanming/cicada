@@ -60,7 +60,7 @@
         "deactivateNone": "我了解隐含的风险，仍然希望在不先停用不兼容扩展的情况下更新 Cicada。我意识到，Cicada 不能保证更新后的安装功能。",
         "recommended": "(推荐)"
       },
-      "pluginNotInStore": "该扩展在商店中不可用。请联系扩展的作者。",
+      "pluginNotInStore": "该扩展在商城中不可用。请联系扩展的作者。",
       "pluginWillBeDeactivatedHint": "(此扩展将在更新时停用)"
     },
     "updateModal": {

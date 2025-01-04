@@ -3,8 +3,7 @@
     "general": {
       "mainMenuItemGeneral": "Mailer",
       "textHeadline": "Mailer",
-      "buttonSave": "Save",
-      "helpText": "For more information look at <a href='https://docs.xchanming.com/en/cicada-6-en'>documentation</a>"
+      "buttonSave": "Save"
     },
     "mailer-configuration": {
       "card-title": "Mailer configuration",

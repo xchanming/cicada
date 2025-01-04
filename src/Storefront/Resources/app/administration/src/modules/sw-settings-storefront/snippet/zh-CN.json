@@ -1,20 +1,24 @@
 {
   "sw-settings-storefront": {
     "general": {
-      "mainMenuItemGeneral": "店铺",
-      "textHeadline": "店铺",
-      "description": "店铺设置",
-      "helpText": "更多信息请参阅 <a target=\"_blank\" href='https://haokeyingxiao.com'>文档</a>"
+      "mainMenuItemGeneral": "商城前端",
+      "textHeadline": "商城前端",
+      "description": "商城前端设置",
+      "helpText": "更多信息请查看 <a target=\"_blank\" href='https://docs.xchanming.com/en/cicada-6-de'>文档</a>"
     },
     "configuration": {
-      "cardTitle": "店铺配置",
-      "iconCache": "激活图标缓存",
-      "iconCacheToolTip": "控制图标是否只在每个店面页面交付一次，额外的使用将仅通过图标ID引用。",
+      "cardTitle": "商城前端配置",
+      "iconCache": "启用图标缓存",
+      "iconCacheToolTip": "控制是否只在每个商城前端页面上交付一次图标，后续的使用将仅通过图标ID进行引用。",
       "theme": {
         "async": "在后台编译主题",
-        "asyncTooltip": "控制主题编译是否通过消息队列而不是直接在更改时处理。"
+        "asyncTooltip": "控制主题编译是否通过消息队列处理，而不是在变更时直接处理。"
+      },
+      "speculationRules": {
+        "title": "预渲染规则API（实验性）",
+        "description": "启用“适度”模式的预渲染用于商城前端。这可能会影响您的分析数据。"
       }
     },
-    "helpText": "更多信息请参阅 <a target=\"_blank\" href=\"https://haokeyingxiao.com\">文档</a>。"
+    "helpText": "更多信息请查看 <a target=\"_blank\", href=\"https://docs.xchanming.com/en/cicada-6-en\">文档。</a>"
   }
 }

@@ -44,8 +44,8 @@ class Migration1638514913RemovedUnusedVarsInMailTemplates extends MigrationStep
             MailTemplateTypes::MAILTYPE_PASSWORD_CHANGE,
             (string) file_get_contents(__DIR__ . '/../Fixtures/mails/password_change/en-plain.html.twig'),
             (string) file_get_contents(__DIR__ . '/../Fixtures/mails/password_change/en-html.html.twig'),
-            (string) file_get_contents(__DIR__ . '/../Fixtures/mails/password_change/de-plain.html.twig'),
-            (string) file_get_contents(__DIR__ . '/../Fixtures/mails/password_change/de-html.html.twig'),
+            (string) file_get_contents(__DIR__ . '/../Fixtures/mails/password_change/zh-plain.html.twig'),
+            (string) file_get_contents(__DIR__ . '/../Fixtures/mails/password_change/zh-html.html.twig'),
         );
         $this->updateMail($update, $connection);
 
