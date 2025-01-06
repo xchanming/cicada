@@ -11,7 +11,7 @@ use Cicada\Core\Checkout\Cart\LineItem\LineItemCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionDeliveryProcessor implements CartProcessorInterface
 {
     final public const SKIP_DELIVERY_RECALCULATION = 'skipDeliveryRecalculation';

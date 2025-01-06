@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PermittedGlobalCodePromotions extends MultiFilter
 {
     /**

@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Salutation\Aggregate\SalutationTranslation\SalutationTranslationCollection;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class SalutationEntity extends Entity
 {
     use EntityCustomFieldsTrait;

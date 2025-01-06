@@ -12,7 +12,7 @@ use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\MaxUsage\MaxUsage;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class AdvancedPackageFilter extends PackageFilter
 {
     final public const APPLIER_ALL = 'ALL';

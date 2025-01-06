@@ -21,7 +21,7 @@ use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Rule\Container\OrRule;
 use Cicada\Core\Framework\Rule\Rule;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionEntity extends Entity
 {
     use EntityCustomFieldsTrait;

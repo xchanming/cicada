@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Salutation;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 abstract class AbstractSalutationsSorter
 {
     abstract public function getDecorated(): AbstractSalutationsSorter;

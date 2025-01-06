@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Exception\FilterPickerNo
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Exception\FilterSorterNotFoundException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class FilterServiceRegistry
 {
     /**

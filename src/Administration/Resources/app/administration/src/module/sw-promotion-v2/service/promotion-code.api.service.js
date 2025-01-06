@@ -2,7 +2,7 @@ const ApiService = Cicada.Classes.ApiService;
 
 /**
  * Gateway for the API endpoint "promotion codes"
- * @package buyers-experience
+ * @package checkout
  * @class
  * @extends ApiService
  */

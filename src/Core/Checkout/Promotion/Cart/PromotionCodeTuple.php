@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart;
 use Cicada\Core\Checkout\Promotion\PromotionEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionCodeTuple
 {
     public function __construct(

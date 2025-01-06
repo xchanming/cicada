@@ -14,7 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Currency\CurrencyDefinition;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionDiscountPriceDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'promotion_discount_prices';

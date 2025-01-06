@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('checkout')]
 #[CoversClass(DiscountAbsoluteCalculator::class)]
 class DiscountAbsoluteCalculatorTest extends TestCase
 {

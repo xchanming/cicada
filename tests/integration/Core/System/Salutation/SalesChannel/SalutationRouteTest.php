@@ -2,6 +2,7 @@
 
 namespace Cicada\Tests\Integration\Core\System\Salutation\SalesChannel;
 
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
@@ -13,6 +14,7 @@ use Symfony\Bundle\FrameworkBundle\KernelBrowser;
  * @internal
  */
 #[Group('store-api')]
+#[Package('checkout')]
 class SalutationRouteTest extends TestCase
 {
     use IntegrationTestBehaviour;

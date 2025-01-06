@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('checkout')]
 #[CoversClass(FilterSorterPriceAsc::class)]
 #[CoversClass(FilterSorterPriceDesc::class)]
 class FilterSorterPriceTest extends TestCase

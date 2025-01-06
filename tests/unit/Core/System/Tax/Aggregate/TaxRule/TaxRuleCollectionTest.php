@@ -2,6 +2,7 @@
 
 namespace Cicada\Tests\Unit\Core\System\Tax\Aggregate\TaxRule;
 
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleCollection;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleEntity;
 use Cicada\Core\System\Tax\Aggregate\TaxRuleType\TaxRuleTypeEntity;
@@ -12,6 +13,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(TaxRuleCollection::class)]
+#[Package('checkout')]
 class TaxRuleCollectionTest extends TestCase
 {
     public function testLatestActivationDate(): void

@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 abstract class DiscountPackager
 {
     /**

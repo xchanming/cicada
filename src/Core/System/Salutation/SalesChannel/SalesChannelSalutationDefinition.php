@@ -8,7 +8,7 @@ use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\Salutation\SalutationDefinition;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class SalesChannelSalutationDefinition extends SalutationDefinition implements SalesChannelDefinitionInterface
 {
     public function processCriteria(Criteria $criteria, SalesChannelContext $context): void

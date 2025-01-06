@@ -36,7 +36,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationFiel
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'promotion';

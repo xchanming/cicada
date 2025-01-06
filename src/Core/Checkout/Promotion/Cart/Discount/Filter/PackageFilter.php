@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Promotion\Cart\Discount\DiscountLineItem;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\DiscountPackageCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 abstract class PackageFilter
 {
     abstract public function getDecorated(): PackageFilter;

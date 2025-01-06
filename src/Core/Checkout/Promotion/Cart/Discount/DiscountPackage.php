@@ -10,7 +10,7 @@ use Cicada\Core\Checkout\Cart\Price\Struct\PriceCollection;
 use Cicada\Core\Checkout\Promotion\Exception\PriceNotFoundException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class DiscountPackage
 {
     private LineItemFlatCollection $cartItems;

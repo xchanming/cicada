@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Error;
 use Cicada\Core\Checkout\Cart\Error\Error;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionsOnCartPriceZeroError extends Error
 {
     private const KEY = 'promotions-on-cart-price-zero-error';

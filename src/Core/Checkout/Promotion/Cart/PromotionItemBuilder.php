@@ -19,7 +19,7 @@ use Cicada\Core\Framework\Rule\Container\OrRule;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Uuid\Uuid;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionItemBuilder
 {
     /**

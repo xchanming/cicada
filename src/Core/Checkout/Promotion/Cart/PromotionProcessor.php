@@ -17,7 +17,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionProcessor implements CartProcessorInterface
 {
     final public const DATA_KEY = 'promotions';

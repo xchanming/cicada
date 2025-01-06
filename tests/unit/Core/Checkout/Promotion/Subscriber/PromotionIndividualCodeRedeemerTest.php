@@ -25,7 +25,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('checkout')]
 #[CoversClass(PromotionIndividualCodeRedeemer::class)]
 class PromotionIndividualCodeRedeemerTest extends TestCase
 {

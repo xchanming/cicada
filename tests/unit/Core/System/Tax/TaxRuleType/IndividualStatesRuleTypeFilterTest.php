@@ -3,6 +3,7 @@
 namespace Cicada\Tests\Unit\Core\System\Tax\TaxRuleType;
 
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateEntity;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleEntity;
@@ -15,6 +16,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(IndividualStatesRuleTypeFilter::class)]
+#[Package('checkout')]
 class IndividualStatesRuleTypeFilterTest extends TestCase
 {
     public function testMatchesNotWithWrongType(): void

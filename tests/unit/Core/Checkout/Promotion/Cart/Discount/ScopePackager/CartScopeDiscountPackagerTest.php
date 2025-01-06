@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('checkout')]
 #[CoversClass(CartScopeDiscountPackager::class)]
 class CartScopeDiscountPackagerTest extends TestCase
 {

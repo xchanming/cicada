@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionSetGroupRuleDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'promotion_setgroup_rule';

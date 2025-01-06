@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Price\Struct\PriceDefinitionInterface;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class DiscountLineItem
 {
     /**

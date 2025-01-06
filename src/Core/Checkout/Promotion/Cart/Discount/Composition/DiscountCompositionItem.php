@@ -4,7 +4,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount\Composition;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class DiscountCompositionItem
 {
     public function __construct(

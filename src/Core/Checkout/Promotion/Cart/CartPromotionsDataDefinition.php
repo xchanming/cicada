@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class CartPromotionsDataDefinition extends Struct
 {
     /**

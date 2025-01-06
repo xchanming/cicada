@@ -28,7 +28,7 @@ use Cicada\Core\Profiling\Profiler;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Doctrine\DBAL\Connection;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionCollector implements CartDataCollectorInterface
 {
     use PromotionCartInformationTrait;

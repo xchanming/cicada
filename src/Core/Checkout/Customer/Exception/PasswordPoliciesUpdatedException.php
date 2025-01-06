@@ -7,7 +7,7 @@ use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('customer-order')]
+#[Package('checkout')]
 class PasswordPoliciesUpdatedException extends CustomerException
 {
     public function __construct()

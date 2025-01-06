@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Sorter;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class FilterSorterPriceDesc extends AbstractPriceSorter
 {
     public function getKey(): string

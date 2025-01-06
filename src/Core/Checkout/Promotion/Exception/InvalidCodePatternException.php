@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Exception;
 use Cicada\Core\Checkout\Promotion\PromotionException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class InvalidCodePatternException extends PromotionException
 {
 }

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PriceNotFoundException extends CicadaHttpException
 {
     public function __construct(LineItem $item)

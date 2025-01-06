@@ -4,7 +4,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\Applier;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class Applier
 {
     final public const APPLIER_ALL = 'ALL';

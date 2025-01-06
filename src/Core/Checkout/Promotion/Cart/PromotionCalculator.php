@@ -47,7 +47,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 /**
  * Cart Promotion Calculator
  */
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionCalculator
 {
     use PromotionCartInformationTrait;

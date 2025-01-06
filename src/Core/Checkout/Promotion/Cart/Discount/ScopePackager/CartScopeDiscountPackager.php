@@ -17,7 +17,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class CartScopeDiscountPackager extends DiscountPackager
 {
     public function getDecorated(): DiscountPackager

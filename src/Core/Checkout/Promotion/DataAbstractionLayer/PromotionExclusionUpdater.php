@@ -11,7 +11,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionExclusionUpdater
 {
     /**

@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount\Composition;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class DiscountCompositionBuilder
 {
     /**

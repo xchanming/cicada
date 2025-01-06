@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 interface DiscountCalculatorInterface
 {
     /**

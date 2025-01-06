@@ -9,7 +9,7 @@ use Cicada\Core\Checkout\Promotion\Cart\Discount\DiscountPackageCollection;
 use Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\FilterSorterInterface;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 abstract class AbstractPriceSorter implements FilterSorterInterface
 {
     public function sort(DiscountPackageCollection $packages): DiscountPackageCollection

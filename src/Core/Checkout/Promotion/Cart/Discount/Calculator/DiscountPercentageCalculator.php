@@ -14,7 +14,7 @@ use Cicada\Core\Checkout\Promotion\PromotionException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class DiscountPercentageCalculator
 {
     public function __construct(

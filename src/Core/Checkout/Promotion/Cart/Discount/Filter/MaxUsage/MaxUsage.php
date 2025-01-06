@@ -4,7 +4,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount\Filter\MaxUsage;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class MaxUsage
 {
     final public const APPLIER_ALL = 'ALL';

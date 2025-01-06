@@ -4,7 +4,7 @@ namespace Cicada\Core\Checkout\Promotion\Service;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 interface PromotionDateTimeServiceInterface
 {
     public function getNow(): string;

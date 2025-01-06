@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Extension;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class CartExtension extends Struct
 {
     /**

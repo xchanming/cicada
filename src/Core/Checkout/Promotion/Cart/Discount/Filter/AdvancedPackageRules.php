@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class AdvancedPackageRules extends SetGroupScopeFilter
 {
     public function getDecorated(): SetGroupScopeFilter

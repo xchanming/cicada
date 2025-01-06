@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\Promotion\Service;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class PromotionDateTimeService implements PromotionDateTimeServiceInterface
 {
     /**

@@ -22,7 +22,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Salutation\Aggregate\SalutationTranslation\SalutationTranslationDefinition;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class SalutationDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'salutation';

@@ -15,7 +15,7 @@ use Cicada\Core\Checkout\Promotion\PromotionException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class DiscountFixedPriceCalculator
 {
     public function __construct(private readonly AbsolutePriceCalculator $absolutePriceCalculator)

@@ -5,7 +5,7 @@ namespace Cicada\Core\System\Salutation;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 class SalutationSorter extends AbstractSalutationsSorter
 {
     public function getDecorated(): AbstractSalutationsSorter

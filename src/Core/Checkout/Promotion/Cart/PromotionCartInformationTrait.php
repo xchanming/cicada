@@ -8,7 +8,7 @@ use Cicada\Core\Checkout\Promotion\Cart\Error\PromotionNotEligibleError;
 use Cicada\Core\Checkout\Promotion\Cart\Error\PromotionNotFoundError;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('checkout')]
 trait PromotionCartInformationTrait
 {
     /**
