@@ -94,9 +94,6 @@ class Migration1727768690UpdateDefaultEnglishPlainMailFooterTest extends TestCas
 
         Address:
         {{ config(\'core.basicInformation.address\')|striptags(\'<br>\')|replace({"<br>":"\n"}) }}
-
-        Bank account:
-        {{ config(\'core.basicInformation.bankAccount\')|striptags(\'<br>\')|replace({"<br>":"\n"}) }}
 ';
     }
 
