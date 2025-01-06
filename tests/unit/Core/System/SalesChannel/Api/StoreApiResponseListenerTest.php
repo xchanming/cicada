@@ -2,13 +2,17 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel\Api;
 
+use Cicada\Core\Framework\Struct\ArrayStruct;
 use Cicada\Core\Framework\Struct\Struct;
+use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Cicada\Core\System\SalesChannel\Api\StoreApiResponseListener;
 use Cicada\Core\System\SalesChannel\Api\StructEncoder;
+use Cicada\Core\System\SalesChannel\GenericStoreApiResponse;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -28,7 +32,31 @@ class StoreApiResponseListenerTest extends TestCase
     protected function setUp(): void
     {
         $this->encoder = $this->createMock(StructEncoder::class);
-        $this->listener = new StoreApiResponseListener($this->encoder);
+        $this->listener = new StoreApiResponseListener($this->encoder, new EventDispatcher());
+    }
+
+    public function testEncodeEvent(): void
+    {
+        $request = new Request();
+        $request->attributes->set('_route', 'store-api.my-route');
+
+        $listener = $this->createMock(CallableClass::class);
+        $listener->expects(static::exactly(1))->method('__invoke');
+
+        $dispatcher = new EventDispatcher();
+        $dispatcher->addListener('store-api.my-route.encode', $listener);
+
+        $instance = new StoreApiResponseListener(
+            $this->createMock(StructEncoder::class),
+            $dispatcher
+        );
+
+        $instance->encodeResponse(new ResponseEvent(
+            $this->createMock(HttpKernelInterface::class),
+            $request,
+            HttpKernelInterface::MAIN_REQUEST,
+            new GenericStoreApiResponse(200, new ArrayStruct())
+        ));
     }
 
     public function testEncodeResponseWithIncludesSpecialCharacters(): void

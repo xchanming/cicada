@@ -162,6 +162,7 @@
         <service id="Cicada\Core\System\SalesChannel\Api\StoreApiResponseListener">
             <tag name="kernel.event_subscriber"/>
             <argument type="service" id="Cicada\Core\System\SalesChannel\Api\StructEncoder"/>
+            <argument type="service" id="event_dispatcher"/>
         </service>
 
         <service id="Cicada\Core\System\SalesChannel\Api\StructEncoder">
