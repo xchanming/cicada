@@ -16,6 +16,7 @@ abstract class MigrationStep
     use AddColumnTrait;
 
     final public const INSTALL_ENVIRONMENT_VARIABLE = 'CICADA_INSTALL';
+    private const MAX_INT_32_BIT = 2147483647;
 
     /**
      * get creation timestamp
@@ -32,6 +33,17 @@ abstract class MigrationStep
      */
     public function updateDestructive(Connection $connection): void
     {
+    }
+
+    public function getPlausibleCreationTimestamp(): int
+    {
+        $creationTime = $this->getCreationTimestamp();
+
+        if ($creationTime < 1 || $creationTime >= self::MAX_INT_32_BIT) {
+            throw MigrationException::implausibleCreationTimestamp($creationTime, $this);
+        }
+
+        return $creationTime;
     }
 
     public function removeTrigger(Connection $connection, string $name): void

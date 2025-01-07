@@ -204,8 +204,17 @@ class PluginLifecycleService
         if (!$cicadaContext->hasState(self::STATE_SKIP_ASSET_BUILDING)) {
             $this->assetInstaller->removeAssetsOfBundle($pluginBaseClassString);
         }
+        if (!$uninstallContext->keepUserData()) {
+            // plugin->uninstall() will remove the tables etc of the plugin,
+            // we drop the migrations before, so we can recover in case of errors by rerunning the migrations
+            $pluginBaseClass->removeMigrations();
+        }
 
         $pluginBaseClass->uninstall($uninstallContext);
+
+        if (!$uninstallContext->keepUserData()) {
+            $this->systemConfigService->deletePluginConfiguration($pluginBaseClass);
+        }
 
         if (!$uninstallContext->keepUserData()) {
             $pluginBaseClass->removeMigrations();
