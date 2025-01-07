@@ -7,25 +7,25 @@ on:
 
 jobs:
   phpunit:
-    name: "${{ matrix.tests.testsuite }}${{ matrix.tests.path }} ${{ matrix.db }}"
+    name: "${{ matrix.php}} ${{ matrix.tests.testsuite }}${{ matrix.tests.path }} ${{ matrix.db }}"
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
         tests:
-          - path: Administration
           - path: Core/Checkout
           - path: Core/Content
           - path: Core/Framework
-          - path: Core/Installer
-          - path: Core/Maintenance
-          - path: Core/System
-          - path: Elasticsearch
           - path: Storefront
+          - path: '{Administration,Elasticsearch}'
+          - path: '{Core/Installer,Core/Maintenance,Core/System}'
           - testsuite: devops,migration
         db:
           - mysql:8.0
           - mariadb:11
+        php:
+          - '8.2'
+          - '8.4'
     env:
       APP_ENV: test
       DATABASE_URL: mysql://root@127.0.0.1:3306/root
@@ -57,6 +57,7 @@ jobs:
       - name: Setup Cicada
         uses: xchanming/setup-cicada@main
         with:
+          php-version: ${{ matrix.php }}
           mysql-version: 'skip'
           cicada-version: ${{ github.ref }}
           cicada-repository: ${{ github.repository }}
