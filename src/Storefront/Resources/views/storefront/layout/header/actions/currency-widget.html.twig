@@ -1,9 +1,12 @@
+{% if not header is defined and page is defined %}
+    {% set header = page.header %}
+{% endif %}
 {% block layout_header_actions_currency_widget %}
     {% if position is empty %}
         {% set position = 'top-bar' %}
     {% endif %}
 
-    {% if page.header.currencies.count > 1 %}
+    {% if header.currencies.count > 1 %}
         <div class="top-bar-nav-item top-bar-currency">
             {% block layout_header_actions_currency_widget_form %}
                 <form method="post"
@@ -19,10 +22,10 @@
                                         data-bs-toggle="dropdown"
                                         aria-haspopup="true"
                                         aria-expanded="false"
-                                        aria-label="{{ 'header.currencyTrigger'|trans({ '%currency%': page.header.activeCurrency.translated.name })|striptags }}">
+                                        aria-label="{{ 'header.currencyTrigger'|trans({ '%currency%': context.currency.translated.name })|striptags }}">
                                     {% block layout_header_actions_currency_widget_dropdown_toggle_name %}
-                                        <span aria-hidden="true">{{ page.header.activeCurrency.symbol }}</span>
-                                        <span class="top-bar-nav-text d-none d-md-inline">{{ page.header.activeCurrency.translated.name }}</span>
+                                        <span aria-hidden="true">{{ context.currency.translated.symbol }}</span>
+                                        <span class="top-bar-nav-text d-none d-md-inline">{{ context.currency.translated.name }}</span>
                                     {% endblock %}
                                 </button>
                             {% endblock %}

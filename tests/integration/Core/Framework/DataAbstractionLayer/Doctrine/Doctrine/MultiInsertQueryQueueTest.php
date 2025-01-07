@@ -7,6 +7,7 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\TestCase;
 
@@ -96,5 +97,43 @@ class MultiInsertQueryQueueTest extends TestCase
 
         static::assertNotFalse($type);
         static::assertSame(CategoryDefinition::TYPE_FOLDER, $type);
+    }
+
+    public function testAddInserts(): void
+    {
+        $catA = Uuid::randomBytes();
+        $catB = Uuid::randomBytes();
+
+        $date = (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT);
+
+        $inserts = [
+            [
+                'id' => $catA,
+                'version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
+                'type' => CategoryDefinition::TYPE_LINK,
+                'created_at' => $date,
+                'updated_at' => null,
+            ],
+            [
+                'id' => $catB,
+                'version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
+                'type' => CategoryDefinition::TYPE_LINK,
+                'created_at' => $date,
+                'updated_at' => null,
+            ],
+        ];
+
+        $connection = static::getContainer()->get(Connection::class);
+        $query = new MultiInsertQueryQueue($connection);
+        $query->addInserts('category', $inserts);
+        $query->execute();
+
+        $rows = $connection->fetchFirstColumn(
+            'SELECT id FROM `category` WHERE id IN(:ids)',
+            ['ids' => [$catA, $catB]],
+            ['ids' => ArrayParameterType::BINARY]
+        );
+
+        static::assertSame([$catA, $catB], $rows);
     }
 }
