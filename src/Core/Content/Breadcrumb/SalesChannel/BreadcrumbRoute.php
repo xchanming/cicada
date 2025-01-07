@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\Breadcrumb\SalesChannel;
 
-use Cicada\Core\Content\Breadcrumb\Struct\Breadcrumb;
 use Cicada\Core\Content\Breadcrumb\Struct\BreadcrumbCollection;
 use Cicada\Core\Content\Category\Service\CategoryBreadcrumbBuilder;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
@@ -38,29 +37,24 @@ class BreadcrumbRoute extends AbstractBreadcrumbRoute
         $id = $request->get('id', '');
         $type = $request->get('type', 'product');
         if ($type === 'category') {
-            $categories = $this->getCategories($id, $salesChannelContext);
+            $breadcrumb = $this->getCategories($id, $salesChannelContext);
         } else {
-            $categories = $this->tryToGetCategoriesFromProductOrCategory(
+            $breadcrumb = $this->tryToGetCategoriesFromProductOrCategory(
                 $id,
                 $request->get('referrerCategoryId', ''),
                 $salesChannelContext
             );
         }
 
-        $breadcrumb = new BreadcrumbCollection($categories);
-
         return new BreadcrumbRouteResponse($breadcrumb);
     }
 
-    /**
-     * @return array<int, Breadcrumb>
-     */
-    private function getCategories(string $id, SalesChannelContext $salesChannelContext): array
+    private function getCategories(string $id, SalesChannelContext $salesChannelContext): BreadcrumbCollection
     {
         $category = $this->breadcrumbBuilder->loadCategory($id, $salesChannelContext->getContext());
 
         if ($category === null) {
-            return [];
+            return new BreadcrumbCollection();
         }
 
         return $this->breadcrumbBuilder->getCategoryBreadcrumbUrls(
@@ -72,10 +66,8 @@ class BreadcrumbRoute extends AbstractBreadcrumbRoute
 
     /**
      * Simple helper function to retry with category type if product is not found
-     *
-     * @return array<int, Breadcrumb>
      */
-    private function tryToGetCategoriesFromProductOrCategory(string $id, string $referrerCategoryId, SalesChannelContext $salesChannelContext): array
+    private function tryToGetCategoriesFromProductOrCategory(string $id, string $referrerCategoryId, SalesChannelContext $salesChannelContext): BreadcrumbCollection
     {
         try {
             $categories = $this->breadcrumbBuilder->getProductBreadcrumbUrls($id, $referrerCategoryId, $salesChannelContext);
