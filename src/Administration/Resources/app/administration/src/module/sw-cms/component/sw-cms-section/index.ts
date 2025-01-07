@@ -24,7 +24,7 @@ type SlotConfigErrorObject = {
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

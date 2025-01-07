@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Snippet\Files;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class GenericSnippetFile extends AbstractSnippetFile
 {
     public function __construct(

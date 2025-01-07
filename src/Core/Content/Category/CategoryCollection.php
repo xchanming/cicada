@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CategoryEntity>
  */
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryCollection extends EntityCollection
 {
     /**

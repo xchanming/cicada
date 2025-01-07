@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Cms\SalesChannel\Struct;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ManufacturerLogoStruct extends ImageStruct
 {
     /**

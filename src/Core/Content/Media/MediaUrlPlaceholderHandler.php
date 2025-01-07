@@ -12,7 +12,7 @@ use Cicada\Core\Profiling\Profiler;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaUrlPlaceholderHandler implements MediaUrlPlaceholderHandlerInterface
 {
     final public const DOMAIN_PLACEHOLDER = '124c71d524604ccbad6042edce3ac799';

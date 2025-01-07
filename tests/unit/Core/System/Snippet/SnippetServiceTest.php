@@ -24,7 +24,7 @@ use Symfony\Component\Translation\MessageCatalogue;
 /**
  * @internal
  */
-#[CoversClass(SnippetService::class)]
+#[Package('discovery')]
 class SnippetServiceTest extends TestCase
 {
     private SnippetFileCollection $snippetCollection;

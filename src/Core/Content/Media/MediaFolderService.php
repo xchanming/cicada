@@ -11,7 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaFolderService
 {
     /**

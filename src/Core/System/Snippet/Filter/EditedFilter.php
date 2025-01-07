@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Snippet\Filter;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class EditedFilter extends AbstractFilter implements SnippetFilterInterface
 {
     /**

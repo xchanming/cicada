@@ -1,5 +1,5 @@
 /**
- * @package buyers-experience
+ * @package discovery
  */
 
 describe('src/module/sw-cms/store/cms-page.store.ts', () => {

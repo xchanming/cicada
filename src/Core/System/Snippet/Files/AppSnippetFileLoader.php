@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class AppSnippetFileLoader
 {
     /**

@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 #[CoversClass(StoreApiInfoController::class)]
 #[Group('store-api')]
 class StoreApiInfoControllerTest extends TestCase

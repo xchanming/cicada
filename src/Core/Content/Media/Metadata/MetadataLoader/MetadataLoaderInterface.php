@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Media\Metadata\MetadataLoader;
 use Cicada\Core\Content\Media\MediaType\MediaType;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 interface MetadataLoaderInterface
 {
     /**

@@ -5,7 +5,7 @@ const { Context } = Cicada;
 const { Criteria, EntityCollection } = Cicada.Data;
 
 /**
- * @package inventory
+ * @package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

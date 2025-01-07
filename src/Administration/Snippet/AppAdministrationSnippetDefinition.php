@@ -16,7 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Locale\LocaleDefinition;
 
-#[Package('administration')]
+#[Package('discovery')]
 class AppAdministrationSnippetDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'app_administration_snippet';

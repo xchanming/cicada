@@ -15,7 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaThumbnailSizeDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'media_thumbnail_size';

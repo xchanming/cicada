@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
 use Cicada\Storefront\Pagelet\Pagelet;
 
-#[Package('storefront')]
+#[Package('discovery')]
 class CountryStateDataPagelet extends Pagelet
 {
     protected CountryStateCollection $states;

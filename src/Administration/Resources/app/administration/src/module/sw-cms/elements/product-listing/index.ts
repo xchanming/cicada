@@ -1,21 +1,21 @@
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-el-preview-product-listing', () => import('./preview'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-el-config-product-listing', () => import('./config'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-el-product-listing', () => import('./component'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register(
     'sw-cms-el-config-product-listing-config-sorting-grid',
@@ -24,7 +24,7 @@ Cicada.Component.register(
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'product-listing',

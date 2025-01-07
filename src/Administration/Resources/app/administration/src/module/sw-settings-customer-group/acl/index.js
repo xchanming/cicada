@@ -1,5 +1,5 @@
 /**
- * @package checkout
+ * @package discovery
  */
 
 Cicada.Service('privileges').addPrivilegeMappingEntry({

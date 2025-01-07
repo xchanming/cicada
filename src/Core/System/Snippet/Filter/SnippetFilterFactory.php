@@ -5,7 +5,7 @@ namespace Cicada\Core\System\Snippet\Filter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\SnippetException;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetFilterFactory
 {
     /**

@@ -11,7 +11,7 @@ use Cicada\Core\System\Salutation\SalesChannel\AbstractSalutationRoute;
 use Cicada\Core\System\Salutation\SalutationEntity;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class FormCmsElementResolver extends AbstractCmsElementResolver
 {
     /**

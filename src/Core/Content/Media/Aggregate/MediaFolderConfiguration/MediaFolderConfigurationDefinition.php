@@ -20,7 +20,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaFolderConfigurationDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'media_folder_configuration';

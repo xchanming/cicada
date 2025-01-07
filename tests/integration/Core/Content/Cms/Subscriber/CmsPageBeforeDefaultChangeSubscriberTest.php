@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 #[CoversClass(CmsPageDefaultChangeSubscriber::class)]
 class CmsPageBeforeDefaultChangeSubscriberTest extends TestCase
 {

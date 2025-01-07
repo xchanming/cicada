@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelCountryDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'sales_channel_country';

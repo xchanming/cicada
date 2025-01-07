@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class SalesChannelCategoryDefinition extends CategoryDefinition implements SalesChannelDefinitionInterface
 {
     public function processCriteria(Criteria $criteria, SalesChannelContext $context): void

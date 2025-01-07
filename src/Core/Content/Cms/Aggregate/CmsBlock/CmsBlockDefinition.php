@@ -25,7 +25,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\VersionField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsBlockDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'cms_block';

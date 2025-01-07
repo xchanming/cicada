@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class DefaultMediaResolver extends AbstractDefaultMediaResolver
 {
     /**

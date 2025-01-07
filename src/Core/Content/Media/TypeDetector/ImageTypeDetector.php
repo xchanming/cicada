@@ -8,7 +8,7 @@ use Cicada\Core\Content\Media\MediaType\ImageType;
 use Cicada\Core\Content\Media\MediaType\MediaType;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ImageTypeDetector implements TypeDetectorInterface
 {
     protected const SUPPORTED_FILE_EXTENSIONS = [

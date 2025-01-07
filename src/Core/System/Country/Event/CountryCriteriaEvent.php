@@ -10,7 +10,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryCriteriaEvent extends Event implements CicadaSalesChannelEvent
 {
     public function __construct(

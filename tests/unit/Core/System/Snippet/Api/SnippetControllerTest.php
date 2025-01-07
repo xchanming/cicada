@@ -4,6 +4,7 @@ namespace Cicada\Tests\Unit\Core\System\Snippet\Api;
 
 use Cicada\Core\Framework\Api\Context\SystemSource;
 use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Api\SnippetController;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollection;
 use Cicada\Core\System\Snippet\SnippetException;
@@ -16,6 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * @internal
  */
+#[Package('discovery')]
 #[CoversClass(SnippetController::class)]
 class SnippetControllerTest extends TestCase
 {

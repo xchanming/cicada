@@ -17,7 +17,7 @@ use Cicada\Core\System\Language\LanguageEntity;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryBreadcrumbUpdater
 {
     /**

@@ -6,7 +6,7 @@ use Cicada\Core\Content\Category\Tree\Tree;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('inventory')]
+#[Package('discovery')]
 interface NavigationLoaderInterface
 {
     /**

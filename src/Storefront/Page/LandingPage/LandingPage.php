@@ -7,7 +7,7 @@ use Cicada\Core\Content\LandingPage\LandingPageEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class LandingPage extends Page
 {
     protected ?LandingPageEntity $landingPage = null;

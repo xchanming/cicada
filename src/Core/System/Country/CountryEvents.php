@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Country;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryEvents
 {
     final public const COUNTRY_WRITTEN_EVENT = 'country.written';

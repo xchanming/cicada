@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<MediaThumbnailEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaThumbnailCollection extends EntityCollection
 {
     public function getApiAlias(): string

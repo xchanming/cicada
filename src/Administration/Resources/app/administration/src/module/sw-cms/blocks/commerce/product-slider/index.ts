@@ -1,17 +1,17 @@
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-preview-product-slider', () => import('./preview'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-block-product-slider', () => import('./component'));
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Service('cmsService').registerCmsBlock({
     name: 'product-slider',

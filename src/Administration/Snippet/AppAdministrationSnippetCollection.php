@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Log\Package;
  * @method AppAdministrationSnippetEntity|null first()
  * @method AppAdministrationSnippetEntity|null last()
  */
-#[Package('administration')]
+#[Package('discovery')]
 class AppAdministrationSnippetCollection extends EntityCollection
 {
     public function getApiAlias(): string

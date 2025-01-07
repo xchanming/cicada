@@ -11,7 +11,7 @@ use Doctrine\DBAL\Exception;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\KernelInterface;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetFileLoader implements SnippetFileLoaderInterface
 {
     /**

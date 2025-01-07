@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Page\Wishlist;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('discovery')]
 class GuestWishlistPage extends Page
 {
 }

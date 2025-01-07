@@ -7,7 +7,7 @@ use Cicada\Core\Content\Property\PropertyGroupCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class BuyBoxStruct extends Struct
 {
     /**

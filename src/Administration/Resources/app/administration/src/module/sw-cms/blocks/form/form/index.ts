@@ -1,17 +1,17 @@
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-preview-form', () => import('./preview'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-block-form', () => import('./component'));
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Service('cmsService').registerCmsBlock({
     name: 'form',

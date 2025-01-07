@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 #[CoversClass(SalesChannelUserConfigSubscriber::class)]
 class SalesChannelUserConfigSubscriberTest extends TestCase
 {

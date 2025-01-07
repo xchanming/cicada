@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CleanupSalesChannelContextTaskHandlerTest extends TestCase
 {
     use DatabaseTransactionBehaviour;

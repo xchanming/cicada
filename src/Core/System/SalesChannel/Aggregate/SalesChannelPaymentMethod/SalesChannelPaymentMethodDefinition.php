@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelPaymentMethodDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'sales_channel_payment_method';

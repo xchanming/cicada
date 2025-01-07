@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Media\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaIndexingMessage extends EntityIndexingMessage
 {
 }

@@ -15,7 +15,7 @@ type CmsPageState = {
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 const cmsPageStore = Cicada.Store.register({
     id: 'cmsPage',

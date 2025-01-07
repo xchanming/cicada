@@ -7,7 +7,7 @@ use Cicada\Core\Content\Cms\DataResolver\CriteriaCollection;
 use Cicada\Core\Content\Cms\DataResolver\ResolverContext\ResolverContext;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 interface CmsElementResolverInterface
 {
     public function getType(): string;

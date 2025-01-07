@@ -3,7 +3,7 @@ import './sw-cms-stage-add-block.scss';
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

@@ -6,7 +6,7 @@ use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryRouteResponse extends StoreApiResponse
 {
     /**

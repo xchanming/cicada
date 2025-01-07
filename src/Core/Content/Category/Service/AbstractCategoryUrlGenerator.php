@@ -6,7 +6,7 @@ use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('inventory')]
+#[Package('discovery')]
 abstract class AbstractCategoryUrlGenerator
 {
     abstract public function getDecorated(): AbstractCategoryUrlGenerator;

@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Snippet;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetEvents
 {
     final public const SNIPPET_WRITTEN_EVENT = 'snippet.written';

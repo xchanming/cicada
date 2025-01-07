@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<SnippetEntity>
  */
-#[Package('core')]
+#[Package('discovery')]
 class SnippetCollection extends EntityCollection
 {
     public function getApiAlias(): string

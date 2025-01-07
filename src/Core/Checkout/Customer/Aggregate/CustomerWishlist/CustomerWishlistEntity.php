@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class CustomerWishlistEntity extends Entity
 {
     use EntityCustomFieldsTrait;

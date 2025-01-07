@@ -8,7 +8,7 @@ use Cicada\Core\Content\Media\Event\MediaIndexerEvent;
 use Cicada\Core\Content\Media\Event\MediaUploadedEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaEvents
 {
     final public const MEDIA_WRITTEN_EVENT = 'media.written';

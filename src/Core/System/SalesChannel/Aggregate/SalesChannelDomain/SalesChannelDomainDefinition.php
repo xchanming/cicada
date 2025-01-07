@@ -22,7 +22,7 @@ use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\Snippet\Aggregate\SnippetSet\SnippetSetDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelDomainDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'sales_channel_domain';

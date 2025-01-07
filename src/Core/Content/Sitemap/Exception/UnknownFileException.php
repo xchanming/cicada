@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Sitemap\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class UnknownFileException extends CicadaHttpException
 {
     public function getErrorCode(): string

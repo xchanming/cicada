@@ -6,7 +6,7 @@ use Cicada\Core\Content\Product\SalesChannel\ProductListResponse;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Pagelet\Pagelet;
 
-#[Package('storefront')]
+#[Package('discovery')]
 class GuestWishlistPagelet extends Pagelet
 {
     /**

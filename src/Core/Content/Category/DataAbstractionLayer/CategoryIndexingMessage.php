@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Category\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryIndexingMessage extends EntityIndexingMessage
 {
 }

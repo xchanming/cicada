@@ -6,7 +6,7 @@ use Cicada\Core\Content\Product\SalesChannel\CrossSelling\CrossSellingElementCol
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CrossSellingStruct extends Struct
 {
     /**

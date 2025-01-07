@@ -1,22 +1,22 @@
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-el-preview-image', () => import('./preview'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-el-config-image', () => import('./config'));
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Component.register('sw-cms-el-image', () => import('./component'));
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'image',

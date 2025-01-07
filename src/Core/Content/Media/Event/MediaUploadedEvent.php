@@ -14,7 +14,7 @@ use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Hookable;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaUploadedEvent extends Event implements ScalarValuesAware, FlowEventAware, Hookable
 {
     public const EVENT_NAME = 'media.uploaded';

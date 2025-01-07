@@ -2,11 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\System\Snippet\Mock;
 
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Files\AbstractSnippetFile;
 
 /**
  * @internal
  */
+#[Package('discovery')]
 class MockSnippetFile extends AbstractSnippetFile
 {
     private readonly string $iso;

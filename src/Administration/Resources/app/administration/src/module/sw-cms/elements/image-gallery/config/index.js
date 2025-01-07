@@ -10,7 +10,7 @@ const Criteria = Cicada.Data.Criteria;
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 export default {
     template,

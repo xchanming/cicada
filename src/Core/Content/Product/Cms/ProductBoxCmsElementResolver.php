@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ProductBoxCmsElementResolver extends AbstractCmsElementResolver
 {
     /**

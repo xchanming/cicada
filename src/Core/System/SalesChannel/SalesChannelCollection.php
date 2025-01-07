@@ -11,7 +11,7 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelType\SalesChannelTypeC
 /**
  * @extends EntityCollection<SalesChannelEntity>
  */
-#[Package('core')]
+#[Package('discovery')]
 class SalesChannelCollection extends EntityCollection
 {
     /**

@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Media\Core\Params;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 enum UrlParamsSource
 {
     case MEDIA;

@@ -26,7 +26,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\TreePathField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaFolderDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'media_folder';

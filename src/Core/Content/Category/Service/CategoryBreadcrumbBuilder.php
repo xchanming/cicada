@@ -35,7 +35,7 @@ use Doctrine\DBAL\Connection;
  * related methods: getProductBreadcrumbUrls, loadProduct, getCategoryForProduct, loadCategory,
  * getCategoryBreadcrumbUrls, loadCategories, loadSeoUrls, convertCategoriesToBreadcrumbUrls, filterCategorySeoUrls
  */
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryBreadcrumbBuilder
 {
     /**

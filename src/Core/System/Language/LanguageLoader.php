@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @phpstan-import-type LanguageData from LanguageLoaderInterface
  */
-#[Package('core')]
+#[Package('fundamentals@discovery')]
 class LanguageLoader implements LanguageLoaderInterface
 {
     /**

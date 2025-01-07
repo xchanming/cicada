@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\ApiAware;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsSlotTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'cms_slot_translation';

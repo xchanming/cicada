@@ -14,7 +14,7 @@ use Cicada\Core\System\SalesChannel\Event\SalesChannelIndexerEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelIndexer extends EntityIndexer
 {
     final public const MANY_TO_MANY_UPDATER = 'sales_channel.many-to-many';

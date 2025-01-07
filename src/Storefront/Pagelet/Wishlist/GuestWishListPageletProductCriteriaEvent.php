@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('storefront')]
+#[Package('discovery')]
 class GuestWishListPageletProductCriteriaEvent extends NestedEvent implements CicadaSalesChannelEvent
 {
     public function __construct(

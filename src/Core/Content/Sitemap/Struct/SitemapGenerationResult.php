@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Sitemap\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapGenerationResult extends Struct
 {
     public function __construct(

@@ -5,7 +5,7 @@ import './sw-cms-create-wizard.scss';
 const { Filter } = Cicada;
 
 /**
- * @package buyers-experience
+ * @package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default Cicada.Component.wrapComponentConfig({

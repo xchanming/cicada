@@ -6,7 +6,7 @@ use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class Tree extends Struct
 {
     /**

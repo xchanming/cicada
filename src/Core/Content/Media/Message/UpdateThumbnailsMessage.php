@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Media\Message;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class UpdateThumbnailsMessage extends GenerateThumbnailsMessage
 {
     private bool $isStrict = false;

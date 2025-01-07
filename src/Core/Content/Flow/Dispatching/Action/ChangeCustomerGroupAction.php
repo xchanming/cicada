@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('discovery')]
 class ChangeCustomerGroupAction extends FlowAction implements DelayableAction
 {
     /**

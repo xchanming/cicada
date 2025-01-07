@@ -15,7 +15,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
  *
  * @extends EntitySearchResultLoadedEvent<TEntityCollection>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelEntitySearchResultLoadedEvent extends EntitySearchResultLoadedEvent implements CicadaSalesChannelEvent
 {
     /**

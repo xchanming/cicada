@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 #[CoversClass(SalesChannelContextCreatedEvent::class)]
 class SalesChannelContextCreatedEventTest extends TestCase
 {

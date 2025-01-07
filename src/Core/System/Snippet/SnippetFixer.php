@@ -5,7 +5,7 @@ namespace Cicada\Core\System\Snippet;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Struct\MissingSnippetCollection;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetFixer
 {
     /**

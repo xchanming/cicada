@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 #[CoversClass(LandingPageLoadedHook::class)]
 class LandingPageLoadedHookTest extends TestCase
 {

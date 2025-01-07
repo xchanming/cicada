@@ -24,7 +24,7 @@ use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelRepository;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsSlotsDataResolver
 {
     /**

@@ -15,7 +15,7 @@ use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ImageCmsElementResolver extends AbstractCmsElementResolver
 {
     final public const CMS_DEFAULT_ASSETS_PATH = '/bundles/storefront/assets/default/cms/';

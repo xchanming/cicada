@@ -5,7 +5,7 @@ namespace Cicada\Core\System\Snippet\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class MissingSnippetStruct extends Struct
 {
     /**

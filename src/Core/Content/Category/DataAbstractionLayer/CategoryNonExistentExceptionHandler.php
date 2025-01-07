@@ -6,7 +6,7 @@ use Cicada\Core\Content\Category\CategoryException;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryNonExistentExceptionHandler implements ExceptionHandlerInterface
 {
     public function getPriority(): int

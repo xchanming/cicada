@@ -7,7 +7,7 @@ use Cicada\Core\Content\Category\CategoryException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class TreeItem extends Struct
 {
     /**

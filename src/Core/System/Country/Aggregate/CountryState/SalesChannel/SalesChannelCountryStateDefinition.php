@@ -9,7 +9,7 @@ use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateDefinition;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class SalesChannelCountryStateDefinition extends CountryStateDefinition implements SalesChannelDefinitionInterface
 {
     public function processCriteria(Criteria $criteria, SalesChannelContext $context): void

@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class UnusedMediaSubscriberTest extends TestCase
 {
     use IntegrationTestBehaviour;

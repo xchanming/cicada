@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CrossSellingCmsElementResolver extends AbstractProductDetailCmsElementResolver
 {
     final public const TYPE = 'cross-selling';

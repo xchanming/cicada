@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<LocaleTranslationEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class LocaleTranslationCollection extends EntityCollection
 {
     public function getLocaleIds(): array

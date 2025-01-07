@@ -20,7 +20,7 @@ use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\Locale\Aggregate\LocaleTranslation\LocaleTranslationDefinition;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class LocaleDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'locale';

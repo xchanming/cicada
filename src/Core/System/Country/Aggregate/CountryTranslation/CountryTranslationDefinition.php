@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'country_translation';

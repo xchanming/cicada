@@ -4,7 +4,7 @@ import './sw-media-index.scss';
 const { Context, Filter } = Cicada;
 
 /**
- * @package buyers-experience
+ * @package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

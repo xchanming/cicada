@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Media\File;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class FileUrlValidator implements FileUrlValidatorInterface
 {
     public function isValid(string $source): bool

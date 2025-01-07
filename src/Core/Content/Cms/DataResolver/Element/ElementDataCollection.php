@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @implements \IteratorAggregate<array-key, EntitySearchResult<EntityCollection>>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ElementDataCollection implements \IteratorAggregate, \Countable
 {
     /**

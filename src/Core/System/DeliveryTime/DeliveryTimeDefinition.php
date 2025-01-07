@@ -19,7 +19,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\DeliveryTime\Aggregate\DeliveryTimeTranslation\DeliveryTimeTranslationDefinition;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class DeliveryTimeDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'delivery_time';

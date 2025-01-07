@@ -6,7 +6,7 @@ use Cicada\Core\Content\Sitemap\ConfigHandler\ConfigHandlerInterface;
 use Cicada\Core\Content\Sitemap\Exception\InvalidSitemapKey;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class ConfigHandler
 {
     final public const EXCLUDED_URLS_KEY = 'excluded_urls';

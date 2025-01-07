@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Aggregate\SnippetSet\SnippetSetEntity;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetEntity extends Entity
 {
     use EntityCustomFieldsTrait;

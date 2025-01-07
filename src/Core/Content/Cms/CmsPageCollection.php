@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CmsPageEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsPageCollection extends EntityCollection
 {
     public function getApiAlias(): string

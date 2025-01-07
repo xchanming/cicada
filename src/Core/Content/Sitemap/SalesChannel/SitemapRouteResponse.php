@@ -6,7 +6,7 @@ use Cicada\Core\Content\Sitemap\Struct\SitemapCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapRouteResponse extends StoreApiResponse
 {
     /**

@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelRepositoryNotFoundException extends CicadaHttpException
 {
     public function __construct(string $entity)

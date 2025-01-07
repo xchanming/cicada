@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('administration')]
+#[Package('discovery')]
 class AppAdministrationSnippetEntity extends Entity
 {
     use EntityIdTrait;

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class GenerateThumbnailsMessage implements AsyncMessageInterface
 {
     /**

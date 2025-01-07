@@ -13,7 +13,7 @@ use League\Flysystem\FilesystemOperator;
 use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class FileLoader
 {
     private readonly FileNameValidator $fileNameValidator;

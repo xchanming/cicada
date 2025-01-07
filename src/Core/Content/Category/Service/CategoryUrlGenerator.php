@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryUrlGenerator extends AbstractCategoryUrlGenerator
 {
     /**

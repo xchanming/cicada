@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@discovery')]
 class CountryRepositoryTest extends TestCase
 {
     use DatabaseTransactionBehaviour;

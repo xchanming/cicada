@@ -9,7 +9,7 @@ use Cicada\Core\Content\Cms\DataResolver\ResolverContext\ResolverContext;
 use Cicada\Core\Content\Cms\SalesChannel\Struct\TextStruct;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ProductNameCmsElementResolver extends AbstractProductDetailCmsElementResolver
 {
     public function getType(): string

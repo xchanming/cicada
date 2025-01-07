@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Currency\CurrencyDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelCurrencyDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'sales_channel_currency';

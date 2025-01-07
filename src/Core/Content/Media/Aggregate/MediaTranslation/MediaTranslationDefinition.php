@@ -11,7 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'media_translation';

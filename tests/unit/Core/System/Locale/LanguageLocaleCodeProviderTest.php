@@ -3,6 +3,7 @@
 namespace Cicada\Tests\Unit\Core\System\Locale;
 
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\FetchModeHelper;
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageLoaderInterface;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
@@ -15,6 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
+#[Package('discovery')]
 #[CoversClass(LanguageLocaleCodeProvider::class)]
 class LanguageLocaleCodeProviderTest extends TestCase
 {

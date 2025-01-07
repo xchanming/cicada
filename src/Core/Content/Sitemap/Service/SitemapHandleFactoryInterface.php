@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 interface SitemapHandleFactoryInterface
 {
     /**

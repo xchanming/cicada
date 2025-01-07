@@ -16,7 +16,7 @@ use Cicada\Storefront\Page\PageLoadedHook;
  *
  * @final
  */
-#[Package('storefront')]
+#[Package('discovery')]
 class GuestWishlistPageletLoadedHook extends PageLoadedHook
 {
     use SalesChannelContextAwareTrait;

@@ -9,7 +9,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 abstract class AbstractUrlProvider
 {
     /**

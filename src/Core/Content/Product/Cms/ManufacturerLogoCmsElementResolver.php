@@ -16,7 +16,7 @@ use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ManufacturerLogoCmsElementResolver extends AbstractProductDetailCmsElementResolver
 {
     public function getType(): string

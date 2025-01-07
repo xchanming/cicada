@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<MediaEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaCollection extends EntityCollection
 {
     /**

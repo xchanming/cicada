@@ -62,7 +62,7 @@ use Cicada\Core\System\Tax\Aggregate\TaxRuleTypeTranslation\TaxRuleTypeTranslati
 use Cicada\Core\System\TaxProvider\Aggregate\TaxProviderTranslation\TaxProviderTranslationCollection;
 use Cicada\Core\System\Unit\Aggregate\UnitTranslation\UnitTranslationCollection;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class LanguageEntity extends Entity
 {
     use EntityCustomFieldsTrait;

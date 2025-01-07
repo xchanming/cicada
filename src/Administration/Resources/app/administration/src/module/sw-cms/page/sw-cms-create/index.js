@@ -5,7 +5,7 @@ const utils = Cicada.Utils;
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 export default {
     template,

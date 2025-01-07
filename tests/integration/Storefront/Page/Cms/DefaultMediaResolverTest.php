@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class DefaultMediaResolverTest extends TestCase
 {
     use IntegrationTestBehaviour;

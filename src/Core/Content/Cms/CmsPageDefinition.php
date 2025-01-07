@@ -28,7 +28,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsPageDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'cms_page';

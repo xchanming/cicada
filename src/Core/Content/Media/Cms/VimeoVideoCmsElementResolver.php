@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Media\Cms;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class VimeoVideoCmsElementResolver extends YoutubeVideoCmsElementResolver
 {
     public function getType(): string

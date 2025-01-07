@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelType\SalesChannelTypeEntity;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelTypeTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

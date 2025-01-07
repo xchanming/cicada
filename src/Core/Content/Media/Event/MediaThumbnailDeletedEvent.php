@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaThumbnailDeletedEvent extends Event
 {
     final public const EVENT_NAME = 'media_thumbnail.after_delete';

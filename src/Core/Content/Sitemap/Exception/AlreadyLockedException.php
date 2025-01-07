@@ -6,7 +6,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class AlreadyLockedException extends CicadaHttpException
 {
     public function __construct(SalesChannelContext $salesChannelContext)

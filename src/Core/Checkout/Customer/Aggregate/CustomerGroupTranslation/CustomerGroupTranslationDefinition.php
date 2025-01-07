@@ -14,7 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class CustomerGroupTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'customer_group_translation';

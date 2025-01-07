@@ -6,7 +6,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class PageNotFoundException extends CicadaHttpException
 {
     final public const ERROR_CODE = 'CONTENT__CMS_PAGE_NOT_FOUND';

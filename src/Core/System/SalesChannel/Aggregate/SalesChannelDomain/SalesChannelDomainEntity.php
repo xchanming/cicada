@@ -12,7 +12,7 @@ use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Snippet\Aggregate\SnippetSet\SnippetSetEntity;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelDomainEntity extends Entity
 {
     use EntityCustomFieldsTrait;

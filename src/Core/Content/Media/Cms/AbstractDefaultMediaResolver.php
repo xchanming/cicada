@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Media\Cms;
 use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 abstract class AbstractDefaultMediaResolver
 {
     abstract public function getDecorated(): AbstractDefaultMediaResolver;

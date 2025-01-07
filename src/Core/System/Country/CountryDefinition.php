@@ -30,7 +30,7 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelCountry\SalesChannelCo
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'country';

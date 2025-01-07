@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelIndexingMessage extends EntityIndexingMessage
 {
 }

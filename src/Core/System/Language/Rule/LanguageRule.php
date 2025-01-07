@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\System\Language\LanguageDefinition;
 
-#[Package('services-settings')]
+#[Package('fundamentals@discovery')]
 class LanguageRule extends Rule
 {
     final public const RULE_NAME = 'language';

@@ -6,7 +6,7 @@ use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsRouteResponse extends StoreApiResponse
 {
     /**

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 use League\Flysystem\Visibility;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class DeleteFileMessage implements AsyncMessageInterface
 {
     public function __construct(

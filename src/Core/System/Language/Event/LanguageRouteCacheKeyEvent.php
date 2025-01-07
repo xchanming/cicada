@@ -5,7 +5,7 @@ namespace Cicada\Core\System\Language\Event;
 use Cicada\Core\Framework\Adapter\Cache\StoreApiRouteCacheKeyEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class LanguageRouteCacheKeyEvent extends StoreApiRouteCacheKeyEvent
 {
 }

@@ -11,7 +11,7 @@ use Cicada\Storefront\Event\StorefrontRenderEvent;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelAnalyticsLoader
 {
     public function __construct(

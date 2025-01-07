@@ -21,7 +21,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class CustomerGroupDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'customer_group';

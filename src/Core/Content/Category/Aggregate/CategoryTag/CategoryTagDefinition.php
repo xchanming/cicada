@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Tag\TagDefinition;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryTagDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'category_tag';

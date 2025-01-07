@@ -3,7 +3,7 @@ import template from './sw-cms-block-app-renderer.html.twig';
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

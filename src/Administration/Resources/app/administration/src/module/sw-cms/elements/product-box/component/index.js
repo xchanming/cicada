@@ -5,7 +5,7 @@ const { Mixin, Filter } = Cicada;
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 export default {
     template,

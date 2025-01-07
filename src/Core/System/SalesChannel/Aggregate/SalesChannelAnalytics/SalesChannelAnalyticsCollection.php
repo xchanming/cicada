@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<SalesChannelAnalyticsEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelAnalyticsCollection extends EntityCollection
 {
     public function getApiAlias(): string

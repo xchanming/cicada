@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Media\Cms\Type;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ImageGalleryTypeDataResolver extends ImageSliderTypeDataResolver
 {
     public function getType(): string

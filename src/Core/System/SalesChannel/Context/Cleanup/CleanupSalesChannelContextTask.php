@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel\Context\Cleanup;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CleanupSalesChannelContextTask extends ScheduledTask
 {
     public static function getTaskName(): string

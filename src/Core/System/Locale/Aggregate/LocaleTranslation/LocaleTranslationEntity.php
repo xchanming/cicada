@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Locale\LocaleEntity;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class LocaleTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

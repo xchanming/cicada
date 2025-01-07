@@ -6,7 +6,7 @@ use Cicada\Core\Content\Sitemap\Struct\Sitemap;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 interface SitemapListerInterface
 {
     /**

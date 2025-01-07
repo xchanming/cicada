@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Customer\SalesChannel\LoadWishlistRouteResponse;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('discovery')]
 class WishlistPage extends Page
 {
     /**

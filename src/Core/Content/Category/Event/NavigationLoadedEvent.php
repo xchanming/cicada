@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class NavigationLoadedEvent extends NestedEvent implements CicadaSalesChannelEvent
 {
     /**

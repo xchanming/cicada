@@ -6,7 +6,7 @@ use Cicada\Core\Content\Media\File\MediaFile;
 use Cicada\Core\Content\Media\MediaType\MediaType;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 interface TypeDetectorInterface
 {
     public function detect(MediaFile $mediaFile, ?MediaType $previouslyDetectedType): ?MediaType;

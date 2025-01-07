@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<FieldConfig>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class FieldConfigCollection extends Collection
 {
     /**

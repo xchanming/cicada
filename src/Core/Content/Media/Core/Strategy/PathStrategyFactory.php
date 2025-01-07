@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal Factory is only used for DI container construction to find configured strategy
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class PathStrategyFactory
 {
     /**

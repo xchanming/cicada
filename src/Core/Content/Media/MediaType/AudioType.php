@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Media\MediaType;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class AudioType extends MediaType
 {
     /**

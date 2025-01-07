@@ -7,7 +7,7 @@ use Cicada\Core\Content\Media\MediaEntity;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaLoadedSubscriber
 {
     public function unserialize(EntityLoadedEvent $event): void

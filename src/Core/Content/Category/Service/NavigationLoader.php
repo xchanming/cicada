@@ -16,7 +16,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class NavigationLoader implements NavigationLoaderInterface
 {
     private readonly TreeItem $treeItem;

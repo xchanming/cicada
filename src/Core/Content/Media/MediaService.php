@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Psr\Http\Message\StreamInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaService
 {
     /**

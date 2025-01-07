@@ -6,7 +6,7 @@ use Cicada\Core\Content\Media\MediaType\ImageType;
 use Cicada\Core\Content\Media\MediaType\MediaType;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ImageMetadataLoader implements MetadataLoaderInterface
 {
     /**

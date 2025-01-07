@@ -4,7 +4,7 @@ namespace Cicada\Administration\Snippet;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('administration')]
+#[Package('discovery')]
 interface SnippetFinderInterface
 {
     /**

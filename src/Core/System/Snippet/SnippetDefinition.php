@@ -19,7 +19,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Aggregate\SnippetSet\SnippetSetDefinition;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'snippet';

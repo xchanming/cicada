@@ -7,7 +7,7 @@ use Cicada\Core\Content\Media\MediaType\DocumentType;
 use Cicada\Core\Content\Media\MediaType\MediaType;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class DocumentTypeDetector implements TypeDetectorInterface
 {
     protected const SUPPORTED_FILE_EXTENSIONS = [

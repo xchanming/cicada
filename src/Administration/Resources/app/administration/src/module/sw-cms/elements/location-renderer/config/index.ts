@@ -6,7 +6,7 @@ const { Component, Mixin } = Cicada;
 
 /**
  * @private
- * @package buyers-experience
+ * @package discovery
  */
 Component.register('sw-cms-el-config-location-renderer', {
     template,

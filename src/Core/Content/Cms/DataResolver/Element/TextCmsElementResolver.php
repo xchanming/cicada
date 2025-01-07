@@ -10,7 +10,7 @@ use Cicada\Core\Content\Cms\SalesChannel\Struct\TextStruct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\HtmlSanitizer;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class TextCmsElementResolver extends AbstractCmsElementResolver
 {
     /**

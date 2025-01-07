@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelContextTest extends TestCase
 {
     use IntegrationTestBehaviour;

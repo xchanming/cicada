@@ -9,7 +9,7 @@ use Cicada\Core\Content\Cms\DataResolver\ResolverContext\ResolverContext;
 use Cicada\Core\Content\Cms\SalesChannel\Struct\HtmlStruct;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class HtmlCmsElementResolver extends AbstractCmsElementResolver
 {
     /**

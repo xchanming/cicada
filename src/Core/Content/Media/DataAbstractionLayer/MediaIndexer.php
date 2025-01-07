@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaIndexer extends EntityIndexer
 {
     /**

@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Cms;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsPageEvents
 {
     final public const PAGE_WRITTEN_EVENT = 'cms_page.written';

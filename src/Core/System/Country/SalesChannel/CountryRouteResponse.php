@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryCollection;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryRouteResponse extends StoreApiResponse
 {
     /**

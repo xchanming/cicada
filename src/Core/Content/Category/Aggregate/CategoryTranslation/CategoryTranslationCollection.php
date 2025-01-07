@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CategoryTranslationEntity>
  */
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryTranslationCollection extends EntityCollection
 {
     /**

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapGeneratedEvent extends Event implements CicadaEvent
 {
     public function __construct(private readonly SalesChannelContext $context)

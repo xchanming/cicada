@@ -6,7 +6,7 @@ use Cicada\Core\Content\Cms\DataAbstractionLayer\FieldSerializer\SlotConfigField
 use Cicada\Core\Framework\DataAbstractionLayer\Field\JsonField;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SlotConfigField extends JsonField
 {
     public function __construct(

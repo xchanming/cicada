@@ -18,7 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'category_translation';

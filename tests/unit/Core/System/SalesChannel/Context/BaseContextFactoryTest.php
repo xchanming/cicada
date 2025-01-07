@@ -45,7 +45,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 #[CoversClass(BaseContextFactory::class)]
 class BaseContextFactoryTest extends TestCase
 {

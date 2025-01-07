@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<MediaFolderConfigurationEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaFolderConfigurationCollection extends EntityCollection
 {
     public function getApiAlias(): string

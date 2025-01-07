@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('discovery')]
 #[CoversClass(EmptySnippetFilter::class)]
 class EmptySnippetFilterTest extends TestCase
 {

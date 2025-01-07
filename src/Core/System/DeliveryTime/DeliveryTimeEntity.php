@@ -11,7 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\DeliveryTime\Aggregate\DeliveryTimeTranslation\DeliveryTimeTranslationCollection;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class DeliveryTimeEntity extends Entity
 {
     use EntityCustomFieldsTrait;

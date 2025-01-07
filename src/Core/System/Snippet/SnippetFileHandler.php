@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Storefront;
 use Symfony\Component\Finder\Finder;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetFileHandler
 {
     public function openJsonFile(string $path): array

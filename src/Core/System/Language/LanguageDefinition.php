@@ -76,7 +76,7 @@ use Cicada\Core\System\Tax\Aggregate\TaxRuleTypeTranslation\TaxRuleTypeTranslati
 use Cicada\Core\System\TaxProvider\Aggregate\TaxProviderTranslation\TaxProviderTranslationDefinition;
 use Cicada\Core\System\Unit\Aggregate\UnitTranslation\UnitTranslationDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class LanguageDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'language';

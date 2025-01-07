@@ -6,7 +6,7 @@ use Cicada\Core\Content\Cms\CmsException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class FieldConfig extends Struct
 {
     final public const SOURCE_STATIC = 'static';

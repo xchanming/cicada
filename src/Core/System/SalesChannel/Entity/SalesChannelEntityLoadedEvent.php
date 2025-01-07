@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\CicadaSalesChannelEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelEntityLoadedEvent extends EntityLoadedEvent implements CicadaSalesChannelEvent
 {
     private readonly SalesChannelContext $salesChannelContext;

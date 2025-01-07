@@ -15,7 +15,7 @@ use Cicada\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountr
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\Tax\Aggregate\TaxRule\TaxRuleCollection;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryEntity extends Entity
 {
     use EntityCustomFieldsTrait;

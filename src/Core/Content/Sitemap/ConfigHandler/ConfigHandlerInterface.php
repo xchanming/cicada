@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Sitemap\ConfigHandler;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 interface ConfigHandlerInterface
 {
     public function getSitemapConfig(): array;

@@ -6,7 +6,7 @@ const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
 const CicadaError = Cicada.Classes.CicadaError;
 
 /**
- * @package inventory
+ * @package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

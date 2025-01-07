@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class CustomerGroupTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

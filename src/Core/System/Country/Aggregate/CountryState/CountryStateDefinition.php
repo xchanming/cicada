@@ -24,7 +24,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\Aggregate\CountryStateTranslation\CountryStateTranslationDefinition;
 use Cicada\Core\System\Country\CountryDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryStateDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'country_state';

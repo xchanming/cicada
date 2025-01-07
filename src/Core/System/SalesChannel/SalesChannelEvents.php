@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Event\SalesChannelIndexerEvent;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelEvents
 {
     final public const SALES_CHANNEL_WRITTEN = 'sales_channel.written';

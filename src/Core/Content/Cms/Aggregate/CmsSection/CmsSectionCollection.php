@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CmsSectionEntity>
  */
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class CmsSectionCollection extends EntityCollection
 {
     public function getBlocks(): CmsBlockCollection

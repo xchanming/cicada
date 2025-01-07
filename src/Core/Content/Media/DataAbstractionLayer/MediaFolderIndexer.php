@@ -19,7 +19,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaFolderIndexer extends EntityIndexer
 {
     final public const CHILD_COUNT_UPDATER = 'media_folder.child-count';

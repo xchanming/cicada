@@ -10,7 +10,7 @@ use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\Locale\Aggregate\LocaleTranslation\LocaleTranslationCollection;
 use Cicada\Core\System\User\UserCollection;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class LocaleEntity extends Entity
 {
     use EntityCustomFieldsTrait;

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateEntity;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class CountryStateTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

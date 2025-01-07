@@ -8,7 +8,7 @@ use Cicada\Core\System\Language\SalesChannelLanguageLoader;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('fundamentals@discovery')]
 class StaticSalesChannelLanguageLoader extends SalesChannelLanguageLoader
 {
     /**

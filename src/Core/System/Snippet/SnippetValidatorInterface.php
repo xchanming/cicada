@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Snippet;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 interface SnippetValidatorInterface
 {
     public function validate(): array;

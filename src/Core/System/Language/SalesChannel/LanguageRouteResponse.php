@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@discovery')]
 class LanguageRouteResponse extends StoreApiResponse
 {
     /**

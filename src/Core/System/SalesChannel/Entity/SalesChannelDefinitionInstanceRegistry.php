@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Exception\SalesChannelRepositoryNotFoundException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelDefinitionInstanceRegistry extends DefinitionInstanceRegistry
 {
     /**

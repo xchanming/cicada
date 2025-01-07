@@ -18,7 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class BuyBoxCmsElementResolver extends AbstractProductDetailCmsElementResolver
 {
     /**

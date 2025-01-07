@@ -7,7 +7,7 @@ use Cicada\Core\Content\Media\MediaType\MediaType;
 use Cicada\Core\Content\Media\Metadata\MetadataLoader\MetadataLoaderInterface;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MetadataLoader
 {
     /**

@@ -41,7 +41,7 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelTranslation\SalesChann
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelType\SalesChannelTypeEntity;
 use Cicada\Core\System\SystemConfig\SystemConfigCollection;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelEntity extends Entity
 {
     use EntityCustomFieldsTrait;

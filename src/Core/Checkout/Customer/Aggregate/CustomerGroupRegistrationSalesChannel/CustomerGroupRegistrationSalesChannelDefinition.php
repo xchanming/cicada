@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class CustomerGroupRegistrationSalesChannelDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'customer_group_registration_sales_channels';

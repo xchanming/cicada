@@ -59,7 +59,7 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelTranslation\SalesChann
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelType\SalesChannelTypeDefinition;
 use Cicada\Core\System\SystemConfig\SystemConfigDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'sales_channel';

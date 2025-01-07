@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Cms\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class UnexpectedFieldConfigValueType extends CicadaHttpException
 {
     public function __construct(

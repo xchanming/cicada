@@ -17,7 +17,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainDefinition;
 use Cicada\Core\System\Snippet\SnippetDefinition;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetSetDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'snippet_set';

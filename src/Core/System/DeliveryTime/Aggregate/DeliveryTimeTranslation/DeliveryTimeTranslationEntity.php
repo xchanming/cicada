@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
 
-#[Package('checkout')]
+#[Package('discovery')]
 class DeliveryTimeTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

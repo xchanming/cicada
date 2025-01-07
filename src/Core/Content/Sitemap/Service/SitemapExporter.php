@@ -16,7 +16,7 @@ use League\Flysystem\FilesystemOperator;
 use Psr\Cache\CacheItemPoolInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapExporter implements SitemapExporterInterface
 {
     /**

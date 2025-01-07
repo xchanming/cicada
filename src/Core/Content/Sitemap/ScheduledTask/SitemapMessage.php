@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Sitemap\ScheduledTask;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapMessage implements AsyncMessageInterface
 {
     /**

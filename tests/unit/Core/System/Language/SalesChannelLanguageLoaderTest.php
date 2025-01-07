@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('fundamentals@discovery')]
 #[CoversClass(SalesChannelLanguageLoader::class)]
 class SalesChannelLanguageLoaderTest extends TestCase
 {

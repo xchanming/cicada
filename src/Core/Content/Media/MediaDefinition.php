@@ -54,7 +54,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Tag\TagDefinition;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class MediaDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'media';

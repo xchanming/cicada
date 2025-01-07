@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Snippet\Files\GenericSnippetFile;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollection;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetValidator implements SnippetValidatorInterface
 {
     /**

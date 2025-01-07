@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\CorruptedPathDetected;
 use League\Flysystem\WhitespacePathNormalizer;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class FileNameValidator
 {
     private const RESTRICTED_CHARACTERS = [

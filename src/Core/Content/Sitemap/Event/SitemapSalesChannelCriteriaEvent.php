@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapSalesChannelCriteriaEvent extends Event implements CicadaEvent
 {
     public function __construct(

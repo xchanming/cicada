@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
 use Cicada\Core\System\Snippet\SnippetCollection;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetSetEntity extends Entity
 {
     use EntityCustomFieldsTrait;

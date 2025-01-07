@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Sitemap\ConfigHandler;
 use Cicada\Core\Content\Sitemap\Service\ConfigHandler;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class File implements ConfigHandlerInterface
 {
     /**

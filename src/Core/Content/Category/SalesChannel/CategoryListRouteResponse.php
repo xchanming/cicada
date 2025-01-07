@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryListRouteResponse extends StoreApiResponse
 {
     /**

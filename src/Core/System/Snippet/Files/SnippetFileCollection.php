@@ -10,7 +10,7 @@ use Cicada\Core\System\Snippet\SnippetException;
 /**
  * @extends Collection<AbstractSnippetFile>
  */
-#[Package('services-settings')]
+#[Package('discovery')]
 class SnippetFileCollection extends Collection
 {
     /**

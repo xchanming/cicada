@@ -9,7 +9,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryRouteCacheTagsEvent extends StoreApiRouteCacheTagsEvent
 {
     /**

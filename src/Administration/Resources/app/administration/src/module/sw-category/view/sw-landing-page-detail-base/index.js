@@ -5,7 +5,7 @@ const { Mixin } = Cicada;
 const { mapState, mapPropertyErrors } = Cicada.Component.getComponentHelper();
 
 /**
- * @package inventory
+ * @package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

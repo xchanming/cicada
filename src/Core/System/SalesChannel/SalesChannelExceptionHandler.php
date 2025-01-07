@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Exception\LanguageOfSalesChannelDomainDeleteException;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelExceptionHandler implements ExceptionHandlerInterface
 {
     public function getPriority(): int

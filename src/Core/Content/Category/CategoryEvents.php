@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Category;
 use Cicada\Core\Content\Category\Event\CategoryIndexerEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryEvents
 {
     final public const CATEGORY_WRITTEN_EVENT = 'category.written';

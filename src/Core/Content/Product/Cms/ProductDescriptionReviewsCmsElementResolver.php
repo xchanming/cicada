@@ -13,7 +13,7 @@ use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\ScriptExecutor;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class ProductDescriptionReviewsCmsElementResolver extends AbstractProductDetailCmsElementResolver
 {
     final public const TYPE = 'product-description-reviews';

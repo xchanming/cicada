@@ -16,7 +16,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Routing\RouterInterface;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class LandingPageUrlProvider extends AbstractUrlProvider
 {
     final public const CHANGE_FREQ = 'daily';

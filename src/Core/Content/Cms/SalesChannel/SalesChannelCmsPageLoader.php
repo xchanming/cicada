@@ -25,7 +25,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelCmsPageLoader implements SalesChannelCmsPageLoaderInterface
 {
     /**

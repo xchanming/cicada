@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelType\SalesChannelTypeDefinition;
 
-#[Package('buyers-experience')]
+#[Package('discovery')]
 class SalesChannelTypeTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'sales_channel_type_translation';

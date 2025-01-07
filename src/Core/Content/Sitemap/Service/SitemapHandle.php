@@ -10,7 +10,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use League\Flysystem\FilesystemOperator;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapHandle implements SitemapHandleInterface
 {
     private const MAX_URLS = 49999;

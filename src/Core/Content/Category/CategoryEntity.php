@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\Tag\TagCollection;
 
-#[Package('inventory')]
+#[Package('discovery')]
 class CategoryEntity extends Entity
 {
     use EntityCustomFieldsTrait;
