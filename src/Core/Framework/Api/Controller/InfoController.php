@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Framework\Api\Controller;
 
+use Cicada\Administration\Framework\Twig\ViteFileAccessorDecorator;
 use Cicada\Core\Content\Flow\Api\FlowActionCollector;
 use Cicada\Core\Framework\Api\ApiDefinition\DefinitionService;
 use Cicada\Core\Framework\Api\ApiDefinition\Generator\EntitySchemaGenerator;
@@ -24,6 +25,8 @@ use Cicada\Core\Maintenance\System\Service\AppUrlVerifier;
 use Cicada\Core\PlatformRequest;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemException;
+use League\Flysystem\FilesystemOperator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
@@ -57,6 +60,7 @@ class InfoController extends AbstractController
         private readonly SystemConfigService $systemConfigService,
         private readonly ApiRouteInfoResolver $apiRouteInfoResolver,
         private readonly InAppPurchase $inAppPurchase,
+        private readonly FilesystemOperator $filesystem,
     ) {
     }
 
@@ -126,42 +130,6 @@ class InfoController extends AbstractController
         $events = $this->eventCollector->collect($context);
 
         return new JsonResponse($events);
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - Will be removed in v6.7.0. Use api.info.stoplightio instead
-     */
-    #[Route(
-        path: '/api/_info/swagger.html',
-        name: 'api.info.swagger',
-        defaults: ['auth_required' => '%cicada.api.api_browser.auth_required_str%'],
-        methods: ['GET']
-    )]
-    public function infoHtml(Request $request): Response
-    {
-        Feature::triggerDeprecationOrThrow(
-            'v6.7.0.0',
-            'Route "/api/_info/swagger.html" is deprecated. Use "/api/_info/stoplightio.html" instead.'
-        );
-
-        $nonce = $request->attributes->get(PlatformRequest::ATTRIBUTE_CSP_NONCE);
-        $apiType = $request->query->getAlpha('type', DefinitionService::TYPE_JSON);
-        $response = $this->render(
-            '@Framework/swagger.html.twig',
-            [
-                'schemaUrl' => 'api.info.openapi3',
-                'cspNonce' => $nonce,
-                'apiType' => $apiType,
-            ]
-        );
-
-        $cspTemplate = trim($this->params->get('cicada.security.csp_templates')['administration'] ?? '');
-        if ($cspTemplate !== '') {
-            $csp = str_replace(['%nonce%', "\n", "\r"], [$nonce, ' ', ' '], $cspTemplate);
-            $response->headers->set('Content-Security-Policy', $csp);
-        }
-
-        return $response;
     }
 
     #[Route(
@@ -280,17 +248,40 @@ class InfoController extends AbstractController
                 throw ApiException::unableGenerateBundle($bundle->getName());
             }
 
-            $styles = array_map(static function (string $filename) use ($package, $bundleDirectoryName) {
-                $url = 'bundles/' . $bundleDirectoryName . '/' . $filename;
+            $viteEntryPoints = [];
+            if (Feature::isActive('ADMIN_VITE')) {
+                try {
+                    $viteEntryPoints = \json_decode(
+                        $this->filesystem->read(\sprintf('bundles/%s/administration/.vite/%s', $bundleDirectoryName, ViteFileAccessorDecorator::FILES[ViteFileAccessorDecorator::ENTRYPOINTS])),
+                        true,
+                        flags: \JSON_THROW_ON_ERROR
+                    );
+                } catch (FilesystemException|\JsonException $e) {
+                    // ignore
+                }
+            }
 
-                return $package->getUrl($url);
-            }, $this->getAdministrationStyles($bundle));
+            $styles = [];
+            if (Feature::isActive('ADMIN_VITE') && !empty($viteEntryPoints)) {
+                $styles = $viteEntryPoints['entryPoints'][$this->getTechnicalBundleName($bundle)]['css'] ?? [];
+            } else {
+                $styles = array_map(static function (string $filename) use ($package, $bundleDirectoryName) {
+                    $url = 'bundles/' . $bundleDirectoryName . '/' . $filename;
 
-            $scripts = array_map(static function (string $filename) use ($package, $bundleDirectoryName) {
-                $url = 'bundles/' . $bundleDirectoryName . '/' . $filename;
+                    return $package->getUrl($url);
+                }, $this->getAdministrationStyles($bundle));
+            }
 
-                return $package->getUrl($url);
-            }, $this->getAdministrationScripts($bundle));
+            $scripts = [];
+            if (Feature::isActive('ADMIN_VITE') && !empty($viteEntryPoints)) {
+                $scripts = $viteEntryPoints['entryPoints'][$this->getTechnicalBundleName($bundle)]['js'] ?? [];
+            } else {
+                $scripts = array_map(static function (string $filename) use ($package, $bundleDirectoryName) {
+                    $url = 'bundles/' . $bundleDirectoryName . '/' . $filename;
+
+                    return $package->getUrl($url);
+                }, $this->getAdministrationScripts($bundle));
+            }
 
             $baseUrl = $this->getBaseUrl($bundle);
 
@@ -326,7 +317,7 @@ class InfoController extends AbstractController
      */
     private function getAdministrationStyles(Bundle $bundle): array
     {
-        $path = 'administration/css/' . str_replace('_', '-', $bundle->getContainerPrefix()) . '.css';
+        $path = \sprintf('administration/css/%s.css', $this->getTechnicalBundleName($bundle));
         $bundlePath = $bundle->getPath();
 
         if (!file_exists($bundlePath . '/Resources/public/' . $path) && !file_exists($bundlePath . '/Resources/.administration-css')) {
@@ -341,7 +332,7 @@ class InfoController extends AbstractController
      */
     private function getAdministrationScripts(Bundle $bundle): array
     {
-        $path = 'administration/js/' . str_replace('_', '-', $bundle->getContainerPrefix()) . '.js';
+        $path = \sprintf('administration/js/%s.js', $this->getTechnicalBundleName($bundle));
         $bundlePath = $bundle->getPath();
 
         if (!file_exists($bundlePath . '/Resources/public/' . $path) && !file_exists($bundlePath . '/Resources/.administration-js')) {
@@ -427,5 +418,10 @@ WHERE app.active = 1 AND app.base_app_url is not null');
         }
 
         return $cicadaVersion;
+    }
+
+    private function getTechnicalBundleName(Bundle $bundle): string
+    {
+        return str_replace('_', '-', $bundle->getContainerPrefix());
     }
 }

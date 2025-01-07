@@ -18,6 +18,7 @@ use Cicada\Core\Kernel;
 use Cicada\Core\Maintenance\System\Service\AppUrlVerifier;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
 use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -40,6 +41,8 @@ class InfoControllerTest extends TestCase
     private Kernel&MockObject $kernelMock;
 
     private RouterInterface&MockObject $routerMock;
+
+    private FilesystemOperator&MockObject $fileSystemOperator;
 
     private InAppPurchase $inAppPurchase;
 
@@ -143,6 +146,7 @@ class InfoControllerTest extends TestCase
         $this->parameterBagMock = $this->createMock(ParameterBagInterface::class);
         $this->kernelMock = $this->createMock(Kernel::class);
         $this->routerMock = $this->createMock(RouterInterface::class);
+        $this->fileSystemOperator = $this->createMock(FilesystemOperator::class);
         $this->inAppPurchase = StaticInAppPurchaseFactory::createWithFeatures(['SwagApp' => ['SwagApp_premium']]);
 
         $this->infoController = new InfoController(
@@ -159,6 +163,7 @@ class InfoControllerTest extends TestCase
             new StaticSystemConfigService(),
             $this->createMock(ApiRouteInfoResolver::class),
             $this->inAppPurchase,
+            $this->fileSystemOperator,
         );
     }
 }

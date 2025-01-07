@@ -33,6 +33,7 @@ use Cicada\Core\Test\AppSystemTestBehaviour;
 use Cicada\Core\Test\Stub\Framework\BundleFixture;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Doctrine\DBAL\Connection;
+use League\Flysystem\FilesystemOperator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Asset\Package;
 use Symfony\Component\Asset\Packages;
@@ -369,6 +370,7 @@ class InfoControllerTest extends TestCase
         $kernelMock = $this->createMock(Kernel::class);
         $packagesMock = $this->createMock(Packages::class);
         $eventCollector = $this->createMock(FlowActionCollector::class);
+        $fileSystemOperatorMock = $this->createMock(FilesystemOperator::class);
         $infoController = new InfoController(
             $this->createMock(DefinitionService::class),
             new ParameterBag([
@@ -395,6 +397,7 @@ class InfoControllerTest extends TestCase
             static::getContainer()->get(SystemConfigService::class),
             static::getContainer()->get(ApiRouteInfoResolver::class),
             static::getContainer()->get(InAppPurchase::class),
+            $fileSystemOperatorMock,
         );
 
         $infoController->setContainer($this->createMock(Container::class));
@@ -434,6 +437,7 @@ class InfoControllerTest extends TestCase
         $kernelMock = $this->createMock(Kernel::class);
         $packagesMock = $this->createMock(Packages::class);
         $eventCollector = $this->createMock(FlowActionCollector::class);
+        $fileSystemOperatorMock = $this->createMock(FilesystemOperator::class);
         $infoController = new InfoController(
             $this->createMock(DefinitionService::class),
             new ParameterBag([
@@ -460,6 +464,7 @@ class InfoControllerTest extends TestCase
             static::getContainer()->get(SystemConfigService::class),
             static::getContainer()->get(ApiRouteInfoResolver::class),
             static::getContainer()->get(InAppPurchase::class),
+            $fileSystemOperatorMock,
         );
 
         $infoController->setContainer($this->createMock(Container::class));
@@ -506,6 +511,7 @@ class InfoControllerTest extends TestCase
 
         $kernelMock = $this->createMock(Kernel::class);
         $eventCollector = $this->createMock(FlowActionCollector::class);
+        $fileSystemOperatorMock = $this->createMock(FilesystemOperator::class);
 
         $appUrl = EnvironmentHelper::getVariable('APP_URL');
         static::assertIsString($appUrl);
@@ -539,6 +545,7 @@ class InfoControllerTest extends TestCase
             static::getContainer()->get(SystemConfigService::class),
             static::getContainer()->get(ApiRouteInfoResolver::class),
             static::getContainer()->get(InAppPurchase::class),
+            $fileSystemOperatorMock,
         );
 
         $infoController->setContainer($this->createMock(Container::class));
