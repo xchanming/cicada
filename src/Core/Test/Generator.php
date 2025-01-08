@@ -31,6 +31,7 @@ use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateEntity;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\Currency\CurrencyEntity;
 use Cicada\Core\System\DeliveryTime\DeliveryTimeEntity;
+use Cicada\Core\System\SalesChannel\Context\LanguageInfo;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
@@ -59,7 +60,8 @@ class Generator extends TestCase
         ?CustomerEntity $customer = null,
         ?string $token = null,
         ?string $domainId = null,
-        bool $createCustomer = true
+        bool $createCustomer = true,
+        ?LanguageInfo $languageInfo = null,
     ): SalesChannelContext {
         if (!$baseContext) {
             $baseContext = Context::createDefaultContext();
@@ -156,7 +158,8 @@ class Generator extends TestCase
             $customer,
             new CashRoundingConfig(2, 0.01, true),
             new CashRoundingConfig(2, 0.01, true),
-            []
+            [],
+            $languageInfo ?? new LanguageInfo('English', 'en-GB')
         );
     }
 

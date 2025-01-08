@@ -101,6 +101,7 @@ class TemplateEntity extends Entity
     {
         $this->app = $app;
     }
+
     public function getHash(): ?string
     {
         return $this->hash;

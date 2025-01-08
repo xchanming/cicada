@@ -167,6 +167,7 @@
 
         <service id="Cicada\Core\Framework\App\Template\TemplateStateService" public="true">
             <argument type="service" id="app_template.repository"/>
+            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheClearer"/>
         </service>
 
         <service id="Cicada\Core\Framework\App\Payment\PaymentMethodStateService">

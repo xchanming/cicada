@@ -5,9 +5,12 @@ namespace Cicada\Core\System\SalesChannel\Context;
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\AbstractTaxDetector;
+use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressCollection;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerAddress\CustomerAddressEntity;
-use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
+use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupCollection;
+use Cicada\Core\Checkout\Customer\CustomerCollection;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
+use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
 use Cicada\Core\Framework\Api\Context\SalesChannelApiSource;
 use Cicada\Core\Framework\Context;
@@ -18,7 +21,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
-use Cicada\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingEntity;
+use Cicada\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
 use Cicada\Core\System\SalesChannel\BaseContext;
 use Cicada\Core\System\SalesChannel\Event\SalesChannelContextPermissionsChangedEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
@@ -32,7 +35,12 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
 {
     /**
+     * @param EntityRepository<CustomerCollection> $customerRepository
+     * @param EntityRepository<CustomerGroupCollection> $customerGroupRepository
+     * @param EntityRepository<CustomerAddressCollection> $addressRepository
+     * @param EntityRepository<PaymentMethodCollection> $paymentMethodRepository
      * @param iterable<TaxRuleTypeFilterInterface> $taxRuleTypeFilter
+     * @param EntityRepository<CurrencyCountryRoundingCollection> $currencyCountryRepository
      *
      * @internal
      */
@@ -80,8 +88,7 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         if ($customer) {
             $criteria = new Criteria([$customer->getGroupId()]);
             $criteria->setTitle('context-factory::customer-group');
-            /** @var CustomerGroupEntity $customerGroup */
-            $customerGroup = $this->customerGroupRepository->search($criteria, $base->getContext())->first() ?? $customerGroup;
+            $customerGroup = $this->customerGroupRepository->search($criteria, $base->getContext())->getEntities()->first() ?? $customerGroup;
         }
 
         // loads tax rules based on active customer and delivery address
@@ -117,7 +124,9 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
             $shippingLocation,
             $customer,
             $itemRounding,
-            $totalRounding
+            $totalRounding,
+            [],
+            $base->getLanguageInfo(),
         );
 
         if (\array_key_exists(SalesChannelContextService::PERMISSIONS, $options)) {
@@ -180,9 +189,6 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
     }
 
     /**
-     * @group not-deterministic
-     * NEXT-21735 - This is covered randomly
-     *
      * @codeCoverageIgnore
      *
      * @param array<string, mixed> $options
@@ -196,7 +202,6 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $id = $customer->getLastPaymentMethodId();
 
         if ($id === null || $id === $context->getPaymentMethod()->getId()) {
-            // NEXT-21735 - does not execute on every test run
             return $context->getPaymentMethod();
         }
 
@@ -207,8 +212,7 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $criteria->addFilter(new EqualsFilter('active', 1));
         $criteria->addFilter(new EqualsFilter('salesChannels.id', $context->getSalesChannel()->getId()));
 
-        /** @var PaymentMethodEntity|null $paymentMethod */
-        $paymentMethod = $this->paymentMethodRepository->search($criteria, $context->getContext())->get($id);
+        $paymentMethod = $this->paymentMethodRepository->search($criteria, $context->getContext())->getEntities()->get($id);
 
         if (!$paymentMethod) {
             return $context->getPaymentMethod();
@@ -228,16 +232,15 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $criteria->setTitle('context-factory::customer');
         $criteria->addAssociation('salutation');
 
-        /** @var SalesChannelApiSource $source */
         $source = $context->getSource();
+        \assert($source instanceof SalesChannelApiSource);
 
         $criteria->addFilter(new MultiFilter(MultiFilter::CONNECTION_OR, [
             new EqualsFilter('customer.boundSalesChannelId', null),
             new EqualsFilter('customer.boundSalesChannelId', $source->getSalesChannelId()),
         ]));
 
-        /** @var CustomerEntity|null $customer */
-        $customer = $this->customerRepository->search($criteria, $context)->get($customerId);
+        $customer = $this->customerRepository->search($criteria, $context)->getEntities()->get($customerId);
 
         if (!$customer) {
             return null;
@@ -269,41 +272,49 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
             $criteria->addAssociation('country');
             $criteria->addAssociation('countryState');
 
-            $addresses = $this->addressRepository->search($criteria, $context);
-            if ($addresses->getTotal() > 0) {
-                $activeBillingAddressId = $activeBillingAddressId ?? $customer->getDefaultBillingAddressId();
-                if ($activeBillingAddressId !== null) {
-                    /** @var CustomerAddressEntity|null $activeBillingAddress */
-                    $activeBillingAddress = $addresses->get($activeBillingAddressId);
-                    if ($activeBillingAddress) {
-                        $customer->setDefaultBillingAddress($activeBillingAddress);
-                    }
-                }
-                $activeShippingAddressId = $activeShippingAddressId ?? $customer->getDefaultShippingAddressId();
-                if ($activeShippingAddressId !== null) {
-                    /** @var CustomerAddressEntity|null $activeShippingAddress */
-                    $activeShippingAddress = $addresses->get($activeShippingAddressId);
-                    if ($activeShippingAddress) {
-                        $customer->setActiveShippingAddress($activeShippingAddress);
-                    }
-                }
-                /** @var string $defaultBillingAddressId */
+            $addresses = $this->addressRepository->search($criteria, $context)->getEntities();
+
+            $activeBillingAddress = null;
+            if ($activeBillingAddressId !== null) {
+                $activeBillingAddress = $addresses->get($activeBillingAddressId);
+            } else {
                 $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
                 if ($defaultBillingAddressId !== null) {
-                    /** @var CustomerAddressEntity|null $defaultBillingAddress */
-                    $defaultBillingAddress = $addresses->get($defaultBillingAddressId);
-                    if ($defaultBillingAddress) {
-                        $customer->setDefaultBillingAddress($defaultBillingAddress);
-                    }
+                    $activeBillingAddress = $addresses->get($defaultBillingAddressId);
                 }
+            }
 
+            if ($activeBillingAddress !== null) {
+                $customer->setDefaultBillingAddress($activeBillingAddress);
+            }
+
+            $activeShippingAddress = null;
+            if ($activeShippingAddressId !== null) {
+                $activeShippingAddress = $addresses->get($activeShippingAddressId);
+            } else {
                 $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
                 if ($defaultShippingAddressId !== null) {
-                    /** @var CustomerAddressEntity|null $defaultShippingAddress */
-                    $defaultShippingAddress = $addresses->get($defaultShippingAddressId);
-                    if ($defaultShippingAddress) {
-                        $customer->setDefaultShippingAddress($defaultShippingAddress);
-                    }
+                    $activeShippingAddress = $addresses->get($defaultShippingAddressId);
+                }
+            }
+
+            if ($activeShippingAddress !== null) {
+                $customer->setActiveShippingAddress($activeShippingAddress);
+            }
+
+            $defaultBillingAddressId = $customer->getDefaultBillingAddressId();
+            if ($defaultBillingAddressId !== null) {
+                $defaultBillingAddress = $addresses->get($defaultBillingAddressId);
+                if ($defaultBillingAddress !== null) {
+                    $customer->setDefaultBillingAddress($defaultBillingAddress);
+                }
+            }
+
+            $defaultShippingAddressId = $customer->getDefaultShippingAddressId();
+            if ($defaultShippingAddressId !== null) {
+                $defaultShippingAddress = $addresses->get($defaultShippingAddressId);
+                if ($defaultShippingAddress !== null) {
+                    $customer->setDefaultShippingAddress($defaultShippingAddress);
                 }
             }
         }
@@ -312,12 +323,9 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
     }
 
     /**
-     * @return CashRoundingConfig[]
-     *
-     * @group not-deterministic
-     * NEXT-21735 - This is covered randomly
-     *
      * @codeCoverageIgnore
+     *
+     * @return array{CashRoundingConfig, CashRoundingConfig}
      */
     private function getCashRounding(BaseContext $context, ShippingLocation $shippingLocation): array
     {
@@ -331,9 +339,9 @@ class SalesChannelContextFactory extends AbstractSalesChannelContextFactory
         $criteria->addFilter(new EqualsFilter('currencyId', $context->getCurrencyId()));
         $criteria->addFilter(new EqualsFilter('countryId', $shippingLocation->getCountry()->getId()));
 
-        /** @var CurrencyCountryRoundingEntity|null $countryConfig */
         $countryConfig = $this->currencyCountryRepository
             ->search($criteria, $context->getContext())
+            ->getEntities()
             ->first();
 
         if ($countryConfig) {

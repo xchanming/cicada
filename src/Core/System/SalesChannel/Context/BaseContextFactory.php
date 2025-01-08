@@ -4,8 +4,10 @@ namespace Cicada\Core\System\SalesChannel\Context;
 
 use Cicada\Core\Checkout\Cart\Delivery\Struct\ShippingLocation;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
-use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
+use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupCollection;
+use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Checkout\Payment\PaymentMethodEntity;
+use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
 use Cicada\Core\Checkout\Shipping\ShippingMethodEntity;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Context\AdminSalesChannelApiSource;
@@ -17,11 +19,17 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateCollection;
 use Cicada\Core\System\Country\Aggregate\CountryState\CountryStateEntity;
+use Cicada\Core\System\Country\CountryCollection;
 use Cicada\Core\System\Country\CountryEntity;
+use Cicada\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingCollection;
 use Cicada\Core\System\Currency\Aggregate\CurrencyCountryRounding\CurrencyCountryRoundingEntity;
+use Cicada\Core\System\Currency\CurrencyCollection;
 use Cicada\Core\System\Currency\CurrencyEntity;
+use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\SalesChannel\BaseContext;
+use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
 use Cicada\Core\System\Tax\TaxCollection;
@@ -33,6 +41,17 @@ use Doctrine\DBAL\Connection;
 #[Package('core')]
 class BaseContextFactory extends AbstractBaseContextFactory
 {
+    /**
+     * @param EntityRepository<SalesChannelCollection> $salesChannelRepository
+     * @param EntityRepository<CurrencyCollection> $currencyRepository
+     * @param EntityRepository<CustomerGroupCollection> $customerGroupRepository
+     * @param EntityRepository<CountryCollection> $countryRepository
+     * @param EntityRepository<TaxCollection> $taxRepository
+     * @param EntityRepository<PaymentMethodCollection> $paymentMethodRepository
+     * @param EntityRepository<ShippingMethodCollection> $shippingMethodRepository
+     * @param EntityRepository<CountryStateCollection> $countryStateRepository
+     * @param EntityRepository<CurrencyCountryRoundingCollection> $currencyCountryRepository
+     */
     public function __construct(
         private readonly EntityRepository $salesChannelRepository,
         private readonly EntityRepository $currencyRepository,
@@ -58,20 +77,23 @@ class BaseContextFactory extends AbstractBaseContextFactory
         $criteria->setTitle('base-context-factory::sales-channel');
         $criteria->addAssociation('currency');
         $criteria->addAssociation('domains');
+        $criteria->getAssociation('languages')
+            ->addFilter(new EqualsFilter('id', $context->getLanguageId()))
+            ->addAssociation('translationCode')
+            ->addAssociation('locale');
 
-        $salesChannel = $this->salesChannelRepository->search($criteria, $context)->get($salesChannelId);
-
+        $salesChannel = $this->salesChannelRepository->search($criteria, $context)->getEntities()->get($salesChannelId);
         if (!$salesChannel instanceof SalesChannelEntity) {
             throw SalesChannelException::salesChannelNotFound($salesChannelId);
         }
 
         // load active currency, fallback to shop currency
-        /** @var CurrencyEntity $currency */
         $currency = $salesChannel->getCurrency();
-
         if (\array_key_exists(SalesChannelContextService::CURRENCY_ID, $options)) {
             $currencyId = $options[SalesChannelContextService::CURRENCY_ID];
-            \assert(\is_string($currencyId) && Uuid::isValid($currencyId));
+            if (!\is_string($currencyId) || !Uuid::isValid($currencyId)) {
+                throw SalesChannelException::invalidCurrencyId();
+            }
 
             $criteria = new Criteria([$currencyId]);
             $criteria->setTitle('base-context-factory::currency');
@@ -83,6 +105,10 @@ class BaseContextFactory extends AbstractBaseContextFactory
             }
         }
 
+        if ($currency === null) {
+            throw SalesChannelException::currencyNotFound($salesChannel->getCurrencyId());
+        }
+
         // load not logged in customer with default shop configuration or with provided checkout scopes
         $shippingLocation = $this->loadShippingLocation($options, $context, $salesChannel);
 
@@ -91,10 +117,10 @@ class BaseContextFactory extends AbstractBaseContextFactory
         $criteria = new Criteria([$salesChannel->getCustomerGroupId()]);
         $criteria->setTitle('base-context-factory::customer-group');
 
-        $customerGroups = $this->customerGroupRepository->search($criteria, $context);
-
-        /** @var CustomerGroupEntity $customerGroup */
-        $customerGroup = $customerGroups->get($groupId);
+        $customerGroup = $this->customerGroupRepository->search($criteria, $context)->getEntities()->get($groupId);
+        if ($customerGroup === null) {
+            throw SalesChannelException::customerGroupNotFound($groupId);
+        }
 
         // loads tax rules based on active customer and delivery address
         $taxRules = $this->getTaxRules($context);
@@ -129,7 +155,8 @@ class BaseContextFactory extends AbstractBaseContextFactory
             $shippingMethod,
             $shippingLocation,
             $itemRounding,
-            $totalRounding
+            $totalRounding,
+            $this->getLanguageInfo($salesChannel->getLanguages(), $context->getLanguageId()),
         );
     }
 
@@ -139,10 +166,7 @@ class BaseContextFactory extends AbstractBaseContextFactory
         $criteria->setTitle('base-context-factory::taxes');
         $criteria->addAssociation('rules.type');
 
-        /** @var TaxCollection $taxes */
-        $taxes = $this->taxRepository->search($criteria, $context)->getEntities();
-
-        return $taxes;
+        return $this->taxRepository->search($criteria, $context)->getEntities();
     }
 
     /**
@@ -181,10 +205,12 @@ class BaseContextFactory extends AbstractBaseContextFactory
         $criteria->addAssociation('media');
         $criteria->setTitle('base-context-factory::shipping-method');
 
-        $shippingMethods = $this->shippingMethodRepository->search($criteria, $context);
+        $shippingMethods = $this->shippingMethodRepository->search($criteria, $context)->getEntities();
 
-        /** @var ShippingMethodEntity $shippingMethod */
         $shippingMethod = $shippingMethods->get($id) ?? $shippingMethods->get($salesChannel->getShippingMethodId());
+        if ($shippingMethod === null) {
+            throw SalesChannelException::shippingMethodNotFound($id);
+        }
 
         return $shippingMethod;
     }
@@ -274,7 +300,9 @@ class BaseContextFactory extends AbstractBaseContextFactory
         // allows previewing cart calculation for a specify state for not logged in customers
         if (isset($options[SalesChannelContextService::COUNTRY_STATE_ID])) {
             $countryStateId = $options[SalesChannelContextService::COUNTRY_STATE_ID];
-            \assert(\is_string($countryStateId) && Uuid::isValid($countryStateId));
+            if (!\is_string($countryStateId) || !Uuid::isValid($countryStateId)) {
+                throw SalesChannelException::invalidCountryStateId();
+            }
 
             $criteria = new Criteria([$countryStateId]);
             $criteria->addAssociation('country');
@@ -287,14 +315,18 @@ class BaseContextFactory extends AbstractBaseContextFactory
                 throw SalesChannelException::countryStateNotFound($countryStateId);
             }
 
-            /** @var CountryEntity $country */
             $country = $state->getCountry();
+            if (!$country instanceof CountryEntity) {
+                throw SalesChannelException::countryNotFound($state->getCountryId());
+            }
 
             return new ShippingLocation($country, $state, null);
         }
 
         $countryId = $options[SalesChannelContextService::COUNTRY_ID] ?? $salesChannel->getCountryId();
-        \assert(\is_string($countryId) && Uuid::isValid($countryId));
+        if (!\is_string($countryId) || !Uuid::isValid($countryId)) {
+            throw SalesChannelException::invalidCountryId();
+        }
 
         $criteria = new Criteria([$countryId]);
         $criteria->setTitle('base-context-factory::country');
@@ -353,5 +385,21 @@ class BaseContextFactory extends AbstractBaseContextFactory
         }
 
         return [$currency->getItemRounding(), $currency->getTotalRounding()];
+    }
+
+    private function getLanguageInfo(?LanguageCollection $languages, string $currentLanguageId): LanguageInfo
+    {
+        $currentLanguage = $languages?->get($currentLanguageId);
+        if ($currentLanguage === null) {
+            throw SalesChannelException::languageNotFound($currentLanguageId);
+        }
+
+        $locale = $currentLanguage->getTranslationCode() ?? $currentLanguage->getLocale();
+        \assert($locale !== null, 'At least the localeId is required, so the fallback should never be null');
+
+        return new LanguageInfo(
+            $currentLanguage->getTranslation('name') ?? $currentLanguage->getName(),
+            $locale->getCode(),
+        );
     }
 }

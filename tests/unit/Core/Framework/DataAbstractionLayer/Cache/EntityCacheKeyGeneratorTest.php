@@ -20,6 +20,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\SuffixFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\Currency\CurrencyEntity;
+use Cicada\Core\System\SalesChannel\Context\LanguageInfo;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Tax\TaxCollection;
@@ -157,7 +158,8 @@ class DummyContext extends SalesChannelContext
             new CustomerEntity(),
             new CashRoundingConfig(2, 0.01, true),
             new CashRoundingConfig(2, 0.01, true),
-            []
+            [],
+            new LanguageInfo('English', 'en-GB'),
         );
     }
 

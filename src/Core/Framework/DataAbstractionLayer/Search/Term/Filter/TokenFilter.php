@@ -14,8 +14,6 @@ use Doctrine\DBAL\Connection;
 #[Package('core')]
 class TokenFilter extends AbstractTokenFilter
 {
-    private const DEFAULT_MIN_SEARCH_TERM_LENGTH = 2;
-
     /**
      * @var array<string, FilterConfig>
      */

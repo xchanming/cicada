@@ -2,7 +2,9 @@
 
 namespace Cicada\Storefront\Pagelet\Footer;
 
+use Cicada\Core\Content\Category\CategoryCollection;
 use Cicada\Core\Content\Category\Service\NavigationLoaderInterface;
+use Cicada\Core\Content\Category\Tree\TreeItem;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -34,12 +36,25 @@ class FooterPageletLoader implements FooterPageletLoaderInterface
             $tree = $this->navigationLoader->load($navigationId, $salesChannelContext, $footerId);
         }
 
-        $pagelet = new FooterPagelet($tree);
+        $pagelet = new FooterPagelet($tree, $this->getServiceMenu($salesChannelContext));
 
         $this->eventDispatcher->dispatch(
             new FooterPageletLoadedEvent($pagelet, $salesChannelContext, $request)
         );
 
         return $pagelet;
+    }
+
+    private function getServiceMenu(SalesChannelContext $context): CategoryCollection
+    {
+        $serviceId = $context->getSalesChannel()->getServiceCategoryId();
+
+        if ($serviceId === null) {
+            return new CategoryCollection();
+        }
+
+        $navigation = $this->navigationLoader->load($serviceId, $context, $serviceId, 1);
+
+        return new CategoryCollection(array_map(static fn (TreeItem $treeItem) => $treeItem->getCategory(), $navigation->getTree()));
     }
 }

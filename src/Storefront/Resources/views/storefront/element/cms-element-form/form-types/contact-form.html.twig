@@ -114,7 +114,7 @@
                            value="{{ page.entityName }}">
                 {% else %}
                     <input type="hidden" id="{{ formPrefix }}-navigationId" name="navigationId"
-                           value="{{ page.header.navigation.active.id }}">
+                           value="{{ cicada.navigation.id }}">
                 {% endif %}
 
                 <input type="hidden" id="{{ formPrefix }}-slotId" name="slotId" value="{{ element.id }}">

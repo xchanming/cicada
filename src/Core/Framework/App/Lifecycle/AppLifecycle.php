@@ -2,8 +2,6 @@
 
 namespace Cicada\Core\Framework\App\Lifecycle;
 
-use Composer\Semver\VersionParser;
-use Doctrine\DBAL\Connection;
 use Cicada\Administration\Snippet\AppAdministrationSnippetPersister;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleCollection;
@@ -60,6 +58,8 @@ use Cicada\Core\System\Integration\IntegrationCollection;
 use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
+use Composer\Semver\VersionParser;
+use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**

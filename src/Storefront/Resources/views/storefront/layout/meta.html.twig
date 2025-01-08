@@ -144,7 +144,7 @@
         {% block layout_head_javascript_router %}
             {# Register all routes that will be needed in JavaScript to the window.router object #}
             <script>
-                window.activeNavigationId = '{{ page.header.navigation.active.id }}';
+                window.activeNavigationId = '{{ cicada.navigation.id }}';
                 window.router = {
                     'frontend.cart.offcanvas': '{{ path('frontend.cart.offcanvas') }}',
                     'frontend.cookie.offcanvas': '{{ path('frontend.cookie.offcanvas') }}',
@@ -157,7 +157,7 @@
                     'frontend.country.country-data': '{{ path('frontend.country.country.data') }}',
                     'frontend.app-system.generate-token': '{{ path('frontend.app-system.generate-token', { name: 'Placeholder' }) }}',
                     };
-                window.salesChannelId = '{{ app.request.attributes.get('sw-sales-channel-id') }}';
+                window.salesChannelId = '{{ context.salesChannelId }}';
             </script>
         {% endblock %}
 
