@@ -52,10 +52,10 @@ class MigrationCollectionFactory
             $coreBasePath = $this->projectDir . '/src/Core';
             $storefrontBasePath = $this->projectDir . '/src/Storefront';
             $adminBasePath = $this->projectDir . '/src/Administration';
-        } elseif (file_exists($this->projectDir . '/vendor/cicada-ag/platform/src/Core/schema.sql')) {
-            $coreBasePath = $this->projectDir . '/vendor/cicada-ag/platform/src/Core';
-            $storefrontBasePath = $this->projectDir . '/vendor/cicada-ag/platform/src/Storefront';
-            $adminBasePath = $this->projectDir . '/vendor/cicada-ag/platform/src/Administration';
+        } elseif (file_exists($this->projectDir . '/vendor/cicada-ag/cicada/src/Core/schema.sql')) {
+            $coreBasePath = $this->projectDir . '/vendor/cicada-ag/cicada/src/Core';
+            $storefrontBasePath = $this->projectDir . '/vendor/cicada-ag/cicada/src/Storefront';
+            $adminBasePath = $this->projectDir . '/vendor/cicada-ag/cicada/src/Administration';
         } else {
             $coreBasePath = $this->projectDir . '/vendor/cicada-ag/core';
             $storefrontBasePath = $this->projectDir . '/vendor/cicada-ag/storefront';

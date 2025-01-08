@@ -22,7 +22,7 @@ class DomainExceptionRuleTest extends RuleTestCase
     {
         $this->analyse([__DIR__ . '/data/DomainExceptionRule/DomainExceptionViolations.php'], [
             [
-                'Throwing new exceptions within classes are not allowed. Please use domain exception pattern. See https://github.com/cicada-ag/platform/blob/v6.4.20.0/adr/2022-02-24-domain-exceptions.md',
+                'Throwing new exceptions within classes are not allowed. Please use domain exception pattern. See https://github.com/cicada-ag/cicada/blob/v6.4.20.0/adr/2022-02-24-domain-exceptions.md',
                 9,
             ],
         ]);
