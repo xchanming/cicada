@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Doctrine;
 
-use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
@@ -33,7 +32,9 @@ class MultiInsertQueryQueue
         private readonly bool $useReplace = false
     ) {
         if ($chunkSize < 1) {
-            throw DataAbstractionLayerException::invalidChunkSize($chunkSize);
+            throw new \InvalidArgumentException(
+                \sprintf('Parameter $chunkSize needs to be a positive integer starting with 1, "%d" given', $chunkSize)
+            );
         }
         $this->chunkSize = $chunkSize;
     }
@@ -67,17 +68,6 @@ class MultiInsertQueryQueue
             'columns' => $columns,
             'types' => $types,
         ];
-    }
-
-    /**
-     * @param list<array<string, mixed>> $rows
-     * @param array<string, ParameterType::*>|null $types
-     */
-    public function addInserts(string $table, array $rows, ?array $types = null): void
-    {
-        foreach ($rows as $row) {
-            $this->addInsert($table, $row, $types);
-        }
     }
 
     public function execute(): void
