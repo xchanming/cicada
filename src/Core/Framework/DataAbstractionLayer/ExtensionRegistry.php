@@ -118,7 +118,7 @@ class ExtensionRegistry
 
     private function getInstance(DefinitionInstanceRegistry $registry, EntityExtension $extension): EntityDefinition
     {
-        if (Feature::isActive('v6.7.0.0')) {
+        if ($this->is67) {
             $entity = $extension->getEntityName();
 
             return $registry->getByEntityName($entity);
