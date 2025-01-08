@@ -5,6 +5,7 @@ namespace Cicada\Core\Framework\Routing;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Event\StorefrontRenderEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -67,6 +68,17 @@ class RouteEventSubscriber implements EventSubscriberInterface
         }
 
         $name = $request->attributes->get('_route') . '.response';
+        $this->dispatcher->dispatch($event, $name);
+    }
+
+    public function controller(ControllerEvent $event): void
+    {
+        $request = $event->getRequest();
+        if (!$request->attributes->has('_route')) {
+            return;
+        }
+
+        $name = $request->attributes->get('_route') . '.controller';
         $this->dispatcher->dispatch($event, $name);
     }
 }
