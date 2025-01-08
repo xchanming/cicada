@@ -16,6 +16,8 @@ use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistr
 #[Package('core')]
 class ExtensionRegistry
 {
+    private bool $is67;
+
     /**
      * @internal
      *
@@ -26,6 +28,7 @@ class ExtensionRegistry
         private readonly iterable $extensions,
         private readonly iterable $bulks
     ) {
+        $this->is67 = Feature::isActive('v6.7.0.0');
     }
 
     public function configureExtensions(DefinitionInstanceRegistry $registry, SalesChannelDefinitionInstanceRegistry $salesChannelRegistry): void
