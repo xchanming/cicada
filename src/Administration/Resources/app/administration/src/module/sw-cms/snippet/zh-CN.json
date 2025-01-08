@@ -393,6 +393,8 @@
             "priceDesc": "价格降序",
             "creationDateAsc": "创建日期升序",
             "creationDateDesc": "创建日期降序",
+            "releaseDateAsc": "发布日期升序",
+            "releaseDateDesc": "发布日期降序",
             "random": "随机"
           },
           "textProductStreamPreviewLink": "预览动态产品组",
