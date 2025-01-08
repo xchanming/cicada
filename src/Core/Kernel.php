@@ -352,12 +352,6 @@ class Kernel extends HttpKernel
 
     protected function initializeDatabaseConnectionVariables(): void
     {
-        $cicadaSkipConnectionVariables = EnvironmentHelper::getVariable('CICADA_SKIP_CONNECTION_VARIABLES', false);
-
-        if ($cicadaSkipConnectionVariables) {
-            return;
-        }
-
         $connection = self::getConnection();
 
         try {

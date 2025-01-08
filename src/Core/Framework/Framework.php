@@ -154,5 +154,6 @@ class Framework extends Bundle
 
         CacheValueCompressor::$compress = $this->container->getParameter('cicada.cache.cache_compression');
         CacheValueCompressor::$compressMethod = $this->container->getParameter('cicada.cache.cache_compression_method');
+        Feature::$emitDeprecations = $this->container->getParameter('kernel.debug');
     }
 }
