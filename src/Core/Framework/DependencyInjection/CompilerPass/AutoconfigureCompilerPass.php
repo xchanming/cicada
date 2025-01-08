@@ -21,6 +21,7 @@ use Cicada\Core\Content\Seo\SeoUrlRoute\SeoUrlRouteInterface;
 use Cicada\Core\Content\Sitemap\Provider\AbstractUrlProvider;
 use Cicada\Core\Framework\Adapter\Filesystem\Adapter\AdapterFactoryInterface;
 use Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy\TemplateNamespaceHierarchyBuilderInterface;
+use Cicada\Core\Framework\DataAbstractionLayer\BulkEntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityExtension;
@@ -57,6 +58,10 @@ class AutoconfigureCompilerPass implements CompilerPassInterface
         $container
             ->registerForAutoconfiguration(EntityExtension::class)
             ->addTag('cicada.entity.extension');
+
+        $container
+            ->registerForAutoconfiguration(BulkEntityExtension::class)
+            ->addTag('cicada.bulk.entity.extension');
 
         $container
             ->registerForAutoconfiguration(CartProcessorInterface::class)
