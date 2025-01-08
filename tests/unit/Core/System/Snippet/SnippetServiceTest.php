@@ -3,6 +3,7 @@
 namespace Cicada\Tests\Unit\Core\System\Snippet;
 
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Snippet\Files\SnippetFileCollection;
 use Cicada\Core\System\Snippet\Filter\SnippetFilterFactory;
