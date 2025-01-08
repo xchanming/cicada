@@ -25,6 +25,7 @@ use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Profiling\Profiler;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\VarExporter\LazyGhostTrait;
 
 /**
  * @final
@@ -34,6 +35,8 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 #[Package('core')]
 class EntityRepository
 {
+    use LazyGhostTrait;
+
     /**
      * @internal
      */

@@ -4,8 +4,6 @@ namespace Cicada\Core\System\CustomEntity\Schema;
 
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEventFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\BoolField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\DateTimeField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\EmailField;
@@ -35,11 +33,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
-use Cicada\Core\Framework\DataAbstractionLayer\Read\EntityReaderInterface;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\EntityAggregatorInterface;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearcherInterface;
-use Cicada\Core\Framework\DataAbstractionLayer\VersionManager;
 use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\System\CustomEntity\CustomEntityRegistrar;
 use Cicada\Core\System\CustomEntity\Xml\Field\AssociationField;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
@@ -107,7 +102,7 @@ class DynamicFieldFactory
 
         $translation = DynamicTranslationEntityDefinition::create($entityName, $translated, $container);
         $container->set($translation->getEntityName(), $translation);
-        $container->set($translation->getEntityName() . '.repository', self::createRepository($container, $translation));
+        $container->set($translation->getEntityName() . '.repository', CustomEntityRegistrar::createRepository($container, $translation));
 
         $registry->register($translation, $translation->getEntityName());
 
@@ -117,19 +112,6 @@ class DynamicFieldFactory
     private static function kebabCaseToCamelCase(string $string): string
     {
         return (new CamelCaseToSnakeCaseNameConverter())->denormalize(str_replace('-', '_', $string));
-    }
-
-    private static function createRepository(ContainerInterface $container, EntityDefinition $definition): EntityRepository
-    {
-        return new EntityRepository(
-            $definition,
-            $container->get(EntityReaderInterface::class),
-            $container->get(VersionManager::class),
-            $container->get(EntitySearcherInterface::class),
-            $container->get(EntityAggregatorInterface::class),
-            $container->get('event_dispatcher'),
-            $container->get(EntityLoadedEventFactory::class)
-        );
     }
 
     /**
@@ -242,7 +224,7 @@ class DynamicFieldFactory
 
                 // register definition in container and definition registry
                 $container->set($definition->getEntityName(), $definition);
-                $container->set($definition->getEntityName() . '.repository', self::createRepository($container, $definition));
+                $container->set($definition->getEntityName() . '.repository', CustomEntityRegistrar::createRepository($container, $definition));
                 $registry->register($definition, $definition->getEntityName());
 
                 // define reverse side
