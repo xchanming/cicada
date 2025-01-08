@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Framework\App\Template;
 
+use Cicada\Core\Framework\Adapter\Cache\CacheClearer;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
@@ -14,8 +15,10 @@ use Cicada\Core\Framework\Log\Package;
 #[Package('core')]
 class TemplateStateService
 {
-    public function __construct(private readonly EntityRepository $templateRepo)
-    {
+    public function __construct(
+        private readonly EntityRepository $templateRepo,
+        private readonly CacheClearer $cacheClearer,
+    ) {
     }
 
     public function activateAppTemplates(string $appId, Context $context): void
@@ -40,5 +43,7 @@ class TemplateStateService
         $updateSet = array_map(fn (string $id) => ['id' => $id, 'active' => $newActiveState], $templates);
 
         $this->templateRepo->update($updateSet, $context);
+
+        $this->cacheClearer->clearHttpCache();
     }
 }
