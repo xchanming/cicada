@@ -35,6 +35,7 @@ class UserCreateCommand extends Command
             ->addOption('password', 'p', InputOption::VALUE_REQUIRED, 'Password for the user')
             ->addOption('name', null, InputOption::VALUE_REQUIRED, 'The user\'s name')
             ->addOption('email', null, InputOption::VALUE_REQUIRED, 'Email for the user')
+            ->addOption('phone', null, InputOption::VALUE_REQUIRED, 'Phone for the user')
         ;
     }
 
@@ -54,7 +55,10 @@ class UserCreateCommand extends Command
         if ($email) {
             $additionalData['email'] = $email;
         }
-
+        $phone = $input->getOption('phone');
+        if ($phone) {
+            $additionalData['phone'] = $phone;
+        }
         if ($input->getOption('admin')) {
             $additionalData['admin'] = true;
         }

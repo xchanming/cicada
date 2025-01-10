@@ -50,6 +50,7 @@ class TestUser
             'email' => "{$email}@example.com",
             'username' => $username,
             'password' => TestDefaults::HASHED_PASSWORD,
+            'phone' => (string) rand(10000000000, 99999999999),
             'locale_id' => self::getLocaleOfSystemLanguage($connection),
             'active' => 1,
             'admin' => 0,

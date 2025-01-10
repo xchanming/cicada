@@ -18,6 +18,7 @@ use Doctrine\DBAL\Connection;
 class UserProvisioner
 {
     final public const USER_EMAIL_FALLBACK = 'user@example.com';
+    final public const USER_PHONE_FALLBACK = '12000000000';
 
     /**
      * @internal
@@ -53,6 +54,7 @@ class UserProvisioner
             'active' => true,
             'admin' => $additionalData['admin'] ?? true,
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
+            'phone' => $additionalData['phone'] ?? self::USER_PHONE_FALLBACK,
         ];
 
         $this->connection->insert('user', $userPayload);
