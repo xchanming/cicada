@@ -208,6 +208,7 @@ class StoreClientTest extends TestCase
 
         static::assertSame([], $returnedUserInfo);
     }
+
     public function testCancelExtensionAlreadyCancelled(): void
     {
         $errorInfo = [
