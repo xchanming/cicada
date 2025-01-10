@@ -8,7 +8,9 @@
       "messageSaveSuccess": "配置已保存。",
       "messageSaveError": "配置无法保存。",
       "labelDefaultSorting": "默认排序",
+      "labelDefaultSearchResultSorting": "默认搜索排序",
       "placeholderDefaultSorting": "选择一个默认排序...",
+      "placeholderDefaultSearchResultSorting": "选择一个默认搜索排序...",
       "productSortingCriteriaGrid": {
         "header": {
           "name": "名称",

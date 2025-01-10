@@ -8,7 +8,6 @@ use Cicada\Core\Content\Product\Events\ProductSuggestResultEvent;
 use Cicada\Core\Content\Product\ProductEvents;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Processor\CompositeListingProcessor;
 use Cicada\Core\Content\Product\SalesChannel\ProductAvailableFilter;
-use Cicada\Core\Content\Product\SalesChannel\Search\ResolvedCriteriaProductSearchRoute;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchBuilderInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
@@ -43,10 +42,6 @@ class ResolvedCriteriaProductSuggestRoute extends AbstractProductSuggestRoute
     {
         if (!$request->get('search')) {
             throw RoutingException::missingRequestParameter('search');
-        }
-
-        if (!$request->get('order')) {
-            $request->request->set('order', ResolvedCriteriaProductSearchRoute::DEFAULT_SEARCH_SORT);
         }
 
         $criteria->addState(ProductSuggestRoute::STATE);
