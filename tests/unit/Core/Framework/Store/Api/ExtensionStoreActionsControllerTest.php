@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Store\Api;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\PluginNotAZipFileException;
@@ -11,9 +14,6 @@ use Cicada\Core\Framework\Store\Api\ExtensionStoreActionsController;
 use Cicada\Core\Framework\Store\Services\ExtensionDownloader;
 use Cicada\Core\Framework\Store\Services\ExtensionLifecycleService;
 use Cicada\Core\Framework\Store\StoreException;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -230,7 +230,7 @@ class ExtensionStoreActionsControllerTest extends TestCase
 
         static::assertEquals(
             Response::HTTP_NO_CONTENT,
-            $controller->removeExtension('plugin', 'test', Context::createDefaultContext())->getStatusCode()
+            $controller->removeExtension('plugin', 'test', new Request(), Context::createDefaultContext())->getStatusCode()
         );
     }
 
@@ -340,7 +340,7 @@ class ExtensionStoreActionsControllerTest extends TestCase
         }
 
         try {
-            $controller->removeExtension('plugin', 'test', $context);
+            $controller->removeExtension('plugin', 'test', new Request(), $context);
         } catch (StoreException $e) {
             static::assertEquals(StoreException::EXTENSION_RUNTIME_EXTENSION_MANAGEMENT_NOT_ALLOWED, $e->getErrorCode());
         }
