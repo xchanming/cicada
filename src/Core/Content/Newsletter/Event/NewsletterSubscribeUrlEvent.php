@@ -44,7 +44,7 @@ class NewsletterSubscribeUrlEvent extends Event implements CicadaSalesChannelEve
 
     public function getSalesChannelId(): string
     {
-        return $this->salesChannelContext->getSalesChannel()->getId();
+        return $this->salesChannelContext->getSalesChannelId();
     }
 
     public function getHashedEmail(): string

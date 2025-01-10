@@ -350,7 +350,7 @@ class SalesChannelContext extends Struct
 
     public function getSalesChannelId(): string
     {
-        return $this->getSalesChannel()->getId();
+        return $this->getSalesChannelId();
     }
 
     public function addState(string ...$states): void

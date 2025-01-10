@@ -57,7 +57,7 @@ class CustomerProfileValidationFactory implements DataValidationFactoryInterface
     {
         if ($context instanceof SalesChannelContext) {
             $frameworkContext = $context->getContext();
-            $salesChannelId = $context->getSalesChannel()->getId();
+            $salesChannelId = $context->getSalesChannelId();
         } else {
             $frameworkContext = $context;
             $salesChannelId = null;
