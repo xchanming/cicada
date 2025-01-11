@@ -50,7 +50,7 @@ class CustomerLogoutEvent extends Event implements SalesChannelAware, CicadaSale
 
     public function getSalesChannelId(): string
     {
-        return $this->salesChannelContext->getSalesChannel()->getId();
+        return $this->salesChannelContext->getSalesChannelId();
     }
 
     public static function getAvailableData(): EventDataCollection

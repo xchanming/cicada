@@ -126,7 +126,7 @@ trait StorefrontPageTestBehaviour
                 ['id' => Uuid::randomHex(), 'name' => 'asd'],
             ],
             'visibilities' => [
-                ['salesChannelId' => $context->getSalesChannel()->getId(), 'visibility' => ProductVisibilityDefinition::VISIBILITY_ALL],
+                ['salesChannelId' => $context->getSalesChannelId(), 'visibility' => ProductVisibilityDefinition::VISIBILITY_ALL],
             ],
         ];
 

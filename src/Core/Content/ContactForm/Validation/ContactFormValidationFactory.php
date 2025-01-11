@@ -53,7 +53,7 @@ class ContactFormValidationFactory implements DataValidationFactoryInterface
             ->add('comment', new NotBlank())
             ->add('name', new Regex(['pattern' => self::DOMAIN_NAME_REGEX, 'match' => false]));
 
-        $required = $this->systemConfigService->get('core.basicInformation.nameFieldRequired', $context->getSalesChannel()->getId());
+        $required = $this->systemConfigService->get('core.basicInformation.nameFieldRequired', $context->getSalesChannelId());
         if ($required) {
             $definition->set('name', new NotBlank(), new Regex([
                 'pattern' => self::DOMAIN_NAME_REGEX,
@@ -61,7 +61,7 @@ class ContactFormValidationFactory implements DataValidationFactoryInterface
             ]));
         }
 
-        $required = $this->systemConfigService->get('core.basicInformation.phoneNumberFieldRequired', $context->getSalesChannel()->getId());
+        $required = $this->systemConfigService->get('core.basicInformation.phoneNumberFieldRequired', $context->getSalesChannelId());
         if ($required) {
             $definition->add('phone', new NotBlank());
         }

@@ -193,7 +193,7 @@ class OrderConverter
             $data['orderNumber'] = $this->numberRangeValueGenerator->getValue(
                 $this->orderDefinition->getEntityName(),
                 $context->getContext(),
-                $context->getSalesChannel()->getId()
+                $context->getSalesChannelId()
             );
         }
 

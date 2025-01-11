@@ -57,7 +57,7 @@ class OrderRoute extends AbstractOrderRoute
     {
         ReplicaConnection::ensurePrimary();
 
-        $criteria->addFilter(new EqualsFilter('order.salesChannelId', $context->getSalesChannel()->getId()));
+        $criteria->addFilter(new EqualsFilter('order.salesChannelId', $context->getSalesChannelId()));
 
         $criteria->addAssociation('billingAddress');
         $criteria->addAssociation('orderCustomer.customer');

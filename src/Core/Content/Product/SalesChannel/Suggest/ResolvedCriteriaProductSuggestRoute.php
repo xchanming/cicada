@@ -8,7 +8,6 @@ use Cicada\Core\Content\Product\Events\ProductSuggestResultEvent;
 use Cicada\Core\Content\Product\ProductEvents;
 use Cicada\Core\Content\Product\SalesChannel\Listing\Processor\CompositeListingProcessor;
 use Cicada\Core\Content\Product\SalesChannel\ProductAvailableFilter;
-use Cicada\Core\Content\Product\SalesChannel\Search\ResolvedCriteriaProductSearchRoute;
 use Cicada\Core\Content\Product\SearchKeyword\ProductSearchBuilderInterface;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
@@ -45,15 +44,11 @@ class ResolvedCriteriaProductSuggestRoute extends AbstractProductSuggestRoute
             throw RoutingException::missingRequestParameter('search');
         }
 
-        if (!$request->get('order')) {
-            $request->request->set('order', ResolvedCriteriaProductSearchRoute::DEFAULT_SEARCH_SORT);
-        }
-
         $criteria->addState(ProductSuggestRoute::STATE);
         $criteria->addState(Criteria::STATE_ELASTICSEARCH_AWARE);
 
         $criteria->addFilter(
-            new ProductAvailableFilter($context->getSalesChannel()->getId(), ProductVisibilityDefinition::VISIBILITY_SEARCH)
+            new ProductAvailableFilter($context->getSalesChannelId(), ProductVisibilityDefinition::VISIBILITY_SEARCH)
         );
 
         $this->searchBuilder->build($request, $criteria, $context);

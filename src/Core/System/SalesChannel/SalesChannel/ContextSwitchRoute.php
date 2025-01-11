@@ -99,22 +99,22 @@ class ContextSwitchRoute extends AbstractContextSwitchRoute
 
         $currencyCriteria = new Criteria();
         $currencyCriteria->addFilter(
-            new EqualsFilter('currency.salesChannels.id', $context->getSalesChannel()->getId())
+            new EqualsFilter('currency.salesChannels.id', $context->getSalesChannelId())
         );
 
         $languageCriteria = new Criteria();
         $languageCriteria->addFilter(
-            new EqualsFilter('language.salesChannels.id', $context->getSalesChannel()->getId())
+            new EqualsFilter('language.salesChannels.id', $context->getSalesChannelId())
         );
 
         $paymentMethodCriteria = new Criteria();
         $paymentMethodCriteria->addFilter(
-            new EqualsFilter('payment_method.salesChannels.id', $context->getSalesChannel()->getId())
+            new EqualsFilter('payment_method.salesChannels.id', $context->getSalesChannelId())
         );
 
         $shippingMethodCriteria = new Criteria();
         $shippingMethodCriteria->addFilter(
-            new EqualsFilter('shipping_method.salesChannels.id', $context->getSalesChannel()->getId())
+            new EqualsFilter('shipping_method.salesChannels.id', $context->getSalesChannelId())
         );
 
         $definition
@@ -138,7 +138,7 @@ class ContextSwitchRoute extends AbstractContextSwitchRoute
         $this->contextPersister->save(
             $context->getToken(),
             $parameters,
-            $context->getSalesChannel()->getId(),
+            $context->getSalesChannelId(),
             $customer && empty($context->getPermissions()) ? $customer->getId() : null
         );
 

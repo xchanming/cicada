@@ -43,7 +43,7 @@ class PasswordRecoveryUrlEvent extends Event implements CicadaSalesChannelEvent
 
     public function getSalesChannelId(): string
     {
-        return $this->salesChannelContext->getSalesChannel()->getId();
+        return $this->salesChannelContext->getSalesChannelId();
     }
 
     public function getHash(): string

@@ -71,7 +71,7 @@
 
         <service id="Cicada\Core\Framework\Api\Command\DumpSchemaCommand">
             <argument type="service" id="Cicada\Core\Framework\Api\ApiDefinition\DefinitionService"/>
-
+            <argument type="service" id="cache.object"/>
             <tag name="console.command"/>
         </service>
 

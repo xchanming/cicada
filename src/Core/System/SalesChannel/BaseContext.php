@@ -46,6 +46,11 @@ class BaseContext
         return $this->currency;
     }
 
+    public function getSalesChannelId(): string
+    {
+        return $this->salesChannel->getId();
+    }
+
     public function getSalesChannel(): SalesChannelEntity
     {
         return $this->salesChannel;

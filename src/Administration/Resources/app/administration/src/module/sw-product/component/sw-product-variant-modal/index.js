@@ -219,6 +219,7 @@ export default {
                     allowResize: true,
                     inlineEdit: true,
                     sortable: false,
+                    visible: false,
                 },
             ];
         },
