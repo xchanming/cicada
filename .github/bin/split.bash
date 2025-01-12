@@ -70,8 +70,8 @@ copy_assets() {
 # Returns a list of mandatory assets for the Administration package.
 admin_assets_list() {
   cat <<EOF | tr -d '[:blank:]'
-    ${PLATFORM_DIR}/repos/administration/Resources/public/static/js/app.js
-    ${PLATFORM_DIR}/repos/administration/Resources/public/static/css/app.css
+    ${PLATFORM_DIR}/repos/administration/Resources/public/administration/assets
+    ${PLATFORM_DIR}/repos/administration/Resources/public/administration/static
 EOF
 }
 
@@ -79,8 +79,7 @@ EOF
 storefront_assets_list() {
   cat <<EOF | tr -d '[:blank:]'
     ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/dist/storefront/storefront.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration
+    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/assets
     ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/vendor/bootstrap/package.json
 EOF
 }
