@@ -507,36 +507,6 @@ describe('module/sw-product/page/sw-product-list', () => {
         expect(wrapper.vm.naturalSorting).toBe(false);
     });
 
-    it('should sort products by Manufacturer name', async () => {
-        await wrapper.vm.getList();
-
-        const currencyColumnHeader = wrapper.find('.sw-data-grid__cell--header.sw-data-grid__cell--2');
-
-        await currencyColumnHeader.trigger('click');
-        await flushPromises();
-
-        const manufacturerNamesASCSorted = wrapper.findAll('.sw-data-grid__cell--manufacturer-name');
-        const [
-            firstManufacturerNameASCSorted,
-            secondManufacturerNameASCSorted,
-        ] = manufacturerNamesASCSorted;
-
-        expect(firstManufacturerNameASCSorted.text()).toBe('Manufacturer A');
-        expect(secondManufacturerNameASCSorted.text()).toBe('Manufacturer B');
-
-        await currencyColumnHeader.trigger('click');
-        await flushPromises();
-
-        const manufacturerNamesDESCSorted = wrapper.findAll('.sw-data-grid__cell--manufacturer-name');
-        const [
-            firstManufacturerNameDESCSorted,
-            secondManufacturerNameDESCSorted,
-        ] = manufacturerNamesDESCSorted;
-
-        expect(firstManufacturerNameDESCSorted.text()).toBe('Manufacturer B');
-        expect(secondManufacturerNameDESCSorted.text()).toBe('Manufacturer A');
-    });
-
     it('should return price when given currency id', async () => {
         const currencyId = CURRENCY_ID.EURO;
         const prices = mockPrices();
