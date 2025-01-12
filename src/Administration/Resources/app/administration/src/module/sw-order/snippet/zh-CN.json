@@ -318,7 +318,8 @@
       "labelErrorStateChange": "更新状态时发生错误：",
       "labelErrorNoAction": "状态未更改。",
       "labelNoTransactionState": "尚无交易",
-      "labelNoDeliveryState": "尚无送货"
+      "labelNoDeliveryState": "未送货",
+      "labelStateChangeRemark": "备注"
     },
     "changeStateCard": {
       "cardTitle": "Change state"

@@ -5,11 +5,18 @@
     class="sw-order-state-change-modal"
     @modal-close="onCancel"
 >
+    {% block sw_order_state_change_modal_state_remark %}
+        <mt-textarea
+            v-model="stateRemark"
+            name="sw-field--state-change-remark"
+            :label="$tc('sw-order.stateCard.labelStateChangeRemark')"
+        />
+    {% endblock %}
     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_order_state_change_modal_button_wrapper %}
+    {% block sw_order_state_change_modal_button_wrapper %}
     <div class="sw-order-state-change-modal__button-wrapper">
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                {% block sw_order_state_change_modal_button %}
+        {% block sw_order_state_change_modal_button %}
         <sw-button
             class="sw-order-state-change-modal__button"
             variant="primary"
@@ -18,8 +25,8 @@
         >
             {{ $tc('sw-order.stateCard.labelSelectStateButton') }}
         </sw-button>
-                {% endblock %}
-    </div>
         {% endblock %}
+    </div>
+    {% endblock %}
 </sw-modal>
 {% endblock %}

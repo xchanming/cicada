@@ -30,6 +30,7 @@ CREATE TABLE `state_machine_history` (
   `from_state_id` BINARY(16) NOT NULL,
   `to_state_id` BINARY(16) NOT NULL,
   `action_name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remark` VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,
   `user_id` BINARY(16) NULL,
   `created_at` DATETIME(3) NOT NULL,
   `updated_at` DATETIME(3) NULL,

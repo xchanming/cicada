@@ -52,6 +52,7 @@ class StateMachineHistoryDefinition extends EntityDefinition
             new ManyToOneAssociationField('stateMachine', 'state_machine_id', StateMachineDefinition::class, 'id', false),
 
             (new StringField('entity_name', 'entityName'))->addFlags(new Required()),
+            (new StringField('remark', 'remark'))->addFlags(new ApiAware()),
 
             (new FkField('from_state_id', 'fromStateId', StateMachineStateDefinition::class))->addFlags(new Required()),
             (new ManyToOneAssociationField('fromStateMachineState', 'from_state_id', StateMachineStateDefinition::class, 'id', false))->addFlags(new ApiAware()),

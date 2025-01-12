@@ -318,7 +318,8 @@
       "labelErrorStateChange": "An error occured while updating the status:",
       "labelErrorNoAction": "Status unchanged.",
       "labelNoTransactionState": "No transactions yet",
-      "labelNoDeliveryState": "No deliveries yet"
+      "labelNoDeliveryState": "No deliveries yet",
+      "labelStateChangeRemark": "Remark"
     },
     "changeStateCard": {
       "cardTitle": "Change state"

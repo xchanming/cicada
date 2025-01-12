@@ -98,6 +98,18 @@ class StateMachineHistoryEntity extends Entity
      */
     protected $transitionActionName;
 
+    protected ?string $remark = null;
+
+    public function getRemark(): ?string
+    {
+        return $this->remark;
+    }
+
+    public function setRemark(?string $remark): void
+    {
+        $this->remark = $remark;
+    }
+
     public function getTransitionActionName(): string
     {
         return $this->transitionActionName;

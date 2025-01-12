@@ -37,6 +37,7 @@ export default {
         return {
             showModal: false,
             userCanConfirm: false,
+            stateRemark: null,
         };
     },
 
