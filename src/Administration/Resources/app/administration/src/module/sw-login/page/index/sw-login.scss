@@ -120,7 +120,7 @@ $sw-login-error-animation-duration: 0.15s;
         flex-direction: row;
         overflow: hidden;
         background-color: rgba($sw-login-color-background,0.5);
-        background-image: url("/static/img/sw-login-background.png");
+        background-image: url("../img/sw-login-background.png");
         background-position: center center;
         background-size: cover;
         opacity: 1;
