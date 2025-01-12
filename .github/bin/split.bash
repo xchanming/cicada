@@ -79,8 +79,8 @@ EOF
 storefront_assets_list() {
   cat <<EOF | tr -d '[:blank:]'
     ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/dist/storefront/storefront.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/js/storefront.js
-    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration/css/storefront.css
+    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration
+    ${PLATFORM_DIR}/repos/storefront/Resources/public/administration
     ${PLATFORM_DIR}/repos/storefront/Resources/app/storefront/vendor/bootstrap/package.json
 EOF
 }
