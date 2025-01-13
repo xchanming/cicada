@@ -10,6 +10,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\Test\Generator;
+use Cicada\Core\Test\TestDefaults;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -108,6 +109,7 @@ class PaymentMethodValidatorTest extends TestCase
         $paymentMethod->setAvailabilityRuleId('payment-method-availability-rule-id');
 
         $salesChannel = new SalesChannelEntity();
+        $salesChannel->setId(TestDefaults::SALES_CHANNEL);
         $salesChannel->setPaymentMethodIds(['payment-method-id']);
 
         $base = Context::createDefaultContext();

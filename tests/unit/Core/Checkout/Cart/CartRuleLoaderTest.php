@@ -16,7 +16,9 @@ use Cicada\Core\Content\Rule\RuleCollection;
 use Cicada\Core\Content\Rule\RuleEntity;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\RuleAreas;
+use Cicada\Core\Framework\DataAbstractionLayer\TaxFreeConfig;
 use Cicada\Core\Framework\Uuid\Uuid;
+use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Generator;
 use Doctrine\DBAL\Connection;
@@ -89,7 +91,11 @@ class CartRuleLoaderTest extends TestCase
 
     public function testProcessorHasCorrectRuleIds(): void
     {
-        $salesChannelContext = Generator::generateSalesChannelContext();
+        $country = new CountryEntity();
+        $country->setId(Generator::COUNTRY);
+        $country->setCustomerTax(new TaxFreeConfig());
+
+        $salesChannelContext = Generator::generateSalesChannelContext(country: $country);
 
         $rule1 = new RuleEntity();
         $rule1->setId(Uuid::randomHex());
