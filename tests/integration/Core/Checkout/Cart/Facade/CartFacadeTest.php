@@ -4,6 +4,7 @@ namespace Cicada\Tests\Integration\Core\Checkout\Cart\Facade;
 
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
+use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Facade\CartFacade;
 use Cicada\Core\Checkout\Cart\Facade\CartFacadeHookFactory;
 use Cicada\Core\Checkout\Cart\Facade\ContainerFacade;
@@ -21,6 +22,7 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\Price;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\PriceCollection;
+use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Exception\HookInjectionException;
 use Cicada\Core\Framework\Script\Execution\Script;
@@ -173,7 +175,11 @@ class CartFacadeTest extends TestCase
 
     public function testDependency(): void
     {
-        $this->expectException(HookInjectionException::class);
+        if (!Feature::isActive('v6.7.0.0')) {
+            $this->expectException(HookInjectionException::class);
+        } else {
+            $this->expectException(CartException::class);
+        }
 
         $service = static::getContainer()->get(CartFacadeHookFactory::class);
         $service->factory(new TestHook('test', Context::createDefaultContext()), $this->script);

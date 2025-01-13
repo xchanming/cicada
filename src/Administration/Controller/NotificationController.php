@@ -2,10 +2,9 @@
 
 namespace Cicada\Administration\Controller;
 
-use Cicada\Administration\Notification\Exception\NotificationThrottledException;
 use Cicada\Administration\Notification\NotificationService;
+use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
-use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceException;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\RateLimiter\Exception\RateLimitExceededException;
@@ -39,8 +38,8 @@ class NotificationController extends AbstractController
     #[Route(path: '/api/notification', name: 'api.notification', defaults: ['_acl' => ['notification:create']], methods: ['POST'])]
     public function saveNotification(Request $request, Context $context): Response
     {
-        $status = $request->request->get('status');
-        $message = $request->request->get('message');
+        $status = (string) $request->request->get('status');
+        $message = (string) $request->request->get('message');
         $adminOnly = (bool) $request->request->get('adminOnly', false);
 
         try {
@@ -51,7 +50,7 @@ class NotificationController extends AbstractController
 
         $source = $context->getSource();
         if (!$source instanceof AdminApiSource) {
-            throw new InvalidContextSourceException(AdminApiSource::class, $context->getSource()::class);
+            throw ApiException::invalidAdminSource($context->getSource()::class);
         }
 
         if (empty($status)) {
@@ -69,7 +68,7 @@ class NotificationController extends AbstractController
             $cacheKey = $createdByUserId ?? $integrationId . '-' . $request->getClientIp();
             $this->rateLimiter->ensureAccepted(self::NOTIFICATION, $cacheKey);
         } catch (RateLimitExceededException $exception) {
-            throw new NotificationThrottledException($exception->getWaitTime(), $exception);
+            throw ApiException::notificationThrottled($exception->getWaitTime(), $exception);
         }
 
         $notificationId = Uuid::randomHex();

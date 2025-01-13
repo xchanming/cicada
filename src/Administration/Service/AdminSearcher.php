@@ -6,6 +6,8 @@ use Cicada\Administration\Framework\Search\CriteriaCollection;
 use Cicada\Core\Framework\Api\Acl\Role\AclRoleDefinition;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
+use Cicada\Core\Framework\DataAbstractionLayer\Entity;
+use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\Log\Package;
 
 #[Package('administration')]
@@ -18,6 +20,9 @@ class AdminSearcher
     {
     }
 
+    /**
+     * @return array<array-key, array{data: EntityCollection<covariant Entity>, total: int}>
+     */
     public function search(CriteriaCollection $entities, Context $context): array
     {
         $result = [];

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer\Facade;
 
+use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\RequestCriteriaBuilder;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Script\Exception\HookInjectionException;
 use Cicada\Core\Framework\Script\Execution\Awareness\HookServiceFactory;
 use Cicada\Core\Framework\Script\Execution\Awareness\SalesChannelContextAware;
 use Cicada\Core\Framework\Script\Execution\Hook;
@@ -29,7 +29,7 @@ class SalesChannelRepositoryFacadeHookFactory extends HookServiceFactory
     public function factory(Hook $hook, Script $script): SalesChannelRepositoryFacade
     {
         if (!$hook instanceof SalesChannelContextAware) {
-            throw new HookInjectionException($hook, self::class, SalesChannelContextAware::class);
+            throw DataAbstractionLayerException::hookInjectionException($hook, self::class, SalesChannelContextAware::class);
         }
 
         return new SalesChannelRepositoryFacade(

@@ -2,9 +2,9 @@
 
 namespace Cicada\Core\Checkout\Cart\Facade;
 
+use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Checkout\Cart\Hook\CartAware;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Framework\Script\Exception\HookInjectionException;
 use Cicada\Core\Framework\Script\Execution\Awareness\HookServiceFactory;
 use Cicada\Core\Framework\Script\Execution\Hook;
 use Cicada\Core\Framework\Script\Execution\Script;
@@ -24,7 +24,7 @@ class CartFacadeHookFactory extends HookServiceFactory
     public function factory(Hook $hook, Script $script): CartFacade
     {
         if (!$hook instanceof CartAware) {
-            throw new HookInjectionException($hook, self::class, CartAware::class);
+            throw CartException::hookInjectionException($hook, self::class, CartAware::class);
         }
 
         return new CartFacade($this->helper, $this->priceStubs, $hook->getCart(), $hook->getSalesChannelContext());

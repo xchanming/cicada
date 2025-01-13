@@ -3,8 +3,8 @@
 namespace Cicada\Tests\Unit\Administration\Controller;
 
 use Cicada\Administration\Controller\NotificationController;
-use Cicada\Administration\Notification\Exception\NotificationThrottledException;
 use Cicada\Administration\Notification\NotificationService;
+use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Api\Context\AdminApiSource;
 use Cicada\Core\Framework\Api\Context\Exception\InvalidContextSourceException;
 use Cicada\Core\Framework\Api\Context\SystemSource;
@@ -75,8 +75,8 @@ class NotificationControllerTest extends TestCase
     public function testSaveNotificationThrowsNotificationThrottledExceptionWhenLimitIsReachedAndUserIdExists(): void
     {
         $exception = new RateLimitExceededException(42);
-        $this->expectExceptionObject(new NotificationThrottledException($exception->getWaitTime(), $exception));
-
+        $this->expectException(ApiException::class);
+        $this->expectExceptionMessage('Notification throttled for ' . $exception->getWaitTime() . ' seconds.');
         $this->rateLimiter->expects(static::once())->method('ensureAccepted')
             ->with('notification', '123')
             ->willThrowException($exception);
@@ -89,8 +89,8 @@ class NotificationControllerTest extends TestCase
     {
         $this->context = Context::createDefaultContext(new AdminApiSource(null, '345'));
         $exception = new RateLimitExceededException(12);
-        $this->expectExceptionObject(new NotificationThrottledException($exception->getWaitTime(), $exception));
-
+        $this->expectException(ApiException::class);
+        $this->expectExceptionMessage('Notification throttled for ' . $exception->getWaitTime() . ' seconds.');
         $this->rateLimiter->expects(static::once())->method('ensureAccepted')
             ->with('notification', '345-')
             ->willThrowException($exception);

@@ -5,6 +5,9 @@ namespace Cicada\Core\Framework\Script\Exception;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Execution\Hook;
 
+/**
+ * @deprecated tag:v6.7.0 - Will be removed, use Cicada\Core\Checkout\Cart\CartException::hookInjectionException or Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException::hookInjectionException instead
+ */
 #[Package('core')]
 class HookInjectionException extends \RuntimeException
 {

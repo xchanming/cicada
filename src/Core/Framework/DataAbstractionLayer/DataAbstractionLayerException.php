@@ -82,6 +82,7 @@ class DataAbstractionLayerException extends HttpException
     public const PRIMARY_KEY_NOT_PROVIDED = 'FRAMEWORK__PRIMARY_KEY_NOT_PROVIDED';
     public const NO_GENERATOR_FOR_FIELD_TYPE = 'FRAMEWORK__NO_GENERATOR_FOR_FIELD_TYPE';
     public const FOREIGN_KEY_NOT_FOUND_IN_DEFINITION = 'FRAMEWORK__FOREIGN_KEY_NOT_FOUND_IN_DEFINITION';
+    public const HOOK_INJECTION_EXCEPTION = 'FRAMEWORK__HOOK_INJECTION_EXCEPTION';
 
     public static function invalidSerializerField(string $expectedClass, Field $field): self
     {
@@ -780,6 +781,16 @@ class DataAbstractionLayerException extends HttpException
             self::FIELD_NOT_FOUND,
             'Field "{{ field }}" is missing a reference version field',
             ['field' => $field]
+        );
+    }
+
+    public static function hookInjectionException(Hook $hook, string $class, string $required): self
+    {
+        return new self(
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            self::HOOK_INJECTION_EXCEPTION,
+            'Class {{ class }} is only executable in combination with hooks that implement the {{ required }} interface. Hook {{ hook }} does not implement this interface',
+            ['class' => $class, 'required' => $required, 'hook' => $hook]
         );
     }
 }

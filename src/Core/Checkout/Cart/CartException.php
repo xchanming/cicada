@@ -15,6 +15,8 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Script\Exception\HookInjectionException;
+use Cicada\Core\Framework\Script\Execution\Hook;
 use Symfony\Component\HttpFoundation\Response;
 
 #[Package('checkout')]
@@ -68,6 +70,10 @@ class CartException extends HttpException
      */
     public const SALES_CHANNEL_NOT_SET = 'CHECKOUT__SALES_CHANNEL_NOT_SET';
     public const CART_EMPTY = 'CHECKOUT__CART_EMPTY';
+    public const HOOK_INJECTION_EXCEPTION = 'CHECKOUT__HOOK_INJECTION_EXCEPTION';
+    public const LINE_ITEM_GROUP_PACKAGER_NOT_FOUND = 'CHECKOUT__GROUP_PACKAGER_NOT_FOUND';
+    public const LINE_ITEM_GROUP_SORTER_NOT_FOUND = 'CHECKOUT__GROUP_SORTER_NOT_FOUND';
+    public const UNEXPECTED_VALUE_EXCEPTION = 'CHECKOUT__UNEXPECTED_VALUE_EXCEPTION';
 
     public static function shippingMethodNotFound(string $id, ?\Throwable $e = null): self
     {
@@ -541,5 +547,51 @@ class CartException extends HttpException
     public static function cartEmpty(): self|EmptyCartException
     {
         return new EmptyCartException();
+    }
+
+    /**
+     * @deprecated tag:v6.7.0 - reason:return-type-change - Will only return 'self' in the future
+     */
+    public static function hookInjectionException(Hook $hook, string $class, string $required): self|HookInjectionException
+    {
+        if (!Feature::isActive('v6.7.0.0')) {
+            return new HookInjectionException($hook, $class, $required);
+        }
+
+        return new self(
+            Response::HTTP_INTERNAL_SERVER_ERROR,
+            self::HOOK_INJECTION_EXCEPTION,
+            'Class {{ class }} is only executable in combination with hooks that implement the {{ required }} interface. Hook {{ hook }} does not implement this interface',
+            ['class' => $class, 'required' => $required, 'hook' => $hook]
+        );
+    }
+
+    public static function lineItemGroupPackagerNotFoundException(string $key): self
+    {
+        return new self(
+            Response::HTTP_BAD_REQUEST,
+            self::LINE_ITEM_GROUP_PACKAGER_NOT_FOUND,
+            'Packager "{{ key }}" has not been found!',
+            ['key' => $key]
+        );
+    }
+
+    public static function lineItemGroupSorterNotFoundException(string $key): self
+    {
+        return new self(
+            Response::HTTP_BAD_REQUEST,
+            self::LINE_ITEM_GROUP_SORTER_NOT_FOUND,
+            'Sorter "{{ key }}" has not been found!',
+            ['key' => $key]
+        );
+    }
+
+    public static function unexpectedValueException(string $message): self
+    {
+        return new self(
+            Response::HTTP_BAD_REQUEST,
+            self::UNEXPECTED_VALUE_EXCEPTION,
+            $message
+        );
     }
 }

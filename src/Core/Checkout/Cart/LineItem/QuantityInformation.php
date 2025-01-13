@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Checkout\Cart\LineItem;
 
+use Cicada\Core\Checkout\Cart\CartException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
@@ -37,7 +38,7 @@ class QuantityInformation extends Struct
     public function setMinPurchase(int $minPurchase): QuantityInformation
     {
         if ($minPurchase < 1) {
-            throw new \UnexpectedValueException('minPurchase must be greater or equal 1');
+            throw CartException::unexpectedValueException('minPurchase must be greater or equal 1');
         }
 
         $this->minPurchase = $minPurchase;
@@ -65,7 +66,7 @@ class QuantityInformation extends Struct
     public function setPurchaseSteps(int $purchaseSteps): QuantityInformation
     {
         if ($purchaseSteps < 1) {
-            throw new \UnexpectedValueException('purchaseSteps must be greater or equal 1');
+            throw CartException::unexpectedValueException('purchaseSteps must be greater or equal 1');
         }
 
         $this->purchaseSteps = $purchaseSteps;
