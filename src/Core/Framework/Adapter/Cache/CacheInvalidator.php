@@ -2,12 +2,14 @@
 
 namespace Cicada\Core\Framework\Adapter\Cache;
 
+use Psr\Cache\CacheItemPoolInterface;
+use Psr\Log\LoggerInterface;
 use Cicada\Core\Framework\Adapter\Cache\InvalidatorStorage\AbstractInvalidatorStorage;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
-use Psr\Cache\CacheItemPoolInterface;
-use Psr\Log\LoggerInterface;
+use Cicada\Core\PlatformRequest;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -27,7 +29,7 @@ class CacheInvalidator
         private readonly AbstractInvalidatorStorage $cache,
         private readonly EventDispatcherInterface $dispatcher,
         private readonly LoggerInterface $logger,
-        private readonly string $environment
+        private readonly RequestStack $requestStack,
     ) {
     }
 
@@ -43,9 +45,7 @@ class CacheInvalidator
         }
 
         if (Feature::isActive('cache_rework')) {
-            $force = $force || $this->environment !== 'prod';
-
-            if ($force) {
+            if ($force || $this->shouldForceInvalidate()) {
                 $this->purge($tags);
 
                 return;
@@ -99,5 +99,10 @@ class CacheInvalidator
         }
 
         $this->dispatcher->dispatch(new InvalidateCacheEvent($keys));
+    }
+
+    private function shouldForceInvalidate(): bool
+    {
+        return $this->requestStack->getMainRequest()?->headers->get(PlatformRequest::HEADER_FORCE_CACHE_INVALIDATE) === '1';
     }
 }
