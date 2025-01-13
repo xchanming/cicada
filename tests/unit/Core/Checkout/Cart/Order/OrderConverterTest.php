@@ -67,11 +67,11 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
+use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Core\Test\TestDefaults;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -126,13 +126,8 @@ class OrderConverterTest extends TestCase
                     SalesChannelContextService::PAYMENT_METHOD_ID => 'order-transaction-payment-method-id',
                 ];
                 static::assertSame($expectedOptions, $options);
-                $salesChannelContext = $this->getSalesChannelContext(true);
-                $salesChannelContext->expects(static::once())->method('setItemRounding')->with($this->cashRoundingConfig);
-                $salesChannelContext->expects(static::once())->method('setTotalRounding')->with($this->cashRoundingConfig);
-                $salesChannelContext->expects(static::once())->method('setRuleIds')->with(['order-rule-id-1', 'order-rule-id-2']);
-                $salesChannelContext->expects(static::once())->method('setAreaRuleIds')->with([RuleAreas::PAYMENT_AREA => ['rule-id']]);
 
-                return $salesChannelContext;
+                return $this->getSalesChannelContext(true);
             }
         );
 
@@ -344,6 +339,9 @@ class OrderConverterTest extends TestCase
         return [
             [
                 AddressNotFoundException::class,
+            ],
+            [
+                DeliveryWithoutAddressException::class,
             ],
             [
                 CartException::class,
@@ -632,22 +630,26 @@ class OrderConverterTest extends TestCase
         $converter->assembleSalesChannelContext($order, $salesChannelContext->getContext());
     }
 
-    private function getSalesChannelContext(bool $loginCustomer, bool $customerWithoutBillingAddress = false): MockObject&SalesChannelContext
+    private function getSalesChannelContext(bool $loginCustomer, bool $customerWithoutBillingAddress = false): SalesChannelContext
     {
         $salesChannel = new SalesChannelEntity();
         $salesChannel->setId(TestDefaults::SALES_CHANNEL);
         $salesChannel->setLanguageId(Defaults::LANGUAGE_SYSTEM);
 
-        $salesChannelContext = $this->createMock(SalesChannelContext::class);
-        $salesChannelContext->method('getSalesChannel')->willReturn($salesChannel);
-        $salesChannelContext->method('getSalesChannelId')->willReturn(TestDefaults::SALES_CHANNEL);
-        $salesChannelContext->method('getContext')->willReturn(Context::createDefaultContext());
-        if ($loginCustomer) {
-            $salesChannelContext->method('getCustomer')->willReturn($this->getCustomer($customerWithoutBillingAddress));
-        }
         $paymentMethod = new PaymentMethodEntity();
         $paymentMethod->setId('payment-method-id');
-        $salesChannelContext->method('getPaymentMethod')->willReturn($paymentMethod);
+
+        $salesChannelContext = Generator::generateSalesChannelContext(
+            salesChannel: $salesChannel,
+            paymentMethod: $paymentMethod,
+            customer: $loginCustomer ? $this->getCustomer($customerWithoutBillingAddress) : null,
+            overrides: $loginCustomer ? [] : ['customer' => null]
+        );
+
+        $salesChannelContext->setItemRounding($this->cashRoundingConfig);
+        $salesChannelContext->setTotalRounding($this->cashRoundingConfig);
+        $salesChannelContext->setRuleIds(['order-rule-id-1', 'order-rule-id-2']);
+        $salesChannelContext->setAreaRuleIds([RuleAreas::PAYMENT_AREA => ['rule-id']]);
 
         return $salesChannelContext;
     }
@@ -888,7 +890,7 @@ class OrderConverterTest extends TestCase
         $customer->setId('customer-id');
         $customer->setEmail('customer-email');
         $customer->setSalutationId('customer-salutation-id');
-        $customer->setName('customer-name');
+        $customer->setName('customer-first-name');
         $customer->setCustomerNumber('customer-number');
         $customer->setGroupId('customer-group-id');
 
@@ -904,7 +906,7 @@ class OrderConverterTest extends TestCase
         $address = new CustomerAddressEntity();
         $address->setId('billing-address-id');
         $address->setSalutationId('billing-address-salutation-id');
-        $address->setName('billing-address-name');
+        $address->setName('billing-address-first-name');
         $address->setStreet('billing-address-street');
         $address->setZipcode('billing-address-zipcode');
         $address->setCity('billing-address-city');
@@ -920,7 +922,7 @@ class OrderConverterTest extends TestCase
         $customer->setCustomerId('customer-id');
         $customer->setEmail('order-customer-email');
         $customer->setSalutationId('order-customer-salutation-id');
-        $customer->setName('order-customer-name');
+        $customer->setName('order-customer-first-name');
         $customer->setCustomerNumber('order-customer-number');
 
         return $customer;
@@ -940,7 +942,7 @@ class OrderConverterTest extends TestCase
         $address->setId('order-address-id');
         $address->setVersionId('order-address-version-id');
         $address->setSalutationId('order-address-salutation-id');
-        $address->setName('order-address-name');
+        $address->setName('order-address-first-name');
         $address->setStreet('order-address-street');
         $address->setZipcode('order-address-zipcode');
         $address->setCity('order-address-city');
@@ -984,7 +986,6 @@ class OrderConverterTest extends TestCase
     }
 
     // Expectations
-
     /**
      * @return array<string, mixed>
      */
@@ -1243,8 +1244,8 @@ class OrderConverterTest extends TestCase
                 'regulationPrice' => null,
                 'extensions' => [],
             ],
-            'currencyId' => '',
-            'currencyFactor' => 0,
+            'currencyId' => 'b7d2554b0ce847cd82f3ac9bd1c0dfca',
+            'currencyFactor' => 1,
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'lineItems' => [
                 [
@@ -1311,7 +1312,7 @@ class OrderConverterTest extends TestCase
                 'shippingOrderAddress' => [
                     'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
-                    'name' => 'billing-address-name',
+                    'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',
                     'street' => 'billing-address-street',
                     'zipcode' => 'billing-address-zipcode',
@@ -1323,8 +1324,18 @@ class OrderConverterTest extends TestCase
             'campaignCode' => null,
             'source' => null,
             'createdById' => null,
-            'itemRounding' => [],
-            'totalRounding' => [],
+            'itemRounding' => [
+                'decimals' => 2,
+                'extensions' => [],
+                'interval' => 0.01,
+                'roundForNet' => true,
+            ],
+            'totalRounding' => [
+                'decimals' => 2,
+                'extensions' => [],
+                'interval' => 0.01,
+                'roundForNet' => true,
+            ],
             'orderCustomer' => [
                 'company' => null,
                 'customFields' => null,
@@ -1334,7 +1345,7 @@ class OrderConverterTest extends TestCase
                 ],
                 'customerNumber' => 'customer-number',
                 'email' => 'customer-email',
-                'name' => 'customer-name',
+                'name' => 'customer-first-name',
                 'remoteAddress' => null,
                 'salutationId' => 'customer-salutation-id',
                 'title' => null,
@@ -1342,12 +1353,15 @@ class OrderConverterTest extends TestCase
             ],
             'transactions' => [],
             'orderNumber' => '10000',
-            'ruleIds' => [],
+            'ruleIds' => [
+                'order-rule-id-1',
+                'order-rule-id-2',
+            ],
             'addresses' => [
                 [
                     'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
-                    'name' => 'billing-address-name',
+                    'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',
                     'street' => 'billing-address-street',
                     'zipcode' => 'billing-address-zipcode',

@@ -2,11 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Checkout\Customer\Validation;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
 use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Checkout\Customer\Validation\CustomerProfileValidationFactory;
 use Cicada\Core\Defaults;
-use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Validation\EntityExists;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
@@ -15,11 +16,9 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Salutation\SalutationDefinition;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
+use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\Stub\SystemConfigService\StaticSystemConfigService;
 use Cicada\Core\Test\TestDefaults;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 use Symfony\Component\Validator\Constraints\Length;
@@ -56,7 +55,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->create($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.create');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -76,7 +75,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->create($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.create');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -99,7 +98,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->create($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.create');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -122,7 +121,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->create($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.create');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -139,7 +138,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->update($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.update');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -159,7 +158,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->update($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.update');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -182,7 +181,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->update($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.update');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -205,7 +204,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
             $this->accountTypes,
         );
 
-        $salesChannelContext = $this->mockSalesChannelContext();
+        $salesChannelContext = $this->getSalesChannelContext();
         $actual = $customerProfileValidationFactory->update($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.update');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
@@ -214,19 +213,15 @@ class CustomerProfileValidationFactoryTest extends TestCase
         static::assertEquals($expected, $actual);
     }
 
-    private function mockSalesChannelContext(): SalesChannelContext&MockObject
+    private function getSalesChannelContext(): SalesChannelContext
     {
         $salesChannel = new SalesChannelEntity();
         $salesChannel->setId(TestDefaults::SALES_CHANNEL);
         $salesChannel->setLanguageId(Defaults::LANGUAGE_SYSTEM);
-        $context = Context::createDefaultContext();
 
-        $salesChannelContext = $this->createMock(SalesChannelContext::class);
-        $salesChannelContext->method('getContext')->willReturn($context);
-        $salesChannelContext->method('getSalesChannel')->willReturn($salesChannel);
-        $salesChannelContext->method('getSalesChannelId')->willReturn(TestDefaults::SALES_CHANNEL);
-
-        return $salesChannelContext;
+        return Generator::generateSalesChannelContext(
+            salesChannel: $salesChannel,
+        );
     }
 
     private function addConstraintsSalesChannelContext(DataValidationDefinition $definition, SalesChannelContext $context): void
@@ -237,10 +232,8 @@ class CustomerProfileValidationFactoryTest extends TestCase
             ->add('accountType', new Choice($this->accountTypes))
             ->add('title', new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE]));
 
-        if (Feature::isActive('v6.7.0.0')) {
-            $definition
-                ->add('name', new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]));
-        }
+        $definition
+            ->add('name', new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]));
     }
 
     private function addConstraintsBirthday(DataValidationDefinition $definition): void

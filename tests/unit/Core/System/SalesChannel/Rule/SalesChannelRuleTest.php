@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\System\SalesChannel\Rule;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
@@ -9,11 +12,8 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\Framework\Rule\SalesChannelRule;
 use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
+use Cicada\Core\Test\Generator;
 
 /**
  * @internal
@@ -101,13 +101,12 @@ class SalesChannelRuleTest extends TestCase
 
     private function createRuleScope(string $salesChannelId): RuleScope
     {
-        $salesChannelContext = $this->createMock(SalesChannelContext::class);
-
         $salesChannel = new SalesChannelEntity();
         $salesChannel->setId($salesChannelId);
 
-        $salesChannelContext->method('getSalesChannel')->willReturn($salesChannel);
-        $salesChannelContext->method('getSalesChannelId')->willReturn($salesChannelId);
+        $salesChannelContext = Generator::generateSalesChannelContext(
+            salesChannel: $salesChannel
+        );
 
         return new CheckoutRuleScope(
             $salesChannelContext
