@@ -5,7 +5,7 @@ Cicada.Component.register('sw-dashboard-index', () => import('./page/sw-dashboar
 /* eslint-enable max-len, sw-deprecation-rules/private-feature-declarations */
 
 /**
- * @package services-settings
+ * @sw-package after-sales
  *
  * @private
  */

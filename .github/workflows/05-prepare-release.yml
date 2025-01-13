@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    if: github.repository == 'cicada/cicada'
+    if: github.repository == 'xchanming/cicada'
     env:
       CICADA_ADMIN_SKIP_SOURCEMAP_GENERATION: "1"
       DATABASE_URL: mysql://root:root@127.0.0.1:3306/root
@@ -54,10 +54,10 @@ jobs:
 
   check-recipe:
     runs-on: ubuntu-24.04
-    if: github.repository == 'cicada/cicada'
+    if: github.repository == 'xchanming/cicada'
     env:
       GH_TOKEN: ${{ github.token }}
-      CHECK_REPOSITORY: 'cicada/recipes'
+      CHECK_REPOSITORY: 'xchanming/recipes'
       CHECK_WORKFLOW: 'nightly.yml'
       CHECK_STATUS: 'success'
     steps:
@@ -75,7 +75,7 @@ jobs:
     environment: release
     # we use this image to get an older git version, which does not suffer from a performance regression
     container: alpine:3.19
-    if: github.repository == 'cicada/cicada'
+    if: github.repository == 'xchanming/cicada'
     strategy:
       matrix:
         package:
@@ -134,7 +134,7 @@ jobs:
   draft-release-notes:
     needs: split
     runs-on: ubuntu-24.04
-    if: github.repository == 'cicada/cicada'
+    if: github.repository == 'xchanming/cicada'
     permissions:
       contents: write
     steps:
@@ -150,24 +150,3 @@ jobs:
         run: |
           echo DRY_RUN: "${DRY_RUN}"
           bash .github/bin/create_github_release.bash draft "${{ github.ref_name }}"
-
-  create-sbp-release:
-    needs: split
-    runs-on: ubuntu-24.04
-    if: github.repository == 'cicada/cicada'
-    strategy:
-      matrix:
-        sbp-environment: [STAGING, PRODUCTION]
-    env:
-      SBP_API_URL: ${{ secrets[format('SBP_API_URL_{0}', matrix.sbp-environment)] }}
-      SBP_TOKEN: ${{ secrets[format('SBP_API_TOKEN_{0}', matrix.sbp-environment)] }}
-      # set dry run if it's not a tag
-      DRY_RUN: ${{ github.ref_type != 'tag' && '1' || '' }}
-    continue-on-error: true
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Create sbp release
-        run: |
-          echo DRY_RUN: "${DRY_RUN}"
-          bash .github/bin/sbp_release.bash create "${{ github.ref_name }}"

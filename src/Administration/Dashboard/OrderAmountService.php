@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('after-sales')]
 class OrderAmountService
 {
     public function __construct(

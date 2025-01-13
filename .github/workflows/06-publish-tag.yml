@@ -1,9 +1,8 @@
 name: 'Publish Tag'
 
 on:
-  push:
-    tags:
-      - 'v*'
+  workflow_dispatch:
+
 env:
   GITHUB_TOKEN: ${{ secrets.TOKEN }}
   GITHUB_SYNC_USER: "gxiaosong"
