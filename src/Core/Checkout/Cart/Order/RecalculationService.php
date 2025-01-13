@@ -78,7 +78,7 @@ class RecalculationService
         $cart = $this->orderConverter->convertToCart($order, $context);
         $recalculatedCart = $this->recalculateCart($cart, $salesChannelContext);
         $lineItems = $cart->getLineItems();
-        $shouldIncludeDeliveries = \count($lineItems) > 0 && $lineItems->hasLineItemWithState(State::IS_PHYSICAL);
+        $shouldIncludeDeliveries = \count($lineItems) > 0 && !$lineItems->hasLineItemWithState(State::IS_NON_PHYSICAL);
         $conversionContext = (new OrderConversionContext())
             ->setIncludeCustomer(false)
             ->setIncludeBillingAddress(false)

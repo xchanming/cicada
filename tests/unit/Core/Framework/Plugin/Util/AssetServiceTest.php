@@ -9,6 +9,7 @@ use Cicada\Core\Framework\Plugin\Exception\PluginNotFoundException;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\StaticKernelPluginLoader;
 use Cicada\Core\Framework\Plugin\Util\AssetService;
+use Cicada\Core\Framework\Test\TestCaseBase\EnvTestBehaviour;
 use Cicada\Core\Framework\Util\Filesystem as ThemeFilesystem;
 use Cicada\Core\Test\Stub\App\StaticSourceResolver;
 use Cicada\Core\Test\Stub\Framework\Util\StaticFilesystem;
@@ -30,6 +31,8 @@ use Symfony\Component\HttpKernel\KernelInterface;
 #[CoversClass(AssetService::class)]
 class AssetServiceTest extends TestCase
 {
+    use EnvTestBehaviour;
+
     public function testCopyAssetsFromBundlePluginDoesNotExists(): void
     {
         $kernelMock = $this->createMock(KernelInterface::class);
@@ -62,12 +65,49 @@ class AssetServiceTest extends TestCase
             ->willReturn($this->getBundle());
 
         $filesystem = new Filesystem(new MemoryFilesystemAdapter());
+
+        $cacheInvalidator = $this->createMock(CacheInvalidator::class);
+        $cacheInvalidator->expects(static::exactly(2))->method('invalidate');
+
         $assetService = new AssetService(
             $filesystem,
             $filesystem,
             $kernel,
             new StaticKernelPluginLoader($this->createMock(ClassLoader::class)),
-            $this->createMock(CacheInvalidator::class),
+            $cacheInvalidator,
+            new StaticSourceResolver(),
+            new ParameterBag(['cicada.filesystem.asset.type' => 's3'])
+        );
+
+        $assetService->copyAssetsFromBundle('ExampleBundle');
+
+        static::assertTrue($filesystem->has('bundles/example'));
+        static::assertTrue($filesystem->has('bundles/example/test.txt'));
+        static::assertSame('TEST', trim($filesystem->read('bundles/example/test.txt')));
+        static::assertTrue($filesystem->has('bundles/featurea'));
+    }
+
+    public function testCopyAssetsFromBundlePluginWithoutInvalidation(): void
+    {
+        $this->setEnvVars(['SHOPWARE_SKIP_ASSET_INSTALL_CACHE_INVALIDATION' => '1']);
+
+        $kernel = $this->createMock(KernelInterface::class);
+        $kernel
+            ->method('getBundle')
+            ->with('ExampleBundle')
+            ->willReturn($this->getBundle());
+
+        $filesystem = new Filesystem(new MemoryFilesystemAdapter());
+
+        $cacheInvalidator = $this->createMock(CacheInvalidator::class);
+        $cacheInvalidator->expects(static::never())->method('invalidate');
+
+        $assetService = new AssetService(
+            $filesystem,
+            $filesystem,
+            $kernel,
+            new StaticKernelPluginLoader($this->createMock(ClassLoader::class)),
+            $cacheInvalidator,
             new StaticSourceResolver(),
             new ParameterBag(['cicada.filesystem.asset.type' => 's3'])
         );

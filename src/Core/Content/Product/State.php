@@ -9,4 +9,5 @@ final class State
 {
     public const IS_PHYSICAL = 'is-physical';
     public const IS_DOWNLOAD = 'is-download';
+    public const IS_NON_PHYSICAL = 'is-non-physical';
 }

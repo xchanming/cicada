@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Framework\Plugin\Util;
 
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Cache\CacheInvalidator;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatch;
 use Cicada\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInput;
@@ -147,7 +148,9 @@ class AssetService
         $manifest[$bundleOrAppName] = $localBundleManifest;
         $this->writeManifest($manifest);
 
-        $this->cacheInvalidator->invalidate(['asset-metaData'], true);
+        if (!EnvironmentHelper::getVariable('SHOPWARE_SKIP_ASSET_INSTALL_CACHE_INVALIDATION', false)) {
+            $this->cacheInvalidator->invalidate(['asset-metaData'], true);
+        }
     }
 
     /**
