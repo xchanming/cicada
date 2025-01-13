@@ -2,7 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer\Dbal;
 
+use Doctrine\DBAL\Types\Type;
+use Doctrine\DBAL\Types\Types;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Order\OrderStates;
+use Cicada\Core\Content\Product\ProductDefinition;
+use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\AutoIncrementField;
@@ -64,10 +70,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityWriteGatewayInterface
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\DataAbstractionLayer\NumberRangeField;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
-use Doctrine\DBAL\Types\Type;
-use Doctrine\DBAL\Types\Types;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
@@ -87,6 +89,8 @@ class SchemaBuilderTest extends TestCase
                 TestAssociationDefinition::class,
                 TestEntityWithAllPossibleFieldsDefinition::class,
                 TestEntityWithForeignKeysDefinition::class,
+                ProductDefinition::class,
+                TestAssociationWithMissingReferenceVersionDefinition::class,
             ],
             $this->createMock(ValidatorInterface::class),
             $this->createMock(EntityWriteGatewayInterface::class)
@@ -110,6 +114,9 @@ class SchemaBuilderTest extends TestCase
 
         static::assertArrayNotHasKey('runtime', $table->getColumns());
         static::assertArrayNotHasKey('translated', $table->getColumns());
+
+        static::assertSame('utf8mb4', $table->getOption('charset'));
+        static::assertSame('utf8mb4_unicode_ci', $table->getOption('collate'));
     }
 
     public function testDifferentFieldTypes(): void
@@ -323,6 +330,16 @@ class SchemaBuilderTest extends TestCase
         static::assertArrayHasKey('onDelete', $associationFk3->getOptions());
         static::assertEquals('RESTRICT', $associationFk3->getOptions()['onDelete']);
     }
+
+    public function testDefinitionMissingReferenceVersionField(): void
+    {
+        $definition = $this->registry->get(TestAssociationWithMissingReferenceVersionDefinition::class);
+
+        $schemaBuilder = new SchemaBuilder();
+
+        static::expectExceptionObject(DataAbstractionLayerException::versionFieldNotFound('product'));
+        $schemaBuilder->buildSchemaOfDefinition($definition);
+    }
 }
 
 /**
@@ -451,6 +468,26 @@ class TestAssociationDefinition extends EntityDefinition
         return new FieldCollection([
             (new IdField('id', 'id'))->addFlags(new PrimaryKey(), new Required()),
             new StringField('name', 'name'),
+        ]);
+    }
+}
+
+/**
+ * @internal
+ */
+class TestAssociationWithMissingReferenceVersionDefinition extends EntityDefinition
+{
+    public function getEntityName(): string
+    {
+        return 'test_association_with_missing_reference_version';
+    }
+
+    protected function defineFields(): FieldCollection
+    {
+        return new FieldCollection([
+            (new IdField('id', 'id'))->addFlags(new PrimaryKey(), new Required()),
+            (new FkField('product_id', 'productId', ProductDefinition::class))->addFlags(new Required()),
+            new OneToOneAssociationField('product', 'product_id', 'id', ProductDefinition::class),
         ]);
     }
 }
