@@ -111,7 +111,13 @@ class RegisterRouteTest extends TestCase
             ->method('getViolations')
             ->with($data, static::callback(function (DataValidationDefinition $definition) {
                 $subs = $definition->getSubDefinitions();
-                static::assertArrayNotHasKey('billingAddress', $subs);
+
+                static::assertArrayHasKey('billingAddress', $subs);
+
+                $billingAddressDefinition = $subs['billingAddress'];
+
+                static::assertCount(5, $billingAddressDefinition->getProperties());
+                static::assertArrayNotHasKey('vatIds', $billingAddressDefinition->getProperties());
 
                 return true;
             }));
@@ -208,7 +214,6 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
-            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
@@ -281,7 +286,6 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
-            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
@@ -712,7 +716,6 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
-            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
@@ -826,7 +829,6 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
-            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
