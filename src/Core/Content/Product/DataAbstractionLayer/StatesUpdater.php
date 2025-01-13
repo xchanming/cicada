@@ -96,7 +96,8 @@ class StatesUpdater
         $states = [];
 
         if ((int) $product['hasDownloads'] === 1) {
-            $states[] = [State::IS_NON_PHYSICAL, State::IS_DOWNLOAD];
+            $states[] = State::IS_NON_PHYSICAL;
+            $states[] = State::IS_DOWNLOAD;
         } else {
             $states[] = State::IS_PHYSICAL;
         }
