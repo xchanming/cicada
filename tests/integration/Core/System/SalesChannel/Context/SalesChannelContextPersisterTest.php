@@ -17,6 +17,7 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextService;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\TestDefaults;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -243,9 +244,7 @@ class SalesChannelContextPersisterTest extends TestCase
     {
         $token = Random::getAlphanumericString(32);
 
-        $context = $this->createMock(SalesChannelContext::class);
-        $salesChannel = (new SalesChannelEntity())->assign(['id' => TestDefaults::SALES_CHANNEL]);
-        $context->method('getSalesChannel')->willReturn($salesChannel);
+        $context = Generator::generateSalesChannelContext(overrides: ['customer' => null]);
         $newToken = $this->contextPersister->replace($token, $context);
 
         static::assertTrue($this->contextExists($newToken));

@@ -643,13 +643,13 @@ class OrderConverterTest extends TestCase
             salesChannel: $salesChannel,
             paymentMethod: $paymentMethod,
             customer: $loginCustomer ? $this->getCustomer($customerWithoutBillingAddress) : null,
+            itemRounding: $this->cashRoundingConfig,
+            totalRounding: $this->cashRoundingConfig,
+            areaRuleIds: [RuleAreas::PAYMENT_AREA => ['rule-id']],
             overrides: $loginCustomer ? [] : ['customer' => null]
         );
 
-        $salesChannelContext->setItemRounding($this->cashRoundingConfig);
-        $salesChannelContext->setTotalRounding($this->cashRoundingConfig);
         $salesChannelContext->setRuleIds(['order-rule-id-1', 'order-rule-id-2']);
-        $salesChannelContext->setAreaRuleIds([RuleAreas::PAYMENT_AREA => ['rule-id']]);
 
         return $salesChannelContext;
     }

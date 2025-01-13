@@ -8,7 +8,7 @@
     },
     "list": {
       "columnCustomerCompany": "公司",
-      "columnCustomerName": "客户名称",
+      "columnCustomerName": "客户",
       "columnBillingAddress": "账单地址",
       "columnDeliveryAddress": "送货地址",
       "columnAmount": "总计",

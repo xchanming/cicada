@@ -8,7 +8,7 @@
     },
     "list": {
       "columnCustomerCompany": "Company",
-      "columnCustomerName": "Customer name",
+      "columnCustomerName": "Customer",
       "columnBillingAddress": "Billing address",
       "columnDeliveryAddress": "Delivery address",
       "columnAmount": "Total",
