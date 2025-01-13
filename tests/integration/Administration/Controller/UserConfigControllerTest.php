@@ -84,6 +84,7 @@ class UserConfigControllerTest extends TestCase
             'email' => 'foo@bar.com',
             'name' => 'Firstname',
             'password' => TestDefaults::HASHED_PASSWORD,
+            'phone' => (string) rand(10000000000, 99999999999),
             'username' => 'foobar',
             'localeId' => static::getContainer()->get(Connection::class)->fetchOne('SELECT LOWER(HEX(id)) FROM locale LIMIT 1'),
             'aclRoles' => [],

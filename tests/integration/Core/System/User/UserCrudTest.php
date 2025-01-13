@@ -32,6 +32,7 @@ class UserCrudTest extends TestCase
             'password' => 'i am safe',
             'email' => 'some-guy@xchanming.com',
             'name' => 'first',
+            'phone' => (string) rand(10000000000, 99999999999),
             'active' => true,
             'admin' => false,
             'locale' => [

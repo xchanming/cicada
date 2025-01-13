@@ -41,6 +41,7 @@ class LocaleProviderTest extends TestCase
             'name' => 'first',
             'email' => 'first@last.de',
             'password' => TestDefaults::HASHED_PASSWORD,
+            'phone' => (string) rand(10000000000, 99999999999),
             'locale' => [
                 'code' => $userLocale,
                 'name' => 'testLocale',

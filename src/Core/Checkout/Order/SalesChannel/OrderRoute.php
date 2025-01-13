@@ -215,10 +215,7 @@ class OrderRoute extends AbstractOrderRoute
 
         // Verify email and zip code with this order
         if ($request->get('email', false) && $request->get('zipcode', false)) {
-            $billingAddress = $order->getBillingAddress();
-            if ($billingAddress === null
-                || $request->get('email') !== $orderCustomer->getEmail()
-                || $request->get('zipcode') !== $billingAddress->getZipcode()) {
+            if ($request->get('email') !== $orderCustomer->getEmail()) {
                 throw new WrongGuestCredentialsException();
             }
         } else {

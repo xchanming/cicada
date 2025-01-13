@@ -66,6 +66,7 @@ trait StoreClientBehaviour
                 'localeId' => $this->getLocaleIdOfSystemLanguage(),
                 'username' => 'foobar',
                 'password' => 'asdasdasdasd',
+                'phone' => (string) rand(10000000000, 99999999999),
                 'name' => 'Foo',
                 'email' => Uuid::randomHex() . '@bar.com',
                 'storeToken' => $storeToken,

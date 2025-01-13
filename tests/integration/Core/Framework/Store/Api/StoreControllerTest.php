@@ -171,6 +171,7 @@ class StoreControllerTest extends TestCase
             'localeId' => $adminUser->getLocaleId(),
             'username' => 'admin-two',
             'password' => 's3cr3t12345',
+            'phone' => (string) rand(10000000000, 99999999999),
             'email' => 'jane.doe@xchanming.com',
         ]], $this->defaultContext);
 
