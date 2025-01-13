@@ -60,7 +60,6 @@ class MailerTransportDecorator implements TransportInterface, \Stringable
         foreach ($attachments as $attachment) {
             $message->attach(
                 $attachment['content'],
-                $attachment['fileName'],
                 $attachment['mimeType']
             );
         }

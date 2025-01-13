@@ -6,6 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Attribute\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\Attribute\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Attribute\FieldType;
 use Cicada\Core\Framework\DataAbstractionLayer\Attribute\ForeignKey;
+use Cicada\Core\Framework\DataAbstractionLayer\Attribute\ManyToOne;
 use Cicada\Core\Framework\DataAbstractionLayer\Attribute\PrimaryKey;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity as EntityStruct;
 
@@ -24,4 +25,10 @@ class AttributeEntityAgg extends EntityStruct
 
     #[Field(type: FieldType::STRING)]
     public string $number;
+
+    #[ManyToOne(entity: 'attribute_entity', column: 'attribute_entity_id')]
+    public ?AttributeEntity $ownColumn = null;
+
+    #[ManyToOne(entity: 'attribute_entity')]
+    public ?AttributeEntity $attributeEntity = null;
 }

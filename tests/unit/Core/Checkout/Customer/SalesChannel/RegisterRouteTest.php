@@ -111,12 +111,7 @@ class RegisterRouteTest extends TestCase
             ->method('getViolations')
             ->with($data, static::callback(function (DataValidationDefinition $definition) {
                 $subs = $definition->getSubDefinitions();
-
                 static::assertArrayNotHasKey('billingAddress', $subs);
-
-                $billingAddressDefinition = $subs['billingAddress'];
-
-                static::assertNull($billingAddressDefinition);
 
                 return true;
             }));

@@ -12,14 +12,6 @@
         </input-field>
 
         <input-field type="bool">
-            <name>requireShippingAddressDuringRegistration</name>
-            <label>Require shipping address during registration</label>
-            <label lang="zh-CN">是否注册时要求填写收货地址</label>
-            <helpText>If this setting is active, users will be required to provide a shipping address during registration. If inactive, users can choose to enter the address later during checkout.</helpText>
-            <helpText lang="zh-CN">如果此设置启用，用户在注册时必须填写收货地址。如果未启用，用户可以选择稍后在结账时填写地址。</helpText>
-        </input-field>
-
-        <input-field type="bool">
             <name>createCustomerAccountDefault</name>
             <label>Create customer account by default</label>
             <label lang="zh-CN">是否默认创建客户账号</label>

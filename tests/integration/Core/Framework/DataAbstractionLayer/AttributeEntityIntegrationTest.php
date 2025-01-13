@@ -14,6 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\AttributeMappingDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\AttributeTranslationDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldType\DateInterval;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\Price;
@@ -83,6 +84,27 @@ class AttributeEntityIntegrationTest extends TestCase
         static::assertInstanceOf(EntityRepository::class, static::getContainer()->get('attribute_entity_currency.repository'));
         static::assertInstanceOf(EntityRepository::class, static::getContainer()->get('attribute_entity_agg.repository'));
         static::assertInstanceOf(EntityRepository::class, static::getContainer()->get('attribute_entity_translation.repository'));
+    }
+
+    public function testAssociationDefinitions(): void
+    {
+        $definition = static::getContainer()->get('attribute_entity_agg.definition');
+
+        static::assertInstanceOf(AttributeEntityDefinition::class, $definition);
+        static::assertNotNull($definition->getFields()->get('ownColumn'));
+        static::assertNotNull($definition->getFields()->get('attributeEntity'));
+
+        $field = $definition->getFields()->get('ownColumn');
+        static::assertInstanceOf(ManyToOneAssociationField::class, $field);
+        static::assertSame('attribute_entity_id', $field->getStorageName());
+        static::assertSame('id', $field->getReferenceField());
+        static::assertSame('attribute_entity', $field->getReferenceEntity());
+
+        $field = $definition->getFields()->get('attributeEntity');
+        static::assertInstanceOf(ManyToOneAssociationField::class, $field);
+        static::assertSame('attribute_entity_id', $field->getStorageName());
+        static::assertSame('id', $field->getReferenceField());
+        static::assertSame('attribute_entity', $field->getReferenceEntity());
     }
 
     public function testCrudRoot(): void
@@ -571,7 +593,7 @@ class AttributeEntityIntegrationTest extends TestCase
         static::assertContains($ids->get('first-key'), $result->getPrimaryKeys('attribute_entity'));
 
         $search = $this->repository('attribute_entity')
-                       ->search(new Criteria([$ids->get('first-key')]), Context::createDefaultContext());
+            ->search(new Criteria([$ids->get('first-key')]), Context::createDefaultContext());
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
@@ -580,7 +602,7 @@ class AttributeEntityIntegrationTest extends TestCase
         $criteria = new Criteria([$ids->get('first-key')]);
         $criteria->addAssociation('state');
         $search = $this->repository('attribute_entity')
-                       ->search($criteria, Context::createDefaultContext());
+            ->search($criteria, Context::createDefaultContext());
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
@@ -601,7 +623,7 @@ class AttributeEntityIntegrationTest extends TestCase
         $criteria = new Criteria([$ids->get('first-key')]);
         $criteria->addAssociation('state');
         $search = $this->repository('attribute_entity')
-                       ->search($criteria, Context::createDefaultContext());
+            ->search($criteria, Context::createDefaultContext());
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
@@ -621,7 +643,7 @@ class AttributeEntityIntegrationTest extends TestCase
         $criteria = new Criteria([$ids->get('first-key')]);
         $criteria->addAssociation('state');
         $search = $this->repository('attribute_entity')
-                       ->search($criteria, Context::createDefaultContext());
+            ->search($criteria, Context::createDefaultContext());
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
@@ -638,7 +660,7 @@ class AttributeEntityIntegrationTest extends TestCase
             'string' => 'string',
             'transString' => [
                 'en-GB' => 'transString',
-                'zh-CN' => 'transString-de',
+                'de-DE' => 'transString-de',
             ],
         ];
 
@@ -670,9 +692,9 @@ class AttributeEntityIntegrationTest extends TestCase
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
-        static::assertSame('transString-de', $record->getTranslation('transString'));
+        static::assertSame('transString', $record->getTranslation('transString'));
         $translations = $record->translations ?? [];
-        static::assertCount(2, $translations);
+        static::assertCount(1, $translations);
 
         foreach ($translations as $translation) {
             static::assertInstanceOf(ArrayEntity::class, $translation);

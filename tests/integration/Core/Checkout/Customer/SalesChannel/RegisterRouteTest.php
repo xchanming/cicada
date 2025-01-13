@@ -1045,6 +1045,7 @@ class RegisterRouteTest extends TestCase
     public function testRegistrationCommercialAccountWithDifferentCommercialAddress(): void
     {
         $this->systemConfigService->set('core.loginRegistration.showAccountTypeSelection', true);
+        $this->systemConfigService->set('core.loginRegistration.requireShippingAddressDuringRegistration', true);
 
         $additionalData = [
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
@@ -1241,8 +1242,7 @@ class RegisterRouteTest extends TestCase
 
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertNotEmpty($response['errors']);
-        static::assertEquals('VIOLATION::IS_BLANK_ERROR', $response['errors'][0]['code']);
+        static::assertEmpty($response['errors']);
     }
 
     public function testRegistrationWithExistingNotSpecifiedSalutation(): void

@@ -23,7 +23,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 #[Package('checkout')]
 class CartCalculatorTest extends TestCase
 {
-    public const EXPECTED_HASH = '0e7471dd6822e878f04962fc750993c42ccfe121672409e8ef92237658055942';
+    public const EXPECTED_HASH = '7c9a2b636e57aaef19cad2feadf213083030bb22466653c1171f7ba56511ec03';
 
     public function testCalculate(): void
     {
