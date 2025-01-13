@@ -118,10 +118,10 @@ class OrderConverterTest extends TestCase
                     SalesChannelContextService::CURRENCY_ID => 'order-currency-id',
                     SalesChannelContextService::LANGUAGE_ID => 'order-language-id',
                     SalesChannelContextService::CUSTOMER_ID => 'customer-id',
-                    SalesChannelContextService::COUNTRY_STATE_ID => 'order-address-country-state-id',
                     SalesChannelContextService::CUSTOMER_GROUP_ID => 'customer-group-id',
                     SalesChannelContextService::PERMISSIONS => OrderConverter::ADMIN_EDIT_ORDER_PERMISSIONS,
                     SalesChannelContextService::VERSION_ID => Defaults::LIVE_VERSION,
+                    SalesChannelContextService::COUNTRY_STATE_ID => 'order-address-country-state-id',
                     SalesChannelContextService::SHIPPING_METHOD_ID => 'order-delivery-shipping-method-id',
                     SalesChannelContextService::PAYMENT_METHOD_ID => 'order-transaction-payment-method-id',
                 ];
@@ -363,9 +363,6 @@ class OrderConverterTest extends TestCase
     public static function convertToOrderExceptionsData(): array
     {
         return [
-            [
-                AddressNotFoundException::class,
-            ],
             [
                 OrderException::class,
             ],
@@ -643,6 +640,7 @@ class OrderConverterTest extends TestCase
 
         $salesChannelContext = $this->createMock(SalesChannelContext::class);
         $salesChannelContext->method('getSalesChannel')->willReturn($salesChannel);
+        $salesChannelContext->method('getSalesChannelId')->willReturn(TestDefaults::SALES_CHANNEL);
         $salesChannelContext->method('getContext')->willReturn(Context::createDefaultContext());
         if ($loginCustomer) {
             $salesChannelContext->method('getCustomer')->willReturn($this->getCustomer($customerWithoutBillingAddress));
@@ -986,6 +984,7 @@ class OrderConverterTest extends TestCase
     }
 
     // Expectations
+
     /**
      * @return array<string, mixed>
      */

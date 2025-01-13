@@ -3,7 +3,6 @@
 namespace Cicada\Storefront\Controller;
 
 use Cicada\Core\Checkout\Cart\CartException;
-use Cicada\Core\Checkout\Cart\Error\Error;
 use Cicada\Core\Checkout\Cart\Error\ErrorCollection;
 use Cicada\Core\Checkout\Cart\Exception\InvalidCartException;
 use Cicada\Core\Checkout\Cart\SalesChannel\AbstractCartLoadRoute;
@@ -170,14 +169,14 @@ class CheckoutController extends StorefrontController
         if (!$context->getCustomer()) {
             return $this->redirectToRoute('frontend.checkout.register.page');
         }
-
+        $orderId = '';
         try {
             $this->addAffiliateTracking($data, $request->getSession());
 
             $orderId = Profiler::trace('checkout-order', fn () => $this->orderService->createOrder($data, $context));
         } catch (ConstraintViolationException $formViolations) {
             return $this->forwardToRoute('frontend.checkout.confirm.page', ['formViolations' => $formViolations]);
-        } catch (InvalidCartException|Error|EmptyCartException) {
+        } catch (InvalidCartException|EmptyCartException) {
             $this->addCartErrors(
                 $this->cartService->getCart($context->getToken(), $context)
             );
@@ -191,6 +190,13 @@ class CheckoutController extends StorefrontController
             $this->addFlash('danger', $message);
 
             return $this->forwardToRoute('frontend.checkout.confirm.page');
+        } catch (OrderException $e) {
+            if ($e->getErrorCode() === OrderException::ORDER_DELIVERY_WITHOUT_ADDRESS) {
+                $message = $this->trans('error.' . $e->getErrorCode(), $e->getParameters());
+                $this->addFlash('danger', $message);
+
+                return $this->forwardToRoute('frontend.checkout.confirm.page');
+            }
         }
 
         try {

@@ -25,6 +25,7 @@ use Cicada\Core\Checkout\Order\OrderException;
 use Cicada\Core\Checkout\Promotion\Cart\PromotionCollector;
 use Cicada\Core\Checkout\Promotion\Cart\PromotionItemBuilder;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
+use Cicada\Core\Content\Product\State;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
@@ -76,8 +77,8 @@ class RecalculationService
         $salesChannelContext = $this->orderConverter->assembleSalesChannelContext($order, $context, $salesChannelContextOptions);
         $cart = $this->orderConverter->convertToCart($order, $context);
         $recalculatedCart = $this->recalculateCart($cart, $salesChannelContext);
-
-        $shouldIncludeDeliveries = \count($cart->getLineItems()) > 0;
+        $lineItems = $cart->getLineItems();
+        $shouldIncludeDeliveries = \count($lineItems) > 0 && $lineItems->hasLineItemWithState(State::IS_PHYSICAL);
         $conversionContext = (new OrderConversionContext())
             ->setIncludeCustomer(false)
             ->setIncludeBillingAddress(false)

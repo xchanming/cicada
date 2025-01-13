@@ -95,9 +95,12 @@
         {% endblock %}
 
         {% block page_checkout_confirm_address %}
+            {% set PHYSICAL_STATE = constant('Cicada\\Core\\Content\\Product\\State::IS_PHYSICAL') %}
+            {% if page.cart.lineItems.hasLineItemWithState(PHYSICAL_STATE) %}
             <div class="confirm-address">
                 {% sw_include '@Storefront/storefront/page/checkout/confirm/confirm-address.html.twig' %}
             </div>
+            {% endif %}
         {% endblock %}
 
         {% block page_checkout_confirm_payment_shipping %}

@@ -1473,8 +1473,8 @@ class Migration1536233560BasicData extends MigrationStep
                 'nameZh' => '商品',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['product']['id'],
-                'pattern' => 'SW{n}',
-                'start' => 10000,
+                'pattern' => '{n}{date_ysmd}',
+                'start' => 100000,
             ],
             'order' => [
                 'id' => Uuid::randomHex(),
@@ -1482,8 +1482,8 @@ class Migration1536233560BasicData extends MigrationStep
                 'nameZh' => '订单',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['order']['id'],
-                'pattern' => '{n}',
-                'start' => 10000,
+                'pattern' => '{n}{date_ysmd}',
+                'start' => 100000,
             ],
             'customer' => [
                 'id' => Uuid::randomHex(),
@@ -1491,8 +1491,8 @@ class Migration1536233560BasicData extends MigrationStep
                 'nameZh' => '客户',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['customer']['id'],
-                'pattern' => '{n}',
-                'start' => 10000,
+                'pattern' => '{n}{date_ysmd}',
+                'start' => 100000,
             ],
         ];
 

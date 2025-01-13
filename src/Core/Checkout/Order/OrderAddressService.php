@@ -195,7 +195,9 @@ class OrderAddressService
         array $alreadyUpdatedIds
     ): string {
         $newOrderAddressId = $order->getBillingAddressId();
-
+        if ($newOrderAddressId === null) {
+            return Uuid::randomHex();
+        }
         // If it's already used, we need to create a new one
         if (\in_array($newOrderAddressId, $alreadyUpdatedIds, true)) {
             return Uuid::randomHex();
@@ -222,7 +224,9 @@ class OrderAddressService
         array $alreadyUpdatedIds
     ): string {
         $newOrderAddressId = $this->getOrderAddressIdForDeliveryId($order, $deliveryId);
-
+        if (!$newOrderAddressId) {
+            return Uuid::randomHex();
+        }
         // If it's already used, we need to create a new one
         if (\in_array($newOrderAddressId, $alreadyUpdatedIds, true)) {
             return Uuid::randomHex();

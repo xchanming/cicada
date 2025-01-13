@@ -80,7 +80,7 @@ class LineItemTransformer
             'price' => $lineItem->getPrice(),
             'priceDefinition' => $definition,
             'parentId' => $parentId,
-            'coverId' => $lineItem->getCover() ? $lineItem->getCover()->getId() : null,
+            'coverId' => $lineItem->getCover()?->getId(),
             'payload' => $lineItem->getPayload(),
             'states' => $lineItem->getStates(),
         ];

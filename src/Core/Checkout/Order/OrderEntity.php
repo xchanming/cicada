@@ -57,14 +57,14 @@ class OrderEntity extends Entity
     protected $salesChannelId;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
     protected $billingAddressId;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
@@ -340,7 +340,7 @@ class OrderEntity extends Entity
         $this->salesChannelId = $salesChannelId;
     }
 
-    public function getBillingAddressId(): string
+    public function getBillingAddressId(): ?string
     {
         return $this->billingAddressId;
     }
@@ -741,7 +741,7 @@ class OrderEntity extends Entity
         $this->totalRounding = $totalRounding;
     }
 
-    public function getBillingAddressVersionId(): string
+    public function getBillingAddressVersionId(): ?string
     {
         return $this->billingAddressVersionId;
     }

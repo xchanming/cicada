@@ -131,7 +131,8 @@
     "CHECKOUT__ORDER_ORDER_CANCELLED": "订单编号为 \"%orderNumber%\" 的订单已被取消，无法再进行编辑。",
     "CHECKOUT__ORDER_ORDER_NOT_FOUND": "未找到该订单。",
     "CHECKOUT__CART_HASH_MISMATCH": "您的购物车中的产品或价格可能已更改。请在下单前检查您的购物车。",
-    "CHECKOUT__CART_INVALID_LINE_ITEM_QUANTITY": "数量 (%quantity%) 不正确。"
+    "CHECKOUT__CART_INVALID_LINE_ITEM_QUANTITY": "数量 (%quantity%) 不正确。",
+    "CHECKOUT__DELIVERY_WITHOUT_ADDRESS": "配送没有包含收货地址"
   },
   "account": {
     "externalPaymentCanceled": "我们已收到您的订单，但付款被中止。请更改付款方式或重试。",
@@ -165,14 +166,10 @@
     "registerAddressShippingHeader": "备用送货地址",
     "personalTypeLabel": "帐户类型",
     "personalTypePlaceholder": "选择...",
-    "personalTypePrivate": "私人",
-    "personalTypeBusiness": "商业",
-    "personalSalutationLabel": "称呼",
-    "personalSalutationPlaceholder": "选择称呼...",
+    "personalTypePrivate": "个人",
+    "personalTypeBusiness": "公司",
     "personalTitleLabel": "头衔",
     "personalTitlePlaceholder": "输入头衔...",
-    "personalNameLabel": "姓名",
-    "personalNamePlaceholder": "输入姓名...",
     "personalMailLabel": "电子邮件地址",
     "personalMailPlaceholder": "输入电子邮件地址...",
     "personalMailConfirmationLabel": "确认电子邮件地址",

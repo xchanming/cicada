@@ -66,6 +66,7 @@
             {% block page_account_address_default %}
                 <div class="row default-address">
                     {% block page_account_address_billing %}
+                        {% if defaultBillingAddress is not empty %}
                         <div class="address-card col-sm p-0 pt-4 me-4">
                             {% block page_account_address_billing_headline %}
                                 <div class="h3">
@@ -90,9 +91,11 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
                     {% endblock %}
 
                     {% block page_account_address_shipping %}
+                        {% if defaultShippingAddress is not empty %}
                         <div class="address-card col-sm p-0 pt-4">
                             {% block page_account_address_shipping_headline %}
                                 <div class="h3">
@@ -115,11 +118,13 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
                     {% endblock %}
                 </div>
             {% endblock %}
 
             {% block page_account_address_list %}
+                {% if page.addresses is not empty %}
                 <div class="address-list pt-4">
                     <div class="h3">
                         {{ "account.addressListHeader"|trans|sw_sanitize }}
@@ -149,6 +154,7 @@
                         {% endfor %}
                     </div>
                 </div>
+                {% endif %}
             {% endblock %}
         {% endblock %}
     </div>

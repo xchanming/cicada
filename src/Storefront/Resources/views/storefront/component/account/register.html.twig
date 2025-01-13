@@ -27,8 +27,8 @@
 
                     {% block component_account_register_create_account %}
                         <input type="hidden"
-                           name="createCustomerAccount"
-                           value="1">
+                               name="createCustomerAccount"
+                               value="1">
                     {% endblock %}
 
                     {% block component_account_register_form_action %}
@@ -84,9 +84,9 @@
                                                    placeholder="{{ 'account.personalMailPlaceholder'|trans|striptags }}"
                                                    name="email"
                                                    value="{{ data.get('email') }}"
-                                                   {% if config('core.loginRegistration.requireEmailConfirmation') %}
-                                                   data-form-validation-equal="personalMail"
-                                                   {% endif %}
+                                                {% if config('core.loginRegistration.requireEmailConfirmation') %}
+                                                    data-form-validation-equal="personalMail"
+                                                {% endif %}
                                                    required="required">
                                         {% endblock %}
 
@@ -157,14 +157,14 @@
                                                        name="password"
                                                        minlength="{{ config('core.loginRegistration.passwordMinLength') }}"
                                                        {% if config('core.loginRegistration.requirePasswordConfirmation') %}
-                                                       data-form-validation-equal="newPassword"
+                                                           data-form-validation-equal="newPassword"
                                                        {% endif %}
-                                                       {% if config('core.loginRegistration.passwordMinLength') != 0 %}
-                                                       data-form-validation-length="{{ config('core.loginRegistration.passwordMinLength') }}"
-                                                       data-form-validation-length-message=" {{ 'account.personalPasswordDescription'|trans({
-                                                           '%minLength%': config('core.loginRegistration.passwordMinLength')
-                                                       })|sw_sanitize }}"
-                                                       {% endif %}
+                                                    {% if config('core.loginRegistration.passwordMinLength') != 0 %}
+                                                        data-form-validation-length="{{ config('core.loginRegistration.passwordMinLength') }}"
+                                                        data-form-validation-length-message=" {{ 'account.personalPasswordDescription'|trans({
+                                                            '%minLength%': config('core.loginRegistration.passwordMinLength')
+                                                        })|sw_sanitize }}"
+                                                    {% endif %}
                                                        required="required">
                                             {% endblock %}
 
@@ -259,6 +259,7 @@
                     {% endblock %}
 
                     {% block component_account_register_address %}
+                        {% if config('core.loginRegistration.requireShippingAddressDuringRegistration') %}
                         <div class="register-address mb-5">
                             {% block component_account_register_address_fields %}
                                 {% block component_account_register_address_billing %}
@@ -307,7 +308,8 @@
                                         {% endblock %}
 
                                         {% block component_account_register_address_shipping %}
-                                            <fieldset class="register-shipping js-form-field-toggle-shipping-address d-none mb-4">
+                                            <fieldset
+                                                class="register-shipping js-form-field-toggle-shipping-address d-none mb-4">
                                                 {% block component_account_register_address_shipping_header %}
                                                     <legend class="card-title">
                                                         {{ 'account.registerAddressShippingHeader'|trans|sw_sanitize }}
@@ -349,6 +351,7 @@
                                 {% endblock %}
                             {% endblock %}
                         </div>
+                        {% endif %}
                     {% endblock %}
 
                     {% block component_account_register_captcha %}

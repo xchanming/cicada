@@ -131,7 +131,8 @@
     "CHECKOUT__ORDER_ORDER_CANCELLED": "The order with the order number \"%orderNumber%\" was canceled and cannot be edited afterwards.",
     "CHECKOUT__ORDER_ORDER_NOT_FOUND": "This order could not be found.",
     "CHECKOUT__CART_HASH_MISMATCH": "Products or prices in your shopping cart may have changed. Please check your shopping cart before placing your order.",
-    "CHECKOUT__CART_INVALID_LINE_ITEM_QUANTITY": "The quantity (%quantity%) is incorrect."
+    "CHECKOUT__CART_INVALID_LINE_ITEM_QUANTITY": "The quantity (%quantity%) is incorrect.",
+    "CHECKOUT__DELIVERY_WITHOUT_ADDRESS": "Delivery contains no shipping address"
   },
   "account": {
     "externalPaymentCanceled": "We have received your order, but the payment was aborted. Please change your payment method or try again.",
@@ -167,12 +168,8 @@
     "personalTypePlaceholder": "Select...",
     "personalTypePrivate": "Private",
     "personalTypeBusiness": "Commercial",
-    "personalSalutationLabel": "Salutation",
-    "personalSalutationPlaceholder": "Select salutation...",
     "personalTitleLabel": "Title",
     "personalTitlePlaceholder": "Enter title...",
-    "personalNameLabel": "Name",
-    "personalNamePlaceholder": "Enter name...",
     "personalMailLabel": "Email address",
     "personalMailPlaceholder": "Enter email address...",
     "personalMailConfirmationLabel": "Email address confirmation",

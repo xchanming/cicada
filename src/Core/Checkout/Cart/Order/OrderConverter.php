@@ -72,11 +72,11 @@ class OrderConverter
     ];
 
     /**
-     * @internal
-     *
      * @param EntityRepository<CustomerCollection> $customerRepository
      * @param EntityRepository<OrderAddressCollection> $orderAddressRepository
      * @param EntityRepository<RuleCollection> $ruleRepository
+     *
+     * @internal
      */
     public function __construct(
         protected EntityRepository $customerRepository,
@@ -150,19 +150,18 @@ class OrderConverter
             }
 
             $activeBillingAddress = $customer->getActiveBillingAddress();
-            if ($activeBillingAddress === null) {
-                throw CartException::addressNotFound('');
-            }
-            $customerAddressId = $activeBillingAddress->getId();
+            if ($activeBillingAddress !== null) {
+                $customerAddressId = $activeBillingAddress->getId();
 
-            if (\array_key_exists($customerAddressId, $shippingAddresses)) {
-                $billingAddressId = $shippingAddresses[$customerAddressId]['id'];
-            } else {
-                $billingAddress = AddressTransformer::transform($activeBillingAddress);
-                $data['addresses'] = [$billingAddress];
-                $billingAddressId = $billingAddress['id'];
+                if (\array_key_exists($customerAddressId, $shippingAddresses)) {
+                    $billingAddressId = $shippingAddresses[$customerAddressId]['id'];
+                } else {
+                    $billingAddress = AddressTransformer::transform($activeBillingAddress);
+                    $data['addresses'] = [$billingAddress];
+                    $billingAddressId = $billingAddress['id'];
+                }
+                $data['billingAddressId'] = $billingAddressId;
             }
-            $data['billingAddressId'] = $billingAddressId;
         }
 
         if ($conversionContext->shouldIncludeTransactions()) {
@@ -267,26 +266,24 @@ class OrderConverter
 
         if ($customerId) {
             $customer = $this->customerRepository->search(new Criteria([$customerId]), $context)->getEntities()->get($customerId);
-            if ($customer !== null) {
-                $customerGroupId = $customer->getGroupId();
-            }
+            $customerGroupId = $customer?->getGroupId();
         }
-
-        $billingAddressId = $order->getBillingAddressId();
-        $billingAddress = $this->orderAddressRepository->search(new Criteria([$billingAddressId]), $context)->getEntities()->get($billingAddressId);
-        if ($billingAddress === null) {
-            throw CartException::addressNotFound($billingAddressId);
-        }
-
         $options = [
             SalesChannelContextService::CURRENCY_ID => $order->getCurrencyId(),
             SalesChannelContextService::LANGUAGE_ID => $order->getLanguageId(),
             SalesChannelContextService::CUSTOMER_ID => $customerId,
-            SalesChannelContextService::COUNTRY_STATE_ID => $billingAddress->getCountryStateId(),
             SalesChannelContextService::CUSTOMER_GROUP_ID => $customerGroupId,
             SalesChannelContextService::PERMISSIONS => self::ADMIN_EDIT_ORDER_PERMISSIONS,
             SalesChannelContextService::VERSION_ID => $context->getVersionId(),
         ];
+        $billingAddressId = $order->getBillingAddressId();
+        if ($billingAddressId) {
+            $billingAddress = $this->orderAddressRepository->search(new Criteria([$billingAddressId]), $context)->getEntities()->get($billingAddressId);
+            if ($billingAddress === null) {
+                throw CartException::addressNotFound($billingAddressId);
+            }
+            $options[SalesChannelContextService::COUNTRY_STATE_ID] = $billingAddress->getCountryStateId();
+        }
 
         $delivery = $order->getDeliveries()?->first();
         if ($delivery !== null) {

@@ -441,6 +441,7 @@ export default {
                     dataIndex: 'deliveries.stateMachineState.name',
                     label: 'sw-order.list.columnDeliveryState',
                     allowResize: true,
+                    visible: false,
                 },
                 {
                     property: 'orderDateTime',
