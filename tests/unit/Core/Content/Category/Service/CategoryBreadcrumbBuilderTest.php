@@ -389,7 +389,7 @@ class CategoryBreadcrumbBuilderTest extends TestCase
         $salesChannelEntity->setServiceCategoryId('serviceCategoryId');
         $salesChannelEntity->setFooterCategoryId('footerCategoryId');
 
-        return Generator::createSalesChannelContext(
+        return Generator::generateSalesChannelContext(
             salesChannel: $salesChannelEntity
         );
     }

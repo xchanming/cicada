@@ -3,7 +3,6 @@
 namespace Cicada\Tests\Unit\Storefront\Controller\Exception;
 
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Test\Annotation\DisabledFeatures;
 use Cicada\Storefront\Controller\Exception\StorefrontException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -54,21 +53,6 @@ class StorefrontExceptionTest extends TestCase
         static::assertSame('Can not render test.html.twig view: Error message with these parameters: {"param":"Param"}', $exception->getMessage());
         static::assertSame(5, $exception->getLine());
         static::assertSame($path, $exception->getFile());
-    }
-
-    #[DisabledFeatures(['v6.7.0.0'])]
-    public function testCannotRenderView(): void
-    {
-        $parameters = [
-            'param' => 'Param',
-            'context' => Context::createDefaultContext(),
-        ];
-
-        $res = StorefrontException::cannotRenderView('test.html.twig', 'Error message', $parameters);
-
-        static::assertEquals(500, $res->getStatusCode());
-        static::assertEquals('STOREFRONT__CAN_NOT_RENDER_VIEW', $res->getErrorCode());
-        static::assertEquals('Can not render test.html.twig view: Error message with these parameters: {"param":"Param"}', $res->getMessage());
     }
 
     public function testUnSupportStorefrontResponse(): void

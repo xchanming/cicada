@@ -5,20 +5,16 @@ namespace Cicada\Storefront\Controller;
 use Cicada\Core\Content\Category\SalesChannel\AbstractCategoryRoute;
 use Cicada\Core\Content\Cms\CmsException;
 use Cicada\Core\Content\Cms\SalesChannel\AbstractCmsRoute;
-use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Content\Product\SalesChannel\Detail\AbstractProductDetailRoute;
 use Cicada\Core\Content\Product\SalesChannel\FindVariant\AbstractFindProductVariantRoute;
 use Cicada\Core\Content\Product\SalesChannel\Listing\AbstractProductListingRoute;
 use Cicada\Core\Content\Product\SalesChannel\Review\AbstractProductReviewLoader;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RoutingException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Event\SwitchBuyBoxVariantEvent;
-use Cicada\Storefront\Framework\Page\StorefrontSearchResult;
 use Cicada\Storefront\Page\Cms\CmsPageLoadedHook;
-use Cicada\Storefront\Page\Product\Review\ProductReviewsLoadedEvent as StorefrontProductReviewsLoadedEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -164,20 +160,6 @@ class CmsController extends StorefrontController
         $configurator = $result->getConfigurator();
 
         $reviews = $this->productReviewLoader->load($request, $context, $product->getId(), $product->getParentId());
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            /** @var StorefrontSearchResult<ProductReviewCollection> $storefrontReviews */
-            $storefrontReviews = new StorefrontSearchResult(
-                $reviews->getEntity(),
-                $reviews->getTotal(),
-                $reviews->getEntities(),
-                $reviews->getAggregations(),
-                $reviews->getCriteria(),
-                $reviews->getContext()
-            );
-
-            $this->eventDispatcher->dispatch(new StorefrontProductReviewsLoadedEvent($storefrontReviews, $context, $request));
-        }
 
         $event = new SwitchBuyBoxVariantEvent($elementId, $product, $configurator, $request, $context);
         $this->eventDispatcher->dispatch($event);

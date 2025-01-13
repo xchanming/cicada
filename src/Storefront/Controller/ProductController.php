@@ -2,7 +2,6 @@
 
 namespace Cicada\Storefront\Controller;
 
-use Cicada\Core\Content\Product\Aggregate\ProductReview\ProductReviewCollection;
 use Cicada\Core\Content\Product\Exception\ProductNotFoundException;
 use Cicada\Core\Content\Product\Exception\ReviewNotActiveExeption;
 use Cicada\Core\Content\Product\Exception\VariantNotFoundException;
@@ -11,27 +10,21 @@ use Cicada\Core\Content\Product\SalesChannel\Review\AbstractProductReviewLoader;
 use Cicada\Core\Content\Product\SalesChannel\Review\AbstractProductReviewSaveRoute;
 use Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewsWidgetLoadedHook;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Controller\Exception\StorefrontException;
-use Cicada\Storefront\Framework\Page\StorefrontSearchResult;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Page\Product\ProductPageLoadedHook;
 use Cicada\Storefront\Page\Product\ProductPageLoader;
 use Cicada\Storefront\Page\Product\QuickView\MinimalQuickViewPageLoader;
 use Cicada\Storefront\Page\Product\QuickView\ProductQuickViewWidgetLoadedHook;
-use Cicada\Storefront\Page\Product\Review\ProductReviewsLoadedEvent as StorefrontProductReviewsLoadedEvent;
-use Cicada\Storefront\Page\Product\Review\ProductReviewsWidgetLoadedHook as StorefrontProductReviewsWidgetLoadedHook;
-use Cicada\Storefront\Page\Product\Review\ReviewLoaderResult;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @internal
@@ -52,7 +45,6 @@ class ProductController extends StorefrontController
         private readonly SeoUrlPlaceholderHandlerInterface $seoUrlPlaceholderHandler,
         private readonly AbstractProductReviewLoader $productReviewLoader,
         private readonly SystemConfigService $systemConfigService,
-        private readonly EventDispatcherInterface $eventDispatcher
     ) {
     }
 
@@ -162,30 +154,6 @@ class ProductController extends StorefrontController
         $reviews = $this->productReviewLoader->load($request, $context, $productId, $request->get('parentId'));
 
         $this->hook(new ProductReviewsWidgetLoadedHook($reviews, $context));
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            /** @var StorefrontSearchResult<ProductReviewCollection> $storefrontReviews */
-            $storefrontReviews = new StorefrontSearchResult(
-                $reviews->getEntity(),
-                $reviews->getTotal(),
-                $reviews->getEntities(),
-                $reviews->getAggregations(),
-                $reviews->getCriteria(),
-                $reviews->getContext()
-            );
-
-            $this->eventDispatcher->dispatch(new StorefrontProductReviewsLoadedEvent($storefrontReviews, $context, $request));
-
-            $reviewResult = ReviewLoaderResult::createFrom($storefrontReviews);
-            $reviewResult->setMatrix($reviews->getMatrix());
-            $reviewResult->setCustomerReview($reviews->getCustomerReview());
-            $reviewResult->setTotalReviews($reviews->getTotal());
-            $reviewResult->setTotalReviewsInCurrentLanguage($reviews->getTotalReviewsInCurrentLanguage());
-            $reviewResult->setProductId($reviews->getProductId());
-            $reviewResult->setParentId($reviews->getParentId());
-
-            $this->hook(new StorefrontProductReviewsWidgetLoadedHook($reviewResult, $context));
-        }
 
         return $this->renderStorefront('storefront/component/review/review.html.twig', [
             'reviews' => $reviews,

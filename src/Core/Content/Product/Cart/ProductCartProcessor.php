@@ -17,13 +17,13 @@ use Cicada\Core\Checkout\Cart\Price\QuantityPriceCalculator;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
 use Cicada\Core\Checkout\Cart\Price\Struct\ReferencePriceDefinition;
+use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Content\Product\SalesChannel\Price\AbstractProductPriceCalculator;
 use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Content\Product\State;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\DataAbstractionLayer\Cache\EntityCacheKeyGenerator;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\RuleAreas;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -81,24 +81,23 @@ class ProductCartProcessor implements CartProcessorInterface, CartDataCollectorI
                 foreach ($products as $product) {
                     $data->set($this->getDataKey($product->getId()), $product);
                 }
+            }
 
-                // refresh data timestamp to prevent unnecessary gateway calls
-                foreach ($items as $lineItem) {
-                    $product = $products->get((string) $lineItem->getReferencedId());
+            // refresh data timestamp to prevent unnecessary gateway calls
+            foreach ($items as $lineItem) {
+                $product = $data->get($this->getDataKey($lineItem->getReferencedId() ?: ''));
 
-                    // product was fetched, update timestamp to not fetch it again
-                    if ($product) {
-                        if (Feature::isActive('v6.7.0.0') || Feature::isActive('PERFORMANCE_TWEAKS')) {
-                            $lineItem->setDataTimestamp($product->getUpdatedAt() ?? $product->getCreatedAt());
-                        } else {
-                            $lineItem->setDataTimestamp(new \DateTimeImmutable());
-                        }
-                        $lineItem->setDataContextHash($hash);
-                    // we have asked for this product, but we didn't get it back, so we need to remove it
-                    } elseif (\in_array($lineItem->getReferencedId(), $ids, true)) {
-                        $lineItem->setDataTimestamp(null);
-                    }
+                // product was fetched, update timestamp to not fetch it again
+                if ($product instanceof ProductEntity) {
+                    $lineItem->setDataTimestamp($product->getUpdatedAt() ?? $product->getCreatedAt());
+                // we have asked for this product, but we didn't get it back, so we need to remove it
+                } elseif (\in_array($lineItem->getReferencedId(), $ids, true)) {
+                    $lineItem->setDataTimestamp(null);
                 }
+
+                // no matter if we fetched data or not, we need to set the hash to all products in case it changed
+                // so the next time we need to calculate and there is no data, we know to fetch it again
+                $lineItem->setDataContextHash($hash);
             }
 
             // run price calculator in batch
@@ -473,7 +472,7 @@ class ProductCartProcessor implements CartProcessorInterface, CartDataCollectorI
         }
 
         $updates = $this->connection->fetchAllKeyValue(
-            'SELECT LOWER(HEX(id)) as id, updated_at FROM product WHERE id IN (:ids) AND version_id = :liveVersionId',
+            'SELECT LOWER(HEX(id)) as id, IFNULL(updated_at, created_at) FROM product WHERE id IN (:ids) AND version_id = :liveVersionId',
             [
                 'ids' => Uuid::fromHexToBytesList(array_keys($changes)),
                 'liveVersionId' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),

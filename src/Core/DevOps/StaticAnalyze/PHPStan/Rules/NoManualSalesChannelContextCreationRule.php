@@ -20,7 +20,7 @@ use PHPStan\Rules\RuleErrorBuilder;
 /**
  * This PHPStan rule prevents the manual creation of a `SalesChannelContext`.
  * It checks if the `SalesChannelContext` or any of its children are created manually.
- * Usually it should be sufficient to use the `SalesChannelContextFactory` or the `Generator::createSalesChannelContext` method.
+ * Usually it should be sufficient to use the `SalesChannelContextFactory` or the `Generator::generateSalesChannelContext` method.
  *
  * @internal
  *

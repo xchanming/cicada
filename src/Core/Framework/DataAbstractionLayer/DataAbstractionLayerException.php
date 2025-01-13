@@ -772,6 +772,7 @@ class DataAbstractionLayerException extends HttpException
             ['association' => $association, 'entityDefinition' => $entityDefinition]
         );
     }
+
     public static function versionFieldNotFound(string $field): self
     {
         return new self(

@@ -24,7 +24,6 @@ use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Controller\ProductController;
 use Cicada\Storefront\Framework\Routing\RequestTransformer;
 use Cicada\Storefront\Page\Product\QuickView\ProductQuickViewWidgetLoadedHook;
-use Cicada\Storefront\Page\Product\Review\ProductReviewsWidgetLoadedHook as ProductReviewsWidgetLoadedHookDeprecated;
 use Cicada\Storefront\Test\Controller\StorefrontControllerTestBehaviour;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -352,11 +351,7 @@ class ProductControllerTest extends TestCase
 
         $traces = static::getContainer()->get(ScriptTraces::class)->getTraces();
 
-        if (Feature::isActive('v6.7.0.0')) {
-            static::assertArrayHasKey(ProductReviewsWidgetLoadedHook::HOOK_NAME, $traces);
-        } else {
-            static::assertArrayHasKey(ProductReviewsWidgetLoadedHookDeprecated::HOOK_NAME, $traces);
-        }
+        static::assertArrayHasKey(ProductReviewsWidgetLoadedHook::HOOK_NAME, $traces);
         $content = $response->getContent();
         static::assertIsString($content);
         static::assertStringContainsString('<p class="product-detail-review-item-content" itemprop="description" lang="en-GB">', $content);
