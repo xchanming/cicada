@@ -300,6 +300,7 @@ class ImportExportLogApiTest extends TestCase
                 'localeId' => $this->getLocaleIdOfSystemLanguage(),
                 'username' => \sprintf('foobar%d', $i),
                 'password' => TestDefaults::HASHED_PASSWORD,
+                'phone' => (string) rand(10000000000, 99999999999),
                 'name' => \sprintf('Foo%d', $i),
                 'email' => \sprintf('fo%d@ob.ar', $i),
             ];

@@ -55,6 +55,7 @@ class AppLocaleProviderTest extends TestCase
             'name' => 'first',
             'email' => 'first@last.de',
             'password' => '12345678',
+            'phone' => (string) rand(10000000000, 99999999999),
             'locale' => [
                 'code' => $userLocale,
                 'name' => 'testLocale',

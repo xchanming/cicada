@@ -2096,6 +2096,7 @@ class AppLifecycleTest extends TestCase
             'email' => 'test@example.com',
             'username' => 'userTest',
             'password' => password_hash('12345678', \PASSWORD_BCRYPT),
+            'phone' => (string) rand(10000000000, 99999999999),
             'locale_id' => Uuid::fromHexToBytes($this->getLocaleIdOfSystemLanguage()),
             'active' => 1,
             'admin' => 1,

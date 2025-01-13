@@ -34,7 +34,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
-use Cicada\Core\Framework\DataAbstractionLayer\Field\ReferenceVersionField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StateMachineStateField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\UpdatedByField;
@@ -85,7 +84,6 @@ class OrderDefinition extends EntityDefinition
             (new NumberRangeField('order_number', 'orderNumber'))->addFlags(new ApiAware(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING, false)),
 
             (new FkField('billing_address_id', 'billingAddressId', OrderAddressDefinition::class))->addFlags(new ApiAware(), new NoConstraint()),
-            (new ReferenceVersionField(OrderAddressDefinition::class, 'billing_address_version_id'))->addFlags(new ApiAware()),
 
             (new FkField('currency_id', 'currencyId', CurrencyDefinition::class))->addFlags(new ApiAware(), new Required()),
             (new FkField('language_id', 'languageId', LanguageDefinition::class))->addFlags(new ApiAware(), new Required()),

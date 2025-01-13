@@ -4,8 +4,6 @@ namespace Cicada\Tests\Integration\Core\Checkout\Cart\LineItem\Group;
 
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupPackagerNotFoundException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupSorterNotFoundException;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroup;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilder;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupServiceRegistry;
@@ -424,7 +422,7 @@ class LineItemGroupBuilderTest extends TestCase
 
         $group = $this->buildGroup('UNKNOWN', 2, self::KEY_SORTER_PRICE_ASC, new RuleCollection());
 
-        $this->expectException(LineItemGroupPackagerNotFoundException::class);
+        $this->expectException(CartException::class);
 
         $this->unitTestBuilder->findGroupPackages([$group], $cart, $this->context);
     }
@@ -440,7 +438,7 @@ class LineItemGroupBuilderTest extends TestCase
 
         $group = $this->buildGroup(self::KEY_PACKAGER_COUNT, 2, 'UNKNOWN', new RuleCollection());
 
-        $this->expectException(LineItemGroupSorterNotFoundException::class);
+        $this->expectException(CartException::class);
 
         $this->unitTestBuilder->findGroupPackages([$group], $cart, $this->context);
     }

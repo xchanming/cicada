@@ -3,7 +3,6 @@
 namespace Cicada\Tests\Integration\Core\Framework\Routing;
 
 use Cicada\Administration\Controller\AdministrationController;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\PlatformRequest;
@@ -90,31 +89,6 @@ class CoreSubscriberTest extends TestCase
         );
         static::assertStringNotContainsString("\n", (string) $response->headers->get('Content-Security-Policy'));
         static::assertStringNotContainsString("\r", (string) $response->headers->get('Content-Security-Policy'));
-    }
-
-    /**
-     * @deprecated tag:v6.7.0 - Route will be removed in v6.7.0, so this test can be removed as well.
-     */
-    public function testSwaggerHasCsp(): void
-    {
-        Feature::skipTestIfActive('v6.7.0.0', $this);
-
-        $browser = $this->getBrowser();
-
-        $browser->request('GET', '/api/_info/swagger.html');
-        $response = $browser->getResponse();
-
-        static::assertTrue($response->headers->has(PlatformRequest::HEADER_FRAME_OPTIONS));
-        static::assertTrue($response->headers->has('X-Content-Type-Options'));
-        static::assertTrue($response->headers->has('Content-Security-Policy'));
-
-        $nonce = $this->getNonceFromCsp($response);
-
-        static::assertMatchesRegularExpression(
-            '/.*script-src[^;]+nonce-' . preg_quote($nonce, '/') . '.*/',
-            (string) $response->headers->get('Content-Security-Policy'),
-            'CSP should contain the nonce'
-        );
     }
 
     public function testStoplightIoHasCsp(): void

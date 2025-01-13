@@ -80,6 +80,7 @@ class ExtensionStoreLicensesServiceTest extends TestCase
                 'password' => TestDefaults::HASHED_PASSWORD,
                 'name' => 'Foo',
                 'email' => 'foo@bar.com',
+                'phone' => (string) rand(10000000000, 99999999999),
                 'storeToken' => Uuid::randomHex(),
                 'admin' => true,
                 'aclRoles' => [],
