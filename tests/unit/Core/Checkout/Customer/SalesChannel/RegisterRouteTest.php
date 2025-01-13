@@ -56,6 +56,98 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 #[CoversClass(RegisterRoute::class)]
 class RegisterRouteTest extends TestCase
 {
+    public function testRegisterWithoutAddressCountryViolation(): void
+    {
+        $systemConfigService = new StaticSystemConfigService([
+            TestDefaults::SALES_CHANNEL => [
+                'core.loginRegistration.showAccountTypeSelection' => true,
+                'core.loginRegistration.passwordMinLength' => '8',
+            ],
+            'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
+        ]);
+
+        $customerEntity = new CustomerEntity();
+        $customerEntity->setDoubleOptInRegistration(true);
+        $customerEntity->setId('customer-1');
+        $customerEntity->setGuest(false);
+        $customerEntity->setEmail('test@test.de');
+
+        /** @var StaticEntityRepository<CustomerCollection> $customerRepository */
+        $customerRepository = new StaticEntityRepository(
+            [new CustomerCollection([$customerEntity])],
+            new CustomerDefinition(),
+        );
+
+        $countryId = Uuid::randomHex();
+
+        $country = new CountryEntity();
+        $country->setId($countryId);
+
+        $countryRepository = $this->createMock(SalesChannelRepository::class);
+        $countryRepository
+            ->method('search')
+            ->willReturn(
+                new EntitySearchResult(
+                    CountryDefinition::ENTITY_NAME,
+                    1,
+                    new CountryCollection([$country]),
+                    null,
+                    new Criteria(),
+                    Context::createDefaultContext()
+                )
+            );
+
+        $data = [
+            'email' => 'test@test.de',
+            'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
+            'storefrontUrl' => 'foo',
+            'salutationId' => null,
+            'name' => '',
+        ];
+
+        $dataValidator = $this->createMock(DataValidator::class);
+        $dataValidator
+            ->expects(static::once())
+            ->method('getViolations')
+            ->with($data, static::callback(function (DataValidationDefinition $definition) {
+                $subs = $definition->getSubDefinitions();
+
+                static::assertArrayNotHasKey('billingAddress', $subs);
+
+                $billingAddressDefinition = $subs['billingAddress'];
+
+                static::assertNull($billingAddressDefinition);
+
+                return true;
+            }));
+
+        $definitionFactory = $this->createMock(DataValidationFactoryInterface::class);
+        $definitionFactory
+            ->method('create')
+            ->willReturn(new DataValidationDefinition());
+
+        $registerRoute = new RegisterRoute(
+            new EventDispatcher(),
+            $this->createMock(NumberRangeValueGeneratorInterface::class),
+            $dataValidator,
+            $definitionFactory,
+            $definitionFactory,
+            $systemConfigService,
+            $customerRepository,
+            $this->createMock(SalesChannelContextPersister::class),
+            $countryRepository,
+            $this->createMock(Connection::class),
+            $this->createMock(SalesChannelContextService::class),
+            $this->createMock(StoreApiCustomFieldMapper::class),
+            $this->createMock(EntityRepository::class),
+        );
+
+        $salesChannelContext = $this->createMock(SalesChannelContext::class);
+        $salesChannelContext->method('getSalesChannelId')->willReturn(TestDefaults::SALES_CHANNEL);
+
+        $registerRoute->register(new RequestDataBag($data), $salesChannelContext, false);
+    }
+
     public function testAccountType(): void
     {
         $systemConfigService = new StaticSystemConfigService([
@@ -121,6 +213,7 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
+            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
@@ -193,6 +286,7 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
+            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
@@ -623,6 +717,7 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
+            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();
@@ -736,6 +831,7 @@ class RegisterRouteTest extends TestCase
                 'core.loginRegistration.passwordMinLength' => '8',
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
+            'core.loginRegistration.requireShippingAddressDuringRegistration' => true,
         ]);
 
         $customerEntity = new CustomerEntity();

@@ -107,6 +107,7 @@ class SalesChannelRuleTest extends TestCase
         $salesChannel->setId($salesChannelId);
 
         $salesChannelContext->method('getSalesChannel')->willReturn($salesChannel);
+        $salesChannelContext->method('getSalesChannelId')->willReturn($salesChannelId);
 
         return new CheckoutRuleScope(
             $salesChannelContext

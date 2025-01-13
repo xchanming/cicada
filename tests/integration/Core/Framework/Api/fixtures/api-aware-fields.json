@@ -450,6 +450,7 @@
   "state_machine_history.toStateMachineState",
   "state_machine_history.createdAt",
   "state_machine_history.updatedAt",
+  "state_machine_history.remark",
   "system_config.id",
   "system_config.configurationKey",
   "system_config.configurationValue",

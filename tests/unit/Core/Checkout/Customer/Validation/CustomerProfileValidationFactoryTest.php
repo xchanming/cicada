@@ -224,6 +224,7 @@ class CustomerProfileValidationFactoryTest extends TestCase
         $salesChannelContext = $this->createMock(SalesChannelContext::class);
         $salesChannelContext->method('getContext')->willReturn($context);
         $salesChannelContext->method('getSalesChannel')->willReturn($salesChannel);
+        $salesChannelContext->method('getSalesChannelId')->willReturn(TestDefaults::SALES_CHANNEL);
 
         return $salesChannelContext;
     }

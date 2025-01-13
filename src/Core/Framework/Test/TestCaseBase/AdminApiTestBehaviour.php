@@ -138,6 +138,7 @@ trait AdminApiTestBehaviour
             'name' => $username,
             'username' => $username,
             'password' => TestDefaults::HASHED_PASSWORD,
+            'phone' => (string) rand(10000000000, 99999999999),
             'locale_id' => $this->getLocaleOfSystemLanguage($connection),
             'active' => 1,
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
