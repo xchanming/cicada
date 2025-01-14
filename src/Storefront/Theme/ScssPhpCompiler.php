@@ -2,9 +2,9 @@
 
 namespace Cicada\Storefront\Theme;
 
+use Cicada\Core\Framework\Log\Package;
 use ScssPhp\ScssPhp\Compiler;
 use ScssPhp\ScssPhp\OutputStyle;
-use Cicada\Core\Framework\Log\Package;
 
 /**
  * @internal - may be changed in the future
