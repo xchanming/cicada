@@ -119,7 +119,7 @@ class SalesChannelContext extends Struct
     protected $context;
 
     /**
-     * @param array<string, string[]> $areaRuleIds
+     * @param array<string, array<string>> $areaRuleIds
      *
      * @internal
      *
@@ -231,7 +231,7 @@ class SalesChannelContext extends Struct
     }
 
     /**
-     * @return string[]
+     * @return array<string>
      */
     public function getRuleIds(): array
     {
@@ -247,9 +247,9 @@ class SalesChannelContext extends Struct
     }
 
     /**
-     * @return array<string, string[]>
-     *
      * @internal
+     *
+     * @return array<string, array<string>>
      */
     public function getAreaRuleIds(): array
     {
@@ -257,11 +257,11 @@ class SalesChannelContext extends Struct
     }
 
     /**
-     * @param string[] $areas
-     *
-     * @return string[]
-     *
      * @internal
+     *
+     * @param array<string> $areas
+     *
+     * @return array<string>
      */
     public function getRuleIdsByAreas(array $areas): array
     {
@@ -279,9 +279,9 @@ class SalesChannelContext extends Struct
     }
 
     /**
-     * @param array<string, string[]> $areaRuleIds
-     *
      * @internal
+     *
+     * @param array<string, array<string>> $areaRuleIds
      */
     public function setAreaRuleIds(array $areaRuleIds): void
     {
@@ -369,7 +369,7 @@ class SalesChannelContext extends Struct
     }
 
     /**
-     * @return string[]
+     * @return array<string>
      */
     public function getStates(): array
     {
@@ -387,7 +387,7 @@ class SalesChannelContext extends Struct
     }
 
     /**
-     * @return string[]
+     * @return non-empty-list<string>
      */
     public function getLanguageIdChain(): array
     {
