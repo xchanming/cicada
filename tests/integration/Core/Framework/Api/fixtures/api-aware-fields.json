@@ -1174,7 +1174,6 @@
   "order.versionId",
   "order.orderNumber",
   "order.billingAddressId",
-  "order.billingAddressVersionId",
   "order.currencyId",
   "order.languageId",
   "order.salesChannelId",

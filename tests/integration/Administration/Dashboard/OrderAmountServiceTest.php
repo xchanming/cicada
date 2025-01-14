@@ -290,7 +290,6 @@ class OrderAmountServiceTest extends TestCase
             'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
             'sales_channel_id' => Uuid::fromHexToBytes(TestDefaults::SALES_CHANNEL),
             'billing_address_id' => Uuid::randomBytes(),
-            'billing_address_version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
             'shipping_costs' => '{}',
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
         ];
