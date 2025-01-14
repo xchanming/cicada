@@ -154,13 +154,13 @@ class SCSSValidator
             str_starts_with($value, '#')
             && self::isHex(substr($value, 1))
         ) || str_starts_with($value, 'rgb')
-                || str_starts_with($value, 'rgba')
-                || str_starts_with($value, 'hsl')
-                || str_starts_with($value, 'hsla')
-                || (
-                    !str_starts_with($value, '#')
-                    && Colors::colorNameToRGBa($value) !== null
-                );
+            || str_starts_with($value, 'rgba')
+            || str_starts_with($value, 'hsl')
+            || str_starts_with($value, 'hsla')
+            || (
+                !str_starts_with($value, '#')
+                && Colors::colorNameToRGBa($value) !== null
+            );
     }
 
     private static function initVariables(string $value, string $varVal): string

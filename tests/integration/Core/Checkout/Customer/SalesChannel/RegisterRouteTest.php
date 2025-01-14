@@ -75,6 +75,54 @@ class RegisterRouteTest extends TestCase
         $this->systemConfigService = static::getContainer()->get(SystemConfigService::class);
     }
 
+    public function testBaseRegistration(): void
+    {
+        $registrationData = $this->getBaseRegistrationData();
+        $this->browser
+            ->request(
+                'POST',
+                '/store-api/account/register',
+                [],
+                [],
+                ['CONTENT_TYPE' => 'application/json'],
+                json_encode($registrationData, \JSON_THROW_ON_ERROR)
+            );
+
+        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
+
+        $connection = static::getContainer()->get(Connection::class);
+        $result = $connection->fetchOne(
+            'SELECT `payload` FROM `sales_channel_api_context` WHERE `customer_id` = :customerId ',
+            [
+                'customerId' => Uuid::fromHexToBytes($response['id']),
+            ]
+        );
+        $result = json_decode((string) $result, true, 512, \JSON_THROW_ON_ERROR);
+
+        static::assertArrayHasKey('domainId', $result);
+
+        static::assertSame('customer', $response['apiAlias']);
+        static::assertNotEmpty($this->browser->getResponse()->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN));
+
+        $this->browser
+            ->request(
+                'POST',
+                '/store-api/account/login',
+                [],
+                [],
+                ['CONTENT_TYPE' => 'application/json'],
+                json_encode([
+                    'email' => 'teg-reg@example.com',
+                    'password' => '12345678',
+                ], \JSON_THROW_ON_ERROR)
+            );
+
+        $response = $this->browser->getResponse();
+
+        $contextToken = $response->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN) ?? '';
+        static::assertNotEmpty($contextToken);
+    }
+
     public function testRegistration(): void
     {
         $registrationData = $this->getRegistrationData();
@@ -858,6 +906,8 @@ class RegisterRouteTest extends TestCase
 
     public function testRegistrationCommercialAccountWithVatIds(): void
     {
+        $this->systemConfigService->set('core.loginRegistration.requireCustomerAddress', true);
+
         $additionalData = [
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             'billingAddress' => [
@@ -1046,6 +1096,7 @@ class RegisterRouteTest extends TestCase
     {
         $this->systemConfigService->set('core.loginRegistration.showAccountTypeSelection', true);
         $this->systemConfigService->set('core.loginRegistration.requireShippingAddressDuringRegistration', true);
+        $this->systemConfigService->set('core.loginRegistration.requireCustomerAddress', true);
 
         $additionalData = [
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
@@ -1127,6 +1178,7 @@ class RegisterRouteTest extends TestCase
     public function testRegistrationCommercialAccountWithDifferentCommercialAddressButEmptyCompany(): void
     {
         $this->systemConfigService->set('core.loginRegistration.showAccountTypeSelection', true);
+        $this->systemConfigService->set('core.loginRegistration.requireCustomerAddress', true);
 
         $additionalData = [
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
@@ -1242,7 +1294,7 @@ class RegisterRouteTest extends TestCase
 
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertEmpty($response['errors']);
+        static::assertArrayNotHasKey('errors', $response);
     }
 
     public function testRegistrationWithExistingNotSpecifiedSalutation(): void
@@ -1416,6 +1468,15 @@ class RegisterRouteTest extends TestCase
             ->upsert([$customer], Context::createDefaultContext());
 
         return $customerId;
+    }
+
+    private function getBaseRegistrationData(): array
+    {
+        return [
+            'password' => '12345678',
+            'email' => 'teg-reg@example.com',
+            'storefrontUrl' => 'http://localhost',
+        ];
     }
 
     private function createProductTestData(): void
