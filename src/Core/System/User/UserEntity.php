@@ -62,7 +62,7 @@ class UserEntity extends Entity
     protected $name;
 
     /**
-     * @var string
+     * @var string|null
      *
      * @deprecated tag:v6.7.0 - Will be natively typed
      */
@@ -471,7 +471,7 @@ class UserEntity extends Entity
         $this->name = $name;
     }
 
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
@@ -480,4 +480,5 @@ class UserEntity extends Entity
     {
         $this->phone = $phone;
     }
+
 }

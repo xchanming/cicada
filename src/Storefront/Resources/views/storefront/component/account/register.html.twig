@@ -259,7 +259,7 @@
                     {% endblock %}
 
                     {% block component_account_register_address %}
-                        {% if config('core.loginRegistration.requireShippingAddressDuringRegistration') %}
+                        {% if config('core.loginRegistration.requireCustomerAddress') %}
                         <div class="register-address mb-5">
                             {% block component_account_register_address_fields %}
                                 {% block component_account_register_address_billing %}

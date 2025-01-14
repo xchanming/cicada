@@ -28,7 +28,15 @@
         <input-field type="bool">
             <name>showTitleField</name>
             <label>Show title</label>
-            <label lang="zh-CN">是否显示“标题”字段</label>
+            <label lang="zh-CN">客户注册时是否显示“昵称”字段</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>requireCustomerAddress</name>
+            <label>Require customer address on registration</label>
+            <label lang="zh-CN">注册时必须填写地址</label>
+            <helpText>If this setting is active, customers are required to provide an address during registration. If inactive, the address is optional during registration.</helpText>
+            <helpText lang="zh-CN">如果此设置已激活，客户在注册时必须提供地址。如果未激活，地址在注册时为可选项。</helpText>
         </input-field>
 
         <input-field type="bool">
@@ -81,7 +89,7 @@
 
         <input-field type="bool">
             <name>phoneNumberFieldRequired</name>
-            <label>手机号字段是否必填</label>
+            <label>Phone field required</label>
             <label lang="zh-CN">是否必填”手机号“字段</label>
         </input-field>
 
@@ -94,13 +102,13 @@
         <input-field type="bool">
             <name>birthdayFieldRequired</name>
             <label>Birthday field required</label>
-            <label lang="zh-CN">是否必填“生日”字段</label>
+            <label lang="zh-CN">注册是否必填“生日”字段</label>
         </input-field>
 
         <input-field type="bool">
             <name>showAccountTypeSelection</name>
             <label>Show selection between company and customer account</label>
-            <label lang="zh-CN">是否显示公司账号与个人账号之间的选择</label>
+            <label lang="zh-CN">注册时是否显示公司账号与个人账号选择框</label>
         </input-field>
 
         <input-field type="bool">
