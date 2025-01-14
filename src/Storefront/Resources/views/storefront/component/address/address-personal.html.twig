@@ -156,7 +156,7 @@
     {% block component_address_personal_name %}
         <div class="row g-2">
             {% block component_address_personal_fields_name %}
-                {% if config('core.loginRegistration.showNameField') %}
+                {% if config('core.loginRegistration.nameFieldRequire') %}
                 <div class="form-group col-sm-6">
 
                     {# New implementation, setting of "violationPath" #}

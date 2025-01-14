@@ -175,6 +175,8 @@
     "personalTitlePlaceholder": "输入昵称...",
     "personalNameLabel": "姓名",
     "personalNamePlaceholder": "输入姓名...",
+    "personalPhoneNumberLabel": "手机号",
+    "personalPhoneNumberPlaceholder": "输入手机号...",
     "personalMailLabel": "电子邮件地址",
     "personalMailPlaceholder": "输入电子邮件地址...",
     "personalMailConfirmationLabel": "确认电子邮件地址",

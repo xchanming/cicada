@@ -82,9 +82,9 @@
         </input-field>
 
         <input-field type="bool">
-            <name>showNameField</name>
-            <label>Show name number</label>
-            <label lang="zh-CN">是否显示“姓名”字段</label>
+            <name>nameFieldRequire</name>
+            <label>Number field required</label>
+            <label lang="zh-CN">是否“姓名”字段必填</label>
             <helpText>If this setting is activated, customers are required to provide their name during registration. If inactive, the name will be taken from the email field.</helpText>
             <helpText lang="zh-CN">如果此设置已激活，客户在注册时必须填写姓名。如果未激活，姓名使用邮箱字段。</helpText>
         </input-field>

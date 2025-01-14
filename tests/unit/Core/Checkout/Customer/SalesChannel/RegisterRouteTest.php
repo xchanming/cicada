@@ -56,7 +56,7 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 #[CoversClass(RegisterRoute::class)]
 class RegisterRouteTest extends TestCase
 {
-    public function testRegisterWithoutAddressCountryViolation(): void
+    public function testRegisterWithoutAddressCountry(): void
     {
         $systemConfigService = new StaticSystemConfigService([
             TestDefaults::SALES_CHANNEL => [
@@ -102,7 +102,7 @@ class RegisterRouteTest extends TestCase
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
             'storefrontUrl' => 'foo',
             'salutationId' => null,
-            'name' => '',
+            'name' => 'test',
         ];
 
         $dataValidator = $this->createMock(DataValidator::class);
@@ -112,12 +112,7 @@ class RegisterRouteTest extends TestCase
             ->with($data, static::callback(function (DataValidationDefinition $definition) {
                 $subs = $definition->getSubDefinitions();
 
-                static::assertArrayHasKey('billingAddress', $subs);
-
-                $billingAddressDefinition = $subs['billingAddress'];
-
-                static::assertCount(5, $billingAddressDefinition->getProperties());
-                static::assertArrayNotHasKey('vatIds', $billingAddressDefinition->getProperties());
+                static::assertArrayNotHasKey('billingAddress', $subs);
 
                 return true;
             }));
@@ -212,6 +207,7 @@ class RegisterRouteTest extends TestCase
             TestDefaults::SALES_CHANNEL => [
                 'core.loginRegistration.showAccountTypeSelection' => true,
                 'core.loginRegistration.passwordMinLength' => '8',
+                'core.loginRegistration.requireCustomerAddress' => true,
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
         ]);
@@ -284,6 +280,7 @@ class RegisterRouteTest extends TestCase
             TestDefaults::SALES_CHANNEL => [
                 'core.loginRegistration.showAccountTypeSelection' => true,
                 'core.loginRegistration.passwordMinLength' => '8',
+                'core.loginRegistration.requireCustomerAddress' => true,
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
         ]);
@@ -714,6 +711,7 @@ class RegisterRouteTest extends TestCase
             TestDefaults::SALES_CHANNEL => [
                 'core.loginRegistration.showAccountTypeSelection' => true,
                 'core.loginRegistration.passwordMinLength' => '8',
+                'core.loginRegistration.requireCustomerAddress' => true,
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
         ]);
@@ -827,6 +825,7 @@ class RegisterRouteTest extends TestCase
             TestDefaults::SALES_CHANNEL => [
                 'core.loginRegistration.showAccountTypeSelection' => true,
                 'core.loginRegistration.passwordMinLength' => '8',
+                'core.loginRegistration.requireCustomerAddress' => true,
             ],
             'core.systemWideLoginRegistration.isCustomerBoundToSalesChannel' => true,
         ]);
