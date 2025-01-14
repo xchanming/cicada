@@ -480,5 +480,4 @@ class UserEntity extends Entity
     {
         $this->phone = $phone;
     }
-
 }

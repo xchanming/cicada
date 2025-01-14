@@ -6,11 +6,11 @@
     @modal-close="onCancel"
 >
     {% block sw_order_state_change_modal_state_remark %}
-        <mt-textarea
-            v-model="stateRemark"
-            name="sw-field--state-change-remark"
-            :label="$tc('sw-order.stateCard.labelStateChangeRemark')"
-        />
+    <mt-textarea
+        v-model="stateRemark"
+        name="sw-field--state-change-remark"
+        :label="$tc('sw-order.stateCard.labelStateChangeRemark')"
+    />
     {% endblock %}
     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
     {% block sw_order_state_change_modal_button_wrapper %}

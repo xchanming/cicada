@@ -132,7 +132,9 @@ describe('sw-app-actions', () => {
 
     it('creates an sw-app-action-button per action', async () => {
         wrapper = await createWrapper(router);
-
+        Cicada.State.commit('cicadaApps/setSelectedIds', [
+            Cicada.Utils.createId(),
+        ]);
         router.push({ name: 'sw.product.detail' });
         await flushPromises();
 

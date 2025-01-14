@@ -125,7 +125,14 @@ Component.register('sw-app-actions', {
             this.loadActions();
         },
     },
-
+    created() {
+        // Reset the selectedIds when the component is created to avoid
+        // that the actions are executed on the wrong entities.
+        // Only reset when a entity exists
+        if (this.entity) {
+            Cicada.State.commit('cicadaApps/setSelectedIds', []);
+        }
+    },
     methods: {
         async runAction(action) {
             const entityIdList = { ids: this.params };
