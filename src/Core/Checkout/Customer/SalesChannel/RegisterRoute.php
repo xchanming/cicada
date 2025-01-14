@@ -120,6 +120,9 @@ class RegisterRoute extends AbstractRegisterRoute
             if ($data->has('title')) {
                 $billing->set('title', $data->get('title'));
             }
+            if ($data->has('phoneNumber')) {
+                $billing->set('phoneNumber', $data->get('phoneNumber'));
+            }
         }
 
         $this->validateRegistrationData($data, $isGuest, $context, $additionalValidationDefinitions, $validateStorefrontUrl);
@@ -334,8 +337,9 @@ class RegisterRoute extends AbstractRegisterRoute
         }
 
         $accountType = $data->get('accountType', CustomerEntity::ACCOUNT_TYPE_PRIVATE);
-        if ($billingAddress instanceof DataBag || !($shippingAddress instanceof DataBag)) {
-            $definition->addSub('billingAddress', $this->getCreateAddressValidationDefinition($data, $accountType, $billingAddress ?? new RequestDataBag(), $context));
+
+        if ($billingAddress instanceof DataBag) {
+            $definition->addSub('billingAddress', $this->getCreateAddressValidationDefinition($data, $accountType, $billingAddress, $context));
         }
 
         if ($shippingAddress instanceof DataBag) {
@@ -425,6 +429,7 @@ class RegisterRoute extends AbstractRegisterRoute
             'groupId' => $context->getCurrentCustomerGroup()->getId(),
             'requestedGroupId' => $data->get('requestedGroupId', null),
             'salutationId' => $data->get('salutationId'),
+            'phoneNumber' => $data->get('phoneNumber', null),
             'name' => $data->get('name'),
             'email' => $data->get('email'),
             'title' => $data->get('title'),

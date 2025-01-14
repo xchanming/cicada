@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             customers: null,
-            sortBy: 'customerNumber',
+            sortBy: 'createdAt',
             naturalSorting: true,
             sortDirection: 'DESC',
             isLoading: false,
@@ -77,7 +77,7 @@ export default {
         defaultCriteria() {
             const defaultCriteria = new Criteria(this.page, this.limit);
             // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-            this.naturalSorting = this.sortBy === 'customerNumber';
+            this.naturalSorting = this.sortBy === 'createdAt';
 
             defaultCriteria.setTerm(this.term);
 
@@ -383,6 +383,12 @@ export default {
                     allowResize: true,
                     visible: true,
                     useCustomSort: true,
+                },
+                {
+                    property: 'createdAt',
+                    dataIndex: 'createdAt',
+                    label: 'sw-customer.list.columnCreatedAt',
+                    visible: false,
                 },
                 {
                     property: 'active',

@@ -71,6 +71,7 @@
       "columnAffiliateCode": "联盟代码",
       "columnCampaignCode": "活动代码",
       "columnBoundSalesChannel": "销售渠道",
+      "columnCreatedAt": "注册时间",
       "columnActive": "操作",
       "emptyBoundSalesChannel": "全部",
       "contextMenuView": "查看",

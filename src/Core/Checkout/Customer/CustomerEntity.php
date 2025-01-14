@@ -47,7 +47,7 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected ?string $salutationId = null;
 
-    protected ?string $name = null;
+    protected string $name;
 
     protected ?string $company = null;
 
@@ -336,7 +336,7 @@ class CustomerEntity extends Entity implements \Stringable
         $this->active = $active;
     }
 
-    public function getName(): ?string
+    public function getName(): string
     {
         return $this->name;
     }

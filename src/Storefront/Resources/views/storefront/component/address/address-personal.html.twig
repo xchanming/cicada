@@ -192,6 +192,48 @@
                     {% endblock %}
                 </div>
             {% endblock %}
+            {% block component_address_personal_fields_phone_number %}
+                {% if config('core.loginRegistration.showPhoneNumberField') %}
+                <div class="form-group col-sm-6">
+
+                    {# New implementation, setting of "violationPath" #}
+                    {% if formViolations.getViolations("/#{prefix}/phoneNumber") is not empty %}
+                        {% set violationPath = "/#{prefix}/phoneNumber" %}
+                    {% elseif formViolations.getViolations("/phoneNumber") is not empty and not prefix %}
+                        {% set violationPath = "/phoneNumber" %}
+                    {% else %}
+                        {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalPhoneNumberLabel"|trans|sw_sanitize }) %}
+                    {% endif %}
+
+
+                    {% block component_address_personal_fields_phone_number_label %}
+                        <label class="form-label"
+                               for="{{ idPrefix ~ prefix }}personalPhoneNumber">
+                            {{ "account.personalPhoneNumberLabel"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+                        </label>
+                    {% endblock %}
+
+                    {% block component_address_personal_fields_phone_number_input %}
+                        <input type="text"
+                               class="form-control{% if violationPath is not empty %} is-invalid{% endif %}"
+                               autocomplete="section-personal given-phoneNumber"
+                               id="{{ idPrefix ~ prefix }}personalPhoneNumber"
+                               name="{% if prefix %}{{ prefix }}[phoneNumber]{% else %}phoneNumber{% endif %}"
+                               value="{% if prefix and data.has(prefix) %}{{ data.get(prefix).get('phoneNumber') }}{% else %}{{data.get('phoneNumber')}}{% endif %}"
+                               placeholder="{{ "account.personalPhoneNumberPlaceholder"|trans|striptags }}"
+                               data-form-validation-required
+                               {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+                               required="required">
+                    {% endblock %}
+
+                    {% block component_address_personal_fields_phone_number_input_error %}
+                        {% if violationPath %}
+                            {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' %}
+                        {% endif %}
+                    {% endblock %}
+                </div>
+                {% endif %}
+            {% endblock %}
         </div>
     {% endblock %}
 

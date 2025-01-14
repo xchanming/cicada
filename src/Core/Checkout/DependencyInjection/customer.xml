@@ -68,6 +68,11 @@
             <tag name="validator.constraint_validator"/>
         </service>
 
+        <service id="Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerPhoneNumberUniqueValidator">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="validator.constraint_validator"/>
+        </service>
+
         <service id="Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerPasswordMatchesValidator">
             <argument type="service" id="Cicada\Core\Checkout\Customer\SalesChannel\AccountService"/>
 

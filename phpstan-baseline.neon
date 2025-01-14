@@ -213,6 +213,11 @@ parameters:
 		-
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
 			count: 1
+			path: src/Core/Checkout/Customer/Validation/Constraint/CustomerPhoneNumberUniqueValidator.php
+
+		-
+			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
+			count: 1
 			path: src/Core/Checkout/Customer/Validation/Constraint/CustomerPasswordMatches.php
 
 		-

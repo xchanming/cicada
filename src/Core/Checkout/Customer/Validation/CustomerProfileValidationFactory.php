@@ -3,7 +3,7 @@
 namespace Cicada\Core\Checkout\Customer\Validation;
 
 use Cicada\Core\Checkout\Customer\CustomerDefinition;
-use Cicada\Core\Framework\Context;
+use Cicada\Core\Checkout\Customer\Validation\Constraint\CustomerPhoneNumberUnique;
 use Cicada\Core\Framework\DataAbstractionLayer\Validation\EntityExists;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataValidationDefinition;
@@ -50,18 +50,10 @@ class CustomerProfileValidationFactory implements DataValidationFactoryInterface
         return $definition;
     }
 
-    /**
-     * @param Context|SalesChannelContext $context
-     */
-    private function addConstraints(DataValidationDefinition $definition, $context): void
+    private function addConstraints(DataValidationDefinition $definition, SalesChannelContext $context): void
     {
-        if ($context instanceof SalesChannelContext) {
-            $frameworkContext = $context->getContext();
-            $salesChannelId = $context->getSalesChannelId();
-        } else {
-            $frameworkContext = $context;
-            $salesChannelId = null;
-        }
+        $frameworkContext = $context->getContext();
+        $salesChannelId = $context->getSalesChannelId();
 
         $definition
             ->add('salutationId', new EntityExists(['entity' => $this->salutationDefinition->getEntityName(), 'context' => $frameworkContext]))
@@ -75,6 +67,16 @@ class CustomerProfileValidationFactory implements DataValidationFactoryInterface
                 ->add('birthdayDay', new GreaterThanOrEqual(['value' => 1]), new LessThanOrEqual(['value' => 31]))
                 ->add('birthdayMonth', new GreaterThanOrEqual(['value' => 1]), new LessThanOrEqual(['value' => 12]))
                 ->add('birthdayYear', new GreaterThanOrEqual(['value' => 1900]), new LessThanOrEqual(['value' => date('Y')]));
+        }
+        if ($this->systemConfigService->get('core.loginRegistration.showPhoneNumberField', $salesChannelId)
+            && $this->systemConfigService->get('core.loginRegistration.phoneNumberFieldRequired', $salesChannelId)) {
+            $definition->add('phoneNumber', new NotBlank(null, 'VIOLATION::PHONE_NUMBER_IS_BLANK_ERROR'));
+            $options = ['context' => $context->getContext(), 'salesChannelContext' => $context];
+            $definition->add('phoneNumber', new CustomerPhoneNumberUnique($options));
+        }
+
+        if ($this->systemConfigService->get('core.loginRegistration.showPhoneNumberField', $salesChannelId)) {
+            $definition->add('phoneNumber', new Length(['max' => CustomerDefinition::MAX_LENGTH_PHONE_NUMBER], null, null, null, null, null, 'VIOLATION::PHONE_NUMBER_IS_TOO_LONG'));
         }
     }
 }
