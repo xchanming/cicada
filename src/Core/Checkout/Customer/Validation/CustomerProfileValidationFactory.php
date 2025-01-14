@@ -61,22 +61,21 @@ class CustomerProfileValidationFactory implements DataValidationFactoryInterface
             ->add('name', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]))
             ->add('accountType', new Choice($this->accountTypes));
 
-        if ($this->systemConfigService->get('core.loginRegistration.showBirthdayField', $salesChannelId)
-            && $this->systemConfigService->get('core.loginRegistration.birthdayFieldRequired', $salesChannelId)) {
+        if ($this->systemConfigService->get('core.loginRegistration.birthdayFieldRequired', $salesChannelId)) {
             $definition
                 ->add('birthdayDay', new GreaterThanOrEqual(['value' => 1]), new LessThanOrEqual(['value' => 31]))
                 ->add('birthdayMonth', new GreaterThanOrEqual(['value' => 1]), new LessThanOrEqual(['value' => 12]))
                 ->add('birthdayYear', new GreaterThanOrEqual(['value' => 1900]), new LessThanOrEqual(['value' => date('Y')]));
         }
-        if ($this->systemConfigService->get('core.loginRegistration.showPhoneNumberField', $salesChannelId)
-            && $this->systemConfigService->get('core.loginRegistration.phoneNumberFieldRequired', $salesChannelId)) {
+        if ($this->systemConfigService->get('core.loginRegistration.phoneNumberFieldRequired', $salesChannelId)) {
             $definition->add('phoneNumber', new NotBlank(null, 'VIOLATION::PHONE_NUMBER_IS_BLANK_ERROR'));
             $options = ['context' => $context->getContext(), 'salesChannelContext' => $context];
             $definition->add('phoneNumber', new CustomerPhoneNumberUnique($options));
-        }
-
-        if ($this->systemConfigService->get('core.loginRegistration.showPhoneNumberField', $salesChannelId)) {
             $definition->add('phoneNumber', new Length(['max' => CustomerDefinition::MAX_LENGTH_PHONE_NUMBER], null, null, null, null, null, 'VIOLATION::PHONE_NUMBER_IS_TOO_LONG'));
+        }
+        if ($this->systemConfigService->get('core.loginRegistration.titleFieldRequired', $salesChannelId)) {
+            $definition->add('title', new NotBlank(null, 'VIOLATION::TITLE_IS_BLANK_ERROR'));
+            $definition->add('title', new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE], null, null, null, null, null, 'VIOLATION::TITLE_NUMBER_IS_TOO_LONG'));
         }
     }
 }

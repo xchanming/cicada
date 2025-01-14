@@ -66,11 +66,11 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 class RegisterRoute extends AbstractRegisterRoute
 {
     /**
-     * @internal
-     *
      * @param EntityRepository<CustomerCollection> $customerRepository
      * @param SalesChannelRepository<CountryCollection> $countryRepository
      * @param EntityRepository<SalutationCollection> $salutationRepository
+     *
+     * @internal
      */
     public function __construct(
         private readonly EventDispatcherInterface $eventDispatcher,
@@ -107,6 +107,11 @@ class RegisterRoute extends AbstractRegisterRoute
 
         if (!$data->get('salutationId')) {
             $data->set('salutationId', $this->getDefaultSalutationId($context));
+        }
+        if (!$this->systemConfigService->get('core.loginRegistration.showNameField', $context->getSalesChannelId())) {
+            if (!$data->get('name')) {
+                $data->set('name', $data->get('email'));
+            }
         }
 
         $billing = $data->get('billingAddress');

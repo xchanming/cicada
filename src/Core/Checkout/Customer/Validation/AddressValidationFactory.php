@@ -65,12 +65,8 @@ class AddressValidationFactory implements DataValidationFactoryInterface
             $definition->add('additionalAddressLine2', new NotBlank(null, 'VIOLATION::ADDITIONAL_ADDR2_IS_BLANK_ERROR'));
         }
 
-        if ($this->systemConfigService->get('core.loginRegistration.showPhoneNumberField', $salesChannelId)
-            && $this->systemConfigService->get('core.loginRegistration.phoneNumberFieldRequired', $salesChannelId)) {
+        if ($this->systemConfigService->get('core.loginRegistration.phoneNumberFieldRequired', $salesChannelId)) {
             $definition->add('phoneNumber', new NotBlank(null, 'VIOLATION::PHONE_NUMBER_IS_BLANK_ERROR'));
-        }
-
-        if ($this->systemConfigService->get('core.loginRegistration.showPhoneNumberField', $salesChannelId)) {
             $definition->add('phoneNumber', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_PHONE_NUMBER], null, null, null, null, null, 'VIOLATION::PHONE_NUMBER_IS_TOO_LONG'));
         }
 

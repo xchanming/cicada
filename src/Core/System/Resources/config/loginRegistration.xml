@@ -26,15 +26,9 @@
         </input-field>
 
         <input-field type="bool">
-            <name>showTitleField</name>
-            <label>Show title</label>
-            <label lang="zh-CN">客户注册时是否显示“昵称”字段</label>
-        </input-field>
-
-        <input-field type="bool">
             <name>requireCustomerAddress</name>
             <label>Require customer address on registration</label>
-            <label lang="zh-CN">注册时必须填写地址</label>
+            <label lang="zh-CN">注册时必须填写地址信息</label>
             <helpText>If this setting is active, customers are required to provide an address during registration. If inactive, the address is optional during registration.</helpText>
             <helpText lang="zh-CN">如果此设置已激活，客户在注册时必须提供地址。如果未激活，地址在注册时为可选项。</helpText>
         </input-field>
@@ -82,9 +76,17 @@
         </input-field>
 
         <input-field type="bool">
-            <name>showPhoneNumberField</name>
-            <label>Show phone number</label>
-            <label lang="zh-CN">是否显示手机号</label>
+            <name>titleFieldRequired</name>
+            <label>Require customer nick name</label>
+            <label lang="zh-CN">是否必须填写“昵称”字段</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>showNameField</name>
+            <label>Show name number</label>
+            <label lang="zh-CN">是否显示“姓名”字段</label>
+            <helpText>If this setting is activated, customers are required to provide their name during registration. If inactive, the name will be taken from the email field.</helpText>
+            <helpText lang="zh-CN">如果此设置已激活，客户在注册时必须填写姓名。如果未激活，姓名使用邮箱字段。</helpText>
         </input-field>
 
         <input-field type="bool">

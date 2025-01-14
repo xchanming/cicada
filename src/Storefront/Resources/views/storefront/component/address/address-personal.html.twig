@@ -113,7 +113,7 @@
             {% endblock %}
 
             {% block component_address_personal_fields_title %}
-                {% if config('core.loginRegistration.showTitleField') %}
+                {% if config('core.loginRegistration.titleFieldRequired') %}
 
                     {% if formViolations.getViolations("/#{prefix}/title") is not empty %}
                         {% set violationPath = "/#{prefix}/title" %}
@@ -125,7 +125,7 @@
                         {% block component_address_personal_fields_title_label %}
                             <label class="form-label"
                                    for="{{ idPrefix ~ prefix }}personalTitle">
-                                {{ "account.personalTitleLabel"|trans|sw_sanitize }}
+                                {{ "account.personalTitleLabel"|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
                             </label>
                         {% endblock %}
 
@@ -136,6 +136,9 @@
                                    id="{{ idPrefix ~ prefix }}personalTitle"
                                    placeholder="{{ "account.personalTitlePlaceholder"|trans|striptags }}"
                                    name="{% if prefix %}{{ prefix }}[title]{% else %}title{% endif %}"
+                                   data-form-validation-required
+                                   {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
+                                   required="required"
                                    value="{{ data.get('title') }}">
                         {% endblock %}
 
@@ -153,6 +156,7 @@
     {% block component_address_personal_name %}
         <div class="row g-2">
             {% block component_address_personal_fields_name %}
+                {% if config('core.loginRegistration.showNameField') %}
                 <div class="form-group col-sm-6">
 
                     {# New implementation, setting of "violationPath" #}
@@ -191,9 +195,10 @@
                         {% endif %}
                     {% endblock %}
                 </div>
+                {% endif %}
             {% endblock %}
             {% block component_address_personal_fields_phone_number %}
-                {% if config('core.loginRegistration.showPhoneNumberField') %}
+                {% if config('core.loginRegistration.phoneNumberFieldRequired') %}
                 <div class="form-group col-sm-6">
 
                     {# New implementation, setting of "violationPath" #}
@@ -302,7 +307,7 @@
     {% endblock %}
 
     {% block component_address_personal_fields_birthday %}
-        {% if showBirthdayField %}
+        {% if birthdayFieldRequired %}
             {% block component_address_personal_fields_birthday_label %}
                 <label for="{{ idPrefix ~ prefix }}personalBirthday">
                     {{ "account.personalBirthdayLabel"|trans|sw_sanitize }}{{ config('core.loginRegistration.birthdayFieldRequired') ? "general.required"|trans|sw_sanitize }}
@@ -316,7 +321,7 @@
                             <select id="{{ idPrefix ~ prefix }}personalBirthday"
                                     name="{% if prefix %}{{ prefix }}[birthdayDay]{% else %}birthdayDay{% endif %}"
                                     class="form-select{% if formViolations.getViolations('/birthdayDay') is not empty %} is-invalid{% endif %}"
-                                {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
+                                    required="required">
                                 {% if not data.get('birthdayDay') %}
                                     <option selected="selected"
                                             value="">
@@ -345,7 +350,7 @@
                         <div class="form-group col-md-2 col-4">
                             <select name="{% if prefix %}{{ prefix }}[birthdayMonth]{% else %}birthdayMonth{% endif %}"
                                     class="form-select{% if formViolations.getViolations('/birthdayMonth') is not empty %} is-invalid{% endif %}"
-                                {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
+                                    required="required">
                                 {% if not data.get('birthdayMonth') %}
                                     <option selected="selected"
                                             value="">
@@ -377,7 +382,7 @@
 
                             <select name="{% if prefix %}{{ prefix }}[birthdayYear]{% else %}birthdayYear{% endif %}"
                                     class="form-select{% if formViolations.getViolations('/birthdayYear') is not empty %} is-invalid{% endif %}"
-                                {{ config('core.loginRegistration.birthdayFieldRequired') ? 'required="required"' }}>
+                                    required="required">
                                 {% if not data.get('birthdayYear') %}
                                     <option selected="selected"
                                             value="">
