@@ -5,8 +5,6 @@ namespace Cicada\Core\Checkout\Promotion\Cart;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartBehavior;
 use Cicada\Core\Checkout\Cart\CartException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupPackagerNotFoundException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupSorterNotFoundException;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilder;
 use Cicada\Core\Checkout\Cart\LineItem\LineItem;
 use Cicada\Core\Checkout\Cart\LineItem\LineItemCollection;
@@ -237,8 +235,6 @@ class PromotionCalculator
      * @throws InvalidPriceDefinitionException
      * @throws InvalidScopeDefinitionException
      * @throws CartException
-     * @throws LineItemGroupPackagerNotFoundException
-     * @throws LineItemGroupSorterNotFoundException
      * @throws SetGroupNotFoundException
      */
     private function calculateDiscount(LineItem $item, Cart $calculatedCart, SalesChannelContext $context): DiscountCalculatorResult

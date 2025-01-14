@@ -3,8 +3,6 @@
 namespace Cicada\Core\Checkout\Cart\Rule;
 
 use Cicada\Core\Checkout\Cart\CartException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupPackagerNotFoundException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupSorterNotFoundException;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilder;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupDefinition;
 use Cicada\Core\Content\Rule\RuleCollection;
@@ -32,8 +30,6 @@ class LineItemGroupRule extends FilterRule
 
     /**
      * @throws CartException
-     * @throws LineItemGroupPackagerNotFoundException
-     * @throws LineItemGroupSorterNotFoundException
      */
     public function match(RuleScope $scope): bool
     {

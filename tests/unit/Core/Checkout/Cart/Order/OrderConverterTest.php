@@ -341,9 +341,6 @@ class OrderConverterTest extends TestCase
                 AddressNotFoundException::class,
             ],
             [
-                DeliveryWithoutAddressException::class,
-            ],
-            [
                 CartException::class,
                 false,
             ],

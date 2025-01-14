@@ -27,6 +27,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\FieldException\ExpectedArra
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Framework\Script\Execution\Hook;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\ConstraintViolationList;

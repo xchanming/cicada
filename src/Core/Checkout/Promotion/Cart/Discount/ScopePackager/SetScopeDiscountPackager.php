@@ -4,8 +4,6 @@ namespace Cicada\Core\Checkout\Promotion\Cart\Discount\ScopePackager;
 
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupPackagerNotFoundException;
-use Cicada\Core\Checkout\Cart\LineItem\Group\Exception\LineItemGroupSorterNotFoundException;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupBuilder;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemGroupDefinition;
 use Cicada\Core\Checkout\Cart\LineItem\Group\LineItemQuantity;
@@ -41,8 +39,6 @@ class SetScopeDiscountPackager extends DiscountPackager
      * result may come from multiple complete sets and their groups.
      *
      * @throws CartException
-     * @throws LineItemGroupPackagerNotFoundException
-     * @throws LineItemGroupSorterNotFoundException
      */
     public function getMatchingItems(DiscountLineItem $discount, Cart $cart, SalesChannelContext $context): DiscountPackageCollection
     {
