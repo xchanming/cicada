@@ -33,7 +33,7 @@ class Migration1536232960Customer extends MigrationStep
               `default_shipping_address_id` BINARY(16) NULL,
               `customer_number` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
               `salutation_id` BINARY(16) NOT NULL,
-              `name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+              `name` VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,
               `phone_number` VARCHAR(40) COLLATE utf8mb4_unicode_ci NULL,
               `avatar_id` binary(16) DEFAULT NULL,
               `company`     VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,

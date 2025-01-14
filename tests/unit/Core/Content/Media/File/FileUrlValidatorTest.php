@@ -2,10 +2,10 @@
 
 namespace Cicada\Tests\Unit\Core\Content\Media\File;
 
-use Cicada\Core\Content\Media\File\FileUrlValidator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
+use Cicada\Core\Content\Media\File\FileUrlValidator;
 
 /**
  * @internal

@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\ScheduledTask\Registry;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Cleanup\CleanupCartTask;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -15,9 +18,6 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticEntityRepository;
 use Cicada\Elasticsearch\Framework\Indexing\CreateAliasTask;
 use Cicada\Tests\Unit\Core\Framework\MessageQueue\ScheduledTask\Scheduler\TestScheduledTask;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 /**

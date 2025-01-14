@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\MessageQueue\ScheduledTask\Scheduler;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
@@ -16,9 +19,6 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskCollection;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskDefinition;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\Scheduler\TaskScheduler;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\Messenger\Envelope;
