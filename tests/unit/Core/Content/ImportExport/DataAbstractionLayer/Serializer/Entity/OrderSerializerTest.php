@@ -413,8 +413,7 @@ class OrderSerializerTest extends TestCase
                 'customerId' => 'customer-id',
                 'customerNumber' => 'customer-number',
                 'email' => 'customer-email',
-                'firstName' => 'customer-first-name',
-                'lastName' => 'customer-last-name',
+                'name' => 'customer-first-name',
                 'remoteAddress' => null,
                 'salutationId' => 'customer-salutation-id',
                 'title' => null,
@@ -426,14 +425,12 @@ class OrderSerializerTest extends TestCase
                 [
                     'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
-                    'firstName' => 'billing-address-first-name',
-                    'lastName' => 'billing-address-last-name',
+                    'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',
                     'street' => 'billing-address-street',
                     'zipcode' => 'billing-address-zipcode',
                 ],
             ],
-            'billingAddressVersionId' => null,
         ];
 
         $mergedData = array_merge_recursive($rawData, $data);
@@ -579,8 +576,7 @@ class OrderSerializerTest extends TestCase
                 'customerId' => 'customer-id',
                 'customerNumber' => 'customer-number',
                 'email' => 'customer-email',
-                'firstName' => 'customer-first-name',
-                'lastName' => 'customer-last-name',
+                'name' => 'customer-first-name',
                 'remoteAddress' => null,
                 'salutationId' => 'customer-salutation-id',
                 'title' => null,
@@ -593,14 +589,12 @@ class OrderSerializerTest extends TestCase
                 [
                     'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
-                    'firstName' => 'billing-address-first-name',
-                    'lastName' => 'billing-address-last-name',
+                    'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',
                     'street' => 'billing-address-street',
                     'zipcode' => 'billing-address-zipcode',
                 ],
             ],
-            'billingAddressVersionId' => null,
             'source' => null,
         ], $overrided);
     }

@@ -279,18 +279,6 @@
           "no_constraint": true
         }
       },
-      "billingAddressVersionId": {
-        "type": "uuid",
-        "flags": {
-          "read_protected": [
-            [
-              "Cicada\\Core\\Framework\\Api\\Context\\AdminApiSource",
-              "Cicada\\Core\\Framework\\Api\\Context\\SalesChannelApiSource"
-            ]
-          ],
-          "required": true
-        }
-      },
       "currencyId": {
         "type": "uuid",
         "flags": {

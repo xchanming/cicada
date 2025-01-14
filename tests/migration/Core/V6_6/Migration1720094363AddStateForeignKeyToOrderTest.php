@@ -92,7 +92,6 @@ class Migration1720094363AddStateForeignKeyToOrderTest extends TestCase
                 language_id = :defaultLanguage,
                 sales_channel_id = :defaultSalesChannel,
                 billing_address_id = :billingAddressId,
-                billing_address_version_id = :defaultVersion,
                 price = '{}',
                 order_date_time = NOW(),
                 shipping_costs = '{}',

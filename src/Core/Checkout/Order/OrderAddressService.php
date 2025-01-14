@@ -112,7 +112,6 @@ class OrderAddressService
             [
                 'id' => $order->getId(),
                 'billingAddressId' => $newOrderAddressId,
-                'billingAddressVersionId' => $context->getVersionId(),
             ],
         ], $context);
 
