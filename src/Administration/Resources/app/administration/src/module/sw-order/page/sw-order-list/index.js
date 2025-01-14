@@ -369,12 +369,8 @@ export default {
             });
         },
 
-        disableDeletion(order) {
-            if (!this.acl.can('order.deleter')) {
-                return true;
-            }
-
-            return false;
+        disableDeletion() {
+            return !this.acl.can('order.deleter');
         },
 
         getOrderColumns() {
