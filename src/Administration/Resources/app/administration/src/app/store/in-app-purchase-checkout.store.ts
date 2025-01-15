@@ -27,7 +27,16 @@ const inAppPurchaseCheckoutStore = Cicada.Store.register({
     }),
 
     actions: {
-        request(entry: InAppPurchaseRequest, extension: Extension): void {
+        request(entry: InAppPurchaseRequest, extension: Extension | string): void {
+            if (typeof extension === 'string') {
+                const extensionObject = Object.values(Cicada.State.get('extensions')).find(
+                    (ext) => ext.name === extension,
+                );
+                if (extensionObject === undefined) {
+                    throw new Error(`Extension with the name "${extension}" not found.`);
+                }
+                extension = extensionObject;
+            }
             this.entry = entry;
             this.extension = extension;
         },
