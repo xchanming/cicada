@@ -15,7 +15,7 @@ $sw-login-error-animation-duration: 0.15s;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: rgba($sw-login-color-background,0.8);
+    background-color: rgba($sw-login-color-background, 0.8);
     transition: background-color $sw-login-success-animation-duration ease-in-out;
     overflow: auto;
 
@@ -96,6 +96,7 @@ $sw-login-error-animation-duration: 0.15s;
         color: $sw-login-back-color;
         outline: none;
     }
+
     .sw-login__submit {
         text-align: right;
 
@@ -119,7 +120,7 @@ $sw-login-error-animation-duration: 0.15s;
         display: flex;
         flex-direction: row;
         overflow: hidden;
-        background-color: rgba($sw-login-color-background,0.5);
+        background-color: rgba($sw-login-color-background, 0.5);
         background-image: url("../img/sw-login-background.png");
         background-position: center center;
         background-size: cover;

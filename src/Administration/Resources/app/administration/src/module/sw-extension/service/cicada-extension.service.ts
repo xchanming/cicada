@@ -79,7 +79,6 @@ export default class CicadaExtensionService {
         await this.updateExtensionData();
     }
 
-
     public async cancelLicense(licenseId: number): Promise<void> {
         await this.extensionStoreActionService.cancelLicense(licenseId);
     }

@@ -40,7 +40,6 @@ describe('src/app/component/base/sw-switch-field', () => {
         expect(wrapper.html()).toContain('mt-switch');
     });
 
-
     it('should use the correct checked value', async () => {
         global.activeFeatureFlags = ['v6.7.0.0'];
 

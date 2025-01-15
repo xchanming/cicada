@@ -194,9 +194,7 @@ describe('module/sw-customer/page/sw-customer-base-info', () => {
         expect(leftColumn.findAll('.sw-description-list')[2].find('dd').text()).toBe('Group test');
 
         // Default payment method
-        expect(leftColumn.findAll('.sw-description-list')[3].find('dt').text()).toBe(
-            'sw-customer.baseInfo.labelActive',
-        );
+        expect(leftColumn.findAll('.sw-description-list')[3].find('dt').text()).toBe('sw-customer.baseInfo.labelActive');
 
         // Affiliate code
         expect(leftColumn.findAll('.sw-description-list')[5].find('dt').text()).toBe(

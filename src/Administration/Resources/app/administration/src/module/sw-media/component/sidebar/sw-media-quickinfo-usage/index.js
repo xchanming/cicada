@@ -155,7 +155,6 @@ export default {
             this.loadCategoryAssociations();
             this.loadManufacturerAssociations();
             this.loadMailTemplateAssociations();
-            this.loadDocumentBaseConfigAssociations();
             this.loadAvatarUserAssociations();
             this.loadPaymentMethodAssociations();
             this.loadShippingMethodAssociations();

@@ -28,4 +28,3 @@ describe('module/sw-dashboard/page/sw-dashboard-index', () => {
         expect(1 + 1).toBe(2);
     });
 });
-

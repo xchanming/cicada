@@ -272,7 +272,7 @@ describe('module/sw-import-export/service/importExportProfileMapping.service.spe
             'salesChannel.currency.totalRounding',
             'salesChannel.paymentMethod.id',
             'salesChannel.paymentMethod.translations.DEFAULT.name',
-            "salesChannel.paymentMethod.technicalName",
+            'salesChannel.paymentMethod.technicalName',
             'salesChannel.shippingMethod.id',
             'salesChannel.shippingMethod.taxType',
             'salesChannel.shippingMethod.deliveryTime.id',

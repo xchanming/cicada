@@ -20,6 +20,7 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
             productManufacturers: [],
             productMedia: [],
             mailTemplateMedia: [],
+            documentBaseConfigs: [],
             paymentMethods: [],
             shippingMethods: [],
             cmsBlocks: [],
@@ -117,7 +118,7 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
         );
 
         register('sw-users-permissions', moduleMock);
-        const avatarUserMock = { username: 'abc123' };
+        const avatarUserMock = { username: 'abc123'};
 
         register('sw-product', moduleMock);
         const productMediaMock = {

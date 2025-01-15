@@ -402,9 +402,9 @@ export default {
             if (defaultSortingId) {
                 Object.entries(this.productSortingOptions).forEach(
                     ([
-                         ,
-                         productSorting,
-                     ]) => {
+                        ,
+                        productSorting,
+                    ]) => {
                         if (productSorting.id === defaultSortingId) {
                             productSorting.active = true;
                         }
