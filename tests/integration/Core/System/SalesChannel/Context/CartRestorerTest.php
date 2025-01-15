@@ -2,6 +2,7 @@
 
 namespace Cicada\Tests\Integration\Core\System\SalesChannel\Context;
 
+use Cicada\Core\Checkout\Cart\AbstractCartPersister;
 use Cicada\Core\Checkout\Cart\Cart;
 use Cicada\Core\Checkout\Cart\CartPersister;
 use Cicada\Core\Checkout\Cart\CartRuleLoader;
@@ -45,7 +46,7 @@ class CartRestorerTest extends TestCase
 
     private CartService $cartService;
 
-    private CartPersister $cartPersister;
+    private AbstractCartPersister $cartPersister;
 
     /**
      * @var array<string, Event>
@@ -265,7 +266,7 @@ class CartRestorerTest extends TestCase
         static::assertInstanceOf(LineItem::class, $customerLineItem1);
         static::assertInstanceOf(LineItem::class, $customerLineItem2);
 
-        $this->connection->executeStatement(<<<SQL
+        $this->connection->executeStatement(<<<'SQL'
             UPDATE sales_channel_api_context
             SET updated_at = DATE_SUB(updated_at, INTERVAL 7 DAY)
             WHERE token = :token

@@ -11,6 +11,7 @@ use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistr
 /**
  * @internal
  *
+ * @deprecated tag:v6.7.0 - unused with 6.7, will be now handled by \Shopware\Core\System\DependencyInjection\CompilerPass\SalesChannelEntityCompilerPass - reason:remove-entity
  * Contains all registered entity extensions in the system and attaches them to the corresponding entity definitions
  */
 #[Package('core')]

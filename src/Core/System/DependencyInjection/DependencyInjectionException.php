@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\System\DependencyInjection;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Exception\DefinitionNotFoundException;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 
@@ -18,5 +19,10 @@ class DependencyInjectionException extends HttpException
             // @deprecated tag:v6.7.0 - remove '"cicada.number_range.config.dsn" or' from this message - only "cicada.number_range.config.connection" would be supported
             'Parameter "cicada.number_range.config.dsn" or "cicada.number_range.config.connection" is required for redis storage'
         );
+    }
+
+    public static function definitionNotFound(string $entity): DefinitionNotFoundException
+    {
+        return new DefinitionNotFoundException($entity);
     }
 }
