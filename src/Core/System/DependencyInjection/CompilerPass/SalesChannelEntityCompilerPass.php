@@ -4,6 +4,7 @@ namespace Cicada\Core\System\DependencyInjection\CompilerPass;
 
 use Cicada\Core\Framework\DataAbstractionLayer\BulkEntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
+use Cicada\Core\Framework\DataAbstractionLayer\EntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityLoadedEventFactory;
 use Cicada\Core\Framework\DataAbstractionLayer\FilteredBulkEntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\Read\EntityReaderInterface;

@@ -1470,6 +1470,9 @@ class RegisterRouteTest extends TestCase
         return $customerId;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function getBaseRegistrationData(): array
     {
         return [

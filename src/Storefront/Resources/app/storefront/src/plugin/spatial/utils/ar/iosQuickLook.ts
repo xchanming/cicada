@@ -3,7 +3,7 @@ import { type Object3D } from 'three';
 /**
  * @package innovation
  *
- * @experimental stableVersion:v6.7.0 feature:SPATIAL_BASES
+ * @experimental stableVersion:v6.8.0 feature:SPATIAL_BASES
  */
 export default async function iosQuickLook(scene: Object3D) {
     const modelUrl = await generateUSDZ(scene);

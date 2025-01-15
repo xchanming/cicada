@@ -2,8 +2,6 @@
 
 namespace Cicada\Tests\Unit\Core\System\DependencyInjection\CompilerPass;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Content\Product\ProductDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\BulkEntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityWriteGateway;
@@ -14,6 +12,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\System\DependencyInjection\CompilerPass\SalesChannelEntityCompilerPass;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\Validator\Validator\ValidatorInterface;

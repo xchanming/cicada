@@ -2,11 +2,11 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\System\Integration\IntegrationDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal

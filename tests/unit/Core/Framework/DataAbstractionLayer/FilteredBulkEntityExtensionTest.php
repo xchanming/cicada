@@ -2,12 +2,12 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\DataAbstractionLayer;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\BulkEntityExtension;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\FilteredBulkEntityExtension;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
