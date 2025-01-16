@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow;
 use Cicada\Core\Content\Flow\Events\FlowIndexerEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowEvents
 {
     final public const FLOW_WRITTEN_EVENT = 'flow.written';

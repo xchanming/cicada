@@ -14,7 +14,7 @@ use Cicada\Core\System\User\Aggregate\UserRecovery\UserRecoveryDefinition;
 use Cicada\Core\System\User\Aggregate\UserRecovery\UserRecoveryEntity;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class UserStorer extends FlowStorer
 {
     /**

@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(FlowRuleScopeBuilder::class)]
 class FlowRuleScopeBuilderTest extends TestCase
 {

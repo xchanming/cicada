@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow\Dispatching\Action;
 use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 abstract class FlowAction
 {
     /**

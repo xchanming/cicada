@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class CustomTriggerByNameNotFoundException extends CicadaHttpException
 {
     public function __construct(string $eventName)

@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowPayloadUpdaterTest extends TestCase
 {
     use DatabaseTransactionBehaviour;

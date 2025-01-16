@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowSendMailActionEvent implements CicadaEvent
 {
     public function __construct(

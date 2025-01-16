@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowActionCollectorEvent extends NestedEvent
 {
     public function __construct(

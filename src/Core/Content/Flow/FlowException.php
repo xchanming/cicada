@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Exception as DBALException;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowException extends HttpException
 {
     final public const METHOD_NOT_COMPATIBLE = 'METHOD_NOT_COMPATIBLE';

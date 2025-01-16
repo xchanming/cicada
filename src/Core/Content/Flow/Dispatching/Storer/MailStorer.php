@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Event\MailAware;
 use Cicada\Core\Framework\Event\OrderAware;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class MailStorer extends FlowStorer
 {
     /**

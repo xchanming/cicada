@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow\Indexing;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowIndexingMessage extends EntityIndexingMessage
 {
 }

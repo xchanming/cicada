@@ -3,6 +3,7 @@
 namespace Cicada\Tests\Unit\Core\Content\Flow;
 
 use Cicada\Core\Content\Flow\Dispatching\TransactionFailedException;
+use Cicada\Core\Framework\Log\Package;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
  * @internal
  */
 #[CoversClass(TransactionFailedException::class)]
+#[Package('after-sales')]
 class TransactionFailedExceptionTest extends TestCase
 {
     public function testTransactionCommitFailed(): void

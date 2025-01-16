@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * When a flow action implements this interface, it will be executed within a database transaction.
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 interface TransactionalAction
 {
 }

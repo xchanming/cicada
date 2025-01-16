@@ -3,6 +3,7 @@
 namespace Cicada\Tests\Unit\Core\Content\Flow\Dispatching\Action;
 
 use Cicada\Core\Content\Flow\Dispatching\Action\FlowMailVariables;
+use Cicada\Core\Framework\Log\Package;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -10,6 +11,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(FlowMailVariables::class)]
+#[Package('after-sales')]
 class FlowMailVariablesTest extends TestCase
 {
     public function testVariablesAreStillTheSame(): void

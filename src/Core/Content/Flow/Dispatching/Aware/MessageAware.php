@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Event\IsFlowEventAware;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Mime\Email;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[IsFlowEventAware]
 interface MessageAware
 {

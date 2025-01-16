@@ -8,7 +8,7 @@ const utils = Cicada.Utils;
 
 /**
  * @private
- * @package services-settings
+ * @sw-package after-sales
  */
 export default {
     template,

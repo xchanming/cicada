@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(BeforeLoadStorableFlowDataEvent::class)]
 class BeforeLoadStorableFlowDataEventTest extends TestCase
 {

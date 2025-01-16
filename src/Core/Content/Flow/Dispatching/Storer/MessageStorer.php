@@ -7,7 +7,7 @@ use Cicada\Core\Content\Flow\Dispatching\StorableFlow;
 use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class MessageStorer extends FlowStorer
 {
     /**

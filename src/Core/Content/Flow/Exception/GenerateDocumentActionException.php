@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class GenerateDocumentActionException extends CicadaHttpException
 {
     public function __construct(string $message)

@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class AddOrderAffiliateAndCampaignCodeActionTest extends TestCase
 {
     use OrderActionTrait;

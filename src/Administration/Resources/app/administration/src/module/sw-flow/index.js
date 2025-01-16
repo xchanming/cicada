@@ -58,7 +58,7 @@ Cicada.Component.register('sw-flow-leave-page-modal', () => import('./component/
 
 /**
  * @private
- * @package services-settings
+ * @sw-package after-sales
  */
 Module.register('sw-flow', {
     type: 'core',

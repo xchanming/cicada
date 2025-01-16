@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\System\Tag\TagDefinition;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class OrderTagRule extends FlowRule
 {
     final public const RULE_NAME = 'orderTag';

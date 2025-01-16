@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(OrderStatusRule::class)]
 #[Group('rules')]
 class OrderStatusRuleTest extends TestCase

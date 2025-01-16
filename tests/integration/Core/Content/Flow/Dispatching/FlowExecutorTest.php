@@ -36,7 +36,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowExecutorTest extends TestCase
 {
     use IntegrationTestBehaviour;

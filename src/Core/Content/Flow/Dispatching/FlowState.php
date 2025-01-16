@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow\Dispatching;
 use Cicada\Core\Content\Flow\Dispatching\Struct\Sequence;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowState
 {
     public string $flowId;
