@@ -17,6 +17,7 @@ import type { ComponentPublicInstance } from '@vue/runtime-core';
 import { compatUtils } from '@vue/compat';
 
 import * as MeteorImport from '@cicada-ag/meteor-component-library';
+import getBlockDataScope from '../../component/structure/sw-block-override/sw-block/get-block-data-scope';
 
 const { Component, State, Mixin } = Cicada;
 

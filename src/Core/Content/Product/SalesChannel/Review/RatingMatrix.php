@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\AggregationResult\Bucket\B
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('inventory')]
+#[Package('after-sales')]
 class RatingMatrix extends Struct
 {
     private const MAX_POINTS = 5;

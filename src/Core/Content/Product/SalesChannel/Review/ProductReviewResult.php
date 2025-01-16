@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntitySearchResult<ProductReviewCollection>
  */
-#[Package('inventory')]
+#[Package('after-sales')]
 class ProductReviewResult extends EntitySearchResult
 {
     /**

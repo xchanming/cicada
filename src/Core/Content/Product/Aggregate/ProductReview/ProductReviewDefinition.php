@@ -23,7 +23,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('inventory')]
+#[Package('after-sales')]
 class ProductReviewDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'product_review';

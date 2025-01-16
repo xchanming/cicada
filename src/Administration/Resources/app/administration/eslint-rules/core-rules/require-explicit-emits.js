@@ -100,9 +100,9 @@ module.exports = {
                     return true;
                 }
 
-                // Cicada.Component.register() or Cicada.Component.extend()
+                // Shopware.Component.register() or Shopware.Component.extend()
                 if (parent.callee.object.type === 'MemberExpression' &&
-                    parent.callee.object.object.name === 'Cicada' &&
+                    parent.callee.object.object.name === 'Shopware' &&
                     parent.callee.object.property.name === 'Component'
                 ) {
                     return true;
@@ -114,9 +114,9 @@ module.exports = {
                     return true;
                 }
 
-                // Cicada.Mixin.register()
+                // Shopware.Mixin.register()
                 if (parent.callee.object.type === 'MemberExpression' &&
-                    parent.callee.object.object.name === 'Cicada' &&
+                    parent.callee.object.object.name === 'Shopware' &&
                     parent.callee.object.property.name === 'Mixin') {
                     return true;
                 }
