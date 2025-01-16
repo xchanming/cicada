@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow\Dispatching\Action;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 trait CustomFieldActionTrait
 {
     /**

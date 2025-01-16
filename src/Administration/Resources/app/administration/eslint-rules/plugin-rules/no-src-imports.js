@@ -15,7 +15,7 @@ module.exports = {
                         loc: node.source.loc.start,
                         message: `\
 You can't use imports directly from the Cicada Core via "${node.source.value}". \
-Use the global Cicada object directly instead (https://developer.xchanming.com/docs/guides/plugins/plugins/administration/the-cicada-object)`,
+Use the global Cicada object directly instead (https://developer.cicada.com/docs/guides/plugins/plugins/administration/the-cicada-object)`,
                     });
                 }
             },

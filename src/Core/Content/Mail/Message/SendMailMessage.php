@@ -8,7 +8,7 @@ use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 /**
  * @codeCoverageIgnore
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class SendMailMessage implements AsyncMessageInterface
 {
     /**

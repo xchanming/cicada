@@ -6,7 +6,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class LanguageOfNewsletterDeleteException extends CicadaHttpException
 {
     public function __construct(?\Throwable $e = null)

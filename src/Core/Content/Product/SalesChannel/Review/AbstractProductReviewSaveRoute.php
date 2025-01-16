@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\System\SalesChannel\NoContentResponse;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('inventory')]
+#[Package('after-sales')]
 abstract class AbstractProductReviewSaveRoute
 {
     abstract public function getDecorated(): AbstractProductReviewSaveRoute;

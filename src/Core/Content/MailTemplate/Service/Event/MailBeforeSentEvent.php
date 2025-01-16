@@ -17,7 +17,7 @@ use Monolog\Level;
 use Symfony\Component\Mime\Email;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailBeforeSentEvent extends Event implements LogAware, MessageAware, ScalarValuesAware, FlowEventAware
 {
     final public const EVENT_NAME = 'mail.after.create.message';

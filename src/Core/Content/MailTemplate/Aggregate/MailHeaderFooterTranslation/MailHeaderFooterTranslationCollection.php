@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<MailHeaderFooterTranslationEntity>
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class MailHeaderFooterTranslationCollection extends EntityCollection
 {
     /**

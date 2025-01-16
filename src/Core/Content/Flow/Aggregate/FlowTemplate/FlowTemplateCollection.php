@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<FlowTemplateEntity>
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowTemplateCollection extends EntityCollection
 {
     public function getApiAlias(): string

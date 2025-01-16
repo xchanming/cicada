@@ -11,7 +11,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 use Cicada\Core\System\Salutation\SalutationEntity;
 use Cicada\Core\System\Tag\TagCollection;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRecipientEntity extends Entity
 {
     use EntityCustomFieldsTrait;

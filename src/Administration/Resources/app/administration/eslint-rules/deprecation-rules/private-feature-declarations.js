@@ -74,7 +74,7 @@ module.exports = {
         docs: {
             description: 'New features have to be private',
             recommended: true,
-            url: 'https://handbook.xchanming.com/Product/Product/Components/Admin/NewFeatures',
+            url: 'https://handbook.cicada.com/Product/Product/Components/Admin/NewFeatures',
         },
     },
     create(context) {

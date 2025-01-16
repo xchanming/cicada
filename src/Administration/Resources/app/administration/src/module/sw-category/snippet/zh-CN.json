@@ -226,7 +226,7 @@
         "socialMediaPreview": "社交媒体预览",
         "searchResultPreview": "搜索结果预览",
         "helpTextMetaTitle": "元标题不应超过70个字符。超出的文本将被谷歌截断，标题将不会完全显示在SERP摘要中。",
-        "helpTextMetaDescription": "谷歌上元描述的可能长度约为175个字符，并根据像素宽度进行裁剪。然而，建议目标长度约为150个字符，以便描述不会在SERP摘要中被截断。Shopware允许的最大长度为255个字符。",
+        "helpTextMetaDescription": "谷歌上元描述的可能长度约为175个字符，并根据像素宽度进行裁剪。然而，建议目标长度约为150个字符，以便描述不会在SERP摘要中被截断。Cicada允许的最大长度为255个字符。",
         "notification": {
           "noLayoutAssigned": "这个落地页没有分配布局。没有布局，落地页无法通过SEO访问。"
         }

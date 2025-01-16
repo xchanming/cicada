@@ -1022,7 +1022,8 @@ export default {
 
     computed: {
         ...mapPropertyErrors('user', [
-            'name',
+            'firstName',
+            'lastName',
             'email',
             'username',
             'localeId',
@@ -1104,7 +1105,8 @@ export default {
                 '\n' +
                 '    /** TODO: Spread computed property is not fully supported yet. Original code:\n' +
                 "        mapPropertyErrors('user', [\n" +
-                "            'name',\n" +
+                "            'firstName',\n" +
+                "            'lastName',\n" +
                 "            'email',\n" +
                 "            'username',\n" +
                 "            'localeId',\n" +

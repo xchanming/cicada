@@ -69,13 +69,13 @@ describe('ASYNC app/adapter/view/vue.adapter.js', () => {
 
         Cicada.State.get('system').locales = [
             'en-GB',
-            'zh-CN',
+            'de-DE',
         ];
 
         Cicada.State.commit('setAdminLocale', {
             locales: [
                 'en-GB',
-                'zh-CN',
+                'de-DE',
             ],
             locale: 'en-GB',
             languageId: '12345678',
@@ -651,6 +651,7 @@ describe('ASYNC app/adapter/view/vue.adapter.js', () => {
             expect(rootComponent.config.globalProperties.$router).toBeDefined();
             expect(rootComponent.config.globalProperties.$tc).toBeDefined();
             expect(rootComponent.config.globalProperties.$store).toBeDefined();
+            expect(rootComponent.config.globalProperties.$dataScope).toBeDefined();
         });
 
         it('should initialize the directives correctly', async () => {
@@ -740,12 +741,12 @@ describe('ASYNC app/adapter/view/vue.adapter.js', () => {
         });
 
         it('should update the i18n global locale to update the locale in UI when the locale in the session store changes', async () => {
-            const expectedLocale = 'zh-CN';
+            const expectedLocale = 'de-DE';
 
             Cicada.State.commit('setAdminLocale', {
                 locales: [
                     'en-GB',
-                    'zh-CN',
+                    'de-DE',
                 ],
                 locale: expectedLocale,
                 languageId: '12345678',

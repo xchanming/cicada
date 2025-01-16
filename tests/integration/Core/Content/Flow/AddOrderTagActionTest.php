@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class AddOrderTagActionTest extends TestCase
 {
     use OrderActionTrait;

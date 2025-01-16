@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Product\SalesChannel\Review;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('inventory')]
+#[Package('after-sales')]
 class MatrixElement
 {
     public function __construct(

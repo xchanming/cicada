@@ -98,7 +98,7 @@
       "placeholderKeywords": "输入一个或多个关键词...",
       "placeholderCanonicalProduct": "选择一个变体...",
       "helpTextMetaTitle": "Meta 标题是最重要的 SEO 元素，每个页面都应该是唯一的。最好将长度限制在最多 56 个字符。您的关键词应该理想地放在最前面。",
-      "helpTextMetaDescription": "通过 Meta 描述，您向客户确认他们在您的店铺中找到了正确的位置。您创建激励措施，建立信任并邀请行动。您应该将自己限制在最多 155 个字符。Shopware 允许最大长度为 255 个字符。",
+      "helpTextMetaDescription": "通过 Meta 描述，您向客户确认他们在您的店铺中找到了正确的位置。您创建激励措施，建立信任并邀请行动。您应该将自己限制在最多 155 个字符。Cicada 允许最大长度为 255 个字符。",
       "helpTextKeywords": "在这里您可以定义可选的三到五个关键词，您的产品应该在这些关键词下找到。"
     },
     "settingsForm": {

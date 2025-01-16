@@ -13,7 +13,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
  * Valid "option" arguments: "subscribe" for double optin and "direct" to skip double optin
  * Optional parameters are: "salutationId", "name",  "street", "city" and "zipCode"
  */
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 abstract class AbstractNewsletterSubscribeRoute
 {
     abstract public function getDecorated(): AbstractNewsletterSubscribeRoute;

@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\JsonSerializableTrait;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterConfirmEvent extends Event implements SalesChannelAware, MailAware, NewsletterRecipientAware, FlowEventAware
 {
     use JsonSerializableTrait;

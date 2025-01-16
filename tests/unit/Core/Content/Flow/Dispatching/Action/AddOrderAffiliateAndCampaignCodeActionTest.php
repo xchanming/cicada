@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(AddOrderAffiliateAndCampaignCodeAction::class)]
 class AddOrderAffiliateAndCampaignCodeActionTest extends TestCase
 {

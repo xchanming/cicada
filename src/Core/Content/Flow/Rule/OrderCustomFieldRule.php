@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Rule\Exception\UnsupportedOperatorException;
 use Cicada\Core\Framework\Rule\FlowRule;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class OrderCustomFieldRule extends FlowRule
 {
     final public const RULE_NAME = 'orderCustomField';

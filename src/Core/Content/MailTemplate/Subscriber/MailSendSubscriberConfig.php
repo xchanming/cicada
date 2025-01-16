@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\MailTemplate\Subscriber;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailSendSubscriberConfig extends Struct
 {
     protected bool $skip;

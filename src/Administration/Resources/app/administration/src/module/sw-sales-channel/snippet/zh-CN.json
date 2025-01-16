@@ -161,7 +161,7 @@
         "buttonPreviewLabel": "生成预览",
         "settings": "产品导出",
         "fileName": "文件名",
-        "placeholderFileName": "shopware.csv",
+        "placeholderFileName": "cicada.csv",
         "lastGenerationLabel": "最后生成于：",
         "notYetGenerated": "尚未生成此导出。",
         "encoding": "编码",

@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(OrderCustomFieldRule::class)]
 #[Group('rules')]
 class OrderCustomFieldRuleTest extends TestCase

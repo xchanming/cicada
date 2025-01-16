@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateDefinition;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class OrderStatusRule extends FlowRule
 {
     public const RULE_NAME = 'orderStatus';

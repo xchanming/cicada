@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(ChangeCustomerStatusAction::class)]
 class ChangeCustomerStatusActionTest extends TestCase
 {

@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(OrderDeliveryStatusRule::class)]
 #[Group('rules')]
 class OrderDeliveryStatusRuleTest extends TestCase

@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(RemoveOrderTagAction::class)]
 class RemoveOrderTagActionTest extends TestCase
 {

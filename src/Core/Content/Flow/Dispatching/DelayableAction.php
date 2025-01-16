@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Flow\Dispatching;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 interface DelayableAction
 {
 }

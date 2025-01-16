@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Newsletter\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRecipientIndexingMessage extends EntityIndexingMessage
 {
     private bool $deletedNewsletterRecipients = false;

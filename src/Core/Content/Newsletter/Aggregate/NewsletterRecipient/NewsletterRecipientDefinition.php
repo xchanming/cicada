@@ -20,7 +20,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Core\System\Salutation\SalutationDefinition;
 use Cicada\Core\System\Tag\TagDefinition;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRecipientDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'newsletter_recipient';

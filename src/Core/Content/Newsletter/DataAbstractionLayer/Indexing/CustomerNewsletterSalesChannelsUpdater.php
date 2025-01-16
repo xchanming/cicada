@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class CustomerNewsletterSalesChannelsUpdater
 {
     /**

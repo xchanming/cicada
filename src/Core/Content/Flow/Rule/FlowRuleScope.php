@@ -8,7 +8,7 @@ use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class FlowRuleScope extends CartRuleScope
 {
     public function __construct(

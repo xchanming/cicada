@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('checkout')]
+#[Package('after-sales')]
 class NewsletterRecipientServiceTest extends TestCase
 {
     use IntegrationTestBehaviour;

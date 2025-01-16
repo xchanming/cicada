@@ -17,6 +17,7 @@ import type { ComponentPublicInstance } from '@vue/runtime-core';
 import { compatUtils } from '@vue/compat';
 
 import * as MeteorImport from '@cicada-ag/meteor-component-library';
+import getBlockDataScope from '../../component/structure/sw-block-override/sw-block/get-block-data-scope';
 
 const { Component, State, Mixin } = Cicada;
 
@@ -96,6 +97,11 @@ export default class VueAdapter extends ViewAdapter {
                 throw new Error(msg);
             }
         };
+        // This is a hack for providing the data scope to the components.
+        Object.defineProperty(this.app.config.globalProperties, '$dataScope', {
+            get: getBlockDataScope,
+            enumerable: true,
+        });
 
         /**
          * This is a hack for providing the services to the components.
@@ -299,9 +305,9 @@ export default class VueAdapter extends ViewAdapter {
 
         Object.entries(moduleSnippets).forEach(
             ([
-                key,
-                moduleSnippet,
-            ]) => {
+                 key,
+                 moduleSnippet,
+             ]) => {
                 this.applicationFactory.locale.extend(key, moduleSnippet);
             },
         );

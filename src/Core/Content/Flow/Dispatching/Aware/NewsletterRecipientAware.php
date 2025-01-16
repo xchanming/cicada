@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Flow\Dispatching\Aware;
 use Cicada\Core\Framework\Event\IsFlowEventAware;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[IsFlowEventAware]
 interface NewsletterRecipientAware
 {

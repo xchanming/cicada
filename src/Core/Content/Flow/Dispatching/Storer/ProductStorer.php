@@ -14,7 +14,7 @@ use Cicada\Core\Framework\Event\ProductAware;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class ProductStorer extends FlowStorer
 {
     /**

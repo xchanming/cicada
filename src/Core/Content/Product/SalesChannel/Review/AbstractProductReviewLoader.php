@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('inventory')]
+#[Package('after-sales')]
 abstract class AbstractProductReviewLoader
 {
     abstract public function getDecorated(): AbstractProductReviewLoader;

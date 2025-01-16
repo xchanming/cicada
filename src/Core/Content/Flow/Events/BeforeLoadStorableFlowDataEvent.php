@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\GenericEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('after-sales')]
 class BeforeLoadStorableFlowDataEvent extends Event implements CicadaEvent, GenericEvent
 {
     public function __construct(

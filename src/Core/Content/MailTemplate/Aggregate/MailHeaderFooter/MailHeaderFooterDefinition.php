@@ -16,7 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailHeaderFooterDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'mail_header_footer';

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailHeaderFooterEntity extends Entity
 {
     use EntityIdTrait;

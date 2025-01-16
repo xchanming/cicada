@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Newsletter\ScheduledTask;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRecipientTask extends ScheduledTask
 {
     public static function getTaskName(): string

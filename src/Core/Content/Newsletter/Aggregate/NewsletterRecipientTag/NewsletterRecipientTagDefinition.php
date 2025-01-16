@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Tag\TagDefinition;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRecipientTagDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'newsletter_recipient_tag';

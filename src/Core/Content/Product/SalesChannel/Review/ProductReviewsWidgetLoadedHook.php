@@ -20,7 +20,7 @@ use Cicada\Core\System\SystemConfig\Facade\SystemConfigFacadeHookFactory;
  *
  * @final
  */
-#[Package('inventory')]
+#[Package('after-sales')]
 class ProductReviewsWidgetLoadedHook extends Hook implements SalesChannelContextAware
 {
     use SalesChannelContextAwareTrait;

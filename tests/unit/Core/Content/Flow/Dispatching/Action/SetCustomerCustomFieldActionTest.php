@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 #[CoversClass(SetCustomerCustomFieldAction::class)]
 class SetCustomerCustomFieldActionTest extends TestCase
 {

@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class SetCustomerGroupCustomFieldActionTest extends TestCase
 {
     use AdminApiTestBehaviour;

@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\MailTemplate;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailTemplateEvents
 {
     final public const MAIL_TEMPLATE_WRITTEN_EVENT = 'mail_template.written';

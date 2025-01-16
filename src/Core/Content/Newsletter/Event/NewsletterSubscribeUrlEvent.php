@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterSubscribeUrlEvent extends Event implements CicadaSalesChannelEvent
 {
     public function __construct(
