@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('checkout')]
+#[Package('after-sales')]
 #[CoversClass(MailActionController::class)]
 class MailActionControllerTest extends TestCase
 {

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailTemplateMediaEntity extends Entity
 {
     use EntityIdTrait;

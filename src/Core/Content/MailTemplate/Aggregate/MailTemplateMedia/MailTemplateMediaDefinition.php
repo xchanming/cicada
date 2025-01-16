@@ -16,7 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailTemplateMediaDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'mail_template_media';

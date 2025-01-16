@@ -6,7 +6,7 @@ use Cicada\Core\Content\MailTemplate\Aggregate\MailHeaderFooter\MailHeaderFooter
 use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailHeaderFooterTranslationEntity extends TranslationEntity
 {
     /**

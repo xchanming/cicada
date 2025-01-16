@@ -34,7 +34,7 @@ use Symfony\Component\Serializer\Serializer;
 /**
  * @internal
  */
-#[Package('checkout')]
+#[Package('after-sales')]
 #[CoversClass(MailActionController::class)]
 class MailActionControllerTest extends TestCase
 {

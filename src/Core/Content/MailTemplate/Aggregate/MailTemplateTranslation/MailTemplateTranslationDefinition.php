@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailTemplateTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'mail_template_translation';

@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\MailTemplate;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailTemplateTypes
 {
     final public const MAILTYPE_PASSWORD_CHANGE = 'password_change';

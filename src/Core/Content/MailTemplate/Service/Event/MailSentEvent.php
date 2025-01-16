@@ -14,7 +14,7 @@ use Cicada\Core\Framework\Log\Package;
 use Monolog\Level;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class MailSentEvent extends Event implements LogAware, ScalarValuesAware, FlowEventAware
 {
     final public const EVENT_NAME = 'mail.sent';
