@@ -2,10 +2,6 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\DataAbstractionLayer;
 
-use OpenSearchDSL\Aggregation\Bucketing\CompositeAggregation;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductTranslation\ProductTranslationDefinition;
@@ -39,6 +35,10 @@ use Cicada\Core\System\Unit\UnitDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\CriteriaParser;
+use OpenSearchDSL\Aggregation\Bucketing\CompositeAggregation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
