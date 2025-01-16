@@ -4,7 +4,7 @@ import './sw-first-run-wizard-welcome.scss';
 const { Criteria } = Cicada.Data;
 
 /**
- * @package checkout
+ * @sw-package fundamentals@after-sales
  * @private
  */
 export default {

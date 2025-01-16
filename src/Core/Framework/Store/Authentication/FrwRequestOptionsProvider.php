@@ -15,7 +15,7 @@ use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigEntity;
 /**
  * @internal
  */
-#[Package('checkout')]
+#[Package('fundamentals@after-sales')]
 class FrwRequestOptionsProvider extends AbstractStoreRequestOptionsProvider
 {
     private const CICADA_TOKEN_HEADER = 'X-Cicada-Token';

@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('checkout')]
+#[Package('fundamentals@after-sales')]
 class FrwRequestOptionsProviderTest extends TestCase
 {
     use IntegrationTestBehaviour;

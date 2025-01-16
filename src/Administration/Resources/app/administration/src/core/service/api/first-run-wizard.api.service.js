@@ -1,7 +1,7 @@
 const ApiService = Cicada.Classes.ApiService;
 
 /**
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  *
  * Gateway for the API end point "frw"
  * @private

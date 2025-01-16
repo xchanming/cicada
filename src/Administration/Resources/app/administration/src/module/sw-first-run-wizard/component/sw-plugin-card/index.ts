@@ -19,7 +19,7 @@ type RecommendedPlugin = {
 };
 
 /**
- * @package checkout
+ * @sw-package fundamentals@after-sales
  * @private
  */
 export default Cicada.Component.wrapComponentConfig({
