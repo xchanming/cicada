@@ -7,7 +7,7 @@ import useBlockContext from '../composables/use-block-context';
 /**
  * @private
  */
-const blockOverrideStore = Shopware.Store.register('blockOverride', useBlockContext);
+const blockOverrideStore = Cicada.Store.register('blockOverride', useBlockContext);
 
 /**
  * @private

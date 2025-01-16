@@ -56,8 +56,8 @@ import useBlockContext from '../../../../composables/use-block-context';
  *     <div>Another block content extension</div>
  * </sw-block>
  */
-Shopware.Component.register('sw-block', {
-    compatConfig: Shopware.compatConfig,
+Cicada.Component.register('sw-block', {
+    compatConfig: Cicada.compatConfig,
     props: {
         name: {
             type: String,

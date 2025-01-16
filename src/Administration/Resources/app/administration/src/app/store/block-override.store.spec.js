@@ -4,7 +4,7 @@ describe('block-override.store', () => {
     let store;
 
     beforeEach(() => {
-        store = Shopware.Store.get('blockOverride');
+        store = Cicada.Store.get('blockOverride');
     });
 
     it('has initial state', () => {

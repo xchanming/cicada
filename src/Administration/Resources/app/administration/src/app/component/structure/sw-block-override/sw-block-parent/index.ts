@@ -12,8 +12,8 @@ import parentsInjectionKey from '../sw-block/parents-injection-key';
  * @private
  *
  */
-Shopware.Component.register('sw-block-parent', {
-    compatConfig: Shopware.compatConfig,
+Cicada.Component.register('sw-block-parent', {
+    compatConfig: Cicada.compatConfig,
     setup() {
         const parent = inject(parentsInjectionKey, null)?.value.pop();
 
