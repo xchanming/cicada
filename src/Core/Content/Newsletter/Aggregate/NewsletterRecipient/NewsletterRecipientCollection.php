@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<NewsletterRecipientEntity>
  */
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRecipientCollection extends EntityCollection
 {
     public function getApiAlias(): string

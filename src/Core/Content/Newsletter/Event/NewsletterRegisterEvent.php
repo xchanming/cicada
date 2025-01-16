@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Event\SalesChannelAware;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterRegisterEvent extends Event implements SalesChannelAware, MailAware, NewsletterRecipientAware, ScalarValuesAware, FlowEventAware
 {
     final public const EVENT_NAME = 'newsletter.register';

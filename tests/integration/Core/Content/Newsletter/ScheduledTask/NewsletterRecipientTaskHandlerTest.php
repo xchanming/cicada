@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * @internal
  */
-#[Package('checkout')]
+#[Package('after-sales')]
 class NewsletterRecipientTaskHandlerTest extends TestCase
 {
     use IntegrationTestBehaviour;

@@ -6,7 +6,7 @@ use Cicada\Core\Content\Newsletter\Exception\LanguageOfNewsletterDeleteException
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterExceptionHandler implements ExceptionHandlerInterface
 {
     public function getPriority(): int

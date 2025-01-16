@@ -7,7 +7,7 @@ use Cicada\Core\Content\Newsletter\Event\NewsletterRegisterEvent;
 use Cicada\Core\Content\Newsletter\Event\NewsletterUnsubscribeEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('after-sales')]
 class NewsletterEvents
 {
     final public const NEWSLETTER_CONFIRM_EVENT = NewsletterConfirmEvent::class;
