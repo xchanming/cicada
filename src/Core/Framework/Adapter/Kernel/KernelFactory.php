@@ -2,9 +2,8 @@
 
 namespace Cicada\Core\Framework\Adapter\Kernel;
 
-use Cicada\Core\Framework\Adapter\Cache\CacheIdLoader;
+use Cicada\Core\DevOps\Environment\EnvironmentHelper;
 use Cicada\Core\Framework\Adapter\Database\MySQLFactory;
-use Cicada\Core\Framework\Adapter\Storage\MySQLKeyValueStorage;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\DbalKernelPluginLoader;
 use Cicada\Core\Framework\Plugin\KernelPluginLoader\KernelPluginLoader;
@@ -58,8 +57,7 @@ class KernelFactory
 
         $pluginLoader = $pluginLoader ?? new DbalKernelPluginLoader($classLoader, null, $connection);
 
-        $storage = new MySQLKeyValueStorage($connection);
-        $cacheId = (new CacheIdLoader($storage))->load();
+        $cacheId = EnvironmentHelper::getVariable('CICADA_CACHE_ID', '');
 
         /** @var KernelInterface $kernel */
         $kernel = new static::$kernelClass(
