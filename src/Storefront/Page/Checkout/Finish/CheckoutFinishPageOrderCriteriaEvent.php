@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Event\CicadaSalesChannelEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('storefront')]
+#[Package('framework')]
 class CheckoutFinishPageOrderCriteriaEvent implements CicadaSalesChannelEvent
 {
     public function __construct(

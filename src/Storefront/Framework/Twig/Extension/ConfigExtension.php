@@ -10,7 +10,7 @@ use Cicada\Storefront\Framework\Twig\TemplateConfigAccessor;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ConfigExtension extends AbstractExtension
 {
     /**

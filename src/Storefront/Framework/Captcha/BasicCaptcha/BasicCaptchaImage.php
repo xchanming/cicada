@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Framework\Captcha\BasicCaptcha;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class BasicCaptchaImage extends Struct
 {
     public function __construct(

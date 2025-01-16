@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<ThemeSalesChannel>
  */
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeSalesChannelCollection extends Collection
 {
     /**

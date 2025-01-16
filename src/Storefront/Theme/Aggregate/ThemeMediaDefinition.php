@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\ThemeDefinition;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeMediaDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'theme_media';

@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Event;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeCompilerConcatenatedStylesEvent extends Event
 {
     public function __construct(

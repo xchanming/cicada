@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('storefront')]
+#[Package('framework')]
 #[CoversClass(StaticFileConfigLoader::class)]
 class StaticFileConfigLoaderTest extends TestCase
 {

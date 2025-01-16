@@ -30,7 +30,7 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\DelayStamp;
 
-#[\Cicada\Core\Framework\Log\Package('storefront')]
+#[\Cicada\Core\Framework\Log\Package('framework')]
 class ThemeCompiler implements ThemeCompilerInterface
 {
     /**

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ErrorRedirectRequestEvent implements CicadaEvent
 {
     public function __construct(

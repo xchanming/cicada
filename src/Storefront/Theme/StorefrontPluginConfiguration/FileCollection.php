@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<File>
  */
-#[Package('storefront')]
+#[Package('framework')]
 class FileCollection extends Collection
 {
     /**

@@ -14,7 +14,7 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Cicada\Storefront\Theme\Struct\ThemeDependencies;
 use Doctrine\DBAL\Connection;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeLifecycleHandler
 {
     public const STATE_SKIP_THEME_COMPILATION = 'skip-theme-compilation';

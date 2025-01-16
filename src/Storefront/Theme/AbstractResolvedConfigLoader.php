@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class AbstractResolvedConfigLoader
 {
     abstract public function getDecorated(): AbstractResolvedConfigLoader;

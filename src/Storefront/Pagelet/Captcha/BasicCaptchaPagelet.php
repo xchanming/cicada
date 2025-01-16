@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Framework\Captcha\BasicCaptcha\BasicCaptchaImage;
 use Cicada\Storefront\Pagelet\Pagelet;
 
-#[Package('storefront')]
+#[Package('framework')]
 class BasicCaptchaPagelet extends Pagelet
 {
     protected BasicCaptchaImage $captcha;

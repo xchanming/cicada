@@ -10,7 +10,7 @@ use Cicada\Core\System\Country\CountryCollection;
 use Cicada\Core\System\Salutation\SalutationCollection;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('framework')]
 class AddressListingPage extends Page
 {
     /**

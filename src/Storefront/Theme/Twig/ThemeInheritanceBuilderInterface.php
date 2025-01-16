@@ -4,7 +4,7 @@ namespace Cicada\Storefront\Theme\Twig;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('storefront')]
+#[Package('framework')]
 interface ThemeInheritanceBuilderInterface
 {
     /**

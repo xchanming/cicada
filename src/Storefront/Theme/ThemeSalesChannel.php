@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeSalesChannel extends Struct
 {
     public function __construct(

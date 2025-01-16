@@ -8,7 +8,7 @@ use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('framework')]
 class NavigationPage extends Page
 {
     /**

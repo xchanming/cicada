@@ -1,3 +1,6 @@
+/**
+ * @sw-package framework
+ */
 module.exports = {
     extends: 'stylelint-config-sass-guidelines',
     plugins: ['./build/stylelint/cicada-object-fit-polyfill.js'],

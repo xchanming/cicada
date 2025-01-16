@@ -11,7 +11,7 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\FileCollection;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('storefront')]
+#[Package('framework')]
 class StaticFileConfigLoader extends AbstractConfigLoader
 {
     /**

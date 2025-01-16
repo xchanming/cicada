@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 use Cicada\Storefront\Theme\Aggregate\ThemeTranslationCollection;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeEntity extends Entity
 {
     use EntityCustomFieldsTrait;

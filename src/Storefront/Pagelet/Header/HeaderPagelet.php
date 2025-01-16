@@ -11,7 +11,7 @@ use Cicada\Core\System\Language\LanguageCollection;
 use Cicada\Core\System\Language\LanguageEntity;
 use Cicada\Storefront\Pagelet\NavigationPagelet;
 
-#[Package('storefront')]
+#[Package('framework')]
 class HeaderPagelet extends NavigationPagelet
 {
     /**

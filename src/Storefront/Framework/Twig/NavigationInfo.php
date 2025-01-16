@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @codeCoverageIgnore
  */
-#[Package('storefront')]
+#[Package('framework')]
 final readonly class NavigationInfo
 {
     public function __construct(

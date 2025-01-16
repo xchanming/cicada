@@ -8,7 +8,7 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Theme\ThemeConfigValueAccessor;
 use Cicada\Storefront\Theme\ThemeScripts;
 
-#[Package('storefront')]
+#[Package('framework')]
 class TemplateConfigAccessor
 {
     /**

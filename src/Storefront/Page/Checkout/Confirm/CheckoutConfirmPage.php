@@ -8,7 +8,7 @@ use Cicada\Core\Checkout\Shipping\ShippingMethodCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('framework')]
 class CheckoutConfirmPage extends Page
 {
     protected Cart $cart;

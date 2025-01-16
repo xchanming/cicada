@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @phpstan-import-type Domain from AbstractDomainLoader
  */
-#[Package('storefront')]
+#[Package('framework')]
 class DomainLoader extends AbstractDomainLoader
 {
     /**

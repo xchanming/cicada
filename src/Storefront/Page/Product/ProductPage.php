@@ -8,7 +8,7 @@ use Cicada\Core\Content\Product\SalesChannel\SalesChannelProductEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ProductPage extends Page
 {
     /**

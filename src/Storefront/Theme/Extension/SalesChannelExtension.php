@@ -10,7 +10,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 use Cicada\Storefront\Theme\Aggregate\ThemeSalesChannelDefinition;
 use Cicada\Storefront\Theme\ThemeDefinition;
 
-#[Package('storefront')]
+#[Package('framework')]
 class SalesChannelExtension extends EntityExtension
 {
     public function extendFields(FieldCollection $collection): void

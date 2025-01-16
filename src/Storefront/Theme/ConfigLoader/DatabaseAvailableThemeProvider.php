@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 
-#[Package('storefront')]
+#[Package('framework')]
 class DatabaseAvailableThemeProvider extends AbstractAvailableThemeProvider
 {
     /**

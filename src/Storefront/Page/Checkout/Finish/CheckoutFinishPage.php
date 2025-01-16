@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Order\OrderEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('storefront')]
+#[Package('framework')]
 class CheckoutFinishPage extends Page
 {
     /**

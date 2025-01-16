@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Storefront\Pagelet\Footer\FooterPagelet;
 use Cicada\Storefront\Pagelet\Header\HeaderPagelet;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ErrorTemplateStruct extends Struct
 {
     protected ?HeaderPagelet $header;

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal - may be changed in the future
  */
-#[Package('storefront')]
+#[Package('framework')]
 abstract class AbstractScssCompiler
 {
     abstract public function compileString(

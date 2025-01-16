@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 
-#[Package('storefront')]
+#[Package('framework')]
 class SeedingThemePathBuilder extends AbstractThemePathBuilder
 {
     private const SYSTEM_CONFIG_KEY = 'storefront.themeSeed';

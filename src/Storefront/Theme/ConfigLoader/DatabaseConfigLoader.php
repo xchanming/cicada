@@ -18,7 +18,7 @@ use Cicada\Storefront\Theme\ThemeCollection;
 use Cicada\Storefront\Theme\ThemeConfigField;
 use Cicada\Storefront\Theme\ThemeEntity;
 
-#[Package('storefront')]
+#[Package('framework')]
 class DatabaseConfigLoader extends AbstractConfigLoader
 {
     /**

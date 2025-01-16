@@ -4,7 +4,7 @@ namespace Cicada\Storefront\Framework\Cookie;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('storefront')]
+#[Package('framework')]
 class CookieProvider implements CookieProviderInterface
 {
     private const REQUIRED_COOKIES = [

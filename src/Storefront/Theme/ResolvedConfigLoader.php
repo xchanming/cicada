@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ResolvedConfigLoader extends AbstractResolvedConfigLoader
 {
     /**

@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\Aggregate\ThemeMediaDefinition;
 use Cicada\Storefront\Theme\ThemeDefinition;
 
-#[Package('storefront')]
+#[Package('framework')]
 class MediaExtension extends EntityExtension
 {
     public function extendFields(FieldCollection $collection): void

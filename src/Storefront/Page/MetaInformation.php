@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Page;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class MetaInformation extends Struct
 {
     /**

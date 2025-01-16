@@ -17,7 +17,7 @@ use Cicada\Storefront\Pagelet\Header\HeaderPageletLoaderInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('storefront')]
+#[Package('framework')]
 class GenericPageLoader implements GenericPageLoaderInterface
 {
     /**

@@ -9,7 +9,7 @@ use ScssPhp\ScssPhp\OutputStyle;
 /**
  * @internal - may be changed in the future
  */
-#[Package('storefront')]
+#[Package('framework')]
 class ScssPhpCompiler extends AbstractScssCompiler
 {
     private Compiler $compiler;

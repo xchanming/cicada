@@ -10,7 +10,7 @@ use Cicada\Storefront\Page\Page;
 /**
  * @codeCoverageIgnore
  */
-#[Package('storefront')]
+#[Package('framework')]
 class AddressEditorModalStruct extends Struct
 {
     protected bool $changeBilling = false;

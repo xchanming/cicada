@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<ThemeEntity>
  */
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeCollection extends EntityCollection
 {
     public function getByTechnicalName(string $technicalName): ?ThemeEntity

@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Pagelet;
 use Cicada\Core\Content\Category\Tree\Tree;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class NavigationPagelet extends Pagelet
 {
     /**

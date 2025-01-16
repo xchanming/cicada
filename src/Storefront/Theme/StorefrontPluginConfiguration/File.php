@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme\StorefrontPluginConfiguration;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class File extends Struct
 {
     /**

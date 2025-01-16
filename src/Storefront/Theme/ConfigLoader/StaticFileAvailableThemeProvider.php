@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('storefront')]
+#[Package('framework')]
 class StaticFileAvailableThemeProvider extends AbstractAvailableThemeProvider
 {
     final public const THEME_INDEX = 'theme-config/index.json';

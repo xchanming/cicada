@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class RouteRequestEvent extends NestedEvent implements CicadaSalesChannelEvent
 {
     private readonly Criteria $criteria;

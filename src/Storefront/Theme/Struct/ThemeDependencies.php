@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeDependencies extends Struct
 {
     /**

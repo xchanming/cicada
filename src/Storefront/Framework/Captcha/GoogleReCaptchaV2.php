@@ -7,7 +7,7 @@ use GuzzleHttp\ClientInterface;
 use Psr\Http\Client\ClientExceptionInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('storefront')]
+#[Package('framework')]
 class GoogleReCaptchaV2 extends AbstractCaptcha
 {
     final public const CAPTCHA_NAME = 'googleReCaptchaV2';

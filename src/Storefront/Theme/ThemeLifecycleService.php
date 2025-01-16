@@ -23,7 +23,7 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 use Doctrine\DBAL\Connection;
 use GuzzleHttp\Psr7\MimeType;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeLifecycleService
 {
     /**

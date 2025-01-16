@@ -9,7 +9,7 @@ use Cicada\Storefront\Theme\Exception\ThemeException;
 /**
  * @internal
  */
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeExceptionHandler implements ExceptionHandlerInterface
 {
     public function getPriority(): int

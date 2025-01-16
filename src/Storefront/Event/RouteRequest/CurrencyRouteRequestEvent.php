@@ -4,7 +4,7 @@ namespace Cicada\Storefront\Event\RouteRequest;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('storefront')]
+#[Package('framework')]
 class CurrencyRouteRequestEvent extends RouteRequestEvent
 {
 }

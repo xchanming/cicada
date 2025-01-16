@@ -11,7 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\ThemeDefinition;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'theme_translation';

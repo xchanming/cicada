@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class AbstractConfigLoader
 {
     abstract public function getDecorated(): AbstractConfigLoader;

@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme\StorefrontPluginConfiguration;
 use Cicada\Core\Framework\Bundle;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class AbstractStorefrontPluginConfigurationFactory
 {
     abstract public function getDecorated(): AbstractStorefrontPluginConfigurationFactory;

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ProductPageCriteriaEvent extends Event implements CicadaSalesChannelEvent
 {
     public function __construct(

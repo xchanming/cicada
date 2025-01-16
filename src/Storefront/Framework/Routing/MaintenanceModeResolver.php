@@ -10,7 +10,7 @@ use Cicada\Core\SalesChannelRequest;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-#[Package('storefront')]
+#[Package('framework')]
 class MaintenanceModeResolver
 {
     /**

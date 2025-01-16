@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeConfigField extends Struct
 {
     /**

@@ -10,7 +10,7 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\FileCollection;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfiguration;
 use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfigurationCollection;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeFileResolver
 {
     final public const SCRIPT_FILES = 'script';

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\ThemeEntity;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

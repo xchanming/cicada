@@ -25,7 +25,7 @@ use Cicada\Storefront\Theme\Aggregate\ThemeMediaDefinition;
 use Cicada\Storefront\Theme\Aggregate\ThemeSalesChannelDefinition;
 use Cicada\Storefront\Theme\Aggregate\ThemeTranslationDefinition;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'theme';

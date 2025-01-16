@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeCompilerEnrichScssVariablesEvent extends Event implements CicadaEvent
 {
     /**

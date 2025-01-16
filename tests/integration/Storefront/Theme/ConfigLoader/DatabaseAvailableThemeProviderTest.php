@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('storefront')]
+#[Package('framework')]
 class DatabaseAvailableThemeProviderTest extends TestCase
 {
     use IntegrationTestBehaviour;

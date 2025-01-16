@@ -6,7 +6,7 @@ use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('storefront')]
+#[Package('framework')]
 class MinimalQuickViewPage extends Struct
 {
     /**

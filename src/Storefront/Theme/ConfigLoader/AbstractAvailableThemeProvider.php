@@ -6,7 +6,7 @@ namespace Cicada\Storefront\Theme\ConfigLoader;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class AbstractAvailableThemeProvider
 {
     abstract public function getDecorated(): AbstractAvailableThemeProvider;

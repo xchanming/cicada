@@ -11,7 +11,7 @@ use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
  *
  * used to compile the themes in the queue
  */
-#[Package('storefront')]
+#[Package('framework')]
 class CompileThemeMessage implements AsyncMessageInterface
 {
     public function __construct(

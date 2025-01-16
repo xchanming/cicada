@@ -8,7 +8,7 @@ use Cicada\Storefront\Theme\StorefrontPluginConfiguration\StorefrontPluginConfig
 /**
  * @deprecated tag:v6.7.0 - Will be removed
  */
-#[Package('storefront')]
+#[Package('framework')]
 interface StorefrontPluginRegistryInterface
 {
     public function getConfigurations(): StorefrontPluginConfigurationCollection;

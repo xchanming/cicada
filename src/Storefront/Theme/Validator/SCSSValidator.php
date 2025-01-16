@@ -9,7 +9,7 @@ use Cicada\Storefront\Theme\Exception\ThemeException;
 use ScssPhp\ScssPhp\Colors;
 use ScssPhp\ScssPhp\OutputStyle;
 
-#[Package('storefront')]
+#[Package('framework')]
 class SCSSValidator
 {
     /**

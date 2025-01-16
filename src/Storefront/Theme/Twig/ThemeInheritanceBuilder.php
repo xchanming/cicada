@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\StorefrontPluginRegistry;
 use Cicada\Storefront\Theme\StorefrontPluginRegistryInterface;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeInheritanceBuilder implements ThemeInheritanceBuilderInterface
 {
     /**

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Exception\InconsistentCriteriaIds
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ProductPageConfiguratorLoader extends ProductConfiguratorLoader
 {
     /**

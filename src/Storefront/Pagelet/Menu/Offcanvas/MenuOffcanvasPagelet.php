@@ -6,7 +6,7 @@ use Cicada\Core\Content\Category\Tree\Tree;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Pagelet\NavigationPagelet;
 
-#[Package('storefront')]
+#[Package('framework')]
 class MenuOffcanvasPagelet extends NavigationPagelet
 {
     public function setNavigation(Tree $navigation): void

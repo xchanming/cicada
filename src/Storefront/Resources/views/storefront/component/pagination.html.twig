@@ -1,3 +1,5 @@
+{# @sw-package framework #}
+
 {% block component_pagination_nav %}
     {% set currentPage = currentPage ?? entities.page %}
     {% set totalPages = totalPages ?? (entities.total / (entities.limit ?: 1))|round(0, 'ceil') %}

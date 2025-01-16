@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme\Event;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeAssignedEvent extends Event
 {
     public function __construct(

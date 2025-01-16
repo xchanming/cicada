@@ -14,7 +14,7 @@ use Cicada\Storefront\Theme\Exception\InvalidThemeBundleException;
 use Cicada\Storefront\Theme\Exception\ThemeCompileException;
 use Symfony\Component\Finder\Finder;
 
-#[Package('storefront')]
+#[Package('framework')]
 class StorefrontPluginConfigurationFactory extends AbstractStorefrontPluginConfigurationFactory
 {
     /**

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 
-#[Package('storefront')]
+#[Package('framework')]
 /**
  * @internal
  */

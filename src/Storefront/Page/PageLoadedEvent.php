@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('storefront')]
+#[Package('framework')]
 abstract class PageLoadedEvent extends NestedEvent implements CicadaSalesChannelEvent
 {
     /**

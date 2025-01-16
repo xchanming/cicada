@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Storefront\Theme\Aggregate\ThemeTranslationDefinition;
 
-#[Package('storefront')]
+#[Package('framework')]
 class LanguageExtension extends EntityExtension
 {
     public function extendFields(FieldCollection $collection): void

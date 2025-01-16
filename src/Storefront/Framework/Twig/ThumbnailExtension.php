@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Framework\Twig\TokenParser\ThumbnailTokenParser;
 use Twig\Extension\AbstractExtension;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThumbnailExtension extends AbstractExtension
 {
     /**

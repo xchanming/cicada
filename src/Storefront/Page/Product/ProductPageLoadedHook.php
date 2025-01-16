@@ -16,7 +16,7 @@ use Cicada\Storefront\Page\PageLoadedHook;
  *
  * @final
  */
-#[Package('storefront')]
+#[Package('framework')]
 class ProductPageLoadedHook extends PageLoadedHook
 {
     use SalesChannelContextAwareTrait;

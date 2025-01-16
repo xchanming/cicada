@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Theme;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Theme\Exception\InvalidThemeConfigException;
 
-#[Package('storefront')]
+#[Package('framework')]
 class ThemeConfigFieldFactory
 {
     public function create(string $name, array $configFieldArray): ThemeConfigField
