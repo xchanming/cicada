@@ -38,7 +38,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ConsistsOfManyToManyDefinition;
-use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\NonIdPrimaryKeyTestDefinition;
+use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\NonIdFieldNamePrimaryKeyTestDefinition;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageCollection;
@@ -94,7 +94,7 @@ class EntityReaderTest extends TestCase
         $this->customerRepository = static::getContainer()->get('customer.repository');
         $this->deLanguageId = $this->getDeDeLanguageId();
 
-        $this->registerDefinition(NonIdPrimaryKeyTestDefinition::class);
+        $this->registerDefinition(NonIdFieldNamePrimaryKeyTestDefinition::class);
         $this->registerDefinition(ConsistsOfManyToManyDefinition::class);
 
         $this->connection->rollBack();
@@ -103,6 +103,7 @@ class EntityReaderTest extends TestCase
             DROP TABLE IF EXISTS `non_id_primary_key_test`;
             CREATE TABLE `non_id_primary_key_test` (
                 `test_field` BINARY(16) NOT NULL,
+                `non_pk` BINARY(16) NULL,
                 `name` VARCHAR(255) NULL,
                 `created_at` DATETIME(3) NOT NULL,
                 `updated_at` DATETIME(3) NULL,
@@ -2194,6 +2195,7 @@ class EntityReaderTest extends TestCase
     {
         $id1 = Uuid::randomHex();
         $id2 = Uuid::randomHex();
+        $id3 = Uuid::randomHex();
 
         $data = [
             [
@@ -2202,7 +2204,13 @@ class EntityReaderTest extends TestCase
             ],
             [
                 'testField' => $id2,
+                'nonPk' => null,
                 'name' => 'test2',
+            ],
+            [
+                'testField' => $id3,
+                'nonPk' => $id3,
+                'name' => 'test3',
             ],
         ];
 
@@ -2213,8 +2221,20 @@ class EntityReaderTest extends TestCase
 
         $result = $repository->search(new Criteria(), Context::createDefaultContext());
 
-        static::assertEquals(2, $result->getTotal());
-        static::assertEquals(2, $result->count());
+        static::assertEquals(3, $result->getTotal());
+        static::assertEquals(3, $result->count());
+
+        $foundIds = [];
+        foreach ($result as $entity) {
+            $foundIds[] = $entity->getUniqueIdentifier();
+            if ($entity->getUniqueIdentifier() === $id3) {
+                static::assertSame($id3, $entity->get('nonPk'));
+            } else {
+                static::assertNull($entity->get('nonPk'));
+            }
+        }
+
+        static::assertEqualsCanonicalizing([$id1, $id2, $id3], $foundIds);
     }
 
     public function testReadWithNonIdPKOverPropertyName(): void
