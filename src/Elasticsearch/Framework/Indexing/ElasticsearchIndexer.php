@@ -149,8 +149,6 @@ class ElasticsearchIndexer
     {
         $this->connection->executeStatement('DELETE FROM elasticsearch_index_task');
 
-        $this->createScripts();
-
         $timestamp = new \DateTime();
 
         $this->createIndex($timestamp);
@@ -189,28 +187,6 @@ class ElasticsearchIndexer
         }
 
         return $errors;
-    }
-
-    private function createScripts(): void
-    {
-        $finder = (new Finder())
-            ->files()
-            ->in(__DIR__ . '/Scripts')
-            ->name('*.groovy');
-
-        foreach ($finder as $file) {
-            $name = pathinfo($file->getFilename(), \PATHINFO_FILENAME);
-
-            $this->client->putScript([
-                'id' => $name,
-                'body' => [
-                    'script' => [
-                        'lang' => 'painless',
-                        'source' => file_get_contents($file->getPathname()),
-                    ],
-                ],
-            ]);
-        }
     }
 
     private function createIndex(\DateTime $timestamp): void
