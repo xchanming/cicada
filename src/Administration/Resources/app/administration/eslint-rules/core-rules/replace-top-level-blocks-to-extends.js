@@ -3,7 +3,7 @@
  *
  * Overview
  * This custom ESLint rule enforces that the top-level <sw-block> element should be using the `extends` prop instead of
- * the `name` prop. This is used in the plugins to extend the existing blocks in the Shopware Administration.
+ * the `name` prop. This is used in the plugins to extend the existing blocks in the Cicada Administration.
  *
  * How It Works
  *

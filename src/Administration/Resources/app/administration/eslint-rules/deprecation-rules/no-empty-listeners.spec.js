@@ -105,7 +105,7 @@ ruleTester.run('no-empty-listeners', rule, {
             code: `
 import template from './sw-button.html.twig';
 
-const { Component } = Shopware;
+const { Component } = Cicada;
 
 /**
  * @package admin
@@ -118,7 +118,7 @@ Component.register('sw-button', {
     template,
 
     compatConfig: {
-        ...Shopware.compatConfig,
+        ...Cicada.compatConfig,
         // Needed so that Button classes are bound correctly via \`v-bind="$attrs"\`
         INSTANCE_ATTRS_CLASS_STYLE: false,
     },
@@ -134,12 +134,12 @@ Component.register('sw-button', {
     computed: {
         useMeteorComponent() {
             // Use new meteor component in major
-            if (Shopware.Feature.isActive('v6.7.0.0')) {
+            if (Cicada.Feature.isActive('v6.7.0.0')) {
                 return true;
             }
 
             // Throw warning when deprecated component is used
-            Shopware.Utils.debug.warn(
+            Cicada.Utils.debug.warn(
                 'sw-button',
                 // eslint-disable-next-line max-len
                 'The old usage of "sw-button" is deprecated and will be removed in v6.7.0.0. Please use "mt-button" instead.',
@@ -169,7 +169,7 @@ Component.register('sw-button', {
             output: `
 import template from './sw-button.html.twig';
 
-const { Component } = Shopware;
+const { Component } = Cicada;
 
 /**
  * @package admin
@@ -182,7 +182,7 @@ Component.register('sw-button', {
     template,
 
     compatConfig: {
-        ...Shopware.compatConfig,
+        ...Cicada.compatConfig,
         // Needed so that Button classes are bound correctly via \`v-bind="$attrs"\`
         INSTANCE_ATTRS_CLASS_STYLE: false,
     },
@@ -198,12 +198,12 @@ Component.register('sw-button', {
     computed: {
         useMeteorComponent() {
             // Use new meteor component in major
-            if (Shopware.Feature.isActive('v6.7.0.0')) {
+            if (Cicada.Feature.isActive('v6.7.0.0')) {
                 return true;
             }
 
             // Throw warning when deprecated component is used
-            Shopware.Utils.debug.warn(
+            Cicada.Utils.debug.warn(
                 'sw-button',
                 // eslint-disable-next-line max-len
                 'The old usage of "sw-button" is deprecated and will be removed in v6.7.0.0. Please use "mt-button" instead.',

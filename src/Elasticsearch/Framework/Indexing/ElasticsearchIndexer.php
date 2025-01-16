@@ -16,7 +16,6 @@ use Doctrine\DBAL\Connection;
 use OpenSearch\Client;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 
 /**

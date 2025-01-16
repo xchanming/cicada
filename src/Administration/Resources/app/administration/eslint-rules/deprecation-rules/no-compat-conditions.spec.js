@@ -89,7 +89,7 @@ yetAnotherThing();
             code: `
         const obj = {
           sliderLength() {
-              const children = Shopware.Utils.VueHelper.getCompatChildren();
+              const children = Cicada.Utils.VueHelper.getCompatChildren();
 
               if (this.isCompatEnabled('INSTANCE_CHILDREN')) {
                   if (this.$children[this.activeItem]) {
@@ -108,7 +108,7 @@ yetAnotherThing();
             output: `
         const obj = {
           sliderLength() {
-              const children = Shopware.Utils.VueHelper.getCompatChildren();
+              const children = Cicada.Utils.VueHelper.getCompatChildren();
 
               if (children[this.activeItem]) {
 const activeChildren = children[this.activeItem];
@@ -185,17 +185,17 @@ return true;
             code: `
         const children = this.isCompatEnabled('INSTANCE_CHILDREN')
                 ? this.$children
-                : Shopware.Utils.VueHelper.getCompatChildren();
+                : Cicada.Utils.VueHelper.getCompatChildren();
       `,
             output: `
-        const children = Shopware.Utils.VueHelper.getCompatChildren();
+        const children = Cicada.Utils.VueHelper.getCompatChildren();
       `,
             errors: [{ message: 'Feature flag condition should be removed' }],
         },
         {
             name: 'handles single-line ternary operator correctly',
-            code: `const children = this.isCompatEnabled('INSTANCE_CHILDREN') ? this.$children : Shopware.Utils.VueHelper.getCompatChildren();`,
-            output: `const children = Shopware.Utils.VueHelper.getCompatChildren();`,
+            code: `const children = this.isCompatEnabled('INSTANCE_CHILDREN') ? this.$children : Cicada.Utils.VueHelper.getCompatChildren();`,
+            output: `const children = Cicada.Utils.VueHelper.getCompatChildren();`,
             errors: [{ message: 'Feature flag condition should be removed' }],
         },
         {
@@ -210,7 +210,7 @@ return true;
         if (!this.isCompatEnabled('INSTANCE_EVENT_EMITTER')) {
             this.$root.$off('on-change-notification-center-visibility', this.changeVisibility);
         } else {
-            Shopware.Utils.EventBus.$off('on-change-notification-center-visibility', this.changeVisibility);
+            Cicada.Utils.EventBus.$off('on-change-notification-center-visibility', this.changeVisibility);
         }
       `,
             output: `

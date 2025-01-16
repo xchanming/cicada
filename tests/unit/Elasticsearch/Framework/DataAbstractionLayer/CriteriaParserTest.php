@@ -2,6 +2,10 @@
 
 namespace Cicada\Tests\Unit\Elasticsearch\Framework\DataAbstractionLayer;
 
+use OpenSearchDSL\Aggregation\Bucketing\CompositeAggregation;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Content\Product\Aggregate\ProductManufacturer\ProductManufacturerDefinition;
 use Cicada\Core\Content\Product\Aggregate\ProductTranslation\ProductTranslationDefinition;
@@ -17,6 +21,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\FloatField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\IntField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Bucket\TermsAggregation;
+use Cicada\Core\Framework\DataAbstractionLayer\Search\Aggregation\Metric\StatsAggregation;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\ContainsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
@@ -34,10 +39,6 @@ use Cicada\Core\System\Unit\UnitDefinition;
 use Cicada\Core\Test\Stub\DataAbstractionLayer\StaticDefinitionInstanceRegistry;
 use Cicada\Elasticsearch\ElasticsearchException;
 use Cicada\Elasticsearch\Framework\DataAbstractionLayer\CriteriaParser;
-use OpenSearchDSL\Aggregation\Bucketing\CompositeAggregation;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
@@ -1223,10 +1224,9 @@ EOT,
     #[DataProvider('providerCheapestPrice')]
     public function testCheapestPriceSortingSourceExists(
         FieldSorting $sorting,
-        array        $expectedQuery,
-        Context      $context
-    ): void
-    {
+        array $expectedQuery,
+        Context $context
+    ): void {
         $definition = $this->getDefinition();
 
         $sorting = (new CriteriaParser(

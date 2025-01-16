@@ -5,9 +5,9 @@
 /* eslint-disable max-len */
 
 const getAsyncExpressionName = (node) => {
-    // Shopware.Component.build
-    if (node.callee?.object?.object?.name === 'Shopware' && node.callee?.object?.property?.name === 'Component' && node.callee?.property?.name === 'build') {
-        return 'Shopware.Component.build';
+    // Cicada.Component.build
+    if (node.callee?.object?.object?.name === 'Cicada' && node.callee?.object?.property?.name === 'Component' && node.callee?.property?.name === 'build') {
+        return 'Cicada.Component.build';
     }
 
     const asyncFunctions = [
