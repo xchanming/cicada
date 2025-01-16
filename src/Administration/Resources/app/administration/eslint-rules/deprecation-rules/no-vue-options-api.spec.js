@@ -167,7 +167,7 @@ export default {
             async loadEntityData() {
                 this.numberRange = await this.numberRangeRepository.get(
                     this.numberRangeId,
-                    Cicada.Context.api,
+                    Shopware.Context.api,
                     this.numberRangeCriteria,
                 );
             }
@@ -187,7 +187,7 @@ export default {
                 '      const loadEntityData = async () => {\n' +
                 '                Object.assign(numberRange, await this.numberRangeRepository.get(\n' +
                 '                    this.numberRangeId,\n' +
-                '                    Cicada.Context.api,\n' +
+                '                    Shopware.Context.api,\n' +
                 '                    this.numberRangeCriteria,\n' +
                 '                ))\n' +
                 ';\n' +
@@ -878,12 +878,12 @@ export default {
  */
 import template from './sw-users-permissions-role-view-general.html.twig';
 
-const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
+const { mapPropertyErrors } = Shopware.Component.getComponentHelper();
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'acl',
@@ -915,7 +915,7 @@ export default {
                 "import { inject } from 'vue';\n" +
                 "import template from './sw-users-permissions-role-view-general.html.twig';\n" +
                 '\n' +
-                'const { mapPropertyErrors } = Cicada.Component.getComponentHelper();\n' +
+                'const { mapPropertyErrors } = Shopware.Component.getComponentHelper();\n' +
                 '\n' +
                 'export default {\n' +
                 '    setup() {\n' +
@@ -934,7 +934,7 @@ export default {
                 '        },\n' +
                 'template,\n' +
                 '\n' +
-                '    compatConfig: Cicada.compatConfig,\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
                 '\n' +
                 '    \n' +
                 '\n' +
@@ -955,13 +955,13 @@ export default {
 import template from './sw-users-permissions-user-detail.html.twig';
 import './sw-users-permissions-user-detail.scss';
 
-const { Component, Mixin } = Cicada;
+const { Component, Mixin } = Shopware;
 const { mapPropertyErrors } = Component.getComponentHelper();
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'userService',
@@ -1022,7 +1022,8 @@ export default {
 
     computed: {
         ...mapPropertyErrors('user', [
-            'name',
+            'firstName',
+            'lastName',
             'email',
             'username',
             'localeId',
@@ -1073,7 +1074,7 @@ export default {
                 "import template from './sw-users-permissions-user-detail.html.twig';\n" +
                 "import './sw-users-permissions-user-detail.scss';\n" +
                 '\n' +
-                'const { Component, Mixin } = Cicada;\n' +
+                'const { Component, Mixin } = Shopware;\n' +
                 'const { mapPropertyErrors } = Component.getComponentHelper();\n' +
                 '\n' +
                 'export default {\n' +
@@ -1104,7 +1105,8 @@ export default {
                 '\n' +
                 '    /** TODO: Spread computed property is not fully supported yet. Original code:\n' +
                 "        mapPropertyErrors('user', [\n" +
-                "            'name',\n" +
+                "            'firstName',\n" +
+                "            'lastName',\n" +
                 "            'email',\n" +
                 "            'username',\n" +
                 "            'localeId',\n" +
@@ -1180,7 +1182,7 @@ export default {
                 '        },\n' +
                 'template,\n' +
                 '\n' +
-                '    compatConfig: Cicada.compatConfig,\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
                 '\n' +
                 '    \n' +
                 '\n' +
@@ -1221,13 +1223,13 @@ import './sw-settings-tax-detail.scss';
  * @package checkout
  */
 
-const { Mixin } = Cicada;
-const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
+const { Mixin } = Shopware;
+const { mapPropertyErrors } = Shopware.Component.getComponentHelper();
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'repositoryFactory',
@@ -1319,12 +1321,12 @@ export default {
             };
         },
 
-        isCicadaDefaultTax() {
+        isShopwareDefaultTax() {
             return this.$te(\`global.tax-rates.\${this.tax.name}\`, 'en-GB');
         },
 
         label() {
-            return this.isCicadaDefaultTax ? this.$tc(\`global.tax-rates.\${this.tax.name}\`) : this.tax.name;
+            return this.isShopwareDefaultTax ? this.$tc(\`global.tax-rates.\${this.tax.name}\`) : this.tax.name;
         },
 
         showCustomFields() {
@@ -1418,7 +1420,7 @@ export default {
         },
 
         onChangeLanguage(languageId) {
-            Cicada.State.commit('context/setApiLanguageId', languageId);
+            Shopware.State.commit('context/setApiLanguageId', languageId);
             this.createdComponent();
         },
 
@@ -1467,8 +1469,8 @@ export default {
 ' * @package checkout\n' +
 ' */\n' +
 '\n' +
-'const { Mixin } = Cicada;\n' +
-'const { mapPropertyErrors } = Cicada.Component.getComponentHelper();\n' +
+'const { Mixin } = Shopware;\n' +
+'const { mapPropertyErrors } = Shopware.Component.getComponentHelper();\n' +
 '\n' +
 'export default {\n' +
 '    setup(props) {\n' +
@@ -1522,11 +1524,11 @@ export default {
 "                appearance: 'light',\n" +
 '            };\n' +
 '        });\n' +
-'          const isCicadaDefaultTax = computed(() => {\n' +
+'          const isShopwareDefaultTax = computed(() => {\n' +
 "            return this.$te(`global.tax-rates.${tax.name}`, 'en-GB');\n" +
 '        });\n' +
 '          const label = computed(() => {\n' +
-'            return isCicadaDefaultTax.value ? this.$tc(`global.tax-rates.${tax.name}`) : tax.name;\n' +
+'            return isShopwareDefaultTax.value ? this.$tc(`global.tax-rates.${tax.name}`) : tax.name;\n' +
 '        });\n' +
 '          const showCustomFields = computed(() => {\n' +
 '            return customFieldSets.value && customFieldSets.value.length > 0;\n' +
@@ -1594,7 +1596,7 @@ export default {
 '            return onSave();\n' +
 '        };\n' +
 '      const onChangeLanguage = (languageId) => {\n' +
-"            Cicada.State.commit('context/setApiLanguageId', languageId);\n" +
+"            Shopware.State.commit('context/setApiLanguageId', languageId);\n" +
 '            createdComponent();\n' +
 '        };\n' +
 '      const changeName = (name) => {\n' +
@@ -1655,7 +1657,7 @@ export default {
 '            isNewTax,\n' +
 '            allowSave,\n' +
 '            tooltipSave,\n' +
-'            isCicadaDefaultTax,\n' +
+'            isShopwareDefaultTax,\n' +
 '            label,\n' +
 '            showCustomFields,\n' +
 '            isDefaultTaxRate,\n' +
@@ -1673,7 +1675,7 @@ export default {
 '        },\n' +
 'template,\n' +
 '\n' +
-'    compatConfig: Cicada.compatConfig,\n' +
+'    compatConfig: Shopware.compatConfig,\n' +
 '\n' +
 '    \n' +
 '\n' +
@@ -1723,12 +1725,12 @@ import Sanitizer from 'src/core/helper/sanitizer.helper';
 import template from './sw-settings-snippet-list.html.twig';
 import './sw-settings-snippet-list.scss';
 
-const { Mixin, Data: { Criteria } } = Cicada;
+const { Mixin, Data: { Criteria } } = Shopware;
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'snippetSetService',
@@ -1995,7 +1997,7 @@ export default {
 "import template from './sw-settings-snippet-list.html.twig';\n" +
 "import './sw-settings-snippet-list.scss';\n" +
 '\n' +
-'const { Mixin, Data: { Criteria } } = Cicada;\n' +
+'const { Mixin, Data: { Criteria } } = Shopware;\n' +
 '\n' +
 'export default {\n' +
 '    setup() {\n' +
@@ -2259,7 +2261,7 @@ export default {
 '        },\n' +
 'template,\n' +
 '\n' +
-'    compatConfig: Cicada.compatConfig,\n' +
+'    compatConfig: Shopware.compatConfig,\n' +
 '\n' +
 '    \n' +
 '\n' +
@@ -2290,14 +2292,14 @@ export default {
             import template from './sw-sales-channel-detail-domains.html.twig';
 import './sw-sales-channel-detail-domains.scss';
 
-const { Mixin, Context } = Cicada;
-const { Criteria } = Cicada.Data;
-const { CicadaError } = Cicada.Classes;
+const { Mixin, Context } = Shopware;
+const { Criteria } = Shopware.Data;
+const { ShopwareError } = Shopware.Classes;
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'repositoryFactory',
@@ -2401,9 +2403,9 @@ export default {
 "import template from './sw-sales-channel-detail-domains.html.twig';\n" +
 "import './sw-sales-channel-detail-domains.scss';\n" +
 '\n' +
-'const { Mixin, Context } = Cicada;\n' +
-'const { Criteria } = Cicada.Data;\n' +
-'const { CicadaError } = Cicada.Classes;\n' +
+'const { Mixin, Context } = Shopware;\n' +
+'const { Criteria } = Shopware.Data;\n' +
+'const { ShopwareError } = Shopware.Classes;\n' +
 '\n' +
 'export default {\n' +
 '    setup(props) {\n' +
@@ -2491,7 +2493,7 @@ export default {
 '        },\n' +
 'template,\n' +
 '\n' +
-'    compatConfig: Cicada.compatConfig,\n' +
+'    compatConfig: Shopware.compatConfig,\n' +
 '\n' +
 '    \n' +
 '\n' +
@@ -2559,7 +2561,7 @@ export default {
                     async loadEntityData() {
                         this.numberRange = await this.numberRangeRepository.get(
                             this.numberRangeId,
-                            Cicada.Context.api,
+                            Shopware.Context.api,
                             this.numberRangeCriteria,
                         );
 
@@ -2614,7 +2616,7 @@ export default {
 '      const loadEntityData = async () => {\n' +
 '                        Object.assign(numberRange, await numberRangeRepository.value.get(\n' +
 '                            numberRangeId.value,\n' +
-'                            Cicada.Context.api,\n' +
+'                            Shopware.Context.api,\n' +
 '                            numberRangeCriteria.value,\n' +
 '                        ))\n' +
 ';\n' +

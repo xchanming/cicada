@@ -428,14 +428,14 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template #label>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
         output: `
             <template>
                 <mt-checkbox>
-                    <!-- Slot "label" was removed and should be replaced with "label" prop. Previous value was:  Hello Cicada  -->
+                    <!-- Slot "label" was removed and should be replaced with "label" prop. Previous value was:  Hello Shopware  -->
                 </mt-checkbox>
             </template>`,
         errors: [{
@@ -450,7 +450,7 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template #label>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
@@ -465,14 +465,14 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template v-slot:label>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
         output: `
             <template>
                 <mt-checkbox>
-                    <!-- Slot "label" was removed and should be replaced with "label" prop. Previous value was:  Hello Cicada  -->
+                    <!-- Slot "label" was removed and should be replaced with "label" prop. Previous value was:  Hello Shopware  -->
                 </mt-checkbox>
             </template>`,
         errors: [{
@@ -487,7 +487,7 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template v-slot:label>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
@@ -502,14 +502,14 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template v-slot:hint>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
         output: `
             <template>
                 <mt-checkbox>
-                    <!-- Slot "hint" was removed and should be replaced with "label" prop. Previous value was:  Hello Cicada  -->
+                    <!-- Slot "hint" was removed and should be replaced with "label" prop. Previous value was:  Hello Shopware  -->
                 </mt-checkbox>
             </template>`,
         errors: [{
@@ -524,7 +524,7 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template v-slot:hint>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
@@ -539,14 +539,14 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template #hint>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
         output: `
             <template>
                 <mt-checkbox>
-                    <!-- Slot "hint" was removed and should be replaced with "label" prop. Previous value was:  Hello Cicada  -->
+                    <!-- Slot "hint" was removed and should be replaced with "label" prop. Previous value was:  Hello Shopware  -->
                 </mt-checkbox>
             </template>`,
         errors: [{
@@ -561,7 +561,7 @@ const mtCheckboxInvalidTests = [
             <template>
                 <mt-checkbox>
                     <template #hint>
-                        Hello Cicada
+                        Hello Shopware
                     </template>
                 </mt-checkbox>
             </template>`,
