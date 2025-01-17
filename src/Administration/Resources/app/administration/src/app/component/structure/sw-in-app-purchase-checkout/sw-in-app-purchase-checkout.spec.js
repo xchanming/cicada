@@ -49,6 +49,12 @@ describe('src/app/component/structure/sw-in-app-purchase-checkout', () => {
             featureId: 'Test Feature',
         };
 
+        Cicada.Context.app.config.bundles = {
+            'TestExtension': {
+                identifier: 'TestExtension',
+            }
+        };
+
         Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout);
 
         await flushPromises();
@@ -66,6 +72,12 @@ describe('src/app/component/structure/sw-in-app-purchase-checkout', () => {
     it('should close the modal when closeModal method is called', async () => {
         const requestCheckout = {
             featureId: 'Test Feature',
+        };
+
+        Cicada.Context.app.config.bundles = {
+            'TestExtension': {
+                identifier: 'TestExtension',
+            }
         };
 
         Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout);

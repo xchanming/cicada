@@ -16,7 +16,7 @@ export default function initializeInAppPurchaseCheckout(): void {
             throw new Error(`Extension with the origin "${_event_.origin}" not found.`);
         }
 
-        const store = Cicada.Store.get('inAppPurchaseCheckout');
-        store.request(entry, extension);
+        Cicada.Store.get('inAppPurchaseCheckout').request(entry, extension.name);
+
     });
 }

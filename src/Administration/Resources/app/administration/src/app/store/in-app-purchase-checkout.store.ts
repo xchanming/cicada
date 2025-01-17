@@ -10,13 +10,13 @@ export type InAppPurchaseRequest = Omit<iapCheckout, 'responseType'>;
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export type InAppPurchaseCheckoutState =
     | {
-          entry: null;
-          extension: null;
-      }
+    entry: null;
+    extension: null;
+}
     | {
-          entry: InAppPurchaseRequest;
-          extension: Extension;
-      };
+    entry: InAppPurchaseRequest;
+    extension: string;
+};
 
 const inAppPurchaseCheckoutStore = Cicada.Store.register({
     id: 'inAppPurchaseCheckout',
@@ -27,14 +27,16 @@ const inAppPurchaseCheckoutStore = Cicada.Store.register({
     }),
 
     actions: {
+        // @deprecated tag:v6.7.0 - extension will only be string
         request(entry: InAppPurchaseRequest, extension: Extension | string): void {
-            if (typeof extension === 'string') {
-                const extensionObject = Object.values(Cicada.State.get('extensions')).find((ext) => ext.name === extension);
-                if (extensionObject === undefined) {
-                    throw new Error(`Extension with the name "${extension}" not found.`);
-                }
-                extension = extensionObject;
+            if (Cicada.Utils.types.isObject(extension)) {
+                extension = extension.name;
             }
+
+            if (!Cicada.Context.app.config.bundles?.[extension]) {
+                throw new Error(`Extension with the name "${extension}" not found.`);
+            }
+
             this.entry = entry;
             this.extension = extension;
         },
