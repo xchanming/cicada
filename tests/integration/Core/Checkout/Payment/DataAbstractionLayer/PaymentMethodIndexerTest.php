@@ -160,7 +160,7 @@ class PaymentMethodIndexerTest extends TestCase
             new SystemSource(),
             [],
             Defaults::CURRENCY,
-            [$this->getDeDeLanguageId(), Defaults::LANGUAGE_SYSTEM]
+            [$this->getZhCnLanguageId(), Defaults::LANGUAGE_SYSTEM]
         );
 
         /** @var PaymentMethodCollection $payments */

@@ -23,13 +23,15 @@ class CustomerAddressEntity extends Entity
 
     protected ?string $countryStateId = null;
 
+    protected ?string $cityId = null;
+
+    protected ?string $districtId = null;
+
     protected ?string $salutationId = null;
 
     protected string $name;
 
     protected ?string $zipcode = null;
-
-    protected string $city;
 
     protected ?string $company = null;
 
@@ -48,6 +50,10 @@ class CustomerAddressEntity extends Entity
     protected ?CountryEntity $country = null;
 
     protected ?CountryStateEntity $countryState = null;
+
+    protected ?CountryStateEntity $city = null;
+
+    protected ?CountryStateEntity $district = null;
 
     protected ?SalutationEntity $salutation = null;
 
@@ -113,14 +119,44 @@ class CustomerAddressEntity extends Entity
         $this->zipcode = empty($zipcode) ? null : $zipcode;
     }
 
-    public function getCity(): string
+    public function getCityId(): ?string
+    {
+        return $this->cityId;
+    }
+
+    public function setCityId(?string $cityId): void
+    {
+        $this->cityId = $cityId;
+    }
+
+    public function getDistrictId(): ?string
+    {
+        return $this->districtId;
+    }
+
+    public function setDistrictId(?string $districtId): void
+    {
+        $this->districtId = $districtId;
+    }
+
+    public function getCity(): ?CountryStateEntity
     {
         return $this->city;
     }
 
-    public function setCity(string $city): void
+    public function setCity(CountryStateEntity $city): void
     {
         $this->city = $city;
+    }
+
+    public function getDistrict(): ?CountryStateEntity
+    {
+        return $this->district;
+    }
+
+    public function setDistrict(CountryStateEntity $district): void
+    {
+        $this->district = $district;
     }
 
     public function getCompany(): ?string

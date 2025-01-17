@@ -230,8 +230,8 @@ trait SalesChannelApiTestBehaviour
             'defaultShippingAddress' => [
                 'id' => $addressId,
                 'name' => 'Max',
+                'cityId'=>$this->getValidCountryCityId(),
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),

@@ -311,7 +311,6 @@ class WishlistControllerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),
@@ -377,7 +376,6 @@ class WishlistControllerTest extends TestCase
                     'countryId' => $this->getValidCountryId(),
                     'street' => 'Musterstrasse 13',
                     'zipcode' => '48599',
-                    'city' => 'Epe',
                 ],
             ])
         );

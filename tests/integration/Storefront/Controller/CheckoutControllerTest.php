@@ -691,7 +691,6 @@ class CheckoutControllerTest extends TestCase
             'defaultShippingAddress' => [
                 'id' => $this->customerId,
                 'name' => self::CUSTOMER_NAME,
-                'city' => 'Schöppingen',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
                 'salutationId' => $salutationId,

@@ -295,7 +295,7 @@ class RecalculationServiceTest extends TestCase
     {
         // create order
         $cart = $this->generateDemoCart();
-        $orderId = $this->persistCart($cart, $this->getDeDeLanguageId())['orderId'];
+        $orderId = $this->persistCart($cart, $this->getZhCnLanguageId())['orderId'];
 
         // create version of order
         $versionId = $this->createVersionedOrder($orderId);
@@ -322,7 +322,7 @@ class RecalculationServiceTest extends TestCase
         /** @var OrderEntity $order */
         $order = static::getContainer()->get('order.repository')->search(new Criteria([$orderId]), $versionContext)->get($orderId);
 
-        static::assertEquals($this->getDeDeLanguageId(), $order->getLanguageId());
+        static::assertEquals($this->getZhCnLanguageId(), $order->getLanguageId());
     }
 
     public function testFetchOrder(): void
@@ -1079,14 +1079,12 @@ class RecalculationServiceTest extends TestCase
 
         $name = 'Replace name';
         $street = 'Replace street';
-        $city = 'Replace city';
         $zipcode = '98765';
 
         $customerAddressId = $this->addAddressToCustomer(
             $this->customerId,
             $name,
             $street,
-            $city,
             $zipcode
         );
 
@@ -1280,7 +1278,6 @@ class RecalculationServiceTest extends TestCase
         string $customerId,
         string $name,
         string $street,
-        string $city,
         string $zipcode
     ): string {
         $addressId = Uuid::randomHex();
@@ -1296,7 +1293,6 @@ class RecalculationServiceTest extends TestCase
                     'name' => $name,
                     'street' => $street,
                     'zipcode' => $zipcode,
-                    'city' => $city,
                 ],
             ],
         ];
@@ -1423,7 +1419,6 @@ class RecalculationServiceTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];
@@ -1445,7 +1440,6 @@ class RecalculationServiceTest extends TestCase
         $address->setName('Max');
         $address->setStreet('Musterstraße 1');
         $address->setZipcode('12345');
-        $address->setCity('Musterstadt');
 
         return $address;
     }

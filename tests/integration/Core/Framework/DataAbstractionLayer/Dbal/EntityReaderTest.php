@@ -78,7 +78,7 @@ class EntityReaderTest extends TestCase
         $translations = $products->get($productId)?->getTranslations();
         static::assertNotNull($translations);
         static::assertCount(2, $translations);
-        $deDeTranslation = $translations->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deDeTranslation = $translations->filterByLanguageId($this->getZhCnLanguageId())->first();
         static::assertEquals('Deutscher Name', $deDeTranslation?->get('name'));
     }
 
@@ -103,7 +103,7 @@ class EntityReaderTest extends TestCase
         static::assertInstanceOf(EntityCollection::class, $translations);
         static::assertCount(2, $translations);
         $deDeTranslation = $translations
-            ->filter(fn (Entity $entity) => $entity->get('languageId') === $this->getDeDeLanguageId())
+            ->filter(fn (Entity $entity) => $entity->get('languageId') === $this->getZhCnLanguageId())
             ->first();
         static::assertEquals('Deutscher Name', $deDeTranslation?->get('name'));
     }
@@ -119,7 +119,7 @@ class EntityReaderTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             new Criteria(),
             self::createLocalizedContext([
-                $this->getDeDeLanguageId(),
+                $this->getZhCnLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -144,7 +144,7 @@ class EntityReaderTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getDeDeLanguageId(),
+                $this->getZhCnLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -170,7 +170,7 @@ class EntityReaderTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getDeDeLanguageId(),
+                $this->getZhCnLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -202,7 +202,7 @@ class EntityReaderTest extends TestCase
         $criteria->addFields(['name']);
 
         $context = self::createLocalizedContext([
-            $this->getDeDeLanguageId(),
+            $this->getZhCnLanguageId(),
             Defaults::LANGUAGE_SYSTEM,
         ]);
         $context->setConsiderInheritance(true);
@@ -240,7 +240,7 @@ class EntityReaderTest extends TestCase
         $criteria->addFields(['name']);
 
         $context = self::createLocalizedContext([
-            $this->getDeDeLanguageId(),
+            $this->getZhCnLanguageId(),
             Defaults::LANGUAGE_SYSTEM,
         ]);
         $context->setConsiderInheritance(true);
@@ -304,7 +304,7 @@ class EntityReaderTest extends TestCase
         $productBuilder = new ProductBuilder($ids, $productNumber);
         $productBuilder->price(100);
         if ($deDeTranslation !== null) {
-            $productBuilder->translation($this->getDeDeLanguageId(), 'name', $deDeTranslation);
+            $productBuilder->translation($this->getZhCnLanguageId(), 'name', $deDeTranslation);
         }
         if ($defaultTranslation !== null) {
             $productBuilder->translation(Defaults::LANGUAGE_SYSTEM, 'name', $defaultTranslation);

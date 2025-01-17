@@ -211,7 +211,6 @@ EOF;
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                     'countryId' => $this->fetchFirstIdFromTable('country'),
                 ],
             ],
@@ -239,7 +238,6 @@ EOF;
                         'salutationId' => $this->getValidSalutationId(),
                         'name' => 'Floy',
                         'zipcode' => '59438-0403',
-                        'city' => 'Stellaberg',
                         'street' => 'street',
                         'country' => [
                             'name' => 'kasachstan',
@@ -322,15 +320,9 @@ EOF;
                     'salutationId' => $this->getValidSalutationId(),
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
-                    'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')->upsert([$customer], Context::createDefaultContext());
 

@@ -712,7 +712,7 @@ class EntityWriterTest extends TestCase
             $context->getSource(),
             $context->getRuleIds(),
             $context->getCurrencyId(),
-            [$this->getDeDeLanguageId(), Defaults::LANGUAGE_SYSTEM]
+            [$this->getZhCnLanguageId(), Defaults::LANGUAGE_SYSTEM]
         );
 
         $mediaRepo->create([

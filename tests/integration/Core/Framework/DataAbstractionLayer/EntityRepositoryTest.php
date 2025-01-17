@@ -975,7 +975,6 @@ class EntityRepositoryTest extends TestCase
         $salutation = $this->getValidSalutationId();
         $address = [
             'name' => 'not',
-            'city' => 'not',
             'street' => 'not',
             'zipcode' => 'not',
             'salutationId' => $salutation,
@@ -983,7 +982,6 @@ class EntityRepositoryTest extends TestCase
         ];
         $address2 = [
             'name' => 'not',
-            'city' => 'not',
             'street' => 'not',
             'zipcode' => 'not',
             'salutationId' => $salutation,

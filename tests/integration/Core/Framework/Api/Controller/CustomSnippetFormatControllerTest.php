@@ -287,7 +287,6 @@ class CustomSnippetFormatControllerTest extends TestCase
                 'data' => [
                     'address' => [
                         'zipcode' => '550000',
-                        'city' => 'Da Nang',
                     ],
                 ],
             ],

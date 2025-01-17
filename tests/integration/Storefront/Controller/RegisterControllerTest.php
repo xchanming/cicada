@@ -381,7 +381,6 @@ class RegisterControllerTest extends TestCase
                 'countryId' => $this->getValidCountryId(),
                 'street' => 'Musterstrasse 13',
                 'zipcode' => '48599',
-                'city' => 'Epe',
             ],
         ];
 

@@ -66,7 +66,6 @@ class UpsertAddressTest extends TestCase
         $data = [
             'name' => 'Test',
             'street' => 'Test',
-            'city' => 'Test',
             'zipcode' => 'Test',
             'countryId' => $this->getValidCountryId(),
         ];
@@ -91,7 +90,6 @@ class UpsertAddressTest extends TestCase
         $data = [
             'name' => 'Test',
             'street' => 'Test',
-            'city' => 'Test',
             'zipcode' => 'Test',
             'countryId' => $this->getValidCountryId(),
         ];

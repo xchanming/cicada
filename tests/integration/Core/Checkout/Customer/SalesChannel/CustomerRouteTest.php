@@ -134,14 +134,12 @@ class CustomerRouteTest extends TestCase
                 'countryId' => $this->getValidCountryId(),
                 'street' => 'Examplestreet 11',
                 'zipcode' => '48441',
-                'city' => 'Cologne',
             ],
             'shippingAddress' => [
                 'countryId' => $this->getValidCountryId(),
                 'name' => 'Test 2',
                 'street' => 'Examplestreet 111',
                 'zipcode' => '12341',
-                'city' => 'Berlin',
             ],
         ];
     }

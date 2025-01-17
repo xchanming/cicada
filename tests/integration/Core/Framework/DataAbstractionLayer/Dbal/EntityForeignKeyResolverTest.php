@@ -261,7 +261,6 @@ class EntityForeignKeyResolverTest extends TestCase
                     'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
-                    'city' => 'asd',
                 ],
                 [
                     'id' => $ids->create('shipping-address' . $i),
@@ -270,7 +269,6 @@ class EntityForeignKeyResolverTest extends TestCase
                     'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
-                    'city' => 'asd',
                 ],
             ],
             'lineItems' => [

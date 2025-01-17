@@ -419,7 +419,6 @@ class SetOrderStateActionTest extends TestCase
                             'salutationId' => $salutation,
                             'name' => 'Floy',
                             'zipcode' => '59438-0403',
-                            'city' => 'Stellaberg',
                             'street' => 'street',
                             'country' => [
                                 'name' => 'kasachstan',
@@ -453,7 +452,6 @@ class SetOrderStateActionTest extends TestCase
                                 'salutationId' => $salutation,
                                 'name' => 'Floy',
                                 'zipcode' => '59438-0403',
-                                'city' => 'Stellaberg',
                                 'street' => 'street',
                                 'countryStateId' => $countryStateId,
                                 'country' => [
@@ -477,7 +475,6 @@ class SetOrderStateActionTest extends TestCase
                         'salutationId' => $salutation,
                         'name' => 'Floy',
                         'zipcode' => '59438-0403',
-                        'city' => 'Stellaberg',
                         'street' => 'street',
                         'countryId' => $this->getValidCountryId(),
                         'id' => $addressId,

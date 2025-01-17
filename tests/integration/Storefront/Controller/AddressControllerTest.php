@@ -180,7 +180,6 @@ class AddressControllerTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'foo',
                 'zipcode' => '48599',
-                'city' => 'gronau',
                 'street' => 'Schillerstr.',
                 'countryId' => $this->getValidCountryId(),
             ],
@@ -247,7 +246,6 @@ class AddressControllerTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'foo',
                 'zipcode' => '48599',
-                'city' => 'gronau',
                 'street' => 'Schillerstr.',
                 'countryId' => $this->getValidCountryId(),
             ],
@@ -287,7 +285,6 @@ class AddressControllerTest extends TestCase
                 'department' => 'not',
                 'street' => 'not',
                 'zipcode' => '',
-                'city' => 'not',
                 'countryId' => $this->getValidCountryId(),
             ]),
         ]);
@@ -426,7 +423,6 @@ class AddressControllerTest extends TestCase
                 'id' => $this->addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),
@@ -477,7 +473,6 @@ class AddressControllerTest extends TestCase
                 'defaultShippingAddress' => [
                     'id' => $id1,
                     'name' => 'not',
-                    'city' => 'not',
                     'street' => 'not',
                     'zipcode' => 'not',
                     'salutationId' => $salutationId,
@@ -497,7 +492,6 @@ class AddressControllerTest extends TestCase
                 'defaultShippingAddress' => [
                     'id' => $id2,
                     'name' => 'not',
-                    'city' => 'not',
                     'street' => 'not',
                     'zipcode' => 'not',
                     'salutationId' => $salutationId,
@@ -534,7 +528,6 @@ class AddressControllerTest extends TestCase
                 'department' => 'not',
                 'street' => 'not',
                 'zipcode' => 'not',
-                'city' => 'not',
                 'countryId' => $this->getValidCountryId(),
             ]),
         ]);

@@ -272,7 +272,6 @@ class ChangeEmailRouteTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schoöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),
@@ -322,7 +321,6 @@ class ChangeEmailRouteTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];

@@ -195,7 +195,6 @@ class UpsertAddressRouteTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Test',
             'street' => 'Test',
-            'city' => 'Test',
             'zipcode' => 'Test',
             'countryId' => $this->getValidCountryId(),
         ];
@@ -249,7 +248,6 @@ class UpsertAddressRouteTest extends TestCase
                     'salutationId' => '1',
                     'name' => null,
                     'street' => null,
-                    'city' => null,
                     'zipcode' => null,
                     'countryId' => null,
                     'countryStateId' => null,
@@ -301,7 +299,6 @@ class UpsertAddressRouteTest extends TestCase
                 'salutationId' => '',
                 'name' => 'Test',
                 'street' => 'Test',
-                'city' => 'Test',
                 'zipcode' => 'Test',
             ],
         ];
@@ -310,7 +307,6 @@ class UpsertAddressRouteTest extends TestCase
             [
                 'name' => 'Test',
                 'street' => 'Test',
-                'city' => 'Test',
                 'zipcode' => 'Test',
             ],
         ];
@@ -320,7 +316,6 @@ class UpsertAddressRouteTest extends TestCase
                 'salutationId' => null,
                 'name' => 'Test',
                 'street' => 'Test',
-                'city' => 'Test',
                 'zipcode' => 'Test',
             ],
         ];

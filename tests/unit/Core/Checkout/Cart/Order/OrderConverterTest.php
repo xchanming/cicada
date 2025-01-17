@@ -906,7 +906,6 @@ class OrderConverterTest extends TestCase
         $address->setName('billing-address-first-name');
         $address->setStreet('billing-address-street');
         $address->setZipcode('billing-address-zipcode');
-        $address->setCity('billing-address-city');
         $address->setCountryId('billing-address-country-id');
 
         return $address;
@@ -942,7 +941,6 @@ class OrderConverterTest extends TestCase
         $address->setName('order-address-first-name');
         $address->setStreet('order-address-street');
         $address->setZipcode('order-address-zipcode');
-        $address->setCity('order-address-city');
         $address->setCountryId('order-address-country-id');
         $address->setCountryStateId('order-address-country-state-id');
         $address->setCountry($country);
@@ -983,6 +981,7 @@ class OrderConverterTest extends TestCase
     }
 
     // Expectations
+
     /**
      * @return array<string, mixed>
      */
@@ -1140,6 +1139,9 @@ class OrderConverterTest extends TestCase
                             'extensions' => [],
                             'id' => 'country-state-id',
                             'customFields' => null,
+                            'parentId' => null,
+                            'children' => null,
+                            'parent' => null,
                         ],
                         'address' => null,
                         'extensions' => [],
@@ -1307,7 +1309,6 @@ class OrderConverterTest extends TestCase
                 ],
                 'shippingMethodId' => 'shipping-method-id',
                 'shippingOrderAddress' => [
-                    'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
                     'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',
@@ -1356,7 +1357,6 @@ class OrderConverterTest extends TestCase
             ],
             'addresses' => [
                 [
-                    'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
                     'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',

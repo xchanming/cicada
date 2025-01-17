@@ -347,7 +347,6 @@ class ImportExportTest extends AbstractImportExportTestCase
             'title' => 'dr.',
             'name' => 'Max',
             'zipCode' => '48599',
-            'city' => 'Musterstadt',
             'street' => 'Musterstraße 7',
             'hash' => 'asdf',
             'status' => NewsletterSubscribeRoute::STATUS_DIRECT,

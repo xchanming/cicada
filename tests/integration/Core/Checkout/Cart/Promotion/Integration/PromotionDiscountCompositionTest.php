@@ -376,7 +376,6 @@ class PromotionDiscountCompositionTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];

@@ -98,7 +98,6 @@ class ContextRouteTest extends TestCase
                 'customerId' => $customerId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),

@@ -722,7 +722,7 @@ class AttributeEntityIntegrationTest extends TestCase
             $context->getSource(),
             $context->getRuleIds(),
             $context->getCurrencyId(),
-            [$this->getDeDeLanguageId(), Defaults::LANGUAGE_SYSTEM],
+            [$this->getZhCnLanguageId(), Defaults::LANGUAGE_SYSTEM],
         );
         $search = $this->repository('attribute_entity')
             ->search($criteria, $languageContext);
@@ -920,7 +920,6 @@ class AttributeEntityIntegrationTest extends TestCase
                     'name' => 'John',
                     'street' => 'Main Street',
                     'zipcode' => '59438-0403',
-                    'city' => 'City',
                     'countryId' => $countryId,
                     'id' => $addressId,
                 ],

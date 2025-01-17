@@ -34,7 +34,8 @@ class Migration1536232970CustomerAddress extends MigrationStep
               `name` VARCHAR(50) COLLATE utf8mb4_unicode_ci NOT NULL,
               `street` VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,
               `zipcode` VARCHAR(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-              `city` VARCHAR(70) COLLATE utf8mb4_unicode_ci NOT NULL,
+              `city_id` BINARY(16) NULL,
+              `district_id` BINARY(16) NULL,
               `vat_id` VARCHAR(50) COLLATE utf8mb4_unicode_ci NULL,
               `phone_number` VARCHAR(40) COLLATE utf8mb4_unicode_ci NULL,
               `additional_address_line1` VARCHAR(255) COLLATE utf8mb4_unicode_ci NULL,
@@ -47,6 +48,10 @@ class Migration1536232970CustomerAddress extends MigrationStep
                CONSTRAINT `fk.customer_address.country_id` FOREIGN KEY (`country_id`)
                  REFERENCES `country` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
                CONSTRAINT `fk.customer_address.country_state_id` FOREIGN KEY (`country_state_id`)
+                 REFERENCES `country_state` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+                  CONSTRAINT `fk.customer_address.city_id` FOREIGN KEY (`city_id`)
+                 REFERENCES `country_state` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+                          CONSTRAINT `fk.customer_address.district_id` FOREIGN KEY (`district_id`)
                  REFERENCES `country_state` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
                CONSTRAINT `fk.customer_address.customer_id` FOREIGN KEY (`customer_id`)
                  REFERENCES `customer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

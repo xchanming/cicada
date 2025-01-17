@@ -303,7 +303,6 @@ class DefaultMappingsTest extends TestCase
             ],
             'name' => 'Max',
             'zipCode' => '48624',
-            'city' => 'Schöppingen',
             'street' => 'Ebbinghoff 10',
             'status' => NewsletterSubscribeRoute::STATUS_DIRECT,
             'hash' => Uuid::randomHex(),
@@ -322,7 +321,6 @@ class DefaultMappingsTest extends TestCase
         static::assertSame($newsletterRecipient['salutation']['salutationKey'], $mappedNewsletterRecipient['salutation']);
         static::assertSame($newsletterRecipient['name'], $mappedNewsletterRecipient['name']);
         static::assertSame($newsletterRecipient['zipCode'], $mappedNewsletterRecipient['zip_code']);
-        static::assertSame($newsletterRecipient['city'], $mappedNewsletterRecipient['city']);
         static::assertSame($newsletterRecipient['street'], $mappedNewsletterRecipient['street']);
         static::assertSame($newsletterRecipient['status'], $mappedNewsletterRecipient['status']);
         static::assertSame($newsletterRecipient['hash'], $mappedNewsletterRecipient['hash']);
@@ -338,7 +336,6 @@ class DefaultMappingsTest extends TestCase
         static::assertSame($newsletterRecipient['salutation']['salutationKey'], $unmappedNewsletterRecipient['salutation']['salutationKey']);
         static::assertSame($newsletterRecipient['name'], $unmappedNewsletterRecipient['name']);
         static::assertSame($newsletterRecipient['zipCode'], $unmappedNewsletterRecipient['zipCode']);
-        static::assertSame($newsletterRecipient['city'], $unmappedNewsletterRecipient['city']);
         static::assertSame($newsletterRecipient['street'], $unmappedNewsletterRecipient['street']);
         static::assertSame($newsletterRecipient['status'], $unmappedNewsletterRecipient['status']);
         static::assertSame($newsletterRecipient['hash'], $unmappedNewsletterRecipient['hash']);

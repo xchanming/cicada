@@ -665,7 +665,6 @@ class AuthControllerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),

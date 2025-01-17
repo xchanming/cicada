@@ -92,7 +92,7 @@ class EntityReaderTest extends TestCase
         $this->categoryRepository = static::getContainer()->get('category.repository');
         $this->languageRepository = static::getContainer()->get('language.repository');
         $this->customerRepository = static::getContainer()->get('customer.repository');
-        $this->deLanguageId = $this->getDeDeLanguageId();
+        $this->deLanguageId = $this->getZhCnLanguageId();
 
         $this->registerDefinition(NonIdFieldNamePrimaryKeyTestDefinition::class);
         $this->registerDefinition(ConsistsOfManyToManyDefinition::class);
@@ -1020,7 +1020,6 @@ class EntityReaderTest extends TestCase
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
-            'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'A',
             'countryId' => $this->getValidCountryId(),
@@ -1046,10 +1045,6 @@ class EntityReaderTest extends TestCase
             ],
         ];
 
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->customerRepository->upsert([$customer], $context);
 
         $criteria = new Criteria([$id]);
@@ -1072,7 +1067,6 @@ class EntityReaderTest extends TestCase
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
-            'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'A',
             'countryId' => $this->getValidCountryId(),
@@ -1131,7 +1125,6 @@ class EntityReaderTest extends TestCase
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
-            'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'A',
             'countryId' => $this->getValidCountryId(),
@@ -1234,7 +1227,6 @@ class EntityReaderTest extends TestCase
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
-            'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'A',
             'countryId' => $this->getValidCountryId(),
@@ -1360,7 +1352,6 @@ class EntityReaderTest extends TestCase
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
-            'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'A',
             'countryId' => $this->getValidCountryId(),
@@ -1433,7 +1424,6 @@ class EntityReaderTest extends TestCase
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
-            'city' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'A',
             'countryId' => $this->getValidCountryId(),

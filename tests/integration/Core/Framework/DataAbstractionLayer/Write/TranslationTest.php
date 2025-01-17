@@ -77,7 +77,7 @@ class TranslationTest extends TestCase
         $this->context = Context::createDefaultContext();
         $this->ids = new IdsCollection();
 
-        $this->deLanguageId = $this->getDeDeLanguageId();
+        $this->deLanguageId = $this->getZhCnLanguageId();
     }
 
     public function testCurrencyWithTranslationViaLocale(): void
@@ -886,7 +886,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
         static::assertEquals('en translation', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getZhCnLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
         static::assertEquals('de übersetzung', $deTranslation->getName());
     }
@@ -903,7 +903,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
                 Defaults::LANGUAGE_SYSTEM => [
                     'name' => 'en translation',
                 ],
-                $this->getDeDeLanguageId() => [
+                $this->getZhCnLanguageId() => [
                     'name' => 'de übersetzung',
                 ],
             ],
@@ -926,7 +926,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
         static::assertEquals('en translation', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getZhCnLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
         static::assertEquals('de übersetzung', $deTranslation->getName());
     }
@@ -945,7 +945,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
                 Defaults::LANGUAGE_SYSTEM => [
                     'name' => 'en translation',
                 ],
-                $this->getDeDeLanguageId() => [
+                $this->getZhCnLanguageId() => [
                     'name' => 'de übersetzung',
                 ],
             ],
@@ -968,7 +968,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
         static::assertEquals('en translation', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getZhCnLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
         static::assertEquals('de übersetzung', $deTranslation->getName());
     }
@@ -987,7 +987,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
                 Defaults::LANGUAGE_SYSTEM => [
                     'name' => 'en translation',
                 ],
-                $this->getDeDeLanguageId() => [
+                $this->getZhCnLanguageId() => [
                     'name' => 'de übersetzung',
                 ],
             ],
@@ -1010,7 +1010,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
         static::assertEquals('default', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getZhCnLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
         static::assertEquals('de übersetzung', $deTranslation->getName());
     }

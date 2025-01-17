@@ -133,7 +133,6 @@ class CustomerBuilder
     {
         $address = \array_replace([
             'name' => $this->name,
-            'city' => 'Bielefeld',
             'salutation' => self::salutation($this->ids),
             'street' => 'Buchenweg 5',
             'zipcode' => '33062',

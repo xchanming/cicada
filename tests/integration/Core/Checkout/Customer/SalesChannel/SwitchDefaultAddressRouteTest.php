@@ -127,7 +127,6 @@ class SwitchDefaultAddressRouteTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Test',
             'street' => 'Test',
-            'city' => 'Test',
             'zipcode' => 'Test',
             'countryId' => $this->getValidCountryId(),
         ];

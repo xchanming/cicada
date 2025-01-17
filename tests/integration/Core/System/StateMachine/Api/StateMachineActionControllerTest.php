@@ -169,7 +169,7 @@ class StateMachineActionControllerTest extends TestCase
         $cartService = static::getContainer()->get(CartService::class);
 
         $options = [
-            SalesChannelContextService::LANGUAGE_ID => $this->getDeDeLanguageId(),
+            SalesChannelContextService::LANGUAGE_ID => $this->getZhCnLanguageId(),
             SalesChannelContextService::CUSTOMER_ID => $customerId,
             SalesChannelContextService::SHIPPING_METHOD_ID => $this->createShippingMethod(),
         ];
@@ -222,7 +222,7 @@ class StateMachineActionControllerTest extends TestCase
         /** @var OrderEntity $order */
         $order = $orderRepository->search(new Criteria([$orderId]), $salesChannelContext->getContext())->first();
 
-        static::assertEquals($order->getLanguageId(), $this->getDeDeLanguageId());
+        static::assertEquals($order->getLanguageId(), $this->getZhCnLanguageId());
     }
 
     public function testOrderCartEn(): void
@@ -361,7 +361,6 @@ class StateMachineActionControllerTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                     'countryId' => $this->getValidCountryId(),
                 ],
             ],
@@ -402,7 +401,6 @@ class StateMachineActionControllerTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];

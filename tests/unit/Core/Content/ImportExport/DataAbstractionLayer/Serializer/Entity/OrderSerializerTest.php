@@ -423,7 +423,6 @@ class OrderSerializerTest extends TestCase
             'ruleIds' => [],
             'addresses' => [
                 [
-                    'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
                     'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',
@@ -587,7 +586,6 @@ class OrderSerializerTest extends TestCase
             'ruleIds' => [],
             'addresses' => [
                 [
-                    'city' => 'billing-address-city',
                     'countryId' => 'billing-address-country-id',
                     'name' => 'billing-address-first-name',
                     'salutationId' => 'billing-address-salutation-id',

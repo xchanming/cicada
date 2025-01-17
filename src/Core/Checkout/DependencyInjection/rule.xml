@@ -76,18 +76,6 @@
             <tag name="cicada.rule.definition"/>
         </service>
 
-        <service id="Cicada\Core\Checkout\Customer\Rule\BillingCountryRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\BillingStreetRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\BillingZipCodeRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
         <service id="Cicada\Core\Checkout\Customer\Rule\CustomerGroupRule">
             <tag name="cicada.rule.definition"/>
         </service>
@@ -133,34 +121,6 @@
         </service>
 
         <service id="Cicada\Core\Checkout\Customer\Rule\IsNewsletterRecipientRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingCountryRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingStreetRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\BillingCityRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingCityRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\BillingStateRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingStateRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\ShippingZipCodeRule">
             <tag name="cicada.rule.definition"/>
         </service>
 
@@ -333,10 +293,6 @@
         </service>
 
         <service id="Cicada\Core\Checkout\Customer\Rule\DaysSinceFirstLoginRule">
-            <tag name="cicada.rule.definition"/>
-        </service>
-
-        <service id="Cicada\Core\Checkout\Customer\Rule\AffiliateCodeRule">
             <tag name="cicada.rule.definition"/>
         </service>
 

@@ -152,7 +152,7 @@ class PluginServiceTest extends TestCase
 
     public function testRefreshPluginsWithGermanContext(): void
     {
-        $context = new Context(new SystemSource(), [], Defaults::CURRENCY, [$this->getDeDeLanguageId()]);
+        $context = new Context(new SystemSource(), [], Defaults::CURRENCY, [$this->getZhCnLanguageId()]);
 
         $this->pluginService->refreshPlugins($context, new NullIO());
 

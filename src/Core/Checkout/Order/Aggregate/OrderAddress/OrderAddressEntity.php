@@ -25,6 +25,14 @@ class OrderAddressEntity extends Entity
      */
     protected $countryId;
 
+    protected ?string $cityId = null;
+
+    protected ?string $districtId = null;
+
+    protected ?CountryStateEntity $city = null;
+
+    protected ?CountryStateEntity $district = null;
+
     /**
      * @var string|null
      *
@@ -54,13 +62,6 @@ class OrderAddressEntity extends Entity
     protected $street;
 
     protected ?string $zipcode;
-
-    /**
-     * @var string
-     *
-     * @deprecated tag:v6.7.0 - Will be natively typed
-     */
-    protected $city;
 
     /**
      * @var string|null
@@ -210,14 +211,44 @@ class OrderAddressEntity extends Entity
         $this->zipcode = $zipcode;
     }
 
-    public function getCity(): string
+    public function getCityId(): ?string
+    {
+        return $this->cityId;
+    }
+
+    public function setCityId(?string $cityId): void
+    {
+        $this->cityId = $cityId;
+    }
+
+    public function getDistrictId(): ?string
+    {
+        return $this->districtId;
+    }
+
+    public function setDistrictId(?string $districtId): void
+    {
+        $this->districtId = $districtId;
+    }
+
+    public function getCity(): ?CountryStateEntity
     {
         return $this->city;
     }
 
-    public function setCity(string $city): void
+    public function setCity(CountryStateEntity $city): void
     {
         $this->city = $city;
+    }
+
+    public function getDistrict(): ?CountryStateEntity
+    {
+        return $this->district;
+    }
+
+    public function setDistrict(CountryStateEntity $district): void
+    {
+        $this->district = $district;
     }
 
     public function getCompany(): ?string

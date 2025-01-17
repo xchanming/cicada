@@ -148,7 +148,7 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
                 'name' => 'Max',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
-                'city' => 'Schöppingen',
+                'cityId'=> $this->getValidCountryCityId()
             ])
             ->customerGroup(TestDefaults::FALLBACK_CUSTOMER_GROUP);
 
@@ -192,7 +192,6 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
                 'name' => 'Max',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
-                'city' => 'Schöppingen',
                 'countryId' => $this->getValidCountryId(),
             ])
             ->add('billingAddressId', $addressId)

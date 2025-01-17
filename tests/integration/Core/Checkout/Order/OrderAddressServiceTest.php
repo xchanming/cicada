@@ -69,7 +69,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -110,7 +109,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['deliveries'][0]['shippingOrderAddress']['salutationId'], $shippingAddress->getSalutationId());
         static::assertEquals($orderData[0]['deliveries'][0]['shippingOrderAddress']['name'], $shippingAddress->getName());
         static::assertEquals($orderData[0]['deliveries'][0]['shippingOrderAddress']['zipcode'], $shippingAddress->getZipcode());
-        static::assertEquals($orderData[0]['deliveries'][0]['shippingOrderAddress']['city'], $shippingAddress->getCity());
         static::assertEquals($orderData[0]['deliveries'][0]['shippingOrderAddress']['street'], $shippingAddress->getStreet());
 
         // Check that we have 2 addresses
@@ -139,7 +137,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -180,7 +177,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['addresses'][0]['salutationId'], $billingAddress->getSalutationId());
         static::assertEquals($orderData[0]['addresses'][0]['name'], $billingAddress->getName());
         static::assertEquals($orderData[0]['addresses'][0]['zipcode'], $billingAddress->getZipcode());
-        static::assertEquals($orderData[0]['addresses'][0]['city'], $billingAddress->getCity());
         static::assertEquals($orderData[0]['addresses'][0]['street'], $billingAddress->getStreet());
 
         // Check that we have 2 addresses
@@ -208,8 +204,6 @@ class OrderAddressServiceTest extends TestCase
                 'countryId' => $countryId,
                 'salutationId' => $salutationId,
                 'name' => 'Max',
-                'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -297,7 +291,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -346,7 +339,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['addresses'][0]['salutationId'], $shippingAddress->getSalutationId());
         static::assertEquals($orderData[0]['addresses'][0]['name'], $shippingAddress->getName());
         static::assertEquals($orderData[0]['addresses'][0]['zipcode'], $shippingAddress->getZipcode());
-        static::assertEquals($orderData[0]['addresses'][0]['city'], $shippingAddress->getCity());
         static::assertEquals($orderData[0]['addresses'][0]['street'], $shippingAddress->getStreet());
 
         // Check that we have 2 addresses
@@ -388,7 +380,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -437,7 +428,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['addresses'][0]['salutationId'], $billingAddress->getSalutationId());
         static::assertEquals($orderData[0]['addresses'][0]['name'], $billingAddress->getName());
         static::assertEquals($orderData[0]['addresses'][0]['zipcode'], $billingAddress->getZipcode());
-        static::assertEquals($orderData[0]['addresses'][0]['city'], $billingAddress->getCity());
         static::assertEquals($orderData[0]['addresses'][0]['street'], $billingAddress->getStreet());
 
         // Check that we have 2 addresses
@@ -478,7 +468,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -569,7 +558,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -674,7 +662,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -778,7 +765,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -795,7 +781,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId2,
                 'name' => 'Tom',
                 'zipcode' => '45678',
-                'city' => 'Berlin',
                 'street' => 'Berlinstraße 1',
             ],
         ], $defaultContext);
@@ -904,7 +889,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -960,7 +944,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['addresses'][0]['salutationId'], $billingAddress->getSalutationId());
         static::assertEquals($orderData[0]['addresses'][0]['name'], $billingAddress->getName());
         static::assertEquals($orderData[0]['addresses'][0]['zipcode'], $billingAddress->getZipcode());
-        static::assertEquals($orderData[0]['addresses'][0]['city'], $billingAddress->getCity());
         static::assertEquals($orderData[0]['addresses'][0]['street'], $billingAddress->getStreet());
 
         // Check that we have 3 addresses
@@ -999,7 +982,6 @@ class OrderAddressServiceTest extends TestCase
                 'salutationId' => $salutationId,
                 'name' => 'Max',
                 'zipcode' => '12345',
-                'city' => 'Musterstadt',
                 'street' => 'Musterstraße 1',
             ],
         ], $defaultContext);
@@ -1051,7 +1033,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['deliveries'][1]['shippingOrderAddress']['salutationId'], $shippingAddress->getSalutationId());
         static::assertEquals($orderData[0]['deliveries'][1]['shippingOrderAddress']['name'], $shippingAddress->getName());
         static::assertEquals($orderData[0]['deliveries'][1]['shippingOrderAddress']['zipcode'], $shippingAddress->getZipcode());
-        static::assertEquals($orderData[0]['deliveries'][1]['shippingOrderAddress']['city'], $shippingAddress->getCity());
         static::assertEquals($orderData[0]['deliveries'][1]['shippingOrderAddress']['street'], $shippingAddress->getStreet());
 
         // Check that the billing address has not been updated
@@ -1062,7 +1043,6 @@ class OrderAddressServiceTest extends TestCase
         static::assertEquals($orderData[0]['addresses'][0]['salutationId'], $billingAddress->getSalutationId());
         static::assertEquals($orderData[0]['addresses'][0]['name'], $billingAddress->getName());
         static::assertEquals($orderData[0]['addresses'][0]['zipcode'], $billingAddress->getZipcode());
-        static::assertEquals($orderData[0]['addresses'][0]['city'], $billingAddress->getCity());
         static::assertEquals($orderData[0]['addresses'][0]['street'], $billingAddress->getStreet());
 
         // Check that we have 3 addresses
