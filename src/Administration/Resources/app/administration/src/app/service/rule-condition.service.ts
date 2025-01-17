@@ -1,5 +1,3 @@
-import type EntityCollection from '@cicada-ag/meteor-admin-sdk/es/_internals/data/EntityCollection';
-
 const { Criteria } = Cicada.Data;
 
 type appScriptCondition = {

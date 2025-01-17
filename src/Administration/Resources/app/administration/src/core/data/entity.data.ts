@@ -2,7 +2,6 @@
  * @package admin
  */
 
-import type Vue from 'vue';
 import Entity, { assignSetterMethod } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';
 
 assignSetterMethod((draft, property, value) => {

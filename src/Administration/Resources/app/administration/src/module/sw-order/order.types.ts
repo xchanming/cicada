@@ -1,5 +1,3 @@
-import type { Entity } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';
-
 /**
  * @package checkout
  */

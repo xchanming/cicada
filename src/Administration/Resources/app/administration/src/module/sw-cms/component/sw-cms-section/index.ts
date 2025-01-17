@@ -53,12 +53,12 @@ export default Cicada.Component.wrapComponentConfig({
 
     props: {
         page: {
-            type: Object as PropType<EntitySchema.Entity<'cms_page'>>,
+            type: Object as PropType<Entity<'cms_page'>>,
             required: true,
         },
 
         section: {
-            type: Object as PropType<EntitySchema.Entity<'cms_section'>>,
+            type: Object as PropType<Entity<'cms_section'>>,
             required: true,
         },
 

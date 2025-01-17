@@ -38,9 +38,9 @@ export default Cicada.Component.wrapComponentConfig({
     data() {
         return {
             shopPageSalesChannelId: null as string | null,
-            previousCategories: [] as EntitySchema.Entity<'category'>[],
+            previousCategories: [] as Entity<'category'>[],
             previousCategoryIds: [] as string[],
-            previousLandingPages: [] as EntitySchema.Entity<'landing_page'>[],
+            previousLandingPages: [] as Entity<'landing_page'>[],
             previousLandingPageIds: [] as string[],
             showConfirmChangesModal: false,
             isLoading: false,

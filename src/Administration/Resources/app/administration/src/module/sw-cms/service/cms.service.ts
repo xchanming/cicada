@@ -1,7 +1,5 @@
 import { reactive } from 'vue';
 import type Criteria from '@cicada-ag/meteor-admin-sdk/es/data/Criteria';
-import type EntityCollection from '@cicada-ag/meteor-admin-sdk/es/_internals/data/EntityCollection';
-import type { Entity } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';
 
 const { Application } = Cicada;
 
@@ -550,7 +548,7 @@ function CmsElementEnrich<EntityName extends keyof EntitySchema.Entities>(
             slotData[configKey] = [];
 
             (slotConfigValue as unknown as string[]).forEach((value) => {
-                (slotData[configKey] as EntitySchema.Entity<EntityName>[]).push(collection.get(value) as Entity<EntityName>);
+                (slotData[configKey] as Entity<EntityName>[]).push(collection.get(value) as Entity<EntityName>);
             });
         } else {
             slotData[configKey] = collection.get(slotConfigValue);

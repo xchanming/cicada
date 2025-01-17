@@ -1,5 +1,3 @@
-import type { Entity } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';
-import type EntityCollection from '@cicada-ag/meteor-admin-sdk/es/_internals/data/EntityCollection';
 import type CriteriaType from 'src/core/data/criteria.data';
 import type RepositoryType from '../../../../core/data/repository.data';
 

@@ -1,8 +1,6 @@
 /**
  * @package admin
  */
-import type { Entity } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';
-
 const { Context, Data, Service, State } = Cicada;
 const { Criteria } = Data;
 

@@ -1,4 +1,3 @@
-import type { Entity } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';
 import type { Module } from 'vuex';
 import type { AxiosResponse } from 'axios';
 import type {
