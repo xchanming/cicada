@@ -5,6 +5,7 @@ import CUSTOMER from '../../constant/sw-customer.constant';
  * @package checkout
  */
 
+const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
 const { CicadaError } = Cicada.Classes;
 const { Mixin } = Cicada;
 const { Criteria } = Cicada.Data;
@@ -29,6 +30,7 @@ export default {
     data() {
         return {
             customer: null,
+            address: null,
             customerNumberPreview: '',
             isSaveSuccessful: false,
             isLoading: false,
@@ -36,8 +38,16 @@ export default {
     },
 
     computed: {
+        ...mapPropertyErrors('address', [
+            'company',
+        ]),
+
         customerRepository() {
             return this.repositoryFactory.create('customer');
+        },
+
+        validCompanyField() {
+            return this.customer.accountType === CUSTOMER.ACCOUNT_TYPE_BUSINESS ? this.address.company?.trim().length : true;
         },
 
         languageRepository() {
@@ -74,6 +84,10 @@ export default {
         salutationFilter() {
             return Cicada.Filter.getByName('salutation');
         },
+
+        isBusinessAccountType() {
+            return this.customer?.accountType === CUSTOMER.ACCOUNT_TYPE_BUSINESS;
+        },
     },
 
     watch: {
@@ -82,6 +96,16 @@ export default {
                 if (response['core.systemWideLoginRegistration.isCustomerBoundToSalesChannel']) {
                     this.customer.boundSalesChannelId = salesChannelId;
                 }
+            });
+        },
+
+        'customer.accountType'(value) {
+            if (value === CUSTOMER.ACCOUNT_TYPE_BUSINESS || !this.addressCompanyError) {
+                return;
+            }
+
+            Cicada.State.dispatch('error/removeApiError', {
+                expression: `customer_address.${this.address.id}.company`,
             });
         },
     },
@@ -96,10 +120,22 @@ export default {
 
             Cicada.State.commit('context/resetLanguageToDefault');
             this.customer = this.customerRepository.create();
+
+            const addressRepository = this.repositoryFactory.create(
+                this.customer.addresses.entity,
+                this.customer.addresses.source,
+            );
+
             this.customer.accountType = CUSTOMER.ACCOUNT_TYPE_PRIVATE;
+            this.address = addressRepository.create();
+
+            this.customer.addresses.add(this.address);
+            this.customer.defaultBillingAddressId = this.address.id;
+            this.customer.defaultShippingAddressId = this.address.id;
             this.customer.password = '';
             this.customer.vatIds = [];
             this.customer.salutationId = defaultSalutationId;
+            this.address.salutationId = defaultSalutationId;
         },
 
         saveFinish() {
@@ -154,6 +190,11 @@ export default {
                     });
             }
 
+            if (!this.validCompanyField) {
+                this.createErrorMessageForCompanyField();
+                hasError = true;
+            }
+
             if (hasError) {
                 this.createNotificationError({
                     message: this.$tc('sw-customer.detail.messageSaveError'),
@@ -189,6 +230,20 @@ export default {
             this.numberRangeService.reserve('customer', salesChannelId, true).then((response) => {
                 this.customerNumberPreview = response.number;
                 this.customer.customerNumber = response.number;
+            });
+        },
+
+        createErrorMessageForCompanyField() {
+            this.isLoading = false;
+            Cicada.State.dispatch('error/addApiError', {
+                expression: `customer_address.${this.address.id}.company`,
+                error: new Cicada.Classes.CicadaError({
+                    code: 'c1051bb4-d103-4f74-8988-acbcafc7fdc3',
+                }),
+            });
+
+            this.createNotificationError({
+                message: this.$tc('sw-customer.error.COMPANY_IS_REQUIRED'),
             });
         },
 
