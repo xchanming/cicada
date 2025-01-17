@@ -50,9 +50,9 @@ class CountryStateRouteTest extends TestCase
 
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertCount(34, $response['elements']);
+        static::assertCount(100, $response['elements']);
         static::assertContains($this->ids->get('countryId'), array_column($response['elements'], 'countryId'));
-        static::assertContains('CN-FJ', array_column($response['elements'], 'shortCode'));
+        static::assertContains('540324', array_column($response['elements'], 'shortCode'));
     }
 
     public function testIncludes(): void
@@ -70,9 +70,9 @@ class CountryStateRouteTest extends TestCase
 
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertCount(34, $response['elements']);
+        static::assertCount(100, $response['elements']);
         static::assertArrayNotHasKey('id', $response['elements'][0]);
-        static::assertContains('CN-FJ', array_column($response['elements'], 'shortCode'));
+        static::assertContains('540324', array_column($response['elements'], 'shortCode'));
     }
 
     public function testLimit(): void
@@ -108,7 +108,7 @@ class CountryStateRouteTest extends TestCase
         static::assertCount(2, $response['elements']);
 
         static::assertEquals([
-            'Anhui', 'Beijing',
+            '丁青县', '七台河市',
         ], array_map(fn (array $state) => $state['name'], $response['elements']));
     }
 }

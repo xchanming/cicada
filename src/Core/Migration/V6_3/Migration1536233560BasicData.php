@@ -199,14 +199,14 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createCountry(Connection $connection): void
     {
-        $languageZH = fn(string $countryId, string $name) => [
+        $languageZH = fn (string $countryId, string $name) => [
             'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
             'name' => $name,
             'country_id' => $countryId,
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
         ];
 
-        $languageEN = static fn(string $countryId, string $name) => [
+        $languageEN = static fn (string $countryId, string $name) => [
             'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
             'name' => $name,
             'country_id' => $countryId,
@@ -229,13 +229,9 @@ class Migration1536233560BasicData extends MigrationStep
             $this->processRegionData($data, $connection, $countryId, $countryCode);
         }
     }
+
     /**
-     *
      * @param array<array{code: string, name: string, children?: array<array{code: string, name: string, children?: array<array{code: string, name: string}>}>}> $regions
-     * @param Connection $connection
-     * @param string $countryId
-     * @param string $countryCode
-     * @param string|null $parentId
      */
     private function processRegionData(array $regions, Connection $connection, string $countryId, string $countryCode, ?string $parentId = null): void
     {
@@ -523,7 +519,7 @@ class Migration1536233560BasicData extends MigrationStep
     private function getMediaFolderName(string $entity): string
     {
         $capitalizedEntityParts = array_map(
-            static fn($part) => ucfirst((string)$part),
+            static fn ($part) => ucfirst((string) $part),
             explode('_', $entity)
         );
 
@@ -1115,7 +1111,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'availableEntities' => [
                     'customer' => 'customer',
                     'urlResetPassword' => null,
-                    'salesChannel' => 'sales_channel',],
+                    'salesChannel' => 'sales_channel', ],
             ],
         ];
     }

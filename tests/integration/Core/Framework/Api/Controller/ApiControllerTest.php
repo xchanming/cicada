@@ -2507,7 +2507,7 @@ EOF;
                     'salutationId' => $this->getValidSalutationId(),
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
-                    'zipcode' => '48624'
+                    'zipcode' => '48624',
                 ],
             ],
         ];

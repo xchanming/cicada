@@ -8,14 +8,12 @@ use Cicada\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
-use Cicada\Core\Checkout\Customer\Rule\BillingCountryRule;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
-use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -23,7 +21,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\RequestCriteriaBuilder;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\MailTemplateTestBehaviour;
@@ -37,7 +34,6 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionIntegrationTestBehaviour;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
-use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Controller\AccountOrderController;
 use PHPUnit\Framework\Attributes\Group;
@@ -637,6 +633,7 @@ class OrderRouteTest extends TestCase
                 ],
             ],
         ];
+
         return $order;
     }
 }

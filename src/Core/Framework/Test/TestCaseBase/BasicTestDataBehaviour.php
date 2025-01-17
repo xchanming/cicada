@@ -217,7 +217,7 @@ trait BasicTestDataBehaviour
             ->addFilter(new EqualsFilter('active', true))
             ->addFilter(new EqualsFilter('countryId', $this->getValidCountryId($salesChannelId)))
             ->addFilter(new EqualsFilter('shortCode', '5101'));
-        
+
         /** @var string $id */
         $id = $repository->searchIds($criteria, Context::createDefaultContext())->firstId();
 
