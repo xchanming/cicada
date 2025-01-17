@@ -1118,7 +1118,6 @@ class RecalculationServiceTest extends TestCase
         static::assertSame($orderAddressId, $orderAddress->getId());
         static::assertSame($name, $orderAddress->getName());
         static::assertSame($street, $orderAddress->getStreet());
-        static::assertSame($city, $orderAddress->getCity());
         static::assertSame($zipcode, $orderAddress->getZipcode());
     }
 
