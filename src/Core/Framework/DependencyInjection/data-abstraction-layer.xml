@@ -406,6 +406,13 @@
             <tag name="cicada.field_serializer"/>
         </service>
 
+        <service id="Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\EnumFieldSerializer">
+            <argument type="service" id="validator"/>
+            <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry"/>
+
+            <tag name="cicada.field_serializer"/>
+        </service>
+
         <service id="Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FkFieldSerializer">
             <argument type="service" id="validator"/>
             <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry"/>

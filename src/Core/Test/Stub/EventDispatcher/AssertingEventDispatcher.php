@@ -2,10 +2,10 @@
 
 namespace Cicada\Core\Test\Stub\EventDispatcher;
 
+use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use PHPUnit\Framework\MockObject\MockBuilder;
 use PHPUnit\Framework\MockObject\Rule\InvokedCount;
 use PHPUnit\Framework\TestCase;
-use Cicada\Core\Framework\Test\TestCaseHelper\CallableClass;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class AssertingEventDispatcher extends EventDispatcher

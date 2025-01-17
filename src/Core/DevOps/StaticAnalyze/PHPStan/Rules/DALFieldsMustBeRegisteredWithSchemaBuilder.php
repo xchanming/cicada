@@ -4,12 +4,14 @@ namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\SchemaBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\EnumField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\Log\Package;
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Node\InClassNode;
+use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleError;
@@ -65,7 +67,7 @@ class DALFieldsMustBeRegisteredWithSchemaBuilder implements Rule
             return [];
         }
 
-        if ($ref->is(AssociationField::class) || $ref->is(TranslatedField::class)) {
+        if ($this->isFieldIgnored($ref)) {
             return [];
         }
 
@@ -102,5 +104,15 @@ class DALFieldsMustBeRegisteredWithSchemaBuilder implements Rule
         $reflectionProperty->setAccessible(true);
 
         return $reflectionProperty->getValue();
+    }
+
+    private function isFieldIgnored(ClassReflection $field): bool
+    {
+        return match (true) {
+            $field->is(AssociationField::class),
+            $field->is(EnumField::class),
+            $field->is(TranslatedField::class) => true,
+            default => false,
+        };
     }
 }

@@ -26,6 +26,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\DateField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\DateIntervalField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\DateTimeField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\EmailField;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\EnumField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\FkField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\CascadeDelete;
@@ -205,6 +206,10 @@ class SchemaBuilder
 
     private function getFieldType(Field $field): string
     {
+        if ($field instanceof EnumField) {
+            return $field->getType();
+        }
+
         foreach (self::$fieldMapping as $class => $type) {
             if ($field instanceof $class) {
                 return self::$fieldMapping[$field::class];

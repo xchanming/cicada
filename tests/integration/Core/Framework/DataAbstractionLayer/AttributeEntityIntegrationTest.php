@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
@@ -12,9 +9,11 @@ use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
+use Cicada\Core\Framework\DataAbstractionLayer\AttributeEntityCompiler;
 use Cicada\Core\Framework\DataAbstractionLayer\AttributeEntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\AttributeMappingDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\AttributeTranslationDefinition;
+use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
@@ -31,8 +30,14 @@ use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntity;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityCollection;
+use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityInvalidEnum;
+use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityUnionEnum;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityWithHydrator;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\DummyHydrator;
+use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\StringEnum;
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
@@ -210,6 +215,7 @@ class AttributeEntityIntegrationTest extends TestCase
             'date' => new \DateTimeImmutable('2020-01-01 00:00:00'),
             'dateInterval' => new \DateInterval('P1D'),
             'timeZone' => 'Europe/Berlin',
+            'enum' => 'b',
             'json' => ['key' => 'value'],
             'serialized' => [
                 ['currencyId' => Defaults::CURRENCY, 'gross' => 1, 'net' => 1, 'linked' => true],
@@ -254,6 +260,7 @@ class AttributeEntityIntegrationTest extends TestCase
         static::assertEquals(new \DateTimeImmutable('2020-01-01 00:00:00'), $record->date);
         static::assertEquals(new DateInterval('P1D'), $record->dateInterval);
         static::assertSame('Europe/Berlin', $record->timeZone);
+        static::assertSame(StringEnum::B, $record->enum);
         static::assertSame(['key' => 'value'], $record->json);
         static::assertEquals(
             new PriceCollection([new Price(Defaults::CURRENCY, 1, 1, true)]),
@@ -293,6 +300,7 @@ class AttributeEntityIntegrationTest extends TestCase
             'bool' => true,
             'datetime' => $record->datetime?->format(\DateTimeInterface::RFC3339_EXTENDED),
             'autoIncrement' => 1,
+            'enum' => StringEnum::B,
             'json' => ['key' => 'value'],
             'date' => $record->date?->format(\DateTimeInterface::RFC3339_EXTENDED),
             'dateInterval' => new DateInterval('P1D'),
@@ -322,6 +330,24 @@ class AttributeEntityIntegrationTest extends TestCase
             'translations' => null,
             'customFields' => null,
         ], $json);
+    }
+
+    public function testInvalidEnumsFail(): void
+    {
+        $attributeCompiler = new AttributeEntityCompiler();
+        try {
+            $attributeCompiler->compile(AttributeEntityUnionEnum::class);
+        } catch (\Throwable $e) {
+            static::assertInstanceOf(DataAbstractionLayerException::class, $e);
+            static::assertSame('Expected "enum" to be a BackedEnum. Got "Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\StringEnum&Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\IntEnum" instead.', $e->getMessage());
+        }
+
+        try {
+            $attributeCompiler->compile(AttributeEntityInvalidEnum::class);
+        } catch (\Throwable $e) {
+            static::assertInstanceOf(DataAbstractionLayerException::class, $e);
+            static::assertSame('Expected "enum" to be a BackedEnum. Got "string" instead.', $e->getMessage());
+        }
     }
 
     public function testOneToOne(): void
