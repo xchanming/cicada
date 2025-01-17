@@ -44,7 +44,7 @@ class CicadaNamespaceStyleRule implements Rule
         if (\count($namespaceParts) > 0 && $namespaceParts[0] !== 'Cicada') {
             return [
                 RuleErrorBuilder::message('Namespace must start with Cicada')
-                    ->line($namespaceNode->getLine())
+                    ->line($namespaceNode->getStartLine())
                     ->identifier('cicada.namespace')
                     ->build(),
             ];
@@ -57,7 +57,7 @@ class CicadaNamespaceStyleRule implements Rule
         if ($namespaceParts[2] === 'Command') {
             return [
                 RuleErrorBuilder::message('No global Command directories allowed, put your commands in the right domain directory')
-                    ->line($namespaceNode->getLine())
+                    ->line($namespaceNode->getStartLine())
                     ->identifier('cicada.namespace')
                     ->build(),
             ];
@@ -66,7 +66,7 @@ class CicadaNamespaceStyleRule implements Rule
         if ($namespaceParts[2] === 'Exception') {
             return [
                 RuleErrorBuilder::message('No global Exception directories allowed, put your exceptions in the right domain directory')
-                    ->line($namespaceNode->getLine())
+                    ->line($namespaceNode->getStartLine())
                     ->identifier('cicada.namespace')
                     ->build(),
             ];

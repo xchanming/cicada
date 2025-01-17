@@ -49,7 +49,7 @@ class PaymentHandlerIdentifierSubscriberTest extends TestCase
         /** @var array<PaymentMethodEntity> $methods */
         $methods = $event->getEntities();
 
-        static::assertContainsOnly(PaymentMethodEntity::class, $methods);
+        static::assertContainsOnlyInstancesOf(PaymentMethodEntity::class, $methods);
         static::assertCount(1, $methods);
 
         static::assertSame('handler_cicada_apppaymenthandler', $methods[0]->getFormattedHandlerIdentifier());
@@ -73,7 +73,7 @@ class PaymentHandlerIdentifierSubscriberTest extends TestCase
         /** @var array<PaymentMethodEntity> $methods */
         $methods = $event->getEntities();
 
-        static::assertContainsOnly(PaymentMethodEntity::class, $methods);
+        static::assertContainsOnlyInstancesOf(PaymentMethodEntity::class, $methods);
         static::assertCount(1, $methods);
 
         static::assertSame('foo', $methods[0]->getFormattedHandlerIdentifier());

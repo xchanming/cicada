@@ -38,11 +38,6 @@ use PHPUnit\Framework\TestCase;
 #[CoversClass(Block::class)]
 class BlockTest extends TestCase
 {
-    public function __construct(string $name)
-    {
-        parent::__construct($name);
-    }
-
     public function testFromXml(): void
     {
         $manifest = CmsManifest::createFromXmlFile(__DIR__ . '/../../_fixtures/Resources/cms.xml');
