@@ -136,6 +136,7 @@ class AttributeEntityCompiler
             'since' => $instance->since,
             'parent' => $instance->parent,
             'entity_class' => $class,
+            'hydrator_class' => $instance->hydratorClass,
             'entity_name' => $instance->name,
             'collection_class' => $instance->collectionClass,
             'fields' => $fields,

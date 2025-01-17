@@ -53,5 +53,9 @@ return [
 
         // Class is marked as @final
         'Parameter clearHttp was added to Method clear\(\) of class Cicada\\\\Core\\\\Framework\\\\Adapter\\\\Cache\\\\CacheClearer',
+
+        // Was not intended to be extended, declared as final
+        'Class Cicada\\\\Core\\\\Framework\\\\DataAbstractionLayer\\\\Attribute\\\\Entity became final',
+        'Parameter hydratorClass was added to Method __construct\(\) of class Cicada\\\\Core\\\\Framework\\\\DataAbstractionLayer\\\\Attribute\\\\Entity',
     ],
 ];

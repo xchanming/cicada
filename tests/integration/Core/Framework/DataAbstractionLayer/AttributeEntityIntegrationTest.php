@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer;
 
+use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CartPrice;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
@@ -28,9 +31,8 @@ use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntity;
 use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityCollection;
-use Doctrine\DBAL\Connection;
-use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
-use PHPUnit\Framework\TestCase;
+use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityWithHydrator;
+use Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\DummyHydrator;
 
 /**
  * @internal
@@ -68,6 +70,9 @@ class AttributeEntityIntegrationTest extends TestCase
         static::assertTrue(static::getContainer()->has('attribute_entity_agg.repository'));
         static::assertTrue(static::getContainer()->has('attribute_entity_agg.definition'));
 
+        static::assertTrue(static::getContainer()->has('attribute_entity_with_hydrator.repository'));
+        static::assertTrue(static::getContainer()->has('attribute_entity_with_hydrator.definition'));
+
         static::assertTrue(static::getContainer()->has('attribute_entity_currency.definition'));
 
         static::assertTrue(static::getContainer()->has('attribute_entity_translation.repository'));
@@ -75,8 +80,14 @@ class AttributeEntityIntegrationTest extends TestCase
 
         static::assertInstanceOf(AttributeEntityDefinition::class, static::getContainer()->get('attribute_entity.definition'));
         static::assertSame(AttributeEntityCollection::class, static::getContainer()->get('attribute_entity.definition')->getCollectionClass());
+
         static::assertInstanceOf(AttributeEntityDefinition::class, static::getContainer()->get('attribute_entity_agg.definition'));
         static::assertSame(EntityCollection::class, static::getContainer()->get('attribute_entity_agg.definition')->getCollectionClass());
+
+        static::assertInstanceOf(AttributeEntityDefinition::class, static::getContainer()->get('attribute_entity_with_hydrator.definition'));
+        static::assertSame(EntityCollection::class, static::getContainer()->get('attribute_entity_with_hydrator.definition')->getCollectionClass());
+        static::assertSame(DummyHydrator::class, static::getContainer()->get('attribute_entity_with_hydrator.definition')->getHydratorClass());
+
         static::assertInstanceOf(AttributeMappingDefinition::class, static::getContainer()->get('attribute_entity_currency.definition'));
         static::assertInstanceOf(AttributeTranslationDefinition::class, static::getContainer()->get('attribute_entity_translation.definition'));
 
@@ -660,7 +671,7 @@ class AttributeEntityIntegrationTest extends TestCase
             'string' => 'string',
             'transString' => [
                 'en-GB' => 'transString',
-                'de-DE' => 'transString-de',
+                'zh-CN' => 'transString-de',
             ],
         ];
 
@@ -692,9 +703,9 @@ class AttributeEntityIntegrationTest extends TestCase
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
-        static::assertSame('transString', $record->getTranslation('transString'));
+        static::assertSame('transString-de', $record->getTranslation('transString'));
         $translations = $record->translations ?? [];
-        static::assertCount(1, $translations);
+        static::assertCount(2, $translations);
 
         foreach ($translations as $translation) {
             static::assertInstanceOf(ArrayEntity::class, $translation);
@@ -809,6 +820,29 @@ class AttributeEntityIntegrationTest extends TestCase
         static::assertNotNull($record->orders);
         static::assertCount(1, $record->orders);
         static::assertArrayHasKey($ids->get('order-2'), $record->orders);
+    }
+
+    public function testHydrator(): void
+    {
+        $ids = new IdsCollection();
+
+        $data = [
+            'id' => $ids->get('first-key'),
+            'number' => 'number',
+        ];
+
+        $result = $this->repository('attribute_entity_with_hydrator')
+            ->create([$data], Context::createDefaultContext());
+
+        static::assertNotEmpty($result->getPrimaryKeys('attribute_entity_with_hydrator'));
+        static::assertContains($ids->get('first-key'), $result->getPrimaryKeys('attribute_entity_with_hydrator'));
+
+        $search = $this->repository('attribute_entity_with_hydrator')
+            ->search(new Criteria([$ids->get('first-key')]), Context::createDefaultContext());
+
+        $record = $search->get($ids->get('first-key'));
+        static::assertInstanceOf(AttributeEntityWithHydrator::class, $record);
+        static::assertSame('code-number', $record->number);
     }
 
     private function repository(string $entity): EntityRepository

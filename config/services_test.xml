@@ -56,6 +56,14 @@
             <tag name="cicada.entity"/>
         </service>
 
+        <service id="Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\AttributeEntityWithHydrator">
+            <tag name="cicada.entity"/>
+        </service>
+
+        <service id="Cicada\Tests\Integration\Core\Framework\DataAbstractionLayer\fixture\DummyHydrator" public="true">
+            <argument type="service" id="service_container"/>
+        </service>
+
         <service id="Cicada\Core\Framework\Test\Telemetry\Factory\TraceableTransportFactory">
             <tag name="cicada.metric_transport_factory"/>
         </service>

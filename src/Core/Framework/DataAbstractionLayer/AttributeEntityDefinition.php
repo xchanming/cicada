@@ -2,6 +2,7 @@
 
 namespace Cicada\Core\Framework\DataAbstractionLayer;
 
+use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityHydrator;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Flag;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
@@ -42,6 +43,14 @@ class AttributeEntityDefinition extends EntityDefinition
     public function getCollectionClass(): string
     {
         return $this->meta['collection_class'];
+    }
+
+    /**
+     * @return class-string<EntityHydrator>
+     */
+    public function getHydratorClass(): string
+    {
+        return $this->meta['hydrator_class'];
     }
 
     protected function getParentDefinitionClass(): ?string
