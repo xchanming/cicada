@@ -86,7 +86,7 @@ trait UpdateMailTrait
 
     private function updateEnMailSubject(Connection $connection, MailSubjectUpdate $update): void
     {
-        $languages = array_merge([Defaults::LANGUAGE_SYSTEM], $this->getLanguageIds($connection, 'en-GB'));
+        $languages = array_merge([Defaults::LANGUAGE_SYSTEM], $this->getLanguageIds($connection, 'zh-CN'));
         $languages = array_unique(array_filter($languages));
 
         if (empty($languages)) {

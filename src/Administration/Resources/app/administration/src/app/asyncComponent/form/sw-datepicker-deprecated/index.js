@@ -215,7 +215,7 @@ export default {
         },
 
         userTimeZone() {
-            return Cicada?.State?.get('session')?.currentUser?.timeZone ?? 'UTC';
+            return Cicada?.State?.get('session')?.currentUser?.timeZone ?? 'Asia/Shanghai';
         },
 
         timezoneFormattedValue: {

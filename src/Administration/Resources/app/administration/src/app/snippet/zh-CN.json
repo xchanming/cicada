@@ -204,7 +204,7 @@
     "sw-gtc-checkbox": {
       "label": "我接受",
       "link": "条款和条件。",
-      "url": "https://www.haokeyingxiao.com/en/gtc"
+      "url": "https://www.xchanming.com/en/gtc"
     },
     "sw-price-field": {
       "labelPriceGross": "价格（毛）",
@@ -1188,13 +1188,13 @@
       "documentation": {
         "headline": "需要帮助吗？",
         "linkText": "查看文档",
-        "linkUrl": "https://docs.haokeyingxiao.com/en/cicada-6-en"
+        "linkUrl": "https://docs.xchanming.com/en/cicada-6-en"
       },
       "support": {
         "headline": "我们在这里为你服务！",
         "paragraph": "在我们的文档中找不到有用的信息？联系官方支持，我们会查看你的问题。",
         "linkText": "创建支持请求",
-        "linkUrl": "https://account.haokeyingxiao.com/shops/support"
+        "linkUrl": "https://account.xchanming.com/shops/support"
       }
     },
     "sw-page": {
@@ -1526,7 +1526,7 @@
         "textGetSupport": "尝试联系你的主机提供商以获得支持。",
         "textDetails": "技术细节：APP_URL 配置错误。",
         "labelLearnMoreButton": "了解更多",
-        "linkToDocsArticle": "https://docs.haokeyingxiao.com/en/cicada-6-en/tutorials-and-faq/notes-to-the-APP-URL"
+        "linkToDocsArticle": "https://docs.xchanming.com/en/cicada-6-en/tutorials-and-faq/notes-to-the-APP-URL"
       }
     }
   },
@@ -1615,11 +1615,11 @@
         "title": "支持",
         "documentation": {
           "text": "文档",
-          "href": "https://docs.haokeyingxiao.com/zh"
+          "href": "https://docs.xchanming.com/zh"
         },
         "createSupportRequest": {
           "text": "创建支持请求",
-          "href": "https://account.haokeyingxiao.com/"
+          "href": "https://account.xchanming.com/"
         }
       }
     }

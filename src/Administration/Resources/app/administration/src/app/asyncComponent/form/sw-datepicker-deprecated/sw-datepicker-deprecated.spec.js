@@ -29,7 +29,7 @@ describe('src/app/component/form/sw-datepicker', () => {
     const currentUser = Cicada.State.get('session').currentUser;
 
     beforeEach(async () => {
-        Cicada.State.commit('setCurrentUser', { timeZone: 'UTC' });
+        Cicada.State.commit('setCurrentUser', { timeZone: 'Asia/Shanghai' });
     });
 
     afterAll(() => {

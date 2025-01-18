@@ -44,7 +44,7 @@ WHERE `locale`.`code` = :code
 SQL;
 
         $languageId = $connection->executeQuery($sql, ['code' => $locale])->fetchOne();
-        if (!$languageId && $locale !== 'en-GB') {
+        if (!$languageId && $locale !== 'zh-CN') {
             return null;
         }
 
@@ -59,8 +59,8 @@ SQL;
     {
         $mailTemplateTypeId = Uuid::randomHex();
 
-        $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
+        $defaultLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
+        $enLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
 
         $connection->insert('mail_template_type', [
             'id' => Uuid::fromHexToBytes($mailTemplateTypeId),
@@ -69,11 +69,11 @@ SQL;
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
         ]);
 
-        if ($defaultLangId !== $deLangId) {
+        if ($defaultLangId !== $enLangId) {
             $connection->insert('mail_template_type_translation', [
                 'mail_template_type_id' => Uuid::fromHexToBytes($mailTemplateTypeId),
                 'language_id' => $defaultLangId,
-                'name' => 'User password recovery',
+                'name' => '用户密码恢复',
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
             ]);
         }
@@ -87,11 +87,11 @@ SQL;
             ]);
         }
 
-        if ($deLangId) {
+        if ($enLangId) {
             $connection->insert('mail_template_type_translation', [
                 'mail_template_type_id' => Uuid::fromHexToBytes($mailTemplateTypeId),
-                'language_id' => $deLangId,
-                'name' => 'Benutzer Passwort Wiederherstellung',
+                'language_id' => $enLangId,
+                'name' => 'User password recovery',
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
             ]);
         }
@@ -103,8 +103,8 @@ SQL;
     {
         $mailTemplateId = Uuid::randomHex();
 
-        $defaultLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
-        $deLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
+        $defaultLangId = $this->getLanguageIdByLocale($connection, 'zh-CN');
+        $deLangId = $this->getLanguageIdByLocale($connection, 'en-GB');
 
         $connection->insert('mail_template', [
             'id' => Uuid::fromHexToBytes($mailTemplateId),

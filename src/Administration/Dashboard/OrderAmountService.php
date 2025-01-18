@@ -26,7 +26,7 @@ class OrderAmountService
     /**
      * @return list<array{date:string, amount:float, count:int}>
      */
-    public function load(Context $context, string $since, bool $paid, string $timezone = 'UTC'): array
+    public function load(Context $context, string $since, bool $paid, string $timezone = 'Asia/Shanghai'): array
     {
         $query = $this->connection->createQueryBuilder();
 

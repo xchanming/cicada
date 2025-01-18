@@ -81,7 +81,7 @@ class Kernel extends HttpKernel
         Connection $connection,
         protected string $projectDir
     ) {
-        date_default_timezone_set('UTC');
+        date_default_timezone_set('Asia/Shanghai');
 
         parent::__construct($environment, $debug);
         self::$connection = $connection;

@@ -63,8 +63,8 @@ class Migration1697112043AddPaymentAndShippingTechnicalName extends MigrationSte
             ['handlers' => ArrayParameterType::STRING]
         );
 
-        $this->updateShippingMethodName('Standard', $connection);
-        $this->updateShippingMethodName('Express', $connection);
+        $this->updateShippingMethodName('普通物流', $connection);
+        $this->updateShippingMethodName('快递物流', $connection);
         $this->updateAppShippingMethods($connection);
     }
 

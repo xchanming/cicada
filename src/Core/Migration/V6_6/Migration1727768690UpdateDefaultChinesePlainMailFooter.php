@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  * @internal
  */
 #[Package('core')]
-class Migration1727768690UpdateDefaultEnglishPlainMailFooter extends MigrationStep
+class Migration1727768690UpdateDefaultChinesePlainMailFooter extends MigrationStep
 {
     public function getCreationTimestamp(): int
     {
@@ -23,15 +23,15 @@ class Migration1727768690UpdateDefaultEnglishPlainMailFooter extends MigrationSt
     {
         $defaultLanguageId = $this->fetchDefaultLanguageId($connection);
 
-        $enPlainFooterFilePath = __DIR__ . '/../Fixtures/mails/defaultMailFooter/en-plain.twig';
-        $enPlainFooter = \file_get_contents($enPlainFooterFilePath);
-        \assert($enPlainFooter !== false);
+        $zhPlainFooterFilePath = __DIR__ . '/../Fixtures/mails/defaultMailFooter/zh-plain.twig';
+        $zhPlainFooter = \file_get_contents($zhPlainFooterFilePath);
+        \assert($zhPlainFooter !== false);
 
         $systemDefaultMailHeaderFooterId = $connection->fetchOne('SELECT `id` FROM `mail_header_footer` WHERE `system_default` = 1');
 
         $sqlString = 'UPDATE `mail_header_footer_translation` SET `footer_plain` = :footerPlain  WHERE `mail_header_footer_id`= :mailHeaderFooterId AND `language_id` = :enLangId AND `updated_at` IS NULL';
         $connection->executeStatement($sqlString, [
-            'footerPlain' => $enPlainFooter,
+            'footerPlain' => $zhPlainFooter,
             'mailHeaderFooterId' => $systemDefaultMailHeaderFooterId,
             'enLangId' => $defaultLanguageId,
         ]);
@@ -39,7 +39,7 @@ class Migration1727768690UpdateDefaultEnglishPlainMailFooter extends MigrationSt
 
     private function fetchDefaultLanguageId(Connection $connection): string
     {
-        $code = 'en-GB';
+        $code = 'zh-CN';
         $langId = $connection->fetchOne('
         SELECT `language`.`id` FROM `language` INNER JOIN `locale` ON `language`.`locale_id` = `locale`.`id` WHERE `code` = :code LIMIT 1
         ', ['code' => $code]);
