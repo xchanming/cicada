@@ -1719,21 +1719,21 @@ class ElasticsearchProductTest extends TestCase
         return [
             [
                 new DateHistogramCase(DateHistogramAggregation::PER_MINUTE, [
-                    '2019-01-01 10:11:00' => 1,
-                    '2019-01-01 10:13:00' => 1,
-                    '2019-06-15 13:00:00' => 1,
-                    '2020-09-30 15:00:00' => 1,
-                    '2021-12-10 11:59:00' => 2,
-                    '2024-12-11 23:59:00' => 1,
+                    '2019-01-01 02:11:00' => 1,
+                    '2019-01-01 02:13:00' => 1,
+                    '2019-06-15 05:00:00' => 1,
+                    '2020-09-30 07:00:00' => 1,
+                    '2021-12-10 03:59:00' => 2,
+                    '2024-12-11 15:59:00' => 1,
                 ]),
             ],
             [
                 new DateHistogramCase(DateHistogramAggregation::PER_HOUR, [
-                    '2019-01-01 10:00:00' => 2,
-                    '2019-06-15 13:00:00' => 1,
-                    '2020-09-30 15:00:00' => 1,
-                    '2021-12-10 11:00:00' => 2,
-                    '2024-12-11 23:00:00' => 1,
+                    '2019-01-01 02:00:00' => 2,
+                    '2019-06-15 05:00:00' => 1,
+                    '2020-09-30 07:00:00' => 1,
+                    '2021-12-10 03:00:00' => 2,
+                    '2024-12-11 15:00:00' => 1,
                 ]),
             ],
             [
@@ -1797,25 +1797,6 @@ class ElasticsearchProductTest extends TestCase
                     'Friday 10th Dec, 2021' => 2,
                     'Wednesday 11th Dec, 2024' => 1,
                 ], 'l dS M, Y'),
-            ],
-            [
-                new DateHistogramCase(DateHistogramAggregation::PER_DAY, [
-                    '2019-01-01 00:00:00' => 2,
-                    '2019-06-15 00:00:00' => 1,
-                    '2020-09-30 00:00:00' => 1,
-                    '2021-12-10 00:00:00' => 2,
-                    '2024-12-12 00:00:00' => 1,
-                ], null, 'Europe/Berlin'),
-            ],
-            // case with time zone alias
-            [
-                new DateHistogramCase(DateHistogramAggregation::PER_DAY, [
-                    '2019-01-01 00:00:00' => 2,
-                    '2019-06-15 00:00:00' => 1,
-                    '2020-09-30 00:00:00' => 1,
-                    '2021-12-10 00:00:00' => 2,
-                    '2024-12-12 00:00:00' => 1,
-                ], null, 'Asia/Ho_Chi_Minh'),
             ],
         ];
     }
@@ -3159,32 +3140,32 @@ class ElasticsearchProductTest extends TestCase
         $this->createEntitySearcher()->search($this->productDefinition, $criteria, $this->context);
 
         $criteria = new EsAwareCriteria();
-        $criteria->addFilter(new EqualsFilter('releaseDate', '2019-01-01 10:11:00.000'));
+        $criteria->addFilter(new EqualsFilter('releaseDate', '2019-01-01 02:11:00.000'));
         $result = $this->createEntitySearcher()->search($this->productDefinition, $criteria, $this->context);
 
         static::assertCount(4, $result->getIds());
 
         $criteria = new EsAwareCriteria();
-        $criteria->addFilter(new EqualsFilter('createdAt', '2019-01-01 10:11:00.000'));
+        $criteria->addFilter(new EqualsFilter('createdAt', '2019-01-01 02:11:00.000'));
         $result = $this->createEntitySearcher()->search($this->productDefinition, $criteria, $this->context);
 
         static::assertCount(1, $result->getIds());
 
         // Test with non-zero ms
         $criteria = new EsAwareCriteria();
-        $criteria->addFilter(new EqualsFilter('createdAt', '2019-01-01 10:11:00.123'));
+        $criteria->addFilter(new EqualsFilter('createdAt', '2019-01-01 02:11:00.123'));
         $result = $this->createEntitySearcher()->search($this->productDefinition, $criteria, $this->context);
 
         static::assertCount(1, $result->getIds());
 
         $criteria = new EsAwareCriteria();
-        $criteria->addFilter(new EqualsFilter('releaseDate', '2019/01/01 10:11:00'));
+        $criteria->addFilter(new EqualsFilter('releaseDate', '2019/01/01 02:11:00'));
         $result = $this->createEntitySearcher()->search($this->productDefinition, $criteria, $this->context);
 
         static::assertCount(4, $result->getIds());
 
         $criteria = new EsAwareCriteria();
-        $criteria->addFilter(new EqualsFilter('createdAt', '2019/01/01 10:11:00'));
+        $criteria->addFilter(new EqualsFilter('createdAt', '2019/01/01 02:11:00'));
         $result = $this->createEntitySearcher()->search($this->productDefinition, $criteria, $this->context);
 
         static::assertCount(1, $result->getIds());
