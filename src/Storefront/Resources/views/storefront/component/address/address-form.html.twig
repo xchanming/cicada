@@ -105,7 +105,7 @@
 
         <div class="row g-2 country-and-state-form-elements" data-country-state-select="true" data-country-state-select-options="{{ options|json_encode }}">
             {% block component_address_form_country %}
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-3">
                     {% set initialCountryId = null %}
 
                     {% if data.get('countryId') %}
@@ -158,7 +158,7 @@
                     {% endblock %}
                 </div>
 
-                <div class="form-group col-md-6 d-none">
+                <div class="form-group col-md-3">
                     {% if formViolations.getViolations('/countryStateId') is not empty %}
                         {% set violationPath = '/countryStateId' %}
                     {% elseif formViolations.getViolations("/#{prefix}/countryStateId") is not empty %}
@@ -192,7 +192,7 @@
                     {% endblock %}
                 </div>
 
-                <div class="form-group col-md-6 d-none">
+                <div class="form-group col-md-3">
                     {% if formViolations.getViolations('/cityId') is not empty %}
                         {% set violationPath = '/cityId' %}
                     {% elseif formViolations.getViolations("/#{prefix}/cityId") is not empty %}
@@ -202,24 +202,57 @@
                     {% block component_address_form_country_state_city_label %}
                         <label class="form-label"
                                for="{{ idPrefix ~ prefix }}AddressCountryState">
-                            {{ 'address.countryStateLabel'|trans|sw_sanitize }}
+                            {{ 'address.countryCityLabel'|trans|sw_sanitize }}
                         </label>
                     {% endblock %}
 
                     {% block component_address_form_country_state_city_select %}
                         <select class="country-state-select form-select{% if violationPath %} is-invalid{% endif %}"
-                                id="{{ idPrefix ~ prefix }}AddressCity"
-                                name="{{ prefix }}[countryStateId]"
-                                data-initial-country-state-id="{{ data.get('countryStateId') }}">
+                                id="{{ idPrefix ~ prefix }}AddressCityId"
+                                name="{{ prefix }}[cityId]"
+                                data-initial-city-id="{{ data.get('cityId') }}">
                             <option value=""
                                     selected="selected"
                                     data-placeholder-option="true">
-                                {{ 'address.countryStatePlaceholder'|trans|sw_sanitize }}
+                                {{ 'address.countryCityPlaceholder'|trans|sw_sanitize }}
                             </option>
                         </select>
                     {% endblock %}
 
                     {% block component_address_form_country_state_city_error %}
+                        {% if violationPath %}
+                            {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' %}
+                        {% endif %}
+                    {% endblock %}
+                </div>
+                <div class="form-group col-md-3">
+                    {% if formViolations.getViolations('/districtId') is not empty %}
+                        {% set violationPath = '/districtId' %}
+                    {% elseif formViolations.getViolations("/#{prefix}/districtId") is not empty %}
+                        {% set violationPath = "/#{prefix}/districtId" %}
+                    {% endif %}
+
+                    {% block component_address_form_country_state_city_district_label %}
+                        <label class="form-label"
+                               for="{{ idPrefix ~ prefix }}AddressCountryState">
+                            {{ 'address.countryDistrictLabel'|trans|sw_sanitize }}
+                        </label>
+                    {% endblock %}
+
+                    {% block component_address_form_country_state_city_district_select %}
+                        <select class="country-state-select form-select{% if violationPath %} is-invalid{% endif %}"
+                                id="{{ idPrefix ~ prefix }}AddressCityId"
+                                name="{{ prefix }}[districtId]"
+                                data-initial-city-id="{{ data.get('districtId') }}">
+                            <option value=""
+                                    selected="selected"
+                                    data-placeholder-option="true">
+                                {{ 'address.countryDistrictPlaceholder'|trans|sw_sanitize }}
+                            </option>
+                        </select>
+                    {% endblock %}
+
+                    {% block component_address_form_country_state_city_district_error %}
                         {% if violationPath %}
                             {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' %}
                         {% endif %}
