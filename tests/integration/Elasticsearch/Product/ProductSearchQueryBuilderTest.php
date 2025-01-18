@@ -197,7 +197,7 @@ class ProductSearchQueryBuilderTest extends TestCase
 
         $criteria = new Criteria();
         $criteria->addState(Criteria::STATE_ELASTICSEARCH_AWARE);
-        $criteria->setTerm('the');
+        $criteria->setTerm('的');
         $criteria->addSorting(new FieldSorting('name', FieldSorting::ASCENDING));
 
         $result = $this->productRepository->searchIds($criteria, Context::createDefaultContext());
