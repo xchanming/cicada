@@ -91,9 +91,11 @@ class AccountLoginPageLoader
 
     private function getCountries(SalesChannelContext $salesChannelContext): CountryCollection
     {
+
         $criteria = (new Criteria())
             ->addFilter(new EqualsFilter('active', true))
-            ->addAssociation('states');
+            ->addAssociation('states')
+            ->addFilter(new EqualsFilter('states.parentId', null));
 
         $countries = $this->countryRoute->load(new Request(), $criteria, $salesChannelContext)->getCountries();
 
