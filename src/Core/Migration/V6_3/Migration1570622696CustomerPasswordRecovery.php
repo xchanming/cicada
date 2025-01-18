@@ -61,7 +61,7 @@ WHERE `locale`.`code` = :code
 SQL;
 
         $languageId = $connection->executeQuery($sql, ['code' => $locale])->fetchOne();
-        if (!$languageId && $locale !== 'en-GB') {
+        if (!$languageId && $locale !== 'zh-CN') {
             return null;
         }
 
