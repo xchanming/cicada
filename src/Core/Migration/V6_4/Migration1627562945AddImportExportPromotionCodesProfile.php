@@ -49,7 +49,7 @@ class Migration1627562945AddImportExportPromotionCodesProfile extends MigrationS
         $translations = new Translations(
             [
                 'import_export_profile_id' => $id,
-                'label' => 'Standardprofil Aktionscodes',
+                'label' => '优惠码',
             ],
             [
                 'import_export_profile_id' => $id,

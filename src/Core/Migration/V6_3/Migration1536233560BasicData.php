@@ -850,7 +850,7 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('salutation_translation', [
             'salutation_id' => $notSpecified,
             'language_id' => $languageZh,
-            'display_name' => '未知',
+            'display_name' => '未指定',
             'letter_name' => ' ',
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
         ]);

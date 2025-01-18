@@ -59,7 +59,7 @@ class Migration1636971615AddImportExportPromotionDiscountProfile extends Migrati
         $translations = new Translations(
             [
                 'import_export_profile_id' => $id,
-                'label' => 'Standardprofil Aktionsrabatte',
+                'label' => '促销',
             ],
             [
                 'import_export_profile_id' => $id,
