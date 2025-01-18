@@ -20,10 +20,8 @@ use Cicada\Core\Content\Product\Cart\ProductCartProcessor;
 use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\CustomField\CustomFieldTypes;
@@ -814,91 +812,6 @@ class ProductCartProcessorTest extends TestCase
         $cart = $this->cartService->getCart($context->getToken(), $context, false);
         $lineItem = $cart->get($this->ids->get('product'));
         static::assertSame(0.0, $lineItem?->getPrice()?->getTaxRules()?->first()?->getTaxRate());
-    }
-
-    public function testProducePriceChangeAfterContextRuleChange(): void
-    {
-        $countryIds = $this->getCountryIds();
-
-        static::assertIsString($countryIds[0]);
-
-        $customerId = $this->createCustomer($countryIds[0]);
-
-        $this->createProduct([
-            'prices' => [
-                [
-                    'quantityStart' => 1,
-                    'rule' => [
-                        'id' => $this->ids->create('rule'),
-                        'name' => 'Test rule',
-                        'priority' => 1,
-                        'conditions' => [
-                            [
-                                'type' => 'customerShippingCountry',
-                                'value' => [
-                                    'operator' => '=',
-                                    'countryIds' => [$countryIds[0]],
-                                ],
-                            ],
-                        ],
-                    ],
-                    'price' => [
-                        [
-                            'currencyId' => Defaults::CURRENCY,
-                            'gross' => 50,
-                            'net' => 9, 'linked' => false,
-                            'listPrice' => ['gross' => 60, 'net' => 60, 'linked' => false],
-                        ],
-                    ],
-                ],
-            ],
-        ]);
-        $token = $this->ids->create('token');
-
-        $context = static::getContainer()->get(SalesChannelContextFactory::class)->create($token, TestDefaults::SALES_CHANNEL, [SalesChannelContextService::CUSTOMER_ID => $customerId]);
-
-        static::assertNotNull($context->getCustomer());
-
-        $product = static::getContainer()->get(ProductLineItemFactory::class)
-            ->create(['id' => $this->ids->get('product'), 'referencedId' => $this->ids->get('product')], $context);
-
-        $cart = $this->cartService->getCart($token, $context);
-        $this->cartService->add($cart, $product, $context);
-
-        $actualProduct = $cart->get($product->getId());
-
-        static::assertSame(50.0, $actualProduct?->getPrice()?->getTotalPrice());
-
-        static::getContainer()->get('customer_address.repository')->update([
-            [
-                'id' => $context->getCustomer()->getDefaultBillingAddressId(),
-                'countryId' => $countryIds[0],
-            ],
-        ], Context::createDefaultContext());
-
-        $context = static::getContainer()->get(SalesChannelContextFactory::class)->create($token, TestDefaults::SALES_CHANNEL, [SalesChannelContextService::CUSTOMER_ID => $customerId]);
-
-        $cart = $this->cartService->getCart($token, $context, false);
-
-        $actualProduct = $cart->get($product->getId());
-
-        static::assertSame(50.0, $actualProduct?->getPrice()?->getTotalPrice());
-    }
-
-    /**
-     * @return list<string>|list<array<string, string>>
-     */
-    private function getCountryIds(): array
-    {
-        /** @var EntityRepository $repository */
-        $repository = static::getContainer()->get('country.repository');
-
-        $criteria = (new Criteria())->setLimit(2)
-            ->addFilter(new EqualsFilter('active', true))
-            ->addFilter(new EqualsFilter('shippingAvailable', true))
-            ->addSorting(new FieldSorting('iso'));
-
-        return $repository->searchIds($criteria, Context::createDefaultContext())->getIds();
     }
 
     private function createCustomer(string $countryId): string

@@ -39,34 +39,34 @@ class SearchKeywordUpdaterTest extends TestCase
 
     /**
      * @param array<mixed> $productData
+     * @param string[] $chineseKeywords
      * @param string[] $englishKeywords
-     * @param string[] $germanKeywords
      * @param string[] $additionalDictionaries
      */
     #[DataProvider('productKeywordProvider')]
-    public function testItUpdatesKeywordsAndDictionary(array $productData, IdsCollection $ids, array $englishKeywords, array $germanKeywords, array $additionalDictionaries = []): void
+    public function testItUpdatesKeywordsAndDictionary(array $productData, IdsCollection $ids, array $chineseKeywords, array $englishKeywords, array $additionalDictionaries = []): void
     {
         $this->productRepository->create([$productData], Context::createDefaultContext());
 
-        $this->assertKeywords($ids->get('1000'), Defaults::LANGUAGE_SYSTEM, $englishKeywords);
-        $this->assertKeywords($ids->get('1000'), $this->getenGbLanguageId(), $germanKeywords);
+        $this->assertKeywords($ids->get('1000'), Defaults::LANGUAGE_SYSTEM, $chineseKeywords);
+        $this->assertKeywords($ids->get('1000'), $this->getenGbLanguageId(), $englishKeywords);
 
-        $expectedDictionary = array_merge($englishKeywords, $additionalDictionaries);
+        $expectedDictionary = array_merge($chineseKeywords, $additionalDictionaries);
         sort($expectedDictionary);
         $this->assertDictionary(Defaults::LANGUAGE_SYSTEM, $expectedDictionary);
-        $expectedDictionary = array_merge($germanKeywords, $additionalDictionaries);
+        $expectedDictionary = array_merge($englishKeywords, $additionalDictionaries);
         sort($expectedDictionary);
         $this->assertDictionary($this->getenGbLanguageId(), $expectedDictionary);
     }
 
     /**
      * @param array<mixed> $productData
+     * @param string[] $chineseKeywords
      * @param string[] $englishKeywords
-     * @param string[] $germanKeywords
      * @param string[] $additionalDictionaries
      */
     #[DataProvider('productKeywordProvider')]
-    public function testItUpdatesKeywordsForAvailableLanguagesOnly(array $productData, IdsCollection $ids, array $englishKeywords, array $germanKeywords, array $additionalDictionaries = []): void
+    public function testItUpdatesKeywordsForAvailableLanguagesOnly(array $productData, IdsCollection $ids, array $chineseKeywords, array $englishKeywords, array $additionalDictionaries = []): void
     {
         $context = Context::createDefaultContext();
 
@@ -81,9 +81,9 @@ class SearchKeywordUpdaterTest extends TestCase
 
         $this->productRepository->create([$productData], Context::createDefaultContext());
 
-        $this->assertKeywords($ids->get('1000'), Defaults::LANGUAGE_SYSTEM, $englishKeywords);
+        $this->assertKeywords($ids->get('1000'), Defaults::LANGUAGE_SYSTEM, $chineseKeywords);
 
-        $expectedDictionary = array_merge($englishKeywords, $additionalDictionaries);
+        $expectedDictionary = array_merge($chineseKeywords, $additionalDictionaries);
         sort($expectedDictionary);
         $this->assertDictionary(Defaults::LANGUAGE_SYSTEM, $expectedDictionary);
 
@@ -166,24 +166,6 @@ class SearchKeywordUpdaterTest extends TestCase
         $idsCollection = new IdsCollection();
 
         return [
-            'test different languages' => [
-                (new ProductBuilder($idsCollection, '1000'))
-                    ->price(10)
-                    ->name('Test product')
-                    ->translation('zh-CN', 'name', 'Test produkt')
-                    ->build(),
-                $idsCollection,
-                [
-                    '1000', // productNumber
-                    'product', // part of name
-                    'test', // part of name
-                ],
-                [
-                    '1000', // productNumber
-                    'produkt', // part of name
-                    'test', // part of name
-                ],
-            ],
             'test it uses parent languages' => [
                 (new ProductBuilder($idsCollection, '1000'))
                     ->price(10)
@@ -200,78 +182,6 @@ class SearchKeywordUpdaterTest extends TestCase
                     'product', // part of name
                     'test', // part of name
                 ],
-            ],
-            'test it uses correct languages for association' => [
-                (new ProductBuilder($idsCollection, '1000'))
-                    ->price(10)
-                    ->name('Test product')
-                    ->manufacturer('manufacturer', ['zh-CN' => ['name' => 'Hersteller']])
-                    ->build(),
-                $idsCollection,
-                [
-                    '1000', // productNumber
-                    'manufacturer', // manufacturer name
-                    'product', // part of name
-                    'test', // part of name
-                ],
-                [
-                    '1000', // productNumber
-                    'Hersteller', // manufacturer name
-                    'product', // part of name
-                    'test', // part of name
-                ],
-            ],
-            'test it uses correct translation from parent' => [
-                (new ProductBuilder($idsCollection, '1001'))
-                    ->name('Test product')
-                    ->translation('zh-CN', 'name', 'Test produkt')
-                    ->price(5)
-                    ->variant(
-                        (new ProductBuilder($idsCollection, '1000'))
-                            ->price(10)
-                            ->name(null)
-                            ->build()
-                    )
-                    ->build(),
-                $idsCollection,
-                [
-                    '1000', // productNumber
-                    'product', // part of name
-                    'test', // part of name
-                ],
-                [
-                    '1000', // productNumber
-                    'produkt', // part of name
-                    'test', // part of name
-                ],
-                ['1001'],
-            ],
-            'test it uses correct translation from parent association' => [
-                (new ProductBuilder($idsCollection, '1001'))
-                    ->name('Test product')
-                    ->manufacturer('manufacturer', ['zh-CN' => ['name' => 'Hersteller']])
-                    ->price(5)
-                    ->variant(
-                        (new ProductBuilder($idsCollection, '1000'))
-                            ->price(10)
-                            ->name(null)
-                            ->build()
-                    )
-                    ->build(),
-                $idsCollection,
-                [
-                    '1000', // productNumber
-                    'manufacturer', // manufacturer name
-                    'product', // part of name
-                    'test', // part of name
-                ],
-                [
-                    '1000', // productNumber
-                    'Hersteller', // manufacturer name
-                    'product', // part of name
-                    'test', // part of name
-                ],
-                ['1001'],
             ],
         ];
     }

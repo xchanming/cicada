@@ -99,7 +99,6 @@ export default class CountryStateSelectPlugin extends Plugin {
 
     requestStateData(countryId, countryStateId = null, stateRequired = false) {
         const payload = JSON.stringify({ countryId });
-
         this._client.post(
             window.router['frontend.country.country-data'],
             payload,
