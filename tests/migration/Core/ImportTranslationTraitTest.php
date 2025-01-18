@@ -22,7 +22,7 @@ class ImportTranslationTraitTest extends TestCase
     use ImportTranslationsTrait;
     use MigrationTestTrait;
 
-    public function testEnglishDefault(): void
+    public function testChineseDefault(): void
     {
         $ids = new IdsCollection();
 
@@ -44,12 +44,12 @@ class ImportTranslationTraitTest extends TestCase
                 [
                     'category_id' => Uuid::fromHexToBytes($ids->get('category')),
                     'category_version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
-                    'name' => 'en name',
+                    'name' => 'zh name',
                 ],
                 [
                     'category_id' => Uuid::fromHexToBytes($ids->get('category')),
                     'category_version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
-                    'name' => 'zh name',
+                    'name' => 'en name',
                 ]
             ),
             KernelLifecycleManager::getConnection()
