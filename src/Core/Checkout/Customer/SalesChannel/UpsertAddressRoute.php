@@ -90,7 +90,7 @@ class UpsertAddressRoute extends AbstractUpsertAddressRoute
             'salutationId' => $data->get('salutationId'),
             'name' => $data->get('name'),
             'street' => $data->get('street'),
-            'city' => $data->get('city'),
+            'cityId' => $data->get('cityId'),
             'zipcode' => $data->get('zipcode'),
             'countryId' => $data->get('countryId'),
             'countryStateId' => $data->get('countryStateId') ?: null,

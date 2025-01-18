@@ -289,7 +289,7 @@ class ThemeLifecycleServiceTest extends TestCase
     public function testItSkipsTranslationsIfLanguageIsNotAvailable(): void
     {
         $bundle = $this->getThemeConfigWithLabels();
-        $this->deleteLanguageForLocale('zh-CN');
+        $this->deleteLanguageForLocale('en-GB');
 
         $this->themeLifecycleService->refreshTheme($bundle, $this->context);
 
@@ -297,12 +297,12 @@ class ThemeLifecycleServiceTest extends TestCase
 
         static::assertInstanceOf(ThemeTranslationCollection::class, $theme->getTranslations());
         static::assertCount(1, $theme->getTranslations());
-        static::assertEquals('en-GB', $theme->getTranslations()->first()?->getLanguage()?->getLocale()?->getCode());
+        static::assertEquals('zh-CN', $theme->getTranslations()->first()?->getLanguage()?->getLocale()?->getCode());
         static::assertEquals([
-            'fields.sw-image' => 'test label',
+            'fields.sw-image' => '测试标签',
         ], $theme->getTranslations()->first()?->getLabels());
         static::assertEquals([
-            'fields.sw-image' => 'test help',
+            'fields.sw-image' => '测试帮助',
         ], $theme->getTranslations()->first()?->getHelpTexts());
     }
 
@@ -319,19 +319,19 @@ class ThemeLifecycleServiceTest extends TestCase
         static::assertCount(2, $theme->getTranslations());
         $translation = $this->getTranslationByLocale('xx-XX', $theme->getTranslations());
         static::assertEquals([
-            'fields.sw-image' => 'test label',
+            'fields.sw-image' => '测试标签',
         ], $translation->getLabels());
         static::assertEquals([
-            'fields.sw-image' => 'test help',
+            'fields.sw-image' => '测试帮助',
         ], $translation->getHelpTexts());
 
-        $germanTranslation = $this->getTranslationByLocale('zh-CN', $theme->getTranslations());
+        $englishTranslation = $this->getTranslationByLocale('en-GB', $theme->getTranslations());
         static::assertEquals([
-            'fields.sw-image' => 'Test label',
-        ], $germanTranslation->getLabels());
+            'fields.sw-image' => 'test label',
+        ], $englishTranslation->getLabels());
         static::assertEquals([
-            'fields.sw-image' => 'Test Hilfe',
-        ], $germanTranslation->getHelpTexts());
+            'fields.sw-image' => 'test help',
+        ], $englishTranslation->getHelpTexts());
     }
 
     public function testItRemovesAThemeCorrectly(): void

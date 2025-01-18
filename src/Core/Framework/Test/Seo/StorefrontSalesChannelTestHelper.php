@@ -150,7 +150,6 @@ trait StorefrontSalesChannelTestHelper
                 'salutationId' => $this->getValidSalutationId(),
                 'name' => 'foo',
                 'zipcode' => '48599',
-                'city' => 'gronau',
                 'street' => 'Schillerstr.',
             ],
             'defaultShippingAddressId' => $defaultBillingAddress,

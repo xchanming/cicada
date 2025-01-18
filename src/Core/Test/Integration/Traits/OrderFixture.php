@@ -87,7 +87,7 @@ trait OrderFixture
                             'salutationId' => $salutationId,
                             'name' => 'Floy',
                             'zipcode' => '59438-0403',
-                            'city' => 'Stellaberg',
+                            'cityId' => $this->getValidCountryCityId(),
                             'street' => 'street',
                             'country' => [
                                 'name' => 'kasachstan',
@@ -147,7 +147,7 @@ trait OrderFixture
                                 'salutationId' => $salutationId,
                                 'name' => 'Floy',
                                 'zipcode' => '59438-0403',
-                                'city' => 'Stellaberg',
+                                'cityId' => $this->getValidCountryCityId(),
                                 'street' => 'street',
                                 'countryStateId' => $countryStateId,
                                 'country' => [
@@ -171,7 +171,7 @@ trait OrderFixture
                         'salutationId' => $salutationId,
                         'name' => 'Floy',
                         'zipcode' => '59438-0403',
-                        'city' => 'Stellaberg',
+                        'cityId' => $this->getValidCountryCityId(),
                         'street' => 'street',
                         'countryId' => $countryId,
                         'id' => $addressId,

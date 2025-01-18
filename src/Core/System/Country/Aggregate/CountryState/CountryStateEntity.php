@@ -23,7 +23,6 @@ class CountryStateEntity extends Entity
 
     protected ?CountryStateEntity $parent = null;
 
-
     /**
      * @var string
      *

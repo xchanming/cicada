@@ -527,7 +527,7 @@ class AddressControllerTest extends TestCase
                 'company' => 'not',
                 'department' => 'not',
                 'street' => 'not',
-                'zipcode' => 'not',
+                'cityId' => $this->getValidCountryCityId(),
                 'countryId' => $this->getValidCountryId(),
             ]),
         ]);

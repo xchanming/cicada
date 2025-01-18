@@ -70,12 +70,12 @@ class CheckoutControllerTest extends TestCase
     private const CUSTOMER_NAME = 'Tester';
     private const TEST_AFFILIATE_CODE = 'testAffiliateCode';
     private const TEST_CAMPAIGN_CODE = 'testCampaignCode';
-    private const SHIPPING_METHOD_BLOCKED_ERROR_CONTENT = 'The shipping method "%s" is blocked for your current shopping cart.';
-    private const SHIPPING_METHOD_CHANGED_ERROR_CONTENT = '"%s" shipping is not available for your current cart, the shipping was changed to "%s".';
-    private const PAYMENT_METHOD_BLOCKED_ERROR_CONTENT = 'The payment method "Cash on delivery" is blocked for your current shopping cart.';
-    private const PAYMENT_METHOD_CHANGED_ERROR_CONTENT = '"%s" payment is not available for your current cart, the payment was changed to "%s".';
-    private const PROMOTION_NOT_FOUND_ERROR_CONTENT = 'Promo code "tn-08" could not be found.';
-    private const PRODUCT_STOCK_REACHED_ERROR_CONTENT = 'The product "Test product" is not available any more';
+    private const SHIPPING_METHOD_BLOCKED_ERROR_CONTENT = '当前购物车中的商品无法使用配送方式 "%s"';
+    private const SHIPPING_METHOD_CHANGED_ERROR_CONTENT = '"%s" 送货方式不可用于当前购物车，送货方式已更改为 "%s"。';
+    private const PAYMENT_METHOD_BLOCKED_ERROR_CONTENT = '当前购物车中的商品无法使用支付方式 "货到付款"';
+    private const PAYMENT_METHOD_CHANGED_ERROR_CONTENT = '"%s" 付款方式不可用于当前购物车，付款方式已更改为 "%s"。';
+    private const PROMOTION_NOT_FOUND_ERROR_CONTENT = '未找到代码为 "tn-08" 的促销。';
+    private const PRODUCT_STOCK_REACHED_ERROR_CONTENT = '产品 "Test product" 不再可用';
 
     private ?string $customerId = null;
 
@@ -308,10 +308,10 @@ class CheckoutControllerTest extends TestCase
         }
         if ($testSwitchToDefault) {
             $activeShippingMethod = $crawler->filterXPath('//div[contains(concat(" ",normalize-space(@class)," "), " shipping-method-radio ")][input/@checked]')->text();
-            static::assertStringContainsString('Standard', $activeShippingMethod);
+            static::assertStringContainsString('普通物流', $activeShippingMethod);
 
             $activePaymentMethod = $crawler->filterXPath('//div[contains(concat(" ",normalize-space(@class)," "), " payment-method-radio ")][input/@checked]')->text();
-            static::assertStringContainsString('Paid in advance', $activePaymentMethod);
+            static::assertStringContainsString('预付', $activePaymentMethod);
         }
 
         // Ensure submit order button is disabled
@@ -331,23 +331,23 @@ class CheckoutControllerTest extends TestCase
             [
                 new ErrorCollection(
                     [
-                        new ShippingMethodChangedError('Standard', 'Express'),
+                        new ShippingMethodChangedError('普通物流', '快递物流'),
                     ]
                 ),
                 [
-                    \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, 'Standard', 'Express'),
+                    \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, '普通物流', '快递物流'),
                 ],
             ],
             // All shipping methods blocked expected to stay blocked
             [
                 new ErrorCollection(
                     [
-                        new ShippingMethodChangedError('Standard', 'Express'),
-                        new ShippingMethodChangedError('Express', 'Standard'),
+                        new ShippingMethodChangedError('普通物流', '快递物流'),
+                        new ShippingMethodChangedError('快递物流', '普通物流'),
                     ]
                 ),
                 [
-                    \sprintf(self::SHIPPING_METHOD_BLOCKED_ERROR_CONTENT, 'Express'),
+                    \sprintf(self::SHIPPING_METHOD_BLOCKED_ERROR_CONTENT, '快递物流'),
                 ],
                 false,
                 true,
@@ -356,19 +356,19 @@ class CheckoutControllerTest extends TestCase
             [
                 new ErrorCollection(
                     [
-                        new PaymentMethodChangedError('Cash On Delivery', 'Paid in advance'),
+                        new PaymentMethodChangedError('货到付款', '预付'),
                     ]
                 ),
                 [
-                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, 'Cash on delivery', 'Paid in advance'),
+                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, '货到付款', '预付'),
                 ],
             ],
             // All payment methods blocked expected to stay blocked
             [
                 new ErrorCollection(
                     [
-                        new PaymentMethodChangedError('Paid in advance', 'Cash On Delivery'),
-                        new PaymentMethodChangedError('Cash On Delivery', 'Paid in advance'),
+                        new PaymentMethodChangedError('预付', '货到付款'),
+                        new PaymentMethodChangedError('货到付款', '预付'),
                     ]
                 ),
                 [
@@ -377,30 +377,30 @@ class CheckoutControllerTest extends TestCase
                 false,
                 true,
             ],
-            // Standard shipping and payment method blocked expected to switch both
+            // 普通物流 shipping and payment method blocked expected to switch both
             [
                 new ErrorCollection(
                     [
-                        new ShippingMethodChangedError('Standard', 'Express'),
-                        new PaymentMethodChangedError('Cash On Delivery', 'Paid in advance'),
+                        new ShippingMethodChangedError('普通物流', '快递物流'),
+                        new PaymentMethodChangedError('货到付款', '预付'),
                     ]
                 ),
                 [
-                    \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, 'Standard', 'Express'),
-                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, 'Cash on delivery', 'Paid in advance'),
+                    \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, '普通物流', '快递物流'),
+                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, '货到付款', '预付'),
                 ],
             ],
             // None defaults blocked, should switch to defaults
             [
                 new ErrorCollection(
                     [
-                        new ShippingMethodChangedError('Express', 'Standard'),
-                        new PaymentMethodChangedError('Cash on delivery', 'Paid in advance'),
+                        new ShippingMethodChangedError('快递物流', '普通物流'),
+                        new PaymentMethodChangedError('货到付款', '预付'),
                     ]
                 ),
                 [
-                    \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, 'Express', 'Standard'),
-                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, 'Cash on delivery', 'Paid in advance'),
+                    \sprintf(self::SHIPPING_METHOD_CHANGED_ERROR_CONTENT, '快递物流', '普通物流'),
+                    \sprintf(self::PAYMENT_METHOD_CHANGED_ERROR_CONTENT, '货到付款', '预付'),
                 ],
                 true,
             ],
