@@ -85,7 +85,7 @@ class Migration1697112043AddPaymentAndShippingTechnicalName extends MigrationSte
             [
                 'name' => $name,
                 'technicalName' => $technicalName,
-                'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)
+                'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
             ]
         );
     }
