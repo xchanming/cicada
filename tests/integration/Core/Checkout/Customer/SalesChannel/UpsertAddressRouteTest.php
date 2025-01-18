@@ -89,6 +89,7 @@ class UpsertAddressRouteTest extends TestCase
     public function testCreateAddress(array $data): void
     {
         $data['countryId'] = $this->getValidCountryId();
+        $data['cityId'] = $this->getValidCountryCityId();
 
         if (\array_key_exists('salutationId', $data)) {
             $data['salutationId'] = $this->getValidSalutationId();
@@ -196,6 +197,7 @@ class UpsertAddressRouteTest extends TestCase
             'name' => 'Test',
             'street' => 'Test',
             'zipcode' => 'Test',
+            'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
         ];
 
@@ -262,6 +264,7 @@ class UpsertAddressRouteTest extends TestCase
                     'customFields' => [
                         'mapped' => 1,
                     ],
+                    'cityId' => null,
                 ],
             ]);
 

@@ -58,7 +58,7 @@ trait OrderFixture
         $paymentMethodId = $salesChannel->getPaymentMethodId();
         $shippingMethodId = $salesChannel->getShippingMethodId();
         $salutationId = $this->getValidSalutationId();
-        $countryId = $this->getValidCountryId(TestDefaults::SALES_CHANNEL);
+        $countryId = $this->getValidCountryId();
 
         $order = [
             [

@@ -913,6 +913,7 @@ class RegisterRouteTest extends TestCase
             'billingAddress' => [
                 'company' => 'Test Company',
                 'department' => 'Test Department',
+                'cityId' => $this->getValidCountryCityId(),
             ],
             'vatIds' => [
                 'DE123456789',
@@ -1103,11 +1104,13 @@ class RegisterRouteTest extends TestCase
             'billingAddress' => [
                 'company' => 'Test Company 1',
                 'department' => 'Test Department 1',
+                'cityId' => $this->getValidCountryCityId(),
             ],
             'shippingAddress' => [
                 'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
                 'company' => 'Test Company 2',
                 'department' => 'Test Department 2',
+                'cityId' => $this->getValidCountryCityId(),
             ],
         ];
         $registrationData = array_merge_recursive($this->getRegistrationData(), $additionalData);
@@ -1186,10 +1189,12 @@ class RegisterRouteTest extends TestCase
                 'name' => 'Max',
                 'company' => 'Test Company 1',
                 'department' => 'Test Department 1',
+                'cityId' => $this->getValidCountryCityId(),
             ],
             'shippingAddress' => [
                 'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
                 'department' => 'Test Department 2',
+                'cityId' => $this->getValidCountryCityId(),
             ],
         ];
         $registrationData = array_merge_recursive($this->getRegistrationData(), $additionalData);
@@ -1411,6 +1416,7 @@ class RegisterRouteTest extends TestCase
                 'countryId' => $this->getValidCountryId($this->ids->get('sales-channel')),
                 'street' => 'Examplestreet 11',
                 'zipcode' => '48441',
+                'cityId' => $this->getValidCountryCityId(),
                 'phoneNumber' => '0123456789',
                 'additionalAddressLine1' => 'Additional address line 1',
                 'additionalAddressLine2' => 'Additional address line 2',
@@ -1422,6 +1428,7 @@ class RegisterRouteTest extends TestCase
                 'title' => 'Prof.',
                 'street' => 'Examplestreet 111',
                 'zipcode' => '12341',
+                'cityId' => $this->getValidCountryCityId(),
                 'phoneNumber' => '987654321',
                 'additionalAddressLine1' => 'Additional address line 01',
                 'additionalAddressLine2' => 'Additional address line 02',

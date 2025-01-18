@@ -135,23 +135,23 @@ class PaymentMethodIndexerTest extends TestCase
 
         $creditCardPayment = $payments->get($creditCardPaymentId);
         static::assertNotNull($creditCardPayment);
-        static::assertEquals('Credit card', $creditCardPayment->getDistinguishableName());
+        static::assertEquals('Kreditkarte', $creditCardPayment->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByCicadaPlugin */
         $invoicePaymentByCicadaPlugin = $payments->get($invoicePaymentByCicadaPluginId);
-        static::assertEquals('Invoice | Cicada (English)', $invoicePaymentByCicadaPlugin->getDistinguishableName());
+        static::assertEquals('Rechnungskauf | Cicada (Deutsch)', $invoicePaymentByCicadaPlugin->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByPlugin */
         $invoicePaymentByPlugin = $payments->get($invoicePaymentByPluginId);
-        static::assertEquals('Invoice | Plugin (English)', $invoicePaymentByPlugin->getDistinguishableName());
+        static::assertEquals('Rechnung | Plugin (Deutsch)', $invoicePaymentByPlugin->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByApp */
         $invoicePaymentByApp = $payments->get($invoicePaymentByAppId);
-        static::assertEquals('Invoice | App', $invoicePaymentByApp->getDistinguishableName());
+        static::assertEquals('Rechnung | App', $invoicePaymentByApp->getDistinguishableName());
 
         /** @var PaymentMethodEntity $paidInAdvance */
         $paidInAdvance = $payments
-            ->filterByProperty('name', 'Cash on delivery')
+            ->filterByProperty('name', '货到付款')
             ->first();
 
         static::assertEquals($paidInAdvance->getTranslation('name'), $paidInAdvance->getTranslation('distinguishableName'));
@@ -170,19 +170,19 @@ class PaymentMethodIndexerTest extends TestCase
 
         $creditCardPayment = $payments->get($creditCardPaymentId);
         static::assertNotNull($creditCardPayment);
-        static::assertEquals('Kreditkarte', $creditCardPayment->getDistinguishableName());
+        static::assertEquals('Credit card', $creditCardPayment->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByCicadaPlugin */
         $invoicePaymentByCicadaPlugin = $payments->get($invoicePaymentByCicadaPluginId);
-        static::assertEquals('Rechnungskauf | Cicada (Deutsch)', $invoicePaymentByCicadaPlugin->getDistinguishableName());
+        static::assertEquals('Invoice | Cicada (English)', $invoicePaymentByCicadaPlugin->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByPlugin */
         $invoicePaymentByPlugin = $payments->get($invoicePaymentByPluginId);
-        static::assertEquals('Rechnung | Plugin (Deutsch)', $invoicePaymentByPlugin->getDistinguishableName());
+        static::assertEquals('Invoice | Plugin (English)', $invoicePaymentByPlugin->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByApp */
         $invoicePaymentByApp = $payments->get($invoicePaymentByAppId);
-        static::assertEquals('Rechnung | App', $invoicePaymentByApp->getDistinguishableName());
+        static::assertEquals('Invoice | App', $invoicePaymentByApp->getDistinguishableName());
     }
 
     public function testPaymentMethodIndexerNotLooping(): void

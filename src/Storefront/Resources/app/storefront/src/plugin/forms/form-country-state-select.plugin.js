@@ -11,6 +11,8 @@ export default class CountryStateSelectPlugin extends Plugin {
         countrySelectSelector: '.country-select',
         initialCountryAttribute: 'initial-country-id',
         countryStateSelectSelector: '.country-state-select',
+        countryStateCitySelectSelector: '.country-state-city-select',
+        countryStateCityDistrictSelectSelector: '.country-state-city-district-select',
         initialCountryStateAttribute: 'initial-country-state-id',
         countryStatePlaceholderSelector: '[data-placeholder-option="true"]',
         vatIdFieldInput: '#vatIds',

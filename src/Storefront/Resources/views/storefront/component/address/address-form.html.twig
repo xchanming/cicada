@@ -207,7 +207,7 @@
                     {% endblock %}
 
                     {% block component_address_form_country_state_city_select %}
-                        <select class="country-state-select form-select{% if violationPath %} is-invalid{% endif %}"
+                        <select class="country-state-city-select form-select{% if violationPath %} is-invalid{% endif %}"
                                 id="{{ idPrefix ~ prefix }}AddressCityId"
                                 name="{{ prefix }}[cityId]"
                                 data-initial-city-id="{{ data.get('cityId') }}">
@@ -225,6 +225,7 @@
                         {% endif %}
                     {% endblock %}
                 </div>
+
                 <div class="form-group col-md-3">
                     {% if formViolations.getViolations('/districtId') is not empty %}
                         {% set violationPath = '/districtId' %}
@@ -240,7 +241,7 @@
                     {% endblock %}
 
                     {% block component_address_form_country_state_city_district_select %}
-                        <select class="country-state-select form-select{% if violationPath %} is-invalid{% endif %}"
+                        <select class="country-state-city-district-select form-select{% if violationPath %} is-invalid{% endif %}"
                                 id="{{ idPrefix ~ prefix }}AddressCityId"
                                 name="{{ prefix }}[districtId]"
                                 data-initial-city-id="{{ data.get('districtId') }}">
