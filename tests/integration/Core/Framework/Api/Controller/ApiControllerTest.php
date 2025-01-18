@@ -2307,7 +2307,7 @@ EOF;
 
         static::assertSame(Response::HTTP_NO_CONTENT, $client->getResponse()->getStatusCode());
 
-        $client->setServerParameter('HTTP_sw-language-id', $this->getZhCnLanguageId());
+        $client->setServerParameter('HTTP_sw-language-id', $this->getenGbLanguageId());
 
         $client->request('PATCH', '/api/' . $entityName . '/' . $id, [
             'id' => $id,

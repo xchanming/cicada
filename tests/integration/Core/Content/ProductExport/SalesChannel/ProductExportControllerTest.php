@@ -139,16 +139,16 @@ class ProductExportControllerTest extends TestCase
 
         $client = $this->createSalesChannelBrowser(null, false, [
             'id' => $deSalesChannelId,
-            'languageId' => $this->getZhCnLanguageId(),
+            'languageId' => $this->getenGbLanguageId(),
             'languages' => [
                 [
-                    'id' => $this->getZhCnLanguageId(),
+                    'id' => $this->getenGbLanguageId(),
                 ],
             ],
             'domains' => [
                 [
                     'id' => $deSalesChannelDomainId,
-                    'languageId' => $this->getZhCnLanguageId(),
+                    'languageId' => $this->getenGbLanguageId(),
                     'currencyId' => Defaults::CURRENCY,
                     'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                     'url' => 'http://example.com/de',

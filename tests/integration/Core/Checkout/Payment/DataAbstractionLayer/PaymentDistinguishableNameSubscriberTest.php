@@ -159,7 +159,7 @@ class PaymentDistinguishableNameSubscriberTest extends TestCase
             new SystemSource(),
             [],
             Defaults::CURRENCY,
-            [$this->getZhCnLanguageId(), Defaults::LANGUAGE_SYSTEM]
+            [$this->getenGbLanguageId(), Defaults::LANGUAGE_SYSTEM]
         );
 
         /** @var PaymentMethodCollection $payments */

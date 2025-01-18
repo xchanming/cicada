@@ -722,7 +722,7 @@ class AttributeEntityIntegrationTest extends TestCase
             $context->getSource(),
             $context->getRuleIds(),
             $context->getCurrencyId(),
-            [$this->getZhCnLanguageId(), Defaults::LANGUAGE_SYSTEM],
+            [$this->getenGbLanguageId(), Defaults::LANGUAGE_SYSTEM],
         );
         $search = $this->repository('attribute_entity')
             ->search($criteria, $languageContext);

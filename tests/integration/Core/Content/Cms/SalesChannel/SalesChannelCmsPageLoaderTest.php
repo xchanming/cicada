@@ -211,11 +211,11 @@ class SalesChannelCmsPageLoaderTest extends TestCase
             [
                 'languages' => [
                     ['id' => Defaults::LANGUAGE_SYSTEM],
-                    ['id' => $this->getZhCnLanguageId()],
+                    ['id' => $this->getenGbLanguageId()],
                 ],
                 'domains' => [
                     [
-                        'languageId' => $this->getZhCnLanguageId(),
+                        'languageId' => $this->getenGbLanguageId(),
                         'currencyId' => Defaults::CURRENCY,
                         'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                         'url' => 'http://localhost/de',
@@ -223,7 +223,7 @@ class SalesChannelCmsPageLoaderTest extends TestCase
                 ],
             ],
             [
-                SalesChannelContextService::LANGUAGE_ID => $this->getZhCnLanguageId(),
+                SalesChannelContextService::LANGUAGE_ID => $this->getenGbLanguageId(),
             ]
         );
 
@@ -242,11 +242,11 @@ class SalesChannelCmsPageLoaderTest extends TestCase
             [
                 'languages' => [
                     ['id' => Defaults::LANGUAGE_SYSTEM],
-                    ['id' => $this->getZhCnLanguageId()],
+                    ['id' => $this->getenGbLanguageId()],
                 ],
                 'domains' => [
                     [
-                        'languageId' => $this->getZhCnLanguageId(),
+                        'languageId' => $this->getenGbLanguageId(),
                         'currencyId' => Defaults::CURRENCY,
                         'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                         'url' => 'http://localhost/de',
@@ -254,7 +254,7 @@ class SalesChannelCmsPageLoaderTest extends TestCase
                 ],
             ],
             [
-                SalesChannelContextService::LANGUAGE_ID => $this->getZhCnLanguageId(),
+                SalesChannelContextService::LANGUAGE_ID => $this->getenGbLanguageId(),
             ]
         );
 

@@ -38,7 +38,7 @@ class SalesChannelValidatorTest extends TestCase
     {
         $exception = null;
 
-        $deDeLanguageId = $this->getZhCnLanguageId();
+        $deDeLanguageId = $this->getenGbLanguageId();
         foreach ($inserts as &$insert) {
             foreach ($insert[2] ?? [] as $key => $language) {
                 if ($language === 'zh-CN') {
@@ -156,15 +156,15 @@ class SalesChannelValidatorTest extends TestCase
     #[DataProvider('getUpdateValidationProvider')]
     public function testUpdateValidation(array $updates, array $invalids = [], array $inserts = []): void
     {
-        $deLangId = $this->getZhCnLanguageId();
+        $enLangId = $this->getenGbLanguageId();
         foreach ($updates as &$update) {
-            if ($update['languageId'] === 'zh-CN') {
-                $update['languageId'] = $deLangId;
+            if ($update['languageId'] === 'en-GB') {
+                $update['languageId'] = $enLangId;
             }
 
             foreach ($update['languages'] ?? [] as $key => $language) {
-                if ($language['id'] === 'zh-CN') {
-                    $update['languages'][$key]['id'] = $deLangId;
+                if ($language['id'] === 'en-GB') {
+                    $update['languages'][$key]['id'] = $enLangId;
                 }
             }
         }
@@ -226,11 +226,11 @@ class SalesChannelValidatorTest extends TestCase
             [
                 [
                     'id' => $id1,
-                    'languageId' => 'zh-CN',
+                    'languageId' => 'en-GB',
                 ],
                 [
                     'id' => $id2,
-                    'languageId' => 'zh-CN',
+                    'languageId' => 'en-GB',
                 ],
             ],
             [$id1, $id2],
@@ -245,7 +245,7 @@ class SalesChannelValidatorTest extends TestCase
                 ],
                 [
                     'id' => $id2,
-                    'languageId' => 'zh-CN',
+                    'languageId' => 'en-GB',
                 ],
             ],
             [$id2],
@@ -256,8 +256,8 @@ class SalesChannelValidatorTest extends TestCase
             [
                 [
                     'id' => $id1,
-                    'languageId' => 'zh-CN',
-                    'languages' => [['id' => 'zh-CN']],
+                    'languageId' => 'en-GB',
+                    'languages' => [['id' => 'en-GB']],
                 ],
             ],
             [],
@@ -268,9 +268,9 @@ class SalesChannelValidatorTest extends TestCase
             [
                 [
                     'id' => $id1,
-                    'languageId' => 'zh-CN',
+                    'languageId' => 'en-GB',
                     'languages' => [
-                        ['id' => 'zh-CN'],
+                        ['id' => 'en-GB'],
                         ['id' => Defaults::LANGUAGE_SYSTEM]],
                 ],
             ],

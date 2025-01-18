@@ -92,7 +92,7 @@ class EntityReaderTest extends TestCase
         $this->categoryRepository = static::getContainer()->get('category.repository');
         $this->languageRepository = static::getContainer()->get('language.repository');
         $this->customerRepository = static::getContainer()->get('customer.repository');
-        $this->deLanguageId = $this->getZhCnLanguageId();
+        $this->deLanguageId = $this->getenGbLanguageId();
 
         $this->registerDefinition(NonIdFieldNamePrimaryKeyTestDefinition::class);
         $this->registerDefinition(ConsistsOfManyToManyDefinition::class);

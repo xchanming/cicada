@@ -240,7 +240,7 @@ class TranslatedVersionsTest extends TestCase
 
     private function createDeContext(Context $enContext): Context
     {
-        $deLanguageId = $this->getZhCnLanguageId();
+        $deLanguageId = $this->getenGbLanguageId();
 
         return new Context(
             $enContext->getSource(),

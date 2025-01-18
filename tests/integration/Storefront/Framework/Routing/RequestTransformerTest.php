@@ -50,7 +50,7 @@ class RequestTransformerTest extends TestCase
             static::getContainer()->get(DomainLoader::class)
         );
 
-        $this->deLanguageId = $this->getZhCnLanguageId();
+        $this->deLanguageId = $this->getenGbLanguageId();
     }
 
     /**

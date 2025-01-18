@@ -390,7 +390,7 @@ class ProductLoadedSubscriberTest extends TestCase
 
         foreach ($languageChain as &$language) {
             if ($language === 'zh-CN') {
-                $language = $this->getZhCnLanguageId();
+                $language = $this->getenGbLanguageId();
             }
         }
 

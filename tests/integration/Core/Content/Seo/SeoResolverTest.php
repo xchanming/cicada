@@ -37,7 +37,7 @@ class SeoResolverTest extends TestCase
         $connection = static::getContainer()->get(Connection::class);
         $connection->executeStatement('DELETE FROM `sales_channel`');
 
-        $this->deLanguageId = $this->getZhCnLanguageId();
+        $this->deLanguageId = $this->getenGbLanguageId();
     }
 
     public function testResolveEmpty(): void

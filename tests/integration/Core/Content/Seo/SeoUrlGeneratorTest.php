@@ -60,7 +60,7 @@ class SeoUrlGeneratorTest extends TestCase
     {
         parent::setUp();
         $this->ids = new IdsCollection();
-        $this->deLanguageId = $this->getZhCnLanguageId();
+        $this->deLanguageId = $this->getenGbLanguageId();
 
         $this->createBreadcrumbData();
         $salesChannel = $this->createSalesChannel([

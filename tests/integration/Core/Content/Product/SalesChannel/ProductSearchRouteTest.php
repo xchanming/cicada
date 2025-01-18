@@ -316,7 +316,7 @@ class ProductSearchRouteTest extends TestCase
     {
         $ids = self::$ids;
         if ($languageId === 'zh-CN') {
-            $languageId = $this->getZhCnLanguageId();
+            $languageId = $this->getenGbLanguageId();
         }
 
         $searchRoute = static::getContainer()->get(ProductSearchRoute::class);
@@ -621,7 +621,7 @@ class ProductSearchRouteTest extends TestCase
         self::$browser = $this->createCustomSalesChannelBrowser([
             'id' => $ids->create('sales-channel'),
             'navigationCategoryId' => $ids->get('category'),
-            'languages' => [['id' => Defaults::LANGUAGE_SYSTEM], ['id' => $this->getZhCnLanguageId()]],
+            'languages' => [['id' => Defaults::LANGUAGE_SYSTEM], ['id' => $this->getenGbLanguageId()]],
         ]);
 
         $this->createGermanSalesChannelDomain($ids);
@@ -738,17 +738,17 @@ class ProductSearchRouteTest extends TestCase
             (new ProductBuilder($ids, '1000'))
                 ->price(10)
                 ->name('Lorem ipsum')
-                ->translation($this->getZhCnLanguageId(), 'name', 'dolor sit amet')
+                ->translation($this->getenGbLanguageId(), 'name', 'dolor sit amet')
                 ->visibility($ids->get('sales-channel'))
-                ->manufacturer('manufacturer', [$this->getZhCnLanguageId() => ['name' => 'Hersteller']])
+                ->manufacturer('manufacturer', [$this->getenGbLanguageId() => ['name' => 'Hersteller']])
                 ->build(),
 
             (new ProductBuilder($ids, '1001'))
                 ->name('consectetur adipiscing')
-                ->translation($this->getZhCnLanguageId(), 'name', 'Suspendisse in')
+                ->translation($this->getenGbLanguageId(), 'name', 'Suspendisse in')
                 ->price(5)
                 ->visibility($ids->get('sales-channel'))
-                ->manufacturer('varius', [$this->getZhCnLanguageId() => ['name' => 'Vestibulum']])
+                ->manufacturer('varius', [$this->getenGbLanguageId() => ['name' => 'Vestibulum']])
                 ->variant(
                     (new ProductBuilder($ids, '1001.1'))
                         ->price(10)
@@ -822,7 +822,7 @@ class ProductSearchRouteTest extends TestCase
     {
         static::getContainer()->get('language.repository')->upsert([
             [
-                'id' => $this->getZhCnLanguageId(),
+                'id' => $this->getenGbLanguageId(),
                 'salesChannelDomains' => [
                     [
                         'salesChannelId' => $ids->get('sales-channel'),
