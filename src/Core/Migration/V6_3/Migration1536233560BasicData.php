@@ -1081,7 +1081,7 @@ class Migration1536233560BasicData extends MigrationStep
     }
 
     /**
-     * @return array<string, array{id: string, name: string, nameZh: string, availableEntities: array<string, string|null>}>
+     * @return array<string, array{id: string, nameEn: string, name: string, availableEntities: array<string, string|null>}>
      */
     private function getMailTypeMapping(): array
     {

@@ -199,7 +199,6 @@ function addNewStates(selectEl, states, selectedStateId) {
         selectEl.setAttribute('disabled', 'disabled');
         return;
     }
-
     states.map(option => createOptionFromState(option, selectedStateId))
         .forEach((option) => {
             selectEl.append(option);

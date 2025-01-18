@@ -37,8 +37,8 @@ class CountryStateController extends StorefrontController
         if (!$countryId) {
             throw RoutingException::missingRequestParameter('countryId');
         }
-
-        $countryStateDataPagelet = $this->countryStateDataPageletLoader->load($countryId, $request, $context);
+        $parentId = (string) $request->request->get('parentId');
+        $countryStateDataPagelet = $this->countryStateDataPageletLoader->load($countryId, $request, $context, $parentId);
 
         $this->hook(new CountryStateDataPageletLoadedHook($countryStateDataPagelet, $context));
 

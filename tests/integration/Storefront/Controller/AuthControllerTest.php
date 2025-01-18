@@ -583,7 +583,7 @@ class AuthControllerTest extends TestCase
         $flashBag = $this->getSession()->getBag('flashes');
 
         static::assertContains(
-            'The passwords you have entered do not match.',
+            '您输入的密码不匹配。',
             $flashBag->get('danger')
         );
     }

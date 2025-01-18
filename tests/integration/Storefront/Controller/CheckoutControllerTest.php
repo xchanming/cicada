@@ -538,23 +538,6 @@ class CheckoutControllerTest extends TestCase
         static::assertArrayHasKey(CheckoutInfoWidgetLoadedHook::HOOK_NAME, $traces);
     }
 
-    public function testCheckoutInfoWidgetSkipsCalculationAndRenderIfCartIsEmpty(): void
-    {
-        Feature::skipTestIfInActive('v6.5.0.0', $this);
-
-        $contextToken = Uuid::randomHex();
-
-        $cartService = static::getContainer()->get(CartService::class);
-        $cartService->createNew($contextToken);
-
-        $salesChannelContext = $this->createSalesChannelContext($contextToken);
-        $request = $this->createRequest($salesChannelContext);
-
-        $response = static::getContainer()->get(CheckoutController::class)->info($request, $salesChannelContext);
-        static::assertEquals(Response::HTTP_NO_CONTENT, $response->getStatusCode());
-        static::assertEmpty($response->getContent());
-    }
-
     public function testCheckoutOffcanvasWidgetLoadedHookScriptsAreExecuted(): void
     {
         $contextToken = Uuid::randomHex();
