@@ -113,8 +113,7 @@ class AddressListingPageLoader
     private function getCountries(SalesChannelContext $salesChannelContext): CountryCollection
     {
         $criteria = (new Criteria())
-            ->addFilter(new EqualsFilter('country.active', true))
-            ->addAssociation('states');
+            ->addFilter(new EqualsFilter('country.active', true));
 
         $countries = $this->countryRoute
             ->load(new Request(), $criteria, $salesChannelContext)
