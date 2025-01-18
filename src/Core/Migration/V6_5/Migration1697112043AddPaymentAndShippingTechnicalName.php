@@ -63,16 +63,16 @@ class Migration1697112043AddPaymentAndShippingTechnicalName extends MigrationSte
             ['handlers' => ArrayParameterType::STRING]
         );
 
-        $this->updateShippingMethodName('普通物流', $connection);
-        $this->updateShippingMethodName('快递物流', $connection);
+        $this->updateShippingMethodName('普通物流', 'Standard', $connection);
+        $this->updateShippingMethodName('快递物流', 'Express', $connection);
         $this->updateAppShippingMethods($connection);
     }
 
-    private function updateShippingMethodName(string $name, Connection $connection): void
+    private function updateShippingMethodName(string $name, string $technicalName, Connection $connection): void
     {
         $connection->executeStatement(
             '
-            UPDATE IGNORE `shipping_method` SET `technical_name` = CONCAT(\'shipping_\', LOWER(:name))
+            UPDATE IGNORE `shipping_method` SET `technical_name` = CONCAT(\'shipping_\', LOWER(:technicalName))
             WHERE `id` = (
                 SELECT `shipping_method_id` FROM `shipping_method_translation`
                 WHERE `language_id` = :languageId
@@ -82,7 +82,11 @@ class Migration1697112043AddPaymentAndShippingTechnicalName extends MigrationSte
             )
             AND `technical_name` IS NULL
             ',
-            ['name' => $name, 'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)]
+            [
+                'name' => $name,
+                'technicalName' => $technicalName,
+                'languageId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM)
+            ]
         );
     }
 
