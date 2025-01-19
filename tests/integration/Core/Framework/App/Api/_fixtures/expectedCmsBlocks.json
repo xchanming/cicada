@@ -3,8 +3,8 @@
     {
       "name": "my-first-block",
       "label": {
-        "zh-CN": "Erster Block einer App",
-        "en-GB": "First block from app"
+        "en-GB": "Erster Block einer App",
+        "zh-CN": "First block from app"
       },
       "slots": {
         "left": {
@@ -63,8 +63,8 @@
     {
       "name": "my-second-block",
       "label": {
-        "zh-CN": "Zweiter Block einer App",
-        "en-GB": "Second block from app"
+        "en-GB": "Zweiter Block einer App",
+        "zh-CN": "Second block from app"
       },
       "slots": {
         "left": {

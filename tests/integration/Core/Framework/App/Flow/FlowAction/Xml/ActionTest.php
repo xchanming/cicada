@@ -24,8 +24,8 @@ class ActionTest extends TestCase
         static::assertSame(['order', 'customer'], $firstAction->getMeta()->getRequirements());
         static::assertSame(
             [
-                'en-GB' => 'First action app',
-                'zh-CN' => 'First action app DE',
+                'zh-CN' => 'First action app',
+                'en-GB' => 'First action app DE',
             ],
             $firstAction->getMeta()->getLabel()
         );
