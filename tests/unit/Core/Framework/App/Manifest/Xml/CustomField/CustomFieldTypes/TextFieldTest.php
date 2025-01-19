@@ -28,11 +28,11 @@ class TextFieldTest extends TestCase
         static::assertInstanceOf(TextField::class, $textField);
         static::assertEquals('test_text_field', $textField->getName());
         static::assertEquals([
-            'en-GB' => 'Test text field',
+            'zh-CN' => 'Test text field',
         ], $textField->getLabel());
         static::assertEquals([], $textField->getHelpText());
         static::assertEquals(1, $textField->getPosition());
-        static::assertEquals(['en-GB' => 'Enter a text...'], $textField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Enter a text...'], $textField->getPlaceholder());
         static::assertFalse($textField->getRequired());
     }
 }
