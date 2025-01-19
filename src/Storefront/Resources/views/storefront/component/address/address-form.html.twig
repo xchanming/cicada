@@ -15,7 +15,8 @@
             {% endif %}
 
             {% if config('core.loginRegistration.showAccountTypeSelection') or prefix == 'address' or prefix == 'shippingAddress' or hasSelectedBusiness %}
-                <div class="{% if prefix == 'shippingAddress' or hasSelectedBusiness %}address-contact-type-company{% elseif prefix == 'address' %}js-field-toggle-contact-type-company d-block{% else %}js-field-toggle-contact-type-company d-none{% endif %}">
+                <div
+                    class="{% if prefix == 'shippingAddress' or hasSelectedBusiness %}address-contact-type-company{% elseif prefix == 'address' %}js-field-toggle-contact-type-company d-block{% else %}js-field-toggle-contact-type-company d-none{% endif %}">
                     {% block component_address_form_company_fields %}
                         <div class="row g-2">
                             {% block component_address_form_company_name %}
@@ -103,7 +104,8 @@
 
     {% block component_address_form_address_fields %}
 
-        <div class="row g-2 country-and-state-form-elements" data-country-state-select="true" data-country-state-select-options="{{ options|json_encode }}">
+        <div class="row g-2 country-and-state-form-elements" data-country-state-select="true"
+             data-country-state-select-options="{{ options|json_encode }}">
             {% block component_address_form_country %}
                 <div class="form-group col-md-3">
                     {% set initialCountryId = null %}
@@ -168,7 +170,7 @@
                     {% block component_address_form_country_state_label %}
                         <label class="form-label"
                                for="{{ idPrefix ~ prefix }}AddressCountryState">
-                            {{ 'address.countryStateLabel'|trans|sw_sanitize }}
+                            {{ 'address.countryStateLabel'|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
                         </label>
                     {% endblock %}
 
@@ -176,6 +178,7 @@
                         <select class="country-state-select form-select{% if violationPath %} is-invalid{% endif %}"
                                 id="{{ idPrefix ~ prefix }}AddressCountryState"
                                 name="{{ prefix }}[countryStateId]"
+                                required="required"
                                 data-initial-country-state-id="{{ data.get('countryStateId') }}">
                             <option value=""
                                     selected="selected"
@@ -201,19 +204,21 @@
 
                     {% block component_address_form_country_state_city_label %}
                         <label class="form-label"
-                               for="{{ idPrefix ~ prefix }}AddressCountryState">
-                            {{ 'address.countryCityLabel'|trans|sw_sanitize }}
+                               for="{{ idPrefix ~ prefix }}AddressCity">
+                            {{ 'address.countryCityLabel'|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
                         </label>
                     {% endblock %}
 
                     {% block component_address_form_country_state_city_select %}
-                        <select class="country-state-city-select form-select{% if violationPath %} is-invalid{% endif %}"
-                                id="{{ idPrefix ~ prefix }}AddressCityId"
-                                name="{{ prefix }}[cityId]"
-                                data-initial-city-id="{{ data.get('cityId') }}">
+                        <select
+                            class="country-state-city-select form-select{% if violationPath %} is-invalid{% endif %}"
+                            id="{{ idPrefix ~ prefix }}AddressCity"
+                            name="{{ prefix }}[cityId]"
+                            required="required"
+                            data-initial-city-id="{{ data.get('cityId') }}">
                             <option value=""
                                     selected="selected"
-                                    data-placeholder-option="true">
+                                    data-city-placeholder-option="true">
                                 {{ 'address.countryCityPlaceholder'|trans|sw_sanitize }}
                             </option>
                         </select>
@@ -235,19 +240,21 @@
 
                     {% block component_address_form_country_state_city_district_label %}
                         <label class="form-label"
-                               for="{{ idPrefix ~ prefix }}AddressCountryState">
-                            {{ 'address.countryDistrictLabel'|trans|sw_sanitize }}
+                               for="{{ idPrefix ~ prefix }}AddressDistrict">
+                            {{ 'address.countryDistrictLabel'|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
                         </label>
                     {% endblock %}
 
                     {% block component_address_form_country_state_city_district_select %}
-                        <select class="country-state-city-district-select form-select{% if violationPath %} is-invalid{% endif %}"
-                                id="{{ idPrefix ~ prefix }}AddressCityId"
-                                name="{{ prefix }}[districtId]"
-                                data-initial-city-id="{{ data.get('districtId') }}">
+                        <select
+                            class="country-state-city-district-select form-select{% if violationPath %} is-invalid{% endif %}"
+                            id="{{ idPrefix ~ prefix }}AddressDistrict"
+                            name="{{ prefix }}[districtId]"
+                            required="required"
+                            data-initial-district-id="{{ data.get('districtId') }}">
                             <option value=""
                                     selected="selected"
-                                    data-placeholder-option="true">
+                                    data-district-placeholder-option="true">
                                 {{ 'address.countryDistrictPlaceholder'|trans|sw_sanitize }}
                             </option>
                         </select>
@@ -270,108 +277,6 @@
         } %}
 
         <div class="row g-2">
-            {% block component_address_form_zipcode_city %}
-                {% set zipcodeField %}
-                    {% set zipcodeValue = formViolations.getInputData()['zipcode'] ?? data.get('zipcode') %}
-
-                    {% if formViolations.getViolations('/zipcode') is not empty %}
-                        {% set violationPath = '/zipcode' %}
-                    {% elseif formViolations.getViolations("/#{prefix}/zipcode") is not empty %}
-                        {% set violationPath = "/#{prefix}/zipcode" %}
-                    {% else %}
-                        {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.zipcodeLabel'|trans|sw_sanitize }) %}
-                    {% endif %}
-
-                    {% block component_address_form_zipcode_label %}
-                        <label class="form-label"
-                               for="{{ idPrefix ~ prefix }}AddressZipcode">
-                            {{ 'address.zipcodeLabel'|trans|sw_sanitize }}<span class="d-none" id="zipcodeLabel">{{ 'general.required'|trans|sw_sanitize }}</span>
-                        </label>
-                    {% endblock %}
-
-                    {% block component_address_form_zipcode_input %}
-                        <input type="text"
-                               class="form-control{% if violationPath %} is-invalid{% endif %}"
-                               autocomplete="{% if prefix == 'shippingAddress' %}shipping {% elseif prefix == 'billingAddress' %}billing {% endif %}postal-code"
-                               id="{{ idPrefix ~ prefix }}AddressZipcode"
-                               placeholder="{{ 'address.zipcodePlaceholder'|trans|striptags }}"
-                               name="{{ prefix }}[zipcode]"
-                               value="{{ zipcodeValue }}"
-                               data-input-name="zipcodeInput"
-                        >
-                    {% endblock %}
-
-                    {% block component_address_form_zipcode_error %}
-                        {% if violationPath %}
-                            {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' %}
-                        {% endif %}
-                    {% endblock %}
-                {% endset %}
-
-                {% set cityField %}
-                    {% if formViolations.getViolations('/city') is not empty %}
-                        {% set violationPath = '/city' %}
-                    {% elseif formViolations.getViolations("/#{prefix}/city") is not empty %}
-                        {% set violationPath = "/#{prefix}/city" %}
-                    {% else %}
-                        {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.cityLabel'|trans|sw_sanitize }) %}
-                        {% set violationPath = null %}
-                    {% endif %}
-
-                    {% block component_address_form_city_label %}
-                        <label class="form-label"
-                               for="{{ idPrefix ~ prefix }}AddressCity">
-                            {{ 'address.cityLabel'|trans|sw_sanitize }}{{ 'general.required'|trans|sw_sanitize }}
-                        </label>
-                    {% endblock %}
-
-                    {% block component_address_form_city_input %}
-                        <input type="text"
-                               class="form-control{% if violationPath %} is-invalid{% endif %}"
-                               autocomplete="{% if prefix == 'shippingAddress' %}shipping {% elseif prefix == 'billingAddress' %}billing {% endif %}address-level2"
-                               id="{{ idPrefix ~ prefix }}AddressCity"
-                               placeholder="{{ 'address.cityPlaceholder'|trans|striptags }}"
-                               name="{{ prefix }}[city]"
-                               value="{{ data.get('city') }}"
-                               data-form-validation-required
-                               {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
-                               required="required">
-                    {% endblock %}
-
-                    {% block component_address_form_city_error %}
-                        {% if violationPath %}
-                            {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' %}
-                        {% endif %}
-                    {% endblock %}
-                {% endset %}
-
-                {% set wrappedZipcodeField %}
-                    {% block component_address_form_zipcode_field %}
-                        <div class="form-group col-md-2 col-4">
-                            {{ zipcodeField }}
-                        </div>
-                    {% endblock %}
-                {% endset %}
-
-                {% set wrappedCityField %}
-                    {% block component_address_form_city_field %}
-                        <div class="form-group col-md-4 col-8">
-                            {{ cityField }}
-                        </div>
-                    {% endblock %}
-                {% endset %}
-
-                {% block component_address_form_zipcode_city_fields %}
-                    {% if config('core.loginRegistration.showZipcodeInFrontOfCity') %}
-                        {{ wrappedZipcodeField }}
-                        {{ wrappedCityField }}
-                    {% else %}
-                        {{ wrappedCityField }}
-                        {{ wrappedZipcodeField }}
-                    {% endif %}
-                {% endblock %}
-            {% endblock %}
-
             {% block component_address_form_street %}
                 <div class="form-group col-md-6">
                     {% if formViolations.getViolations('/street') is not empty %}
@@ -410,6 +315,46 @@
                 </div>
             {% endblock %}
 
+            {% block component_address_form_zipcode %}
+                <div class="form-group col-md-6">
+                    {% set zipcodeValue = formViolations.getInputData()['zipcode'] ?? data.get('zipcode') %}
+
+                    {% if formViolations.getViolations('/zipcode') is not empty %}
+                        {% set violationPath = '/zipcode' %}
+                    {% elseif formViolations.getViolations("/#{prefix}/zipcode") is not empty %}
+                        {% set violationPath = "/#{prefix}/zipcode" %}
+                    {% else %}
+                        {% set requiredMessage = 'error.VIOLATION::IS_BLANK_ERROR'|trans({ '%field%': 'address.zipcodeLabel'|trans|sw_sanitize }) %}
+                    {% endif %}
+
+                    {% block component_address_form_zipcode_label %}
+                        <label class="form-label"
+                               for="{{ idPrefix ~ prefix }}AddressZipcode">
+                            {{ 'address.zipcodeLabel'|trans|sw_sanitize }}<span class="d-none"
+                                                                                id="zipcodeLabel">{{ 'general.required'|trans|sw_sanitize }}</span>
+                        </label>
+                    {% endblock %}
+
+                    {% block component_address_form_zipcode_input %}
+                        <input type="text"
+                               class="form-control{% if violationPath %} is-invalid{% endif %}"
+                               autocomplete="{% if prefix == 'shippingAddress' %}shipping {% elseif prefix == 'billingAddress' %}billing {% endif %}postal-code"
+                               id="{{ idPrefix ~ prefix }}AddressZipcode"
+                               placeholder="{{ 'address.zipcodePlaceholder'|trans|striptags }}"
+                               name="{{ prefix }}[zipcode]"
+                               value="{{ zipcodeValue }}"
+                               data-input-name="zipcodeInput"
+                        >
+                    {% endblock %}
+
+                    {% block component_address_form_zipcode_error %}
+                        {% if violationPath %}
+                            {% sw_include '@Storefront/storefront/utilities/form-violation.html.twig' %}
+                        {% endif %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+
             {% block component_address_form_additional_field1 %}
                 {% if config('core.loginRegistration.showAdditionalAddressField1') %}
                     {% if formViolations.getViolations('/additionalAddressLine1') is not empty %}
@@ -434,7 +379,7 @@
                                    placeholder="{{ 'address.additionalField1Placeholder'|trans|striptags }}"
                                    name="{{ prefix }}[additionalAddressLine1]"
                                    value="{{ data.get('additionalAddressLine1') }}"
-                                    {{ config('core.loginRegistration.additionalAddressField1Required') ? 'required="true"' }}>
+                                {{ config('core.loginRegistration.additionalAddressField1Required') ? 'required="true"' }}>
                         {% endblock %}
 
                         {% block component_address_form_additional_field1_error %}
@@ -469,7 +414,7 @@
                                    placeholder="{{ 'address.additionalField2Placeholder'|trans|striptags }}"
                                    name="{{ prefix }}[additionalAddressLine2]"
                                    value="{{ data.get('additionalAddressLine2') }}"
-                                    {{ config('core.loginRegistration.additionalAddressField2Required') ? 'required="true"' }}>
+                                {{ config('core.loginRegistration.additionalAddressField2Required') ? 'required="true"' }}>
                         {% endblock %}
 
                         {% block component_address_form_additional_field2_error %}

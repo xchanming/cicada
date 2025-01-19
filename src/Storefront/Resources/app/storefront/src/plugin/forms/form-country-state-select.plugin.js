@@ -12,8 +12,15 @@ export default class CountryStateSelectPlugin extends Plugin {
         initialCountryAttribute: 'initial-country-id',
         countryStateSelectSelector: '.country-state-select',
         countryStateCitySelectSelector: '.country-state-city-select',
+        countryStateCityDistrictSelectSelector: '.country-state-city-district-select',
+
+
         initialCountryStateAttribute: 'initial-country-state-id',
+        initialCityAttribute: 'initial-city-id',
+        initialDistrictAttribute: 'initial-district-id',
         countryStatePlaceholderSelector: '[data-placeholder-option="true"]',
+        countryStateCityPlaceholderSelector: '[data-city-placeholder-option]',
+        countryStateCityDistrictPlaceholderSelector: '[data-district-placeholder-option]',
         vatIdFieldInput: '#vatIds',
         zipcodeFieldInput: '[data-input-name="zipcodeInput"]',
         vatIdRequired: 'vat-id-required',
@@ -46,14 +53,22 @@ export default class CountryStateSelectPlugin extends Plugin {
             this.scopeElement = DomAccess.querySelector(document, this.options.scopeElementSelector);
         }
 
-        const { countrySelectSelector, countryStateSelectSelector, initialCountryAttribute, initialCountryStateAttribute
-            ,countryStateCitySelectSelector } = CountryStateSelectPlugin.options;
+        const {
+            countrySelectSelector, countryStateSelectSelector,
+            initialCountryAttribute, initialCountryStateAttribute
+            , countryStateCitySelectSelector,countryStateCityDistrictSelectSelector,initialCityAttribute,initialDistrictAttribute,
+        } = CountryStateSelectPlugin.options;
         const countrySelect = DomAccess.querySelector(this.scopeElement, countrySelectSelector);
         const countryStateSelect = DomAccess.querySelector(this.scopeElement, countryStateSelectSelector);
         const countryStateCitySelect = DomAccess.querySelector(this.scopeElement, countryStateCitySelectSelector);
+        const countryStateCityDistrictSelect = DomAccess.querySelector(this.scopeElement, countryStateCityDistrictSelectSelector);
 
         const initialCountryId = DomAccess.getDataAttribute(countrySelect, initialCountryAttribute);
         const initialCountryStateId = DomAccess.getDataAttribute(countryStateSelect, initialCountryStateAttribute);
+        const initialCityId = DomAccess.getDataAttribute(countryStateCitySelect, initialCityAttribute);
+        const initialDistrictId = DomAccess.getDataAttribute(countryStateCityDistrictSelect, initialDistrictAttribute);
+
+
         const countrySelectCurrentOption = countrySelect.options[countrySelect.selectedIndex];
         const vatIdRequired = !!DomAccess.getDataAttribute(countrySelectCurrentOption, this.options.vatIdRequired, false);
         const vatIdInput = document.querySelector(this.options.vatIdFieldInput);
@@ -69,7 +84,12 @@ export default class CountryStateSelectPlugin extends Plugin {
         if (!initialCountryId) {
             return;
         }
+
+        this._countryId = initialCountryId;
+
         this.requestStateData(initialCountryId, initialCountryStateId, stateRequired);
+        this.requestStateCityData(initialCountryId, initialCountryStateId, initialCityId);
+        this.requestStateCityDistrictData(initialCountryId, initialCityId, initialDistrictId);
 
         if (zipcodeRequired) {
             this._updateZipcodeRequired(zipcodeLabels, zipcodeInputs, zipcodeRequired);
@@ -80,15 +100,49 @@ export default class CountryStateSelectPlugin extends Plugin {
         }
         this._updateRequiredVatId(vatIdInput, vatIdRequired);
     }
-    onChangeCountryState(event){
+
+    onChangeCountryState(event) {
         const stateId = event.target.value;
+        this.requestStateCityData(this._countryId, stateId);
     }
-    onChangeCountryStateCity(event){
+
+    requestStateCityData(countryId, countryStateId = null,initCityId = null) {
+        const payload = JSON.stringify({countryId, parentId: countryStateId});
+
+
+        this._client.post(
+            window.router['frontend.country.country-data'],
+            payload,
+            (response) => {
+                let responseData = JSON.parse(response);
+                responseData = {...responseData};
+                updateStateCitySelect(responseData, initCityId, this.el, CountryStateSelectPlugin.options);
+            }
+        );
+    }
+
+    requestStateCityDistrictData(countryId, countryStateId = null,initialDistrictId = null) {
+        const payload = JSON.stringify({countryId, parentId: countryStateId});
+
+        this._client.post(
+            window.router['frontend.country.country-data'],
+            payload,
+            (response) => {
+                let responseData = JSON.parse(response);
+                responseData = {...responseData};
+                updateStateCityDistrictSelect(responseData, initialDistrictId, this.el, CountryStateSelectPlugin.options);
+            }
+        );
+    }
+
+    onChangeCountryStateCity(event) {
         const cityId = event.target.value;
+        this.requestStateCityDistrictData(this._countryId, cityId);
     }
+
     onChangeCountry(event) {
         const countryId = event.target.value;
-
+        this._countryId = countryId;
         const countrySelect = event.target.options[event.target.selectedIndex];
         const stateRequired = !!DomAccess.getDataAttribute(countrySelect, this.options.stateRequired);
         this.requestStateData(countryId, null, stateRequired);
@@ -107,14 +161,13 @@ export default class CountryStateSelectPlugin extends Plugin {
     }
 
     requestStateData(countryId, countryStateId = null, stateRequired = false) {
-        const payload = JSON.stringify({ countryId });
+        const payload = JSON.stringify({countryId});
         this._client.post(
             window.router['frontend.country.country-data'],
             payload,
             (response) => {
                 let responseData = JSON.parse(response);
-                responseData = {...responseData, ...{ stateRequired }};
-                console.log(responseData);
+                responseData = {...responseData, ...{stateRequired}};
                 updateStateSelect(responseData, countryStateId, this.el, CountryStateSelectPlugin.options);
             }
         );
@@ -138,7 +191,7 @@ export default class CountryStateSelectPlugin extends Plugin {
         }
 
         if (label?.textContent && label.textContent.substr(-1, 1) === '*') {
-            label.textContent = label.textContent.substr(0, label.textContent.length -1);
+            label.textContent = label.textContent.substr(0, label.textContent.length - 1);
         }
 
         vatIdFieldInput.removeAttribute('required');
@@ -170,6 +223,7 @@ export default class CountryStateSelectPlugin extends Plugin {
 
         this._formFieldToggleInstance = window.PluginManager.getPluginInstanceFromElement(toggleField, 'FormFieldToggle');
     }
+
     _onFormFieldToggleChange(event) {
         this._differentShippingCheckbox = event.target.checked;
 
@@ -190,8 +244,36 @@ export default class CountryStateSelectPlugin extends Plugin {
     }
 }
 
-function updateStateSelect({ stateRequired, states}, countryStateId, rootElement, options) {
-    const { countryStateSelectSelector, countryStatePlaceholderSelector } = options;
+function updateStateCitySelect({states}, countryStateId, rootElement, options) {
+
+    const {
+        countryStateCitySelectSelector,
+        countryStateCityPlaceholderSelector,
+        countryStateCityDistrictSelectSelector,
+        countryStateCityDistrictPlaceholderSelector,
+    } = options;
+    const countryStateCitySelect = DomAccess.querySelector(rootElement, countryStateCitySelectSelector);
+    const countryStateCityDistrictSelect = DomAccess.querySelector(rootElement, countryStateCityDistrictSelectSelector);
+    removeOldOptions(countryStateCityDistrictSelect, `option:not(${countryStateCityDistrictPlaceholderSelector})`);
+    removeOldOptions(countryStateCitySelect, `option:not(${countryStateCityPlaceholderSelector})`);
+    addNewStates(countryStateCitySelect, states, countryStateId);
+    updateRequiredState(countryStateCitySelect, `option${countryStateCityPlaceholderSelector}`);
+}
+
+function updateStateCityDistrictSelect({states}, countryStateId, rootElement, options) {
+
+    const {countryStateCityDistrictSelectSelector, countryStateCityDistrictPlaceholderSelector} = options;
+    const countryStateCityDistrictSelect = DomAccess.querySelector(rootElement, countryStateCityDistrictSelectSelector);
+
+    removeOldOptions(countryStateCityDistrictSelect, `option:not(${countryStateCityDistrictPlaceholderSelector})`);
+    addNewStates(countryStateCityDistrictSelect, states, countryStateId);
+    updateRequiredState(countryStateCityDistrictSelect, `option${countryStateCityDistrictPlaceholderSelector}`);
+}
+
+
+
+function updateStateSelect({stateRequired, states}, countryStateId, rootElement, options) {
+    const {countryStateSelectSelector, countryStatePlaceholderSelector} = options;
     const countryStateSelect = DomAccess.querySelector(rootElement, countryStateSelectSelector);
 
     removeOldOptions(countryStateSelect, `option:not(${countryStatePlaceholderSelector})`);
@@ -204,6 +286,9 @@ function removeOldOptions(el, optionQuery) {
 }
 
 function addNewStates(selectEl, states, selectedStateId) {
+    if (selectEl === null) {
+        return;
+    }
     if (states.length === 0) {
         selectEl.parentNode.classList.add('d-none');
         selectEl.setAttribute('disabled', 'disabled');
@@ -232,6 +317,9 @@ function createOptionFromState(state, selectedStateId) {
 
 function updateRequiredState(countryStateSelect, stateRequired, placeholderQuery) {
     const placeholder = countryStateSelect.querySelector(placeholderQuery);
+    if (!placeholder){
+        return;
+    }
     const label = countryStateSelect.parentNode.querySelector('label');
 
     if (stateRequired) {
@@ -246,7 +334,7 @@ function updateRequiredState(countryStateSelect, stateRequired, placeholderQuery
     }
 
     if (label?.textContent && label.textContent.substr(-1, 1) === '*') {
-        label.textContent = label.textContent.substr(0, label.textContent.length -1);
+        label.textContent = label.textContent.substr(0, label.textContent.length - 1);
     }
 
     placeholder.removeAttribute('disabled');
