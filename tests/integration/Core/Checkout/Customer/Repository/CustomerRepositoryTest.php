@@ -76,7 +76,6 @@ class CustomerRepositoryTest extends TestCase
         $salutation = $this->getValidSalutationId();
         $address = [
             'name' => 'not',
-            'city' => 'not',
             'street' => 'not',
             'zipcode' => 'not',
             'salutationId' => $salutation,
@@ -167,7 +166,6 @@ class CustomerRepositoryTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'name' => 'not',
-                'city' => 'not',
                 'street' => 'not',
                 'zipcode' => 'not',
                 'salutationId' => $salutation,
@@ -203,7 +201,6 @@ class CustomerRepositoryTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),

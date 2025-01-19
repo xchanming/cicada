@@ -204,7 +204,7 @@ export default {
         },
 
         isCicadaDefaultTax(tax) {
-            return this.$te(`global.tax-rates.${tax.name}`, 'en-GB');
+            return this.$te(`global.tax-rates.${tax.name}`, 'zh-CN');
         },
 
         getLabel(tax) {

@@ -244,7 +244,7 @@ class ExtensionLoader
                 'active' => false,
                 'type' => ExtensionStruct::EXTENSION_TYPE_APP,
                 'isTheme' => is_file($app->getPath() . '/Resources/theme.json'),
-                'privacyPolicyExtension' => isset($appArray['privacyPolicyExtensions']) ? $this->getTranslationFromArray($appArray['privacyPolicyExtensions'], $language, 'en-GB') : '',
+                'privacyPolicyExtension' => isset($appArray['privacyPolicyExtensions']) ? $this->getTranslationFromArray($appArray['privacyPolicyExtensions'], $language, 'zh-CN') : '',
                 'privacyPolicyLink' => $app->getMetadata()->getPrivacy(),
             ];
 

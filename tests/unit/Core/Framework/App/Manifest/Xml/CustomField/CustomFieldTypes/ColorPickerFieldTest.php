@@ -28,7 +28,7 @@ class ColorPickerFieldTest extends TestCase
         static::assertInstanceOf(ColorPickerField::class, $colorPickerField);
         static::assertEquals('test_color_picker_field', $colorPickerField->getName());
         static::assertEquals([
-            'en-GB' => 'Test color-picker field',
+            'zh-CN' => 'Test color-picker field',
         ], $colorPickerField->getLabel());
         static::assertEquals([], $colorPickerField->getHelpText());
         static::assertEquals(1, $colorPickerField->getPosition());

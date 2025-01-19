@@ -52,7 +52,7 @@ class AddressValidationFactory implements DataValidationFactoryInterface
             ->add('countryStateId', new EntityExists(['entity' => 'country_state', 'context' => $frameworkContext]))
             ->add('name', new NotBlank(null, 'VIOLATION::NAME_IS_BLANK_ERROR'))
             ->add('street', new NotBlank(null, 'VIOLATION::STREET_IS_BLANK_ERROR'))
-            ->add('city', new NotBlank(null, 'VIOLATION::CITY_IS_BLANK_ERROR'))
+            ->add('cityId', new NotBlank(null, 'VIOLATION::CITY_IS_BLANK_ERROR'))
             ->add('countryId', new NotBlank(null, 'VIOLATION::COUNTRY_IS_BLANK_ERROR'), new EntityExists(['entity' => 'country', 'context' => $frameworkContext]));
 
         if ($this->systemConfigService->get('core.loginRegistration.showAdditionalAddressField1', $salesChannelId)

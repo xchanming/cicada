@@ -145,7 +145,6 @@ class CustomerTagTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'defaultShippingAddress' => [
                 'name' => 'not',
-                'city' => 'not',
                 'street' => 'not',
                 'zipcode' => 'not',
                 'salutationId' => $this->getValidSalutationId(),

@@ -85,7 +85,7 @@ class ThemeTest extends TestCase
                             'sw-color-brand-primary' => 'Primary colour',
                         ],
                         'zh-CN' => [
-                            'sw-color-brand-primary' => 'Primärfarbe',
+                            'sw-color-brand-primary' => '主色',
                         ],
                     ],
                 ],
@@ -201,7 +201,7 @@ class ThemeTest extends TestCase
 
         $childThemeFields = $this->themeService->getThemeConfigurationStructuredFields($childTheme->getId(), true, $this->context);
         static::assertSame(
-            'Primary colour',
+            '主色',
             $childThemeFields['tabs']['default']['blocks']['themeColors']['sections']['default']['fields']['sw-color-brand-primary']['label']
         );
     }
@@ -250,7 +250,7 @@ class ThemeTest extends TestCase
 
         $childThemeFields = $this->themeService->getThemeConfigurationStructuredFields($childTheme->getId(), true, $this->context);
         static::assertSame(
-            'Primary colour',
+            '主色',
             $childThemeFields['tabs']['default']['blocks']['themeColors']['sections']['default']['fields']['sw-color-brand-primary']['label']
         );
     }

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\Migration\V6_6\Migration1727768690UpdateDefaultEnglishPlainMailFooter;
+use Cicada\Core\Migration\V6_6\Migration1727768690UpdateDefaultChinesePlainMailFooter;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[Package('core')]
-#[CoversClass(Migration1727768690UpdateDefaultEnglishPlainMailFooter::class)]
+#[CoversClass(Migration1727768690UpdateDefaultChinesePlainMailFooter::class)]
 class Migration1727768690UpdateDefaultEnglishPlainMailFooterTest extends TestCase
 {
     use IntegrationTestBehaviour;
@@ -32,7 +32,7 @@ class Migration1727768690UpdateDefaultEnglishPlainMailFooterTest extends TestCas
     {
         $defaultLanguageId = $this->fetchDefaultLanguageId();
 
-        $migration = new Migration1727768690UpdateDefaultEnglishPlainMailFooter();
+        $migration = new Migration1727768690UpdateDefaultChinesePlainMailFooter();
         $migration->update($this->connection);
         $migration->update($this->connection);
 
@@ -52,7 +52,7 @@ class Migration1727768690UpdateDefaultEnglishPlainMailFooterTest extends TestCas
         $changedEnPlainFooter = 'hello world';
         $this->updatePlainFooterTranslation($systemDefaultMailHeaderFooterId, $defaultLanguageId, $changedEnPlainFooter);
 
-        $migration = new Migration1727768690UpdateDefaultEnglishPlainMailFooter();
+        $migration = new Migration1727768690UpdateDefaultChinesePlainMailFooter();
         $migration->update($this->connection);
         $migration->update($this->connection);
 

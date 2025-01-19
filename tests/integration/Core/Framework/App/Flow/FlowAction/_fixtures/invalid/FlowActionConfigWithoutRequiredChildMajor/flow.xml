@@ -5,9 +5,9 @@
             <meta>
                 <name>abc.cde.ccc</name>
                 <label>First action app</label>
-                <label lang="zh-CN">First action app DE</label>
+                <label lang="en-GB">First action app DE</label>
                 <description>First action app description</description>
-                <description lang="zh-CN">First action app description DE</description>
+                <description lang="en-GB">First action app description DE</description>
                 <url>https://example.xyz</url>
                 <requirements>order</requirements>
                 <requirements>customer</requirements>

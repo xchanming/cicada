@@ -14,7 +14,7 @@
     },
     "welcome": {
       "modalTitle": "欢迎",
-      "headlineWelcome": "欢迎来到好客数字化营销管理后台",
+      "headlineWelcome": "欢迎来到蝉鸣数字化营销管理后台",
       "messageWelcome": "此向导将引导您完成设置，并帮助您进行最重要的设置。<br>您想用不同的语言使用您的商城并吸引其他国家的客户吗？那么请在这里安装所需的语言包。",
       "headlineChangeLanguage": "安装其他语言",
       "switchLanguageModalTitle": "选择界面语言",
@@ -29,12 +29,12 @@
       "noConnectionMessage": "似乎有连接问题，语言无法安装。"
     },
     "dataImport": {
-      "modalTitle": "开始使用好客平台",
+      "modalTitle": "开始使用蝉鸣平台",
       "headlineDemoData": "使用演示数据",
-      "messageDemoData": "通过添加一组演示数据开始探索好客数字化营销平台。演示数据给人以一个完全正常工作的商城的印象，但应仅用于测试目的。",
+      "messageDemoData": "通过添加一组演示数据开始探索蝉鸣数字化营销平台。演示数据给人以一个完全正常工作的商城的印象，但应仅用于测试目的。",
       "buttonInstallDemoData": "安装演示数据",
       "headlineMigration": "迁移您的商城数据",
-      "messageMigration": "迁移助手帮助您连接并将数据从以前的商城系统转移到您的新好客数字化营销平台环境中。",
+      "messageMigration": "迁移助手帮助您连接并将数据从以前的商城系统转移到您的新蝉鸣数字化营销平台环境中。",
       "buttonInstallMigration": "安装迁移助手",
       "loadingMessage": "正在安装扩展<br>这可能需要一段时间..."
     },
@@ -81,18 +81,18 @@
       "otherRecommendations": "地区推荐"
     },
     "cicadaAccount": {
-      "headline": "好客平台官方账号 - 登录",
+      "headline": "蝉鸣平台官方账号 - 登录",
       "passwordLabel": "密码",
       "passwordPlaceholder": "输入您的密码...",
       "emailAddressLabel": "邮箱地址",
       "emailAddressPlaceholder": "输入您的邮箱地址...",
       "modalTitle": "官方账号",
-      "message": "官方账号是您与所有好客营销平台服务互动的主要中心。",
+      "message": "官方账号是您与所有蝉鸣营销平台服务互动的主要中心。",
       "registerAccountText": "还没有账号？在这里注册",
       "registerAccountHere": "这里",
-      "registerAccountUrl": "https://account.haokeyingxiao.com/register?lang=en",
+      "registerAccountUrl": "https://account.xchanming.com/register?lang=en",
       "forgotPasswordText": "忘记密码了吗？",
-      "forgotPasswordUrl": "https://account.haokeyingxiao.com/recovery?lang=en"
+      "forgotPasswordUrl": "https://account.xchanming.com/recovery?lang=en"
     },
     "error": {
       "messageLoginDataInvalid": "登录凭据不正确，请重试。"
@@ -108,28 +108,28 @@
       "loadStatusCollect": "正在收集商城信息...",
       "takeMinutes": "这可能需要几分钟。",
       "alreadyActivated": "商城已成功激活。",
-      "enablingStore": "正在启用好客平台商城...",
+      "enablingStore": "正在启用蝉鸣平台商城...",
       "activationErrorTitle": "激活时出错",
       "activationErrorDescription": "请向管理员寻求帮助。",
       "headingOne": "方便快捷购买扩展 -",
-      "headingTwo": "直接在您的好客平台商城中。",
-      "description": "激活全新的好客平台商城，访问大量有用的扩展和现代主题，这些扩展和主题可以无缝集成到您的商城中 - 无需任何编程技能。"
+      "headingTwo": "直接在您的蝉鸣平台商城中。",
+      "description": "激活全新的蝉鸣平台商城，访问大量有用的扩展和现代主题，这些扩展和主题可以无缝集成到您的商城中 - 无需任何编程技能。"
     },
     "defaults": {
       "modalTitle": "设置默认值"
     },
     "finish": {
       "headlineAllDone": "全部完成！",
-      "message": "您的好客营销平台{edition} 现已验证。",
-      "messageNotLicensed": "您的好客营销平台现已准备就绪。",
+      "message": "您的蝉鸣营销平台{edition} 现已验证。",
+      "messageNotLicensed": "您的蝉鸣营销平台现已准备就绪。",
       "headlineUsefulLinks": "有用的链接",
       "loadingMessage": "正在重新启动应用<br>这可能需要一段时间...",
       "documentationLabel": "文档",
-      "documentationUrl": "https://docs.haokeyingxiao.com/en",
+      "documentationUrl": "https://docs.xchanming.com/en",
       "forumLabel": "论坛",
-      "forumUrl": "https://forum.haokeyingxiao.com/",
+      "forumUrl": "https://forum.xchanming.com/",
       "roadmapLabel": "路线图",
-      "roadmapUrl": "https://www.haokeyingxiao.com/en/roadmap/",
+      "roadmapUrl": "https://www.xchanming.com/en/roadmap/",
       "modalTitle": "完成"
     },
     "stepItemTitle": {

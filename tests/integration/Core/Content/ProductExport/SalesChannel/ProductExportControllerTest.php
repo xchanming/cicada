@@ -130,7 +130,7 @@ class ProductExportControllerTest extends TestCase
         $csvRows = explode(\PHP_EOL, (string) $client->getResponse()->getContent());
 
         static::assertCount(4, $csvRows);
-        static::assertEquals('SwagTheme EN Test', $csvRows[1]);
+        static::assertEquals('SwagTheme DE Test', $csvRows[1]);
         static::assertEquals(ProductExportEntity::ENCODING_UTF8, $client->getResponse()->getCharset());
 
         // Switch to DE
@@ -139,16 +139,16 @@ class ProductExportControllerTest extends TestCase
 
         $client = $this->createSalesChannelBrowser(null, false, [
             'id' => $deSalesChannelId,
-            'languageId' => $this->getDeDeLanguageId(),
+            'languageId' => $this->getEnGbLanguageId(),
             'languages' => [
                 [
-                    'id' => $this->getDeDeLanguageId(),
+                    'id' => $this->getEnGbLanguageId(),
                 ],
             ],
             'domains' => [
                 [
                     'id' => $deSalesChannelDomainId,
-                    'languageId' => $this->getDeDeLanguageId(),
+                    'languageId' => $this->getEnGbLanguageId(),
                     'currencyId' => Defaults::CURRENCY,
                     'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                     'url' => 'http://example.com/de',
@@ -170,7 +170,7 @@ class ProductExportControllerTest extends TestCase
         $csvRows = explode(\PHP_EOL, (string) $client->getResponse()->getContent());
         static::assertNotNull($client->getResponse()->headers->get('Last-Modified'));
         static::assertCount(4, $csvRows);
-        static::assertEquals('SwagTheme DE Test', $csvRows[1]);
+        static::assertEquals('SwagTheme EN Test', $csvRows[1]);
     }
 
     public function testIsoCsvExport(): void

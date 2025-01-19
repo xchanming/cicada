@@ -204,7 +204,6 @@ class ResetPasswordRouteTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schoöppingen',
                 'zipcode' => '12345',
                 'countryId' => $this->getValidCountryId(),
             ],

@@ -105,6 +105,21 @@ export default {
             const criteria = new Criteria(1, 25);
             criteria
                 .addFilter(Criteria.equals('countryId', this.countryId))
+                .addFilter(Criteria.equals('parentId', null))
+                .addSorting(Criteria.sort('position', 'ASC', true))
+                .addSorting(Criteria.sort('name', 'ASC'));
+            return criteria;
+        },
+
+        stateCityCriteria() {
+            if (!this.countryId || !this.address.countryStateId) {
+                return null;
+            }
+
+            const criteria = new Criteria(1, 25);
+            criteria
+                .addFilter(Criteria.equals('countryId', this.countryId))
+                .addFilter(Criteria.equals('parentId', this.address.countryStateId))
                 .addSorting(Criteria.sort('position', 'ASC', true))
                 .addSorting(Criteria.sort('name', 'ASC'));
             return criteria;

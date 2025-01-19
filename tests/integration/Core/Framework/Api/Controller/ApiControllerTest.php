@@ -2307,7 +2307,7 @@ EOF;
 
         static::assertSame(Response::HTTP_NO_CONTENT, $client->getResponse()->getStatusCode());
 
-        $client->setServerParameter('HTTP_sw-language-id', $this->getDeDeLanguageId());
+        $client->setServerParameter('HTTP_sw-language-id', $this->getEnGbLanguageId());
 
         $client->request('PATCH', '/api/' . $entityName . '/' . $id, [
             'id' => $id,
@@ -2508,7 +2508,6 @@ EOF;
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];

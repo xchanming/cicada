@@ -222,7 +222,6 @@ class OrderRepositoryTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];
@@ -266,7 +265,6 @@ class OrderRepositoryTest extends TestCase
                             'salutationId' => $salutation,
                             'name' => 'Floy',
                             'zipcode' => '59438-0403',
-                            'city' => 'Stellaberg',
                             'street' => 'street',
                             'country' => [
                                 'name' => 'kasachstan',
@@ -317,7 +315,6 @@ class OrderRepositoryTest extends TestCase
                                 'salutationId' => $salutation,
                                 'name' => 'Floy',
                                 'zipcode' => '59438-0403',
-                                'city' => 'Stellaberg',
                                 'street' => 'street',
                                 'countryStateId' => $countryStateId,
                                 'country' => [
@@ -341,7 +338,6 @@ class OrderRepositoryTest extends TestCase
                         'salutationId' => $salutation,
                         'name' => 'Floy',
                         'zipcode' => '59438-0403',
-                        'city' => 'Stellaberg',
                         'street' => 'street',
                         'countryId' => $this->getValidCountryId(),
                         'id' => $addressId,

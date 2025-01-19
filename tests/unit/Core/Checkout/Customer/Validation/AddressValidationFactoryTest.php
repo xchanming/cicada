@@ -87,7 +87,7 @@ class AddressValidationFactoryTest extends TestCase
         static::assertArrayHasKey('countryStateId', $definition);
         static::assertArrayHasKey('name', $definition);
         static::assertArrayHasKey('street', $definition);
-        static::assertArrayHasKey('city', $definition);
+        static::assertArrayHasKey('cityId', $definition);
 
         static::assertCount(1, $definition['salutationId']);
         static::assertInstanceOf(EntityExists::class, $definition['salutationId'][0]);
@@ -100,8 +100,8 @@ class AddressValidationFactoryTest extends TestCase
         static::assertCount(1, $definition['countryStateId']);
         static::assertInstanceOf(EntityExists::class, $definition['countryStateId'][0]);
 
-        static::assertCount(1, $definition['city']);
-        static::assertInstanceOf(NotBlank::class, $definition['city'][0]);
+        static::assertCount(1, $definition['cityId']);
+        static::assertInstanceOf(NotBlank::class, $definition['cityId'][0]);
 
         static::assertCount(1, $definition['street']);
         static::assertInstanceOf(NotBlank::class, $definition['street'][0]);

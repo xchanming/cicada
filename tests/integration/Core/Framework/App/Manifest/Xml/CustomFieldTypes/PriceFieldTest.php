@@ -24,7 +24,7 @@ class PriceFieldTest extends TestCase
         static::assertEquals([
             'type' => 'price',
             'label' => [
-                'en-GB' => 'Test price field',
+                'zh-CN' => 'Test price field',
             ],
             'helpText' => [],
             'componentName' => 'sw-price-field',

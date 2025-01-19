@@ -13,7 +13,6 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\BasicTestDataBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -211,7 +210,6 @@ EOF;
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                     'countryId' => $this->fetchFirstIdFromTable('country'),
                 ],
             ],
@@ -239,7 +237,6 @@ EOF;
                         'salutationId' => $this->getValidSalutationId(),
                         'name' => 'Floy',
                         'zipcode' => '59438-0403',
-                        'city' => 'Stellaberg',
                         'street' => 'street',
                         'country' => [
                             'name' => 'kasachstan',
@@ -322,15 +319,9 @@ EOF;
                     'salutationId' => $this->getValidSalutationId(),
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
-                    'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')->upsert([$customer], Context::createDefaultContext());
 

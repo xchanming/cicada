@@ -28,19 +28,19 @@ class SingleSelectFieldTest extends TestCase
         static::assertInstanceOf(SingleSelectField::class, $singleSelectField);
         static::assertEquals('test_single_select_field', $singleSelectField->getName());
         static::assertEquals([
-            'en-GB' => 'Test single-select field',
+            'zh-CN' => 'Test single-select field',
         ], $singleSelectField->getLabel());
         static::assertEquals([], $singleSelectField->getHelpText());
         static::assertEquals(1, $singleSelectField->getPosition());
-        static::assertEquals(['en-GB' => 'Choose an option...'], $singleSelectField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Choose an option...'], $singleSelectField->getPlaceholder());
         static::assertFalse($singleSelectField->getRequired());
         static::assertEquals([
             'first' => [
-                'en-GB' => 'First',
-                'zh-CN' => 'Erster',
+                'zh-CN' => 'First',
+                'en-GB' => 'Erster',
             ],
             'second' => [
-                'en-GB' => 'Second',
+                'zh-CN' => 'Second',
             ],
         ], $singleSelectField->getOptions());
     }

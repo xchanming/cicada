@@ -356,7 +356,6 @@ class OrderServiceTest extends TestCase
             'defaultShippingAddress' => [
                 'id' => $customerId,
                 'name' => $name,
-                'city' => 'Schöppingen',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
                 'salutationId' => $salutationId,

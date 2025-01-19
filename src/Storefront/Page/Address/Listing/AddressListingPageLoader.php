@@ -115,6 +115,7 @@ class AddressListingPageLoader
         $criteria = (new Criteria())
             ->addFilter(new EqualsFilter('country.active', true))
             ->addAssociation('states');
+        $criteria->getAssociation('states')->addFilter(new EqualsFilter('parentId', null));
 
         $countries = $this->countryRoute
             ->load(new Request(), $criteria, $salesChannelContext)

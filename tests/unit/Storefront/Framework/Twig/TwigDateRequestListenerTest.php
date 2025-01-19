@@ -37,7 +37,7 @@ class TwigDateRequestListenerTest extends TestCase
     {
         yield [
             StorefrontRouteScope::ID,
-            'UTC',
+            'Asia/Shanghai',
             false,
         ];
 
@@ -61,7 +61,7 @@ class TwigDateRequestListenerTest extends TestCase
 
         yield [
             null,
-            'UTC',
+            'Asia/Shanghai',
             false,
         ];
 

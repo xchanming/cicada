@@ -187,7 +187,6 @@ class AccountNewsletterRecipientRouteTest extends TestCase
                 'countryId' => $this->getValidCountryId(),
                 'street' => 'Examplestreet 11',
                 'zipcode' => '48441',
-                'city' => 'Cologne',
             ],
             'shippingAddress' => [
                 'countryId' => $this->getValidCountryId(),
@@ -195,7 +194,6 @@ class AccountNewsletterRecipientRouteTest extends TestCase
                 'name' => 'Test 2',
                 'street' => 'Examplestreet 111',
                 'zipcode' => '12341',
-                'city' => 'Berlin',
             ],
         ];
     }

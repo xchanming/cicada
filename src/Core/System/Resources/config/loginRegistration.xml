@@ -82,20 +82,6 @@
         </input-field>
 
         <input-field type="bool">
-            <name>nameFieldRequire</name>
-            <label>Number field required</label>
-            <label lang="zh-CN">是否“姓名”字段必填</label>
-            <helpText>If this setting is activated, customers are required to provide their name during registration. If inactive, the name will be taken from the email field.</helpText>
-            <helpText lang="zh-CN">如果此设置已激活，客户在注册时必须填写姓名。如果未激活，姓名使用邮箱字段。</helpText>
-        </input-field>
-
-        <input-field type="bool">
-            <name>phoneNumberFieldRequired</name>
-            <label>Phone field required</label>
-            <label lang="zh-CN">是否必填”手机号“字段</label>
-        </input-field>
-
-        <input-field type="bool">
             <name>showBirthdayField</name>
             <label>Show birthday field</label>
             <label lang="zh-CN">是否显示“生日”字段</label>
@@ -135,12 +121,6 @@
             <name>additionalAddressField2Required</name>
             <label>Additional address 2 field required</label>
             <label lang="zh-CN">是否必填附加地址2</label>
-        </input-field>
-
-        <input-field type="bool">
-            <name>showZipcodeInFrontOfCity</name>
-            <label>Show ZIP code before city</label>
-            <label lang="zh-CN">是否将邮政编码显示在城市之前</label>
         </input-field>
 
         <input-field type="bool">

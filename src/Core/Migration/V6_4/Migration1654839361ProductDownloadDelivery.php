@@ -20,8 +20,8 @@ class Migration1654839361ProductDownloadDelivery extends MigrationStep
 {
     use ImportTranslationsTrait;
 
+    final public const DELIVERY_TIME_NAME_ZH = '自动交付';
     final public const DELIVERY_TIME_NAME_EN = 'Instant download';
-    final public const DELIVERY_TIME_NAME_DE = 'Sofort verfügbar';
 
     public function getCreationTimestamp(): int
     {
@@ -34,7 +34,7 @@ class Migration1654839361ProductDownloadDelivery extends MigrationStep
 
         $deliveryTimeTranslation = $connection->fetchOne(
             'SELECT LOWER(HEX(delivery_time_id)) FROM delivery_time_translation WHERE name = :deliveryTimeName',
-            ['deliveryTimeName' => self::DELIVERY_TIME_NAME_EN]
+            ['deliveryTimeName' => self::DELIVERY_TIME_NAME_ZH]
         );
 
         if ($deliveryTimeTranslation) {
@@ -52,11 +52,11 @@ class Migration1654839361ProductDownloadDelivery extends MigrationStep
         $translation = new Translations(
             [
                 'delivery_time_id' => $downloadDeliveryTime,
-                'name' => self::DELIVERY_TIME_NAME_DE,
+                'name' => self::DELIVERY_TIME_NAME_EN,
             ],
             [
                 'delivery_time_id' => $downloadDeliveryTime,
-                'name' => self::DELIVERY_TIME_NAME_EN,
+                'name' => self::DELIVERY_TIME_NAME_ZH,
             ]
         );
 

@@ -1,5 +1,6 @@
 // @ts-expect-error
 import MD5 from 'md5-es';
+import {utcToZonedTime} from 'date-fns-tz';
 
 /**
  * @package admin
@@ -115,7 +116,7 @@ export function date(val: string, options: DateFilterOptions = {}): string {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
     const lastKnownLang = Cicada.Application.getContainer('factory').locale.getLastKnownLocale();
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const userTimeZone = Cicada?.State?.get('session')?.currentUser?.timeZone ?? 'UTC';
+    const userTimeZone = Cicada?.State?.get('session')?.currentUser?.timeZone ?? 'Asia/Shanghai';
 
     const dateTimeFormatter = new Intl.DateTimeFormat(lastKnownLang, {
         timeZone: options.skipTimezoneConversion ? undefined : userTimeZone,
@@ -139,20 +140,11 @@ export function date(val: string, options: DateFilterOptions = {}): string {
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export function dateWithUserTimezone(dateObj: Date = new Date()): Date {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    const userTimeZone = Cicada.State.get('session').currentUser?.timeZone ?? 'UTC';
+    const userTimeZone = Cicada.State.get('session').currentUser?.timeZone ?? 'Asia/Shanghai';
 
-    // Language and options are set in order to re-create the date object
-    const localizedDate = dateObj.toLocaleDateString('en-GB', {
-        timeZone: userTimeZone,
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-    });
-
-    return new Date(localizedDate);
+    // 将给定的时间转换为用户时区的时间
+    // 返回转换后的 Date 对象
+    return utcToZonedTime(dateObj, userTimeZone);
 }
 
 /**

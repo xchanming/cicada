@@ -151,7 +151,6 @@ class AddressValidatorTest extends TestCase
         $customerAddress->setId(Uuid::randomHex());
         $customerAddress->setCountryId($country->getId());
         $customerAddress->setName('John');
-        $customerAddress->setCity('ExampleCity');
 
         $customer = new CustomerEntity();
         $customer->setName('John');
@@ -203,7 +202,6 @@ class AddressValidatorTest extends TestCase
         $customerAddress->setId(Uuid::randomHex());
         $customerAddress->setCountryId($country->getId());
         $customerAddress->setName('John');
-        $customerAddress->setCity('ExampleCity');
         $customerAddress->setSalutationId(Uuid::randomHex());
         $customerAddress->setCountry($country);
 
@@ -259,7 +257,6 @@ class AddressValidatorTest extends TestCase
         $customerAddress->setId(Uuid::randomHex());
         $customerAddress->setCountryId($country->getId());
         $customerAddress->setName('John');
-        $customerAddress->setCity('ExampleCity');
         $customerAddress->setSalutationId(Uuid::randomHex());
         $customerAddress->setCountry($country);
         $customerAddress->setCountryState($countryState);

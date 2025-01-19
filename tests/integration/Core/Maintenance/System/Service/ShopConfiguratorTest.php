@@ -103,7 +103,7 @@ class ShopConfiguratorTest extends TestCase
 
         static::assertNotNull($currency);
         static::assertSame('RUB', $currency->getSymbol());
-        static::assertSame('Russian Ruble', $currency->getName());
+        static::assertSame('俄罗斯卢布', $currency->getName());
         static::assertSame('RUB', $currency->getShortName());
         static::assertSame('RUB', $currency->getIsoCode());
         static::assertSame(1.0, $currency->getFactor());
@@ -124,7 +124,7 @@ class ShopConfiguratorTest extends TestCase
             ->first();
 
         static::assertNotNull($currency);
-        static::assertSame('Euro', $currency->getName());
+        static::assertSame('欧元', $currency->getName());
     }
 
     public function testSwitchDefaultCurrencyWithExistingCurrency(): void
@@ -136,7 +136,7 @@ class ShopConfiguratorTest extends TestCase
             ->first();
 
         static::assertNotNull($currency);
-        static::assertSame('British Pound', $currency->getName());
+        static::assertSame('英镑', $currency->getName());
         static::assertSame(1.0, $currency->getFactor());
 
         $criteria = new Criteria();
@@ -147,7 +147,7 @@ class ShopConfiguratorTest extends TestCase
             ->first();
 
         static::assertNotNull($oldDefault);
-        static::assertSame('CNY', $oldDefault->getName());
+        static::assertSame('人民币', $oldDefault->getName());
         static::assertSame(1.0, $oldDefault->getFactor());
     }
 }

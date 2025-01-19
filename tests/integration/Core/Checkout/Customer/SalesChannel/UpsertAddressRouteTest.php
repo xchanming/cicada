@@ -89,6 +89,7 @@ class UpsertAddressRouteTest extends TestCase
     public function testCreateAddress(array $data): void
     {
         $data['countryId'] = $this->getValidCountryId();
+        $data['cityId'] = $this->getValidCountryCityId();
 
         if (\array_key_exists('salutationId', $data)) {
             $data['salutationId'] = $this->getValidSalutationId();
@@ -195,8 +196,8 @@ class UpsertAddressRouteTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Test',
             'street' => 'Test',
-            'city' => 'Test',
             'zipcode' => 'Test',
+            'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
         ];
 
@@ -249,7 +250,6 @@ class UpsertAddressRouteTest extends TestCase
                     'salutationId' => '1',
                     'name' => null,
                     'street' => null,
-                    'city' => null,
                     'zipcode' => null,
                     'countryId' => null,
                     'countryStateId' => null,
@@ -264,6 +264,8 @@ class UpsertAddressRouteTest extends TestCase
                     'customFields' => [
                         'mapped' => 1,
                     ],
+                    'cityId' => null,
+                    'districtId' => null,
                 ],
             ]);
 
@@ -301,7 +303,6 @@ class UpsertAddressRouteTest extends TestCase
                 'salutationId' => '',
                 'name' => 'Test',
                 'street' => 'Test',
-                'city' => 'Test',
                 'zipcode' => 'Test',
             ],
         ];
@@ -310,7 +311,6 @@ class UpsertAddressRouteTest extends TestCase
             [
                 'name' => 'Test',
                 'street' => 'Test',
-                'city' => 'Test',
                 'zipcode' => 'Test',
             ],
         ];
@@ -320,7 +320,6 @@ class UpsertAddressRouteTest extends TestCase
                 'salutationId' => null,
                 'name' => 'Test',
                 'street' => 'Test',
-                'city' => 'Test',
                 'zipcode' => 'Test',
             ],
         ];

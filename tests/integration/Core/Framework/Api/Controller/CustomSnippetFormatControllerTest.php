@@ -287,11 +287,10 @@ class CustomSnippetFormatControllerTest extends TestCase
                 'data' => [
                     'address' => [
                         'zipcode' => '550000',
-                        'city' => 'Da Nang',
                     ],
                 ],
             ],
-            'expectedHtml' => '550000,  Da Nang',
+            'expectedHtml' => '550000,',
         ];
 
         yield 'render lines with empty snippet' => [

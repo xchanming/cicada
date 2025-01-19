@@ -1,8 +1,8 @@
 {
   "name": "my-first-block",
   "label": {
-    "zh-CN": "Erster Block einer App",
-    "en-GB": "First block from app"
+    "zh-CN": "First block from app",
+    "en-GB": "Erster Block einer App"
   },
   "slots": {
     "left": {

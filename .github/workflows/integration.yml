@@ -34,6 +34,7 @@ jobs:
       - phpunit-matrix
     runs-on: ubuntu-24.04
     strategy: ${{ fromJson(needs.phpunit-matrix.outputs.matrix) }}
+
     env:
       APP_ENV: test
       DATABASE_URL: mysql://root@127.0.0.1:3306/root
@@ -173,6 +174,7 @@ jobs:
         env:
           discovery.type: single-node
           plugins.security.disabled: "true"
+          TZ: Asia/Shanghai
         ports:
           - "9200:9200"
 

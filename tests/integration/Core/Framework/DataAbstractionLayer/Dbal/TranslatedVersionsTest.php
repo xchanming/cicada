@@ -33,7 +33,7 @@ class TranslatedVersionsTest extends TestCase
      * @var string[]
      */
     private array $languages = [
-        'en-GB', 'zh-CN',
+        'zh-CN', 'en-GB',
     ];
 
     /**
@@ -48,149 +48,149 @@ class TranslatedVersionsTest extends TestCase
 
     public function testTranslationsAreAllSelectable(): void
     {
-        $enContext = Context::createDefaultContext();
+        $zhContext = Context::createDefaultContext();
         $manufacturerId = Uuid::randomHex();
 
-        $this->createManufacturer($this->manufacturerRepository, $manufacturerId, $enContext);
+        $this->createManufacturer($this->manufacturerRepository, $manufacturerId, $zhContext);
 
-        $versionId = $this->manufacturerRepository->createVersion($manufacturerId, $enContext);
+        $versionId = $this->manufacturerRepository->createVersion($manufacturerId, $zhContext);
+        $zhVersionContext = $zhContext->createWithVersionId($versionId);
+        $enContext = $this->createEnContext($zhContext);
         $enVersionContext = $enContext->createWithVersionId($versionId);
-        $deContext = $this->createDeContext($enContext);
-        $deVersionContext = $deContext->createWithVersionId($versionId);
-
-        $this->manufacturerRepository->update([[
-            'id' => $manufacturerId,
-            'name' => 'version-en-GB',
-        ]], $enVersionContext);
 
         $this->manufacturerRepository->update([[
             'id' => $manufacturerId,
             'name' => 'version-zh-CN',
-        ]], $deVersionContext);
-
-        $enOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enContext)->getEntities()->first();
-        $enVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enVersionContext)->getEntities()->first();
-        $deOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $deContext)->getEntities()->first();
-        $deVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $deVersionContext)->getEntities()->first();
-
-        static::assertNotNull($enOriginal);
-        static::assertNotNull($enVersion);
-        static::assertNotNull($deOriginal);
-        static::assertNotNull($deVersion);
-        static::assertSame('original-en-GB', $enOriginal->getName());
-        static::assertSame('version-en-GB', $enVersion->getName());
-        static::assertSame('original-zh-CN', $deOriginal->getName());
-        static::assertSame('version-zh-CN', $deVersion->getName());
-    }
-
-    public function testTranslationsFallbackToOriginal(): void
-    {
-        $enContext = Context::createDefaultContext();
-        $manufacturerId = Uuid::randomHex();
-
-        $this->createManufacturer($this->manufacturerRepository, $manufacturerId, $enContext);
-
-        $versionId = $this->manufacturerRepository->createVersion($manufacturerId, $enContext);
-        $enVersionContext = $enContext->createWithVersionId($versionId);
-        $deContext = $this->createDeContext($enContext);
-        $deVersionContext = $deContext->createWithVersionId($versionId);
+        ]], $zhVersionContext);
 
         $this->manufacturerRepository->update([[
             'id' => $manufacturerId,
             'name' => 'version-en-GB',
         ]], $enVersionContext);
 
-        $enOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enContext)->getEntities()->first();
-        $enVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enVersionContext)->getEntities()->first();
-        $deOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $deContext)->getEntities()->first();
-        $deVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $deVersionContext)->getEntities()->first();
+        $enOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $zhContext)->getEntities()->first();
+        $enVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $zhVersionContext)->getEntities()->first();
+        $deOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enContext)->getEntities()->first();
+        $deVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enVersionContext)->getEntities()->first();
 
         static::assertNotNull($enOriginal);
         static::assertNotNull($enVersion);
         static::assertNotNull($deOriginal);
         static::assertNotNull($deVersion);
-        static::assertSame('original-en-GB', $enOriginal->getName());
-        static::assertSame('version-en-GB', $enVersion->getName());
-        static::assertSame('original-zh-CN', $deOriginal->getName());
-        static::assertSame('original-zh-CN', $deVersion->getName());
+        static::assertSame('original-zh-CN', $enOriginal->getName());
+        static::assertSame('version-zh-CN', $enVersion->getName());
+        static::assertSame('original-en-GB', $deOriginal->getName());
+        static::assertSame('version-en-GB', $deVersion->getName());
+    }
+
+    public function testTranslationsFallbackToOriginal(): void
+    {
+        $zhContext = Context::createDefaultContext();
+        $manufacturerId = Uuid::randomHex();
+
+        $this->createManufacturer($this->manufacturerRepository, $manufacturerId, $zhContext);
+
+        $versionId = $this->manufacturerRepository->createVersion($manufacturerId, $zhContext);
+        $zhVersionContext = $zhContext->createWithVersionId($versionId);
+        $enContext = $this->createEnContext($zhContext);
+        $enVersionContext = $enContext->createWithVersionId($versionId);
+
+        $this->manufacturerRepository->update([[
+            'id' => $manufacturerId,
+            'name' => 'version-zh-CN',
+        ]], $zhVersionContext);
+
+        $enOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $zhContext)->getEntities()->first();
+        $enVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $zhVersionContext)->getEntities()->first();
+        $deOriginal = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enContext)->getEntities()->first();
+        $deVersion = $this->manufacturerRepository->search(new Criteria([$manufacturerId]), $enVersionContext)->getEntities()->first();
+
+        static::assertNotNull($enOriginal);
+        static::assertNotNull($enVersion);
+        static::assertNotNull($deOriginal);
+        static::assertNotNull($deVersion);
+        static::assertSame('original-zh-CN', $enOriginal->getName());
+        static::assertSame('version-zh-CN', $enVersion->getName());
+        static::assertSame('original-en-GB', $deOriginal->getName());
+        static::assertSame('original-en-GB', $deVersion->getName());
     }
 
     public function testInheritenceWithProductsAllAreTranslated(): void
     {
-        $enContext = Context::createDefaultContext();
-        $deContext = $this->createDeContext($enContext);
+        $zhContext = Context::createDefaultContext();
+        $enContext = $this->createEnContext($zhContext);
         $productRepository = static::getContainer()->get('product.repository');
 
         $ids = $this->createParentChildProduct();
 
+        $zhVersionContext = $zhContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $zhContext));
         $enVersionContext = $enContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $enContext));
-        $deVersionContext = $deContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $deContext));
+        $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-zh-CN']], $zhVersionContext);
         $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-en-GB']], $enVersionContext);
-        $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-zh-CN']], $deVersionContext);
 
         $this->assertProductNames([
+            ['child-original-zh-CN', $zhContext],
             ['child-original-en-GB', $enContext],
-            ['child-original-zh-CN', $deContext],
+            ['child-version-zh-CN', $zhVersionContext],
             ['child-version-en-GB', $enVersionContext],
-            ['child-version-zh-CN', $deVersionContext],
         ], $ids->get('child'));
         $this->assertProductNames([
+            ['parent-original-zh-CN', $zhContext],
             ['parent-original-en-GB', $enContext],
-            ['parent-original-zh-CN', $deContext],
+            ['parent-original-zh-CN', $zhVersionContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('parent'));
     }
 
     public function testInheritanceWithProductsOnlyEnInVersionTranslated(): void
     {
-        $enContext = Context::createDefaultContext();
-        $deContext = $this->createDeContext($enContext);
+        $zhContext = Context::createDefaultContext();
+        $enContext = $this->createEnContext($zhContext);
         $productRepository = static::getContainer()->get('product.repository');
 
         $ids = $this->createParentChildProduct();
 
+        $zhVersionContext = $zhContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $zhContext));
         $enVersionContext = $enContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $enContext));
-        $deVersionContext = $deContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $deContext));
-        $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-en-GB']], $enVersionContext);
+        $productRepository->update([['id' => $ids->get('child'), 'name' => 'child-version-zh-CN']], $zhVersionContext);
 
         $this->assertProductNames([
+            ['child-original-zh-CN', $zhContext],
             ['child-original-en-GB', $enContext],
-            ['child-original-zh-CN', $deContext],
-            ['child-version-en-GB', $enVersionContext],
-            ['child-original-zh-CN', $deVersionContext],
+            ['child-version-zh-CN', $zhVersionContext],
+            ['child-original-en-GB', $enVersionContext],
         ], $ids->get('child'));
         $this->assertProductNames([
+            ['parent-original-zh-CN', $zhContext],
             ['parent-original-en-GB', $enContext],
-            ['parent-original-zh-CN', $deContext],
+            ['parent-original-zh-CN', $zhVersionContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('parent'));
     }
 
     public function testInheritanceWithOnlyParentTranslations(): void
     {
-        $enContext = Context::createDefaultContext();
-        $deContext = $this->createDeContext($enContext);
+        $zhContext = Context::createDefaultContext();
+        $enContext = $this->createEnContext($zhContext);
         $productRepository = static::getContainer()->get('product.repository');
 
         $ids = $this->createParentChildProduct(false);
 
+        $zhVersionContext = $zhContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $zhContext));
         $enVersionContext = $enContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $enContext));
-        $deVersionContext = $deContext->createWithVersionId($productRepository->createVersion($ids->get('child'), $deContext));
 
         $this->assertProductNames([
+            ['parent-original-zh-CN', $zhContext],
             ['parent-original-en-GB', $enContext],
-            ['parent-original-zh-CN', $deContext],
+            ['parent-original-zh-CN', $zhVersionContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('parent'));
 
         $this->assertProductNames([
+            ['parent-original-zh-CN', $zhContext],
             ['parent-original-en-GB', $enContext],
-            ['parent-original-zh-CN', $deContext],
+            ['parent-original-zh-CN', $zhVersionContext],
             ['parent-original-en-GB', $enVersionContext],
-            ['parent-original-zh-CN', $deVersionContext],
         ], $ids->get('child'));
     }
 
@@ -238,15 +238,15 @@ class TranslatedVersionsTest extends TestCase
         ]], $context);
     }
 
-    private function createDeContext(Context $enContext): Context
+    private function createEnContext(Context $enContext): Context
     {
-        $deLanguageId = $this->getDeDeLanguageId();
+        $enLanguageId = $this->getEnGbLanguageId();
 
         return new Context(
             $enContext->getSource(),
             $enContext->getRuleIds(),
             $enContext->getCurrencyId(),
-            [$deLanguageId, $enContext->getLanguageId()],
+            [$enLanguageId, $enContext->getLanguageId()],
             $enContext->getVersionId(),
             $enContext->getCurrencyFactor(),
             $enContext->considerInheritance(),

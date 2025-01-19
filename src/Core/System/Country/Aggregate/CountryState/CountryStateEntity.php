@@ -17,6 +17,12 @@ class CountryStateEntity extends Entity
     use EntityCustomFieldsTrait;
     use EntityIdTrait;
 
+    protected ?string $parentId = null;
+
+    protected ?CountryStateCollection $children = null;
+
+    protected ?CountryStateEntity $parent = null;
+
     /**
      * @var string
      *
@@ -168,5 +174,35 @@ class CountryStateEntity extends Entity
     public function setOrderAddresses(OrderAddressCollection $orderAddresses): void
     {
         $this->orderAddresses = $orderAddresses;
+    }
+
+    public function getParentId(): ?string
+    {
+        return $this->parentId;
+    }
+
+    public function setParentId(?string $parentId): void
+    {
+        $this->parentId = $parentId;
+    }
+
+    public function getChildren(): ?CountryStateCollection
+    {
+        return $this->children;
+    }
+
+    public function setChildren(CountryStateCollection $children): void
+    {
+        $this->children = $children;
+    }
+
+    public function getParent(): ?CountryStateEntity
+    {
+        return $this->parent;
+    }
+
+    public function setParent(CountryStateEntity $parent): void
+    {
+        $this->parent = $parent;
     }
 }

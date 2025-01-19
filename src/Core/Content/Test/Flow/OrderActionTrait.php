@@ -63,7 +63,6 @@ trait OrderActionTrait
                 'id' => $this->ids->create('address'),
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId($this->ids->get('sales-channel')),
@@ -193,7 +192,6 @@ trait OrderActionTrait
                         'name' => 'Max',
                         'street' => 'Ebbinghoff 10',
                         'zipcode' => '48624',
-                        'city' => 'Schöppingen',
                         'countryId' => $this->getValidCountryId(),
                     ],
                     [
@@ -203,7 +201,6 @@ trait OrderActionTrait
                         'name' => 'Max',
                         'street' => 'Ebbinghoff 10',
                         'zipcode' => '48624',
-                        'city' => 'Schöppingen',
                     ],
                 ],
                 'lineItems' => [

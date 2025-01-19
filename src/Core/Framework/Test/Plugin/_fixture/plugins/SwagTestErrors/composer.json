@@ -14,7 +14,7 @@
     "extra": {
         "cicada-plugin-class": "Swag\\Test\\SwagTestErrors",
         "label": {
-            "en_GB": "Invalid locale Code for label"
+            "zh_CN": "Invalid locale Code for label"
         }
     }
 }

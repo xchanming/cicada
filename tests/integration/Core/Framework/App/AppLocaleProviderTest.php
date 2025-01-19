@@ -33,7 +33,7 @@ class AppLocaleProviderTest extends TestCase
     {
         $locale = $this->localeProvider->getLocaleFromContext(Context::createDefaultContext());
 
-        static::assertSame('en-GB', $locale);
+        static::assertSame('zh-CN', $locale);
     }
 
     public function testGetLocaleWithSalesChannelSource(): void
@@ -41,7 +41,7 @@ class AppLocaleProviderTest extends TestCase
         $context = static::getContainer()->get(SalesChannelContextFactory::class)->create(Uuid::randomHex(), TestDefaults::SALES_CHANNEL);
         $locale = $this->localeProvider->getLocaleFromContext($context->getContext());
 
-        static::assertSame('en-GB', $locale);
+        static::assertSame('zh-CN', $locale);
     }
 
     public function testGetLocaleFromContextReturnsLocaleFromUser(): void
@@ -74,7 +74,7 @@ class AppLocaleProviderTest extends TestCase
     {
         $locale = $this->localeProvider->getLocaleFromContext(Context::createDefaultContext());
 
-        static::assertSame('en-GB', $locale);
+        static::assertSame('zh-CN', $locale);
     }
 
     public function testGetLocaleFromContextReturnsEnglishForIntegrations(): void
@@ -83,6 +83,6 @@ class AppLocaleProviderTest extends TestCase
             Context::createDefaultContext(new AdminApiSource(null, Uuid::randomHex()))
         );
 
-        static::assertSame('en-GB', $locale);
+        static::assertSame('zh-CN', $locale);
     }
 }

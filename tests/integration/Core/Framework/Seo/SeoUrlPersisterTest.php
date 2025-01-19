@@ -203,7 +203,7 @@ class SeoUrlPersisterTest extends TestCase
     public function testSameSeoPathDifferentLanguage(): void
     {
         $defaultContext = Context::createDefaultContext();
-        $deContext = new Context($defaultContext->getSource(), [], $defaultContext->getCurrencyId(), [$this->getDeDeLanguageId()]);
+        $deContext = new Context($defaultContext->getSource(), [], $defaultContext->getCurrencyId(), [$this->getEnGbLanguageId()]);
 
         $fk = Uuid::randomHex();
         $seoUrlUpdates = [

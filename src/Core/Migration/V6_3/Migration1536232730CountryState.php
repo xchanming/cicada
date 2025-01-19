@@ -25,14 +25,17 @@ class Migration1536232730CountryState extends MigrationStep
             CREATE TABLE `country_state` (
               `id`          BINARY(16)                              NOT NULL,
               `country_id`  BINARY(16)                              NOT NULL,
+              `parent_id` binary(16) DEFAULT NULL,
               `short_code`  VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
               `position`    INT(11)                                 NOT NULL DEFAULT 1,
               `active`      TINYINT(1)                              NOT NULL DEFAULT 1,
               `created_at`  DATETIME(3)                             NOT NULL,
               `updated_at`  DATETIME(3)                             NULL,
               PRIMARY KEY (`id`),
+              KEY `fk.country_state.parent_id` (`parent_id`),
               CONSTRAINT `fk.country_state.country_id` FOREIGN KEY (`country_id`)
-                REFERENCES `country` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+                REFERENCES `country` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+              CONSTRAINT `fk.country_state.parent_id` FOREIGN KEY (`parent_id`) REFERENCES `country_state` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ');
 

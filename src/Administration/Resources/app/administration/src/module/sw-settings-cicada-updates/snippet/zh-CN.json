@@ -43,7 +43,7 @@
         "writeableCheckValid": "以下目录和文件可写入：<br/>{checkedDirectories}",
         "writeableCheckFailed": "以下目录和文件不可写入：<br>{failedDirectories}",
         "validCicadaLicense": "您当前的 Cicada 版本已过期。您可能需要考虑更新到最新版本。",
-        "invalidCicadaLicense": "未找到有效的 Cicada 订阅。<br>无法执行自动更新。<br>您可以通过<a target=\"_blank\" href=\"https://account.haokeyingxiao.com\">Cicada 账户页面</a>购买 Cicada 订阅。"
+        "invalidCicadaLicense": "未找到有效的 Cicada 订阅。<br>无法执行自动更新。<br>您可以通过<a target=\"_blank\" href=\"https://account.xchanming.com\">Cicada 账户页面</a>购买 Cicada 订阅。"
       },
       "ready": "准备就绪",
       "notReady": "未准备好"

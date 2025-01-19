@@ -22,8 +22,8 @@ class BlocksTest extends TestCase
         static::assertSame('text-image', $firstBlock->getCategory());
         static::assertEquals(
             [
-                'en-GB' => 'First block from app',
-                'zh-CN' => 'Erster Block einer App',
+                'zh-CN' => 'First block from app',
+                'en-GB' => 'Erster Block einer App',
             ],
             $firstBlock->getLabel()
         );

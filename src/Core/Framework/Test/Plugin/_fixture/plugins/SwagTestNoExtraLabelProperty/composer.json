@@ -17,15 +17,15 @@
         "cicada-plugin-class": "SwagTestNoExtraLabelProperty\\SwagTestNoExtraLabelProperty",
         "copyright": "(c) by cicada AG",
         "description": {
-            "zh-CN": "Deutsche Beschreibung",
+            "zh-CN": "Chinese Beschreibung",
             "en-GB": "English description"
         },
         "manufacturerLink": {
-            "zh-CN": "https://www.test.de/",
+            "zh-CN": "https://www.test.zh/",
             "en-GB": "https://www.test.com/"
         },
         "supportLink": {
-            "zh-CN": "https://www.test.de/support",
+            "zh-CN": "https://www.test.zh/support",
             "en-GB": "https://www.test.com/support"
         }
     },

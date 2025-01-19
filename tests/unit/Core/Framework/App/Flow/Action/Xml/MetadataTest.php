@@ -28,12 +28,12 @@ class MetadataTest extends TestCase
 
         $expected = [
             'label' => [
-                'en-GB' => 'First action app',
-                'zh-CN' => 'First action app DE',
+                'zh-CN' => 'First action app',
+                'en-GB' => 'First action app DE',
             ],
             'description' => [
-                'en-GB' => 'First action app description',
-                'zh-CN' => 'First action app description DE',
+                'zh-CN' => 'First action app description',
+                'en-GB' => 'First action app description DE',
             ],
             'name' => 'abc.cde.ccc',
             'url' => 'https://example.xyz',
@@ -41,14 +41,14 @@ class MetadataTest extends TestCase
             'icon' => 'resource/pencil',
             'swIcon' => 'sw-pencil',
             'headline' => [
-                'en-GB' => 'Headline for action',
-                'zh-CN' => 'Überschrift für Aktion',
+                'zh-CN' => 'Headline for action',
+                'en-GB' => 'Überschrift für Aktion',
             ],
             'delayable' => true,
             'badge' => 'abc',
         ];
 
         $metaData = Metadata::fromXml($meta);
-        static::assertSame($expected, $metaData->toArray('en-GB'));
+        static::assertSame($expected, $metaData->toArray('zh-CN'));
     }
 }

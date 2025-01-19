@@ -147,7 +147,6 @@ class NewsletterControllerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),
@@ -185,7 +184,6 @@ class NewsletterControllerTest extends TestCase
         static::assertSame($this->customerData['title'], $recipientEntry->getTitle());
         static::assertSame($this->customerData['name'], $recipientEntry->getName());
         static::assertSame($this->customerData['defaultShippingAddress']['zipcode'], $recipientEntry->getZipCode());
-        static::assertSame($this->customerData['defaultShippingAddress']['city'], $recipientEntry->getCity());
         static::assertSame($this->customerData['defaultShippingAddress']['street'], $recipientEntry->getStreet());
     }
 }

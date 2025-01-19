@@ -31,11 +31,11 @@ use Doctrine\DBAL\Connection;
 class Migration1536233560BasicData extends MigrationStep
 {
     /**
-     * @var array<string, array{id: string, name: string, nameZh: string, availableEntities: array<string, string|null>}>|null
+     * @var array<string, array{id: string, nameEn: string, name: string, availableEntities: array<string, string|null>}>|null
      */
     private ?array $mailTypes = null;
 
-    private ?string $zhCnLanguageId = null;
+    private ?string $enGbLanguageId = null;
 
     public function getCreationTimestamp(): int
     {
@@ -88,8 +88,8 @@ class Migration1536233560BasicData extends MigrationStep
         $localeData = include __DIR__ . '/../../locales.php';
 
         $queue = new MultiInsertQueryQueue($connection);
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         foreach ($localeData as $locale) {
             if (\in_array($locale['locale'], ['en-GB', 'zh-CN'], true)) {
@@ -129,21 +129,21 @@ class Migration1536233560BasicData extends MigrationStep
         $queue->execute();
     }
 
-    private function getZhCnLanguageId(): string
+    private function getEnGbLanguageId(): string
     {
-        if (!$this->zhCnLanguageId) {
-            $this->zhCnLanguageId = Uuid::randomHex();
+        if (!$this->enGbLanguageId) {
+            $this->enGbLanguageId = Uuid::randomHex();
         }
 
-        return $this->zhCnLanguageId;
+        return $this->enGbLanguageId;
     }
 
     private function createLanguage(Connection $connection): void
     {
         $localeEn = Uuid::randomBytes();
         $localeZh = Uuid::randomBytes();
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         // first locales
         $connection->insert('locale', ['id' => $localeEn, 'code' => 'en-GB', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -199,15 +199,15 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createCountry(Connection $connection): void
     {
-        $languageZH = fn (string $countryId, string $name) => [
-            'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
+        $languageZH = static fn (string $countryId, string $name) => [
+            'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
             'name' => $name,
             'country_id' => $countryId,
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
         ];
 
-        $languageEN = static fn (string $countryId, string $name) => [
-            'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
+        $languageEN = fn (string $countryId, string $name) => [
+            'language_id' => Uuid::fromHexToBytes($this->getEnGbLanguageId()),
             'name' => $name,
             'country_id' => $countryId,
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
@@ -223,93 +223,33 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createCountryStates(Connection $connection, string $countryId, string $countryCode): void
     {
-        $data = [
-            'CN' => [
-                'CN-BJ' => 'Beijing',
-                'CN-TJ' => 'Tianjin',
-                'CN-HE' => 'Hebei',
-                'CN-SX' => 'Shanxi',
-                'CN-NM' => 'Inner Mongolia',
-                'CN-LN' => 'Liaoning',
-                'CN-JL' => 'Jilin',
-                'CN-HL' => 'Heilongjiang',
-                'CN-SH' => 'Shanghai',
-                'CN-JS' => 'Jiangsu',
-                'CN-ZJ' => 'Zhejiang',
-                'CN-AH' => 'Anhui',
-                'CN-FJ' => 'Fujian',
-                'CN-JX' => 'Jiangxi',
-                'CN-SD' => 'Shandong',
-                'CN-HA' => 'Henan',
-                'CN-HB' => 'Hubei',
-                'CN-HN' => 'Hunan',
-                'CN-GD' => 'Guangdong',
-                'CN-GX' => 'Guangxi',
-                'CN-HI' => 'Hainan',
-                'CN-CQ' => 'Chongqing',
-                'CN-SC' => 'Sichuan',
-                'CN-GZ' => 'Guizhou',
-                'CN-YN' => 'Yunnan',
-                'CN-XZ' => 'Tibet',
-                'CN-SN' => 'Shaanxi',
-                'CN-GS' => 'Gansu',
-                'CN-QH' => 'Qinghai',
-                'CN-NX' => 'Ningxia',
-                'CN-XJ' => 'Xinjiang',
-                'CN-TW' => 'Taiwan',
-                'CN-HK' => 'Hong Kong',
-                'CN-MO' => 'Macao',
-            ],
-        ];
-        $germanTranslations = [
-            'CN' => [
-                'CN-BJ' => '北京市',
-                'CN-TJ' => '天津市',
-                'CN-HE' => '河北省',
-                'CN-SX' => '山西省',
-                'CN-NM' => '内蒙古自治区',
-                'CN-LN' => '辽宁省',
-                'CN-JL' => '吉林省',
-                'CN-HL' => '黑龙江省',
-                'CN-SH' => '上海市',
-                'CN-JS' => '江苏省',
-                'CN-ZJ' => '浙江省',
-                'CN-AH' => '安徽省',
-                'CN-FJ' => '福建省',
-                'CN-JX' => '江西省',
-                'CN-SD' => '山东省',
-                'CN-HA' => '河南省',
-                'CN-HB' => '湖北省',
-                'CN-HN' => '湖南省',
-                'CN-GD' => '广东省',
-                'CN-GX' => '广西壮族自治区',
-                'CN-HI' => '海南省',
-                'CN-CQ' => '重庆市',
-                'CN-SC' => '四川省',
-                'CN-GZ' => '贵州省',
-                'CN-YN' => '云南省',
-                'CN-XZ' => '西藏自治区',
-                'CN-SN' => '陕西省',
-                'CN-GS' => '甘肃省',
-                'CN-QH' => '青海省',
-                'CN-NX' => '宁夏回族自治区',
-                'CN-XJ' => '新疆维吾尔自治区',
-                'CN-TW' => '台湾省',
-                'CN-HK' => '香港特别行政区',
-                'CN-MO' => '澳门特别行政区',
-            ],
-        ];
+        $area = file_get_contents(__DIR__ . '/../Fixtures/area/' . strtolower($countryCode) . '-area.json');
+        if ($area !== false) {
+            $data = json_decode($area, true, 512, \JSON_THROW_ON_ERROR);
+            $this->processRegionData($data, $connection, $countryId, $countryCode);
+        }
+    }
 
-        foreach ($data[$countryCode] as $isoCode => $name) {
+    /**
+     * @param array<array{code: string, name: string, children?: array<array{code: string, name: string, children?: array<array{code: string, name: string}>}>}> $regions
+     */
+    private function processRegionData(array $regions, Connection $connection, string $countryId, string $countryCode, ?string $parentId = null): void
+    {
+        foreach ($regions as $region) {
+            $isoCode = $region['code'];
+            $name = $region['name'];
             $storageDate = (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT);
             $id = Uuid::randomBytes();
+
             $countryStateData = [
                 'id' => $id,
                 'country_id' => $countryId,
+                'parent_id' => $parentId,
                 'short_code' => $isoCode,
                 'created_at' => $storageDate,
             ];
             $connection->insert('country_state', $countryStateData);
+
             $connection->insert('country_state_translation', [
                 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
                 'country_state_id' => $id,
@@ -317,13 +257,15 @@ class Migration1536233560BasicData extends MigrationStep
                 'created_at' => $storageDate,
             ]);
 
-            if (isset($germanTranslations[$countryCode])) {
-                $connection->insert('country_state_translation', [
-                    'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
-                    'country_state_id' => $id,
-                    'name' => $name,
-                    'created_at' => $storageDate,
-                ]);
+            $connection->insert('country_state_translation', [
+                'language_id' => Uuid::fromHexToBytes($this->getEnGbLanguageId()),
+                'country_state_id' => $id,
+                'name' => $name,
+                'created_at' => $storageDate,
+            ]);
+
+            if (isset($region['children']) && \is_array($region['children'])) {
+                $this->processRegionData($region['children'], $connection, $countryId, $countryCode, $id); // 将当前 ID 作为子地区的父级 ID
             }
         }
     }
@@ -333,8 +275,8 @@ class Migration1536233560BasicData extends MigrationStep
         $CNY = Uuid::fromHexToBytes(Defaults::CURRENCY);
         $USD = Uuid::randomBytes();
 
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZH = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $connection->insert('currency', ['id' => $CNY, 'iso_code' => 'CNY', 'factor' => 1, 'symbol' => '¥', 'position' => 1, 'decimal_precision' => 2, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('currency_translation', ['currency_id' => $CNY, 'language_id' => $languageEN, 'short_name' => 'CNY', 'name' => 'CNY', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -348,14 +290,14 @@ class Migration1536233560BasicData extends MigrationStep
     private function createCustomerGroup(Connection $connection): void
     {
         $connection->insert('customer_group', ['id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'display_gross' => 1, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => 'Standard customer group', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()), 'name' => '普通客户组', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes($this->getEnGbLanguageId()), 'name' => 'Standard customer group', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('customer_group_translation', ['customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'), 'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM), 'name' => '普通客户组', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
     }
 
     private function createPaymentMethod(Connection $connection): void
     {
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZH = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $ruleId = Uuid::randomBytes();
         $connection->insert('rule', ['id' => $ruleId, 'name' => 'Cart >= 0 (Payment)', 'priority' => 100, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -383,12 +325,12 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('rule', ['id' => $ruleId, 'name' => 'Cart >= 0', 'priority' => 100, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('rule_condition', ['id' => Uuid::randomBytes(), 'rule_id' => $ruleId, 'type' => 'cartCartAmount', 'value' => json_encode(['operator' => '>=', 'amount' => 0]), 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZH = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $connection->insert('shipping_method', ['id' => $standard, 'active' => 1, 'availability_rule_id' => $ruleId, 'delivery_time_id' => $deliveryTimeId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('shipping_method_translation', ['shipping_method_id' => $standard, 'language_id' => $languageEN, 'name' => 'Standard', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('shipping_method_translation', ['shipping_method_id' => $standard, 'language_id' => $languageZH, 'name' => '普通物理', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('shipping_method_translation', ['shipping_method_id' => $standard, 'language_id' => $languageZH, 'name' => '普通物流', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('shipping_method_price', ['id' => Uuid::randomBytes(), 'shipping_method_id' => $standard, 'calculation' => 1, 'currency_id' => Uuid::fromHexToBytes(Defaults::CURRENCY), 'price' => 0, 'quantity_start' => 0, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
         $connection->insert('shipping_method', ['id' => $express, 'active' => 1, 'availability_rule_id' => $ruleId, 'delivery_time_id' => $deliveryTimeId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -408,8 +350,8 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createSalesChannelTypes(Connection $connection): void
     {
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZH = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $storefront = Uuid::fromHexToBytes(Defaults::SALES_CHANNEL_TYPE_STOREFRONT);
         $storefrontApi = Uuid::fromHexToBytes(Defaults::SALES_CHANNEL_TYPE_API);
@@ -426,8 +368,8 @@ class Migration1536233560BasicData extends MigrationStep
     private function createProductManufacturer(Connection $connection): void
     {
         $id = Uuid::randomBytes();
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZH = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
         $versionId = Uuid::fromHexToBytes(Defaults::LIVE_VERSION);
 
         $connection->insert('product_manufacturer', ['id' => $id, 'version_id' => $versionId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -438,8 +380,8 @@ class Migration1536233560BasicData extends MigrationStep
     private function createRootCategory(Connection $connection): void
     {
         $id = Uuid::randomBytes();
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZH = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
         $versionId = Uuid::fromHexToBytes(Defaults::LIVE_VERSION);
 
         $connection->insert('category', ['id' => $id, 'version_id' => $versionId, 'type' => CategoryDefinition::TYPE_PAGE, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
@@ -460,8 +402,8 @@ class Migration1536233560BasicData extends MigrationStep
         $rootCategoryId = $connection->executeQuery('SELECT id FROM category')->fetchOne();
 
         $id = Uuid::fromHexToBytes('98432def39fc4624b33213a56b8c944d');
-        $languageEN = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDE = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $connection->insert('sales_channel', [
             'id' => $id,
@@ -480,7 +422,7 @@ class Migration1536233560BasicData extends MigrationStep
         ]);
 
         $connection->insert('sales_channel_translation', ['sales_channel_id' => $id, 'language_id' => $languageEN, 'name' => 'Headless', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
-        $connection->insert('sales_channel_translation', ['sales_channel_id' => $id, 'language_id' => $languageDE, 'name' => 'Headless', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('sales_channel_translation', ['sales_channel_id' => $id, 'language_id' => $languageZH, 'name' => 'Headless', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
 
         // country
         $connection->insert('sales_channel_country', ['sales_channel_id' => $id, 'country_id' => $defaultCountry]);
@@ -592,8 +534,8 @@ class Migration1536233560BasicData extends MigrationStep
         $inProgressId = Uuid::randomBytes();
         $canceledId = Uuid::randomBytes();
 
-        $chineseId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
-        $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+        $chineseId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+        $englishId = Uuid::fromHexToBytes($this->getEnGbLanguageId());
 
         $translationZH = ['language_id' => $chineseId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
         $translationEN = ['language_id' => $englishId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
@@ -659,8 +601,8 @@ class Migration1536233560BasicData extends MigrationStep
         $returnedId = Uuid::randomBytes();
         $returnedPartiallyId = Uuid::randomBytes();
 
-        $chineseId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
-        $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+        $chineseId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+        $englishId = Uuid::fromHexToBytes($this->getEnGbLanguageId());
 
         $translationZH = ['language_id' => $chineseId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
         $translationEN = ['language_id' => $englishId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
@@ -743,8 +685,8 @@ class Migration1536233560BasicData extends MigrationStep
         $refundedId = Uuid::randomBytes();
         $refundedPartiallyId = Uuid::randomBytes();
 
-        $chineseId = Uuid::fromHexToBytes($this->getZhCnLanguageId());
-        $englishId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+        $chineseId = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+        $englishId = Uuid::fromHexToBytes($this->getEnGbLanguageId());
 
         $translationDE = ['language_id' => $chineseId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
         $translationEN = ['language_id' => $englishId, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
@@ -847,8 +789,8 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createSalutation(Connection $connection): void
     {
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $mr = Uuid::randomBytes();
         $connection->insert('salutation', [
@@ -908,7 +850,7 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('salutation_translation', [
             'salutation_id' => $notSpecified,
             'language_id' => $languageZh,
-            'display_name' => '未知',
+            'display_name' => '未指定',
             'letter_name' => ' ',
             'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
         ]);
@@ -916,8 +858,8 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createDeliveryTimes(Connection $connection): string
     {
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $oneToThree = Uuid::randomBytes();
         $twoToFive = Uuid::randomBytes();
@@ -984,8 +926,8 @@ class Migration1536233560BasicData extends MigrationStep
         $registerMailId = Uuid::randomBytes();
         $confirmMailId = Uuid::randomBytes();
 
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageDe = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         $connection->insert(
             'mail_template',
@@ -1139,33 +1081,33 @@ class Migration1536233560BasicData extends MigrationStep
     }
 
     /**
-     * @return array<string, array{id: string, name: string, nameZh: string, availableEntities: array<string, string|null>}>
+     * @return array<string, array{id: string, nameEn: string, name: string, availableEntities: array<string, string|null>}>
      */
     private function getMailTypeMapping(): array
     {
         return $this->mailTypes ?? $this->mailTypes = [
             MailTemplateTypes::MAILTYPE_CUSTOMER_REGISTER => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Customer registration',
-                'nameZh' => '客户注册',
+                'nameEn' => 'Customer registration',
+                'name' => '客户注册',
                 'availableEntities' => ['customer' => 'customer', 'salesChannel' => 'sales_channel'],
             ],
             'newsletterDoubleOptIn' => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Newsletter double opt-in',
-                'nameZh' => '订阅邮件 (双重确认)',
+                'nameEn' => 'Newsletter double opt-in',
+                'name' => '订阅邮件 (双重确认)',
                 'availableEntities' => ['newsletterRecipient' => 'newsletter_recipient', 'salesChannel' => 'sales_channel'],
             ],
             'newsletterRegister' => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Newsletter registration',
-                'nameZh' => '订阅邮件 (注册)',
+                'nameEn' => 'Newsletter registration',
+                'name' => '订阅邮件 (注册)',
                 'availableEntities' => ['newsletterRecipient' => 'newsletter_recipient', 'salesChannel' => 'sales_channel'],
             ],
             MailTemplateTypes::MAILTYPE_PASSWORD_CHANGE => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Password change request',
-                'nameZh' => '修改密码',
+                'nameEn' => 'Password change request',
+                'name' => '修改密码',
                 'availableEntities' => [
                     'customer' => 'customer',
                     'urlResetPassword' => null,
@@ -1178,8 +1120,8 @@ class Migration1536233560BasicData extends MigrationStep
     {
         $definitionMailTypes = $this->getMailTypeMapping();
 
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         foreach ($definitionMailTypes as $typeName => $mailType) {
             $availableEntities = null;
@@ -1209,7 +1151,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'mail_template_type_translation',
                 [
                     'mail_template_type_id' => Uuid::fromHexToBytes($mailType['id']),
-                    'name' => $mailType['nameZh'],
+                    'name' => $mailType['nameEn'],
                     'language_id' => $languageZh,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -1235,7 +1177,7 @@ class Migration1536233560BasicData extends MigrationStep
             'mail_template_translation',
             [
                 'mail_template_id' => $customerRegistrationTemplateId,
-                'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
+                'language_id' => Uuid::fromHexToBytes($this->getEnGbLanguageId()),
                 'subject' => 'Your Registration at {{ salesChannel.name }}',
                 'description' => 'Registration confirmation',
                 'sender_name' => '{{ salesChannel.name }}',
@@ -1249,7 +1191,7 @@ class Migration1536233560BasicData extends MigrationStep
             'mail_template_translation',
             [
                 'mail_template_id' => $customerRegistrationTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
+                'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
                 'subject' => '注册确认 - {{ salesChannel.name }}',
                 'description' => '注册确认',
                 'sender_name' => '{{ salesChannel.name }}',
@@ -1281,7 +1223,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'content_plain' => $this->getPasswordChangePlainTemplateEn(),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 'mail_template_id' => $passwordChangeTemplateId,
-                'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
+                'language_id' => Uuid::fromHexToBytes($this->getEnGbLanguageId()),
             ]
         );
 
@@ -1295,7 +1237,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'content_plain' => $this->getPasswordChangePlainTemplateZh(),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 'mail_template_id' => $passwordChangeTemplateId,
-                'language_id' => Uuid::fromHexToBytes($this->getZhCnLanguageId()),
+                'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
             ]
         );
 
@@ -1469,8 +1411,8 @@ class Migration1536233560BasicData extends MigrationStep
         $definitionNumberRanges = [
             'product' => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Products',
-                'nameZh' => '商品',
+                'nameEn' => 'Products',
+                'name' => '商品',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['product']['id'],
                 'pattern' => 'SW{n}',
@@ -1478,8 +1420,8 @@ class Migration1536233560BasicData extends MigrationStep
             ],
             'order' => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Orders',
-                'nameZh' => '订单',
+                'nameEn' => 'Orders',
+                'name' => '订单',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['order']['id'],
                 'pattern' => '{n}',
@@ -1487,8 +1429,8 @@ class Migration1536233560BasicData extends MigrationStep
             ],
             'customer' => [
                 'id' => Uuid::randomHex(),
-                'name' => 'Customers',
-                'nameZh' => '客户',
+                'nameEn' => 'Customers',
+                'name' => '客户',
                 'global' => 1,
                 'typeId' => $definitionNumberRangeTypes['customer']['id'],
                 'pattern' => '{n}',
@@ -1496,8 +1438,8 @@ class Migration1536233560BasicData extends MigrationStep
             ],
         ];
 
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageZh = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
 
         foreach ($definitionNumberRangeTypes as $typeName => $numberRangeType) {
             $connection->insert(
@@ -1522,7 +1464,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'number_range_type_translation',
                 [
                     'number_range_type_id' => Uuid::fromHexToBytes($numberRangeType['id']),
-                    'type_name' => $numberRangeType['nameZh'],
+                    'type_name' => $numberRangeType['nameEn'],
                     'language_id' => $languageZh,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -1554,7 +1496,7 @@ class Migration1536233560BasicData extends MigrationStep
                 'number_range_translation',
                 [
                     'number_range_id' => Uuid::fromHexToBytes($numberRange['id']),
-                    'name' => $numberRange['nameZh'],
+                    'name' => $numberRange['nameEn'],
                     'language_id' => $languageZh,
                     'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
                 ]
@@ -1564,14 +1506,14 @@ class Migration1536233560BasicData extends MigrationStep
 
     private function createCmsPages(Connection $connection): void
     {
-        $languageEn = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
-        $languageDe = Uuid::fromHexToBytes($this->getZhCnLanguageId());
+        $languageEn = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZh = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
         $versionId = Uuid::fromHexToBytes(Defaults::LIVE_VERSION);
 
         // cms page
         $page = ['id' => Uuid::randomBytes(), 'type' => 'product_list', 'locked' => 1, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
         $pageEng = ['cms_page_id' => $page['id'], 'language_id' => $languageEn, 'name' => 'Default category layout', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
-        $pageChinese = ['cms_page_id' => $page['id'], 'language_id' => $languageDe, 'name' => 'Standard Kategorie-Layout', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
+        $pageChinese = ['cms_page_id' => $page['id'], 'language_id' => $languageZh, 'name' => '默认类目布局', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)];
 
         $connection->insert('cms_page', $page);
         $connection->insert('cms_page_translation', $pageEng);
@@ -1661,7 +1603,7 @@ class Migration1536233560BasicData extends MigrationStep
             $slotTranslationDatum['language_id'] = $languageEn;
             $slotTranslations[] = $slotTranslationDatum;
 
-            $slotTranslationDatum['language_id'] = $languageDe;
+            $slotTranslationDatum['language_id'] = $languageZh;
             $slotTranslations[] = $slotTranslationDatum;
         }
 

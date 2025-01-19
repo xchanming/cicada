@@ -7,7 +7,7 @@
             <category>commerce</category>
 
             <label>Block from app</label>
-            <label lang="zh-CN">Block einer App</label>
+            <label lang="en-GB">Block einer App</label>
 
             <slots>
                 <slot name="left" type="form">

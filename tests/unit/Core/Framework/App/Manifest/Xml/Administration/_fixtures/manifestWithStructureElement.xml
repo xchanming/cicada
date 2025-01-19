@@ -4,7 +4,7 @@
     <meta>
         <name>SwagApp</name>
         <label>Swag App Test</label>
-        <label lang="zh-CN">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -15,7 +15,7 @@
     <admin>
         <module name="first-module" parent="sw-catalogue" position="50">
             <label>My first own module</label>
-            <label lang="zh-CN">Mein erstes eigenes Modul</label>
+            <label lang="en-GB">Mein erstes eigenes Modul</label>
         </module>
     </admin>
 </manifest>

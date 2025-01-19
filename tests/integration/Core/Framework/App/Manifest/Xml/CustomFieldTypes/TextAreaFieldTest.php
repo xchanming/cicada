@@ -23,11 +23,11 @@ class TextAreaFieldTest extends TestCase
         static::assertTrue($textAreaField->isActive());
         static::assertEquals([
             'label' => [
-                'en-GB' => 'Test text-area field',
+                'zh-CN' => 'Test text-area field',
             ],
             'helpText' => [],
             'placeholder' => [
-                'en-GB' => 'Enter a text...',
+                'zh-CN' => 'Enter a text...',
             ],
             'componentName' => 'sw-text-editor',
             'customFieldType' => 'textEditor',

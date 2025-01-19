@@ -28,7 +28,7 @@ class PriceFieldTest extends TestCase
         static::assertInstanceOf(PriceField::class, $priceField);
         static::assertEquals('test_price_field', $priceField->getName());
         static::assertEquals([
-            'en-GB' => 'Test price field',
+            'zh-CN' => 'Test price field',
         ], $priceField->getLabel());
         static::assertEquals([], $priceField->getHelpText());
         static::assertEquals(1, $priceField->getPosition());

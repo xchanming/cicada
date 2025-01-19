@@ -45,7 +45,7 @@ class AuthMiddlewareTest extends TestCase
         static::assertArrayHasKey('sw-version', $request->getHeaders());
         static::assertSame('6.4', $request->getHeader('sw-version')[0]);
         static::assertSame(Defaults::LANGUAGE_SYSTEM, $request->getHeader(AuthMiddleware::CICADA_CONTEXT_LANGUAGE)[0]);
-        static::assertSame('en-GB', $request->getHeader(AuthMiddleware::CICADA_USER_LANGUAGE)[0]);
+        static::assertSame('zh-CN', $request->getHeader(AuthMiddleware::CICADA_USER_LANGUAGE)[0]);
     }
 
     public function testSetDefaultHeaderWithSaleChannelApiSource(): void
@@ -58,7 +58,7 @@ class AuthMiddlewareTest extends TestCase
         static::assertArrayHasKey('sw-version', $request->getHeaders());
         static::assertSame('6.4', $request->getHeader('sw-version')[0]);
         static::assertSame(Defaults::LANGUAGE_SYSTEM, $request->getHeader(AuthMiddleware::CICADA_CONTEXT_LANGUAGE)[0]);
-        static::assertSame('en-GB', $request->getHeader(AuthMiddleware::CICADA_USER_LANGUAGE)[0]);
+        static::assertSame('zh-CN', $request->getHeader(AuthMiddleware::CICADA_USER_LANGUAGE)[0]);
     }
 
     public function testSetDefaultHeaderExist(): void

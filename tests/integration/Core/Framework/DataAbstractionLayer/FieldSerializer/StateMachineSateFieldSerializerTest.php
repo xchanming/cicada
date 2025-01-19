@@ -131,8 +131,6 @@ class StateMachineSateFieldSerializerTest extends TestCase
                     'salutationId' => $this->fetchFirstIdFromTable('salutation'),
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
-                    'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                     'countryId' => $this->fetchFirstIdFromTable('country'),
                 ],
             ],

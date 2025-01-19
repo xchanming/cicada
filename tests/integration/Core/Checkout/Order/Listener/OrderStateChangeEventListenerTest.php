@@ -149,7 +149,6 @@ class OrderStateChangeEventListenerTest extends TestCase
                     'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
-                    'city' => 'asd',
                 ],
                 [
                     'id' => $ids->create('shipping-address'),
@@ -158,7 +157,6 @@ class OrderStateChangeEventListenerTest extends TestCase
                     'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
-                    'city' => 'asd',
                 ],
             ],
             'lineItems' => [
@@ -230,7 +228,6 @@ class OrderStateChangeEventListenerTest extends TestCase
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'city' => 'Schöppingen',
                 ],
             ],
         ];

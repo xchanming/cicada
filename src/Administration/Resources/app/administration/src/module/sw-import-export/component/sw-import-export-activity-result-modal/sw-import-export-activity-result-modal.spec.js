@@ -82,7 +82,7 @@ describe('module/sw-import-export/components/sw-import-export-activity-result-mo
         ],
         [
             'Date / time',
-            '8 November 2021 at 14:50',
+            '8 November 2021 at 22:50',
             'date',
         ],
         [

@@ -16,6 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\IdField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\IntField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ManyToOneAssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToManyAssociationField;
+use Cicada\Core\Framework\DataAbstractionLayer\Field\ParentFkField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationField;
@@ -58,6 +59,7 @@ class CountryStateDefinition extends EntityDefinition
     {
         return new FieldCollection([
             (new IdField('id', 'id'))->addFlags(new ApiAware(), new PrimaryKey(), new Required()),
+            (new ParentFkField(self::class))->addFlags(new ApiAware()),
             (new FkField('country_id', 'countryId', CountryDefinition::class))->addFlags(new ApiAware(), new Required()),
             (new StringField('short_code', 'shortCode'))->addFlags(new ApiAware(), new Required(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
             (new TranslatedField('name'))->addFlags(new ApiAware(), new SearchRanking(SearchRanking::HIGH_SEARCH_RANKING)),
@@ -69,6 +71,8 @@ class CountryStateDefinition extends EntityDefinition
             // Reverse Associations, not available in sales-channel-api
             (new OneToManyAssociationField('customerAddresses', CustomerAddressDefinition::class, 'country_state_id', 'id'))->addFlags(new SetNullOnDelete()),
             (new OneToManyAssociationField('orderAddresses', OrderAddressDefinition::class, 'country_state_id', 'id'))->addFlags(new SetNullOnDelete()),
+            new ManyToOneAssociationField('parent', CountryStateDefinition::class, CountryStateDefinition::class, 'id', false),
+            new OneToManyAssociationField('children', CountryStateDefinition::class, 'parent_id'),
         ]);
     }
 }

@@ -5,9 +5,9 @@
             <meta>
                 <name>abc.cde.ccc</name>
                 <label>First action app</label>
-                <label lang="zh-CN">First action app DE</label>
+                <label lang="en-GB">First action app DE</label>
                 <description>First action app description</description>
-                <description lang="zh-CN">First action app description DE</description>
+                <description lang="en-GB">First action app description DE</description>
                 <url>https://example.xyz</url>
                 <aware>order</aware>
                 <aware>customer</aware>
@@ -25,9 +25,9 @@
                 <input-field type="cicada">
                     <name>cicada</name>
                     <label>To</label>
-                    <label lang="zh-CN">To DE</label>
+                    <label lang="en-GB">To DE</label>
                     <place-holder>Enter to...</place-holder>
-                    <place-holder lang="zh-CN">Enter to DE...</place-holder>
+                    <place-holder lang="en-GB">Enter to DE...</place-holder>
                     <required>true</required>
                     <disabled>true</disabled>
                     <editable>false</editable>

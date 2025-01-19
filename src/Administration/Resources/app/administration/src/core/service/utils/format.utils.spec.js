@@ -82,7 +82,7 @@ describe('src/core/service/utils/format.utils.js', () => {
                 date('2000-06-18T08:30:00.000+00:00', {
                     skipTimezoneConversion: true,
                 }),
-            ).toBe('2000年6月18日 08:30');
+            ).toBe('2000年6月18日 16:30');
         });
     });
 
@@ -95,8 +95,8 @@ describe('src/core/service/utils/format.utils.js', () => {
         const setTimeZone = (timeZone) => Cicada.State.commit('setCurrentUser', { timeZone });
 
         beforeEach(async () => {
-            setLocale('en-GB');
-            setTimeZone('UTC');
+            setLocale('zh-CN');
+            setTimeZone('Asia/Shanghai');
         });
 
         it('should convert the date correctly with timezone Pacific/Pago_Pago', async () => {
@@ -105,7 +105,7 @@ describe('src/core/service/utils/format.utils.js', () => {
             const date = new Date(2000, 1, 1, 11, 13, 37);
 
             expect(dateWithUserTimezone(date).toString()).toBe(
-                'Tue Feb 01 2000 00:13:37 GMT+0000 (Coordinated Universal Time)',
+                'Mon Jan 31 2000 16:13:37 GMT+0800 (China Standard Time)',
             );
         });
 
@@ -115,7 +115,7 @@ describe('src/core/service/utils/format.utils.js', () => {
             const date = new Date(2000, 1, 1, 0, 13, 37);
 
             expect(dateWithUserTimezone(date).toString()).toBe(
-                'Tue Feb 01 2000 00:13:37 GMT+0000 (Coordinated Universal Time)',
+                'Tue Feb 01 2000 00:13:37 GMT+0800 (China Standard Time)',
             );
         });
     });

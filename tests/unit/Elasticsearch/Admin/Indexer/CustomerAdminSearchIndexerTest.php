@@ -106,7 +106,7 @@ class CustomerAdminSearchIndexerTest extends TestCase
         $document = $documents[$id];
 
         static::assertSame($id, $document['id']);
-        static::assertSame('809c1844f4734243b6aa04aba860cd45 test tag viet nam da nang street 123 test name test@example.com 12345', $document['text']);
+        static::assertSame('809c1844f4734243b6aa04aba860cd45 test tag viet nam street 123 test name test@example.com 12345', $document['text']);
     }
 
     private function getConnection(): Connection
@@ -119,7 +119,6 @@ class CustomerAdminSearchIndexerTest extends TestCase
                     'id' => '809c1844f4734243b6aa04aba860cd45',
                     'tags' => 'test Tag',
                     'country' => 'Viet Nam',
-                    'city' => 'Da Nang',
                     'zipcode' => null,
                     'street' => 'street',
                     'phone_number' => '123',

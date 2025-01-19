@@ -180,7 +180,7 @@ class CheckoutGatewayRouteTest extends TestCase
                 ],
             ],
             'translations' => [
-                'en-GB' => [
+                'zh-CN' => [
                     'label' => 'Test app',
                 ],
             ],

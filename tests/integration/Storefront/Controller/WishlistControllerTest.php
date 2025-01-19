@@ -10,7 +10,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -128,7 +127,7 @@ class WishlistControllerTest extends TestCase
         $browser->request('DELETE', '/wishlist/product/delete/' . $productId);
 
         static::assertSame(
-            ['danger' => ['Unfortunately, something went wrong.']],
+            ['danger' => ['很抱歉，发生了错误。']],
             $this->getFlashBag()->all()
         );
 
@@ -226,12 +225,12 @@ class WishlistControllerTest extends TestCase
         $flashBag = $session->getFlashBag();
 
         static::assertNotEmpty($successFlash = $flashBag->get('success'));
-        static::assertEquals('You have successfully added the product to your wishlist.', $successFlash[0]);
+        static::assertEquals('您已成功将产品添加到心愿单。', $successFlash[0]);
 
         $browser->request('GET', $_SERVER['APP_URL'] . '/wishlist/add-after-login/' . $productId);
 
         static::assertNotEmpty($warningFlash = $flashBag->get('warning'));
-        static::assertEquals('Product has already been added to your wishlist.', $warningFlash[0]);
+        static::assertEquals('产品已添加到您的心愿单。', $warningFlash[0]);
     }
 
     public function testWishlistPageLoadedHookScriptsAreExecuted(): void
@@ -311,8 +310,8 @@ class WishlistControllerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
+                'cityId' => $this->getValidCountryCityId(),
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),
             ],
@@ -324,10 +323,6 @@ class WishlistControllerTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $repo = static::getContainer()->get('customer.repository');
 
@@ -377,7 +372,6 @@ class WishlistControllerTest extends TestCase
                     'countryId' => $this->getValidCountryId(),
                     'street' => 'Musterstrasse 13',
                     'zipcode' => '48599',
-                    'city' => 'Epe',
                 ],
             ])
         );

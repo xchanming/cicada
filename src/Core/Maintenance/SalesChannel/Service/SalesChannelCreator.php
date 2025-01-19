@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Maintenance\MaintenanceException;
 
 /**
- * @deprecated tag:v6.7.0 - reason:becomes-internal
+ * @internal
  */
 #[Package('core')]
 class SalesChannelCreator

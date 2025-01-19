@@ -24,16 +24,16 @@ class InputFieldTest extends TestCase
         static::assertSame('textField', $firstInputField->getName());
         static::assertSame('text', $firstInputField->getType());
         static::assertEquals([
-            'en-GB' => 'To',
-            'zh-CN' => 'To DE',
+            'zh-CN' => 'To',
+            'en-GB' => 'To DE',
         ], $firstInputField->getLabel());
         static::assertEquals([
-            'en-GB' => 'Enter to...',
-            'zh-CN' => 'Enter to DE...',
+            'zh-CN' => 'Enter to...',
+            'en-GB' => 'Enter to DE...',
         ], $firstInputField->getPlaceHolder());
         static::assertEquals([
-            'en-GB' => 'Help text',
-            'zh-CN' => 'Help text DE',
+            'zh-CN' => 'Help text',
+            'en-GB' => 'Help text DE',
         ], $firstInputField->getHelpText());
 
         static::assertTrue($firstInputField->getRequired());

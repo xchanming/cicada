@@ -14,9 +14,7 @@ use Cicada\Core\Checkout\Cart\Rule\LineItemPurchasePriceRule;
 use Cicada\Core\Checkout\Cart\Rule\LineItemRule;
 use Cicada\Core\Checkout\Cart\Rule\LineItemWithQuantityRule;
 use Cicada\Core\Checkout\Cart\Rule\LineItemWrapperRule;
-use Cicada\Core\Checkout\Customer\Rule\BillingZipCodeRule;
 use Cicada\Core\Checkout\Customer\Rule\CustomerCustomFieldRule;
-use Cicada\Core\Checkout\Customer\Rule\ShippingZipCodeRule;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Container\AndRule;
 use Cicada\Core\Framework\Rule\Container\Container;
@@ -69,8 +67,6 @@ class RuleConditionHasRuleConfigRule implements Rule
         LineItemRule::class,
         LineItemWithQuantityRule::class,
         LineItemWrapperRule::class,
-        BillingZipCodeRule::class,
-        ShippingZipCodeRule::class,
         AlwaysValidRule::class,
         LineItemPropertyRule::class,
         LineItemPurchasePriceRule::class,

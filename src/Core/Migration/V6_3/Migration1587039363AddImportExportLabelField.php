@@ -53,7 +53,7 @@ class Migration1587039363AddImportExportLabelField extends MigrationStep
             INNER JOIN locale loc ON lang.translation_code_id = loc.id
             AND loc.code = \'en-GB\';
         ');
-        $germanLanguageId = $connection->fetchOne('
+        $chineseLanguageId = $connection->fetchOne('
             SELECT lang.id
             FROM language lang
             INNER JOIN locale loc ON lang.translation_code_id = loc.id
@@ -66,22 +66,22 @@ class Migration1587039363AddImportExportLabelField extends MigrationStep
             FROM `import_export_profile`;
         ');
 
-        $insertGermanLabelsStatement = $connection->prepare('
+        $insertChineseLabelsStatement = $connection->prepare('
             CREATE TEMPORARY TABLE `temp_import_export_profile_translation` (id int(11) NOT NULL, PRIMARY KEY (id));
             SELECT `id`, `name` AS `label` FROM import_export_profile;
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'Standardprofil Kategorie\' WHERE `label` = \'Default category\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'Standardprofil Medien\' WHERE `label` = \'Default media\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'Standardprofil Variantenkonfiguration\' WHERE `label` = \'Default variant configuration settings\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'Standardprofil Newsletter-Empfänger\' WHERE `label` = \'Default newsletter recipient\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'Standardprofil Eigenschaften\' WHERE `label` = \'Default properties\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'Standardprofil Produkt\' WHERE `label` = \'Default product\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'类目\' WHERE `label` = \'Default category\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'媒体\' WHERE `label` = \'Default media\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'产品变体配置\' WHERE `label` = \'Default variant configuration settings\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'邮件订阅\' WHERE `label` = \'Default newsletter recipient\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'属性\' WHERE `label` = \'Default properties\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'产品\' WHERE `label` = \'Default product\';
 
             INSERT INTO `import_export_profile_translation` (`import_export_profile_id`, `language_id`, `label`, `created_at`)
             SELECT `id`, :languageId, `label`, NOW()
             FROM `temp_import_export_profile_translation`;
         ');
 
-        if (!\in_array($defaultLanguageId, [$englishLanguageId, $germanLanguageId], true)) {
+        if (!\in_array($defaultLanguageId, [$englishLanguageId, $chineseLanguageId], true)) {
             $insertNamesAsLabelsStatement->executeStatement([
                 'languageId' => $defaultLanguageId,
             ]);
@@ -93,9 +93,9 @@ class Migration1587039363AddImportExportLabelField extends MigrationStep
             ]);
         }
 
-        if ($germanLanguageId) {
-            $insertGermanLabelsStatement->executeStatement([
-                'languageId' => $germanLanguageId,
+        if ($chineseLanguageId) {
+            $insertChineseLabelsStatement->executeStatement([
+                'languageId' => $chineseLanguageId,
             ]);
         }
     }

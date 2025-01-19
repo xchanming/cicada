@@ -140,7 +140,6 @@ class OrderPersisterTest extends TestCase
         $billingAddress->setName($faker->name());
         $billingAddress->setStreet($faker->streetAddress());
         $billingAddress->setZipcode($faker->postcode());
-        $billingAddress->setCity($faker->city());
         $billingAddress->setCountryId('SWAG-AREA-COUNTRY-ID-1');
 
         $customer = new CustomerEntity();

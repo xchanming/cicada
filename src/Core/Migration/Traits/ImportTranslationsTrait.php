@@ -12,10 +12,10 @@ trait ImportTranslationsTrait
 {
     protected function importTranslation(string $table, Translations $translations, Connection $connection): TranslationWriteResult
     {
-        $germanIds = $this->getLanguageIds($connection, 'zh-CN');
-        $englishIds = array_diff(
-            array_merge($this->getLanguageIds($connection, 'en-GB'), [Defaults::LANGUAGE_SYSTEM]),
-            $germanIds
+        $englishIds = $this->getLanguageIds($connection, 'en-GB');
+        $chineseIds = array_diff(
+            array_merge($this->getLanguageIds($connection, 'zh-CN'), [Defaults::LANGUAGE_SYSTEM]),
+            $englishIds
         );
 
         $columns = [];
@@ -37,6 +37,15 @@ trait ImportTranslationsTrait
             'REPLACE INTO #table# (#columns#) VALUES (#values#)'
         );
 
+        foreach ($chineseIds as $id) {
+            $data = array_merge($translations->getChinese(), [
+                'language_id' => Uuid::fromHexToBytes($id),
+                'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
+            ]);
+
+            $connection->executeStatement($sql, $data);
+        }
+
         foreach ($englishIds as $id) {
             $data = array_merge($translations->getEnglish(), [
                 'language_id' => Uuid::fromHexToBytes($id),
@@ -46,16 +55,7 @@ trait ImportTranslationsTrait
             $connection->executeStatement($sql, $data);
         }
 
-        foreach ($germanIds as $id) {
-            $data = array_merge($translations->getChinese(), [
-                'language_id' => Uuid::fromHexToBytes($id),
-                'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
-            ]);
-
-            $connection->executeStatement($sql, $data);
-        }
-
-        return new TranslationWriteResult($englishIds, $germanIds);
+        return new TranslationWriteResult($chineseIds, $englishIds);
     }
 
     /**

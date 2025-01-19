@@ -799,7 +799,6 @@ class SalesChannelContextTest extends TestCase
         $billingAddress = [
             'name' => 'Max',
             'street' => 'Musterstraße 1',
-            'city' => 'Schöppingen',
             'zipcode' => '12345',
             'salutationId' => $salutationId,
             'country' => ['id' => $billingCountryId ?? Uuid::randomHex(), 'name' => 'Germany'],
@@ -808,7 +807,6 @@ class SalesChannelContextTest extends TestCase
         $shippingAddress = [
             'name' => 'Max',
             'street' => 'Musterstraße 1',
-            'city' => 'Schöppingen',
             'zipcode' => '12345',
             'salutationId' => $salutationId,
             'country' => ['id' => $shippingCountryId ?? Uuid::randomHex(), 'name' => 'Germany'],

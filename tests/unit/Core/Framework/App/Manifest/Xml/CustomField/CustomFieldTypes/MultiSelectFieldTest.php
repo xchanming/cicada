@@ -28,19 +28,19 @@ class MultiSelectFieldTest extends TestCase
         static::assertInstanceOf(MultiSelectField::class, $multiSelectField);
         static::assertEquals('test_multi_select_field', $multiSelectField->getName());
         static::assertEquals([
-            'en-GB' => 'Test multi-select field',
+            'zh-CN' => 'Test multi-select field',
         ], $multiSelectField->getLabel());
         static::assertEquals([], $multiSelectField->getHelpText());
         static::assertEquals(1, $multiSelectField->getPosition());
-        static::assertEquals(['en-GB' => 'Choose your options...'], $multiSelectField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Choose your options...'], $multiSelectField->getPlaceholder());
         static::assertFalse($multiSelectField->getRequired());
         static::assertEquals([
             'first' => [
-                'en-GB' => 'First',
-                'zh-CN' => 'Erster',
+                'zh-CN' => 'First',
+                'en-GB' => 'Erster',
             ],
             'second' => [
-                'en-GB' => 'Second',
+                'zh-CN' => 'Second',
             ],
         ], $multiSelectField->getOptions());
     }

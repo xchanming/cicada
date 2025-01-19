@@ -4,9 +4,9 @@
     <meta>
         <name>test</name>
         <label>Swag App Test</label>
-        <label lang="zh-CN">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="zh-CN">Test für das App System</description>
+        <description lang="en-GB">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -20,7 +20,7 @@ Following personal information will be processed on cicada AG's servers:
 - Billing address
 - Order value
         </privacyPolicyExtensions>
-        <privacyPolicyExtensions lang="zh-CN">
+        <privacyPolicyExtensions lang="en-GB">
 Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
 
 - Name
@@ -37,22 +37,22 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
             <constraints>
                 <single-select name="operator">
                     <placeholder>Choose an operator...</placeholder>
-                    <placeholder lang="zh-CN">Bitte Operatoren wählen</placeholder>
+                    <placeholder lang="en-GB">Bitte Operatoren wählen</placeholder>
                     <options>
                         <option value="=">
                             <name>Is equal to</name>
-                            <name lang="zh-CN">Ist gleich</name>
+                            <name lang="en-GB">Ist gleich</name>
                         </option>
                         <option value="!=">
                             <name>Is not equal to</name>
-                            <name lang="zh-CN">Ist nicht gleich</name>
+                            <name lang="en-GB">Ist nicht gleich</name>
                         </option>
                     </options>
                     <required>true</required>
                 </single-select>
                 <text name="constraints">
                     <placeholder>Enter first name</placeholder>
-                    <placeholder lang="zh-CN">Bitte Vornamen eingeben</placeholder>
+                    <placeholder lang="en-GB">Bitte Vornamen eingeben</placeholder>
                     <required>true</required>
                 </text>
             </constraints>

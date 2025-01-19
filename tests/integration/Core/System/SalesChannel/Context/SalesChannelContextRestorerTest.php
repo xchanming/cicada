@@ -191,7 +191,6 @@ class SalesChannelContextRestorerTest extends TestCase
                     'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
-                    'city' => 'asd',
                 ],
                 [
                     'id' => $ids->create('shipping-address'),
@@ -200,7 +199,6 @@ class SalesChannelContextRestorerTest extends TestCase
                     'name' => 'asd',
                     'street' => 'asd',
                     'zipcode' => 'asd',
-                    'city' => 'asd',
                 ],
             ],
             'lineItems' => [
@@ -294,7 +292,6 @@ class SalesChannelContextRestorerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),

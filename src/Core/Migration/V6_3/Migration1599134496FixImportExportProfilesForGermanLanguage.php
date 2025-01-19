@@ -21,14 +21,14 @@ class Migration1599134496FixImportExportProfilesForGermanLanguage extends Migrat
 
     public function update(Connection $connection): void
     {
-        $germanLanguageId = $connection->fetchOne('
+        $chineseLanguageId = $connection->fetchOne('
             SELECT lang.id
             FROM language lang
             INNER JOIN locale loc ON lang.locale_id = loc.id
             AND loc.code = \'zh-CN\';
         ');
 
-        if (!$germanLanguageId) {
+        if (!$chineseLanguageId) {
             return;
         }
 
@@ -50,10 +50,10 @@ SQL;
         $englishData = $connection->fetchAllAssociative($sql, [
             'languageId' => $englishLanguageId,
         ]);
-        $germanData = $connection->fetchAllAssociative($sql, [
-            'languageId' => $germanLanguageId,
+        $chineseData = $connection->fetchAllAssociative($sql, [
+            'languageId' => $chineseLanguageId,
         ]);
-        $germanTranslations = $this->getGermanTranslationData();
+        $germanTranslations = $this->getChineseTranslationData();
 
         $insertSql = <<<'SQL'
             INSERT INTO import_export_profile_translation (`import_export_profile_id`, `language_id`, `label`, `created_at`)
@@ -62,13 +62,13 @@ SQL;
 
         $stmt = $connection->prepare($insertSql);
         foreach ($englishData as $data) {
-            if ($this->checkIfInGermanData($data, $germanData)) {
+            if ($this->checkIfInGermanData($data, $chineseData)) {
                 continue;
             }
 
             $stmt->executeStatement([
                 'import_export_profile_id' => $data['import_export_profile_id'],
-                'language_id' => $germanLanguageId,
+                'language_id' => $chineseLanguageId,
                 'label' => $germanTranslations[$data['label']],
                 'created_at' => $data['created_at'],
             ]);
@@ -82,15 +82,15 @@ SQL;
     /**
      * @return array<string, string>
      */
-    private function getGermanTranslationData(): array
+    private function getChineseTranslationData(): array
     {
         return [
-            'Default category' => 'Standardprofil Kategorie',
-            'Default media' => 'Standardprofil Medien',
-            'Default variant configuration settings' => 'Standardprofil Variantenkonfiguration',
-            'Default newsletter recipient' => 'Standardprofil Newsletter-Empfänger',
-            'Default properties' => 'Standardprofil Eigenschaften',
-            'Default product' => 'Standardprofil Produkt',
+            'Default category' => '类目',
+            'Default media' => '媒体',
+            'Default variant configuration settings' => '产品变体配置',
+            'Default newsletter recipient' => '邮件订阅',
+            'Default properties' => '属性',
+            'Default product' => '产品',
         ];
     }
 

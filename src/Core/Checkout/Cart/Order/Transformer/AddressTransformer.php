@@ -38,7 +38,7 @@ class AddressTransformer
             'name' => $address->getName(),
             'street' => $address->getStreet(),
             'zipcode' => $address->getZipcode(),
-            'city' => $address->getCity(),
+            'cityId' => $address->getCityId(),
             'phoneNumber' => $address->getPhoneNumber(),
             'additionalAddressLine1' => $address->getAdditionalAddressLine1(),
             'additionalAddressLine2' => $address->getAdditionalAddressLine2(),

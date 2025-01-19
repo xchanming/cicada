@@ -331,6 +331,7 @@ export default {
                     label: 'sw-customer.list.columnAccountType',
                     allowResize: false,
                     useCustomSort: true,
+                    visible: false,
                 },
                 {
                     property: 'email',

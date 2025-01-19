@@ -25,8 +25,8 @@ class BlockTest extends TestCase
         static::assertCount(6, $firstBlock->getDefaultConfig()->toArray('en-GB'));
         static::assertEquals(
             [
-                'en-GB' => 'First block from app',
-                'zh-CN' => 'Erster Block einer App',
+                'zh-CN' => 'First block from app',
+                'en-GB' => 'Erster Block einer App',
             ],
             $firstBlock->getLabel()
         );
@@ -47,13 +47,13 @@ class BlockTest extends TestCase
                 'name' => 'first-block-name',
                 'category' => 'text-image',
                 'label' => [
-                    'en-GB' => 'First block from app',
-                    'zh-CN' => 'Erster Block einer App',
+                    'zh-CN' => 'First block from app',
+                    'en-GB' => 'Erster Block einer App',
                 ],
                 'slots' => $slots,
                 'defaultConfig' => $defaultConfig,
             ],
-            $firstBlock->toArray('en-GB')
+            $firstBlock->toArray('zh-CN')
         );
 
         $secondBlock = $manifest->getBlocks()->getBlocks()[1];
@@ -65,13 +65,13 @@ class BlockTest extends TestCase
                 'name' => 'second-block-name',
                 'category' => 'text',
                 'label' => [
-                    'en-GB' => 'Second block from app',
-                    'zh-CN' => 'Zweiter Block einer App',
+                    'zh-CN' => 'Second block from app',
+                    'en-GB' => 'Zweiter Block einer App',
                 ],
                 'slots' => $slots,
                 'defaultConfig' => $defaultConfig,
             ],
-            $secondBlock->toArray('en-GB')
+            $secondBlock->toArray('zh-CN')
         );
     }
 
@@ -86,7 +86,7 @@ class BlockTest extends TestCase
         static::assertNotNull($cmsExtensions->getBlocks());
         static::assertEquals(
             $expectedEntityArray,
-            $cmsExtensions->getBlocks()->getBlocks()[$i]->toEntityArray('app-id', 'en-GB')
+            $cmsExtensions->getBlocks()->getBlocks()[$i]->toEntityArray('app-id', 'zh-CN')
         );
     }
 
@@ -102,15 +102,15 @@ class BlockTest extends TestCase
                     'appId' => 'app-id',
                     'name' => 'first-block-name',
                     'label' => [
-                        'en-GB' => 'First block from app',
-                        'zh-CN' => 'Erster Block einer App',
+                        'zh-CN' => 'First block from app',
+                        'en-GB' => 'Erster Block einer App',
                     ],
                     'block' => [
                         'name' => 'first-block-name',
                         'category' => 'text-image',
                         'label' => [
-                            'en-GB' => 'First block from app',
-                            'zh-CN' => 'Erster Block einer App',
+                            'zh-CN' => 'First block from app',
+                            'en-GB' => 'Erster Block einer App',
                         ],
                         'slots' => [
                             'left' => [
@@ -171,15 +171,15 @@ class BlockTest extends TestCase
                     'appId' => 'app-id',
                     'name' => 'second-block-name',
                     'label' => [
-                        'en-GB' => 'Second block from app',
-                        'zh-CN' => 'Zweiter Block einer App',
+                        'zh-CN' => 'Second block from app',
+                        'en-GB' => 'Zweiter Block einer App',
                     ],
                     'block' => [
                         'name' => 'second-block-name',
                         'category' => 'text',
                         'label' => [
-                            'en-GB' => 'Second block from app',
-                            'zh-CN' => 'Zweiter Block einer App',
+                            'zh-CN' => 'Second block from app',
+                            'en-GB' => 'Zweiter Block einer App',
                         ],
                         'slots' => [
                             'left' => [

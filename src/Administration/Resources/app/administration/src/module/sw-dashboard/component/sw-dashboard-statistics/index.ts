@@ -364,7 +364,7 @@ export default Cicada.Component.wrapComponentConfig({
 
             const initContainer = Cicada.Application.getContainer('init');
             const httpClient = initContainer.httpClient;
-            const timezone = Cicada.State.get('session').currentUser?.timeZone ?? 'UTC';
+            const timezone = Cicada.State.get('session').currentUser?.timeZone ?? 'Asia/Shanghai';
 
             return httpClient
                 .get<

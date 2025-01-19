@@ -149,7 +149,6 @@ class OrderBuilder
     {
         $address = \array_replace([
             'name' => 'Max',
-            'city' => 'Bielefeld',
             'street' => 'Buchenweg 5',
             'zipcode' => '33062',
             'country' => [

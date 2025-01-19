@@ -262,8 +262,8 @@ class AppLifecycleTest extends TestCase
 
     public function testInstallWithSystemDefaultLanguageNotProvidedByApp(): void
     {
-        $this->setNewSystemLanguage('zh-CN');
         $this->setNewSystemLanguage('en-GB');
+        $this->setNewSystemLanguage('zh-CN');
         $manifest = Manifest::createFromXmlFile(__DIR__ . '/../Manifest/_fixtures/test/manifest.xml');
 
         $this->appLifecycle->install($manifest, true, $this->context);
@@ -1790,8 +1790,8 @@ class AppLifecycleTest extends TestCase
             [
                 'name' => 'first-module',
                 'label' => [
-                    'zh-CN' => 'Mein erstes eigenes Modul',
-                    'en-GB' => 'My first own module',
+                    'zh-CN' => 'My first own module',
+                    'en-GB' => 'Mein erstes eigenes Modul',
                 ],
                 'parent' => 'sw-test-structure-module',
                 'source' => 'https://test.com',
@@ -1799,8 +1799,8 @@ class AppLifecycleTest extends TestCase
             ], [
                 'name' => 'structure-module',
                 'label' => [
-                    'zh-CN' => 'Mein Menüeintrag für Module',
-                    'en-GB' => 'My menu entry for modules',
+                    'zh-CN' => 'My menu entry for modules',
+                    'en-GB' => 'Mein Menüeintrag für Module',
                 ],
                 'parent' => 'sw-catalogue',
                 'source' => null,
@@ -1870,8 +1870,8 @@ class AppLifecycleTest extends TestCase
 
         static::assertEquals([
             'label' => [
-                'zh-CN' => 'Zusatzfeld Test',
-                'en-GB' => 'Custom field test',
+                'zh-CN' => 'Custom field test',
+                'en-GB' => 'Zusatzfeld Test',
             ],
             'translated' => true,
         ], $customFieldSet->getConfig());
@@ -2300,19 +2300,19 @@ class AppLifecycleTest extends TestCase
                     'name' => 'text',
                     'type' => 'text',
                     'label' => [
-                        'zh-CN' => 'Text DE',
-                        'en-GB' => 'Text',
+                        'zh-CN' => 'Text',
+                        'en-GB' => 'Text DE',
                     ],
                     'options' => [],
                     'helpText' => [
-                        'zh-CN' => 'Help DE',
-                        'en-GB' => 'Help Text',
+                        'zh-CN' => 'Help Text',
+                        'en-GB' => 'Help DE',
                     ],
                     'required' => true,
                     'extensions' => [],
                     'placeHolder' => [
-                        'zh-CN' => 'Enter Text DE...',
-                        'en-GB' => 'Enter Text...',
+                        'zh-CN' => 'Enter Text...',
+                        'en-GB' => 'Enter Text DE...',
                     ],
                     'defaultValue' => 'Hello',
                 ],

@@ -4,9 +4,9 @@
     <meta>
         <name>SwagApp</name>
         <label>Swag App Test</label>
-        <label lang="zh-CN">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="zh-CN">Test für das App System</description>
+        <description lang="en-GB">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -21,16 +21,16 @@
         <custom-field-set>
             <name>custom_field_test</name>
             <label>Custom field test</label>
-            <label lang="zh-CN">Zusatzfeld Test</label>
+            <label lang="en-GB">Zusatzfeld Test</label>
             <related-entities>
                 <product/>
             </related-entities>
             <fields>
                 <bool name="bool_field">
                     <label>Test bool field</label>
-                    <label lang="zh-CN">Test bool field</label>
+                    <label lang="en-GB">Test bool field</label>
                     <help-text>Help text</help-text>
-                    <help-text lang="zh-CN">Help text</help-text>
+                    <help-text lang="en-GB">Help text</help-text>
                 </bool>
             </fields>
         </custom-field-set>

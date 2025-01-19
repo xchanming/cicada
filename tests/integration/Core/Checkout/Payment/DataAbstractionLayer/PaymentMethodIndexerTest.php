@@ -135,41 +135,6 @@ class PaymentMethodIndexerTest extends TestCase
 
         $creditCardPayment = $payments->get($creditCardPaymentId);
         static::assertNotNull($creditCardPayment);
-        static::assertEquals('Credit card', $creditCardPayment->getDistinguishableName());
-
-        /** @var PaymentMethodEntity $invoicePaymentByCicadaPlugin */
-        $invoicePaymentByCicadaPlugin = $payments->get($invoicePaymentByCicadaPluginId);
-        static::assertEquals('Invoice | Cicada (English)', $invoicePaymentByCicadaPlugin->getDistinguishableName());
-
-        /** @var PaymentMethodEntity $invoicePaymentByPlugin */
-        $invoicePaymentByPlugin = $payments->get($invoicePaymentByPluginId);
-        static::assertEquals('Invoice | Plugin (English)', $invoicePaymentByPlugin->getDistinguishableName());
-
-        /** @var PaymentMethodEntity $invoicePaymentByApp */
-        $invoicePaymentByApp = $payments->get($invoicePaymentByAppId);
-        static::assertEquals('Invoice | App', $invoicePaymentByApp->getDistinguishableName());
-
-        /** @var PaymentMethodEntity $paidInAdvance */
-        $paidInAdvance = $payments
-            ->filterByProperty('name', 'Cash on delivery')
-            ->first();
-
-        static::assertEquals($paidInAdvance->getTranslation('name'), $paidInAdvance->getTranslation('distinguishableName'));
-
-        $germanContext = new Context(
-            new SystemSource(),
-            [],
-            Defaults::CURRENCY,
-            [$this->getDeDeLanguageId(), Defaults::LANGUAGE_SYSTEM]
-        );
-
-        /** @var PaymentMethodCollection $payments */
-        $payments = $paymentRepository
-            ->search(new Criteria(), $germanContext)
-            ->getEntities();
-
-        $creditCardPayment = $payments->get($creditCardPaymentId);
-        static::assertNotNull($creditCardPayment);
         static::assertEquals('Kreditkarte', $creditCardPayment->getDistinguishableName());
 
         /** @var PaymentMethodEntity $invoicePaymentByCicadaPlugin */
@@ -183,6 +148,41 @@ class PaymentMethodIndexerTest extends TestCase
         /** @var PaymentMethodEntity $invoicePaymentByApp */
         $invoicePaymentByApp = $payments->get($invoicePaymentByAppId);
         static::assertEquals('Rechnung | App', $invoicePaymentByApp->getDistinguishableName());
+
+        /** @var PaymentMethodEntity $paidInAdvance */
+        $paidInAdvance = $payments
+            ->filterByProperty('name', '货到付款')
+            ->first();
+
+        static::assertEquals($paidInAdvance->getTranslation('name'), $paidInAdvance->getTranslation('distinguishableName'));
+
+        $germanContext = new Context(
+            new SystemSource(),
+            [],
+            Defaults::CURRENCY,
+            [$this->getEnGbLanguageId(), Defaults::LANGUAGE_SYSTEM]
+        );
+
+        /** @var PaymentMethodCollection $payments */
+        $payments = $paymentRepository
+            ->search(new Criteria(), $germanContext)
+            ->getEntities();
+
+        $creditCardPayment = $payments->get($creditCardPaymentId);
+        static::assertNotNull($creditCardPayment);
+        static::assertEquals('Credit card', $creditCardPayment->getDistinguishableName());
+
+        /** @var PaymentMethodEntity $invoicePaymentByCicadaPlugin */
+        $invoicePaymentByCicadaPlugin = $payments->get($invoicePaymentByCicadaPluginId);
+        static::assertEquals('Invoice | Cicada (English)', $invoicePaymentByCicadaPlugin->getDistinguishableName());
+
+        /** @var PaymentMethodEntity $invoicePaymentByPlugin */
+        $invoicePaymentByPlugin = $payments->get($invoicePaymentByPluginId);
+        static::assertEquals('Invoice | Plugin (English)', $invoicePaymentByPlugin->getDistinguishableName());
+
+        /** @var PaymentMethodEntity $invoicePaymentByApp */
+        $invoicePaymentByApp = $payments->get($invoicePaymentByAppId);
+        static::assertEquals('Invoice | App', $invoicePaymentByApp->getDistinguishableName());
     }
 
     public function testPaymentMethodIndexerNotLooping(): void

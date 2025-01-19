@@ -883,7 +883,7 @@ class WebhookManagerTest extends TestCase
                 static::assertSame($cicadaVersion, $message->getCicadaVersion());
                 static::assertSame('s3cr3t', $message->getSecret());
                 static::assertSame(Defaults::LANGUAGE_SYSTEM, $message->getLanguageId());
-                static::assertSame('en-GB', $message->getUserLocale());
+                static::assertSame('zh-CN', $message->getUserLocale());
 
                 return true;
             }))
@@ -935,7 +935,7 @@ class WebhookManagerTest extends TestCase
                 static::assertNull($message->getAppId());
                 static::assertNull($message->getSecret());
                 static::assertSame(Defaults::LANGUAGE_SYSTEM, $message->getLanguageId());
-                static::assertSame('en-GB', $message->getUserLocale());
+                static::assertSame('zh-CN', $message->getUserLocale());
 
                 return true;
             }))
@@ -1030,7 +1030,6 @@ class WebhookManagerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),

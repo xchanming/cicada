@@ -77,7 +77,7 @@ class TranslationTest extends TestCase
         $this->context = Context::createDefaultContext();
         $this->ids = new IdsCollection();
 
-        $this->deLanguageId = $this->getDeDeLanguageId();
+        $this->deLanguageId = $this->getEnGbLanguageId();
     }
 
     public function testCurrencyWithTranslationViaLocale(): void
@@ -93,7 +93,7 @@ class TranslationTest extends TestCase
             'itemRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'totalRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'translations' => [
-                'en-GB' => [
+                'zh-CN' => [
                     'name' => 'US Dollar',
                     'shortName' => 'FOO',
                 ],
@@ -174,7 +174,7 @@ class TranslationTest extends TestCase
             'itemRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'totalRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'translations' => [
-                'en-GB' => [
+                'zh-CN' => [
                     'name' => $name,
                 ],
 
@@ -217,7 +217,7 @@ class TranslationTest extends TestCase
             'itemRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'totalRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'translations' => [
-                'en-GB' => [
+                'zh-CN' => [
                     'shortName' => $shortName,
                 ],
 
@@ -249,15 +249,15 @@ class TranslationTest extends TestCase
 
     public function testCurrencyWithTranslationViaLocaleAndLanguageId(): void
     {
-        $germanLanguageId = Uuid::randomHex();
-        $germanName = 'Amerikanischer Dollar';
+        $englishLanguageId = Uuid::randomHex();
+        $englishName = 'Amerikanischer Dollar';
         $germanShortName = 'US Dollar Deutsch';
-        $englishName = 'US Dollar';
-        $englishShortName = 'FOO';
+        $chineseName = 'US Dollar';
+        $chineseShortName = 'FOO';
 
         $this->languageRepository->create(
             [[
-                'id' => $germanLanguageId,
+                'id' => $englishLanguageId,
                 'name' => 'zh-CN',
                 'locale' => [
                     'id' => Uuid::randomHex(),
@@ -283,13 +283,13 @@ class TranslationTest extends TestCase
             'totalRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'isoCode' => 'FOO',
             'translations' => [
-                'en-GB' => [
-                    'name' => $englishName,
-                    'shortName' => $englishShortName,
+                'zh-CN' => [
+                    'name' => $chineseName,
+                    'shortName' => $chineseShortName,
                 ],
 
-                $germanLanguageId => [
-                    'name' => $germanName,
+                $englishLanguageId => [
+                    'name' => $englishName,
                     'shortName' => $germanShortName,
                 ],
             ],
@@ -305,7 +305,7 @@ class TranslationTest extends TestCase
         static::assertInstanceOf(EntityWrittenEvent::class, $translations);
         static::assertCount(2, $translations->getIds());
         $languageIds = array_column($translations->getPayloads(), 'languageId');
-        static::assertContains($germanLanguageId, $languageIds);
+        static::assertContains($englishLanguageId, $languageIds);
         static::assertContains(Defaults::LANGUAGE_SYSTEM, $languageIds);
 
         $payload1 = $translations->getPayloads()[0];
@@ -313,13 +313,13 @@ class TranslationTest extends TestCase
 
         static::assertArrayHasKey('name', $payload1);
         static::assertArrayHasKey('shortName', $payload1);
-        static::assertSame($germanName, $payload1['name']);
+        static::assertSame($englishName, $payload1['name']);
         static::assertSame($germanShortName, $payload1['shortName']);
 
         static::assertArrayHasKey('name', $payload2);
         static::assertArrayHasKey('shortName', $payload2);
-        static::assertSame($englishName, $payload2['name']);
-        static::assertSame($englishShortName, $payload2['shortName']);
+        static::assertSame($chineseName, $payload2['name']);
+        static::assertSame($chineseShortName, $payload2['shortName']);
     }
 
     public function testCurrencyTranslationWithCachingAndInvalidation(): void
@@ -335,7 +335,7 @@ class TranslationTest extends TestCase
             'itemRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'totalRounding' => json_decode(json_encode(new CashRoundingConfig(2, 0.01, true), \JSON_THROW_ON_ERROR), true, 512, \JSON_THROW_ON_ERROR),
             'translations' => [
-                'en-GB' => [
+                'zh-CN' => [
                     'name' => $englishName,
                     'shortName' => $englishShortName,
                 ],
@@ -576,15 +576,15 @@ class TranslationTest extends TestCase
         static::assertEquals('system', $catSystem->getTranslated()['name']);
 
         $deDeContext = new Context(new SystemSource(), [], Defaults::CURRENCY, [$this->deLanguageId, Defaults::LANGUAGE_SYSTEM]);
-        $catDeDe = $this->categoryRepository
+        $catEnGb = $this->categoryRepository
             ->search(new Criteria([$category['id']]), $deDeContext)
             ->getEntities()
             ->first();
 
-        static::assertNotNull($catDeDe);
-        static::assertInstanceOf(CategoryEntity::class, $catDeDe);
-        static::assertNull($catDeDe->getName());
-        static::assertEquals('system', $catDeDe->getTranslated()['name']);
+        static::assertNotNull($catEnGb);
+        static::assertInstanceOf(CategoryEntity::class, $catEnGb);
+        static::assertNull($catEnGb->getName());
+        static::assertEquals('system', $catEnGb->getTranslated()['name']);
     }
 
     public function testUpsert(): void
@@ -860,11 +860,11 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
             'id' => $id,
             'name' => 'default',
             'translations' => [
+                'zh-CN' => [
+                    'name' => 'zh translation',
+                ],
                 'en-GB' => [
                     'name' => 'en translation',
-                ],
-                'zh-CN' => [
-                    'name' => 'de übersetzung',
                 ],
             ],
         ];
@@ -884,11 +884,11 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
 
         $enTranslation = $category->getTranslations()->filterByLanguageId(Defaults::LANGUAGE_SYSTEM)->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
-        static::assertEquals('en translation', $enTranslation->getName());
+        static::assertEquals('zh translation', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getEnGbLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
-        static::assertEquals('de übersetzung', $deTranslation->getName());
+        static::assertEquals('en translation', $deTranslation->getName());
     }
 
     public function testTranslationValuesHavePriorityOverDefaultValueWithIds(): void
@@ -901,10 +901,10 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
             'name' => 'default',
             'translations' => [
                 Defaults::LANGUAGE_SYSTEM => [
-                    'name' => 'en translation',
+                    'name' => 'zh translation',
                 ],
-                $this->getDeDeLanguageId() => [
-                    'name' => 'de übersetzung',
+                $this->getEnGbLanguageId() => [
+                    'name' => 'en translation',
                 ],
             ],
         ];
@@ -924,11 +924,11 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
 
         $enTranslation = $category->getTranslations()->filterByLanguageId(Defaults::LANGUAGE_SYSTEM)->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
-        static::assertEquals('en translation', $enTranslation->getName());
+        static::assertEquals('zh translation', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getEnGbLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
-        static::assertEquals('de übersetzung', $deTranslation->getName());
+        static::assertEquals('en translation', $deTranslation->getName());
     }
 
     public function testTranslationValuesHavePriorityOverDefaultValuesWithIds(): void
@@ -943,10 +943,10 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
             ],
             'translations' => [
                 Defaults::LANGUAGE_SYSTEM => [
-                    'name' => 'en translation',
+                    'name' => 'zh translation',
                 ],
-                $this->getDeDeLanguageId() => [
-                    'name' => 'de übersetzung',
+                $this->getEnGbLanguageId() => [
+                    'name' => 'en translation',
                 ],
             ],
         ];
@@ -966,11 +966,11 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
 
         $enTranslation = $category->getTranslations()->filterByLanguageId(Defaults::LANGUAGE_SYSTEM)->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
-        static::assertEquals('en translation', $enTranslation->getName());
+        static::assertEquals('zh translation', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getEnGbLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
-        static::assertEquals('de übersetzung', $deTranslation->getName());
+        static::assertEquals('en translation', $deTranslation->getName());
     }
 
     public function testDefaultValueWithLocaleHasPriorityOverTranslationValueWithId(): void
@@ -981,14 +981,14 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         $data = [
             'id' => $id,
             'name' => [
-                'en-GB' => 'default',
+                'zh-CN' => 'default',
             ],
             'translations' => [
                 Defaults::LANGUAGE_SYSTEM => [
-                    'name' => 'en translation',
+                    'name' => 'zh translation',
                 ],
-                $this->getDeDeLanguageId() => [
-                    'name' => 'de übersetzung',
+                $this->getEnGbLanguageId() => [
+                    'name' => 'en translation',
                 ],
             ],
         ];
@@ -1010,9 +1010,9 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         static::assertInstanceOf(CategoryTranslationEntity::class, $enTranslation);
         static::assertEquals('default', $enTranslation->getName());
 
-        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getDeDeLanguageId())->first();
+        $deTranslation = $category->getTranslations()->filterByLanguageId($this->getEnGbLanguageId())->first();
         static::assertInstanceOf(CategoryTranslationEntity::class, $deTranslation);
-        static::assertEquals('de übersetzung', $deTranslation->getName());
+        static::assertEquals('en translation', $deTranslation->getName());
     }
 
     public function testWriteWithInheritedTranslationCode(): void
@@ -1042,7 +1042,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         $data = [
             'id' => $id,
             'name' => [
-                'en-GB' => 'default',
+                'zh-CN' => 'default',
                 'language-locale' => 'parent language',
             ],
         ];
@@ -1102,7 +1102,7 @@ sors capulus se Quies, mox qui Sentus dum confirmo do iam. Iunceus postulator in
         $data = [
             'id' => $id,
             'name' => [
-                'en-GB' => 'default',
+                'zh-CN' => 'default',
                 'language-locale' => 'parent language',
                 $this->ids->get('language-child') => 'child language',
             ],

@@ -73,7 +73,7 @@ class BlockTest extends TestCase
         static::assertNotNull($actualOuterBlocks);
 
         $actualBlocks = $actualOuterBlocks->getBlocks();
-        $actualBlockArray = array_map(fn ($block) => $block->toArray('en-GB'), $actualBlocks);
+        $actualBlockArray = array_map(fn ($block) => $block->toArray('zh-CN'), $actualBlocks);
 
         $expectedBlocks = $this->getExpectedEntityArrayBlocks();
 
@@ -87,7 +87,7 @@ class BlockTest extends TestCase
             $defaultConfig = $actualBlockArray[$index]['defaultConfig'];
             static::assertInstanceOf(DefaultConfig::class, $defaultConfig);
 
-            static::assertSame($expectedBlockInner['defaultConfig'], $defaultConfig->toArray('en-GB'));
+            static::assertSame($expectedBlockInner['defaultConfig'], $defaultConfig->toArray('zh-CN'));
 
             $slotNames = array_keys($expectedBlockInner['slots']);
             foreach (array_values($expectedBlockInner['slots']) as $slotIndex => $expectedSlot) {
@@ -96,7 +96,7 @@ class BlockTest extends TestCase
 
                 static::assertSame($slotNames[$slotIndex], $actualSlot->getName());
                 static::assertSame($expectedSlot['type'], $actualSlot->getType());
-                static::assertSame($expectedSlot['default']['config'], $actualSlot->getConfig()->toArray('en-GB'));
+                static::assertSame($expectedSlot['default']['config'], $actualSlot->getConfig()->toArray('zh-CN'));
             }
         }
     }
@@ -132,15 +132,15 @@ class BlockTest extends TestCase
             'appId' => 'niceBlockApp',
             'name' => 'my-first-block',
             'label' => [
-                'en-GB' => 'First block from app',
-                'zh-CN' => 'Erster Block einer App',
+                'zh-CN' => 'First block from app',
+                'en-GB' => 'Erster Block einer App',
             ],
             'block' => [
                 'name' => 'my-first-block',
                 'category' => 'text-image',
                 'label' => [
-                    'en-GB' => 'First block from app',
-                    'zh-CN' => 'Erster Block einer App',
+                    'zh-CN' => 'First block from app',
+                    'en-GB' => 'Erster Block einer App',
                 ],
                 'slots' => [
                     'left' => [
@@ -197,15 +197,15 @@ class BlockTest extends TestCase
             'appId' => 'niceBlockApp',
             'name' => 'my-second-block',
             'label' => [
-                'en-GB' => 'Second block from app',
-                'zh-CN' => 'Zweiter Block einer App',
+                'zh-CN' => 'Second block from app',
+                'en-GB' => 'Zweiter Block einer App',
             ],
             'block' => [
                 'name' => 'my-second-block',
                 'category' => 'text-image',
                 'label' => [
-                    'en-GB' => 'Second block from app',
-                    'zh-CN' => 'Zweiter Block einer App',
+                    'zh-CN' => 'Second block from app',
+                    'en-GB' => 'Zweiter Block einer App',
                 ],
                 'slots' => [
                     'left' => [

@@ -23,11 +23,11 @@ class SingleEntitySelectFieldTest extends TestCase
         static::assertTrue($singleEntitySelectField->isActive());
         static::assertEquals([
             'label' => [
-                'en-GB' => 'Test single-entity-select field',
+                'zh-CN' => 'Test single-entity-select field',
             ],
             'helpText' => [],
             'placeholder' => [
-                'en-GB' => 'Choose an entity...',
+                'zh-CN' => 'Choose an entity...',
             ],
             'componentName' => 'sw-entity-single-select',
             'customFieldType' => 'select',

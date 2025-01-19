@@ -23,11 +23,11 @@ class MultiEntitySelectFieldTest extends TestCase
         static::assertTrue($multiEntitySelectField->isActive());
         static::assertEquals([
             'label' => [
-                'en-GB' => 'Test multi-entity-select field',
+                'zh-CN' => 'Test multi-entity-select field',
             ],
             'helpText' => [],
             'placeholder' => [
-                'en-GB' => 'Choose an entity...',
+                'zh-CN' => 'Choose an entity...',
             ],
             'componentName' => 'sw-entity-multi-id-select',
             'customFieldType' => 'select',

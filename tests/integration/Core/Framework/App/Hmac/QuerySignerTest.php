@@ -67,7 +67,7 @@ class QuerySignerTest extends TestCase
         static::assertSame(Context::createDefaultContext()->getLanguageId(), $signedQuery['sw-context-language']);
 
         static::assertArrayHasKey('sw-user-language', $signedQuery);
-        static::assertSame('en-GB', $signedQuery['sw-user-language']);
+        static::assertSame('zh-CN', $signedQuery['sw-user-language']);
 
         static::assertNotNull($this->app->getAppSecret());
 

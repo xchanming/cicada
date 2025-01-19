@@ -19,6 +19,12 @@ describe('Form country state select plugin', () => {
             <select class="country-state-select" data-initial-country-state-id="">
                 <option>Select state..</option>
             </select>
+              <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
         </form>
     `;
 

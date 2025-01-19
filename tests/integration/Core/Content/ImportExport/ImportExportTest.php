@@ -347,7 +347,6 @@ class ImportExportTest extends AbstractImportExportTestCase
             'title' => 'dr.',
             'name' => 'Max',
             'zipCode' => '48599',
-            'city' => 'Musterstadt',
             'street' => 'Musterstraße 7',
             'hash' => 'asdf',
             'status' => NewsletterSubscribeRoute::STATUS_DIRECT,
@@ -1108,7 +1107,7 @@ SWTEST;1;' . $productName . ';9.35;10;0c17372fe6aa46059a97fc28b40f46c4;7;7%%;%s'
         static::assertSame('foo', $product->getCustomFields()['custom_field_1']);
         static::assertSame(23, $product->getCustomFields()['custom_field_2']);
         static::assertTrue($product->getCustomFields()['custom_field_3']);
-        static::assertSame('2021-12-12T12:00:00+00:00', $product->getCustomFields()['custom_field_4']);
+        static::assertSame('2021-12-12T12:00:00+08:00', $product->getCustomFields()['custom_field_4']);
         static::assertSame(['abc8b8f701034e8dbea72ac0fc32521e', 'c5c8b8f701034e8dbea72ac0fc32521e'], $product->getCustomFields()['custom_field_5']);
 
         $progress = $this->export($context, ProductDefinition::ENTITY_NAME, null, null, $profile->getId());
@@ -1130,10 +1129,10 @@ SWTEST;1;' . $productName . ';9.35;10;0c17372fe6aa46059a97fc28b40f46c4;7;7%%;%s'
         static::assertSame('foo', $record['custom_field_1']);
         static::assertSame('23', $record['custom_field_2']);
         static::assertSame('1', $record['custom_field_3']);
-        static::assertSame('2021-12-12T12:00:00+00:00', $record['custom_field_4']);
+        static::assertSame('2021-12-12T12:00:00+08:00', $record['custom_field_4']);
         static::assertSame('["abc8b8f701034e8dbea72ac0fc32521e","c5c8b8f701034e8dbea72ac0fc32521e"]', $record['custom_field_5']);
         static::assertSame(
-            '{"custom_field_1":"foo","custom_field_2":23,"custom_field_3":true,"custom_field_4":"2021-12-12T12:00:00+00:00","custom_field_5":["abc8b8f701034e8dbea72ac0fc32521e","c5c8b8f701034e8dbea72ac0fc32521e"],"custom_field_6":"bar"}',
+            '{"custom_field_1":"foo","custom_field_2":23,"custom_field_3":true,"custom_field_4":"2021-12-12T12:00:00+08:00","custom_field_5":["abc8b8f701034e8dbea72ac0fc32521e","c5c8b8f701034e8dbea72ac0fc32521e"],"custom_field_6":"bar"}',
             $record['custom_fields']
         );
     }
@@ -1340,7 +1339,7 @@ SWTEST;1;' . $productName . ';9.35;10;0c17372fe6aa46059a97fc28b40f46c4;7;7%%;%s'
         $csv = $this->getCsvContent($progress->getLogId());
         static::assertStringContainsString($salesChannel['name'], $csv);
         static::assertStringContainsString('cicada AG', $csv);
-        static::assertStringContainsString('en-GB', $csv);
+        static::assertStringContainsString('zh-CN', $csv);
         static::assertStringContainsString('Standard customer group', $csv);
     }
 
@@ -1577,27 +1576,27 @@ SWTEST;1;' . $productName . ';9.35;10;0c17372fe6aa46059a97fc28b40f46c4;7;7%%;%s'
         $mappings = $clonedPropertyProfile->getMapping();
         $mappings[] = [
             'key' => 'unit.translations.DEFAULT.name',
-            'mappedKey' => 'unit_name_en',
+            'mappedKey' => 'unit_name_zh',
         ];
         $mappings[] = [
             'key' => 'unit.translations.DEFAULT.shortCode',
+            'mappedKey' => 'unit_short_code_zh',
+        ];
+        $mappings[] = [
+            'key' => 'unit.translations.en-GB.name',
+            'mappedKey' => 'unit_name_en',
+        ];
+        $mappings[] = [
+            'key' => 'unit.translations.en-GB.shortCode',
             'mappedKey' => 'unit_short_code_en',
-        ];
-        $mappings[] = [
-            'key' => 'unit.translations.zh-CN.name',
-            'mappedKey' => 'unit_name_de',
-        ];
-        $mappings[] = [
-            'key' => 'unit.translations.zh-CN.shortCode',
-            'mappedKey' => 'unit_short_code_de',
         ];
         $this->updateProfileMapping($clonedPropertyProfile->getId(), $mappings);
         $updateBy = [
             ['entityName' => ProductDefinition::ENTITY_NAME, 'mappedKey' => 'productNumber'],
             ['entityName' => TaxDefinition::ENTITY_NAME, 'mappedKey' => 'taxRate'],
             ['entityName' => ProductManufacturerDefinition::ENTITY_NAME, 'mappedKey' => 'translations.DEFAULT.name'],
-            ['entityName' => UnitDefinition::ENTITY_NAME, 'mappedKey' => 'translations.zh-CN.name'],
-            ['entityName' => CategoryDefinition::ENTITY_NAME, 'mappedKey' => 'translations.en-GB.name'],
+            ['entityName' => UnitDefinition::ENTITY_NAME, 'mappedKey' => 'translations.en-GB.name'],
+            ['entityName' => CategoryDefinition::ENTITY_NAME, 'mappedKey' => 'translations.zh-CN.name'],
             ['entityName' => PropertyGroupOptionDefinition::ENTITY_NAME, 'mappedKey' => 'translations.DEFAULT.name'],
         ];
         $this->updateProfileUpdateBy($clonedPropertyProfile->getId(), $updateBy);

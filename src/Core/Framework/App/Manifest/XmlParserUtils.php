@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter
 #[Package('core')]
 class XmlParserUtils
 {
-    private const FALLBACK_LOCALE = 'en-GB';
+    private const FALLBACK_LOCALE = 'zh-CN';
 
     /**
      * @return array<string, mixed>

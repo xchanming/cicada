@@ -72,9 +72,9 @@ class PluginServiceTest extends TestCase
 
         $this->assertDefaultPlugin($plugin);
         $this->assertPluginMetaInformation($plugin);
-        static::assertSame('English description', $plugin->getDescription());
-        static::assertSame('https://www.test.com/', $plugin->getManufacturerLink());
-        static::assertSame('https://www.test.com/support', $plugin->getSupportLink());
+        static::assertSame('Chinese description', $plugin->getDescription());
+        static::assertSame('https://www.test.de/', $plugin->getManufacturerLink());
+        static::assertSame('https://www.test.de/support', $plugin->getSupportLink());
     }
 
     public function testRefreshPluginsWithRootComposerJsonContainingPlugin(): void
@@ -91,7 +91,7 @@ class PluginServiceTest extends TestCase
 
         $plugin = $this->fetchSwagTestPluginEntity(baseClass: 'Swag\RootTest\RootPlugin');
 
-        static::assertSame('Root test plugin', $plugin->getTranslated()['label']);
+        static::assertSame('Root Test plugin', $plugin->getTranslated()['label']);
     }
 
     public function testRefreshPluginWithoutExtraLabelProperty(): void
@@ -130,9 +130,9 @@ class PluginServiceTest extends TestCase
 
         $this->assertDefaultPlugin($plugin);
         $this->assertPluginMetaInformation($plugin);
-        static::assertSame('English description', $plugin->getTranslated()['description']);
-        static::assertSame('https://www.test.com/', $plugin->getTranslated()['manufacturerLink']);
-        static::assertSame('https://www.test.com/support', $plugin->getTranslated()['supportLink']);
+        static::assertSame('Chinese description', $plugin->getTranslated()['description']);
+        static::assertSame('https://www.test.de/', $plugin->getTranslated()['manufacturerLink']);
+        static::assertSame('https://www.test.de/support', $plugin->getTranslated()['supportLink']);
     }
 
     public function testRefreshPluginsWithDifferentDefaultLanguage(): void
@@ -152,14 +152,14 @@ class PluginServiceTest extends TestCase
 
     public function testRefreshPluginsWithGermanContext(): void
     {
-        $context = new Context(new SystemSource(), [], Defaults::CURRENCY, [$this->getDeDeLanguageId()]);
+        $context = new Context(new SystemSource(), [], Defaults::CURRENCY, [$this->getEnGbLanguageId()]);
 
         $this->pluginService->refreshPlugins($context, new NullIO());
 
         $plugin = $this->fetchSwagTestPluginEntity($context);
 
         $this->assertPluginMetaInformation($plugin);
-        $this->assertGermanPlugin($plugin);
+        $this->assertEnglishPlugin($plugin);
     }
 
     public function testRefreshPluginsExistingWithPluginUpdate(): void
@@ -263,14 +263,14 @@ class PluginServiceTest extends TestCase
         static::assertSame(SwagTestNoDefaultLang::PLUGIN_VERSION, $plugin->getVersion());
     }
 
-    private function assertGermanPlugin(PluginEntity $plugin): void
+    private function assertEnglishPlugin(PluginEntity $plugin): void
     {
         static::assertSame(SwagTestPlugin::class, $plugin->getBaseClass());
-        static::assertSame(SwagTestPlugin::PLUGIN_GERMAN_LABEL, $plugin->getLabel());
+        static::assertSame(SwagTestPlugin::PLUGIN_ENGLISH_LABEL, $plugin->getLabel());
         static::assertSame(SwagTestPlugin::PLUGIN_VERSION, $plugin->getVersion());
-        static::assertSame('Deutsche Beschreibung', $plugin->getDescription());
-        static::assertSame('https://www.test.de/', $plugin->getManufacturerLink());
-        static::assertSame('https://www.test.de/support', $plugin->getSupportLink());
+        static::assertSame('English description', $plugin->getDescription());
+        static::assertSame('https://www.test.com/', $plugin->getManufacturerLink());
+        static::assertSame('https://www.test.com/support', $plugin->getSupportLink());
     }
 
     private function assertPluginMetaInformation(PluginEntity $plugin): void

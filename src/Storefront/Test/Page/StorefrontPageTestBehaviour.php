@@ -183,7 +183,7 @@ trait StorefrontPageTestBehaviour
         $paymentMethodId = $this->getValidPaymentMethodId();
         $shippingMethodId = $this->getAvailableShippingMethod()->getId();
         $countryId = $this->getValidCountryId();
-        $snippetSetId = $this->getSnippetSetIdForLocale('en-GB');
+        $snippetSetId = $this->getSnippetSetIdForLocale('zh-CN');
         $data = [
             'typeId' => Defaults::SALES_CHANNEL_TYPE_STOREFRONT,
             'name' => 'store front',
@@ -283,7 +283,7 @@ trait StorefrontPageTestBehaviour
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
+                'cityId' => $this->getValidCountryCityId(),
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'country' => ['id' => $this->getValidCountryId()],

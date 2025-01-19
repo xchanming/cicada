@@ -38,7 +38,7 @@ export default function initializeContext(): void {
     });
 
     Cicada.ExtensionAPI.handle('contextUserTimezone', () => {
-        return Cicada.State.get('session').currentUser?.timeZone ?? 'UTC';
+        return Cicada.State.get('session').currentUser?.timeZone ?? 'Asia/Shanghai';
     });
 
     Cicada.ExtensionAPI.handle('contextModuleInformation', (_, additionalInformation) => {

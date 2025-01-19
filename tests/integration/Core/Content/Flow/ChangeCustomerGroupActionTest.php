@@ -145,7 +145,6 @@ class ChangeCustomerGroupActionTest extends TestCase
                 'id' => $this->ids->create('address'),
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
-                'city' => 'Schöppingen',
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId($this->ids->get('sales-channel')),

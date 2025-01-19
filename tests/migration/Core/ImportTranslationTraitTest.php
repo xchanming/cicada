@@ -22,7 +22,7 @@ class ImportTranslationTraitTest extends TestCase
     use ImportTranslationsTrait;
     use MigrationTestTrait;
 
-    public function testEnglishDefault(): void
+    public function testChineseDefault(): void
     {
         $ids = new IdsCollection();
 
@@ -44,7 +44,7 @@ class ImportTranslationTraitTest extends TestCase
                 [
                     'category_id' => Uuid::fromHexToBytes($ids->get('category')),
                     'category_version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
-                    'name' => 'de name',
+                    'name' => 'zh name',
                 ],
                 [
                     'category_id' => Uuid::fromHexToBytes($ids->get('category')),
@@ -64,12 +64,12 @@ class ImportTranslationTraitTest extends TestCase
         $translations = FetchModeHelper::groupUnique($translations);
 
         static::assertArrayHasKey(Defaults::LANGUAGE_SYSTEM, $translations);
-        static::assertArrayHasKey($ids->get('german'), $translations);
-        static::assertArrayHasKey($ids->get('en-2'), $translations);
+        static::assertArrayHasKey($ids->get('english'), $translations);
+        static::assertArrayHasKey($ids->get('zh-2'), $translations);
 
-        static::assertEquals('en name', $translations[Defaults::LANGUAGE_SYSTEM]['name']);
-        static::assertEquals('en name', $translations[$ids->get('en-2')]['name']);
-        static::assertEquals('de name', $translations[$ids->get('german')]['name']);
+        static::assertEquals('zh name', $translations[Defaults::LANGUAGE_SYSTEM]['name']);
+        static::assertEquals('zh name', $translations[$ids->get('zh-2')]['name']);
+        static::assertEquals('en name', $translations[$ids->get('english')]['name']);
     }
 
     private function createLanguages(IdsCollection $ids): void
@@ -89,16 +89,16 @@ class ImportTranslationTraitTest extends TestCase
 
         $languageData = [
             [
-                'id' => Uuid::fromHexToBytes($ids->create('german')),
+                'id' => Uuid::fromHexToBytes($ids->create('english')),
                 'name' => 'test',
-                'locale_id' => $this->getLocaleId('zh-CN'),
+                'locale_id' => $this->getLocaleId('en-GB'),
                 'translation_code_id' => Uuid::fromHexToBytes($ids->get('firstLocale')),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
             ],
             [
-                'id' => Uuid::fromHexToBytes($ids->create('en-2')),
+                'id' => Uuid::fromHexToBytes($ids->create('zh-2')),
                 'name' => 'test',
-                'locale_id' => $this->getLocaleId('en-GB'),
+                'locale_id' => $this->getLocaleId('zh-CN'),
                 'translation_code_id' => Uuid::fromHexToBytes($ids->get('secondLocale')),
                 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
             ],

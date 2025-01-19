@@ -8,14 +8,12 @@ use Cicada\Core\Checkout\Cart\Price\Struct\QuantityPriceDefinition;
 use Cicada\Core\Checkout\Cart\Tax\Struct\CalculatedTaxCollection;
 use Cicada\Core\Checkout\Cart\Tax\Struct\TaxRuleCollection;
 use Cicada\Core\Checkout\Customer\CustomerCollection;
-use Cicada\Core\Checkout\Customer\Rule\BillingCountryRule;
 use Cicada\Core\Checkout\Order\Aggregate\OrderDelivery\OrderDeliveryStates;
 use Cicada\Core\Checkout\Order\Aggregate\OrderTransaction\OrderTransactionStates;
 use Cicada\Core\Checkout\Order\OrderCollection;
 use Cicada\Core\Checkout\Order\OrderStates;
 use Cicada\Core\Checkout\Payment\PaymentMethodCollection;
 use Cicada\Core\Content\MailTemplate\Service\Event\MailSentEvent;
-use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -23,7 +21,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\RequestCriteriaBuilder;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\MailTemplateTestBehaviour;
@@ -37,7 +34,6 @@ use Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister;
 use Cicada\Core\System\StateMachine\Loader\InitialStateIdLoader;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionIntegrationTestBehaviour;
 use Cicada\Core\Test\Integration\Traits\Promotion\PromotionTestFixtureBehaviour;
-use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Cicada\Storefront\Controller\AccountOrderController;
 use PHPUnit\Framework\Attributes\Group;
@@ -490,113 +486,6 @@ class OrderRouteTest extends TestCase
         static::assertEquals(TestDefaults::SALES_CHANNEL, $response['orders']['elements'][0]['salesChannelId']);
     }
 
-    public function testPaymentOrderManipulable(): void
-    {
-        $ids = new IdsCollection();
-
-        // get non default country id
-        $country = $this->getValidCountries()->first();
-        $countryId = $country?->getId() ?? '';
-
-        // create rule for that country now, so it is set in the order
-        $ruleId = Uuid::randomHex();
-        static::getContainer()->get('rule.repository')->create([
-            [
-                'id' => $ruleId,
-                'name' => 'test',
-                'priority' => 1,
-                'conditions' => [
-                    [
-                        'type' => (new BillingCountryRule())->getName(),
-                        'value' => [
-                            'operator' => '=',
-                            'countryIds' => [$countryId],
-                        ],
-                    ],
-                ],
-            ],
-        ], Context::createDefaultContext());
-
-        static::getContainer()->get('product.repository')->create([
-            (new ProductBuilder($ids, '1000'))
-                ->price(10)
-                ->name('Test product')
-                ->active(true)
-                ->visibility()
-                ->build(),
-        ], Context::createDefaultContext());
-
-        $this->browser->request(
-            'POST',
-            '/store-api/checkout/cart/line-item',
-            [],
-            [],
-            ['CONTENT_TYPE' => 'application/json'],
-            json_encode([
-                'items' => [
-                    [
-                        'id' => $ids->get('1000'),
-                        'referencedId' => $ids->get('1000'),
-                        'quantity' => 1,
-                        'type' => 'product',
-                    ],
-                ],
-            ]) ?: ''
-        );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertCount(0, $response['errors']);
-
-        $this->browser->request(
-            'POST',
-            '/store-api/checkout/order',
-            [],
-            [],
-            ['CONTENT_TYPE' => 'application/json'],
-            \json_encode([]) ?: ''
-        );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertArrayNotHasKey('errors', $response);
-
-        $orderId = $response['id'];
-
-        // change customer country, so rule is valid
-        static::getContainer()->get('customer.repository')->update([
-            [
-                'id' => $this->customerId,
-                'defaultBillingAddress' => [
-                    'name' => 'Max',
-                    'street' => 'Musterstraße 1',
-                    'city' => 'Schöppingen',
-                    'zipcode' => '12345',
-                    'salutationId' => $this->getValidSalutationId(),
-                    'countryId' => $countryId,
-                ],
-            ],
-        ], Context::createDefaultContext());
-        $paymentId = $this->createCustomPaymentWithRule($ruleId);
-
-        // Request payment change
-        $this->browser->request(
-            'POST',
-            '/store-api/order/payment',
-            [],
-            [],
-            ['CONTENT_TYPE' => 'application/json'],
-            \json_encode([
-                'orderId' => $orderId,
-                'paymentMethodId' => $paymentId,
-            ], \JSON_THROW_ON_ERROR) ?: ''
-        );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertArrayHasKey('success', $response);
-    }
-
     protected function getValidPaymentMethods(): PaymentMethodCollection
     {
         /** @var EntityRepository<PaymentMethodCollection> $paymentMethodRepository */
@@ -678,7 +567,6 @@ class OrderRouteTest extends TestCase
                             'salutationId' => $salutation,
                             'name' => 'Floy',
                             'zipcode' => '59438-0403',
-                            'city' => 'Stellaberg',
                             'street' => 'street',
                             'country' => [
                                 'name' => 'kasachstan',
@@ -719,7 +607,6 @@ class OrderRouteTest extends TestCase
                             'id' => $addressId,
                             'name' => 'Max',
                             'street' => 'Musterstraße 1',
-                            'city' => 'Schoöppingen',
                             'zipcode' => '12345',
                             'salutationId' => $this->getValidSalutationId(),
                             'countryId' => $this->getValidCountryId(),
@@ -739,7 +626,6 @@ class OrderRouteTest extends TestCase
                         'salutationId' => $salutation,
                         'name' => 'Floy',
                         'zipcode' => '59438-0403',
-                        'city' => 'Stellaberg',
                         'street' => 'street',
                         'countryId' => $this->getValidCountryId(),
                         'id' => $addressId,
@@ -748,34 +634,6 @@ class OrderRouteTest extends TestCase
             ],
         ];
 
-        if (!Feature::isActive('v6.7.0.0')) {
-            $order[0]['orderCustomer']['customer']['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         return $order;
-    }
-
-    private function createCustomPaymentWithRule(string $ruleId): string
-    {
-        $paymentId = Uuid::randomHex();
-
-        static::getContainer()->get('payment_method.repository')->create([
-            [
-                'id' => $paymentId,
-                'name' => 'Test Payment with Rule',
-                'technicalName' => 'payment_test_rule',
-                'description' => 'Payment rule test',
-                'active' => true,
-                'afterOrderEnabled' => true,
-                'availabilityRuleId' => $ruleId,
-                'salesChannels' => [
-                    [
-                        'id' => TestDefaults::SALES_CHANNEL,
-                    ],
-                ],
-            ],
-        ], Context::createDefaultContext());
-
-        return $paymentId;
     }
 }

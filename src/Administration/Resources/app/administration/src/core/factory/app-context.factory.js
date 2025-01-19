@@ -9,7 +9,7 @@
 export default function createContext(context = {}) {
     // set initial context
     Cicada.State.commit('context/setAppEnvironment', process.env.NODE_ENV);
-    Cicada.State.commit('context/setAppFallbackLocale', 'en-GB');
+    Cicada.State.commit('context/setAppFallbackLocale', 'zh-CN');
 
     // assign unknown context information
     Object.entries(context).forEach(
