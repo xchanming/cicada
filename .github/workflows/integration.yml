@@ -18,6 +18,13 @@ jobs:
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
     steps:
+      - name: Set timezone to China
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+          timezoneMacos: "Asia/Shanghai"
+          timezoneWindows: "China Standard Time"
+
       - name: Checkout
         uses: actions/checkout@v4
       - id: generate-matrix
@@ -34,6 +41,7 @@ jobs:
       - phpunit-matrix
     runs-on: ubuntu-24.04
     strategy: ${{ fromJson(needs.phpunit-matrix.outputs.matrix) }}
+
     env:
       APP_ENV: test
       DATABASE_URL: mysql://root@127.0.0.1:3306/root
@@ -99,6 +107,13 @@ jobs:
     env:
       COMPOSER_ROOT_VERSION: 6.6.9999999-dev
     steps:
+      - name: Set timezone to China
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+          timezoneMacos: "Asia/Shanghai"
+          timezoneWindows: "China Standard Time"
+
       - name: Clone platform
         uses: actions/checkout@v4
 
@@ -127,6 +142,12 @@ jobs:
         language: ["javascript"]
 
     steps:
+      - name: Set timezone to China
+        uses: szenius/set-timezone@v2.0
+        with:
+          timezoneLinux: "Asia/Shanghai"
+          timezoneMacos: "Asia/Shanghai"
+          timezoneWindows: "China Standard Time"
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
