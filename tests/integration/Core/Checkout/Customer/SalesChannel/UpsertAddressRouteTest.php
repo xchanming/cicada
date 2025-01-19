@@ -265,6 +265,7 @@ class UpsertAddressRouteTest extends TestCase
                         'mapped' => 1,
                     ],
                     'cityId' => null,
+                    'districtId' => null
                 ],
             ]);
 
