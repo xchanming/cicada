@@ -28,7 +28,7 @@ class LocaleProviderTest extends TestCase
     {
         $provider = new LocaleProvider(static::createMock(EntityRepository::class));
 
-        static::assertEquals('en-GB', $provider->getLocaleFromContext(Context::createDefaultContext()));
+        static::assertEquals('zh-CN', $provider->getLocaleFromContext(Context::createDefaultContext()));
     }
 
     public function testGetLocaleFromContextReturnsEnGbIfNoUserIsAssociated(): void
@@ -36,7 +36,7 @@ class LocaleProviderTest extends TestCase
         $provider = new LocaleProvider(static::createMock(EntityRepository::class));
 
         static::assertEquals(
-            'en-GB',
+            'zh-CN',
             $provider->getLocaleFromContext(Context::createDefaultContext(
                 new AdminApiSource(null, 'i-am-an-integration')
             ))

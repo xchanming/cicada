@@ -28,7 +28,7 @@ class MediaSelectionFieldTest extends TestCase
         static::assertInstanceOf(MediaSelectionField::class, $mediaSelectionField);
         static::assertEquals('test_media_selection_field', $mediaSelectionField->getName());
         static::assertEquals([
-            'en-GB' => 'Test media-selection field',
+            'zh-CN' => 'Test media-selection field',
         ], $mediaSelectionField->getLabel());
         static::assertEquals([], $mediaSelectionField->getHelpText());
         static::assertEquals(1, $mediaSelectionField->getPosition());

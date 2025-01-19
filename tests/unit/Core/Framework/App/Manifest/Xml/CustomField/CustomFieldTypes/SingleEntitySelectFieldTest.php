@@ -28,11 +28,11 @@ class SingleEntitySelectFieldTest extends TestCase
         static::assertInstanceOf(SingleEntitySelectField::class, $singleEntitySelectField);
         static::assertEquals('test_single_entity_select_field', $singleEntitySelectField->getName());
         static::assertEquals([
-            'en-GB' => 'Test single-entity-select field',
+            'zh-CN' => 'Test single-entity-select field',
         ], $singleEntitySelectField->getLabel());
         static::assertEquals([], $singleEntitySelectField->getHelpText());
         static::assertEquals(1, $singleEntitySelectField->getPosition());
-        static::assertEquals(['en-GB' => 'Choose an entity...'], $singleEntitySelectField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Choose an entity...'], $singleEntitySelectField->getPlaceholder());
         static::assertFalse($singleEntitySelectField->getRequired());
         static::assertEquals('product', $singleEntitySelectField->getEntity());
     }

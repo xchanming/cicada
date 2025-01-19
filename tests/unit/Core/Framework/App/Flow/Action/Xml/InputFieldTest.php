@@ -39,19 +39,19 @@ class InputFieldTest extends TestCase
         $expectedInputField = InputField::fromArray([
             'name' => 'textField',
             'label' => [
-                'en-GB' => 'To',
-                'zh-CN' => 'To DE',
+                'zh-CN' => 'To',
+                'en-GB' => 'To DE',
             ],
             'required' => true,
             'defaultValue' => 'Cicada 6',
             'placeHolder' => [
-                'en-GB' => 'Enter to...',
-                'zh-CN' => 'Enter to DE...',
+                'zh-CN' => 'Enter to...',
+                'en-GB' => 'Enter to DE...',
             ],
             'type' => 'text',
             'helpText' => [
-                'en-GB' => 'Help text',
-                'zh-CN' => 'Help text DE',
+                'zh-CN' => 'Help text',
+                'en-GB' => 'Help text DE',
             ],
         ]);
 
@@ -76,15 +76,15 @@ class InputFieldTest extends TestCase
                 [
                     'value' => 'smtp',
                     'label' => [
+                        'zh-CN' => 'Chinese label',
                         'en-GB' => 'English label',
-                        'zh-CN' => 'German label',
                     ],
                 ],
                 [
                     'value' => 'pop3',
                     'label' => [
+                        'zh-CN' => 'Chinese label',
                         'en-GB' => 'English label',
-                        'zh-CN' => 'German label',
                     ],
                 ],
             ],

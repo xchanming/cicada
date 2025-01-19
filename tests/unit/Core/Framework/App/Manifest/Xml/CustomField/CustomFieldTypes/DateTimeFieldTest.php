@@ -28,7 +28,7 @@ class DateTimeFieldTest extends TestCase
         static::assertInstanceOf(DateTimeField::class, $dateTimeField);
         static::assertEquals('test_datetime_field', $dateTimeField->getName());
         static::assertEquals([
-            'en-GB' => 'Test datetime field',
+            'zh-CN' => 'Test datetime field',
         ], $dateTimeField->getLabel());
         static::assertEquals([], $dateTimeField->getHelpText());
         static::assertEquals(1, $dateTimeField->getPosition());

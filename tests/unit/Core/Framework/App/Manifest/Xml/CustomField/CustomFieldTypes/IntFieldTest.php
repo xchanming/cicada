@@ -28,15 +28,15 @@ class IntFieldTest extends TestCase
         static::assertInstanceOf(IntField::class, $intField);
         static::assertEquals('test_int_field', $intField->getName());
         static::assertEquals([
-            'en-GB' => 'Test int field',
-            'zh-CN' => 'Test Ganzzahlenfeld',
+            'zh-CN' => 'Test int field',
+            'en-GB' => 'Test Ganzzahlenfeld',
         ], $intField->getLabel());
-        static::assertEquals(['en-GB' => 'This is an int field.'], $intField->getHelpText());
+        static::assertEquals(['zh-CN' => 'This is an int field.'], $intField->getHelpText());
         static::assertEquals(1, $intField->getPosition());
         static::assertEquals(2, $intField->getSteps());
         static::assertEquals(0, $intField->getMin());
         static::assertEquals(1, $intField->getMax());
-        static::assertEquals(['en-GB' => 'Enter an int...'], $intField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Enter an int...'], $intField->getPlaceholder());
         static::assertTrue($intField->getRequired());
     }
 }

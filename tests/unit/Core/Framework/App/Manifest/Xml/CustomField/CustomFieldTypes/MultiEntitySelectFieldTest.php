@@ -28,11 +28,11 @@ class MultiEntitySelectFieldTest extends TestCase
         static::assertInstanceOf(MultiEntitySelectField::class, $multiEntitySelectField);
         static::assertEquals('test_multi_entity_select_field', $multiEntitySelectField->getName());
         static::assertEquals([
-            'en-GB' => 'Test multi-entity-select field',
+            'zh-CN' => 'Test multi-entity-select field',
         ], $multiEntitySelectField->getLabel());
         static::assertEquals([], $multiEntitySelectField->getHelpText());
         static::assertEquals(1, $multiEntitySelectField->getPosition());
-        static::assertEquals(['en-GB' => 'Choose an entity...'], $multiEntitySelectField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Choose an entity...'], $multiEntitySelectField->getPlaceholder());
         static::assertFalse($multiEntitySelectField->getRequired());
         static::assertEquals('product', $multiEntitySelectField->getEntity());
     }

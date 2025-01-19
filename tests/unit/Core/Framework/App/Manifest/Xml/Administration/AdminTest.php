@@ -29,8 +29,8 @@ class AdminTest extends TestCase
         static::assertEquals('detail', $firstActionButton->getView());
         static::assertEquals('https://swag-test.com/your-order', $firstActionButton->getUrl());
         static::assertEquals([
-            'en-GB' => 'View Order',
-            'zh-CN' => 'Zeige Bestellung',
+            'zh-CN' => 'View Order',
+            'en-GB' => 'Zeige Bestellung',
         ], $firstActionButton->getLabel());
 
         $secondActionButton = $admin->getActionButtons()[1];
@@ -39,16 +39,16 @@ class AdminTest extends TestCase
         static::assertEquals('list', $secondActionButton->getView());
         static::assertEquals('https://swag-test.com/do-stuff', $secondActionButton->getUrl());
         static::assertEquals([
-            'en-GB' => 'Do Stuff',
-            'zh-CN' => 'Mache Dinge',
+            'zh-CN' => 'Do Stuff',
+            'en-GB' => 'Mache Dinge',
         ], $secondActionButton->getLabel());
 
         $firstModule = $admin->getModules()[0];
         static::assertEquals('https://test.com', $firstModule->getSource());
         static::assertEquals('first-module', $firstModule->getName());
         static::assertEquals([
-            'en-GB' => 'My first own module',
-            'zh-CN' => 'Mein erstes eigenes Modul',
+            'zh-CN' => 'My first own module',
+            'en-GB' => 'Mein erstes eigenes Modul',
         ], $firstModule->getLabel());
         static::assertEquals('sw-test-structure-module', $firstModule->getParent());
         static::assertEquals(10, $firstModule->getPosition());
@@ -57,8 +57,8 @@ class AdminTest extends TestCase
         static::assertNull($secondModule->getSource());
         static::assertEquals('structure-module', $secondModule->getName());
         static::assertEquals([
-            'en-GB' => 'My menu entry for modules',
-            'zh-CN' => 'Mein Menüeintrag für Module',
+            'zh-CN' => 'My menu entry for modules',
+            'en-GB' => 'Mein Menüeintrag für Module',
         ], $secondModule->getLabel());
         static::assertEquals('sw-catalogue', $secondModule->getParent());
         static::assertEquals(50, $secondModule->getPosition());

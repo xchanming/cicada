@@ -86,12 +86,12 @@ class ActionTest extends TestCase
     {
         $expected = [
             'label' => [
-                'en-GB' => 'First action app',
-                'zh-CN' => 'First action app DE',
+                'zh-CN' => 'First action app',
+                'en-GB' => 'First action app DE',
             ],
             'description' => [
-                'en-GB' => 'First action app description',
-                'zh-CN' => 'First action app description DE',
+                'zh-CN' => 'First action app description',
+                'en-GB' => 'First action app description DE',
             ],
             'name' => 'abc.cde.ccc',
             'url' => 'https://example.xyz',
@@ -99,14 +99,14 @@ class ActionTest extends TestCase
             'icon' => 'resource/pencil',
             'swIcon' => 'sw-pencil',
             'headline' => [
-                'en-GB' => 'Headline for action',
-                'zh-CN' => 'Überschrift für Aktion',
+                'zh-CN' => 'Headline for action',
+                'en-GB' => 'Überschrift für Aktion',
             ],
             'delayable' => true,
             'badge' => 'abc',
         ];
 
-        static::assertSame($expected, $this->action->getMeta()->toArray('en-GB'));
+        static::assertSame($expected, $this->action->getMeta()->toArray('zh-CN'));
     }
 
     public function testGetHeaders(): void

@@ -6,7 +6,7 @@
             <category>text-image</category>
 
             <label>First block from app</label>
-            <label lang="zh-CN">Erster Block einer App</label>
+            <label lang="en-GB">Erster Block einer App</label>
 
             <slots>
                 <slot name="left" type="manufacturer-logo">
@@ -42,7 +42,7 @@
             <category>text-image</category>
 
             <label>Second block from app</label>
-            <label lang="zh-CN">Zweiter Block einer App</label>
+            <label lang="en-GB">Zweiter Block einer App</label>
 
             <slots>
                 <slot name="left" type="form">

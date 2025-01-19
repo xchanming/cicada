@@ -29,12 +29,12 @@ class PaymentMethodTest extends TestCase
         static::assertSame('https://payment.app/payment/recurring', $firstPaymentMethod->getRecurringUrl());
         static::assertSame('Resources/payment.png', $firstPaymentMethod->getIcon());
         static::assertSame([
-            'en-GB' => 'The app payment method',
-            'zh-CN' => 'Die App Zahlungsmethode',
+            'zh-CN' => 'The app payment method',
+            'en-GB' => 'Die App Zahlungsmethode',
         ], $firstPaymentMethod->getName());
         static::assertSame([
-            'en-GB' => 'This is a description',
-            'zh-CN' => 'Die Zahlungsmethoden-Beschreibung',
+            'zh-CN' => 'This is a description',
+            'en-GB' => 'Die Zahlungsmethoden-Beschreibung',
         ], $firstPaymentMethod->getDescription());
 
         $secondPaymentMethod = $paymentMethods[1];
@@ -45,10 +45,10 @@ class PaymentMethodTest extends TestCase
         static::assertNull($secondPaymentMethod->getRecurringUrl());
         static::assertNull($secondPaymentMethod->getIcon());
         static::assertSame([
-            'en-GB' => 'Another app payment method',
+            'zh-CN' => 'Another app payment method',
         ], $secondPaymentMethod->getName());
         static::assertSame([
-            'en-GB' => 'This is another description',
+            'zh-CN' => 'This is another description',
         ], $secondPaymentMethod->getDescription());
     }
 }

@@ -28,7 +28,7 @@ class BoolFieldTest extends TestCase
         static::assertInstanceOf(BoolField::class, $boolField);
         static::assertEquals('test_bool_field', $boolField->getName());
         static::assertEquals([
-            'en-GB' => 'Test bool field',
+            'zh-CN' => 'Test bool field',
         ], $boolField->getLabel());
         static::assertEquals([], $boolField->getHelpText());
         static::assertEquals(1, $boolField->getPosition());

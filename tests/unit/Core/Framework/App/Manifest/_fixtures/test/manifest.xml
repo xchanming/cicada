@@ -4,9 +4,9 @@
     <meta>
         <name>test</name>
         <label>Swag App Test</label>
-        <label lang="zh-CN">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="zh-CN">Test für das App System</description>
+        <description lang="en-GB">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -20,7 +20,7 @@ Following personal information will be processed on cicada AG's servers:
 - Billing address
 - Order value
         </privacyPolicyExtensions>
-        <privacyPolicyExtensions lang="zh-CN">
+        <privacyPolicyExtensions lang="en-GB">
 Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
 
 - Name
@@ -39,7 +39,7 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
             view="detail"
             url="https://swag-test.com/your-order">
             <label>View Order</label>
-            <label lang="zh-CN">Zeige Bestellung</label>
+            <label lang="en-GB">Zeige Bestellung</label>
         </action-button>
         <action-button
             action="doStuffWithProducts"
@@ -47,15 +47,15 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
             view="list"
             url="https://swag-test.com/do-stuff">
             <label>Do Stuff</label>
-            <label lang="zh-CN">Mache Dinge</label>
+            <label lang="en-GB">Mache Dinge</label>
         </action-button>
         <module name="first-module" source="https://test.com" parent="sw-test-structure-module" position="10">
             <label>My first own module</label>
-            <label lang="zh-CN">Mein erstes eigenes Modul</label>
+            <label lang="en-GB">Mein erstes eigenes Modul</label>
         </module>
         <module name="structure-module" parent="sw-catalogue" position="50">
             <label>My menu entry for modules</label>
-            <label lang="zh-CN">Mein Menüeintrag für Module</label>
+            <label lang="en-GB">Mein Menüeintrag für Module</label>
         </module>
         <main-module source="https://main-module"/>
         <base-app-url>https://base-url.com</base-app-url>
@@ -80,7 +80,7 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
         <custom-field-set global="true">
             <name>custom_field_test</name>
             <label>Custom field test</label>
-            <label lang="zh-CN">Zusatzfeld Test</label>
+            <label lang="en-GB">Zusatzfeld Test</label>
             <related-entities>
                 <product/>
                 <customer/>
@@ -128,9 +128,9 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
         <payment-method>
             <identifier>myMethod</identifier>
             <name>The app payment method</name>
-            <name lang="zh-CN">Die App Zahlungsmethode</name>
+            <name lang="en-GB">Die App Zahlungsmethode</name>
             <description>This is a description</description>
-            <description lang="zh-CN">Die Zahlungsmethoden-Beschreibung</description>
+            <description lang="en-GB">Die Zahlungsmethoden-Beschreibung</description>
             <pay-url>https://payment.app/payment/process</pay-url>
             <finalize-url>https://payment.app/payment/finalize</finalize-url>
             <validate-url>https://payment.app/payment/validate</validate-url>
@@ -192,13 +192,13 @@ Folgende Nutzerdaten werden auf Servern der cicada AG verarbeitet:
         <shipping-method>
             <identifier>swagFirstShippingMethod</identifier>
             <name>First shipping method</name>
-            <name lang="zh-CN">Erste Versandmethode</name>
+            <name lang="en-GB">Erste Versandmethode</name>
             <description>This is a simple description</description>
-            <description lang="zh-CN">Das ist eine einfache Beschreibung</description>
+            <description lang="en-GB">Das ist eine einfache Beschreibung</description>
             <icon>icon.png</icon>
             <position>3</position>
             <tracking-url>https://www.mytrackingurl.com</tracking-url>
-            <tracking-url lang="zh-CN">https://de.mytrackingurl.com</tracking-url>
+            <tracking-url lang="en-GB">https://de.mytrackingurl.com</tracking-url>
             <delivery-time>
                 <id>4b00146bdc8b4175b12d3fc36ec114c8</id>
                 <name>Short delivery time 1-2 days</name>
