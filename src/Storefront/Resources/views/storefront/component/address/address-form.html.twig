@@ -102,7 +102,7 @@
     {% endblock %}
 
     {% block component_address_form_address_fields %}
-        {{ dump( page.countries) }}
+
         <div class="row g-2 country-and-state-form-elements" data-country-state-select="true" data-country-state-select-options="{{ options|json_encode }}">
             {% block component_address_form_country %}
                 <div class="form-group col-md-3">
