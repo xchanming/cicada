@@ -24,14 +24,14 @@ class FloatFieldTest extends TestCase
         static::assertEquals([
             'type' => 'number',
             'label' => [
-                'en-GB' => 'Test float field',
-                'zh-CN' => 'Test Kommazahlenfeld',
+                'zh-CN' => 'Test float field',
+                'en-GB' => 'Test Kommazahlenfeld',
             ],
             'helpText' => [
-                'en-GB' => 'This is an float field.',
+                'zh-CN' => 'This is an float field.',
             ],
             'placeholder' => [
-                'en-GB' => 'Enter an float...',
+                'zh-CN' => 'Enter an float...',
             ],
             'componentName' => 'sw-field',
             'customFieldType' => 'number',

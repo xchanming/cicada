@@ -23,11 +23,11 @@ class SingleSelectFieldTest extends TestCase
         static::assertTrue($singleSelectField->isActive());
         static::assertEquals([
             'label' => [
-                'en-GB' => 'Test single-select field',
+                'zh-CN' => 'Test single-select field',
             ],
             'helpText' => [],
             'placeholder' => [
-                'en-GB' => 'Choose an option...',
+                'zh-CN' => 'Choose an option...',
             ],
             'componentName' => 'sw-single-select',
             'customFieldType' => 'select',
@@ -35,14 +35,14 @@ class SingleSelectFieldTest extends TestCase
             'options' => [
                 [
                     'label' => [
-                        'en-GB' => 'First',
-                        'zh-CN' => 'Erster',
+                        'zh-CN' => 'First',
+                        'en-GB' => 'Erster',
                     ],
                     'value' => 'first',
                 ],
                 [
                     'label' => [
-                        'en-GB' => 'Second',
+                        'zh-CN' => 'Second',
                     ],
                     'value' => 'second',
                 ],

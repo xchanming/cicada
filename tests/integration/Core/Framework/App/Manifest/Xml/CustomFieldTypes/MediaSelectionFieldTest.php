@@ -23,7 +23,7 @@ class MediaSelectionFieldTest extends TestCase
         static::assertTrue($mediaSelectionField->isActive());
         static::assertEquals([
             'label' => [
-                'en-GB' => 'Test media-selection field',
+                'zh-CN' => 'Test media-selection field',
             ],
             'helpText' => [],
             'componentName' => 'sw-media-field',

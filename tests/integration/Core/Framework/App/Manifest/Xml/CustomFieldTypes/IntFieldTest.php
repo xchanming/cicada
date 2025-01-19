@@ -24,14 +24,14 @@ class IntFieldTest extends TestCase
         static::assertEquals([
             'type' => 'number',
             'label' => [
-                'en-GB' => 'Test int field',
-                'zh-CN' => 'Test Ganzzahlenfeld',
+                'zh-CN' => 'Test int field',
+                'en-GB' => 'Test Ganzzahlenfeld',
             ],
             'helpText' => [
-                'en-GB' => 'This is an int field.',
+                'zh-CN' => 'This is an int field.',
             ],
             'placeholder' => [
-                'en-GB' => 'Enter an int...',
+                'zh-CN' => 'Enter an int...',
             ],
             'componentName' => 'sw-field',
             'customFieldType' => 'number',

@@ -24,7 +24,7 @@ class ColorPickerFieldTest extends TestCase
         static::assertEquals([
             'type' => 'colorpicker',
             'label' => [
-                'en-GB' => 'Test color-picker field',
+                'zh-CN' => 'Test color-picker field',
             ],
             'helpText' => [],
             'componentName' => 'sw-field',

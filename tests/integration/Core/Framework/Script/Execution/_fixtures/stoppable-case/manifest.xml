@@ -4,9 +4,9 @@
     <meta>
         <name>stoppable-case</name>
         <label>Swag App Test</label>
-        <label lang="zh-CN">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="zh-CN">Test für das App System</description>
+        <description lang="en-GB">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>

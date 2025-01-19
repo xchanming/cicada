@@ -24,7 +24,7 @@ class BoolFieldTest extends TestCase
         static::assertEquals([
             'type' => 'checkbox',
             'label' => [
-                'en-GB' => 'Test bool field',
+                'zh-CN' => 'Test bool field',
             ],
             'helpText' => [],
             'componentName' => 'sw-field',

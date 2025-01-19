@@ -24,7 +24,7 @@ class DateTimeFieldTest extends TestCase
         static::assertEquals([
             'type' => 'date',
             'label' => [
-                'en-GB' => 'Test datetime field',
+                'zh-CN' => 'Test datetime field',
             ],
             'helpText' => [],
             'componentName' => 'sw-field',

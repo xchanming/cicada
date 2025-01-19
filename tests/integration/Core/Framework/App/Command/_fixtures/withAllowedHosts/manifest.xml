@@ -4,9 +4,9 @@
     <meta>
         <name>withAllowedHosts</name>
         <label>Swag App Test</label>
-        <label lang="zh-CN">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="zh-CN">Test für das App System</description>
+        <description lang="en-GB">Test für das App System</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>
@@ -24,7 +24,7 @@
             view="detail"
             url="https://swag-test.com/your-order">
             <label>View Order</label>
-            <label lang="zh-CN">Zeige Bestellung</label>
+            <label lang="en-GB">Zeige Bestellung</label>
         </action-button>
         <action-button
             action="doStuffWithProducts"
@@ -32,7 +32,7 @@
             view="list"
             url="https://swag-test.com/do-stuff">
             <label>Do Stuff</label>
-            <label lang="zh-CN">Mache Dinge</label>
+            <label lang="en-GB">Mache Dinge</label>
         </action-button>
     </admin>
     <permissions>

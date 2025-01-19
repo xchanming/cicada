@@ -62,8 +62,8 @@ class AppActionControllerTest extends TestCase
             [
                 'app' => 'test',
                 'label' => [
-                    'en-GB' => 'View Order',
-                    'zh-CN' => 'Zeige Bestellung',
+                    'zh-CN' => 'View Order',
+                    'en-GB' => 'Zeige Bestellung',
                 ],
                 'action' => 'viewOrder',
                 'url' => 'https://swag-test.com/your-order',
@@ -254,8 +254,8 @@ class AppActionControllerTest extends TestCase
                     'modules' => [
                         [
                             'label' => [
-                                'en-GB' => 'My first own module',
-                                'zh-CN' => 'Mein erstes eigenes Modul',
+                                'zh-CN' => 'My first own module',
+                                'en-GB' => 'Mein erstes eigenes Modul',
                             ],
                             'source' => 'https://test.com',
                             'name' => 'first-module',
@@ -264,8 +264,8 @@ class AppActionControllerTest extends TestCase
                         ],
                         [
                             'label' => [
-                                'en-GB' => 'My menu entry for modules',
-                                'zh-CN' => 'Mein Menüeintrag für Module',
+                                'zh-CN' => 'My menu entry for modules',
+                                'en-GB' => 'Mein Menüeintrag für Module',
                             ],
                             'source' => null,
                             'name' => 'structure-module',

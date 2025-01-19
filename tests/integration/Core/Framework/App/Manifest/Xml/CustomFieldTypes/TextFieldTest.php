@@ -24,11 +24,11 @@ class TextFieldTest extends TestCase
         static::assertEquals([
             'type' => 'text',
             'label' => [
-                'en-GB' => 'Test text field',
+                'zh-CN' => 'Test text field',
             ],
             'helpText' => [],
             'placeholder' => [
-                'en-GB' => 'Enter a text...',
+                'zh-CN' => 'Enter a text...',
             ],
             'componentName' => 'sw-field',
             'customFieldType' => 'text',

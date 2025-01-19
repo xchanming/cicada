@@ -23,11 +23,11 @@ class MultiSelectFieldTest extends TestCase
         static::assertTrue($multiSelectField->isActive());
         static::assertEquals([
             'label' => [
-                'en-GB' => 'Test multi-select field',
+                'zh-CN' => 'Test multi-select field',
             ],
             'helpText' => [],
             'placeholder' => [
-                'en-GB' => 'Choose your options...',
+                'zh-CN' => 'Choose your options...',
             ],
             'componentName' => 'sw-multi-select',
             'customFieldType' => 'select',
@@ -35,14 +35,14 @@ class MultiSelectFieldTest extends TestCase
             'options' => [
                 [
                     'label' => [
-                        'en-GB' => 'First',
-                        'zh-CN' => 'Erster',
+                        'zh-CN' => 'First',
+                        'en-GB' => 'Erster',
                     ],
                     'value' => 'first',
                 ],
                 [
                     'label' => [
-                        'en-GB' => 'Second',
+                        'zh-CN' => 'Second',
                     ],
                     'value' => 'second',
                 ],

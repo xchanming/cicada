@@ -28,15 +28,15 @@ class FloatFieldTest extends TestCase
         static::assertInstanceOf(FloatField::class, $floatField);
         static::assertEquals('test_float_field', $floatField->getName());
         static::assertEquals([
-            'en-GB' => 'Test float field',
-            'zh-CN' => 'Test Kommazahlenfeld',
+            'zh-CN' => 'Test float field',
+            'en-GB' => 'Test Kommazahlenfeld',
         ], $floatField->getLabel());
-        static::assertEquals(['en-GB' => 'This is a float field.'], $floatField->getHelpText());
+        static::assertEquals(['zh-CN' => 'This is a float field.'], $floatField->getHelpText());
         static::assertEquals(2, $floatField->getPosition());
         static::assertEquals(2.2, $floatField->getSteps());
         static::assertEquals(0.5, $floatField->getMin());
         static::assertEquals(1.6, $floatField->getMax());
-        static::assertEquals(['en-GB' => 'Enter a float...'], $floatField->getPlaceholder());
+        static::assertEquals(['zh-CN' => 'Enter a float...'], $floatField->getPlaceholder());
         static::assertFalse($floatField->getRequired());
     }
 }

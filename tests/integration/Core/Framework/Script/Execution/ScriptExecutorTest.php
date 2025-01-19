@@ -109,7 +109,7 @@ class ScriptExecutorTest extends TestCase
         $snippet = [
             'translationKey' => 'new.unit.test.key',
             'value' => 'Realisiert mit Unit test',
-            'setId' => $this->getSnippetSetIdForLocale('en-GB'),
+            'setId' => $this->getSnippetSetIdForLocale('zh-CN'),
             'author' => 'Cicada',
         ];
         static::getContainer()->get('snippet.repository')->create([$snippet], $context);
@@ -117,8 +117,8 @@ class ScriptExecutorTest extends TestCase
         // fake request
         $request = new Request();
 
-        $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_SNIPPET_SET_ID, $this->getSnippetSetIdForLocale('en-GB'));
-        $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_LOCALE, 'en-GB');
+        $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_SNIPPET_SET_ID, $this->getSnippetSetIdForLocale('zh-CN'));
+        $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_LOCALE, 'zh-CN');
 
         static::getContainer()->get(RequestStack::class)->push($request);
 
