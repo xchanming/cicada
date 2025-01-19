@@ -92,6 +92,7 @@ class UpsertAddressTest extends TestCase
             'name' => 'Test',
             'street' => 'Test',
             'zipcode' => 'Test',
+            'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
         ];
 
