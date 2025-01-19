@@ -90,7 +90,7 @@
     <xs:complexType name="translatableString">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="lang" type="languageCode" default="en-GB"/>
+                <xs:attribute name="lang" type="languageCode" default="zh-CN"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

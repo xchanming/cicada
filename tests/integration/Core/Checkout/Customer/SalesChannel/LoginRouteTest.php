@@ -117,7 +117,7 @@ class LoginRouteTest extends TestCase
     public function testItNotUpdatesCustomerLanguageIdOnValidLogin(): void
     {
         $email = Uuid::randomHex() . '@example.com';
-        $customerId = $this->createCustomer($email, null, true, $this->getenGbLanguageId());
+        $customerId = $this->createCustomer($email, null, true, $this->getEnGbLanguageId());
 
         $this->browser
             ->request(
@@ -130,7 +130,7 @@ class LoginRouteTest extends TestCase
             );
 
         static::assertEquals(
-            $this->getenGbLanguageId(),
+            $this->getEnGbLanguageId(),
             $this->customerRepository->search(
                 new Criteria([$customerId]),
                 Context::createDefaultContext()

@@ -63,7 +63,7 @@ class Framework extends Bundle
      */
     public function build(ContainerBuilder $container): void
     {
-        $container->setParameter('locale', 'en-GB');
+        $container->setParameter('locale', 'zh-CN');
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/DependencyInjection/'));
         $loader->load('services.xml');

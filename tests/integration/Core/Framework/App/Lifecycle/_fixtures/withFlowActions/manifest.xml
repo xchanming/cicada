@@ -4,9 +4,9 @@
     <meta>
         <name>FlowExtension</name>
         <label>Swag Flow Extension Test</label>
-        <label lang="zh-CN">Swag Flow Extension Test</label>
+        <label lang="en-GB">Swag Flow Extension Test</label>
         <description>Test for Flow Extension</description>
-        <description lang="zh-CN">Test für das Flow Extension</description>
+        <description lang="en-GB">Test für das Flow Extension</description>
         <author>cicada AG</author>
         <copyright>(c) by cicada AG</copyright>
         <version>1.0.0</version>

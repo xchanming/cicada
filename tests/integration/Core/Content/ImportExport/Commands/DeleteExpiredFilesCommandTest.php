@@ -64,7 +64,6 @@ class DeleteExpiredFilesCommandTest extends TestCase
             $data[$key]['expireDate'] = date('Y-m-d H:i:s', strtotime('-1 second'));
         }
 
-
         $this->fileRepository->create(array_values($data), $this->context);
 
         $commandTester = new CommandTester($this->deleteExpiredFilesCommand);

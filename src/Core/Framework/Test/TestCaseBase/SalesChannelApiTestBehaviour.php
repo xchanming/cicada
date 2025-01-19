@@ -186,7 +186,7 @@ trait SalesChannelApiTestBehaviour
             'name' => 'API Test case sales channel',
             'accessKey' => AccessKeyHelper::generateAccessKey('sales-channel'),
             'languageId' => Defaults::LANGUAGE_SYSTEM,
-            'snippetSetId' => $this->getSnippetSetIdForLocale('en-GB'),
+            'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
             'currencyId' => Defaults::CURRENCY,
             'paymentMethodId' => $paymentMethod->getId(),
             'paymentMethods' => [['id' => $paymentMethod->getId()]],
@@ -200,7 +200,7 @@ trait SalesChannelApiTestBehaviour
                 [
                     'languageId' => Defaults::LANGUAGE_SYSTEM,
                     'currencyId' => Defaults::CURRENCY,
-                    'snippetSetId' => $this->getSnippetSetIdForLocale('en-GB'),
+                    'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                     'url' => 'http://localhost',
                 ],
             ],

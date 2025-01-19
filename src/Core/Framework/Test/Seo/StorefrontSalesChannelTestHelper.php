@@ -88,7 +88,7 @@ trait StorefrontSalesChannelTestHelper
             $domains[] = [
                 'languageId' => $langId,
                 'currencyId' => Defaults::CURRENCY,
-                'snippetSetId' => $this->getSnippetSetIdForLocale('en-GB'),
+                'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
                 'url' => 'http://example.com/' . $name . '/' . $langId,
             ];
         }
@@ -100,7 +100,7 @@ trait StorefrontSalesChannelTestHelper
             'accessKey' => Uuid::randomHex(),
             'secretAccessKey' => 'foobar',
             'languageId' => $defaultLanguageId,
-            'snippetSetId' => $this->getSnippetSetIdForLocale('en-GB'),
+            'snippetSetId' => $this->getSnippetSetIdForLocale('zh-CN'),
             'currencyId' => Defaults::CURRENCY,
             'paymentMethodId' => $paymentMethod,
             'shippingMethodId' => $shippingMethod,

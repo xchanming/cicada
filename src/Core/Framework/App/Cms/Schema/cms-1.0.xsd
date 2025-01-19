@@ -130,12 +130,12 @@
         <xs:annotation>
             <xs:documentation>
                 A translatable label for the block that is shown in the Administration.
-                Defaults to "en-GB" if the "lang" attribute is not set.
+                Defaults to "zh-CN" if the "lang" attribute is not set.
             </xs:documentation>
         </xs:annotation>
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="lang" type="languageCode" default="en-GB"/>
+                <xs:attribute name="lang" type="languageCode" default="zh-CN"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

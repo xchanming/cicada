@@ -58,7 +58,7 @@ class ActionButtonLoaderTest extends TestCase
                 'app' => 'App1',
                 'id' => $this->app1OrderDetailButtonId,
                 'label' => [
-                    'en-GB' => 'Order Detail App1',
+                    'zh-CN' => 'Order Detail App1',
                 ],
                 'action' => 'orderDetailApp1',
                 'url' => 'app1.com/order/detail',
@@ -67,7 +67,7 @@ class ActionButtonLoaderTest extends TestCase
                 'app' => 'App2',
                 'id' => $this->app2OrderDetailButtonId,
                 'label' => [
-                    'en-GB' => 'Order Detail App2',
+                    'zh-CN' => 'Order Detail App2',
                 ],
                 'action' => 'orderDetailApp2',
                 'url' => 'app2.com/order/detail',

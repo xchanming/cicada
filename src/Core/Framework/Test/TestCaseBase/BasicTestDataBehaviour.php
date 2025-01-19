@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 trait BasicTestDataBehaviour
 {
-    public function getenGbLanguageId(): string
+    public function getEnGbLanguageId(): string
     {
         /** @var EntityRepository $repository */
         $repository = static::getContainer()->get('language.repository');

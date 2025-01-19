@@ -52,7 +52,7 @@ class ModuleLoaderTest extends TestCase
             [
                 'name' => 'App1',
                 'label' => [
-                    'en-GB' => 'test App1',
+                    'zh-CN' => 'test App1',
                 ],
                 'modules' => [
                     [
@@ -78,7 +78,7 @@ class ModuleLoaderTest extends TestCase
             [
                 'name' => 'App2',
                 'label' => [
-                    'en-GB' => 'test App2',
+                    'zh-CN' => 'test App2',
                 ],
                 'modules' => [
                     [
@@ -281,7 +281,7 @@ class ModuleLoaderTest extends TestCase
         static::assertArrayHasKey('sw-context-language', $query);
         static::assertSame(Context::createDefaultContext()->getLanguageId(), $query['sw-context-language']);
         static::assertArrayHasKey('sw-user-language', $query);
-        static::assertSame('en-GB', $query['sw-user-language']);
+        static::assertSame('zh-CN', $query['sw-user-language']);
         static::assertArrayHasKey('cicada-shop-signature', $query);
 
         $signature = $query['cicada-shop-signature'];

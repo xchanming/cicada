@@ -17,13 +17,13 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class SwagTestPlugin extends Plugin
 {
-    final public const PLUGIN_LABEL = 'English plugin name';
+    final public const PLUGIN_LABEL = 'Chinese plugin name';
 
     final public const PLUGIN_VERSION = '1.0.1';
 
     final public const PLUGIN_OLD_VERSION = '1.0.0';
 
-    final public const PLUGIN_GERMAN_LABEL = 'Deutscher Pluginname';
+    final public const PLUGIN_ENGLISH_LABEL = 'English plugin name';
 
     final public const THROW_ERROR_ON_UPDATE = 'throw-error-on-update';
     final public const THROW_ERROR_ON_DEACTIVATE = 'throw-error-on-deactivate';

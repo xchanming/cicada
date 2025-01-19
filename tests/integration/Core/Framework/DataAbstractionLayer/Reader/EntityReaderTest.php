@@ -92,7 +92,7 @@ class EntityReaderTest extends TestCase
         $this->categoryRepository = static::getContainer()->get('category.repository');
         $this->languageRepository = static::getContainer()->get('language.repository');
         $this->customerRepository = static::getContainer()->get('customer.repository');
-        $this->deLanguageId = $this->getenGbLanguageId();
+        $this->deLanguageId = $this->getEnGbLanguageId();
 
         $this->registerDefinition(NonIdFieldNamePrimaryKeyTestDefinition::class);
         $this->registerDefinition(ConsistsOfManyToManyDefinition::class);
@@ -2028,7 +2028,7 @@ class EntityReaderTest extends TestCase
                 'id' => $id,
                 'name' => 'system',
                 'translations' => [
-                    'zh-CN' => [
+                    'en-GB' => [
                         'name' => 'deutsch',
                     ],
                 ],
@@ -2263,7 +2263,7 @@ class EntityReaderTest extends TestCase
                 'id' => $id,
                 'name' => 'system',
                 'translations' => [
-                    'zh-CN' => [
+                    'en-GB' => [
                         'name' => 'deutsch',
                     ],
                 ],

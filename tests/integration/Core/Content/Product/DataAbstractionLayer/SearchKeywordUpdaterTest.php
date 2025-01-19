@@ -49,14 +49,14 @@ class SearchKeywordUpdaterTest extends TestCase
         $this->productRepository->create([$productData], Context::createDefaultContext());
 
         $this->assertKeywords($ids->get('1000'), Defaults::LANGUAGE_SYSTEM, $chineseKeywords);
-        $this->assertKeywords($ids->get('1000'), $this->getenGbLanguageId(), $englishKeywords);
+        $this->assertKeywords($ids->get('1000'), $this->getEnGbLanguageId(), $englishKeywords);
 
         $expectedDictionary = array_merge($chineseKeywords, $additionalDictionaries);
         sort($expectedDictionary);
         $this->assertDictionary(Defaults::LANGUAGE_SYSTEM, $expectedDictionary);
         $expectedDictionary = array_merge($englishKeywords, $additionalDictionaries);
         sort($expectedDictionary);
-        $this->assertDictionary($this->getenGbLanguageId(), $expectedDictionary);
+        $this->assertDictionary($this->getEnGbLanguageId(), $expectedDictionary);
     }
 
     /**
@@ -73,7 +73,7 @@ class SearchKeywordUpdaterTest extends TestCase
         $criteria = new Criteria();
 
         // Delete sales channel zh-CN language associations to ensure only default language is used to create keywords.
-        $criteria->addFilter(new EqualsFilter('languageId', $this->getenGbLanguageId()));
+        $criteria->addFilter(new EqualsFilter('languageId', $this->getEnGbLanguageId()));
 
         /** @var list<array<string, string>> $salesChannalLanguageIds */
         $salesChannalLanguageIds = $this->salesChannelLanguageRepository->searchIds($criteria, $context)->getIds();
@@ -87,8 +87,8 @@ class SearchKeywordUpdaterTest extends TestCase
         sort($expectedDictionary);
         $this->assertDictionary(Defaults::LANGUAGE_SYSTEM, $expectedDictionary);
 
-        $this->assertLanguageHasNoKeywords($this->getenGbLanguageId());
-        $this->assertLanguageHasNoDictionary($this->getenGbLanguageId());
+        $this->assertLanguageHasNoKeywords($this->getEnGbLanguageId());
+        $this->assertLanguageHasNoDictionary($this->getEnGbLanguageId());
     }
 
     public function testCustomFields(): void

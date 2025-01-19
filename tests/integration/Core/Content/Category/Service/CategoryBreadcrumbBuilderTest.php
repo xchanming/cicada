@@ -57,7 +57,7 @@ class CategoryBreadcrumbBuilderTest extends TestCase
     protected function setUp(): void
     {
         $this->ids = new IdsCollection();
-        $this->deLanguageId = $this->getenGbLanguageId();
+        $this->deLanguageId = $this->getEnGbLanguageId();
         $this->breadcrumbBuilder = static::getContainer()->get(CategoryBreadcrumbBuilder::class);
 
         $this->browser = $this->createCustomSalesChannelBrowser([

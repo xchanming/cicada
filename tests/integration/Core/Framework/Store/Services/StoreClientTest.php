@@ -55,7 +55,7 @@ class StoreClientTest extends TestCase
 
         static::assertEquals([
             'cicadaVersion' => $this->getCicadaVersion(),
-            'language' => 'en-GB',
+            'language' => 'zh-CN',
             'domain' => 'cicada-test',
         ], Query::parse($lastRequest->getUri()->getQuery()));
 
@@ -81,7 +81,7 @@ class StoreClientTest extends TestCase
 
         static::assertEquals([
             'cicadaVersion' => $this->getCicadaVersion(),
-            'language' => 'en-GB',
+            'language' => 'zh-CN',
             'domain' => 'cicada-test',
         ], Query::parse($lastRequest->getUri()->getQuery()));
 

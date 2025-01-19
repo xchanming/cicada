@@ -295,7 +295,7 @@ class RecalculationServiceTest extends TestCase
     {
         // create order
         $cart = $this->generateDemoCart();
-        $orderId = $this->persistCart($cart, $this->getenGbLanguageId())['orderId'];
+        $orderId = $this->persistCart($cart, $this->getEnGbLanguageId())['orderId'];
 
         // create version of order
         $versionId = $this->createVersionedOrder($orderId);
@@ -322,7 +322,7 @@ class RecalculationServiceTest extends TestCase
         /** @var OrderEntity $order */
         $order = static::getContainer()->get('order.repository')->search(new Criteria([$orderId]), $versionContext)->get($orderId);
 
-        static::assertEquals($this->getenGbLanguageId(), $order->getLanguageId());
+        static::assertEquals($this->getEnGbLanguageId(), $order->getLanguageId());
     }
 
     public function testFetchOrder(): void

@@ -21,7 +21,7 @@ class UnitTest_SnippetFile extends AbstractSnippetFile
 
     public function getIso(): string
     {
-        return 'en-GB';
+        return 'zh-CN';
     }
 
     public function getAuthor(): string

@@ -52,7 +52,7 @@ class SeoUrlUpdaterTest extends TestCase
 
         // Get language ids
         $this->ids->set(self::DEFAULT, Defaults::LANGUAGE_SYSTEM);
-        $this->ids->set(self::PARENT, $this->getenGbLanguageId());
+        $this->ids->set(self::PARENT, $this->getEnGbLanguageId());
         $this->ids->create(self::CHILD);
 
         $salesChannelOverride = [

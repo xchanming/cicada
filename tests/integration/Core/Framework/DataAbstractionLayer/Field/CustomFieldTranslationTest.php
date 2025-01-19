@@ -87,18 +87,18 @@ class CustomFieldTranslationTest extends TestCase
             'id' => $id,
             'name' => 'test',
             'translations' => [
-                'en-GB' => [
+                'zh-CN' => [
                     'customTranslated' => [
                         'root' => 'test',
                     ],
                 ],
-                'zh-CN' => [
+                'en-GB' => [
                     'customTranslated' => null,
                 ],
             ],
         ];
 
-        $chain = [$this->getenGbLanguageId(), Defaults::LANGUAGE_SYSTEM];
+        $chain = [$this->getEnGbLanguageId(), Defaults::LANGUAGE_SYSTEM];
         $repo = $this->getTestRepository();
 
         $context = Context::createDefaultContext();
@@ -117,7 +117,7 @@ class CustomFieldTranslationTest extends TestCase
     {
         $this->addCustomFields([
             'code' => CustomFieldTypes::TEXT,
-            'de' => CustomFieldTypes::TEXT,
+            'en' => CustomFieldTypes::TEXT,
             'system' => CustomFieldTypes::TEXT,
             'systemFloat' => CustomFieldTypes::FLOAT,
             'root' => CustomFieldTypes::TEXT,
@@ -138,16 +138,16 @@ class CustomFieldTranslationTest extends TestCase
             'id' => $id,
             'name' => 'translated',
             'translations' => [
-                'en-GB' => [
-                    'customTranslated' => [
-                        'code' => 'en-GB',
-                        'system' => 'system',
-                    ],
-                ],
                 'zh-CN' => [
                     'customTranslated' => [
                         'code' => 'zh-CN',
-                        'de' => 'de',
+                        'system' => 'system',
+                    ],
+                ],
+                'en-GB' => [
+                    'customTranslated' => [
+                        'code' => 'en-GB',
+                        'en' => 'en',
                     ],
                 ],
                 $rootLanguageId => [
@@ -176,21 +176,21 @@ class CustomFieldTranslationTest extends TestCase
 
         $result = $repo->search(new Criteria([$id]), $context)->first();
         static::assertInstanceOf(Entity::class, $result);
-        $expected = ['code' => 'en-GB', 'system' => 'system'];
+        $expected = ['code' => 'zh-CN', 'system' => 'system'];
         static::assertEquals($expected, $result->getTranslated()['customTranslated']);
 
         $expectedViewData = $expected;
         static::assertEquals($expectedViewData, $result->getTranslated()['customTranslated']);
 
-        $chain = [$this->getenGbLanguageId(), Defaults::LANGUAGE_SYSTEM];
+        $chain = [$this->getEnGbLanguageId(), Defaults::LANGUAGE_SYSTEM];
         $context = new Context(new SystemSource(), [], Defaults::CURRENCY, $chain);
         $result = $repo->search(new Criteria([$id]), $context)->first();
         static::assertInstanceOf(Entity::class, $result);
 
-        $expected = ['de' => 'de', 'code' => 'zh-CN'];
+        $expected = ['en' => 'en', 'code' => 'en-GB'];
         static::assertEquals($expected, $result->get('customTranslated'));
 
-        $expectedViewData = ['code' => 'zh-CN', 'system' => 'system', 'de' => 'de'];
+        $expectedViewData = ['code' => 'en-GB', 'system' => 'system', 'en' => 'en'];
         static::assertEquals($expectedViewData, $result->getTranslated()['customTranslated']);
 
         $chain = [$rootLanguageId, Defaults::LANGUAGE_SYSTEM];

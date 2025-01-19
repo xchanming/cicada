@@ -58,9 +58,9 @@ class FlowActionTranslationTest extends TestCase
                     [
                         'id' => $idFlowAction,
                         'name' => 'FlowActiontest',
-                        'headline' => ['en-GB' => 'Headline for action'],
-                        'description' => ['en-GB' => 'Description for action'],
-                        'label' => ['en-GB' => 'Label for action'],
+                        'headline' => ['zh-CN' => 'Headline for action'],
+                        'description' => ['zh-CN' => 'Description for action'],
+                        'label' => ['zh-CN' => 'Label for action'],
                         'url' => 'http://xxxxx',
                     ],
                 ],

@@ -192,6 +192,7 @@ abstract class AbstractAppPaymentHandlerTestCase extends TestCase
                 'name' => 'Max',
                 'street' => 'Ebbinghoff 10',
                 'zipcode' => '48624',
+                'cityId' => $this->getValidCountryCityId(),
                 'countryId' => $this->getValidCountryId(),
             ])
             ->add('billingAddressId', $addressId)

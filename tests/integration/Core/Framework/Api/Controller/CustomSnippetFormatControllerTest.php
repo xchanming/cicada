@@ -290,7 +290,7 @@ class CustomSnippetFormatControllerTest extends TestCase
                     ],
                 ],
             ],
-            'expectedHtml' => '550000,  Da Nang',
+            'expectedHtml' => '550000,',
         ];
 
         yield 'render lines with empty snippet' => [

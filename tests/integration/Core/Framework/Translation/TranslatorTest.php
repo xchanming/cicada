@@ -64,10 +64,10 @@ class TranslatorTest extends TestCase
         // fake request
         $request = new Request();
         $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_SNIPPET_SET_ID, $this->getSnippetSetIdForLocale('en-GB'));
-        $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_LOCALE, 'en-GB');
+        $request->attributes->set(SalesChannelRequest::ATTRIBUTE_DOMAIN_LOCALE, 'zh-CN');
 
         $stack->push($request);
-        $result = $this->translator->getCatalogue('en-GB')->get('frontend.note.item.NoteLinkZoom');
+        $result = $this->translator->getCatalogue('zh-CN')->get('frontend.note.item.NoteLinkZoom');
         $prop->setValue($stack, []);
 
         static::assertEquals(
@@ -110,48 +110,48 @@ class TranslatorTest extends TestCase
     public function testSymfonyDefaultTranslationFallback(): void
     {
         $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('en');
+        $catalogue = $this->translator->getCatalogue('zh');
         static::assertInstanceOf(MessageCatalogueInterface::class, $catalogue->getFallbackCatalogue());
-        static::assertEquals('en_GB', $catalogue->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh_CN', $catalogue->getFallbackCatalogue()->getLocale());
 
         $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('en_GB');
+        $catalogue = $this->translator->getCatalogue('zh_CN');
         static::assertInstanceOf(MessageCatalogueInterface::class, $catalogue->getFallbackCatalogue());
-        static::assertEquals('en_001', $catalogue->getFallbackCatalogue()->getLocale());
-
-        $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('en-GB');
-        $fallback = $catalogue->getFallbackCatalogue();
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('en', $fallback->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
-
-        $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('de');
-        $fallback = $catalogue->getFallbackCatalogue();
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('en_GB', $fallback->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en', $fallback->getFallbackCatalogue()->getLocale());
-
-        $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('de_DE');
-        $fallback = $catalogue->getFallbackCatalogue();
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('de', $fallback->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
-        static::assertEquals('en', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh', $catalogue->getFallbackCatalogue()->getLocale());
 
         $this->translator->reset();
         $catalogue = $this->translator->getCatalogue('zh-CN');
         $fallback = $catalogue->getFallbackCatalogue();
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('en', $fallback->getLocale());
+        static::assertEquals('zh', $fallback->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh_CN', $fallback->getFallbackCatalogue()->getLocale());
+
+        $this->translator->reset();
+        $catalogue = $this->translator->getCatalogue('en');
+        $fallback = $catalogue->getFallbackCatalogue();
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
+        static::assertEquals('zh_CN', $fallback->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
+        static::assertEquals('zh', $fallback->getFallbackCatalogue()->getLocale());
+
+        $this->translator->reset();
+        $catalogue = $this->translator->getCatalogue('en_GB');
+        $fallback = $catalogue->getFallbackCatalogue();
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
+        static::assertEquals('en_001', $fallback->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
+        static::assertEquals('en', $fallback->getFallbackCatalogue()->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
+        static::assertEquals('zh_CN', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
+
+        $this->translator->reset();
+        $catalogue = $this->translator->getCatalogue('en-GB');
+        $fallback = $catalogue->getFallbackCatalogue();
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
+        static::assertEquals('zh', $fallback->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
+        static::assertEquals('zh_CN', $fallback->getFallbackCatalogue()->getLocale());
         $this->translator->reset();
     }
 
@@ -159,52 +159,52 @@ class TranslatorTest extends TestCase
     {
         $this->switchDefaultLanguage();
 
-        $catalogue = $this->translator->getCatalogue('en');
+        $catalogue = $this->translator->getCatalogue('zh');
         static::assertInstanceOf(MessageCatalogueInterface::class, $catalogue->getFallbackCatalogue());
-        static::assertEquals('en_GB', $catalogue->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh_CN', $catalogue->getFallbackCatalogue()->getLocale());
 
         $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('en_GB');
+        $catalogue = $this->translator->getCatalogue('zh_CN');
         static::assertInstanceOf(MessageCatalogueInterface::class, $catalogue->getFallbackCatalogue());
-        static::assertEquals('en_001', $catalogue->getFallbackCatalogue()->getLocale());
-
-        $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('en-GB');
-        $fallback = $catalogue->getFallbackCatalogue();
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('zh', $fallback->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
-        static::assertEquals('en', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
-
-        $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('de');
-        $fallback = $catalogue->getFallbackCatalogue();
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('en_GB', $fallback->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en', $fallback->getFallbackCatalogue()->getLocale());
-
-        $this->translator->reset();
-        $catalogue = $this->translator->getCatalogue('de_DE');
-        $fallback = $catalogue->getFallbackCatalogue();
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('de', $fallback->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
-        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
-        static::assertEquals('en', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh', $catalogue->getFallbackCatalogue()->getLocale());
 
         $this->translator->reset();
         $catalogue = $this->translator->getCatalogue('zh-CN');
         $fallback = $catalogue->getFallbackCatalogue();
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
-        static::assertEquals('zh', $fallback->getLocale());
+        static::assertEquals('en', $fallback->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
-        static::assertEquals('en_GB', $fallback->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh_CN', $fallback->getFallbackCatalogue()->getLocale());
         static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
-        static::assertEquals('en', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
+        static::assertEquals('zh', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
+
+        $this->translator->reset();
+        $catalogue = $this->translator->getCatalogue('en');
+        $fallback = $catalogue->getFallbackCatalogue();
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
+        static::assertEquals('zh_CN', $fallback->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
+        static::assertEquals('zh', $fallback->getFallbackCatalogue()->getLocale());
+
+        $this->translator->reset();
+        $catalogue = $this->translator->getCatalogue('en_GB');
+        $fallback = $catalogue->getFallbackCatalogue();
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
+        static::assertEquals('en_001', $fallback->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
+        static::assertEquals('en', $fallback->getFallbackCatalogue()->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
+        static::assertEquals('zh_CN', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
+
+        $this->translator->reset();
+        $catalogue = $this->translator->getCatalogue('en-GB');
+        $fallback = $catalogue->getFallbackCatalogue();
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback);
+        static::assertEquals('en', $fallback->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue());
+        static::assertEquals('zh_CN', $fallback->getFallbackCatalogue()->getLocale());
+        static::assertInstanceOf(MessageCatalogueInterface::class, $fallback->getFallbackCatalogue()->getFallbackCatalogue());
+        static::assertEquals('zh', $fallback->getFallbackCatalogue()->getFallbackCatalogue()->getLocale());
         $this->translator->reset();
     }
 
@@ -254,7 +254,7 @@ class TranslatorTest extends TestCase
             $this->translator->trans('new.unit.test.key', [], null, 'zh-CN')
         );
         static::assertEquals(
-            $snippets[0]['value'],
+            $snippets[1]['value'],
             $this->translator->trans('new.unit.test.key')
         );
 
@@ -323,6 +323,15 @@ class TranslatorTest extends TestCase
         $themeService->assignTheme($defaultThemeId, $salesChannelContext->getSalesChannelId(), $salesChannelContext->getContext(), true);
 
         // Inject the sales channel and assert that the original snippet is used
+        $translator->injectSettings(
+            $salesChannelContext->getSalesChannelId(),
+            $salesChannelContext->getLanguageId(),
+            'zh-CN',
+            $salesChannelContext->getContext()
+        );
+
+        static::assertEquals('主页', $translator->trans('general.homeLink'));
+        $translator->reset();
         $loader->reset();
 
         // Assign the SwagTheme and assert that the snippet is overwritten
@@ -334,14 +343,40 @@ class TranslatorTest extends TestCase
 
         $themeService->assignTheme($themeId, $salesChannelContext->getSalesChannelId(), $salesChannelContext->getContext(), true);
 
+        $translator->injectSettings(
+            $salesChannelContext->getSalesChannelId(),
+            $salesChannelContext->getLanguageId(),
+            'en-GB',
+            $salesChannelContext->getContext()
+        );
+
+        static::assertEquals('Home EN', $translator->trans('general.homeLink'));
+
         $translator->reset();
         $loader->reset();
+
+        // In reset, we ignore all theme snippets and use the default ones
+        static::assertEquals('主页', $translator->trans('general.homeLink'));
 
         // Assign the Storefront theme again and assert that the original snippet is used again
         $criteria = new Criteria();
         $criteria->addFilter(new EqualsFilter('technicalName', 'Storefront'));
         $themeId = $themeRepo->searchIds($criteria, $salesChannelContext->getContext())->firstId();
         static::assertNotNull($themeId);
+
+        $themeService->assignTheme($themeId, $salesChannelContext->getSalesChannelId(), $salesChannelContext->getContext(), true);
+
+        $translator->reset();
+        $loader->reset();
+
+        $translator->injectSettings(
+            $salesChannelContext->getSalesChannelId(),
+            $salesChannelContext->getLanguageId(),
+            'zh-CN',
+            $salesChannelContext->getContext()
+        );
+
+        static::assertEquals('主页', $translator->trans('general.homeLink'));
     }
 
     #[DataProvider('pluralTranslationProvider')]
@@ -384,11 +419,11 @@ class TranslatorTest extends TestCase
 
     private function switchDefaultLanguage(): void
     {
-        $currentDeId = $this->connection->fetchOne(
+        $currentEnId = $this->connection->fetchOne(
             'SELECT language.id
              FROM language
              INNER JOIN locale ON translation_code_id = locale.id
-             WHERE locale.code = "zh-CN"'
+             WHERE locale.code = "en-GB"'
         );
 
         $stmt = $this->connection->prepare(
@@ -406,7 +441,7 @@ class TranslatorTest extends TestCase
         // change id to DEFAULT
         $stmt->executeStatement([
             'newId' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
-            'oldId' => $currentDeId,
+            'oldId' => $currentEnId,
         ]);
     }
 }

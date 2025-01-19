@@ -57,7 +57,7 @@ class ChangeLanguageRouteTest extends TestCase
 
     public function testValidLanguage(): void
     {
-        $languageId = $this->getenGbLanguageId();
+        $languageId = $this->getEnGbLanguageId();
 
         static::getContainer()->get('sales_channel.repository')->update(
             [
@@ -65,7 +65,7 @@ class ChangeLanguageRouteTest extends TestCase
                     'id' => $this->ids->get('sales-channel'),
                     'languages' => [
                         [
-                            'id' => $this->getenGbLanguageId(),
+                            'id' => $this->getEnGbLanguageId(),
                         ],
                     ],
                 ],
@@ -97,7 +97,7 @@ class ChangeLanguageRouteTest extends TestCase
 
     public function testInvalidLanguage(): void
     {
-        $languageId = $this->getenGbLanguageId();
+        $languageId = $this->getEnGbLanguageId();
 
         $id = $this->login($this->browser);
 

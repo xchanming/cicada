@@ -697,7 +697,7 @@ class AttributeEntityIntegrationTest extends TestCase
             'string' => 'string',
             'transString' => [
                 'en-GB' => 'transString',
-                'zh-CN' => 'transString-de',
+                'zh-CN' => 'transString-zh',
             ],
         ];
 
@@ -712,7 +712,7 @@ class AttributeEntityIntegrationTest extends TestCase
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
-        static::assertSame('transString', $record->getTranslation('transString'));
+        static::assertSame('transString-zh', $record->getTranslation('transString'));
         // translation association was not loaded in the criteria
         static::assertEmpty($record->translations);
 
@@ -722,23 +722,23 @@ class AttributeEntityIntegrationTest extends TestCase
             $context->getSource(),
             $context->getRuleIds(),
             $context->getCurrencyId(),
-            [$this->getenGbLanguageId(), Defaults::LANGUAGE_SYSTEM],
+            [$this->getEnGbLanguageId(), Defaults::LANGUAGE_SYSTEM],
         );
         $search = $this->repository('attribute_entity')
             ->search($criteria, $languageContext);
 
         $record = $search->get($ids->get('first-key'));
         static::assertInstanceOf(AttributeEntity::class, $record);
-        static::assertSame('transString-de', $record->getTranslation('transString'));
+        static::assertSame('transString', $record->getTranslation('transString'));
         $translations = $record->translations ?? [];
         static::assertCount(2, $translations);
 
         foreach ($translations as $translation) {
             static::assertInstanceOf(ArrayEntity::class, $translation);
             if ($translation->get('languageId') === Defaults::LANGUAGE_SYSTEM) {
-                static::assertSame('transString', $translation->get('transString'));
+                static::assertSame('transString-zh', $translation->get('transString'));
             } else {
-                static::assertSame('transString-de', $translation->get('transString'));
+                static::assertSame('transString', $translation->get('transString'));
             }
         }
     }

@@ -136,6 +136,7 @@ class CustomerBuilder
             'salutation' => self::salutation($this->ids),
             'street' => 'Buchenweg 5',
             'zipcode' => '33062',
+            'cityId' => $this->getCity(),
             'countryId' => $this->getCountry(),
         ], $customParams);
 
@@ -167,6 +168,14 @@ class CustomerBuilder
         return self::connection()->fetchOne(
             'SELECT LOWER(HEX(country_id)) FROM sales_channel_country WHERE sales_channel_id = :id LIMIT 1',
             ['id' => Uuid::fromHexToBytes($this->salesChannelId)]
+        );
+    }
+
+    private function getCity(): string
+    {
+        return self::connection()->fetchOne(
+            'SELECT LOWER(HEX(id)) FROM country_state WHERE country_id = :id and short_code="130123" LIMIT 1',
+            ['id' => Uuid::fromHexToBytes($this->getCountry())]
         );
     }
 }

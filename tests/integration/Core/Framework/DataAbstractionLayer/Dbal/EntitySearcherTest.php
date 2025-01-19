@@ -85,7 +85,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -127,7 +127,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -166,7 +166,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -200,7 +200,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -228,7 +228,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -256,7 +256,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -284,7 +284,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -300,7 +300,7 @@ class EntitySearcherTest extends TestCase
             productNumber: 'product-1',
             ids: $ids,
         );
-        $productBuilder1->translation($this->getenGbLanguageId(), 'keywords', 'Schlagwort');
+        $productBuilder1->translation($this->getEnGbLanguageId(), 'keywords', 'Schlagwort');
         $productBuilder2 = $this->buildProduct(
             deDeTranslation: 'Deutsches Produkt',
             productNumber: 'product-2',
@@ -323,7 +323,7 @@ class EntitySearcherTest extends TestCase
             static::getContainer()->get(ProductDefinition::class),
             $criteria,
             self::createLocalizedContext([
-                $this->getenGbLanguageId(),
+                $this->getEnGbLanguageId(),
                 Defaults::LANGUAGE_SYSTEM,
             ]),
         );
@@ -371,7 +371,7 @@ class EntitySearcherTest extends TestCase
         $productBuilder = new ProductBuilder($ids, $productNumber);
         $productBuilder->price(100);
         if ($deDeTranslation !== null) {
-            $productBuilder->translation($this->getenGbLanguageId(), 'name', $deDeTranslation);
+            $productBuilder->translation($this->getEnGbLanguageId(), 'name', $deDeTranslation);
         }
         if ($defaultTranslation !== null) {
             $productBuilder->translation(Defaults::LANGUAGE_SYSTEM, 'name', $defaultTranslation);
@@ -393,7 +393,7 @@ class EntitySearcherTest extends TestCase
         // the builder as the name
         $categoryBuilder = new CategoryBuilder($ids, categoryName: $defaultTranslation);
         if ($deDeTranslation !== null) {
-            $categoryBuilder->translation($this->getenGbLanguageId(), 'name', $deDeTranslation);
+            $categoryBuilder->translation($this->getEnGbLanguageId(), 'name', $deDeTranslation);
         }
 
         static::getContainer()->get('category.repository')->create(

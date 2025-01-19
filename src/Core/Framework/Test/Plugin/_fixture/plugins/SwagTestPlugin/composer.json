@@ -22,12 +22,12 @@
         "plugin-icon": "src/Resources/public/plugin.png",
         "copyright": "(c) by cicada AG",
         "label": {
-            "zh-CN": "Deutscher Pluginname",
+            "zh-CN": "Chinese plugin name",
             "de-CH": "Schweizerdeutsch Pluginname",
             "en-GB": "English plugin name"
         },
         "description": {
-            "zh-CN": "Deutsche Beschreibung",
+            "zh-CN": "Chinese description",
             "en-GB": "English description"
         },
         "manufacturerLink": {

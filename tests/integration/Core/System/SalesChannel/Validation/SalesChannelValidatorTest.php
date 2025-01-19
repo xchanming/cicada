@@ -38,7 +38,7 @@ class SalesChannelValidatorTest extends TestCase
     {
         $exception = null;
 
-        $deDeLanguageId = $this->getenGbLanguageId();
+        $deDeLanguageId = $this->getEnGbLanguageId();
         foreach ($inserts as &$insert) {
             foreach ($insert[2] ?? [] as $key => $language) {
                 if ($language === 'zh-CN') {
@@ -156,7 +156,7 @@ class SalesChannelValidatorTest extends TestCase
     #[DataProvider('getUpdateValidationProvider')]
     public function testUpdateValidation(array $updates, array $invalids = [], array $inserts = []): void
     {
-        $enLangId = $this->getenGbLanguageId();
+        $enLangId = $this->getEnGbLanguageId();
         foreach ($updates as &$update) {
             if ($update['languageId'] === 'en-GB') {
                 $update['languageId'] = $enLangId;

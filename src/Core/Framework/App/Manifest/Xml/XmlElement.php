@@ -16,7 +16,7 @@ use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter
 abstract class XmlElement extends Struct
 {
     protected const REQUIRED_FIELDS = [];
-    private const FALLBACK_LOCALE = 'en-GB';
+    private const FALLBACK_LOCALE = 'zh-CN';
 
     /**
      * @param array<string, mixed> $data

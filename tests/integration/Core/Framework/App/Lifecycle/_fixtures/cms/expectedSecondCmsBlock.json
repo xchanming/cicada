@@ -1,8 +1,8 @@
 {
   "name": "my-second-block",
   "label": {
-    "zh-CN": "Zweiter Block einer App",
-    "en-GB": "Second block from app"
+    "zh-CN": "Second block from app",
+    "en-GB": "Zweiter Block einer App"
   },
   "slots": {
     "left": {
