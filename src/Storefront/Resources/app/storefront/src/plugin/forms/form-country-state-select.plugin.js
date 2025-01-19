@@ -12,7 +12,6 @@ export default class CountryStateSelectPlugin extends Plugin {
         initialCountryAttribute: 'initial-country-id',
         countryStateSelectSelector: '.country-state-select',
         countryStateCitySelectSelector: '.country-state-city-select',
-        countryStateCityDistrictSelectSelector: '.country-state-city-district-select',
         initialCountryStateAttribute: 'initial-country-state-id',
         countryStatePlaceholderSelector: '[data-placeholder-option="true"]',
         vatIdFieldInput: '#vatIds',
@@ -47,9 +46,12 @@ export default class CountryStateSelectPlugin extends Plugin {
             this.scopeElement = DomAccess.querySelector(document, this.options.scopeElementSelector);
         }
 
-        const { countrySelectSelector, countryStateSelectSelector, initialCountryAttribute, initialCountryStateAttribute } = CountryStateSelectPlugin.options;
+        const { countrySelectSelector, countryStateSelectSelector, initialCountryAttribute, initialCountryStateAttribute
+            ,countryStateCitySelectSelector } = CountryStateSelectPlugin.options;
         const countrySelect = DomAccess.querySelector(this.scopeElement, countrySelectSelector);
         const countryStateSelect = DomAccess.querySelector(this.scopeElement, countryStateSelectSelector);
+        const countryStateCitySelect = DomAccess.querySelector(this.scopeElement, countryStateCitySelectSelector);
+
         const initialCountryId = DomAccess.getDataAttribute(countrySelect, initialCountryAttribute);
         const initialCountryStateId = DomAccess.getDataAttribute(countryStateSelect, initialCountryStateAttribute);
         const countrySelectCurrentOption = countrySelect.options[countrySelect.selectedIndex];
@@ -61,6 +63,8 @@ export default class CountryStateSelectPlugin extends Plugin {
         const zipcodeRequired = !!DomAccess.getDataAttribute(countrySelectCurrentOption, this.options.zipcodeRequired, false);
 
         countrySelect.addEventListener('change', this.onChangeCountry.bind(this));
+        countryStateSelect.addEventListener('change', this.onChangeCountryState.bind(this));
+        countryStateCitySelect.addEventListener('change', this.onChangeCountryStateCity.bind(this));
 
         if (!initialCountryId) {
             return;
@@ -76,7 +80,12 @@ export default class CountryStateSelectPlugin extends Plugin {
         }
         this._updateRequiredVatId(vatIdInput, vatIdRequired);
     }
-
+    onChangeCountryState(event){
+        const stateId = event.target.value;
+    }
+    onChangeCountryStateCity(event){
+        const cityId = event.target.value;
+    }
     onChangeCountry(event) {
         const countryId = event.target.value;
 
@@ -105,7 +114,7 @@ export default class CountryStateSelectPlugin extends Plugin {
             (response) => {
                 let responseData = JSON.parse(response);
                 responseData = {...responseData, ...{ stateRequired }};
-
+                console.log(responseData);
                 updateStateSelect(responseData, countryStateId, this.el, CountryStateSelectPlugin.options);
             }
         );

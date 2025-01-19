@@ -13,14 +13,6 @@ on:
         default: ""
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set timezone globally
-        run: |
-          sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-          sudo dpkg-reconfigure -f noninteractive tzdata
-          date
   phpunit-matrix:
     runs-on: ubuntu-24.04
     outputs:
