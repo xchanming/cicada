@@ -25,7 +25,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\HtmlSanitizer;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
-use Cicada\Core\System\SalesChannel\SalesChannelEntity;
+use Cicada\Core\Test\Generator;
 use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -42,7 +42,7 @@ class PromotionCollectorTest extends TestCase
 
     private readonly PromotionCollector $promotionCollector;
 
-    private readonly SalesChannelContext&MockObject $context;
+    private readonly SalesChannelContext $context;
 
     private readonly Connection&MockObject $connection;
 
@@ -57,11 +57,9 @@ class PromotionCollectorTest extends TestCase
             $this->connection
         );
 
-        $this->context = $this->createMock(SalesChannelContext::class);
-
         $customer = new CustomerEntity();
         $customer->setId(Uuid::randomHex());
-        $this->context->method('getCustomer')->willReturn($customer);
+        $this->context = Generator::generateSalesChannelContext(customer: $customer);
     }
 
     public function testCollectWithExistingPromotionAndDifferentDiscount(): void
@@ -105,7 +103,7 @@ class PromotionCollectorTest extends TestCase
 
     public function testPromotionWithInvalidOrderCountPerCustomerCount(): void
     {
-        $cart = $this->prepareCart([Uuid::randomHex(), Uuid::randomHex()], Uuid::randomHex(), 1, 2, 1, [$this->context->getCustomer()?->getId() => 1]);
+        $cart = $this->prepareCart([Uuid::randomHex(), Uuid::randomHex()], Uuid::randomHex(), 1, 2, 1, [$this->context->getCustomerId() => 1]);
         $cartDataCollection = new CartDataCollection();
 
         $this->promotionCollector->collect($cartDataCollection, $cart, $this->context, new CartBehavior());
@@ -184,7 +182,7 @@ class PromotionCollectorTest extends TestCase
             1,
             1,
             1,
-            [$this->context->getCustomer()?->getId() => 1]
+            [$this->context->getCustomerId() => 1]
         );
         $cart->addExtension(OrderConverter::ORIGINAL_ID, new IdStruct(Uuid::randomHex()));
 
@@ -239,10 +237,6 @@ class PromotionCollectorTest extends TestCase
         $promotionData = new CartExtension();
         $promotionData->addCode($code);
         $cart->addExtension(CartExtension::KEY, $promotionData);
-
-        $salesChannel = new SalesChannelEntity();
-        $salesChannel->setId(Uuid::randomHex());
-        $this->context->method('getSalesChannel')->willReturn($salesChannel);
 
         $this->gateway->method('get')->willReturn(
             new PromotionCollection([$promotion]),

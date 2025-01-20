@@ -207,9 +207,10 @@ EOF;
                 [
                     'id' => $addressId,
                     'salutationId' => $this->fetchFirstIdFromTable('salutation'),
-                    'name' => 'Max',
+                    'name' => 'Mustermann',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
+                    'cityId' => $this->getValidCountryCityId(),
                     'countryId' => $this->fetchFirstIdFromTable('country'),
                 ],
             ],
@@ -235,8 +236,9 @@ EOF;
                     'stateId' => $returnedPartially,
                     'shippingOrderAddress' => [
                         'salutationId' => $this->getValidSalutationId(),
-                        'name' => 'Floy',
+                        'name' => 'Glover',
                         'zipcode' => '59438-0403',
+                        'cityId' => $this->getValidCountryCityId(),
                         'street' => 'street',
                         'country' => [
                             'name' => 'kasachstan',
@@ -319,6 +321,8 @@ EOF;
                     'salutationId' => $this->getValidSalutationId(),
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
+                    'zipcode' => '48624',
+                    'cityId' => $this->getValidCountryCityId(),
                 ],
             ],
         ];

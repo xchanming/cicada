@@ -37,7 +37,7 @@
       "placeholderTagName": "输入标签名称...",
       "assignments": {
         "header": {
-          "products": "产品分配",
+          "products": "商品分配",
           "media": "媒体分配",
           "categories": "类别分配",
           "customers": "客户分配",
@@ -48,7 +48,7 @@
           "rules": "规则分配"
         },
         "content": {
-          "products": "产品",
+          "products": "商品",
           "media": "媒体",
           "categories": "类别",
           "customers": "客户",
@@ -59,7 +59,7 @@
           "rules": "规则"
         },
         "filter": {
-          "products": "产品",
+          "products": "商品",
           "media": "媒体",
           "categories": "类别",
           "customers": "客户",
@@ -81,7 +81,7 @@
         "assignments": "已分配",
         "selected": "已分配的实体",
         "showSelected": "隐藏未分配的实体",
-        "products": "产品",
+        "products": "商品",
         "media": "媒体",
         "categories": "类别",
         "customers": "客户",

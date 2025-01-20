@@ -56,15 +56,15 @@
 
             <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
             {% block sw_customer_create_adress_form %}
-                <sw-card
-                    :title="$tc('sw-customer.detailBase.labelAddressesCard')"
-                    position-identifier="sw-customer-create-address-form"
-                >
-                    <sw-customer-address-form
-                        v-if="customer"
-                        v-bind="{ customer, address }"
-                    />
-                </sw-card>
+            <sw-card
+                :title="$tc('sw-customer.detailBase.labelAddressesCard')"
+                position-identifier="sw-customer-create-address-form"
+            >
+                <sw-customer-address-form
+                    v-if="customer"
+                    v-bind="{ customer, address }"
+                />
+            </sw-card>
             {% endblock %}
 
         </sw-card-view>

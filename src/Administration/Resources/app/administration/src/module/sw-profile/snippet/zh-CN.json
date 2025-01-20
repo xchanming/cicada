@@ -83,7 +83,7 @@
           "ean": "GTIN/EAN",
           "name": "名称",
           "tagsName": "标签",
-          "productNumber": "产品编号",
+          "productNumber": "商品编号",
           "manufacturerNumber": "制造商编号",
           "customSearchKeywords": "SEO 关键词"
         },

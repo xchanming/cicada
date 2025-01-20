@@ -3,31 +3,31 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/xchanming/cicada/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
     <card>
         <title>Product</title>
-        <title lang="zh-CN">产品</title>
+        <title lang="zh-CN">商品</title>
 
         <input-field type="bool">
             <name>allowBuyInListing</name>
             <label>Display buy buttons in listings</label>
             <label lang="zh-CN">在列表中显示购买按钮</label>
             <helpText>In product listings, buy buttons are displayed beneath every product. Deactivate to display detail buttons only.</helpText>
-            <helpText lang="zh-CN">在产品列表中，购买按钮显示在每个产品下方。禁用此选项将仅显示详情按钮。</helpText>
+            <helpText lang="zh-CN">在商品列表中，购买按钮显示在每个商品下方。禁用此选项将仅显示详情按钮。</helpText>
         </input-field>
 
         <input-field type="bool">
             <name>autoplayVideoInListing</name>
             <label>Autoplay videos in product listings</label>
-            <label lang="zh-CN">在产品列表中自动播放视频</label>
+            <label lang="zh-CN">在商品列表中自动播放视频</label>
             <helpText>Videos in product listings that are configured as product media covers are played automatically. Deactivate to display the first frame of video only.</helpText>
-            <helpText lang="zh-CN">在产品列表中，设置为产品媒体封面的 视频会自动播放。禁用此选项将只显示视频的第一帧。</helpText>
+            <helpText lang="zh-CN">在商品列表中，设置为商品媒体封面的 视频会自动播放。禁用此选项将只显示视频的第一帧。</helpText>
             <defaultValue>false</defaultValue>
         </input-field>
 
         <input-field type="bool">
             <name>hideCloseoutProductsWhenOutOfStock</name>
             <label>Hide products after clearance</label>
-            <label lang="zh-CN">清仓后隐藏产品</label>
+            <label lang="zh-CN">清仓后隐藏商品</label>
             <helpText>Products marked as on "clearance sale" are hidden, as soon as their stock depletes back to 0.</helpText>
-            <helpText lang="zh-CN">标记为“清仓销售”的产品将在库存减少至 0 后被隐藏。</helpText>
+            <helpText lang="zh-CN">标记为“清仓销售”的商品将在库存减少至 0 后被隐藏。</helpText>
         </input-field>
 
         <input-field type="bool">
@@ -35,7 +35,7 @@
             <label>Show reviews</label>
             <label lang="zh-CN">是否显示评价</label>
             <helpText>Activate to show reviews</helpText>
-            <helpText lang="zh-CN">启用将在产品详情显示评价</helpText>
+            <helpText lang="zh-CN">启用将在商品详情显示评价</helpText>
         </input-field>
 
         <input-field type="int">
@@ -59,17 +59,17 @@
         <input-field type="int">
             <name>markAsNew</name>
             <label>Mark products as 'new', for ? days</label>
-            <label lang="zh-CN">将产品标记为“新品”，持续 ? 天</label>
+            <label lang="zh-CN">将商品标记为“新品”，持续 ? 天</label>
             <helpText>Products are marked as new, if their release date does not date back past the set number of days.</helpText>
-            <helpText lang="zh-CN">如果产品的发布日期距今未超过设定的天数，则该产品会被标记为“新品”。</helpText>
+            <helpText lang="zh-CN">如果商品的发布日期距今未超过设定的天数，则该商品会被标记为“新品”。</helpText>
         </input-field>
 
         <input-field type="int">
             <name>productsPerPage</name>
             <label>Number of products per page</label>
-            <label lang="zh-CN">每页显示的产品数量</label>
+            <label lang="zh-CN">每页显示的商品数量</label>
             <helpText>The number of products displayed on a search page or in a product list per page in the storefront.</helpText>
-            <helpText lang="zh-CN">在商城前端的搜索页面或产品列表中，每页显示的产品数量。</helpText>
+            <helpText lang="zh-CN">在商城前端的搜索页面或商品列表中，每页显示的商品数量。</helpText>
             <min>1</min>
         </input-field>
     </card>

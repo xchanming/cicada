@@ -75,7 +75,7 @@ class CheckoutControllerTest extends TestCase
     private const PAYMENT_METHOD_BLOCKED_ERROR_CONTENT = '当前购物车中的商品无法使用支付方式 "货到付款"';
     private const PAYMENT_METHOD_CHANGED_ERROR_CONTENT = '"%s" 付款方式不可用于当前购物车，付款方式已更改为 "%s"。';
     private const PROMOTION_NOT_FOUND_ERROR_CONTENT = '未找到代码为 "tn-08" 的促销。';
-    private const PRODUCT_STOCK_REACHED_ERROR_CONTENT = '产品 "Test product" 不再可用';
+    private const PRODUCT_STOCK_REACHED_ERROR_CONTENT = '商品 "Test product" 不再可用';
 
     private ?string $customerId = null;
 

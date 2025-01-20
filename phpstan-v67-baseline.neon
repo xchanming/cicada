@@ -9,7 +9,6 @@ parameters:
             message: "#^Multiple class/interface/trait is not allowed in single file$#"
             paths:
                 - src/Core/Checkout/Cart/Event/BeforeLineItemQuantityChangedEvent.php
-                - src/Core/Checkout/Cart/Event/CartChangedEvent.php
                 - src/Core/Checkout/Order/Event/OrderStateChangeCriteriaEvent.php
                 - src/Core/Maintenance/System/Exception/DatabaseSetupException.php
                 - src/Storefront/Page/Account/Order/AccountOrderPage.php

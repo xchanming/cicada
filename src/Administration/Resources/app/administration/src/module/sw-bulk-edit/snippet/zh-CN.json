@@ -10,15 +10,15 @@
       "clear": "清除"
     },
     "product": {
-      "textTitle": "批量编辑：{productTotal} 个产品 | 批量编辑：{productTotal} 个产品",
-      "messageEmptyTitle": "未选择产品进行批量编辑",
-      "messageEmptySubline": "请返回并选择一些产品",
+      "textTitle": "批量编辑：{productTotal} 个商品 | 批量编辑：{productTotal} 个商品",
+      "messageEmptyTitle": "未选择商品进行批量编辑",
+      "messageEmptySubline": "请返回并选择一些商品",
       "alertInheritance": {
-        "message": "这些变体有继承字段。继承字段的内容来自相应的父产品。您可以通过点击链式符号来激活或停用继承。"
+        "message": "这些变体有继承字段。继承字段的内容来自相应的父商品。您可以通过点击链式符号来激活或停用继承。"
       },
       "alertRestrictedFields": {
         "title": "限制批量编辑",
-        "message": "批量编辑只能应用于所有选定产品均可用的字段。<br><br>不适用于所有选定产品：",
+        "message": "批量编辑只能应用于所有选定商品均可用的字段。<br><br>不适用于所有选定商品：",
         "stock": "库存",
         "isCloseout": "清仓销售",
         "restockTime": "补货时间",
@@ -41,8 +41,8 @@
           "switchLabel": "激活"
         },
         "productPromotion": {
-          "changeLabel": "更改：产品促销",
-          "switchLabel": "产品促销"
+          "changeLabel": "更改：商品促销",
+          "switchLabel": "商品促销"
         }
       },
       "prices": {
@@ -313,7 +313,7 @@
       },
       "documents": {
         "cardTitle": "文件",
-        "warning": "批量编辑现在使用了改进的文件创建方式。然而，您系统中的一个或多个扩展可能会在使用新的文件创建时产生不同的结果。\n因此，请检查您的文件在使用和不使用批量编辑时是否有差异。",
+        "warning": "批量编辑现在使用了改进的文件创建方式。然而，您系统中的一个或多个插件可能会在使用新的文件创建时产生不同的结果。\n因此，请检查您的文件在使用和不使用批量编辑时是否有差异。",
         "generateInvoice": {
           "label": "生成：发票",
           "helpText": "此操作将增加相应数字范围的值。",

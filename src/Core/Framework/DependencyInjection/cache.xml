@@ -31,6 +31,13 @@
             <tag name="cicada.cache.invalidator.storage" storage="redis"/>
         </service>
 
+        <service id="cicada.cache.invalidator.storage.mysql" class="Cicada\Core\Framework\Adapter\Cache\InvalidatorStorage\MySQLInvalidatorStorage" lazy="true">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="logger"/>
+
+            <tag name="cicada.cache.invalidator.storage" storage="mysql"/>
+        </service>
+
         <service id="cicada.cache.invalidator.storage.locator" class="Cicada\Core\Framework\DependencyInjection\TaggedServiceLocator">
             <argument type="tagged_locator" tag="cicada.cache.invalidator.storage" index-by="storage" />
         </service>

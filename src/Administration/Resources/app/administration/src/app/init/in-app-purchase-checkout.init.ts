@@ -17,6 +17,5 @@ export default function initializeInAppPurchaseCheckout(): void {
         }
 
         Cicada.Store.get('inAppPurchaseCheckout').request(entry, extension.name);
-
     });
 }

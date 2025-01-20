@@ -118,7 +118,7 @@ describe('module/sw-media/components/sw-media-quickinfo-usage', () => {
         );
 
         register('sw-users-permissions', moduleMock);
-        const avatarUserMock = { username: 'abc123'};
+        const avatarUserMock = { username: 'abc123' };
 
         register('sw-product', moduleMock);
         const productMediaMock = {

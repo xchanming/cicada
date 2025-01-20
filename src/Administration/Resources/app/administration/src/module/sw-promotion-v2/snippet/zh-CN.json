@@ -13,7 +13,7 @@
       "columnValidFrom": "有效期开始",
       "columnValidUntil": "有效期结束",
       "titleEmpty": "尚无促销。",
-      "descriptionEmpty": "通过折扣产品和服务来提升销售。",
+      "descriptionEmpty": "通过折扣商品和服务来提升销售。",
       "placeholderSearchBar": "搜索促销...",
       "textDeleteConfirm": "您确定要删除促销 \"{name}\" 吗？",
       "titleSidebarItemRefresh": "刷新",
@@ -122,14 +122,14 @@
           "placeholderOrderConditionSelect": "选择订单规则..."
         },
         "setgroups": {
-          "switchGroupsEnabled": "促销产品组",
-          "buttonAddGroup": "添加产品组",
+          "switchGroupsEnabled": "促销商品组",
+          "buttonAddGroup": "添加商品组",
           "titleName": "组",
           "labelMode": "模式",
           "labelValue": "值",
           "labelSorting": "排序",
-          "labelRules": "产品规则",
-          "placeholder": "选择产品规则...",
+          "labelRules": "商品规则",
+          "placeholder": "选择商品规则...",
           "packager": {
             "COUNT": "数量",
             "PRICE_UNIT_GROSS": "金额（毛价）",
@@ -166,14 +166,14 @@
           "basic": {
             "prefixTitle": "基本折扣 - {title}",
             "titleDiscountType": "折扣类型",
-            "titleProductRules": "产品规则",
+            "titleProductRules": "商品规则",
             "description": "首先定义折扣类型。您可以在下一步中选择激活此折扣的触发器。"
           },
           "shipping-discount": {
             "prefixTitle": "运费折扣 - {title}",
             "titleDiscountType": "折扣类型",
             "titleTriggerSelection": "触发器（可选）",
-            "description": "您可以使用规则生成器创建个别折扣触发器。定义阈值，例如一定数量的产品或一定的购物车价值触发折扣。您甚至可以创建嵌套的触发级联。"
+            "description": "您可以使用规则生成器创建个别折扣触发器。定义阈值，例如一定数量的商品或一定的购物车价值触发折扣。您甚至可以创建嵌套的触发级联。"
           },
           "buy-x-get-y": {
             "prefixTitle": "买 X 送 Y - {title}",
@@ -192,23 +192,23 @@
               "displayFixedPrice": "固定价格",
               "displayFixedDiscount": "绝对值",
               "displayPercentage": "百分比",
-              "displayFree": "免费产品"
+              "displayFree": "免费商品"
             },
             "applyDiscountTo": {
               "displayTotalPrice": "总价",
-              "displayProductPrice": "产品价格"
+              "displayProductPrice": "商品价格"
             }
           },
           "ruleSelection": {
-            "description": "选择或创建规则以使产品符合折扣条件。",
+            "description": "选择或创建规则以使商品符合折扣条件。",
             "labelSelection": "规则选择",
             "placeholderSelection": "选择规则..."
           },
           "trigger": {
             "labelUseTrigger": "使用触发器",
             "triggerType": {
-              "displaySingleTrigger": "单一产品触发器",
-              "displayMultiTrigger": "多产品触发器"
+              "displaySingleTrigger": "单一商品触发器",
+              "displayMultiTrigger": "多商品触发器"
             },
             "labelNumberOfTriggers": "触发器类型"
           }
@@ -223,23 +223,23 @@
       },
       "discount-selection": {
         "modalTitle": "新折扣",
-        "description": "折扣可以以毛价或净价的形式应用，作为固定金额或百分比。可以对单个产品、产品范围或运费进行折扣。",
+        "description": "折扣可以以毛价或净价的形式应用，作为固定金额或百分比。可以对单个商品、商品范围或运费进行折扣。",
         "basic": {
           "name": "基本折扣",
-          "description": "对整个购物车或选定的产品组进行折扣。"
+          "description": "对整个购物车或选定的商品组进行折扣。"
         },
         "buy-x-get-y": {
           "name": "买 X 送 Y",
-          "description": "设置当添加一个或多个特定产品到购物车时激活的折扣。"
+          "description": "设置当添加一个或多个特定商品到购物车时激活的折扣。"
         },
         "shipping-discount": {
           "name": "运费折扣",
-          "description": "使用可选产品触发器折扣运费或提供免费运送。"
+          "description": "使用可选商品触发器折扣运费或提供免费运送。"
         }
       },
       "shipping-discount-trigger": {
         "modalTitle": "运费折扣 - 触发器（可选）",
-        "description": "您可以使用规则生成器创建个别折扣触发器。定义阈值，例如一定数量的产品或一定的购物车价值触发折扣。您甚至可以创建嵌套的触发级联。",
+        "description": "您可以使用规则生成器创建个别折扣触发器。定义阈值，例如一定数量的商品或一定的购物车价值触发折扣。您甚至可以创建嵌套的触发级联。",
         "labelUseTrigger": "使用触发器"
       }
     },
@@ -257,9 +257,9 @@
           "helpTextMaxValueAdvancedPrices": "最大可能折扣（绝对货币值）。",
           "placeholderValue": "输入百分比或绝对值...",
           "labelScope": "应用于：",
-          "flagProductScopeLabel": "仅应用于特定产品范围。",
-          "labelRules": "产品规则",
-          "placeholder": "分配产品规则...",
+          "flagProductScopeLabel": "仅应用于特定商品范围。",
+          "labelRules": "商品规则",
+          "placeholder": "分配商品规则...",
           "labelType": "类型",
           "valueScopeCart": "购物车",
           "valueTypeAbsolute": "绝对值",

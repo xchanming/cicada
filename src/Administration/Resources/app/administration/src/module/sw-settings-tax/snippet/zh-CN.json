@@ -48,7 +48,7 @@
       "messageSaveError": "保存税率时出错。",
       "messageSaveSuccess": "税率已保存。",
       "defaultTaxLabel": "用作默认",
-      "defaultTaxHelpText": "创建新产品时将预先选择此税率。只能为一个单一税率设置。"
+      "defaultTaxHelpText": "创建新商品时将预先选择此税率。只能为一个单一税率设置。"
     },
     "taxRuleCard": {
       "tooltipCountries": "如果未显示所有可用国家，请键入名称以访问未显示的国家。国家可以在设置/国家中创建或编辑。",

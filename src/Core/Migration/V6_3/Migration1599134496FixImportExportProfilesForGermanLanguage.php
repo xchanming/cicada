@@ -87,10 +87,10 @@ SQL;
         return [
             'Default category' => '类目',
             'Default media' => '媒体',
-            'Default variant configuration settings' => '产品变体配置',
+            'Default variant configuration settings' => '商品变体配置',
             'Default newsletter recipient' => '邮件订阅',
             'Default properties' => '属性',
-            'Default product' => '产品',
+            'Default product' => '商品',
         ];
     }
 

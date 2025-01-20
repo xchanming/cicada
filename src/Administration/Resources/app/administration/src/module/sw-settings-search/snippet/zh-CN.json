@@ -33,7 +33,7 @@
       "titleExampleModal": "搜索排名示例",
       "textColumnSearchTerm": "排除的搜索词",
       "modal": {
-        "textExplain": "下面是三个虚构的搜索结果，搜索词为“jeans”。可搜索的内容包括产品标题（排名分数100）、产品描述（排名分数50）和产品标签（排名分数20）。",
+        "textExplain": "下面是三个虚构的搜索结果，搜索词为“jeans”。可搜索的内容包括商品标题（排名分数100）、商品描述（排名分数50）和商品标签（排名分数20）。",
         "textTitle": "标题",
         "textSuperJeans": "超级牛仔裤",
         "textDescription": "描述",
@@ -41,11 +41,11 @@
         "textTag": "标签",
         "textJeans": "牛仔裤",
         "textTotal": "总计",
-        "textProductRankedFirstScore": "排名第一的产品在每个可搜索实体中都有搜索命中，总排名分数为170。",
+        "textProductRankedFirstScore": "排名第一的商品在每个可搜索实体中都有搜索命中，总排名分数为170。",
         "textFancyPants": "花哨的裤子",
-        "textProductRankedSecondScore": "排名第二的产品在产品名称和产品标签中有搜索命中，总排名分数为120。",
+        "textProductRankedSecondScore": "排名第二的商品在商品名称和商品标签中有搜索命中，总排名分数为120。",
         "textSuperPants": "超级裤子",
-        "textProductRankedThirdScore": "排名第三的产品只有在产品标签中有命中，总排名分数为20。"
+        "textProductRankedThirdScore": "排名第三的商品只有在商品标签中有命中，总排名分数为20。"
       },
       "labelSearchIndex": "搜索索引",
       "buttonRebuildSearchIndex": "重建搜索索引",
@@ -63,9 +63,9 @@
         "textRemove": "移除"
       },
       "configFields": {
-        "name": "产品名称",
-        "description": "产品描述",
-        "productNumber": "产品编号",
+        "name": "商品名称",
+        "description": "商品描述",
+        "productNumber": "商品编号",
         "manufacturerNumber": "制造商编号",
         "ean": "GTIN/EAN",
         "customSearchKeywords": "自定义搜索词",
@@ -73,9 +73,9 @@
         "manufacturerCustomFields": "制造商自定义字段",
         "categoriesName": "类别名称",
         "categoriesCustomFields": "类别自定义字段",
-        "tagsName": "产品标签",
-        "metaTitle": "产品元标题",
-        "metaDescription": "产品元描述",
+        "tagsName": "商品标签",
+        "metaTitle": "商品元标题",
+        "metaDescription": "商品元描述",
         "propertiesValue": "属性值",
         "variantValue": "变体值"
       }
@@ -91,8 +91,8 @@
       "resetToDefaultExcludedTermError": "重置排除的搜索词时出错。",
       "saveError": "保存配置时出错。",
       "index": {
-        "started": "正在构建产品索引。",
-        "success": "产品索引已构建。"
+        "started": "正在构建商品索引。",
+        "success": "商品索引已构建。"
       },
       "loadError": "加载配置时出错。",
       "notSupportedLanguageError": "所选语言在所选销售渠道中不可用。"

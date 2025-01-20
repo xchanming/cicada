@@ -86,9 +86,9 @@
           "messageSuccess": "索引已完成。"
         },
         "productStream": {
-          "title": "索引动态产品组",
-          "message": "动态产品组已索引。 | 剩余一个动态产品组... | 剩余{n}个动态产品组...",
-          "messageSuccess": "动态产品组已索引。"
+          "title": "索引动态商品组",
+          "message": "动态商品组已索引。 | 剩余一个动态商品组... | 剩余{n}个动态商品组...",
+          "messageSuccess": "动态商品组已索引。"
         },
         "category": {
           "title": "索引类别",
@@ -111,9 +111,9 @@
           "messageSuccess": "规则已索引。"
         },
         "product": {
-          "title": "索引产品",
-          "message": "产品已索引。 | 剩余一个产品... | 剩余{n}个产品...",
-          "messageSuccess": "产品已索引。"
+          "title": "索引商品",
+          "message": "商品已索引。 | 剩余一个商品... | 剩余{n}个商品...",
+          "messageSuccess": "商品已索引。"
         },
         "promotion": {
           "title": "索引促销",
@@ -138,7 +138,7 @@
       },
       "plugin-updates-listener": {
         "updatesAvailableTitle": "有更新可用",
-        "updatesAvailableMessage": "立即下载最新版本的扩展。"
+        "updatesAvailableMessage": "立即下载最新版本的插件。"
       },
       "cicada-updates-listener": {
         "updatesAvailableTitle": "新的Cicada版本{version}可用",
@@ -154,7 +154,7 @@
       "administrator": "超级管理员",
       "navigation": {
         "label": "主导航",
-        "mainMenuItemCatalogue": "产品",
+        "mainMenuItemCatalogue": "商品",
         "mainMenuItemContent": "内容",
         "mainMenuItemMarketing": "营销"
       }
@@ -165,9 +165,9 @@
       "placeholderToManyAssociationCard": "搜索关联...",
       "labelRemoveAssociation": "移除关联",
       "productStreamPreview": {
-        "emptyMessageNoStream": "未选择动态产品组",
-        "emptyMessageNoProducts": "未找到产品",
-        "emptyMessageNoSearchResults": "未找到\"{term}\"的产品"
+        "emptyMessageNoStream": "未选择动态商品组",
+        "emptyMessageNoProducts": "未找到商品",
+        "emptyMessageNoSearchResults": "未找到\"{term}\"的商品"
       }
     },
     "accessibility": {
@@ -213,7 +213,7 @@
     },
     "sw-list-price-field": {
       "labelListPriceGross": "挂牌价格（毛）",
-      "helpTextListPriceGross": "挂牌价格表示折扣产品。挂牌价格表示为“原始”价格，用红色划线表示。实际和折扣价格将以默认文本颜色显示。",
+      "helpTextListPriceGross": "挂牌价格表示折扣商品。挂牌价格表示为“原始”价格，用红色划线表示。实际和折扣价格将以默认文本颜色显示。",
       "labelListPriceNet": "挂牌价格（净）",
       "labelRegulationPriceGross": "最低价格（过去30天，毛）",
       "helpTextRegulationPriceGross": "如果你想在欧盟的商城中宣传价格下降，必须填写此字段。此类信息应由客户验证。因此，除了当前价格的价格下降外，还必须指明价格下降前30天内商品的最低价格。这是《指令98/6/EC》第6条规定的。",
@@ -424,7 +424,7 @@
       "titleModal": "替换媒体文件",
       "buttonUpload": "上传",
       "buttonReplace": "替换",
-      "warningFileExtension": "新文件具有不同的文件扩展名({extension})。搜索引擎可能需要重新索引文件。"
+      "warningFileExtension": "新文件具有不同的文件插件名({extension})。搜索引擎可能需要重新索引文件。"
     },
     "sw-media-preview": {
       "fallbackVideoTagSupport": "你的浏览器不支持视频标签",
@@ -498,8 +498,8 @@
       "title": "从URL上传文件",
       "upload": "上传",
       "example": "https://www.example.com",
-      "labelFileExtension": "文件扩展名",
-      "missingFileExtension": "URL不包含文件扩展名。请在下面指定文件扩展名。"
+      "labelFileExtension": "文件插件名",
+      "missingFileExtension": "URL不包含文件插件名。请在下面指定文件插件名。"
     },
     "sw-media-modal-folder-settings": {
       "labelSettings": "设置",
@@ -582,7 +582,7 @@
       "resetFilters": "重置过滤器",
       "applySelection": "应用选择",
       "entity": {
-        "product": "产品",
+        "product": "商品",
         "rule": "规则"
       }
     },
@@ -595,7 +595,7 @@
     "sw-search-bar": {
       "messageNoResults": "未找到\"{term}\"的结果。",
       "messageNoTypeResults": "未找到类型。",
-      "placeholderSearchField": "查找产品、客户、订单...",
+      "placeholderSearchField": "查找商品、客户、订单...",
       "placeholderTypeSearchField": "搜索\"{entity}\"...",
       "placeholderShortcutInfo": "提示：按\"f\"键可以更快地进入搜索栏。",
       "placeholderSearchShortcutInfo": "<strong>提示：</strong>按<span>f</span>从任何地方打开搜索。",
@@ -610,7 +610,7 @@
     },
     "sw-search-bar-item": {
       "typeLabelCustomer": "客户",
-      "typeLabelProduct": "产品",
+      "typeLabelProduct": "商品",
       "typeLabelOrder": "订单",
       "typeLabelMedia": "媒体",
       "typeLabelCategory": "类别",
@@ -713,12 +713,12 @@
         "orderCampaignCodeRule": "活动代码（订单）",
         "cartAmountRule": "总金额",
         "cartPositionPrice": "总计",
-        "goodsCountRule": "不同产品的总数量",
+        "goodsCountRule": "不同商品的总数量",
         "goodsPriceRule": "所有项目的小计",
         "cartTotalPurchasePrice": "所有购买价格的总计",
         "lineItemOfTypeRule": {
           "label": "类型的项目",
-          "product": "产品",
+          "product": "商品",
           "discount_surcharge": "折扣/附加费"
         },
         "lineItemRule": "购物车中的项目",
@@ -762,8 +762,8 @@
         "createAfter": "之后创建",
         "hasDeliveryFreeItemRule": "具有免费送货项目的项目",
         "timeRangeRule": "时间范围",
-        "weightOfCartRule": "所有产品的总重量",
-        "volumeOfCartRule": "所有产品的总体积",
+        "weightOfCartRule": "所有商品的总重量",
+        "volumeOfCartRule": "所有商品的总体积",
         "cartShippingCost": "运费",
         "dayOfWeekRule": "一周中的哪一天",
         "lineItemTagRule": "具有标签的项目",
@@ -779,8 +779,8 @@
         "lineItemClearanceSale": "清仓销售项目",
         "lineItemPromotedRule": "项目已推广",
         "lineItemInCategoryRule": "在类别中的项目",
-        "categoryWithProductStreamTooltip": "此类别中的产品由动态产品组分配。请使用条件“动态产品组中的项目”动态访问这些产品。",
-        "lineItemInProductStreamRule": "动态产品组中的项目",
+        "categoryWithProductStreamTooltip": "此类别中的商品由动态商品组分配。请使用条件“动态商品组中的项目”动态访问这些商品。",
+        "lineItemInProductStreamRule": "动态商品组中的项目",
         "lineItemTaxationRule": "具有税率的项目",
         "lineItemDimensionWidthRule": "具有宽度的项目",
         "lineItemDimensionHeightRule": "具有高度的项目",
@@ -791,11 +791,11 @@
         "lineItemListPriceRatioRule": "项目与挂牌价格比例的项目",
         "lineItemStockRule": "项目可用",
         "lineItemActualStockRule": "库存中的项目",
-        "lineItemProductStates": "具有产品状态的项目",
+        "lineItemProductStates": "具有商品状态的项目",
         "numberOfReviews": "批准的评论数量",
         "paymentMethodRule": "应用的支付方法",
         "shippingMethodRule": "应用的送货方法",
-        "lineItemGoodsTotalRule": "所有产品的总数量",
+        "lineItemGoodsTotalRule": "所有商品的总数量",
         "orderTotalAmountRule": "完成订单的总价值",
         "promotionValueRule": "所有折扣的小计",
         "promotionCodeOfType": "具有代码选项的促销",
@@ -1025,7 +1025,7 @@
       "customer": "客户 | 客户",
       "customer_address": "地址 | 地址",
       "customer_group": "客户组 | 客户组",
-      "extension": "扩展 | 扩展",
+      "extension": "插件 | 插件",
       "integration": "集成 | 集成",
       "language": "语言 | 语言",
       "mail_header_footer": "页眉和页脚 | 页眉和页脚",
@@ -1047,11 +1047,11 @@
       "payment_method": "支付方法 | 支付方法",
       "plugin_manager": "插件",
       "privacy": "隐私",
-      "product": "产品 | 产品",
+      "product": "商品 | 商品",
       "product_manufacturer": "制造商 | 制造商",
-      "product_media": "产品媒体",
-      "product_price": "产品价格 | 产品价格",
-      "product_stream": "动态产品组 | 动态产品组",
+      "product_media": "商品媒体",
+      "product_price": "商品价格 | 商品价格",
+      "product_stream": "动态商品组 | 动态商品组",
       "product_variation": "变体 | 变体",
       "product_review": "评论 | 评论",
       "promotion": "促销 | 促销",
@@ -1080,7 +1080,7 @@
       "document_base_config": "文档基础配置 | 文档基础配置",
       "product_feature_set": "新模板 | 新模板",
       "custom-field-set": "自定义字段集",
-      "store_settings": "产品排序",
+      "store_settings": "商品排序",
       "flow": "流构建器",
       "module": "模块",
       "frequently_used": "常用",
@@ -1120,7 +1120,7 @@
       "newsletter_register": "新闻通讯注册已注册",
       "newsletter_unsubscribe": "取消订阅新闻通讯",
       "newsletter_update": "新闻通讯注册已更新",
-      "product_export_log": "产品导出已执行",
+      "product_export_log": "商品导出已执行",
       "state_enter_order_state_cancelled": "订单进入取消状态",
       "state_enter_order_state_completed": "订单进入完成状态",
       "state_enter_order_state_in_progress": "订单进入进行中状态",
@@ -1215,21 +1215,21 @@
       "labelUrl": "URL",
       "labelType": "链接类型",
       "labelLink": "链接",
-      "labelProduct": "产品",
+      "labelProduct": "商品",
       "labelCategory":"类别",
       "labelMedia": "文件",
       "labelEmail": "电子邮件地址",
       "labelPhoneNumber": "电话号码",
       "placeholderPhoneNumber": "输入电话号码...",
       "placeholderEmail": "输入电子邮件地址...",
-      "placeholderProduct": "选择一个产品...",
+      "placeholderProduct": "选择一个商品...",
       "placeholderCategory": "选择一个类别..."
     },
     "table": {
       "addHeading": "添加表格标题",
       "cols": "列",
       "rows": "行",
-      "editInfo": "表格可以在以后继续扩展。"
+      "editInfo": "表格可以在以后继续插件。"
     },
     "title": {
       "format": "格式",
@@ -1325,17 +1325,17 @@
     "infoTextInheritedField": "{moduleName}具有继承的字段。这意味着只要继承状态是活跃的，内容将会被继承。可以通过点击链接符号来解除继承的字段。再次点击该符号将恢复继承状态。"
   },
   "sw-license-violation": {
-    "title": "扩展警告",
+    "title": "插件警告",
     "reload": "重新加载",
-    "alertText": "我们在此安装中检测到至少一个扩展的许可违规。要解决许可违规并避免法律后果，请预订或购买/租用扩展（根据所涉及的违规类型）。你不再使用该扩展了吗？然后通过“永久删除扩展”按钮或通过我的扩展删除它。如果不采取这些措施，cicada AG保留对任何许可违规行为收取罚款的权利。",
-    "deletePlugin": "永久删除扩展",
-    "messageDeleteConfirm": "你想完全删除扩展“{pluginName}”吗？",
+    "alertText": "我们在此安装中检测到至少一个插件的许可违规。要解决许可违规并避免法律后果，请预订或购买/租用插件（根据所涉及的违规类型）。你不再使用该插件了吗？然后通过“永久删除插件”按钮或通过我的插件删除它。如果不采取这些措施，cicada AG保留对任何许可违规行为收取罚款的权利。",
+    "deletePlugin": "永久删除插件",
+    "messageDeleteConfirm": "你想完全删除插件“{pluginName}”吗？",
     "checkboxMessage": "我已经注意到这条消息及其可能产生的后果。",
     "closeModal": "关闭通知",
     "ignorePlugin": "永久忽略",
-    "successfullyDeleted": "扩展已删除",
+    "successfullyDeleted": "插件已删除",
     "table": {
-      "plugin": "扩展",
+      "plugin": "插件",
       "warning": "警告"
     }
   },
@@ -1386,7 +1386,7 @@
     "sectionSpecialShortcuts": "特殊快捷键",
     "function": "功能",
     "keyboardShortcut": "键盘快捷键",
-    "functionAddProduct": "添加产品",
+    "functionAddProduct": "添加商品",
     "keyboardShortcutAddProduct": "A P",
     "functionAddCategory": "添加类别",
     "keyboardShortcutAddCategory": "A C",
@@ -1404,11 +1404,11 @@
     "keyboardShortcutAddSaleschannel": "A S",
     "functionGoToDashboard": "转到仪表板",
     "keyboardShortcutGoToDashboard": "G H",
-    "functionGoToProducts": "转到产品",
+    "functionGoToProducts": "转到商品",
     "keyboardShortcutGoToProducts": "G P",
     "functionGoToCategories": "转到类别",
     "keyboardShortcutGoToCategories": "G C",
-    "functionGoToDynamicProductGroups": "转到动态产品组",
+    "functionGoToDynamicProductGroups": "转到动态商品组",
     "keyboardShortcutGoToDynamicProductGroups": "G D",
     "functionGoToProperties": "转到属性",
     "keyboardShortcutGoToProperties": "G P R",
@@ -1436,7 +1436,7 @@
     "keyboardShortcutGoToShipping": "G S S",
     "functionGoToRuleBuilder": "转到规则构建器",
     "keyboardShortcutGoToRuleBuilder": "G S R",
-    "functionGoToPlugins": "转到“我的扩展”",
+    "functionGoToPlugins": "转到“我的插件”",
     "keyboardShortcutGoToPlugins": "G A",
     "functionSpecialShortcutFocusSearch": "聚焦搜索",
     "keyboardShortcutSpecialShortcutFocusSearch": "F",
@@ -1521,8 +1521,8 @@
       },
       "sw-app-wrong-app-url-modal": {
         "title": "配置错误的 APP_URL",
-        "explanationHeader": "与扩展的连接错误。",
-        "explanation": "由于系统中的错误配置，扩展无法与商城建立连接。",
+        "explanationHeader": "与插件的连接错误。",
+        "explanation": "由于系统中的错误配置，插件无法与商城建立连接。",
         "textGetSupport": "尝试联系你的主机提供商以获得支持。",
         "textDetails": "技术细节：APP_URL 配置错误。",
         "labelLearnMoreButton": "了解更多",
@@ -1580,8 +1580,8 @@
       "personaPromotions": "客户规则",
       "orderPromotions": "订单规则",
       "cartPromotions": "购物车规则",
-      "promotionDiscounts": "产品规则",
-      "promotionSetGroups": "产品规则",
+      "promotionDiscounts": "商品规则",
+      "promotionSetGroups": "商品规则",
       "notEqualsViolationTooltip": "此规则使用了防止分配给{entityLabel}的条件。这些条件是：{conditions}。",
       "equalsAnyViolationTooltip": "此规则必须使用以下条件之一，才能将其分配给{entityLabel}：{conditions}。"
     },
@@ -1590,7 +1590,7 @@
       "relation": {
         "flowTrigger": "触发器为{assignments}的流程",
         "promotion": "促销活动为{assignments}",
-        "productPrices": "产品为{assignments}",
+        "productPrices": "商品为{assignments}",
         "shippingMethods": "运输方式为{assignments}",
         "shippingMethodPrices": "运输方式为{assignments}",
         "paymentMethods": "支付方式为{assignments}"

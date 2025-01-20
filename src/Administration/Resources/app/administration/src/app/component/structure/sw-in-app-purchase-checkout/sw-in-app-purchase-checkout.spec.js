@@ -55,7 +55,7 @@ describe('src/app/component/structure/sw-in-app-purchase-checkout', () => {
             }
         };
 
-        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout);
+        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout, 'TestExtension');
 
         await flushPromises();
 
@@ -80,7 +80,7 @@ describe('src/app/component/structure/sw-in-app-purchase-checkout', () => {
             }
         };
 
-        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout);
+        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout, 'TestExtension');
 
         await flushPromises();
 

@@ -1,6 +1,6 @@
 // @ts-expect-error
 import MD5 from 'md5-es';
-import {utcToZonedTime} from 'date-fns-tz';
+import { utcToZonedTime } from 'date-fns-tz';
 
 /**
  * @package admin

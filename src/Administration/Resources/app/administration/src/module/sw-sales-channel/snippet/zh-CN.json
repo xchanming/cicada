@@ -28,8 +28,8 @@
         "offline": "离线"
       },
       "contextMenuEdit": "编辑",
-      "productsLabel": "产品",
-      "productsCount": "个产品"
+      "productsLabel": "商品",
+      "productsCount": "个商品"
     },
     "modal": {
       "title": "添加销售渠道",
@@ -38,7 +38,7 @@
       "buttonShowDetails": "显示详情",
       "buttonBack": "返回",
       "titleDescription": "信息",
-      "messageNoProductStreams": "为了使用产品比较，必须首先创建动态产品组。"
+      "messageNoProductStreams": "为了使用商品比较，必须首先创建动态商品组。"
     },
     "detail": {
       "messageSaveSuccess": "销售渠道 \"{name}\" 已保存。",
@@ -51,7 +51,7 @@
       "tabTheme": "主题",
       "tabAnalytics": "分析",
       "tabProductComparison": "模板",
-      "tabProducts": "产品",
+      "tabProducts": "商品",
       "titleProductComparisonTemplate": "模板",
       "titleProductComparisonPreview": "预览",
       "titleProductComparisonPreviewErrors": "生成时出错",
@@ -103,7 +103,7 @@
       "labelInputLanguage": "语言",
       "labelInputSnippet": "片段",
       "buttonDeleteDomain": "删除域",
-      "messageDeleteDomainError": "由于与现有产品导出关联，无法删除域 \"{url}\"。",
+      "messageDeleteDomainError": "由于与现有商品导出关联，无法删除域 \"{url}\"。",
       "buttonAddDomain": "添加域",
       "deleteDomainModalTitle": "删除域",
       "textConfirmDeleteDomain": "您确定要删除此域吗？销售渠道将无法通过 \"{url}\" 访问",
@@ -123,8 +123,8 @@
       "titleGeneralInformation": "常规信息",
       "titleAccount": "帐户",
       "titleDeleteSalesChannel": "删除销售渠道",
-      "titleProductSync": "产品同步",
-      "titleSyncedProducts": "同步的产品",
+      "titleProductSync": "商品同步",
+      "titleSyncedProducts": "同步的商品",
       "titleCategoryMapping": "类别映射",
       "titleTemplate": "模板",
       "titleDomainHeadline": "创建域名 URL",
@@ -145,21 +145,21 @@
       "basicinformationLink": "在此处更改默认维护布局",
       "columnDomainCurrency": "货币",
       "products": {
-        "titleEmptyState": "未找到更多产品",
-        "titleEmptyStateTable": "未找到匹配的产品",
-        "buttonAddProducts": "添加 {productCount} 个产品",
-        "columnProductName": "产品名称",
+        "titleEmptyState": "未找到更多商品",
+        "titleEmptyStateTable": "未找到匹配的商品",
+        "buttonAddProducts": "添加 {productCount} 个商品",
+        "columnProductName": "商品名称",
         "columnActive": "激活",
-        "columnProductNumber": "产品编号",
-        "inheritVariantNotRemovableTooltip": "此变体产品的销售渠道分配是由其主产品继承的。"
+        "columnProductNumber": "商品编号",
+        "inheritVariantNotRemovableTooltip": "此变体商品的销售渠道分配是由其主商品继承的。"
       },
       "productComparison": {
         "inputHeaderLabel": "表头行",
-        "inputBodyLabel": "产品行",
+        "inputBodyLabel": "商品行",
         "inputFooterLabel": "表尾行",
         "buttonTestLabel": "测试模板",
         "buttonPreviewLabel": "生成预览",
-        "settings": "产品导出",
+        "settings": "商品导出",
         "fileName": "文件名",
         "placeholderFileName": "cicada.csv",
         "lastGenerationLabel": "最后生成于：",
@@ -171,12 +171,12 @@
         "accessKey": "访问密钥",
         "accessUrl": "导出 URL",
         "buttonCreateNewAccessKey": "创建新访问密钥",
-        "productStream": "动态产品组",
+        "productStream": "动态商品组",
         "fileFormatLabels": {
           "csv": "CSV",
           "xml": "XML"
         },
-        "includeVariants": "将变体导出为独立产品",
+        "includeVariants": "将变体导出为独立商品",
         "interval": "间隔",
         "generateByCronjob": "通过调度程序生成",
         "notificationMessageValidateSuccessful": "未发生错误。",
@@ -276,21 +276,21 @@
         "horizontalDescription": "增值税根据每个购物车位置计算。在结账时会显示每个位置的单个增值税。总增值税金额通过累加所有单个增值税值计算得出。"
       },
       "productAssignmentModal": {
-        "title": "添加产品",
-        "singleProducts": "产品选择",
+        "title": "添加商品",
+        "singleProducts": "商品选择",
         "categories": {
           "title": "类别选择",
-          "textInfo": "此处所做的分配不是动态的，仅代表当前产品状态。类别产品组成的后续更改不会影响分配。",
+          "textInfo": "此处所做的分配不是动态的，仅代表当前商品状态。类别商品组成的后续更改不会影响分配。",
           "textSearch": "搜索类别...",
           "emptySearchResults": "未找到类别。"
         },
         "dynamicProductGroups": {
-          "title": "产品组选择",
-          "infoText": "此处所做的分配不是动态的，仅代表当前产品状态。动态产品组产品组成的后续更改不会影响分配。",
+          "title": "商品组选择",
+          "infoText": "此处所做的分配不是动态的，仅代表当前商品状态。动态商品组商品组成的后续更改不会影响分配。",
           "columnName": "名称",
-          "searchFieldPlaceholder": "搜索动态产品组...",
-          "titleNoProductStreamsMatching": "未找到匹配的动态产品组。",
-          "titleNoProductStreamsAvailable": "没有可用的动态产品组。"
+          "searchFieldPlaceholder": "搜索动态商品组...",
+          "titleNoProductStreamsMatching": "未找到匹配的动态商品组。",
+          "titleNoProductStreamsAvailable": "没有可用的动态商品组。"
         }
       }
     },

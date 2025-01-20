@@ -134,14 +134,14 @@ class ContextSwitchRouteTest extends TestCase
         static::assertArrayHasKey('/countryStateId', $mapped);
         static::assertArrayHasKey('/languageId', $mapped);
 
-        static::assertEquals('This value should be of type string.', $mapped['/currencyId']);
-        static::assertEquals('This value should be of type string.', $mapped['/billingAddressId']);
-        static::assertEquals('This value should be of type string.', $mapped['/shippingAddressId']);
-        static::assertEquals('This value should be of type string.', $mapped['/paymentMethodId']);
-        static::assertEquals('This value should be of type string.', $mapped['/shippingMethodId']);
-        static::assertEquals('This value should be of type string.', $mapped['/countryId']);
-        static::assertEquals('This value should be of type string.', $mapped['/countryStateId']);
-        static::assertEquals('This value should be of type string.', $mapped['/languageId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/currencyId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/billingAddressId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/shippingAddressId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/paymentMethodId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/shippingMethodId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/countryId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/countryStateId']);
+        static::assertEquals('该变量的类型应为 string 。', $mapped['/languageId']);
     }
 
     public function testUpdateContextWithLoggedInCustomerAndNonExistingAddresses(): void

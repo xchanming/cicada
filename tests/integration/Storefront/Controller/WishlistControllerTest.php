@@ -225,12 +225,12 @@ class WishlistControllerTest extends TestCase
         $flashBag = $session->getFlashBag();
 
         static::assertNotEmpty($successFlash = $flashBag->get('success'));
-        static::assertEquals('您已成功将产品添加到心愿单。', $successFlash[0]);
+        static::assertEquals('您已成功将商品添加到心愿单。', $successFlash[0]);
 
         $browser->request('GET', $_SERVER['APP_URL'] . '/wishlist/add-after-login/' . $productId);
 
         static::assertNotEmpty($warningFlash = $flashBag->get('warning'));
-        static::assertEquals('产品已添加到您的心愿单。', $warningFlash[0]);
+        static::assertEquals('商品已添加到您的心愿单。', $warningFlash[0]);
     }
 
     public function testWishlistPageLoadedHookScriptsAreExecuted(): void

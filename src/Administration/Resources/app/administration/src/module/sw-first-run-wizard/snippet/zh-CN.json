@@ -20,11 +20,11 @@
       "switchLanguageModalTitle": "选择界面语言",
       "confirmLanguageSwitch": "更改语言",
       "switchLanguageMessage": "\"{pluginName}\" 已成功安装。是否要更改界面语言？",
-      "pluginsInstalled": "扩展已安装",
-      "pluginsInstalledMessage": "语言扩展已安装：| 这些语言扩展已安装：",
-      "pluginNotFoundMessage": "找不到语言扩展 {languageName}。",
-      "pluginInstallationFailedMessage": "扩展无法安装：",
-      "pluginActivationFailedMessage": "扩展无法激活：",
+      "pluginsInstalled": "插件已安装",
+      "pluginsInstalledMessage": "语言插件已安装：| 这些语言插件已安装：",
+      "pluginNotFoundMessage": "找不到语言插件 {languageName}。",
+      "pluginInstallationFailedMessage": "插件无法安装：",
+      "pluginActivationFailedMessage": "插件无法激活：",
       "tryAgainLater": "请稍后再试。",
       "noConnectionMessage": "似乎有连接问题，语言无法安装。"
     },
@@ -36,7 +36,7 @@
       "headlineMigration": "迁移您的商城数据",
       "messageMigration": "迁移助手帮助您连接并将数据从以前的商城系统转移到您的新蝉鸣数字化营销平台环境中。",
       "buttonInstallMigration": "安装迁移助手",
-      "loadingMessage": "正在安装扩展<br>这可能需要一段时间..."
+      "loadingMessage": "正在安装插件<br>这可能需要一段时间..."
     },
     "mailerSelection": {
       "headline": "建立电子邮件通信",
@@ -73,8 +73,8 @@
     },
     "recommendedPlugins": {
       "headline": "我们的推荐",
-      "modalTitle": "扩展",
-      "message": "这里是一些对您的商城有用的扩展。首先选择一个与您相关的区域。然后您可以浏览不同的类别。",
+      "modalTitle": "插件",
+      "message": "这里是一些对您的商城有用的插件。首先选择一个与您相关的区域。然后您可以浏览不同的类别。",
       "availableInRegion": "可用地区",
       "category": "类别",
       "topRecommendations": "全球推荐",
@@ -104,16 +104,16 @@
       "testEnvironment": "测试环境"
     },
     "store": {
-      "modalTitle": "扩展商城",
+      "modalTitle": "插件商城",
       "loadStatusCollect": "正在收集商城信息...",
       "takeMinutes": "这可能需要几分钟。",
       "alreadyActivated": "商城已成功激活。",
       "enablingStore": "正在启用蝉鸣平台商城...",
       "activationErrorTitle": "激活时出错",
       "activationErrorDescription": "请向管理员寻求帮助。",
-      "headingOne": "方便快捷购买扩展 -",
+      "headingOne": "方便快捷购买插件 -",
       "headingTwo": "直接在您的蝉鸣平台商城中。",
-      "description": "激活全新的蝉鸣平台商城，访问大量有用的扩展和现代主题，这些扩展和主题可以无缝集成到您的商城中 - 无需任何编程技能。"
+      "description": "激活全新的蝉鸣平台商城，访问大量有用的插件和现代主题，这些插件和主题可以无缝集成到您的商城中 - 无需任何编程技能。"
     },
     "defaults": {
       "modalTitle": "设置默认值"
@@ -136,7 +136,7 @@
       "dataImport": "数据导入",
       "mailer": "邮件配置",
       "setupPaypal": "设置微信支付",
-      "plugins": "扩展",
+      "plugins": "插件",
       "cicada": "官方账号",
       "store": "官方商城",
       "defaults": "默认值"

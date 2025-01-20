@@ -184,6 +184,7 @@ describe('module/sw-settings-cicada-updates/page/sw-settings-cicada-updates-wiza
                         'sw-data-grid-settings': true,
                         'sw-data-grid-inline-edit': true,
                         'sw-data-grid-skeleton': true,
+                        'sw-provide': true,
                     },
                     attachTo: document.body,
                 },
