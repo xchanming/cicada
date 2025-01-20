@@ -58,7 +58,6 @@ class ProductReviewLoader extends AbstractProductReviewLoader
         $reviewResult = ProductReviewResult::createFrom($reviews);
         $reviewResult->setMatrix($this->getReviewRatingMatrix($reviews));
         $reviewResult->setCustomerReview($this->getCustomerReview($productId, $context));
-        $reviewResult->setTotalReviews($reviews->getTotal());
         $reviewResult->setTotalReviewsInCurrentLanguage($this->getTotalReviewsInCurrentLanguage($reviews));
         $reviewResult->setProductId($productId);
         $reviewResult->setParentId($productParentId ?? $productId);

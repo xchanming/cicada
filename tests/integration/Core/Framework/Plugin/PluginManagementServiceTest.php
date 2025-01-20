@@ -72,7 +72,6 @@ class PluginManagementServiceTest extends TestCase
 
         Kernel::getConnection()->executeStatement('DELETE FROM plugin');
 
-
         // make sure to boot the main container again
         // eg in `\Shopware\Core\Framework\Framework::boot()` we bind the container to \Shopware\Core\Framework\Telemetry\Metrics\MeterProvider
         // if we don't reboot, we hold an old reference to the deleted container used for testing in this class
