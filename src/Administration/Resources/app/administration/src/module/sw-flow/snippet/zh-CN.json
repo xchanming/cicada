@@ -211,8 +211,8 @@
         "titleChangeCustomerStatus": "分配账户状态",
         "labelCustomerStatus": "账户状态",
         "placeholderCustomerStatus": "选择账户状态...",
-        "active": "激活",
-        "inactive": "不活跃"
+        "active": "启用",
+        "inactive": "禁用"
       },
       "mail": {
         "columnRecipientName": "名称",

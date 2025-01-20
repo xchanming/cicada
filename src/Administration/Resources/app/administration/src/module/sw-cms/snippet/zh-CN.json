@@ -335,7 +335,7 @@
               "body": "确定要删除 \"{productSortingName}\" 吗？"
             },
             "defaultSortingInUse": "此商品排序已选定为默认排序。",
-            "defaultSortingCantBeDisabled": "此排序是默认排序。它必须是活跃的，以免对您的商品列表造成问题。"
+            "defaultSortingCantBeDisabled": "此排序是默认排序。它必须是启用的，以免对您的商品列表造成问题。"
           },
           "filter": {
             "infoText": "确保在布局中添加了筛选块，以查看此设置的效果。",

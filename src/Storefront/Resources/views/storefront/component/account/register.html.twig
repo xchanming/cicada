@@ -50,15 +50,6 @@
                             {% endblock %}
 
                             {% block component_account_register_personal_fields %}
-                                {% block component_account_register_personal_address_fields %}
-                                    {% set prefix = 'billingAddress' %}
-
-                                    {% sw_include '@Storefront/storefront/component/address/address-personal.html.twig' with {
-                                        prefix: prefix,
-                                        showBirthdayField: config('core.loginRegistration.showBirthdayField'),
-                                        accountType: data.get('accountType')
-                                    } %}
-                                {% endblock %}
 
                                 {% block component_account_register_company_fields %}
                                     {% sw_include '@Storefront/storefront/component/address/address-personal-company.html.twig' with {

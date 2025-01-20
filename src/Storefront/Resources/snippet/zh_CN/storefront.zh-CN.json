@@ -260,7 +260,7 @@
     "profileRecoverPasswordTitle": "密码恢复",
     "profileRecoverPasswordInfo": "我们将发送一封确认电子邮件。点击电子邮件中的链接以更改密码。",
     "profileRecoverPasswordSubmit": "请求电子邮件",
-    "profileSaveChanges": "保存更改",
+    "profileSaveChanges": "保存",
     "profileDeleteText": "<a href=\"%target%\" data-bs-toggle=\"modal\" data-bs-target=\"%target%\">点击此处</a>删除您的所有个人数据。",
     "profileDeleteAlert": "删除您的客户帐户后，个人数据、新闻订阅和评论将不再可访问。请注意，为了履行法律规定，所有订单记录将被保留。",
     "profileDeleteConfirm": "您真的要删除您的客户帐户吗？",

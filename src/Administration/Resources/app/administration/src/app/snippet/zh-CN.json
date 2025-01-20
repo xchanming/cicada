@@ -1322,7 +1322,7 @@
     "titleModalButtonRevertUnsavedChanges": "放弃更改"
   },
   "sw-inheritance-warning": {
-    "infoTextInheritedField": "{moduleName}具有继承的字段。这意味着只要继承状态是活跃的，内容将会被继承。可以通过点击链接符号来解除继承的字段。再次点击该符号将恢复继承状态。"
+    "infoTextInheritedField": "{moduleName}具有继承的字段。这意味着只要继承状态是启用的，内容将会被继承。可以通过点击链接符号来解除继承的字段。再次点击该符号将恢复继承状态。"
   },
   "sw-license-violation": {
     "title": "插件警告",
@@ -1546,8 +1546,8 @@
   },
   "sw-boolean-filter": {
     "placeholder": "全部",
-    "active": "活跃",
-    "inactive": "非活跃"
+    "active": "启用",
+    "inactive": "禁用"
   },
   "sw-existence-filter": {
     "placeholder": "全部",
