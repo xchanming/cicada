@@ -50,12 +50,12 @@ describe('src/app/component/structure/sw-in-app-purchase-checkout', () => {
         };
 
         Cicada.Context.app.config.bundles = {
-            TestExtension: {
+            'TestExtension': {
                 identifier: 'TestExtension',
-            },
+            }
         };
 
-        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout);
+        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout, 'TestExtension');
 
         await flushPromises();
 
@@ -75,12 +75,12 @@ describe('src/app/component/structure/sw-in-app-purchase-checkout', () => {
         };
 
         Cicada.Context.app.config.bundles = {
-            TestExtension: {
+            'TestExtension': {
                 identifier: 'TestExtension',
-            },
+            }
         };
 
-        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout);
+        Cicada.Store.get('inAppPurchaseCheckout').request(requestCheckout, 'TestExtension');
 
         await flushPromises();
 

@@ -128,7 +128,7 @@ describe('module/sw-customer/page/sw-customer-address-form', () => {
         await flushPromises();
 
         const stateSelect = wrapper.find('.sw-customer-address-form__state-select');
-        expect(stateSelect.exists()).toBeFalsy();
+        expect(stateSelect.exists()).toBeTruthy();
     });
 
     it('should show state field if country has states', async () => {

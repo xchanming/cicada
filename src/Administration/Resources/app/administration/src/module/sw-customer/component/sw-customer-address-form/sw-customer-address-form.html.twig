@@ -98,7 +98,6 @@
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
         {% block sw_customer_address_form_state_field %}
         <div
-            v-if="countryId && hasStates"
             class="sw-customer-address-form__state-select-placeholder"
         >
             <sw-entity-single-select
@@ -111,57 +110,42 @@
                 :placeholder="$tc('sw-customer.addressForm.placeholderState')"
                 :required="country && country.forceStateInRegistration"
                 :error="disabled ? null : addressCountryStateIdError"
-                :disabled="disabled"
+                :disabled="disabled || !(countryId && hasStates)"
                 show-clearable-button
             />
         </div>
         {% endblock %}
 
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_customer_address_form_zipcode_city_container %}
-
-        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_customer_address_form_city_field %}
-        <sw-text-field
-            v-model:value="address.city"
-            name="sw-field--address-city"
-            :label="$tc('sw-customer.addressForm.labelCity')"
-            :placeholder="$tc('sw-customer.addressForm.placeholderCity')"
-            validation="required"
-            required
-            :error="disabled ? null : addressCityError"
-            :disabled="disabled"
-        />
-
+        {% block sw_customer_address_form_city_field %}
         <sw-entity-single-select
-            v-model:value="address.city"
-            name="sw-field--address-countryStateId"
-            class="sw-customer-address-form__state-city-select"
+            v-model:value="address.cityId"
+            name="sw-field--address-city"
+            class="sw-customer-address-form__city-select"
             entity="country_state"
             :criteria="stateCityCriteria"
-            :label="$tc('sw-customer.addressForm.labelState')"
-            :placeholder="$tc('sw-customer.addressForm.placeholderState')"
-            :required="country && country.forceStateInRegistration"
-            :error="disabled ? null : addressCountryStateIdError"
-            :disabled="disabled"
+            :label="$tc('sw-customer.addressForm.labelCity')"
+            :placeholder="$tc('sw-customer.addressForm.placeholderCity')"
+            :error="disabled ? null : addressCityError"
+            :disabled="disabled || !(address.countryStateId)"
             show-clearable-button
         />
-
-            {% endblock %}
+        {% endblock %}
 
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-            {% block sw_customer_address_form_zipcode_field %}
-        <sw-text-field
-            v-model:value="address.zipcode"
-            name="sw-field--address-zipcode"
-            :label="$tc('sw-customer.addressForm.labelZipcode')"
-            :placeholder="$tc('sw-customer.addressForm.placeholderZipcode')"
-            validation="required"
-            :required="country && country.postalCodeRequired"
-            :error="disabled ? null : addressZipcodeError"
-            :disabled="disabled"
+        {% block sw_customer_address_form_district_field %}
+        <sw-entity-single-select
+            v-model:value="address.districtId"
+            name="sw-field--address-district"
+            class="sw-customer-address-form__district-select"
+            entity="country_state"
+            :criteria="stateDistrictCriteria"
+            :label="$tc('sw-customer.addressForm.labelDistrict')"
+            :placeholder="$tc('sw-customer.addressForm.placeholderDistrict')"
+            :error="disabled ? null : addressDistrictError"
+            :disabled="disabled || !(address.cityId)"
+            show-clearable-button
         />
-            {% endblock %}
         {% endblock %}
 
         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
@@ -174,6 +158,19 @@
             validation="required"
             required
             :error="disabled ? null : addressStreetError"
+            :disabled="disabled"
+        />
+        {% endblock %}
+
+        {% block sw_customer_address_form_zipcode_field %}
+        <sw-text-field
+            v-model:value="address.zipcode"
+            name="sw-field--address-zipcode"
+            :label="$tc('sw-customer.addressForm.labelZipcode')"
+            :placeholder="$tc('sw-customer.addressForm.placeholderZipcode')"
+            validation="required"
+            :required="country && country.postalCodeRequired"
+            :error="disabled ? null : addressZipcodeError"
             :disabled="disabled"
         />
         {% endblock %}
