@@ -501,15 +501,6 @@
             <argument type="service" id="event_dispatcher"/>
         </service>
 
-        <service id="Cicada\Core\Content\Product\SalesChannel\Review\CachedProductReviewRoute" decorates="Cicada\Core\Content\Product\SalesChannel\Review\ProductReviewRoute" decoration-priority="-1000" public="true">
-            <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\Review\CachedProductReviewRoute.inner"/>
-            <argument type="service" id="cache.object"/>
-            <argument type="service" id="Cicada\Core\Framework\DataAbstractionLayer\Cache\EntityCacheKeyGenerator"/>
-            <argument type="service" id="Cicada\Core\Framework\Adapter\Cache\CacheTracer"/>
-            <argument type="service" id="event_dispatcher"/>
-            <argument>%cicada.cache.invalidation.product_review_route%</argument>
-        </service>
-
         <service id="Cicada\Core\Content\Product\SalesChannel\Detail\ProductConfiguratorLoader">
             <argument type="service" id="product_configurator_setting.repository"/>
             <argument type="service" id="Cicada\Core\Content\Product\SalesChannel\Detail\AvailableCombinationLoader"/>

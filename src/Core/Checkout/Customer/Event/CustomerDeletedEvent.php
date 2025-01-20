@@ -12,7 +12,6 @@ use Cicada\Core\Framework\Event\EventData\EventDataCollection;
 use Cicada\Core\Framework\Event\EventData\MailRecipientStruct;
 use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Event\MailAware;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Contracts\EventDispatcher\Event;
@@ -78,20 +77,8 @@ class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, Mai
 
     public function getValues(): array
     {
-        if (Feature::isActive('v6.7.0.0')) {
-            return [
-                'customer' => $this->serializedCustomer,
-            ];
-        }
-
         return [
             'customer' => $this->serializedCustomer,
-            'customerId' => $this->customer->getId(),
-            'customerNumber' => $this->customer->getCustomerNumber(),
-            'customerEmail' => $this->customer->getEmail(),
-            'customerName' => $this->customer->getName(),
-            'customerCompany' => $this->customer->getCompany(),
-            'customerSalutationId' => $this->customer->getSalutationId(),
         ];
     }
 }
