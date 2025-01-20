@@ -17,7 +17,6 @@ class ProductReviewResult extends EntitySearchResult
      * @deprecated tag:v6.7.0 - Will be natively typed
      *
      * @var string|null
-     *
      */
     protected $parentId;
 
@@ -25,7 +24,6 @@ class ProductReviewResult extends EntitySearchResult
      * @deprecated tag:v6.7.0 - Will be natively typed
      *
      * @var string
-     *
      */
     protected $productId;
 

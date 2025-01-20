@@ -7,6 +7,7 @@ use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Content\Flow\Dispatching\Aware\ScalarValuesAware;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Event\CicadaSalesChannelEvent;
+use Cicada\Core\Framework\Event\CustomerAware;
 use Cicada\Core\Framework\Event\EventData\EntityType;
 use Cicada\Core\Framework\Event\EventData\EventDataCollection;
 use Cicada\Core\Framework\Event\EventData\MailRecipientStruct;
@@ -17,7 +18,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Contracts\EventDispatcher\Event;
 
 #[Package('checkout')]
-class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, MailAware, ScalarValuesAware, FlowEventAware
+class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, CustomerAware, MailAware, ScalarValuesAware, FlowEventAware
 {
     final public const EVENT_NAME = 'checkout.customer.deleted';
 
@@ -36,6 +37,11 @@ class CustomerDeletedEvent extends Event implements CicadaSalesChannelEvent, Mai
     public function getName(): string
     {
         return self::EVENT_NAME;
+    }
+
+    public function getCustomerId(): string
+    {
+        return $this->customer->getId();
     }
 
     public function getCustomer(): CustomerEntity

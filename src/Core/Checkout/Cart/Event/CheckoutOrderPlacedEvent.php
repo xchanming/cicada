@@ -109,10 +109,10 @@ class CheckoutOrderPlacedEvent extends Event implements SalesChannelAware, Sales
 
     public function getCustomerId(): string
     {
-        $customerId = $this->getOrder()->getOrderCustomer()?->getCustomerId();
+        $customerId = $this->order->getOrderCustomer()?->getCustomerId();
 
         if (!$customerId) {
-            throw CartException::orderCustomerDeleted($this->getOrderId());
+            throw CartException::orderCustomerDeleted($this->order->getId());
         }
 
         return $customerId;

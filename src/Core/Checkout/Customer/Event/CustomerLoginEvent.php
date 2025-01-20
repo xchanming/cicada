@@ -81,7 +81,7 @@ class CustomerLoginEvent extends Event implements SalesChannelAware, CicadaSales
 
     public function getCustomerId(): string
     {
-        return $this->getCustomer()->getId();
+        return $this->customer->getId();
     }
 
     public function getMailStruct(): MailRecipientStruct

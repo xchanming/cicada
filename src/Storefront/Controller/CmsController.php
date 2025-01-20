@@ -167,7 +167,7 @@ class CmsController extends StorefrontController
         $response = $this->renderStorefront('@Storefront/storefront/component/buy-widget/buy-widget.html.twig', [
             'product' => $product,
             'configuratorSettings' => $configurator,
-            'totalReviews' => $reviews->getTotalReviews(),
+            'totalReviews' => $reviews->getTotal(),
             'elementId' => $elementId,
         ]);
         $response->headers->set('x-robots-tag', 'noindex');

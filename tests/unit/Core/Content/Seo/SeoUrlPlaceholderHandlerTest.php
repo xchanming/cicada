@@ -4,12 +4,10 @@ namespace Cicada\Tests\Unit\Core\Content\Seo;
 
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandler;
 use Cicada\Core\Content\Seo\SeoUrlPlaceholderHandlerInterface;
-use Cicada\Core\Defaults;
-use Cicada\Core\Framework\Api\Context\SystemSource;
-use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Cicada\Core\Test\Generator;
 use Cicada\Core\Test\TestDefaults;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -30,7 +28,7 @@ class SeoUrlPlaceholderHandlerTest extends TestCase
 {
     private MockObject&Connection $connection;
 
-    private MockObject&SalesChannelContext $salesChannelContext;
+    private SalesChannelContext $salesChannelContext;
 
     private SeoUrlPlaceholderHandlerInterface $seoUrlPlaceholderHandler;
 
@@ -39,16 +37,7 @@ class SeoUrlPlaceholderHandlerTest extends TestCase
         $this->connection = $this->createMock(Connection::class);
         $this->connection->method('getDatabasePlatform')->willReturn($this->createMock(AbstractPlatform::class));
 
-        $context = new Context(
-            new SystemSource(),
-            [],
-            Defaults::CURRENCY,
-            [Defaults::LANGUAGE_SYSTEM]
-        );
-
-        $this->salesChannelContext = $this->createMock(SalesChannelContext::class);
-        $this->salesChannelContext->expects(static::once())->method('getContext')->willReturn($context);
-        $this->salesChannelContext->expects(static::once())->method('getSalesChannelId')->willReturn(TestDefaults::SALES_CHANNEL);
+        $this->salesChannelContext = Generator::generateSalesChannelContext();
 
         $this->seoUrlPlaceholderHandler = new SeoUrlPlaceholderHandler(
             $this->createMock(RequestStack::class),

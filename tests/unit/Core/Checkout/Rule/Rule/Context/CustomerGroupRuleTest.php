@@ -7,7 +7,7 @@ use Cicada\Core\Checkout\Cart\Rule\CartRuleScope;
 use Cicada\Core\Checkout\Customer\Aggregate\CustomerGroup\CustomerGroupEntity;
 use Cicada\Core\Checkout\Customer\Rule\CustomerGroupRule;
 use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\System\SalesChannel\SalesChannelContext;
+use Cicada\Core\Test\Generator;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
@@ -27,11 +27,7 @@ class CustomerGroupRuleTest extends TestCase
         $group = new CustomerGroupEntity();
         $group->setId('SWAG-CUSTOMER-GROUP-ID-1');
 
-        $context = $this->createMock(SalesChannelContext::class);
-
-        $context
-            ->method('getCurrentCustomerGroup')
-            ->willReturn($group);
+        $context = Generator::generateSalesChannelContext(currentCustomerGroup: $group);
 
         static::assertTrue(
             $rule->match(new CartRuleScope($cart, $context))
@@ -47,11 +43,7 @@ class CustomerGroupRuleTest extends TestCase
         $group = new CustomerGroupEntity();
         $group->setId('SWAG-CUSTOMER-GROUP-ID-3');
 
-        $context = $this->createMock(SalesChannelContext::class);
-
-        $context
-            ->method('getCurrentCustomerGroup')
-            ->willReturn($group);
+        $context = Generator::generateSalesChannelContext(currentCustomerGroup: $group);
 
         static::assertTrue(
             $rule->match(new CartRuleScope($cart, $context))
@@ -67,11 +59,7 @@ class CustomerGroupRuleTest extends TestCase
         $group = new CustomerGroupEntity();
         $group->setId('SWAG-CUSTOMER-GROUP-ID-5');
 
-        $context = $this->createMock(SalesChannelContext::class);
-
-        $context
-            ->method('getCurrentCustomerGroup')
-            ->willReturn($group);
+        $context = Generator::generateSalesChannelContext(currentCustomerGroup: $group);
 
         static::assertFalse(
             $rule->match(new CartRuleScope($cart, $context))
