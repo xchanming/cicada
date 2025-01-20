@@ -66,7 +66,7 @@
     "constants": {
       "weight": "重量",
       "price": "价格",
-      "lineItemCount": "产品数量"
+      "lineItemCount": "商品数量"
     },
     "priceMatrix": {
       "titleCard": "价格矩阵",
@@ -80,7 +80,7 @@
       "useRules": "构建规则",
       "emptyText": "根据预定义的购物车属性和/或自定义规则创建价格矩阵。请选择：",
       "chooseCustomRule": "选择自定义规则",
-      "calculationLineItemCount": "产品数量",
+      "calculationLineItemCount": "商品数量",
       "calculationPrice": "购物车价格",
       "calculationWeight": "重量",
       "calculationVolume": "体积",
@@ -100,7 +100,7 @@
       "textDeleteConfirm": "您确定要删除价格矩阵 \"{name}\" 吗？|您确定要删除这些价格矩阵吗？",
       "deletionNotPossibleMessage": "至少需要一个价格层级。尝试删除整个定价规则。",
       "labelGrossNet": "（总计/净值）",
-      "ruleAlreadyUsedOrRestricted": "此规则已被使用，或包含无法应用于扩展价格的条件。",
+      "ruleAlreadyUsedOrRestricted": "此规则已被使用，或包含无法应用于插件价格的条件。",
       "ruleAlreadyUsedInMatrix": "此规则已在此价格矩阵中使用。",
       "textOr": "或",
       "chooseOrCreateRule": "选择或创建规则",

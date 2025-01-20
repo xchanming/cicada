@@ -100,7 +100,7 @@
       "messageCsvTemplateUploadError": "无法处理 CSV 文件。",
       "messageCsvTemplateUploadEmptyError": "CSV 文件不包含任何列。",
       "messageCsvTemplateUploadWarning": "导入的映射可能不正确。 CSV 文件仅包含一列。 请检查 CSV 分隔符设置。",
-      "productLabel": "产品",
+      "productLabel": "商品",
       "customerLabel": "客户",
       "categoriesLabel": "分类",
       "orderLabel": "订单",
@@ -197,8 +197,8 @@
       "directExportVariantsLabel": "导出变体设置",
       "directExportPropertiesLabel": "导出属性",
       "close": "关闭",
-      "variantsWarning": "<strong>警告：</strong>确保在导出的 CSV 文件中链接到产品的属性和变体在新系统中可用。如果不是这种情况，您可以选择导出属性和变体作为单个 CSV 文件并对应配置。如果两种情况都不适用，则必须在导出后手动在新系统中创建产品变体。",
-      "exportVariants": "导出产品变体"
+      "variantsWarning": "<strong>警告：</strong>确保在导出的 CSV 文件中链接到商品的属性和变体在新系统中可用。如果不是这种情况，您可以选择导出属性和变体作为单个 CSV 文件并对应配置。如果两种情况都不适用，则必须在导出后手动在新系统中创建商品变体。",
+      "exportVariants": "导出商品变体"
     },
     "importer": {
       "messageImportStarted": "导入已开始。",
@@ -209,15 +209,15 @@
       "startImportLabel": "开始导入",
       "selectProfileLabel": "选择配置",
       "profileLabel": "配置",
-      "warningBlock": "<strong>警告：</strong>确保上传的 CSV 文件中链接到产品的属性和变体在您的商城中可用。如果不是这种情况，您可以将属性和变体作为单独的 CSV 文件导入并对应配置。如果两者都不适用，则必须在导入后手动在产品模块中维护产品变体。",
+      "warningBlock": "<strong>警告：</strong>确保上传的 CSV 文件中链接到商品的属性和变体在您的商城中可用。如果不是这种情况，您可以将属性和变体作为单独的 CSV 文件导入并对应配置。如果两者都不适用，则必须在导入后手动在商品模块中维护商品变体。",
       "importActivityLabel": "导入活动",
       "importLabel": "导入",
       "directImportVariantsLabel": "导入变体设置",
       "directImportPropertiesLabel": "导入属性",
       "close": "关闭",
       "labelUploadCaption": "选择 CSV 文件上传",
-      "variantsWarning": "<strong>注意：</strong>如果您正在导入带有变体的产品，请确保使用可以导入变体设置的配置。<br>如果不这样做，仅导入主产品，变体必须由管理员在导入后手动创建。",
-      "importVariants": "导入产品变体"
+      "variantsWarning": "<strong>注意：</strong>如果您正在导入带有变体的商品，请确保使用可以导入变体设置的配置。<br>如果不这样做，仅导入主商品，变体必须由管理员在导入后手动创建。",
+      "importVariants": "导入商品变体"
     },
     "page": {
       "profileTab": "配置",

@@ -8,7 +8,7 @@
     },
     "list": {
       "textReviewOverview": "评论",
-      "columnProduct": "产品",
+      "columnProduct": "商品",
       "columnPoints": "星级",
       "columnUser": "客户",
       "columnStatus": "已批准",
@@ -29,7 +29,7 @@
       "labelUser": "用户",
       "labelSalesChannel": "销售渠道",
       "labelCreatedAt": "创建于",
-      "labelProduct": "产品",
+      "labelProduct": "商品",
       "labelEmail": "电子邮件地址",
       "labelLanguage": "语言",
       "labelPositive": "点赞",

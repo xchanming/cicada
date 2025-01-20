@@ -140,10 +140,10 @@
       "columnTax": "增值税",
       "textCreditTax": "自动",
       "taxDetail": "{taxRate}%：{tax}",
-      "contextMenuShowProduct": "查看产品",
+      "contextMenuShowProduct": "查看商品",
       "messageEmptyItem": "尚未添加任何项目",
       "buttonAddItems": "添加项目",
-      "buttonAddProduct": "添加产品",
+      "buttonAddProduct": "添加商品",
       "buttonAddBlankProduct": "添加自定义项目",
       "buttonAddCredit": "添加信用",
       "summaryLabelAmount": "小计",
@@ -165,7 +165,7 @@
           "percentage": "购物车折扣 {value}%",
           "absolute": "购物车折扣 {value}",
           "absoluteUpto": "最高折扣 {value}。 （此购物车折扣 {totalPrice}）",
-          "fixed_unit": "每个特定产品固定折扣 {value}"
+          "fixed_unit": "每个特定商品固定折扣 {value}"
         },
         "delivery": {
           "percentage": "运费折扣 {value}%",
@@ -174,15 +174,15 @@
           "fixed": "运费固定折扣 {value}"
         },
         "set": {
-          "percentage": "产品套装折扣 {value}%",
-          "absolute": "产品套装折扣 {value}",
-          "fixed_unit": "每个特定产品固定折扣 {value}",
-          "fixed": "每个产品套装固定折扣 {value}"
+          "percentage": "商品套装折扣 {value}%",
+          "absolute": "商品套装折扣 {value}",
+          "fixed_unit": "每个特定商品固定折扣 {value}",
+          "fixed": "每个商品套装固定折扣 {value}"
         },
         "setgroup": {
           "percentage": "套装组 {groupId} 折扣 {value}%",
           "absolute": "套装组 {groupId} 折扣 {value}",
-          "fixed_unit": "每个特定产品固定折扣 {groupId} 折扣 {value}",
+          "fixed_unit": "每个特定商品固定折扣 {groupId} 折扣 {value}",
           "fixed": "每个套装组 {groupId} 固定折扣 {value}"
         }
       }
@@ -191,7 +191,7 @@
       "cardTitleDetails": "详情",
       "cardTitleLineItems": "订单项",
       "cardTitleGeneralInfo": "信息",
-      "columnProductName": "产品名称",
+      "columnProductName": "商品名称",
       "columnQuantity": "数量",
       "columnPriceNet": "价格（净价）",
       "columnPriceGross": "价格（毛价）",
@@ -201,8 +201,8 @@
       "columnTotalPrice": "总计",
       "columnTotalPriceGross": "小计",
       "columnTax": "增值税",
-      "columnProductNumber": "产品编号",
-      "contextMenuShowProduct": "显示产品",
+      "columnProductNumber": "商品编号",
+      "contextMenuShowProduct": "显示商品",
       "contextMenuDelete": "从订单中移除",
       "summaryLabelAmount": "小计",
       "summaryLabelAmountGrandTotal": "总计",
@@ -222,7 +222,7 @@
       "buttonCancel": "取消订单",
       "buttonArchive": "归档订单",
       "buttonDelete": "删除订单",
-      "buttonAddProduct": "添加产品",
+      "buttonAddProduct": "添加商品",
       "buttonAddBlankProduct": "添加自定义项目",
       "buttonAddCredit": "添加信用",
       "buttonEditAddress": "编辑",
@@ -256,10 +256,10 @@
       "taxDetail": "{taxRate}%：{tax}",
       "textPromotionRemoved": "折扣 {promotion} 已被移除",
       "textUnsavedChanges": "有未保存的更改。请在编辑此字段前保存。",
-      "textMissingProductLineItems": "以下项目与已删除的产品相关联：",
-      "textMissingProductLineItemsDescription": "这些产品的价格无法重新计算。因此，保存此订单时，这些项目将转换为自定义项目。",
-      "textConvertedProductLineItems": "以下项目与已删除的产品相关联：",
-      "textConvertedProductLineItemsDescription": "这些产品的价格无法重新计算。编辑订单时请格外注意。",
+      "textMissingProductLineItems": "以下项目与已删除的商品相关联：",
+      "textMissingProductLineItemsDescription": "这些商品的价格无法重新计算。因此，保存此订单时，这些项目将转换为自定义项目。",
+      "textConvertedProductLineItems": "以下项目与已删除的商品相关联：",
+      "textConvertedProductLineItemsDescription": "这些商品的价格无法重新计算。编辑订单时请格外注意。",
       "textDeleteLineItemConfirm": "确定要删除 ({label})?"
     },
     "nestedLineItemsModal": {
@@ -382,7 +382,7 @@
     "initialModal": {
       "titleNewOrder": "新订单",
       "tabCustomer": "客户",
-      "tabProducts": "产品",
+      "tabProducts": "商品",
       "tabCustomItem": "自定义项目",
       "tabOptions": "选项",
       "tabCredit": "信用",
@@ -398,13 +398,13 @@
         "columnEmailAddress": "电子邮件地址",
         "titleSelectSalesChannel": "选择销售渠道",
         "descriptionSelectSalesChannel": "所选客户有多个销售渠道的权限，请选择您希望用于此订单的销售渠道。",
-        "alertSelectSalesChannel": "由于所选销售渠道决定了可用的产品和选项，改变它将会移除产品并重置选项。",
+        "alertSelectSalesChannel": "由于所选销售渠道决定了可用的商品和选项，改变它将会移除商品并重置选项。",
         "labelSalesChannel": "使用销售渠道",
         "placeholderSalesChannel": "选择一个销售渠道...",
         "buttonSelectSalesChannel": "选择",
         "labelAllChannel": "所有渠道",
         "titleCustomerChanges": "更改客户",
-        "descriptionCustomerChanges": "您确定要更改此订单的客户吗？此客户有不同的销售渠道，这将移除产品并重置选项。",
+        "descriptionCustomerChanges": "您确定要更改此订单的客户吗？此客户有不同的销售渠道，这将移除商品并重置选项。",
         "buttonChangeCustomer": "更改客户"
       },
       "options": {
@@ -490,8 +490,8 @@
         "placeholder": "选择标签..."
       },
       "productFilter": {
-        "label": "产品",
-        "placeholder": "选择产品..."
+        "label": "商品",
+        "placeholder": "选择商品..."
       },
       "affiliateCodeFilter": {
         "label": "推广代码",

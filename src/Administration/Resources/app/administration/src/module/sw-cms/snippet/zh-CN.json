@@ -7,7 +7,7 @@
       "greeting": "布局",
       "createNewLayout": "创建新布局",
       "deleteDisabledToolTip": "要删除的布局仍然分配给至少一个类别。",
-      "deleteDisabledProductToolTip": "要删除的布局仍然分配给至少一个产品。",
+      "deleteDisabledProductToolTip": "要删除的布局仍然分配给至少一个商品。",
       "disabledAddingBlocksToolTip": "仅在系统默认语言中添加块。",
       "buttonDelete": "删除"
     },
@@ -100,7 +100,7 @@
           "landingpage": "落地页",
           "page": "商城页",
           "productList": "列表页",
-          "productDetail": "产品页",
+          "productDetail": "商品页",
           "customEntityDetail": "内容布局",
           "customEntityList": "内容列表页"
         },
@@ -158,7 +158,7 @@
         "warningCollectionText": "此布局中缺少以下推荐元素：",
         "messageMissingFields": "一些必填字段未填写。",
         "messageMissingBlockFields": "一些块未配置充分。",
-        "messageMissingProductListing": "此列表页面不包含产品列表块。",
+        "messageMissingProductListing": "此列表页面不包含商品列表块。",
         "messageMissingSections": "此布局不包含部分。",
         "messageRedundantElements": "存在一些可能只存在一次的块。({names})",
         "messageMissingBlocks": "您不能保存一个空页面。请先添加至少一个块。",
@@ -190,7 +190,7 @@
       "tooltip": {
         "blockNameField": "为每个块单独命名以跟踪您的工作。",
         "sectionNameField": "为每个部分单独命名以跟踪您的工作。",
-        "cannotSelectProductPageLayout": "您不能更改产品页面的布局类型。"
+        "cannotSelectProductPageLayout": "您不能更改商品页面的布局类型。"
       }
     },
     "elements": {
@@ -230,7 +230,7 @@
             "options": "选项"
           },
           "infoText": {
-            "listingElement": "此元素的产品数据由与此布局相关的类别自动加载。内容仅显示示例预览。"
+            "listingElement": "此元素的商品数据由与此布局相关的类别自动加载。内容仅显示示例预览。"
           }
         },
         "switch": {
@@ -289,7 +289,7 @@
         }
       },
       "productBox": {
-        "label": "产品盒",
+        "label": "商品盒",
         "component": {
           "label": {
             "actionBuy": "加入购物车",
@@ -300,32 +300,32 @@
         },
         "config": {
           "label": {
-            "selection": "产品",
+            "selection": "商品",
             "layoutType": "布局类型",
             "layoutTypeStandard": "标准",
             "layoutTypeImage": "大图片",
             "layoutTypeMinimal": "最少内容"
           },
           "placeholder": {
-            "selection": "选择一个产品..."
+            "selection": "选择一个商品..."
           }
         }
       },
       "productListing": {
-        "label": "产品列表",
+        "label": "商品列表",
         "config": {
           "tab": {
             "sorting": "排序",
             "filter": "筛选"
           },
           "sorting": {
-            "labelShowSorting": "显示产品排序",
+            "labelShowSorting": "显示商品排序",
             "labelUseCustomSortings": "使用自定义排序",
             "labelDefaultSorting": "默认排序",
-            "labelProductSortings": "产品排序",
+            "labelProductSortings": "商品排序",
             "placeholderDefaultProductSorting": "选择一个默认排序...",
-            "placeHolderProductSortings": "添加或删除产品排序",
-            "helpTextUseCustomSortings": "您可以为产品列表定义自定义产品排序。要为此列表创建单独的排序，请启用此开关。",
+            "placeHolderProductSortings": "添加或删除商品排序",
+            "helpTextUseCustomSortings": "您可以为商品列表定义自定义商品排序。要为此列表创建单独的排序，请启用此开关。",
             "helpTextDefaultSorting": "如果未提供其他排序，则为列表的默认排序。",
             "gridHeaderName": "名称",
             "gridHeaderFields": "条件",
@@ -334,8 +334,8 @@
               "heading": "删除 \"{productSortingName}\"。",
               "body": "确定要删除 \"{productSortingName}\" 吗？"
             },
-            "defaultSortingInUse": "此产品排序已选定为默认排序。",
-            "defaultSortingCantBeDisabled": "此排序是默认排序。它必须是活跃的，以免对您的产品列表造成问题。"
+            "defaultSortingInUse": "此商品排序已选定为默认排序。",
+            "defaultSortingCantBeDisabled": "此排序是默认排序。它必须是活跃的，以免对您的商品列表造成问题。"
           },
           "filter": {
             "infoText": "确保在布局中添加了筛选块，以查看此设置的效果。",
@@ -343,7 +343,7 @@
             "labelFilterByRating": "按评级筛选",
             "labelFilterByPrice": "按价格筛选",
             "labelFilterForFreeShipping": "按免费送货筛选",
-            "labelUseFilterByProperties": "配置可筛选的产品属性",
+            "labelUseFilterByProperties": "配置可筛选的商品属性",
             "helpTextUseFilterByProperties": "如果禁用，将显示此布局中所有现有属性的筛选条件。",
             "descriptionTextUseFilterByProperties": "设置为不可筛选的属性将不会在此处显示。您可以在<a href=\"#/sw/property/index\" target=\"_blank\">属性</a>模块中更改此设置。",
             "gridHeaderStatus": "状态",
@@ -354,11 +354,11 @@
         }
       },
       "productSlider": {
-        "label": "产品滑块",
+        "label": "商品滑块",
         "config": {
           "label": {
             "title": "滑块标题",
-            "selection": "产品",
+            "selection": "商品",
             "navigation": "导航",
             "border": "边框",
             "minWidth": "最小宽度",
@@ -366,25 +366,25 @@
             "navigationPositionNone": "无",
             "navigationPositionInside": "内部",
             "navigationPositionOutside": "外部",
-            "productAssignmentType": "产品分配",
+            "productAssignmentType": "商品分配",
             "productStreamSorting": "排序",
-            "productStreamLimit": "最大产品数",
-            "productStreamChoice": "动态产品组"
+            "productStreamLimit": "最大商品数",
+            "productStreamChoice": "动态商品组"
           },
           "placeholder": {
             "title": "滑块标题",
-            "selection": "选择产品",
+            "selection": "选择商品",
             "minWidth": "最小宽度",
-            "productStreamChoice": "选择一个动态产品组",
+            "productStreamChoice": "选择一个动态商品组",
             "productStreamSorting": "选择一个排序..."
           },
           "helpText": {
             "minWidth": "输入带有期望单位的最小宽度。例如：200px",
-            "displayMode": "<strong>原始：</strong> 图片按产品框的高度或宽度进行缩放，以确保它们始终适合指定区域。图片不会被放大。<br><br><strong>固定高度：</strong> 图片按产品框的高度或宽度进行缩放，以确保它们始终适合指定区域。图片可能会被放大。<br><br><strong>裁剪：</strong> 图片按产品框的高度或宽度进行缩放，任何超出的部分都会被裁剪。"
+            "displayMode": "<strong>原始：</strong> 图片按商品框的高度或宽度进行缩放，以确保它们始终适合指定区域。图片不会被放大。<br><br><strong>固定高度：</strong> 图片按商品框的高度或宽度进行缩放，以确保它们始终适合指定区域。图片可能会被放大。<br><br><strong>裁剪：</strong> 图片按商品框的高度或宽度进行缩放，任何超出的部分都会被裁剪。"
           },
           "productAssignmentTypeOptions": {
             "manual": "手动分配",
-            "productStream": "动态产品组"
+            "productStream": "动态商品组"
           },
           "productStreamSortingOptions": {
             "nameAsc": "名称升序",
@@ -397,8 +397,8 @@
             "releaseDateDesc": "发布日期降序",
             "random": "随机"
           },
-          "textProductStreamPreviewLink": "预览动态产品组",
-          "textProductStreamPerformanceHint": "请记住：动态产品组可能会对性能产生显著影响，这取决于产品组筛选器的复杂性和一页上显示的滑块数量。"
+          "textProductStreamPreviewLink": "预览动态商品组",
+          "textProductStreamPerformanceHint": "请记住：动态商品组可能会对性能产生显著影响，这取决于商品组筛选器的复杂性和一页上显示的滑块数量。"
         }
       },
       "sidebarCategoryNavigation": {
@@ -418,7 +418,7 @@
         }
       },
       "sidebarFilter": {
-        "label": "产品筛选",
+        "label": "商品筛选",
         "infoText": {
           "filterElement": "此元素的筛选数据是自动加载的。显示的筛选器可以通过列表元素进行配置。"
         }
@@ -521,14 +521,14 @@
       "buyBox": {
         "label": "购买框",
         "infoText": {
-          "tooltipSettingDisabled": "此元素的产品数据由与此布局相关的产品自动加载。内容仅显示示例预览。"
+          "tooltipSettingDisabled": "此元素的商品数据由与此布局相关的商品自动加载。内容仅显示示例预览。"
         },
         "config": {
           "label": {
-            "selection": "产品"
+            "selection": "商品"
           },
           "placeholder": {
-            "selection": "选择一个产品..."
+            "selection": "选择一个商品..."
           }
         },
         "component": {
@@ -538,23 +538,23 @@
             "deliveryShippingFree": "免费送货",
             "deliveryTime": "可用，交货时间 {name}",
             "variants": "变体",
-            "productNumber": "产品编号："
+            "productNumber": "商品编号："
           }
         }
       },
       "productDescriptionReviews": {
-        "label": "产品描述与评论",
+        "label": "商品描述与评论",
         "infoText": {
-          "descriptionAndReviewsElement": "此元素的产品数据由与此布局相关的产品自动加载。内容仅显示示例预览。"
+          "descriptionAndReviewsElement": "此元素的商品数据由与此布局相关的商品自动加载。内容仅显示示例预览。"
         },
         "component": {
           "label": {
-            "descriptionAndReviews": "产品描述与评论"
+            "descriptionAndReviews": "商品描述与评论"
           }
         },
         "preview": {
           "label": {
-            "descriptionAndReviews": "产品描述与评论",
+            "descriptionAndReviews": "商品描述与评论",
             "description": "描述",
             "reviews": "评论"
           }
@@ -569,20 +569,20 @@
         },
         "config": {
           "label": {
-            "selection": "产品",
+            "selection": "商品",
             "minWidth": "最小宽度"
           },
           "placeholder": {
-            "selection": "选择产品...",
+            "selection": "选择商品...",
             "minWidth": "输入最小宽度..."
           },
           "infoText": {
-            "productDetailElement": "此元素的产品数据由与此布局相关的产品自动加载。内容仅显示示例预览。"
+            "productDetailElement": "此元素的商品数据由与此布局相关的商品自动加载。内容仅显示示例预览。"
           }
         }
       },
       "productName": {
-        "label": "产品名称"
+        "label": "商品名称"
       },
       "html": {
         "label": "HTML",
@@ -594,19 +594,19 @@
     "blocks": {
       "commerce": {
         "productHeading": {
-          "label": "产品名称和制造商标志"
+          "label": "商品名称和制造商标志"
         },
         "productListing": {
-          "label": "产品列表"
+          "label": "商品列表"
         },
         "productSlider": {
-          "label": "产品滑块"
+          "label": "商品滑块"
         },
         "productThreeColumn": {
-          "label": "三列，产品盒"
+          "label": "三列，商品盒"
         },
         "productDescriptionReviews": {
-          "label": "产品描述与评论",
+          "label": "商品描述与评论",
           "preview": {
             "label": {
               "description": "描述",
@@ -666,7 +666,7 @@
           }
         },
         "sidebarFilter": {
-          "label": "产品筛选"
+          "label": "商品筛选"
         }
       },
       "text": {
@@ -740,12 +740,12 @@
       "cmsLayoutModal": {
         "actionConfirm": "保存",
         "modalTitle": "选择布局",
-        "headline": "落地页 / 产品列表"
+        "headline": "落地页 / 商品列表"
       },
       "cmsLayoutAssignmentModal": {
         "infoText": "一旦将布局分配给活动类别，它将在您的商城中显示。",
         "infoTextShopPages": "您可以将此布局用于类别和商城页面，例如TOS、印记、错误页面等。",
-        "infoTextProductDetailPages": "将布局分配给活动产品后，该布局才能在您的商城中看到。",
+        "infoTextProductDetailPages": "将布局分配给活动商品后，该布局才能在您的商城中看到。",
         "labelCategories": "类别",
         "placeholderCategories": "选择类别...",
         "placeholderLandingPages": "选择落地页...",
@@ -758,8 +758,8 @@
         "confirmChangesTextCategoriesAssignedLayouts": "一些选定的类别已经分配了布局。如果继续，这些先前的分配将被当前布局替换。",
         "confirmChangesTextLandingPages": "您已从落地页中删除了布局分配。如果确认这些更改，这些落地页将不再分配布局。",
         "confirmChangesTextLandingPagesAssignedLayouts": "一些选定的落地页已经分配了布局。如果继续，这些先前的分配将被当前布局替换。",
-        "confirmChangesTextProducts": "您已从产品中删除了布局分配。如果确认这些更改，这些产品将不再分配布局。",
-        "confirmChangesTextProductsAssignedLayouts": "一些选定的产品已经分配了布局。如果继续，先前的分配将被当前布局替换。",
+        "confirmChangesTextProducts": "您已从商品中删除了布局分配。如果确认这些更改，这些商品将不再分配布局。",
+        "confirmChangesTextProductsAssignedLayouts": "一些选定的商品已经分配了布局。如果继续，先前的分配将被当前布局替换。",
         "confirmChangesTextShopPages": "您已从商城页面中删除了布局分配。如果确认这些更改，这些商城页面将不再分配布局。",
         "confirmChangesText": "要应用您的更改吗？",
         "confirmChangesTitle": "确认分配",
@@ -779,19 +779,19 @@
           "newsletterPage": "新闻通讯页面"
         },
         "products": {
-          "productAssignmentHeadline": "产品分配",
-          "productAssignmentPlaceholder": "搜索并分配产品...",
-          "productAssignmentLabel": "产品",
-          "productAssignmentEmptyStateDescription": "未分配产品",
-          "productStreamAssignmentEmptyStateDescription": "未分配动态产品组",
+          "productAssignmentHeadline": "商品分配",
+          "productAssignmentPlaceholder": "搜索并分配商品...",
+          "productAssignmentLabel": "商品",
+          "productAssignmentEmptyStateDescription": "未分配商品",
+          "productStreamAssignmentEmptyStateDescription": "未分配动态商品组",
           "columnNameLabel": "名称",
           "columnManufacturerLabel": "制造商"
         }
       },
       "cmsMissingElementModal": {
         "headline": "缺少元素",
-        "title": "此产品详细信息页面中缺少元素 <span>{element}</span>。| 此产品详细信息页面中缺少元素 <span>{element}</span>。",
-        "subtitle": "访问此页面的客户将错过重要的产品信息。",
+        "title": "此商品详细信息页面中缺少元素 <span>{element}</span>。| 此商品详细信息页面中缺少元素 <span>{element}</span>。",
+        "subtitle": "访问此页面的客户将错过重要的商品信息。",
         "paragraph": "要继续保存布局吗？",
         "buttonSave": "保存布局"
       },
@@ -802,11 +802,11 @@
         "delete": "删除",
         "duplicate": "副本",
         "addPreviewImage": "添加预览图片",
-        "setAsDefaultProductList": "设为产品列表默认",
-        "setAsDefaultProductDetail": "设为产品页面默认",
+        "setAsDefaultProductList": "设为商品列表默认",
+        "setAsDefaultProductDetail": "设为商品页面默认",
         "defaultLayout": "默认布局",
         "defaultLayoutProductList": "默认布局 - 列表页",
-        "defaultLayoutProductDetail": "默认布局 - 产品页面",
+        "defaultLayoutProductDetail": "默认布局 - 商品页面",
         "removePreviewImage": "移除预览",
         "notificationDeleteErrorMessage": "要删除的布局仍然分配给至少一个类别。",
         "modal": {

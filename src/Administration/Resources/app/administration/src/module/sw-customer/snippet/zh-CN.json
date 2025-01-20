@@ -38,7 +38,7 @@
       "placeholderEmail": "邮箱",
       "placeholderNewPassword": "新密码...",
       "placeholderNewPasswordConfirm": "重复新密码...",
-      "labelSalutation": "称呼",
+      "labelSalutation": "性别",
       "labelTitle": "昵称",
       "labelName": "姓名",
       "labelCompany": "公司",
@@ -88,7 +88,7 @@
       "titleSidebarItemFilterRequestedGroup": "仅显示客户组请求"
     },
     "baseForm": {
-      "labelSalutation": "称呼",
+      "labelSalutation": "性别",
       "labelTitle": "昵称",
       "labelName": "姓名",
       "labelEmail": "邮箱地址",
@@ -102,7 +102,7 @@
       "labelPassword": "密码",
       "placeholderPassword": "输入密码...",
       "helpTextPassword": "保存客户后，密码只能由客户直接更改。",
-      "placeholderSalutation": "选择称呼...",
+      "placeholderSalutation": "选择性别...",
       "placeholderTitle": "输入昵称...",
       "placeholderName": "输入姓名...",
       "placeholderEmail": "输入邮箱地址...",
@@ -197,7 +197,7 @@
     "addressForm": {
       "labelCompany": "公司",
       "labelDepartment": "部门",
-      "labelSalutation": "称呼",
+      "labelSalutation": "性别",
       "labelTitle": "标题",
       "labelName": "姓名",
       "labelZipcode": "邮政编码",
@@ -212,7 +212,7 @@
       "labelSameBillingAddress": "同账单地址",
       "placeholderCompany": "输入公司...",
       "placeholderDepartment": "输入部门...",
-      "placeholderSalutation": "选择称呼...",
+      "placeholderSalutation": "选择性别...",
       "placeholderTitle": "输入标题...",
       "placeholderName": "输入姓名...",
       "placeholderZipcode": "输入邮政编码...",
@@ -242,8 +242,8 @@
         "placeholder": "输入客户编号..."
       },
       "salutation": {
-        "label": "称呼",
-        "placeholder": "选择称呼..."
+        "label": "性别",
+        "placeholder": "选择性别..."
       },
       "status": {
         "label": "状态",

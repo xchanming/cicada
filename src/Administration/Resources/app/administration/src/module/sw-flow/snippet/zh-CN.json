@@ -70,7 +70,7 @@
         "noActions": "尚未添加任何操作",
         "noRule": "尚未定义规则"
       },
-      "warningText": "此流程使用的操作由于版本更改、不活动、未安装或更新的扩展而不可用。 当流程触发时，不可用的操作将不会执行。"
+      "warningText": "此流程使用的操作由于版本更改、不活动、未安装或更新的插件而不可用。 当流程触发时，不可用的操作将不会执行。"
     },
     "page": {
       "tabGeneral": "常规",
@@ -89,10 +89,10 @@
       "messageCreateSuccess": "流程已创建。",
       "messageUpdateTemplateSuccess": "流程模板已更新。",
       "messageCreateError": "流程无法创建。",
-      "messageUnknownTriggerWarning": "此流程已停用，因为它使用的触发器不再可用。 这很可能是因为版本已更改，或者提供此触发器的扩展要么不活动要么已卸载。",
+      "messageUnknownTriggerWarning": "此流程已停用，因为它使用的触发器不再可用。 这很可能是因为版本已更改，或者提供此触发器的插件要么不活动要么已卸载。",
       "textIntroduce": "尝试以下解决方案之一以使触发器再次可用：",
-      "textGuide1": "重新安装使触发器可用的扩展",
-      "textGuide2": "重新激活使触发器可用的扩展",
+      "textGuide1": "重新安装使触发器可用的插件",
+      "textGuide2": "重新激活使触发器可用的插件",
       "textGuide3": "选择合适的版本"
     },
     "actions": {
@@ -125,7 +125,7 @@
       "placeholderSelectAction": "选择操作...",
       "labelAffiliateCode": "附属代码: {affiliateCode}",
       "labelCampaignCode": "广告系列代码: {campaignCode}",
-      "tooltipActionDisabled": "此操作由已停用或删除的扩展提供。 激活或重新安装扩展以使用此操作。",
+      "tooltipActionDisabled": "此操作由已停用或删除的插件提供。 激活或重新安装插件以使用此操作。",
       "group": {
         "tag": "标签",
         "customer": "客户",
@@ -133,7 +133,7 @@
         "order": "订单"
       },
       "unknownLabel": "未知操作",
-      "warningText": "此操作由不活动或不再安装的扩展提供。",
+      "warningText": "此操作由不活动或不再安装的插件提供。",
       "downloadAccessLabel": {
         "granted": "已授予",
         "revoked": "已撤销"
@@ -297,7 +297,7 @@
       "order": "订单",
       "paymentMethod": "支付方式",
       "contactForm": "联系表单",
-      "reviewForm": "产品评论",
+      "reviewForm": "商品评论",
       "group": "组",
       "recovery": "恢复",
       "registration": "注册",
@@ -305,7 +305,7 @@
       "after": "之后",
       "create": "创建",
       "newsletter": "时事通讯",
-      "productExport": "产品导出",
+      "productExport": "商品导出",
       "stateEnter": "状态进入",
       "state": "状态",
       "orderDelivery": "订单配送",

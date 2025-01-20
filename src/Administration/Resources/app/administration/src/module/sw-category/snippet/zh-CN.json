@@ -26,7 +26,7 @@
     "view": {
       "general": "常规",
       "cms": "布局",
-      "products": "产品",
+      "products": "商品",
       "customEntity": "自定义实体",
       "seo": "SEO",
       "columnInfoHeader": "页脚元素",
@@ -49,9 +49,9 @@
           "linkUnavailable": "链接（如果分类被定义为入口点则不可选）",
           "help": "结构分类本身不可调用，仅用于结构目的。",
           "helpText": {
-            "page": "页面 / 列表拥有相关联的产品，并且可以直接通过分配的布局访问。",
+            "page": "页面 / 列表拥有相关联的商品，并且可以直接通过分配的布局访问。",
             "folder": "结构元素 / 入口点仅在结构中显示，并且除非被分配为销售渠道的入口点，否则不可直接访问。",
-            "link": "链接允许引用产品、其他分类、落地页或外部网站。"
+            "link": "链接允许引用商品、其他分类、落地页或外部网站。"
           }
         }
       },
@@ -136,7 +136,7 @@
         "internalTypeLabel": "实体",
         "internalTypePlaceholder": "选择实体...",
         "categoryPlaceholder": "选择分类...",
-        "productPlaceholder": "选择产品...",
+        "productPlaceholder": "选择商品...",
         "landingPagePlaceholder": "选择落地页...",
         "example": "示例：",
         "internalExampleText": "/my-category",
@@ -150,23 +150,23 @@
         }
       },
       "products": {
-        "productAssignmentHeadline": "产品分配",
-        "productAssignmentPlaceholder": "搜索并分配产品...",
-        "productAssignmentLabel": "产品",
-        "productAssignmentEmptyStateDescription": "未分配产品",
-        "productStreamAssignmentEmptyStateDescription": "未分配动态产品组",
+        "productAssignmentHeadline": "商品分配",
+        "productAssignmentPlaceholder": "搜索并分配商品...",
+        "productAssignmentLabel": "商品",
+        "productAssignmentEmptyStateDescription": "未分配商品",
+        "productStreamAssignmentEmptyStateDescription": "未分配动态商品组",
         "columnNameLabel": "名称",
         "columnManufacturerLabel": "制造商",
         "productAssignmentTypeLabel": "类型",
         "productAssignmentTypeManualLabel": "手动选择",
-        "productAssignmentTypeStreamLabel": "动态产品组",
-        "productAssignmentTypeStreamPlaceholder": "搜索并分配动态产品组...",
-        "alertManualAssignedProductsOnAssignmentTypeStream": "此分类中仍有手动分配的产品。这些产品在此分类中将不可见，但可能在父分类中可见。",
-        "dynamicProductGroupDetailLinkText": "动态产品组详情",
-        "dynamicProductGroupInvalidMessage": "选定的动态产品组无效。请验证您的动态产品组详情。",
+        "productAssignmentTypeStreamLabel": "动态商品组",
+        "productAssignmentTypeStreamPlaceholder": "搜索并分配动态商品组...",
+        "alertManualAssignedProductsOnAssignmentTypeStream": "此分类中仍有手动分配的商品。这些商品在此分类中将不可见，但可能在父分类中可见。",
+        "dynamicProductGroupDetailLinkText": "动态商品组详情",
+        "dynamicProductGroupInvalidMessage": "选定的动态商品组无效。请验证您的动态商品组详情。",
         "dynamicProductGroupHelpText": {
-          "label": "产品属于动态产品组，如果它们满足该产品组的条件。条件可以在 {link} 模块内定义。",
-          "linkText": "动态产品组",
+          "label": "商品属于动态商品组，如果它们满足该商品组的条件。条件可以在 {link} 模块内定义。",
+          "linkText": "动态商品组",
           "videoUrl": "",
           "videoLink": ""
         }

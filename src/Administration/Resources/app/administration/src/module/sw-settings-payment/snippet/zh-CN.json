@@ -29,7 +29,7 @@
       "columnDescription": "描述",
       "columnActive": "激活",
       "columnPosition": "位置",
-      "columnExtension": "扩展",
+      "columnExtension": "插件",
       "buttonAddPaymentMethod": "添加支付方式",
       "contextMenuEdit": "编辑",
       "contextMenuDelete": "删除",
@@ -74,7 +74,7 @@
     }
   },
   "sw-plugin-box": {
-    "buttonPluginSettings": "扩展设置"
+    "buttonPluginSettings": "插件设置"
   },
   "sw-privileges": {
     "permissions": {

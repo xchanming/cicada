@@ -12,10 +12,10 @@
     },
     "my-extensions": {
       "listing": {
-        "initialSearchType": "扩展",
-        "placeholderSearchBar": "查找扩展...",
+        "initialSearchType": "插件",
+        "placeholderSearchBar": "查找插件...",
         "controls": {
-          "labelActiveStateSwitch": "隐藏未激活扩展",
+          "labelActiveStateSwitch": "隐藏未激活插件",
           "filterOptions": {
             "last-updated": "最近更新",
             "name-asc": "名称 A - Z",
@@ -27,10 +27,10 @@
       },
       "account": {
         "headline": "官方账号",
-        "isLoggedIn": "蝉鸣平台账号成功连接。前往“应用”或“主题”标签并检查您购买的扩展是否列出。如果没有，请查看您的 Showare 账号并确保已设置正确的扩展域名。",
+        "isLoggedIn": "蝉鸣平台账号成功连接。前往“应用”或“主题”标签并检查您购买的插件是否列出。如果没有，请查看您的 Showare 账号并确保已设置正确的插件域名。",
         "login": "登录",
         "logout": "注销",
-        "loginMessage": "使用蝉鸣平台账号登录以访问您在 store.xchanming.com 购买的扩展",
+        "loginMessage": "使用蝉鸣平台账号登录以访问您在 store.xchanming.com 购买的插件",
         "register": "立即注册成为蝉鸣平台社区的一员！",
         "registerNow": "立即注册",
         "registerUrl": "https://account.xchanming.com/register?lang=en",
@@ -49,10 +49,10 @@
         "cicadaAccount": "官方账号"
       },
       "fileUpload": {
-        "buttonFileUpload": "上传扩展",
-        "messageUploadSuccess": "上传扩展成功。",
+        "buttonFileUpload": "上传插件",
+        "messageUploadSuccess": "上传插件成功。",
         "titleWarningModal": "警告",
-        "descriptionWarningModal": "来自蝉鸣商城外部的扩展未经我们审核，可能会对您的商城构成风险。我们建议尽可能使用蝉鸣商城中的扩展。",
+        "descriptionWarningModal": "来自蝉鸣商城外部的插件未经我们审核，可能会对您的商城构成风险。我们建议尽可能使用蝉鸣商城中的插件。",
         "textHideWarning": "不再显示"
       }
     },
@@ -61,37 +61,37 @@
       "messageGenericFailure": "操作失败。",
       "messageUploadFailureNotAZipFile": "上传的文件不是 ZIP 文件。",
       "messageUploadFailureUnzipFailed": "无法解压 ZIP 文件。",
-      "messageUploadFailureNoPluginFoundInZipFile": "ZIP 文件中未找到扩展。",
+      "messageUploadFailureNoPluginFoundInZipFile": "ZIP 文件中未找到插件。",
       "messageLoginDataInvalid": "登录数据不完整。",
       "messageStoreLicenseDomainMissing": "登录失败。您是否在“设置/平台账号”中提供了正确的许可证域名？",
-      "messageStoreNotAvailable": "蝉鸣扩展商城不可用。",
-      "messagePluginBaseClassNotFound": "无法加载扩展基类。请检查扩展的 composer.json 以了解类自动加载。",
-      "messagePluginInstallationFailed": "无法安装扩展：“{message}”。",
-      "messagePluginUninstallationFailed": "无法卸载扩展：“{message}”。",
-      "messagePluginActivationFailed": "无法激活扩展：“{message}”。",
-      "messagePluginDeactivationFailed": "无法停用扩展：“{message}”。",
-      "messageDeactivationFailedDependencies": "无法停用扩展 \"{dependency}\"，因为有其他扩展依赖它。请先停用以下扩展，然后重新启动更新：{dependantNames}",
+      "messageStoreNotAvailable": "蝉鸣插件商城不可用。",
+      "messagePluginBaseClassNotFound": "无法加载插件基类。请检查插件的 composer.json 以了解类自动加载。",
+      "messagePluginInstallationFailed": "无法安装插件：“{message}”。",
+      "messagePluginUninstallationFailed": "无法卸载插件：“{message}”。",
+      "messagePluginActivationFailed": "无法激活插件：“{message}”。",
+      "messagePluginDeactivationFailed": "无法停用插件：“{message}”。",
+      "messageDeactivationFailedDependencies": "无法停用插件 \"{dependency}\"，因为有其他插件依赖它。请先停用以下插件，然后重新启动更新：{dependantNames}",
       "messageDeactivationFailedThemeAssignment": "无法停用或卸载主题 \"{themeName}\"。请删除以下主题分配：{assignments}。",
-      "messagePluginUpdateFailed": "无法更新扩展：“{message}”。 {pluginDeactivatedHint}",
-      "pluginDeactivatedHint": "扩展已停用。",
-      "messagePluginRequirementMismatch": "扩展的技术要求与安装的蝉鸣平台版本不兼容。请联系制造商。",
-      "appIsNotCompatible": "扩展 \"{name}\" 与此蝉鸣平台版本不兼容",
+      "messagePluginUpdateFailed": "无法更新插件：“{message}”。 {pluginDeactivatedHint}",
+      "pluginDeactivatedHint": "插件已停用。",
+      "messagePluginRequirementMismatch": "插件的技术要求与安装的蝉鸣平台版本不兼容。请联系制造商。",
+      "appIsNotCompatible": "插件 \"{name}\" 与此蝉鸣平台版本不兼容",
       "appLicenseCouldNotBeVerified": {
-        "title": "无法验证此扩展的许可证",
-        "message": "确保您的许可证域名设置正确，并且您使用与此扩展授权的蝉鸣平台账号登录。",
+        "title": "无法验证此插件的许可证",
+        "message": "确保您的许可证域名设置正确，并且您使用与此插件授权的蝉鸣平台账号登录。",
         "actionSetLicenseDomain": "设置许可证域名",
         "actionLogin": "登录"
       },
       "storeSessionExpired": {
         "title": "官方账户会话过期",
-        "message": "请登录以访问您的授权扩展。",
+        "message": "请登录以访问您的授权插件。",
         "actionLabel": "登录"
       }
     },
     "mainMenu": {
-      "mainMenuItemExtensionStore": "扩展",
-      "store": "扩展商城",
-      "purchased": "我的扩展",
+      "mainMenuItemExtensionStore": "插件",
+      "store": "插件商城",
+      "purchased": "我的插件",
       "support": "帮助"
     },
     "sw-extension-app-module-error-page": {
@@ -105,7 +105,7 @@
   },
   "sw-extension-store": {
     "landing-page": {
-      "enablingCicadaStore": "激活官方扩展商城...",
+      "enablingCicadaStore": "激活官方插件商城...",
       "takeMinutes": "需要几分钟。",
       "activationErrorTitle": "激活时发生错误",
       "activationErrorDescription": "请重试。如果仍然不起作用，请联系您的管理员。",
@@ -113,13 +113,13 @@
       "activationSuccessTitle": "激活成功",
       "activationSuccessDescription": "享受并探索官方插件商城吧。",
       "label": "未激活",
-      "activationDescriptionTitleFirst": "非常方便的浏览并购买扩展",
+      "activationDescriptionTitleFirst": "非常方便的浏览并购买插件",
       "activationDescriptionTitleSecond": "",
-      "activationDescriptionTitleDescription": "激活蝉鸣平台商城并访问大量有用的扩展和现代主题，这些扩展和现代主题可以无缝集成到您的商城中 - 无需任何编程技能。",
+      "activationDescriptionTitleDescription": "激活蝉鸣平台商城并访问大量有用的插件和现代主题，这些插件和现代主题可以无缝集成到您的商城中 - 无需任何编程技能。",
       "activate": "激活"
     },
     "title": "商城",
-    "descriptionTextModule": "管理您的扩展",
+    "descriptionTextModule": "管理您的插件",
     "general": {
       "labelPrice": "免费 | {price}/月 | {price}",
       "labelDiscountedPrice": "免费 | <s>{price}</s> <strong>{discountedPrice}</strong>/月 | <s>{price}</s> <strong>{discountedPrice}</strong>"
@@ -140,11 +140,11 @@
       }
     },
     "detail": {
-      "labelButtonAddExtension": "添加扩展",
+      "labelButtonAddExtension": "添加插件",
       "labelButtonAddTheme": "添加主题",
-      "labelButtonOpenExtension": "打开扩展",
+      "labelButtonOpenExtension": "打开插件",
       "labelButtonOpenTheme": "打开主题",
-      "labelButtonInstallExtension": "安装扩展",
+      "labelButtonInstallExtension": "安装插件",
       "labelButtonInstallTheme": "安装主题",
       "labelBy": "by",
       "numberOfRatings": "{count} 条评价 | {count} 条评价",
@@ -171,9 +171,9 @@
         "labelButtonMore": "更多"
       },
       "sw-extension-buy-modal": {
-        "title": "添加扩展",
-        "labelAcceptPermissions": "我知道此扩展需要额外的权限",
-        "labelAcceptPrivacyExtensions": "我知道我需要扩展我的隐私政策",
+        "title": "添加插件",
+        "labelAcceptPermissions": "我知道此插件需要额外的权限",
+        "labelAcceptPrivacyExtensions": "我知道我需要插件我的隐私政策",
         "buttonShowPrivacyExtensions": "显示详细信息",
         "variantCard": {
           "free": "使用免费版本",
@@ -187,13 +187,13 @@
           "renewal": "续费日期 {renewalDate}"
         },
         "purchaseButtonsLabels": {
-          "free": "免费添加扩展",
+          "free": "免费添加插件",
           "rent": "订阅",
           "buy": "立即购买"
         },
         "successNotification": {
-          "titleSuccess": "扩展成功添加！",
-          "subtitleSuccess": "您现在可以试用您的新扩展。",
+          "titleSuccess": "插件成功添加！",
+          "subtitleSuccess": "您现在可以试用您的新插件。",
           "labelButtonBack": "返回详情"
         },
         "alertCanNotBuy": {
@@ -202,11 +202,11 @@
       },
       "sw-extension-adding-failed": {
         "titleFailure": "添加失败",
-        "textProblem": "添加扩展程序时出现问题。",
+        "textProblem": "添加插件程序时出现问题。",
         "installationFailed": {
           "titleFailure": "安装失败",
-          "textProblem": "安装扩展程序时出现问题。我们会通知制造商。",
-          "notificationLicense": "请注意，对此扩展程序的订阅仍然有效。",
+          "textProblem": "安装插件程序时出现问题。我们会通知制造商。",
+          "notificationLicense": "请注意，对此插件程序的订阅仍然有效。",
           "textSupport": "如果您对许可证有任何疑问，请联系官方人员。",
           "supportEmail": "",
           "supportPhone": ""
@@ -214,7 +214,7 @@
       },
       "sw-extension-adding-success": {
         "titleSuccess": "添加成功！",
-        "subtitleSuccess": "现在可以尝试新的扩展。"
+        "subtitleSuccess": "现在可以尝试新的插件。"
       },
       "sw-extension-ratings": {
         "sw-review-reply": {
@@ -234,10 +234,10 @@
           "cardTitle": "评价和评论",
           "labelMoreReviewsBtn": "阅读更多评论",
           "footerHeadline": "添加评论",
-          "labelNoReviews": "此扩展尚未收到任何评价或评论。"
+          "labelNoReviews": "此插件尚未收到任何评价或评论。"
         },
         "sw-extension-review-creation-inputs": {
-          "title": "评价扩展",
+          "title": "评价插件",
           "labelHeadline": "标题",
           "placeholderHeadline": "输入简短标题...",
           "labelRating": "评分",
@@ -265,10 +265,10 @@
           "cancelAndRemoveLabel": "取消并移除",
           "uninstallLabel": "卸载",
           "updateLabel": "更新至 {version}",
-          "rateLabel": "评价扩展",
-          "policyExtensions": "隐私政策扩展",
+          "rateLabel": "评价插件",
+          "policyExtensions": "隐私政策插件",
           "permissions": "查看权限",
-          "openExtension": "打开扩展"
+          "openExtension": "打开插件"
         }
       },
       "sw-extension-card-bought": {
@@ -279,9 +279,9 @@
       },
       "sw-extension-deactivation-modal": {
         "deactivateExtensionLabel": "停用 \"{extensionName}\"",
-        "description": "扩展 \"{extensionName}\" 有每月订阅费用。<br>停用此扩展<b>不会</b>取消您的订阅，费用将继续收取。",
+        "description": "插件 \"{extensionName}\" 有每月订阅费用。<br>停用此插件<b>不会</b>取消您的订阅，费用将继续收取。",
         "descriptionCancel": "如果您想取消订阅，可以通过在上下文菜单中单击“{removeLabel}”来移除它。",
-        "alertDeactivate": "您仍然要停用此扩展吗？",
+        "alertDeactivate": "您仍然要停用此插件吗？",
         "deactivateLabel": "停用"
       },
       "sw-extension-permissions-modal": {
@@ -301,7 +301,7 @@
         "listTitle": "域"
       },
       "sw-extension-privacy-policy-extensions-modal": {
-        "title": "{extensionLabel}：隐私政策扩展",
+        "title": "{extensionLabel}：隐私政策插件",
         "intro": "此应用处理个人信息。制造商建议调整您的隐私政策："
       },
       "sw-extension-permissions-details-modal": {
@@ -323,23 +323,23 @@
         },
         "btnOpenStore": "打开商城",
         "alertExtensionManagement": {
-          "title": "运行时扩展管理已禁用",
-          "description": "在此安装中，运行时扩展管理已被禁用。您只能在管理界面中更改扩展的设置。"
+          "title": "运行时插件管理已禁用",
+          "description": "在此安装中，运行时插件管理已被禁用。您只能在管理界面中更改插件的设置。"
         }
       },
       "sw-extension-removal-modal": {
         "titleCancel": "\"{extensionName}\" 取消并移除",
         "titleRemove": "\"{extensionName}\" 移除",
-        "description": "如果删除扩展程序，您将无法再使用它。",
-        "alertCancel": "确定要取消并移除扩展？",
-        "alertRemove": "确定要移除扩展？",
+        "description": "如果删除插件程序，您将无法再使用它。",
+        "alertCancel": "确定要取消并移除插件？",
+        "alertRemove": "确定要移除插件？",
         "labelCancel": "取消并移除",
         "labelRemove": "移除"
       },
       "sw-extension-uninstall-modal": {
         "title": "\"{extensionName}\" 卸载",
-        "description": "如果卸载该扩展程序，则无法再使用它。",
-        "alert": "确定要卸载扩展？",
+        "description": "如果卸载该插件程序，则无法再使用它。",
+        "alert": "确定要卸载插件？",
         "buttonLabel": "卸载",
         "labelRemovePluginData": "永久删除所有应用数据",
         "helpTextRemovePluginData": "警告：应用程序的所有数据将被永久删除。这个过程是不可逆的。"
@@ -510,30 +510,30 @@
       }
     },
     "product": {
-      "title": "产品",
+      "title": "商品",
       "entities": {
-        "product": "产品",
+        "product": "商品",
         "product_category": "类别",
         "product_category_tree": "类别树",
         "product_configurator_setting": "配置器设置",
         "product_cross_selling": "交叉销售",
         "product_cross_selling_translation": "交叉销售翻译",
-        "product_cross_selling_assigned_products": "交叉销售分配的产品",
-        "product_export": "产品导出",
+        "product_cross_selling_assigned_products": "交叉销售分配的商品",
+        "product_export": "商品导出",
         "product_keyword_dictionary": "关键词字典",
         "product_manufacturer": "制造商",
         "product_manufacturer_translation": "制造商翻译",
         "product_media": "媒体",
-        "product_option": "产品选项",
+        "product_option": "商品选项",
         "product_price": "价格",
-        "product_property": "产品属性",
+        "product_property": "商品属性",
         "product_review": "评论",
         "product_search_keyword": "搜索关键词",
-        "product_stream": "产品流",
+        "product_stream": "商品流",
         "product_tag": "标签",
         "product_visibility": "可见性",
         "product_sorting": "排序",
-        "product_translation": "产品翻译",
+        "product_translation": "商品翻译",
         "product_feature_set": "功能集",
         "product_feature_set_translation": "功能集翻译",
         "product_custom_field_set": "自定义字段集"
@@ -616,7 +616,7 @@
       "title": "社交购物",
       "entities": {
         "swag_social_shopping_sales_channel": "销售渠道",
-        "swag_social_shopping_product_error": "产品错误"
+        "swag_social_shopping_product_error": "商品错误"
       }
     },
     "tag": {
@@ -646,7 +646,7 @@
   "sw-privileges": {
     "additional_permissions": {
       "system": {
-        "extension_store": "官方扩展商城"
+        "extension_store": "官方插件商城"
       }
     }
   }

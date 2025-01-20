@@ -151,6 +151,7 @@ async function createWrapper() {
                 'sw-popover': {
                     template: '<div class="sw-popover"><slot></slot></div>',
                 },
+                'sw-provide': { template: '<slot/>', inheritAttrs: false },
             },
             provide: {
                 searchRankingService: () => {},

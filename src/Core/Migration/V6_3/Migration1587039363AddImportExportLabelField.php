@@ -71,10 +71,10 @@ class Migration1587039363AddImportExportLabelField extends MigrationStep
             SELECT `id`, `name` AS `label` FROM import_export_profile;
             UPDATE `temp_import_export_profile_translation` SET `label` = \'类目\' WHERE `label` = \'Default category\';
             UPDATE `temp_import_export_profile_translation` SET `label` = \'媒体\' WHERE `label` = \'Default media\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'产品变体配置\' WHERE `label` = \'Default variant configuration settings\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'商品变体配置\' WHERE `label` = \'Default variant configuration settings\';
             UPDATE `temp_import_export_profile_translation` SET `label` = \'邮件订阅\' WHERE `label` = \'Default newsletter recipient\';
             UPDATE `temp_import_export_profile_translation` SET `label` = \'属性\' WHERE `label` = \'Default properties\';
-            UPDATE `temp_import_export_profile_translation` SET `label` = \'产品\' WHERE `label` = \'Default product\';
+            UPDATE `temp_import_export_profile_translation` SET `label` = \'商品\' WHERE `label` = \'Default product\';
 
             INSERT INTO `import_export_profile_translation` (`import_export_profile_id`, `language_id`, `label`, `created_at`)
             SELECT `id`, :languageId, `label`, NOW()

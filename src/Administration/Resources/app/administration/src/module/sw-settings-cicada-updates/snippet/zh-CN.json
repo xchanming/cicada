@@ -11,7 +11,7 @@
     "cards": {
       "info": "新功能介绍",
       "requirements": "系统要求",
-      "extensions": "扩展兼容性",
+      "extensions": "插件兼容性",
       "updating": "正在更新..."
     },
     "notifications": {
@@ -19,7 +19,7 @@
       "updateStopped": "更新已停止。",
       "downloadFailed": "下载失败。",
       "unpackFailed": "解压失败。",
-      "deactivationFailed": "无法停用扩展。",
+      "deactivationFailed": "无法停用插件。",
       "alreadyUpToDate": "您正在运行最新版本。"
     },
     "infos": {
@@ -28,7 +28,7 @@
       "requirementsNotMet": "并非所有系统要求都已满足。",
       "progress": {
         "download": "正在下载更新文件...",
-        "deactivate": "正在停用扩展...",
+        "deactivate": "正在停用插件...",
         "unpack": "正在解压更新文件..."
       }
     },
@@ -50,26 +50,26 @@
     },
     "plugins": {
       "columns": {
-        "name": "扩展",
+        "name": "插件",
         "available": "兼容性"
       },
       "actions": {
-        "openMyExtensions": "我的扩展",
-        "deactivateAll": "停用所有扩展。",
-        "deactivateIncompatible": "停用不兼容的扩展。",
-        "deactivateNone": "我了解隐含的风险，仍然希望在不先停用不兼容扩展的情况下更新 Cicada。我意识到，Cicada 不能保证更新后的安装功能。",
+        "openMyExtensions": "我的插件",
+        "deactivateAll": "停用所有插件。",
+        "deactivateIncompatible": "停用不兼容的插件。",
+        "deactivateNone": "我了解隐含的风险，仍然希望在不先停用不兼容插件的情况下更新 Cicada。我意识到，Cicada 不能保证更新后的安装功能。",
         "recommended": "(推荐)"
       },
-      "pluginNotInStore": "该扩展在商城中不可用。请联系扩展的作者。",
-      "pluginWillBeDeactivatedHint": "(此扩展将在更新时停用)"
+      "pluginNotInStore": "该插件在商城中不可用。请联系插件的作者。",
+      "pluginWillBeDeactivatedHint": "(此插件将在更新时停用)"
     },
     "updateModal": {
       "actions": {
         "install": "安装",
         "goToUpdate": "立即更新"
       },
-      "messageIncompatible": "安装的一些扩展与最新的 Cicada 版本不兼容。如果继续更新，现在可能会出现未知问题并严重损害您的系统。Cicada 能够在更新过程中自动停用不兼容的扩展，以确保安装的持续功能。更新这些扩展后，您将可以手动重新激活它们。",
-      "messageNotInStore": "安装了一些无法成功测试兼容性的扩展。有关更多信息，请联系扩展的作者。在这种情况下，强烈建议在更新前创建备份。",
+      "messageIncompatible": "安装的一些插件与最新的 Cicada 版本不兼容。如果继续更新，现在可能会出现未知问题并严重损害您的系统。Cicada 能够在更新过程中自动停用不兼容的插件，以确保安装的持续功能。更新这些插件后，您将可以手动重新激活它们。",
+      "messageNotInStore": "安装了一些无法成功测试兼容性的插件。有关更多信息，请联系插件的作者。在这种情况下，强烈建议在更新前创建备份。",
       "messageOkay": "所有前提条件已满足。更新前不要忘记创建备份。",
       "messageUpdateCheck": "您的当前版本可以更新到 {version}。您想做什么？",
       "backupLabel": "是的，我已创建备份。"
@@ -79,8 +79,8 @@
     "additional_permissions": {
       "system": {
         "core_update": "运行更新",
-        "plugin_maintain": "管理扩展",
-        "plugin_upload": "上传扩展"
+        "plugin_maintain": "管理插件",
+        "plugin_upload": "上传插件"
       }
     }
   }

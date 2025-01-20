@@ -22,29 +22,29 @@
       "titleCard": "常规信息",
       "titleCardValues": "值",
       "messageSaveSuccess": "特性模板“{name}”已保存。",
-      "messageSaveError": "保存产品关键特性模板时发生错误。",
+      "messageSaveError": "保存商品关键特性模板时发生错误。",
       "labelName": "名称",
       "labelDescription": "描述",
       "labelValues": "值",
       "placeholderName": "输入模板名称...",
       "placeholderDescription": "输入描述...",
       "buttonSave": "保存",
-      "notificationErrorMessage": "保存产品关键特性模板时发生错误。",
+      "notificationErrorMessage": "保存商品关键特性模板时发生错误。",
       "labelCreateNew": "添加值"
     },
     "valuesCard": {
-      "createStateDescription": "添加值以定义针对您的产品范围量身定制的关键特性。",
+      "createStateDescription": "添加值以定义针对您的商品范围量身定制的关键特性。",
       "labelCreateNew": "添加字段",
       "cardTitle": "值",
       "labelValue": "值",
       "labelType": "类型",
       "labelPosition": "位置",
-      "emptyStateDescription": "添加值以定义针对您的产品范围量身定制的关键特性。"
+      "emptyStateDescription": "添加值以定义针对您的商品范围量身定制的关键特性。"
     },
     "modal": {
       "textPropertyLabel": "属性",
       "textCustomFieldLabel": "自定义字段",
-      "textProductInfoLabel": "产品信息",
+      "textProductInfoLabel": "商品信息",
       "textReferencePriceLabel": "单价",
       "labelTitlePageOne": "选择您要添加到模板的字段类型",
       "labelTitleModal": "添加值",
@@ -58,7 +58,7 @@
         "weight": "重量",
         "releaseDate": "发布日期",
         "description": "描述",
-        "manufacturerNumber": "生产商产品编号",
+        "manufacturerNumber": "生产商商品编号",
         "ean": "GTIN/EAN",
         "referencePrice": "单价"
       }

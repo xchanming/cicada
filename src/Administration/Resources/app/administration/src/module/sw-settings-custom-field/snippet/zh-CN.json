@@ -88,7 +88,7 @@
         "textDeleteActionConfirmation": "您确定要删除此自定义字段吗？ | 您确定要删除这 {count} 个自定义字段吗？"
       },
       "entity": {
-        "product": "产品",
+        "product": "商品",
         "category": "类目",
         "shippingMethod": "运输方式",
         "paymentMethod": "支付方式",
@@ -96,7 +96,7 @@
         "customer": "客户",
         "salesChannel": "销售渠道",
         "manufacturer": "生产商",
-        "dynamicProductGroup": "动态产品组",
+        "dynamicProductGroup": "动态商品组",
         "shoppingExperienceLayout": "购物体验布局"
       }
     },
