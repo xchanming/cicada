@@ -322,7 +322,7 @@ EOF;
                     'name' => 'Max',
                     'street' => 'Ebbinghoff 10',
                     'zipcode' => '48624',
-                    'cityId' => $this->getValidCountryCityId()
+                    'cityId' => $this->getValidCountryCityId(),
                 ],
             ],
         ];
