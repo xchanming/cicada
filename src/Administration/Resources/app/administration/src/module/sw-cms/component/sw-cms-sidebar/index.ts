@@ -142,9 +142,9 @@ export default Cicada.Component.wrapComponentConfig({
 
             const blocks = Object.entries(this.cmsService.getCmsBlockRegistry()).filter(
                 ([
-                     name,
-                     block,
-                 ]) => {
+                    name,
+                    block,
+                ]) => {
                     return block && !block.hidden && this.cmsService.isBlockAllowedInPageType(name, currentPageType);
                 },
             );
@@ -667,10 +667,7 @@ export default Cicada.Component.wrapComponentConfig({
             this.pageUpdate();
         },
 
-        onSetSectionBackgroundMedia(
-            [mediaItem]: [Entity<'media'>],
-            section: Entity<'cms_section'>,
-        ) {
+        onSetSectionBackgroundMedia([mediaItem]: [Entity<'media'>], section: Entity<'cms_section'>) {
             section.backgroundMediaId = mediaItem.id;
             section.backgroundMedia = mediaItem;
 

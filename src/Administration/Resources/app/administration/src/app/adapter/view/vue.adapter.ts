@@ -305,9 +305,9 @@ export default class VueAdapter extends ViewAdapter {
 
         Object.entries(moduleSnippets).forEach(
             ([
-                 key,
-                 moduleSnippet,
-             ]) => {
+                key,
+                moduleSnippet,
+            ]) => {
                 this.applicationFactory.locale.extend(key, moduleSnippet);
             },
         );

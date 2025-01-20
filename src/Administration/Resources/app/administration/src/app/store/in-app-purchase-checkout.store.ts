@@ -10,13 +10,13 @@ export type InAppPurchaseRequest = Omit<iapCheckout, 'responseType'>;
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export type InAppPurchaseCheckoutState =
     | {
-    entry: null;
-    extension: null;
-}
+          entry: null;
+          extension: null;
+      }
     | {
-    entry: InAppPurchaseRequest;
-    extension: string;
-};
+          entry: InAppPurchaseRequest;
+          extension: string;
+      };
 
 const inAppPurchaseCheckoutStore = Cicada.Store.register({
     id: 'inAppPurchaseCheckout',

@@ -156,7 +156,6 @@ declare global {
     type Entity<EntityName extends keyof EntitySchema.Entities> = EntitySchema.Entity<EntityName>;
     type EntityCollection<EntityName extends keyof EntitySchema.Entities> = EntitySchema.EntityCollection<EntityName>;
 
-
     interface CustomCicadaProperties {}
 
     interface Window {

@@ -25,9 +25,9 @@ describe('src/app/init/in-app-purchase.init.ts', () => {
         Cicada.Store.get('inAppPurchaseCheckout').$reset();
 
         Cicada.Context.app.config.bundles = {
-            'jestapp': {
+            jestapp: {
                 identifier: 'jestapp',
-            }
+            },
         };
     });
 
