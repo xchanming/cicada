@@ -35,7 +35,8 @@
                                             showBirthdayField: config('core.loginRegistration.showBirthdayField'),
                                             showVatIdField: true,
                                             data: context.customer,
-                                            onlyCompanyRegistration: context.currentCustomerGroup.translated.registrationOnlyCompanyRegistration ?? false
+                                            onlyCompanyRegistration: context.currentCustomerGroup.translated.registrationOnlyCompanyRegistration ?? false,
+                                            phoneNumberRequired:false
                                         } %}
                                     {% endblock %}
 

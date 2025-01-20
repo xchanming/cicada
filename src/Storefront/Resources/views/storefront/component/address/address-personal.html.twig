@@ -153,7 +153,7 @@
         </div>
     {% endblock %}
 
-    {% block component_address_personal_name %}
+    {% block component_address_personal_name_phone %}
         <div class="row g-2">
             {% block component_address_personal_fields_name %}
                 <div class="form-group col-sm-6">
@@ -211,11 +211,12 @@
                     {% block component_address_personal_fields_phone_number_label %}
                         <label class="form-label"
                                for="{{ idPrefix ~ prefix }}personalPhoneNumber">
-                            {{ "account.personalPhoneNumberLabel"|trans|sw_sanitize }}{{ "general.required"|trans|sw_sanitize }}
+                            {{ "account.personalPhoneNumberLabel"|trans|sw_sanitize }} {% if phoneNumberRequired is not false %}{{ "general.required"|trans|sw_sanitize }}{% endif %}
                         </label>
                     {% endblock %}
 
                     {% block component_address_personal_fields_phone_number_input %}
+
                         <input type="text"
                                class="form-control{% if violationPath is not empty %} is-invalid{% endif %}"
                                autocomplete="section-personal given-phoneNumber"
@@ -223,9 +224,7 @@
                                name="{% if prefix %}{{ prefix }}[phoneNumber]{% else %}phoneNumber{% endif %}"
                                value="{% if prefix and data.has(prefix) %}{{ data.get(prefix).get('phoneNumber') }}{% else %}{{data.get('phoneNumber')}}{% endif %}"
                                placeholder="{{ "account.personalPhoneNumberPlaceholder"|trans|striptags }}"
-                               data-form-validation-required
-                               {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %}
-                               required="required">
+                               {% if phoneNumberRequired is not false %} data-form-validation-required required="required" {% if requiredMessage is defined %}data-form-validation-required-message="{{ requiredMessage }}"{% endif %} {% endif %}>
                     {% endblock %}
 
                     {% block component_address_personal_fields_phone_number_input_error %}
