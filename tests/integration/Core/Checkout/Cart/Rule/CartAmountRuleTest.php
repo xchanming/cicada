@@ -53,11 +53,11 @@ class CartAmountRuleTest extends TestCase
             static::assertCount(2, $exceptions);
             static::assertSame('/0/value/amount', $exceptions[0]['source']['pointer']);
             static::assertSame(NotBlank::IS_BLANK_ERROR, $exceptions[0]['code']);
-            static::assertSame('This value should not be blank.', $exceptions[0]['detail']);
+            static::assertSame('该变量不应为空。', $exceptions[0]['detail']);
 
             static::assertSame('/0/value/operator', $exceptions[1]['source']['pointer']);
             static::assertSame(NotBlank::IS_BLANK_ERROR, $exceptions[1]['code']);
-            static::assertSame('This value should not be blank.', $exceptions[1]['detail']);
+            static::assertSame('该变量不应为空。', $exceptions[1]['detail']);
         }
     }
 
