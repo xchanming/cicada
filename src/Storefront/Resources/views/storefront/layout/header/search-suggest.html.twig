@@ -72,15 +72,15 @@
                                                         {{ 'listing.listingTextFrom'|trans|sw_sanitize }}
                                                     {% endif %}
                                                     <span class="search-suggest-product-price">
-                                                        {{ price.unitPrice|currency }}{{ 'general.star'|trans|sw_sanitize }}
+                                                        {{ price.unitPrice|currency }}
                                                     </span>
 
                                                     {% if price.referencePrice is not null %}
-                                                        <br><small class="search-suggest-product-reference-price">({{ price.referencePrice.price|currency }}{{ 'general.star'|trans|sw_sanitize }} / {{ price.referencePrice.referenceUnit }}&nbsp;{{ price.referencePrice.unitName }})</small>
+                                                        <br><small class="search-suggest-product-reference-price">({{ price.referencePrice.price|currency }} / {{ price.referencePrice.referenceUnit }}&nbsp;{{ price.referencePrice.unitName }})</small>
                                                     {% endif %}
 
                                                     {% if price.regulationPrice.price is not null %}
-                                                        <small class="search-suggest-product-list-price">{{ 'general.listPricePreviously'|trans({'%price%': price.regulationPrice.price|currency }) }}{{ 'general.star'|trans|sw_sanitize }}</small>
+                                                        <small class="search-suggest-product-list-price">{{ 'general.listPricePreviously'|trans({'%price%': price.regulationPrice.price|currency }) }}</small>
                                                     {% endif %}
                                                 </div>
                                             {% endblock %}
