@@ -72,6 +72,12 @@ describe('Form country state select plugin', () => {
                 <select class="country-state-select" data-initial-country-state-id="">
                     <option>Select state..</option>
                 </select>
+                             <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
             </form>
         `;
 
@@ -103,6 +109,12 @@ describe('Form country state select plugin', () => {
                 <select class="country-state-select" data-initial-country-state-id="">
                     <option>Select state..</option>
                 </select>
+                             <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
             </form>
         `;
 
@@ -145,6 +157,12 @@ describe('Form country state select plugin', () => {
                 <select class="country-state-select" data-initial-country-state-id="">
                     <option>Select state..</option>
                 </select>
+                             <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
             </form>
         `;
 
@@ -194,6 +212,12 @@ describe('Form country state select plugin', () => {
                                 <option value="0490081418be4255b87731afc953e901">Hamburg</option>
                             </select>
                         </div>
+                                     <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
                     </div>
                 </div>
             </form>
@@ -240,6 +264,12 @@ describe('Form country state select plugin', () => {
                                 <option value="0490081418be4255b87731afc953e901">Hamburg</option>
                             </select>
                         </div>
+                                     <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
                     </div>
                 </div>
             </form>
@@ -280,6 +310,12 @@ describe('Form country state select plugin', () => {
                                 <option value="0490081418be4255b87731afc953e901">Hamburg</option>
                             </select>
                         </div>
+                                     <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
                     </div>
                 </div>
             </form>
@@ -324,6 +360,12 @@ describe('Form country state select plugin', () => {
                 <select class="country-state-select" data-initial-country-state-id="">
                     <option>Select state..</option>
                 </select>
+                             <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
             </form>
         `;
 
@@ -356,6 +398,12 @@ describe('Form country state select plugin', () => {
                 <select class="country-state-select" data-initial-country-state-id="">
                     <option>Select state..</option>
                 </select>
+                             <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
             </form>
         `;
 
@@ -388,6 +436,12 @@ describe('Form country state select plugin', () => {
                 <select class="country-state-select" data-initial-country-state-id="">
                     <option>Select state..</option>
                 </select>
+                             <select class="country-state-city-select" data-initial-city-id="">
+                <option>Select city..</option>
+            </select>
+              <select class="country-state-city-district-select" data-initial-district-id="">
+                <option>Select state..</option>
+            </select>
             </form>
         `;
 
