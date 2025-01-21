@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport;
 use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportProfileTranslationEntity extends TranslationEntity
 {
     /**

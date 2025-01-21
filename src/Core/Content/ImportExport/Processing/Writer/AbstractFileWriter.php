@@ -7,7 +7,7 @@ use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractFileWriter extends AbstractWriter
 {
     protected FilesystemOperator $filesystem;

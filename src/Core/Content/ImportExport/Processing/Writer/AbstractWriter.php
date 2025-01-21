@@ -6,7 +6,7 @@ use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractWriter
 {
     /**

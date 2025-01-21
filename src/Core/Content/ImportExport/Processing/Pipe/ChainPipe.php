@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport\Processing\Pipe;
 use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ChainPipe extends AbstractPipe
 {
     /**

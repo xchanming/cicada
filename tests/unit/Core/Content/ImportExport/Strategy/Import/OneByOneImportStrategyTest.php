@@ -16,7 +16,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(OneByOneImportStrategy::class)]
 class OneByOneImportStrategyTest extends ImportStrategyTestCase
 {

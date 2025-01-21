@@ -8,7 +8,7 @@ use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\SerializerR
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class PipeFactory extends AbstractPipeFactory
 {
     /**

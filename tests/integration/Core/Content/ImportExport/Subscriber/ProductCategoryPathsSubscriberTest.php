@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ProductCategoryPathsSubscriberTest extends TestCase
 {
     use IntegrationTestBehaviour;

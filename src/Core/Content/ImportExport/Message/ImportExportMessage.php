@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportMessage implements AsyncMessageInterface
 {
     /**

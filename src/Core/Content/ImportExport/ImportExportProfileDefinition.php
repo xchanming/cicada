@@ -18,7 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportProfileDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'import_export_profile';

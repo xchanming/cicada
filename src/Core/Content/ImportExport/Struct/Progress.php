@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class Progress extends Struct
 {
     final public const STATE_PROGRESS = 'progress';

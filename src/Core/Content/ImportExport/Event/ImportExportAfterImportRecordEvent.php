@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportAfterImportRecordEvent extends Event
 {
     public function __construct(

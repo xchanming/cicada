@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport\ScheduledTask;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CleanupImportExportFileTask extends ScheduledTask
 {
     public static function getTaskName(): string
