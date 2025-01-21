@@ -189,6 +189,10 @@
             {% endblock %}
         {% endif %}
 
+        {% block layout_head_form_validation_messages %}
+            {% sw_include '@Storefront/storefront/utilities/form-validation-config.html.twig' %}
+        {% endblock %}
+
         {% block layout_head_javascript_hmr_mode %}
             {% if isHMRMode %}
                 {% block layout_head_javascript_hmr_dev %}
