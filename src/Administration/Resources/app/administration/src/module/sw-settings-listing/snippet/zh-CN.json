@@ -1,7 +1,7 @@
 {
   "sw-settings-listing": {
     "general": {
-      "mainMenuItemGeneral": "商品",
+      "mainMenuItemGeneral": "商品设置",
       "textHeadline": "商品",
       "description": "在这里管理商品显示。",
       "buttonSave": "保存",

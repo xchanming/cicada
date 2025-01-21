@@ -47,7 +47,6 @@
       "labelGuest": "Guest account",
       "labelVatId": "VAT Reg.No.",
       "placeholderVatId": "Enter VAT Reg.No...",
-      "labelPhoneNumber": "Phone number",
       "placeholderPhoneNumber": "Enter phone number..."
     },
     "list": {
@@ -92,7 +91,6 @@
       "labelTitle": "Title",
       "labelName": "Name",
       "labelEmail": "Email address",
-      "labelPhoneNumber": "Phone number",
       "placeholderPhoneNumber": "Enter phone number...",
       "labelCompany": "Company",
       "labelCustomerGroup": "Customer group",

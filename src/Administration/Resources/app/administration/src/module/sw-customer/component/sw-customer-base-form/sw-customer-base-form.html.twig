@@ -151,17 +151,6 @@
             required
         />
         {% endblock %}
-
-        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-        {% block sw_customer_base_form_phone_number_field %}
-        <sw-text-field
-            v-model:value="customer.phoneNumber"
-            name="sw-field--customer-phoneNumber"
-            :label="$tc('sw-customer.baseForm.labelPhoneNumber')"
-            :placeholder="$tc('sw-customer.baseForm.placeholderPhoneNumber')"
-            :error="customerPhoneNumberError"
-        />
-        {% endblock %}
     </sw-container>
 
     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->

@@ -11,8 +11,7 @@
       "vatIds",
       "company",
       "passwordNew",
-      "passwordConfirm",
-      "phoneNumber"
+      "passwordConfirm"
     ]
   }
 }

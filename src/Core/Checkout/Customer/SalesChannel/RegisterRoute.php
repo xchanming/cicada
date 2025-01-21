@@ -109,26 +109,18 @@ class RegisterRoute extends AbstractRegisterRoute
             $data->set('salutationId', $this->getDefaultSalutationId($context));
         }
 
-        if (!$this->systemConfigService->get('core.loginRegistration.nameFieldRequire', $context->getSalesChannelId())) {
-            if (!$data->get('name')) {
-                $data->set('name', explode('@', $data->get('email'))[0]);
-            }
+        if (!$data->get('name')) {
+            $data->set('name', explode('@', $data->get('email'))[0]);
         }
 
         $billing = $data->get('billingAddress');
         $shipping = $data->get('shippingAddress');
 
-        $requireCustomerAddress = $this->systemConfigService->getBool(
-            'core.loginRegistration.requireCustomerAddress',
-            $context->getSalesChannelId()
-        );
-        if ($requireCustomerAddress) {
-            if (!$billing) {
-                $data->set('billingAddress', new DataBag());
-            }
+        if (!$billing) {
+            $data->set('billingAddress', new DataBag());
         }
 
-        if ($billing instanceof DataBag && $requireCustomerAddress) {
+        if ($billing instanceof DataBag) {
             if ($billing->has('name') && !$data->has('name')) {
                 $data->set('name', $billing->get('name'));
             }
@@ -141,11 +133,11 @@ class RegisterRoute extends AbstractRegisterRoute
             }
         }
 
-        $this->validateRegistrationData($data, $isGuest, $context, $additionalValidationDefinitions, $validateStorefrontUrl, $requireCustomerAddress);
+        $this->validateRegistrationData($data, $isGuest, $context, $additionalValidationDefinitions, $validateStorefrontUrl);
 
         $customer = $this->mapCustomerData($data, $isGuest, $context);
 
-        if ($billing instanceof DataBag && $requireCustomerAddress) {
+        if ($billing instanceof DataBag) {
             $billingAddress = $this->mapAddressData($billing, $context->getContext(), CustomerEvents::MAPPING_REGISTER_ADDRESS_BILLING);
             $billingAddress['id'] = Uuid::randomHex();
             $billingAddress['customerId'] = $customer['id'];
@@ -335,12 +327,11 @@ class RegisterRoute extends AbstractRegisterRoute
         bool $isGuest,
         SalesChannelContext $context,
         ?DataValidationDefinition $additionalValidations,
-        bool $validateStorefrontUrl,
-        bool $requireCustomerAddress
+        bool $validateStorefrontUrl
     ): void {
         $billingAddress = $data->get('billingAddress');
         $shippingAddress = $data->get('shippingAddress');
-        if ($billingAddress instanceof DataBag && $requireCustomerAddress) {
+        if ($billingAddress instanceof DataBag) {
             $billingAddress->set('name', $data->get('name'));
             $billingAddress->set('salutationId', $data->get('salutationId'));
         }
@@ -360,11 +351,11 @@ class RegisterRoute extends AbstractRegisterRoute
 
         $accountType = $data->get('accountType', CustomerEntity::ACCOUNT_TYPE_PRIVATE);
 
-        if ($billingAddress instanceof DataBag && $requireCustomerAddress) {
+        if ($billingAddress instanceof DataBag) {
             $definition->addSub('billingAddress', $this->getCreateAddressValidationDefinition($data, $accountType, $billingAddress, $context));
         }
 
-        if ($shippingAddress instanceof DataBag && $requireCustomerAddress) {
+        if ($shippingAddress instanceof DataBag) {
             $shippingAccountType = $shippingAddress->get('accountType', CustomerEntity::ACCOUNT_TYPE_PRIVATE);
             $definition->addSub('shippingAddress', $this->getCreateAddressValidationDefinition($data, $shippingAccountType, $shippingAddress, $context));
         }

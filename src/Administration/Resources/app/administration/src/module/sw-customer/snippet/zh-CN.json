@@ -47,7 +47,6 @@
       "labelGuest": "访客帐户",
       "labelVatId": "统一社会信用代码",
       "placeholderVatId": "输入 统一社会信用代码...",
-      "labelPhoneNumber": "手机号",
       "placeholderPhoneNumber": "输入手机号..."
     },
     "list": {
@@ -92,7 +91,6 @@
       "labelTitle": "昵称",
       "labelName": "姓名",
       "labelEmail": "邮箱地址",
-      "labelPhoneNumber": "手机号",
       "placeholderPhoneNumber": "输入手机号...",
       "labelCompany": "公司",
       "labelCustomerGroup": "客户组",

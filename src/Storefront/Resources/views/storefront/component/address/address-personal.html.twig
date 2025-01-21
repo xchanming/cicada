@@ -20,7 +20,7 @@
                     {% set isCompany = true %}
                 {% endif %}
 
-                {% if onlyCompanyRegistration or (accountType and accountType == constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS')) %}
+                {% if onlyCompanyRegistration or (accountType and accountType == constant('Cicada\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS')) %}
                     {% set isCompany = true %}
                 {% endif %}
 
@@ -29,8 +29,8 @@
                     {% set isLoginPage = true %}
                 {% endif %}
 
-                {% set privateType = constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_PRIVATE') %}
-                {% set businessType = constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS') %}
+                {% set privateType = constant('Cicada\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_PRIVATE') %}
+                {% set businessType = constant('Cicada\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS') %}
 
                 {% set accountTypeOptions %}
                     {% if isLoginPage %}
@@ -66,7 +66,7 @@
                     attributes: {
                         'data-form-field-toggle': 'true',
                         'data-form-field-toggle-target': toggleTarget,
-                        'data-form-field-toggle-value': constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS'),
+                        'data-form-field-toggle-value': constant('Cicada\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS'),
                         'data-form-field-toggle-scope': (scope == 'parent') ? 'parent' : 'all',
                         'data-form-field-toggle-parent-selector': (scope == 'parent') ? parentSelector,
                     },
@@ -77,7 +77,7 @@
                     {# The selection field is then disabled and the account type is set to "business". #}
                     <input type="hidden"
                            name="accountType"
-                           value="{{ constant('Shopware\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS') }}">
+                           value="{{ constant('Cicada\\Core\\Checkout\\Customer\\CustomerEntity::ACCOUNT_TYPE_BUSINESS') }}">
                 {% endif %}
             </div>
         {% elseif not hideCustomerTypeSelect %}
@@ -128,56 +128,6 @@
                         additionalClass: 'col-md-3 col-sm-6',
                     } %}
                 {% endif %}
-            {% endblock %}
-        </div>
-    {% endblock %}
-
-    {% block component_address_personal_name_phone %}
-        <div class="row g-2">
-            {% block component_address_personal_fields_name %}
-                {# New implementation, setting of "violationPath" #}
-                {% if formViolations.getViolations("/#{prefix}/name") is not empty %}
-                    {% set violationPath = "/#{prefix}/name" %}
-                {% elseif formViolations.getViolations("/name") is not empty and not prefix %}
-                    {% set violationPath = "/name" %}
-                {% else %}
-                    {% set requiredMessage = "error.VIOLATION::IS_BLANK_ERROR"|trans({ '%field%': "account.personalNameLabel"|trans|sw_sanitize }) %}
-                {% endif %}
-                {% sw_include '@Storefront/storefront/component/form/form-input.html.twig' with {
-                    label: 'account.personalNameLabel'|trans|sw_sanitize,
-                    id: idPrefix ~ prefix ~ '-personalName',
-                    name: prefix ? prefix ~ '[name]' : 'name',
-                    value: (prefix and data.has(prefix)) ? data.get(prefix).get('name') : data.get('name'),
-                    autocomplete: 'section-personal given-name',
-                    violationPath: violationPath,
-                    validationRules: 'required',
-                    additionalClass: 'col-sm-6',
-                } %}
-            {% endblock %}
-            {% block component_address_personal_fields_phone_number %}
-                {% if formViolations.getViolations('/phoneNumber') is not empty %}
-                    {% set violationPath = '/phoneNumber' %}
-                {% elseif formViolations.getViolations("/#{prefix}/phoneNumber") is not empty %}
-                    {% set violationPath = "/#{prefix}/phoneNumber" %}
-                {% endif %}
-                {% set phoneAutocomplete = 'tel' %}
-
-                {% if prefix == 'shippingAddress' %}
-                    {% set phoneAutocomplete = 'shipping tel' %}
-                {% elseif prefix == 'billingAddress' %}
-                    {% set phoneAutocomplete = 'billing tel' %}
-                {% endif %}
-
-                {% sw_include '@Storefront/storefront/component/form/form-input.html.twig' with {
-                    label: 'address.phoneNumberLabel'|trans|sw_sanitize,
-                    id: idPrefix ~ prefix ~ 'personalPhoneNumber',
-                    name: prefix ~ '[phoneNumber]',
-                    value: data.get('phoneNumber'),
-                    autocomplete: phoneAutocomplete,
-                    violationPath: violationPath,
-                    validationRules: phoneNumberRequired is not false ? 'required',
-                    additionalClass: 'col-md-6',
-                } %}
             {% endblock %}
         </div>
     {% endblock %}

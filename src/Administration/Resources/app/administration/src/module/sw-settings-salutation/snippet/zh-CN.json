@@ -6,33 +6,33 @@
   },
   "sw-settings-salutation": {
     "general": {
-      "mainMenuItemGeneral": "称呼",
-      "buttonCreate": "添加称呼",
+      "mainMenuItemGeneral": "客户称谓",
+      "buttonCreate": "添加称谓",
       "buttonSave": "保存",
-      "placeholderSearchBar": "搜索称呼..."
+      "placeholderSearchBar": "搜索称谓..."
     },
     "list": {
       "columnSalutationKey": "技术名称",
-      "columnDisplayName": "称呼",
-      "columnLetterName": "信件称呼"
+      "columnDisplayName": "称谓",
+      "columnLetterName": "信件称谓"
     },
     "detail": {
-      "cardTitle": "称呼",
-      "fieldDisplayNameLabel": "称呼",
-      "fieldDisplayNamePlaceholder": "输入称呼...",
-      "fieldLetterNameLabel": "信件称呼",
-      "fieldLetterNamePlaceholder": "输入信件称呼...",
-      "fieldSalutationKeyTooltip": "选择一个唯一的技术名称，e.g. 在电子邮件模板中包含称呼时需要。",
+      "cardTitle": "称谓",
+      "fieldDisplayNameLabel": "称谓",
+      "fieldDisplayNamePlaceholder": "输入称谓...",
+      "fieldLetterNameLabel": "信件称谓",
+      "fieldLetterNamePlaceholder": "输入信件称谓...",
+      "fieldSalutationKeyTooltip": "选择一个唯一的技术名称，e.g. 在电子邮件模板中包含称谓时需要。",
       "fieldSalutationKeyLabel": "技术名称",
       "fieldSalutationKeyPlaceholder": "输入技术名称...",
-      "placeholderNewSalutation": "新称呼...",
-      "notificationErrorMessage": "保存称呼时出错。"
+      "placeholderNewSalutation": "新称谓...",
+      "notificationErrorMessage": "保存称谓时出错。"
     }
   },
   "sw-privileges": {
     "permissions": {
       "salutation": {
-        "label": "称呼"
+        "label": "称谓"
       }
     }
   }
