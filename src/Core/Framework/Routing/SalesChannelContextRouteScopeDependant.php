@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Routing;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 interface SalesChannelContextRouteScopeDependant
 {
 }

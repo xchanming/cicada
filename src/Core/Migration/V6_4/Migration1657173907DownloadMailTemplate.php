@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1657173907DownloadMailTemplate extends MigrationStep
 {
     use UpdateMailTrait;

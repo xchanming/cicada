@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SystemConfig\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class BundleConfigNotFoundException extends CicadaHttpException
 {
     public function __construct(

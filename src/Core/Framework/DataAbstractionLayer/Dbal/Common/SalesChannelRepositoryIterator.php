@@ -12,7 +12,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 /**
  * @template TEntityCollection of EntityCollection
  */
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelRepositoryIterator
 {
     private readonly Criteria $criteria;

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\SystemCheck\Check\Category;
 use Cicada\Core\Framework\SystemCheck\Check\Result;
 use Cicada\Core\Framework\SystemCheck\Check\SystemCheckExecutionContext;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class BaseCheck
 {
     abstract public function run(): Result;

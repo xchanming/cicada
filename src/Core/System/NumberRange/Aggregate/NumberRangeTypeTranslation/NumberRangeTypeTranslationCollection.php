@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<NumberRangeTypeTranslationEntity>
  */
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeTypeTranslationCollection extends EntityCollection
 {
     /**

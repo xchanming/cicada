@@ -9,7 +9,7 @@ use Cicada\Core\System\CustomEntity\Xml\Field\Traits\TranslatableTrait;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class JsonField extends Field
 {
     use RequiredTrait;

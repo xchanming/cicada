@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * Breadcrumbs are stored as JSON objects in the DB, but represented as plain array in the API, therefore we need a specific type
  */
-#[Package('core')]
+#[Package('framework')]
 class BreadcrumbField extends JsonField
 {
     /**

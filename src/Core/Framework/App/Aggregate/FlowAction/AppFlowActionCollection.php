@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<AppFlowActionEntity>
  */
-#[Package('core')]
+#[Package('framework')]
 class AppFlowActionCollection extends EntityCollection
 {
     public function getApiAlias(): string

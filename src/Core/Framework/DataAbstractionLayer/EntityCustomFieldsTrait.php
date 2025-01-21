@@ -6,7 +6,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Attribute\CustomFields;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 trait EntityCustomFieldsTrait
 {
     /**

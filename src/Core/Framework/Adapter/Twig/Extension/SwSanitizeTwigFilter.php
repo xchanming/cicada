@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Util\HtmlSanitizer;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
-#[Package('core')]
+#[Package('framework')]
 class SwSanitizeTwigFilter extends AbstractExtension
 {
     /**

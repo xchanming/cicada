@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class PreWriteValidationEvent extends Event implements CicadaEvent
 {
     /**

@@ -12,7 +12,7 @@ use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
 use Cicada\Core\System\User\UserCollection;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class AppLocaleProvider
 {
     /**

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Validation\Constraint;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Validator\Constraint;
 
-#[Package('core')]
+#[Package('framework')]
 class ArrayOfUuid extends Constraint
 {
     final public const INVALID_MESSAGE = 'The value "{{ string }}" is not a valid uuid.';

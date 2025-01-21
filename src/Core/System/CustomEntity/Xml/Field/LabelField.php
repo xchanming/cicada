@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class LabelField extends Field
 {
     protected string $type = 'label';

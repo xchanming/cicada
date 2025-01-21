@@ -5,7 +5,7 @@ namespace Cicada\Core\System\NumberRange\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('checkout')]
+#[Package('framework')]
 class IncrementStorageNotFoundException extends CicadaHttpException
 {
     /**

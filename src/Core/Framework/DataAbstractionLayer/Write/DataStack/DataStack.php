@@ -31,7 +31,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  *      $resultSet = $stack->getResultAsArray();
  */
-#[Package('core')]
+#[Package('framework')]
 class DataStack
 {
     /**

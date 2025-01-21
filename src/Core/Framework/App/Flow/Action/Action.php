@@ -7,7 +7,7 @@ use Cicada\Core\Framework\App\Flow\Action\Xml\Actions;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Config\Util\XmlUtils;
 
-#[Package('core')]
+#[Package('framework')]
 class Action
 {
     private const XSD_FLOW_FILE = '/Schema/flow-1.0.xsd';

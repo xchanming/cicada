@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class EqualsFilter extends SingleFieldFilter
 {
     public function __construct(

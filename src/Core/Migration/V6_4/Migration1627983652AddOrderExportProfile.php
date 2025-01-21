@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1627983652AddOrderExportProfile extends MigrationStep
 {
     use ImportTranslationsTrait;

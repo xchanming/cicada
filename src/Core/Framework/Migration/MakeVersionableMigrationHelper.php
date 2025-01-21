@@ -8,7 +8,7 @@ use Doctrine\DBAL\Platforms\MySQLPlatform;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\DBAL\Schema\ForeignKeyConstraint;
 
-#[Package('core')]
+#[Package('framework')]
 class MakeVersionableMigrationHelper
 {
     private const DROP_FOREIGN_KEY = 'ALTER TABLE `%s` DROP FOREIGN KEY `%s`';

@@ -9,7 +9,7 @@ use League\Flysystem\FileAttributes;
 use League\Flysystem\FilesystemOperator;
 use League\Flysystem\StorageAttributes;
 
-#[Package('core')]
+#[Package('framework')]
 class PrefixFilesystem implements FilesystemOperator
 {
     private readonly string $prefix;

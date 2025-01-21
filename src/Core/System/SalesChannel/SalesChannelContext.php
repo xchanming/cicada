@@ -20,7 +20,7 @@ use Cicada\Core\System\Currency\CurrencyEntity;
 use Cicada\Core\System\SalesChannel\Context\LanguageInfo;
 use Cicada\Core\System\Tax\TaxCollection;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContext extends Struct
 {
     use StateAwareTrait;

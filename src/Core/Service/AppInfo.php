@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 readonly class AppInfo
 {
     public function __construct(

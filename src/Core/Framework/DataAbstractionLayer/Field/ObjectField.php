@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ObjectField extends JsonField
 {
     public function __construct(

@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1604502151AddThemePreviewMediaConstraint extends MigrationStep
 {
     public function getCreationTimestamp(): int

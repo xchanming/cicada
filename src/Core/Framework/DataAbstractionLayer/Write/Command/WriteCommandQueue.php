@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Util\Hasher;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class WriteCommandQueue
 {
     /**

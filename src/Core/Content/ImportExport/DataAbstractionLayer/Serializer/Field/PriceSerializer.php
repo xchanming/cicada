@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Currency\CurrencyCollection;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class PriceSerializer extends FieldSerializer
 {
     /**

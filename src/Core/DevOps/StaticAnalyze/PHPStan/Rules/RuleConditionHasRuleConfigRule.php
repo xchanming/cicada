@@ -43,7 +43,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class RuleConditionHasRuleConfigRule implements Rule
 {
     /**

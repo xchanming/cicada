@@ -10,7 +10,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @codeCoverageIgnore (see \Cicada\Tests\Integration\Core\Content\Media\Infrastructure\Path\MediaPathStorageTest)
  */
-#[Package('core')]
+#[Package('discovery')]
 class SqlMediaPathStorage implements MediaPathStorage
 {
     /**

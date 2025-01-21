@@ -15,7 +15,7 @@ use Cicada\Core\System\Currency\Aggregate\CurrencyTranslation\CurrencyTranslatio
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainCollection;
 use Cicada\Core\System\SalesChannel\SalesChannelCollection;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyEntity extends Entity
 {
     use EntityCustomFieldsTrait;

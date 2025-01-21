@@ -21,7 +21,7 @@ use Symfony\Component\Console\Output\OutputInterface;
     name: 'system:setup:staging',
     description: 'Installs the Cicada 6 system in staging mode',
 )]
-#[Package('core')]
+#[Package('framework')]
 class SystemSetupStagingCommand extends Command
 {
     public function __construct(

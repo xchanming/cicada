@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1624884801MakeMailLinksConfigurable extends MigrationStep
 {
     public function getCreationTimestamp(): int

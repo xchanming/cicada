@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
-#[Package('core')]
+#[Package('framework')]
 class ManyToManyIdFieldUpdater
 {
     /**

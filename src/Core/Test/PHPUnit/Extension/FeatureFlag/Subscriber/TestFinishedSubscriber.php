@@ -11,7 +11,7 @@ use PHPUnit\Event\Test\FinishedSubscriber;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TestFinishedSubscriber implements FinishedSubscriber
 {
     public function __construct(private readonly SavedConfig $savedConfig)

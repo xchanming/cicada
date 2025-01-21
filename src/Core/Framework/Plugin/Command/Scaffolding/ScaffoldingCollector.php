@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Plugin\Command\Scaffolding\Generator\ScaffoldingGenera
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class ScaffoldingCollector
 {
     private string $servicesXmlIntro = <<<'EOL'

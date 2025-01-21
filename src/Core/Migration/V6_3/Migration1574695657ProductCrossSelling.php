@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1574695657ProductCrossSelling extends MigrationStep
 {
     use InheritanceUpdaterTrait;

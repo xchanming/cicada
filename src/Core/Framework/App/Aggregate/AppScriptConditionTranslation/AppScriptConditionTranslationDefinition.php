@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppScriptConditionTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'app_script_condition_translation';

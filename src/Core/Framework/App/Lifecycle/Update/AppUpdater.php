@@ -17,7 +17,7 @@ use Cicada\Core\Framework\Store\Struct\ExtensionStruct;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class AppUpdater extends AbstractAppUpdater
 {
     /**

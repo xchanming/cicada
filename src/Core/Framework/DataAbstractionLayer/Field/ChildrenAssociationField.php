@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\CascadeDelete;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ChildrenAssociationField extends OneToManyAssociationField
 {
     public function __construct(

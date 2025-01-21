@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\PartialEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class PartialEntityLoadedEvent extends EntityLoadedEvent
 {
     /**

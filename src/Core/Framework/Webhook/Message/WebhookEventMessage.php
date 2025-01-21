@@ -8,7 +8,7 @@ use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class WebhookEventMessage implements AsyncMessageInterface
 {
     /**

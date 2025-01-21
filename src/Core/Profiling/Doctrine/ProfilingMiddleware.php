@@ -8,7 +8,7 @@ use Doctrine\DBAL\Driver\Middleware;
 use Symfony\Bridge\Doctrine\Middleware\Debug\Driver as DebugDriver;
 use Symfony\Component\Stopwatch\Stopwatch;
 
-#[Package('core')]
+#[Package('framework')]
 class ProfilingMiddleware implements Middleware
 {
     private const CONNECTION = 'default';

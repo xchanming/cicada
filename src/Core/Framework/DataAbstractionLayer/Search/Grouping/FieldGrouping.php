@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Struct\Struct;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class FieldGrouping extends Struct implements CriteriaPartInterface
 {
     public function __construct(protected readonly string $field)

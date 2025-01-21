@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<EntityProtection>
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityProtectionCollection extends Collection
 {
     /**

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @template TCachedContent
  */
-#[Package('core')]
+#[Package('framework')]
 class CacheValueCompressor
 {
     public static bool $compress = true;

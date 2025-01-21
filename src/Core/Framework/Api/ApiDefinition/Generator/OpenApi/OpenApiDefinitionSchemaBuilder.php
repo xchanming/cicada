@@ -42,7 +42,7 @@ use OpenApi\Annotations\Property;
 use OpenApi\Annotations\Schema;
 use Symfony\Component\Serializer\NameConverter\CamelCaseToSnakeCaseNameConverter;
 
-#[Package('core')]
+#[Package('framework')]
 class OpenApiDefinitionSchemaBuilder
 {
     private CamelCaseToSnakeCaseNameConverter $converter;

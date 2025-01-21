@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1571660203FixOrderDeliveryStateNames extends MigrationStep
 {
     public function getCreationTimestamp(): int

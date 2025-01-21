@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1578042218DefaultPages extends MigrationStep
 {
     public function getCreationTimestamp(): int

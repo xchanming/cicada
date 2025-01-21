@@ -38,7 +38,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class BaseContextFactory extends AbstractBaseContextFactory
 {
     /**

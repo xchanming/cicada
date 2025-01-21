@@ -14,7 +14,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class PHPUnitClassAttributesOverAnnotationsRule implements Rule
 {
     public function getNodeType(): string

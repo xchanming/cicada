@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 readonly class StagingAppHandler
 {
     public function __construct(

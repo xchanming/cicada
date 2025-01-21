@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class CommandAclValidationEvent extends Event
 {
     /**

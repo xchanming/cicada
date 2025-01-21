@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Struct\Struct;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class AggregatorResult extends Struct
 {
     public function __construct(

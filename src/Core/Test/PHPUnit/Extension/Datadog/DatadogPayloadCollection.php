@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Struct\Collection;
  *
  * @extends Collection<DatadogPayload>
  */
-#[Package('core')]
+#[Package('framework')]
 class DatadogPayloadCollection extends Collection
 {
 }

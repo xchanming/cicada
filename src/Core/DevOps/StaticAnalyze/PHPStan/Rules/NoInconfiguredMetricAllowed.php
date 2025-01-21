@@ -30,7 +30,7 @@ use PHPStan\Symfony\ParameterMap;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class NoInconfiguredMetricAllowed implements Rule
 {
     use InTestClassTrait;

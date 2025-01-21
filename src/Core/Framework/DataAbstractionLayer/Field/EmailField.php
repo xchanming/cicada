@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\EmailFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class EmailField extends StringField
 {
     protected function getSerializerClass(): string

@@ -12,7 +12,7 @@ use Doctrine\DBAL\DriverManager;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class DatabaseConnectionFactory
 {
     /**

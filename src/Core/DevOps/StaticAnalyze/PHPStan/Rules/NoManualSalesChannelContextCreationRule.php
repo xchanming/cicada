@@ -26,7 +26,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @implements Rule<New_>
  */
-#[Package('core')]
+#[Package('framework')]
 class NoManualSalesChannelContextCreationRule implements Rule
 {
     /**

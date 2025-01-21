@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class InputField extends XmlElement
 {
     private const TRANSLATABLE_FIELDS = [

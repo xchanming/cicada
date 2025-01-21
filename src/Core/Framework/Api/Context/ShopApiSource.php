@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Api\Context;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ShopApiSource extends SalesChannelApiSource
 {
     public string $type = 'shop-api';

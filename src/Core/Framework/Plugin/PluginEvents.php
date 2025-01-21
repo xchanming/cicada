@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Plugin;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginEvents
 {
     final public const PLUGIN_WRITTEN_EVENT = 'plugin.written';

@@ -18,7 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Api\ResponseFields;
 
-#[Package('core')]
+#[Package('framework')]
 class JsonApiEncoder
 {
     /**

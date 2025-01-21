@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Util;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Exception\ComparatorException;
 
-#[Package('core')]
+#[Package('framework')]
 class ArrayComparator
 {
     /**

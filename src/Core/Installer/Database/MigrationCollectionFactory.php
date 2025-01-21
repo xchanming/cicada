@@ -12,7 +12,7 @@ use Psr\Log\NullLogger;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class MigrationCollectionFactory
 {
     public function __construct(private readonly string $projectDir)

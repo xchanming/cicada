@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Entit
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractMediaSerializer extends EntitySerializer
 {
     abstract public function persistMedia(EntityWrittenEvent $event): void;

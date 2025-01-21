@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Struct\Collection;
  *
  * @extends Collection<TElement>
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityCollection extends Collection
 {
     /**

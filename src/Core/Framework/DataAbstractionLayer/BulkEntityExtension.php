@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class BulkEntityExtension
 {
     /**

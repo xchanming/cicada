@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Kernel;
 use Doctrine\DBAL\Connection;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class SystemConfigLoader extends AbstractSystemConfigLoader
 {
     /**

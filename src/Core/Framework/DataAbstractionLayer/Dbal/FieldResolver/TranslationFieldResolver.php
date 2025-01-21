@@ -17,7 +17,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TranslationFieldResolver extends AbstractFieldResolver
 {
     public function __construct(

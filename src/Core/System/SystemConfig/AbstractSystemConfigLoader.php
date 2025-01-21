@@ -4,7 +4,7 @@ namespace Cicada\Core\System\SystemConfig;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 abstract class AbstractSystemConfigLoader
 {
     abstract public function getDecorated(): AbstractSystemConfigLoader;

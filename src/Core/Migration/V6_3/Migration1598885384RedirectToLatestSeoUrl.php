@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1598885384RedirectToLatestSeoUrl extends MigrationStep
 {
     final public const CONFIG_KEY = 'core.seo.redirectToCanonicalUrl';

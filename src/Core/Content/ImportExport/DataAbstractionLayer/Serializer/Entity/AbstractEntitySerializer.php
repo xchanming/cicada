@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 use Symfony\Contracts\Service\ResetInterface;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractEntitySerializer implements ResetInterface
 {
     protected SerializerRegistry $serializerRegistry;

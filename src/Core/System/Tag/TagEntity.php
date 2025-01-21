@@ -15,7 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('inventory')]
+#[Package('fundamentals@framework')]
 class TagEntity extends Entity
 {
     use EntityIdTrait;

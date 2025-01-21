@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageEntity;
 
-#[Package('core')]
+#[Package('framework')]
 class TranslationEntity extends Entity
 {
     /**

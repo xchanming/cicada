@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class UpdatedAtFieldSerializer extends DateTimeFieldSerializer
 {
     /**

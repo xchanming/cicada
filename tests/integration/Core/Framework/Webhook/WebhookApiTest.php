@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class WebhookApiTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;

@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Plugin\Util;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class VersionSanitizer
 {
     public function sanitizePluginVersion(string $version): string

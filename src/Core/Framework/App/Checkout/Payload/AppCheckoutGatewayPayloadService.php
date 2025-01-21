@@ -13,7 +13,7 @@ use GuzzleHttp\Exception\GuzzleException;
 /**
  * @internal only for use by the app-systems
  */
-#[Package('core')]
+#[Package('framework')]
 class AppCheckoutGatewayPayloadService
 {
     /**

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Write\Command;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 class ChangeSet extends Struct
 {
     /**

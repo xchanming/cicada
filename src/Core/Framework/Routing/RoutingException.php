@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\Exception\CustomerNotLoggedInRoutingException;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class RoutingException extends HttpException
 {
     public const MISSING_REQUEST_PARAMETER_CODE = 'FRAMEWORK__MISSING_REQUEST_PARAMETER';

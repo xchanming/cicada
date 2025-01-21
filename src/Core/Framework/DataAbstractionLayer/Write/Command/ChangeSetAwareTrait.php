@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 trait ChangeSetAwareTrait
 {
     protected bool $requireChangeSet = false;

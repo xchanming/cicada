@@ -52,7 +52,7 @@ use Cicada\Core\System\CustomEntity\Schema\DynamicEntityDefinition;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EntitySchemaGenerator implements ApiDefinitionGeneratorInterface
 {
     final public const FORMAT = 'entity-schema';

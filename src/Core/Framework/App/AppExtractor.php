@@ -14,7 +14,7 @@ use Symfony\Component\Filesystem\Path;
  *
  * @codeCoverageIgnore Integration tested with \Cicada\Tests\Integration\Core\Framework\App\AppExtractorTest
  */
-#[Package('core')]
+#[Package('framework')]
 class AppExtractor
 {
     public function __construct(

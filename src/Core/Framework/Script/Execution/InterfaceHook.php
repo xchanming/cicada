@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only rely on the concrete implementations
  */
-#[Package('core')]
+#[Package('framework')]
 abstract class InterfaceHook extends Hook
 {
     /**

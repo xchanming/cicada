@@ -10,7 +10,7 @@ use Doctrine\DBAL\ConnectionException;
 use Doctrine\DBAL\Exception;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class MigrationStep
 {
     use AddColumnTrait;

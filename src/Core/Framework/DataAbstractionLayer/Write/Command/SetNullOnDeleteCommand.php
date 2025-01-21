@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class SetNullOnDeleteCommand extends UpdateCommand
 {
     /**

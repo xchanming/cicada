@@ -6,7 +6,7 @@ use Cicada\Core\Content\Media\MediaCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('core')]
+#[Package('discovery')]
 class MediaRouteResponse extends StoreApiResponse
 {
     /**

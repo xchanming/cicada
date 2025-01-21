@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\OneToOneAssociationField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class ToOneSerializer extends FieldSerializer
 {
     /**

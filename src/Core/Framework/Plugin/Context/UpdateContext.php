@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationCollection;
 use Cicada\Core\Framework\Plugin;
 
-#[Package('core')]
+#[Package('framework')]
 class UpdateContext extends InstallContext
 {
     public function __construct(

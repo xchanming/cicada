@@ -12,7 +12,7 @@ use Doctrine\DBAL\Exception;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1629700169AddEnqueueIndex extends MigrationStep
 {
     public function getCreationTimestamp(): int

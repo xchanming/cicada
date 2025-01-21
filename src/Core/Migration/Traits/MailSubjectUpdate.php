@@ -4,7 +4,7 @@ namespace Cicada\Core\Migration\Traits;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class MailSubjectUpdate
 {
     /**

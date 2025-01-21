@@ -11,7 +11,7 @@ use Doctrine\DBAL\Exception;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1723193659UpdateVatPatternForCountry extends MigrationStep
 {
     private const VAT_PATTERNS = [

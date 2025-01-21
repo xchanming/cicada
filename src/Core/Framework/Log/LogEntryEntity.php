@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Log;
 use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 
-#[Package('core')]
+#[Package('framework')]
 class LogEntryEntity extends Entity
 {
     use EntityIdTrait;

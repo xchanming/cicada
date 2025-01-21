@@ -9,7 +9,7 @@ use Cicada\Core\System\NumberRange\Aggregate\NumberRangeType\NumberRangeTypeEnti
 use Cicada\Core\System\NumberRange\NumberRangeEntity;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeSalesChannelEntity extends Entity
 {
     use EntityIdTrait;

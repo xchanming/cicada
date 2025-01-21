@@ -72,7 +72,7 @@ use Cicada\Core\System\Tax\TaxDefinition;
 use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 
-#[Package('core')]
+#[Package('framework')]
 class CacheInvalidationSubscriber
 {
     /**

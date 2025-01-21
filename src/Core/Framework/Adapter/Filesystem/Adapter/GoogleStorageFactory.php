@@ -9,7 +9,7 @@ use League\Flysystem\FilesystemAdapter;
 use League\Flysystem\GoogleCloudStorage\GoogleCloudStorageAdapter;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-#[Package('core')]
+#[Package('framework')]
 class GoogleStorageFactory implements AdapterFactoryInterface
 {
     /**

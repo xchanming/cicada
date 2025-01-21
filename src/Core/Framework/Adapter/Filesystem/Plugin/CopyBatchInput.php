@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Filesystem\Plugin;
 use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CopyBatchInput
 {
     /**

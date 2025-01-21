@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1657027979AddOrderRefundPrivilegeForOrderEditor extends MigrationStep
 {
     final public const NEW_PRIVILEGES = [

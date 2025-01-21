@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1668677456AddAppReadPrivilegeForIntegrationRoles extends MigrationStep
 {
     final public const NEW_PRIVILEGES = [

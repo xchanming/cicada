@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @phpstan-import-type AdminUser from ShopConfigurationController
  */
-#[Package('core')]
+#[Package('framework')]
 class AdminConfigurationService
 {
     /**

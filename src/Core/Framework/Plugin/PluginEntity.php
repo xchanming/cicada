@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Plugin\Aggregate\PluginTranslation\PluginTranslationCollection;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginEntity extends Entity
 {
     use EntityCustomFieldsTrait;

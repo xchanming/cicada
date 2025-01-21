@@ -26,7 +26,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Messenger\MessageBusInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class ProductStreamUpdater extends AbstractProductStreamUpdater
 {
     /**

@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1570459127AddCmsSidebarLayout extends MigrationStep
 {
     public function getCreationTimestamp(): int

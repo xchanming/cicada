@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Telemetry\Metrics\Metric;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Telemetry\Metrics\Config\MetricConfig;
 
-#[Package('core')]
+#[Package('framework')]
 readonly class Metric
 {
     final private function __construct(

@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(SearchConfigLoader::class)]
 class SearchConfigLoaderTest extends TestCase
 {

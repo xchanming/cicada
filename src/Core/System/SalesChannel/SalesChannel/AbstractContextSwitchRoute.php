@@ -12,7 +12,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
  * Following parameters are allowed to change: "currencyId", "languageId", "billingAddressId", "shippingAddressId",
  * "paymentMethodId", "shippingMethodId", "countryId" and "countryStateId"
  */
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractContextSwitchRoute
 {
     abstract public function getDecorated(): AbstractContextSwitchRoute;

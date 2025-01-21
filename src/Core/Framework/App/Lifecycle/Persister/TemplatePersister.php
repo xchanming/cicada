@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Util\Hasher;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class TemplatePersister
 {
     /**

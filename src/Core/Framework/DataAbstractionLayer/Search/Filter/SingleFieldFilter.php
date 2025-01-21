@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 abstract class SingleFieldFilter extends Filter
 {
     protected bool $isPrimary = false;

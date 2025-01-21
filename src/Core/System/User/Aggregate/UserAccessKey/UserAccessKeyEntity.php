@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\UserEntity;
 
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class UserAccessKeyEntity extends Entity
 {
     use EntityCustomFieldsTrait;

@@ -28,7 +28,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\UpdatedAtField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class EntityDefinition
 {
     protected ?CompiledFieldCollection $fields = null;

@@ -8,7 +8,7 @@ use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Asset\VersionStrategy\VersionStrategyInterface;
 use Symfony\Component\Cache\Adapter\TagAwareAdapterInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class FlysystemLastModifiedVersionStrategy implements VersionStrategyInterface
 {
     /**

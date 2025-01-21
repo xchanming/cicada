@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class EntitySerializer extends AbstractEntitySerializer
 {
     public function serialize(Config $config, EntityDefinition $definition, $entity): iterable

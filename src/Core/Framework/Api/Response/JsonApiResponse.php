@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Api\Response;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-#[Package('core')]
+#[Package('framework')]
 class JsonApiResponse extends JsonResponse
 {
     protected function update(): static

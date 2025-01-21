@@ -10,7 +10,7 @@ use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Level;
 use Monolog\LogRecord;
 
-#[Package('core')]
+#[Package('framework')]
 class DoctrineSQLHandler extends AbstractProcessingHandler
 {
     /**

@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Version;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class VersionEvents
 {
     final public const VERSION_WRITTEN_EVENT = 'version.written';

@@ -4,7 +4,7 @@ namespace Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('checkout')]
+#[Package('framework')]
 abstract class AbstractIncrementStorage
 {
     /**

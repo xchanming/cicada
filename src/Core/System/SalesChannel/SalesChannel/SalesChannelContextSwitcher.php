@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextSwitcher
 {
     /**

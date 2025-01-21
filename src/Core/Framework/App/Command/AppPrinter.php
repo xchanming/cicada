@@ -17,7 +17,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class AppPrinter
 {
     private const PRIVILEGE_TO_HUMAN_READABLE = [

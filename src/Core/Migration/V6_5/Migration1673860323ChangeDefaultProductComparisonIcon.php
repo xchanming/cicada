@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1673860323ChangeDefaultProductComparisonIcon extends MigrationStep
 {
     public function getCreationTimestamp(): int

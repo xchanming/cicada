@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Migration\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class MigrateException extends CicadaHttpException
 {
     public function __construct(

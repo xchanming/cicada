@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<LocaleEntity>
  */
-#[Package('core')]
+#[Package('discovery')]
 class LocaleCollection extends EntityCollection
 {
     public function getApiAlias(): string

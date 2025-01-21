@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Doctrine\DBAL\Connection;
 
-#[Package('core')]
+#[Package('framework')]
 trait EnsureThumbnailSizesTrait
 {
     /**

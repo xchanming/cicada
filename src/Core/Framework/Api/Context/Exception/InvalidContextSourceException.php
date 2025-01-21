@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class InvalidContextSourceException extends ApiException
 {
     public function __construct(

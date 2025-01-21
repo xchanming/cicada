@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Product\DataAbstractionLayer\StockUpdate;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractStockUpdateFilter
 {
     /**

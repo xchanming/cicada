@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(EnumField::class)]
 #[Group('Field')]
 #[Group('DAL')]

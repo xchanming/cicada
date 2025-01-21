@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Currency\CurrencyCollection;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyRouteResponse extends StoreApiResponse
 {
     /**

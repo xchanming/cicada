@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Struct\StateAwareTrait;
 use Cicada\Core\Framework\Struct\Struct;
 use Symfony\Component\Serializer\Annotation\Ignore;
 
-#[Package('core')]
+#[Package('framework')]
 class Context extends Struct
 {
     use StateAwareTrait;

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractProductStreamUpdater extends EntityIndexer
 {
     /**

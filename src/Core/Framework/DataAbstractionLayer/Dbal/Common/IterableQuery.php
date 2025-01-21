@@ -8,7 +8,7 @@ use Doctrine\DBAL\Query\QueryBuilder;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 interface IterableQuery
 {
     /**

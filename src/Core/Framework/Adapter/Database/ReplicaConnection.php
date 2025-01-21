@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connections\PrimaryReadReplicaConnection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class ReplicaConnection
 {
     public static function ensurePrimary(): void

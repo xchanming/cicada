@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1620820321AddDefaultDomainForHeadlessSaleschannel extends MigrationStep
 {
     public function getCreationTimestamp(): int

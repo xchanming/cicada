@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EnvironmentHelperTransformer implements EnvironmentHelperTransformerInterface
 {
     public static function transform(EnvironmentHelperTransformerData $data): void

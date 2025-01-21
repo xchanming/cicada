@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Validation\Constraint;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Validator\Constraint;
 
-#[Package('core')]
+#[Package('framework')]
 class ArrayOfType extends Constraint
 {
     final public const INVALID_MESSAGE = 'This value "{{ value }}" should be of type {{ type }}.';

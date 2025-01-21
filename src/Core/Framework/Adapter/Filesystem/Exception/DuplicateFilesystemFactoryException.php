@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Filesystem\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class DuplicateFilesystemFactoryException extends CicadaHttpException
 {
     public function __construct(string $type)

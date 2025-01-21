@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1652864153ReindexMediaFolders extends MigrationStep
 {
     /**

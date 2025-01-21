@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<NumberRangeStateEntity>
  */
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeStateCollection extends EntityCollection
 {
     public function getApiAlias(): string

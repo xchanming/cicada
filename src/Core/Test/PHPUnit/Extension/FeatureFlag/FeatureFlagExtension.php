@@ -16,7 +16,7 @@ use PHPUnit\TextUI\Configuration\Configuration;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class FeatureFlagExtension implements Extension
 {
     private const DEFAULT_TEST_NAMESPACE_PREFIX = 'Cicada\\Tests\\Unit\\';

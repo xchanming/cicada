@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Migration;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class Trigger
 {
     final public const TIME_BEFORE = 'BEFORE';

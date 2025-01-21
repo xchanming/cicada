@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppTemplateIterator implements \IteratorAggregate
 {
     /**

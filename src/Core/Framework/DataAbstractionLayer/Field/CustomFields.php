@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder\CustomF
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\CustomFieldsSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CustomFields extends JsonField
 {
     public function __construct(

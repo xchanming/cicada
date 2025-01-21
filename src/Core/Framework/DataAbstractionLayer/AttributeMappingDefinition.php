@@ -9,7 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\ReferenceVersionField;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AttributeMappingDefinition extends MappingEntityDefinition
 {
     /**

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<StateMachineTranslationEntity>
  */
-#[Package('core')]
+#[Package('checkout')]
 class StateMachineTranslationCollection extends EntityCollection
 {
     /**

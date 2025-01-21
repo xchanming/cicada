@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(MetricNotSupportedException::class)]
 class MetricNotSupportedExceptionTest extends TestCase
 {

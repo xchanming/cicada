@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Plugin\PluginException;
 use Cicada\Core\Kernel;
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class Plugin extends Bundle
 {
     /**

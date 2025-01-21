@@ -4,7 +4,7 @@ namespace Cicada\Core\Checkout\Cart;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('checkout')]
 class CartCompressor
 {
     public const COMPRESSION_TYPE_NONE = 0;

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-#[Package('core')]
+#[Package('framework')]
 class FeatureFlagExtension extends AbstractExtension
 {
     /**

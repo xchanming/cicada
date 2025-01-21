@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\XmlReader;
 use Cicada\Core\System\SystemConfig\Exception\BundleConfigNotFoundException;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class ConfigReader extends XmlReader
 {
     private const FALLBACK_LOCALE = 'en-GB';

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\CalculatedPriceFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CalculatedPriceField extends JsonField
 {
     public function __construct(

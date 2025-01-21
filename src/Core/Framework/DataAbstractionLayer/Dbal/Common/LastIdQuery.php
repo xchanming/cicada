@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common;
 use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Query\QueryBuilder;
 
-#[Package('core')]
+#[Package('framework')]
 class LastIdQuery implements IterableQuery
 {
     private ?int $lastId = null;

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Plugin\Util;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginException;
 
-#[Package('core')]
+#[Package('framework')]
 class ZipUtils
 {
     private const HEADER_SIGNATURE = '504b0304';

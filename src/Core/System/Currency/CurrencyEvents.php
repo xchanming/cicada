@@ -4,7 +4,7 @@ namespace Cicada\Core\System\Currency;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyEvents
 {
     final public const CURRENCY_WRITTEN_EVENT = 'currency.written';

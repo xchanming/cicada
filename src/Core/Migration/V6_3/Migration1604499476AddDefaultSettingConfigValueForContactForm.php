@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1604499476AddDefaultSettingConfigValueForContactForm extends MigrationStep
 {
     private const CONFIG_KEYS = [

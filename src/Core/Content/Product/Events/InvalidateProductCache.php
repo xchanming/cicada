@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Product\Events;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class InvalidateProductCache implements ProductChangedEventInterface
 {
     /**

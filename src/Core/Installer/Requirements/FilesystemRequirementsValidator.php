@@ -10,7 +10,7 @@ use Cicada\Core\Installer\Requirements\Struct\RequirementsCheckCollection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class FilesystemRequirementsValidator implements RequirementsValidatorInterface
 {
     private const NEEDED_PATHS = [

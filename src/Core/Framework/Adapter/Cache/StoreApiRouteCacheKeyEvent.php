@@ -8,7 +8,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class StoreApiRouteCacheKeyEvent extends Event
 {
     private bool $disableCaching = false;

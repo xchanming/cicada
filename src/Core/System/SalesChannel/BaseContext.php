@@ -18,7 +18,7 @@ use Cicada\Core\System\Tax\TaxCollection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class BaseContext
 {
     public function __construct(

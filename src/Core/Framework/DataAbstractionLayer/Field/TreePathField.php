@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\WriteProtected;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class TreePathField extends LongTextField
 {
     public function __construct(

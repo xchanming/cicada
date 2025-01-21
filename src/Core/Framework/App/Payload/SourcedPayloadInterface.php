@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 interface SourcedPayloadInterface extends \JsonSerializable
 {
     public function setSource(Source $source): void;

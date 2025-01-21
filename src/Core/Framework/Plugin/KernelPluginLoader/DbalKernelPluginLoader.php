@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @phpstan-import-type PluginInfo from KernelPluginLoader
  */
-#[Package('core')]
+#[Package('framework')]
 class DbalKernelPluginLoader extends KernelPluginLoader
 {
     public function __construct(

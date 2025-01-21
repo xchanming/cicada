@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\Exception\UnknownMigrationSourceException;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 /**
  * @codeCoverageIgnore
  */

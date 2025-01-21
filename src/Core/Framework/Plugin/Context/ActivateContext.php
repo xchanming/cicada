@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Plugin\Context;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ActivateContext extends InstallContext
 {
 }

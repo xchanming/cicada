@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(DoctrineSQLHandler::class)]
 class DoctrineSQLHandlerTest extends TestCase
 {

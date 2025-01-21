@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class AppUpdatedEvent extends ManifestChangedEvent
 {
     final public const NAME = 'app.updated';

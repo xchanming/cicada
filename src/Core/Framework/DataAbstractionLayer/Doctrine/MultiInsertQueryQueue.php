@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\ParameterType;
 
-#[Package('core')]
+#[Package('framework')]
 class MultiInsertQueryQueue
 {
     /**

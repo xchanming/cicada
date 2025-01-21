@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1673966228UpdateVersionAndOrderLineItemPrivilegeForOrderRoles extends MigrationStep
 {
     final public const PRIVILEGES = [

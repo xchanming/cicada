@@ -19,7 +19,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class AppPayloadServiceHelper
 {
     /**

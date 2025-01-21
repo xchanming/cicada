@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class IteratorFactory
 {
     /**

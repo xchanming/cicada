@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<StateMachineEntity>
  */
-#[Package('core')]
+#[Package('checkout')]
 class StateMachineCollection extends EntityCollection
 {
     public function getApiAlias(): string

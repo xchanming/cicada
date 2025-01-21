@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Validation\DataBag\RequestDataBag;
 use Cicada\Core\Framework\Validation\DataValidationDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 class SwitchContextEvent implements CicadaSalesChannelEvent
 {
     public const CONSISTENT_CHECK = self::class . '.consistent_check';

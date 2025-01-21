@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
 use Composer\Autoload\ClassLoader;
 
-#[Package('core')]
+#[Package('framework')]
 final class AdditionalBundleParameters
 {
     public function __construct(

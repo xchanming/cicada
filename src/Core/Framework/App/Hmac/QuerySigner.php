@@ -16,7 +16,7 @@ use Psr\Http\Message\UriInterface;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class QuerySigner
 {
     public function __construct(

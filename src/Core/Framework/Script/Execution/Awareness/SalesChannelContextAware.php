@@ -11,7 +11,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 interface SalesChannelContextAware
 {
     public function getSalesChannelContext(): SalesChannelContext;

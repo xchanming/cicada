@@ -6,7 +6,7 @@ use Cicada\Core\Framework\CicadaException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Validator\ConstraintViolationList;
 
-#[Package('core')]
+#[Package('framework')]
 interface ConstraintViolationExceptionInterface extends CicadaException
 {
     public function getViolations(): ConstraintViolationList;

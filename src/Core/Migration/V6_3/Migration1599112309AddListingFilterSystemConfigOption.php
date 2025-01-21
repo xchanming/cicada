@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1599112309AddListingFilterSystemConfigOption extends MigrationStep
 {
     public function getCreationTimestamp(): int

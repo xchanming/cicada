@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Plugin\Requirement\Exception;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class VersionMismatchException extends RequirementException
 {
     public function __construct(

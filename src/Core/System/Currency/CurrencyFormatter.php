@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Locale\LanguageLocaleCodeProvider;
 use Symfony\Contracts\Service\ResetInterface;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyFormatter implements ResetInterface
 {
     private const REGEX_REMOVE_COUNTRY_CODE = '/^[A-Za-z]+/';

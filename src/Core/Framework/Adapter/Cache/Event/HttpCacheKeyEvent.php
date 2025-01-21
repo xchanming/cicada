@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Cache\Event;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('core')]
+#[Package('framework')]
 class HttpCacheKeyEvent
 {
     /**

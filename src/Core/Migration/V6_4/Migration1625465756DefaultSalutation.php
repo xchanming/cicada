@@ -16,7 +16,7 @@ use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1625465756DefaultSalutation extends MigrationStep
 {
     use ImportTranslationsTrait;

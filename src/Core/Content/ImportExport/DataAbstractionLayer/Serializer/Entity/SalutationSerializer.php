@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Salutation\SalutationDefinition;
 use Symfony\Contracts\Service\ResetInterface;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class SalutationSerializer extends EntitySerializer implements ResetInterface
 {
     /**

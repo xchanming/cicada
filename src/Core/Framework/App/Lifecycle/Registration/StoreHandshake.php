@@ -13,7 +13,7 @@ use Psr\Http\Message\RequestInterface;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class StoreHandshake implements AppHandshakeInterface
 {
     private const SBP_EXCEPTION_UNAUTHORIZED = 'CicadaPlatformException-1';

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\TranslatedFieldSe
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class TranslatedField extends Field
 {
     final public const PRIORITY = 100;

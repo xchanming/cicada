@@ -14,7 +14,7 @@ use Composer\Package\CompletePackageInterface;
 use Symfony\Component\Finder\Exception\DirectoryNotFoundException;
 use Symfony\Component\Finder\Finder;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginFinder
 {
     final public const COMPOSER_TYPE = 'cicada-platform-plugin';

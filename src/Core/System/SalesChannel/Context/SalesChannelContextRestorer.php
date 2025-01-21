@@ -21,7 +21,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextRestorer
 {
     /**

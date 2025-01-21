@@ -10,7 +10,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1726049442UpdateVariantListingConfigInProductTable extends MigrationStep
 {
     public function getCreationTimestamp(): int

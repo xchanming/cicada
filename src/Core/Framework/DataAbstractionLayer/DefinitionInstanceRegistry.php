@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FieldSerializerIn
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class DefinitionInstanceRegistry
 {
     /**

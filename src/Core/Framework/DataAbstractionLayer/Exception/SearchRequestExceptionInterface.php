@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Exception;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 interface SearchRequestExceptionInterface
 {
 }

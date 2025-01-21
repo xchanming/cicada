@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class UserProvisioner
 {
     final public const USER_EMAIL_FALLBACK = 'user@example.com';

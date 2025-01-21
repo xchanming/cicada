@@ -9,7 +9,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class SetupStagingEvent
 {
     public const CONFIG_FLAG = 'core.staging';

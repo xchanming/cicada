@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Api\ApiDefinition\Generator\OpenApi;
 use Cicada\Core\Framework\Log\Package;
 use OpenApi\Analysis;
 
-#[Package('core')]
+#[Package('framework')]
 class DeactivateValidationAnalysis extends Analysis
 {
     public function validate(): bool

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 readonly class TransportConfig
 {
     /**

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\App\Aggregate\AppScriptCondition\AppScriptConditionEnt
 use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppScriptConditionTranslationEntity extends TranslationEntity
 {
     protected ?string $name = null;

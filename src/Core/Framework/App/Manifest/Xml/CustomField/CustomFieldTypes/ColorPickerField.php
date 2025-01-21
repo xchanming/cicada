@@ -8,7 +8,7 @@ use Cicada\Core\System\CustomField\CustomFieldTypes;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class ColorPickerField extends CustomFieldType
 {
     protected function toEntityArray(): array

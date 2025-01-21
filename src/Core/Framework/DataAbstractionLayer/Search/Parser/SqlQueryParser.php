@@ -27,7 +27,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class SqlQueryParser
 {
     /**

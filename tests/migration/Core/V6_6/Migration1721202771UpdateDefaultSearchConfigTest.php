@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1721202771UpdateDefaultSearchConfig::class)]
 class Migration1721202771UpdateDefaultSearchConfigTest extends TestCase
 {

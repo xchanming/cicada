@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @phpstan-type cmsConfigProperty array{value: mixed, source: string}
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1732608755MigrateNavigationSettingsForProductSlider::class)]
 class Migration1732608755MigrateNavigationSettingsForProductSliderTest extends TestCase
 {

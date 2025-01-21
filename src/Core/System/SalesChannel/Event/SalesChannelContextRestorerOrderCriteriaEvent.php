@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextRestorerOrderCriteriaEvent extends NestedEvent
 {
     public function __construct(

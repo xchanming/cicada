@@ -9,7 +9,7 @@ use Cicada\Core\Content\Media\Core\Params\UrlParamsSource;
 use Cicada\Core\Content\Media\Event\MediaPathChangedEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('discovery')]
 class BanMediaUrl
 {
     /**

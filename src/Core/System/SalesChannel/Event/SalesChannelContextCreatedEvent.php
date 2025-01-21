@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextCreatedEvent extends Event implements CicadaSalesChannelEvent
 {
     /**

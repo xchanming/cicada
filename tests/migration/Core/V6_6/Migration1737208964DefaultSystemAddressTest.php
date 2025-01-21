@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1737208964DefaultSystemAddress::class)]
 class Migration1737208964DefaultSystemAddressTest extends TestCase
 {

@@ -8,7 +8,7 @@ use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class AccessTokenRepository implements AccessTokenRepositoryInterface
 {
     /**

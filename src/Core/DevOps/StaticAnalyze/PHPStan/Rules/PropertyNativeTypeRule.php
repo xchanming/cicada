@@ -22,7 +22,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @implements Rule<Class_>
  */
-#[Package('core')]
+#[Package('framework')]
 class PropertyNativeTypeRule implements Rule
 {
     public function getNodeType(): string

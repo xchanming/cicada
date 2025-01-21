@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1696321447AddOnlyLiveVersionToWebhookAndWebhookEventLogTables extends MigrationStep
 {
     public function getCreationTimestamp(): int

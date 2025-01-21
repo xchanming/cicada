@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\CascadeDelete;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\TranslationsAssociationFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class TranslationsAssociationField extends OneToManyAssociationField
 {
     final public const PRIORITY = 90;

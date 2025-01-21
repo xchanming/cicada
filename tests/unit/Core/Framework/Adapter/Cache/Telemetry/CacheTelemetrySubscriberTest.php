@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(CacheTelemetrySubscriber::class)]
 class CacheTelemetrySubscriberTest extends TestCase
 {

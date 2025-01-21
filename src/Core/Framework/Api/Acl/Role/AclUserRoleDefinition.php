@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class AclUserRoleDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'acl_user_role';

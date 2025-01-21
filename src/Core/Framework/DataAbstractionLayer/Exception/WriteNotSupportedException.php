@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class WriteNotSupportedException extends CicadaHttpException
 {
     private readonly Field $field;

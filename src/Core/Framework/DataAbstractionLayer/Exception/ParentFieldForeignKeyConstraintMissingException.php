@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use DataAbstractionLayerException::parentFieldForeignKeyConstraintMissing instead
  */
-#[Package('core')]
+#[Package('framework')]
 class ParentFieldForeignKeyConstraintMissingException extends CicadaHttpException
 {
     public function __construct(EntityDefinition $definition, Field $parentField)

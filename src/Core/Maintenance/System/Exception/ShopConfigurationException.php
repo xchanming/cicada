@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @phpstan-ignore cicada.internalClass
  */
-#[Package('core')]
+#[Package('framework')]
 class ShopConfigurationException extends \RuntimeException
 {
 }

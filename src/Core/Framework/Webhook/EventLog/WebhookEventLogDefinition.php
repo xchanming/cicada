@@ -18,7 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class WebhookEventLogDefinition extends EntityDefinition
 {
     final public const STATUS_QUEUED = 'queued';

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

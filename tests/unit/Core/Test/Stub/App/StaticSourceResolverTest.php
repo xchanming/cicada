@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(StaticSourceResolver::class)]
 class StaticSourceResolverTest extends TestCase
 {

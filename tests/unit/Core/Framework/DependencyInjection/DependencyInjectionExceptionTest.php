@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(DependencyInjectionException::class)]
 class DependencyInjectionExceptionTest extends TestCase
 {

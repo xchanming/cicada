@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Validation;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 interface DataValidationFactoryInterface
 {
     public function create(SalesChannelContext $context): DataValidationDefinition;

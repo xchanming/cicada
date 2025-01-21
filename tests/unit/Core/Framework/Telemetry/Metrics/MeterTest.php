@@ -21,7 +21,7 @@ use Psr\Log\LoggerInterface;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Meter::class)]
 class MeterTest extends TestCase
 {

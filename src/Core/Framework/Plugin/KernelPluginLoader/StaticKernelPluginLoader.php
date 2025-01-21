@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Plugin\KernelPluginLoader;
 use Cicada\Core\Framework\Log\Package;
 use Composer\Autoload\ClassLoader;
 
-#[Package('core')]
+#[Package('framework')]
 class StaticKernelPluginLoader extends KernelPluginLoader
 {
     public function __construct(

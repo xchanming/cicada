@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class ServiceLifecycle
 {
     /**

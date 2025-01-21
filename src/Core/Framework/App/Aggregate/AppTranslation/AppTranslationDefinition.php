@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class AppTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'app_translation';

@@ -13,7 +13,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextPersister
 {
     private readonly string $lifetimeInterval;

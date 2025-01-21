@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Routing\AbstractRouteScope;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-#[Package('core')]
+#[Package('framework')]
 class RouteScopeCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void

@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Dbal;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 interface ExceptionHandlerInterface
 {
     public const PRIORITY_DEFAULT = 0;

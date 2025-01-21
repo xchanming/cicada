@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Psr\Log\LoggerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class ScheduledTaskHandler
 {
     /**

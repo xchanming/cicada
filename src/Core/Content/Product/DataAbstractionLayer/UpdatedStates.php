@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Product\DataAbstractionLayer;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 final class UpdatedStates extends Struct
 {
     /**

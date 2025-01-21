@@ -27,7 +27,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1536233560BasicData extends MigrationStep
 {
     /**

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Migration\Exception\InvalidMigrationClassException;
 use Doctrine\DBAL\Connection;
 use Psr\Log\LoggerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class MigrationCollection
 {
     /**

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use ApiException::unsupportedEncoderInput instead
  */
-#[Package('core')]
+#[Package('framework')]
 class UnsupportedEncoderInputException extends CicadaHttpException
 {
     /**

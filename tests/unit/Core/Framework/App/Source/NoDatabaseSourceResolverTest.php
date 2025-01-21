@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(NoDatabaseSourceResolver::class)]
 class NoDatabaseSourceResolverTest extends TestCase
 {

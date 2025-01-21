@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextRestoredEvent extends NestedEvent
 {
     public function __construct(

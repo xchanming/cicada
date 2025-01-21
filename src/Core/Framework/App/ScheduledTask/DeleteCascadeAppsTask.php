@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\App\ScheduledTask;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
-#[Package('core')]
+#[Package('framework')]
 class DeleteCascadeAppsTask extends ScheduledTask
 {
     public static function getTaskName(): string

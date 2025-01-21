@@ -5,7 +5,7 @@ namespace Cicada\Core\System\Tag\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('inventory')]
+#[Package('fundamentals@framework')]
 class FilteredTagIdsStruct extends Struct
 {
     /**

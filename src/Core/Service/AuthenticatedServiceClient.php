@@ -9,7 +9,7 @@ use GuzzleHttp\Client;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class AuthenticatedServiceClient
 {
     public function __construct(

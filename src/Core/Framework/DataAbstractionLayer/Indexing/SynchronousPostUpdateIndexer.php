@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Indexing;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class SynchronousPostUpdateIndexer extends PostUpdateIndexer
 {
 }

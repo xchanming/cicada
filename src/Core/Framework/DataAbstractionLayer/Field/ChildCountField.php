@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\WriteProtected;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ChildCountField extends IntField
 {
     public function __construct()

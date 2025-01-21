@@ -10,7 +10,7 @@ use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\UserEntityInterface;
 use League\OAuth2\Server\Repositories\UserRepositoryInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class UserRepository implements UserRepositoryInterface
 {
     /**

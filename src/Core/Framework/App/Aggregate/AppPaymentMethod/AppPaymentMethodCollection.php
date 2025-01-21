@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @extends EntityCollection<AppPaymentMethodEntity>
  */
-#[Package('core')]
+#[Package('framework')]
 class AppPaymentMethodCollection extends EntityCollection
 {
     protected function getExpectedClass(): string

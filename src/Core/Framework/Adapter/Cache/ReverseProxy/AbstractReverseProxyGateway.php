@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Cache\ReverseProxy;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractReverseProxyGateway
 {
     /**

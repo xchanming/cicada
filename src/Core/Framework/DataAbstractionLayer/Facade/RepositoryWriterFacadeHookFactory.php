@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Script\Execution\Script;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class RepositoryWriterFacadeHookFactory extends HookServiceFactory
 {
     public function __construct(

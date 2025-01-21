@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Api\OAuth\User;
 use Cicada\Core\Framework\Log\Package;
 use League\OAuth2\Server\Entities\UserEntityInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class User implements UserEntityInterface
 {
     public function __construct(private readonly string $userId)

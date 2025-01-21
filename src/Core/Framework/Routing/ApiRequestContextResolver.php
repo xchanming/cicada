@@ -18,7 +18,7 @@ use Cicada\Core\PlatformRequest;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('core')]
+#[Package('framework')]
 class ApiRequestContextResolver implements RequestContextResolverInterface
 {
     use RouteScopeCheckTrait;

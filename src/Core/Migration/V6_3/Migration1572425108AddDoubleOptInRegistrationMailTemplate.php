@@ -16,7 +16,7 @@ use Doctrine\DBAL\Exception;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1572425108AddDoubleOptInRegistrationMailTemplate extends MigrationStep
 {
     private const GERMAN_LANGUAGE_NAME = 'Deutsch';

@@ -10,7 +10,7 @@ use Cicada\Core\System\NumberRange\Aggregate\NumberRangeSalesChannel\NumberRange
 use Cicada\Core\System\NumberRange\Aggregate\NumberRangeTypeTranslation\NumberRangeTypeTranslationCollection;
 use Cicada\Core\System\NumberRange\NumberRangeCollection;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeTypeEntity extends Entity
 {
     use EntityCustomFieldsTrait;

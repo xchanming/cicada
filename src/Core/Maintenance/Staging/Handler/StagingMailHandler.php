@@ -10,7 +10,7 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 readonly class StagingMailHandler
 {
     public function __construct(

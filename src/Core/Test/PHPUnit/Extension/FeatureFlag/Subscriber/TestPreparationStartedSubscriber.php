@@ -13,7 +13,7 @@ use PHPUnit\Event\Test\PreparationStartedSubscriber;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TestPreparationStartedSubscriber implements PreparationStartedSubscriber
 {
     public function __construct(private readonly SavedConfig $savedConfig)

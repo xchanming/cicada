@@ -6,7 +6,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class ExpectationFailedException extends CicadaHttpException
 {
     /**

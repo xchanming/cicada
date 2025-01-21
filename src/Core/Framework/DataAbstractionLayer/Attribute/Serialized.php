@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Attribute;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\StringFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 #[\Attribute(\Attribute::TARGET_PROPERTY)]
 class Serialized extends Field
 {

@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1667983492UpdateQueuedTasksToSkipped extends MigrationStep
 {
     public function getCreationTimestamp(): int

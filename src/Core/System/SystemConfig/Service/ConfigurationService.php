@@ -17,7 +17,7 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Core\System\SystemConfig\Util\ConfigReader;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class ConfigurationService
 {
     /**

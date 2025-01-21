@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[Group('slow')]
 #[CoversClass(MigrationCollection::class)]
 class MigrationForeignDefaultLanguageTest extends TestCase

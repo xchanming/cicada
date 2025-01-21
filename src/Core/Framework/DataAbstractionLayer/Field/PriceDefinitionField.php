@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\PriceDefinitionFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class PriceDefinitionField extends JsonField
 {
     public function __construct(

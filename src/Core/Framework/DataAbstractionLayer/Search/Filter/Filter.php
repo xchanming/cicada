@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Struct\Struct;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 abstract class Filter extends Struct implements CriteriaPartInterface
 {
     /**

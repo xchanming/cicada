@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\GenericEvent;
 use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class EntityIdSearchResultLoadedEvent extends NestedEvent implements GenericEvent
 {
     /**

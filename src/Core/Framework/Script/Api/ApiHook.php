@@ -21,7 +21,7 @@ use Cicada\Core\System\SystemConfig\Facade\SystemConfigFacadeHookFactory;
  *
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class ApiHook extends Hook implements StoppableHook
 {
     use ScriptResponseAwareTrait;

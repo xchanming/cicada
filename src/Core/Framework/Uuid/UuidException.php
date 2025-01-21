@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidException;
 use Cicada\Core\Framework\Uuid\Exception\InvalidUuidLengthException;
 
-#[Package('core')]
+#[Package('framework')]
 class UuidException extends HttpException
 {
     public static function invalidUuid(string $uuid): CicadaHttpException

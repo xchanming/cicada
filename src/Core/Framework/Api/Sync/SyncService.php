@@ -20,7 +20,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayEntity;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class SyncService implements SyncServiceInterface
 {
     /**

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Adapter\AdapterException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-#[Package('core')]
+#[Package('framework')]
 class TemplateScopeDetector
 {
     public const SCOPES_ATTRIBUTE = '_templateScopes';

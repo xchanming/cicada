@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1597657689ActionButton extends MigrationStep
 {
     public function getCreationTimestamp(): int

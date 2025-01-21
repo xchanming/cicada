@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayStruct;
 use Cicada\Core\PlatformRequest;
 
-#[Package('core')]
+#[Package('framework')]
 class ContextTokenResponse extends StoreApiResponse
 {
     /**

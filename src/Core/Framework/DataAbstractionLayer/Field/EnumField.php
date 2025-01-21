@@ -10,7 +10,7 @@ use Doctrine\DBAL\Types\Types;
 /**
  * Stores a PHP Enum
  */
-#[Package('core')]
+#[Package('framework')]
 class EnumField extends Field implements StorageAware
 {
     private string $type;

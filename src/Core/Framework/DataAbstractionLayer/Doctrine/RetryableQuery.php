@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception\RetryableException;
 use Doctrine\DBAL\Statement;
 
-#[Package('core')]
+#[Package('framework')]
 class RetryableQuery
 {
     public function __construct(

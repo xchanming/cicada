@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  * @phpstan-type DomainRewriteRule = array{match: string, type: string, replace: string}
  * @phpstan-type DomainURL = array{id: string, url: string}
  */
-#[Package('core')]
+#[Package('framework')]
 readonly class StagingSalesChannelHandler
 {
     /**

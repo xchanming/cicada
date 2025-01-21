@@ -14,7 +14,7 @@ use League\OAuth2\Server\Entities\Traits\AccessTokenTrait;
 use League\OAuth2\Server\Entities\Traits\EntityTrait;
 use League\OAuth2\Server\Entities\Traits\RefreshTokenTrait;
 
-#[Package('core')]
+#[Package('framework')]
 class AccessToken implements AccessTokenEntityInterface
 {
     use AccessTokenTrait;

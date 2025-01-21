@@ -17,7 +17,7 @@ use Cicada\Core\Framework\Struct\Collection;
 use Cicada\Core\Framework\Struct\Struct;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class JsonEntityEncoder
 {
     /**

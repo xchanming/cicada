@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SystemConfig;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SystemConfig\Store\MemoizedSystemConfigStore;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class MemoizedSystemConfigLoader extends AbstractSystemConfigLoader
 {
     /**

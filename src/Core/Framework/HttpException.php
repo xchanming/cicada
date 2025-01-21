@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class HttpException extends CicadaHttpException
 {
     protected static string $couldNotFindMessage = 'Could not find {{ entity }} with {{ field }} "{{ value }}"';

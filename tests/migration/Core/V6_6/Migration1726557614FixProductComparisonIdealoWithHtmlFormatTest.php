@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1726557614FixProductComparisonIdealoWithHtmlFormat::class)]
 class Migration1726557614FixProductComparisonIdealoWithHtmlFormatTest extends TestCase
 {

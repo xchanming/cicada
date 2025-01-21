@@ -20,7 +20,7 @@ use Cicada\Core\System\NumberRange\Aggregate\NumberRangeSalesChannel\NumberRange
 use Cicada\Core\System\NumberRange\Aggregate\NumberRangeTypeTranslation\NumberRangeTypeTranslationDefinition;
 use Cicada\Core\System\NumberRange\NumberRangeDefinition;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeTypeDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'number_range_type';

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\ManyToManyAssociationFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ManyToManyAssociationField extends AssociationField
 {
     private ?EntityDefinition $mappingDefinition = null;

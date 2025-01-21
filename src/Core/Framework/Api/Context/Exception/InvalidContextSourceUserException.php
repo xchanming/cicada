@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Api\Context\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class InvalidContextSourceUserException extends CicadaHttpException
 {
     public function __construct(string $contextSource)

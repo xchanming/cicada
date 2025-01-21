@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateEntity;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class OrderSerializer extends EntitySerializer
 {
     public function supports(string $entity): bool

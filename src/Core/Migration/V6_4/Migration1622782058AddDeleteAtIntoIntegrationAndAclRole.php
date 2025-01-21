@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1622782058AddDeleteAtIntoIntegrationAndAclRole extends MigrationStep
 {
     public function getCreationTimestamp(): int

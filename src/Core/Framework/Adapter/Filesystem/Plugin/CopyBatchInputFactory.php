@@ -12,7 +12,7 @@ use Symfony\Component\Finder\SplFileInfo;
  *
  * @codeCoverageIgnore Integration tested with \Cicada\Tests\Integration\Core\Framework\Adapter\Filesystem\Plugin\CopyBatchInputFactoryTest
  */
-#[Package('core')]
+#[Package('framework')]
 class CopyBatchInputFactory
 {
     /**

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Indexing;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class PostUpdateIndexer extends EntityIndexer
 {
     final public function update(EntityWrittenContainerEvent $event): ?EntityIndexingMessage

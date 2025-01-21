@@ -29,7 +29,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(Executor::class)]
-#[Package('core')]
+#[Package('framework')]
 class ExecutorTest extends TestCase
 {
     use AppSystemTestBehaviour;

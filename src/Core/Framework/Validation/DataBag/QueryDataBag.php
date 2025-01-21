@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Validation\DataBag;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class QueryDataBag extends DataBag
 {
 }

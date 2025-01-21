@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use DataAbstractionLayerException::cannotFindParentStorageField instead
  */
-#[Package('core')]
+#[Package('framework')]
 class CanNotFindParentStorageFieldException extends CicadaHttpException
 {
     public function __construct(EntityDefinition $definition)

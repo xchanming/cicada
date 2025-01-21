@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\MessageQueue\ScheduledTask;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class RegisterScheduledTaskMessage implements AsyncMessageInterface
 {
 }

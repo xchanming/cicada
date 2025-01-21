@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(PluginException::class)]
 class PluginExceptionTest extends TestCase
 {

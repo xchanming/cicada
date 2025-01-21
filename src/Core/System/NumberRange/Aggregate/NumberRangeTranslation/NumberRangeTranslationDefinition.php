@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\NumberRangeDefinition;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'number_range_translation';

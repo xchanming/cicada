@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Adapter\Filesystem\Plugin\WriteBatchInterface;
 use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\AsyncAwsS3\AsyncAwsS3Adapter;
 
-#[Package('core')]
+#[Package('framework')]
 class AsyncAwsS3WriteBatchAdapter extends AsyncAwsS3Adapter implements WriteBatchInterface
 {
     public function writeBatch(CopyBatchInput ...$files): void

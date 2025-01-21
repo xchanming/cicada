@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Context\ActivateContext;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginPreActivateEvent extends PluginLifecycleEvent
 {
     public function __construct(

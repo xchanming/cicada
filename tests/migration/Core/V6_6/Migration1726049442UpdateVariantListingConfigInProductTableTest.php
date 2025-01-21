@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1726049442UpdateVariantListingConfigInProductTable::class)]
 class Migration1726049442UpdateVariantListingConfigInProductTableTest extends TestCase
 {

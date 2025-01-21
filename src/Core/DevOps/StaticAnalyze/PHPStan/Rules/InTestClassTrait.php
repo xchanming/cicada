@@ -8,7 +8,7 @@ use PHPStan\Analyser\Scope;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 trait InTestClassTrait
 {
     protected function isInTestClass(Scope $scope): bool

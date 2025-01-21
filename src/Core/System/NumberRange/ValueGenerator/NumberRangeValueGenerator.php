@@ -11,7 +11,7 @@ use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\ValueGeneratorPatternR
 use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeValueGenerator implements NumberRangeValueGeneratorInterface
 {
     /**

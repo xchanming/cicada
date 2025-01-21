@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Hookable;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class AppDeletedEvent extends Event implements CicadaEvent, Hookable
 {
     final public const NAME = 'app.deleted';

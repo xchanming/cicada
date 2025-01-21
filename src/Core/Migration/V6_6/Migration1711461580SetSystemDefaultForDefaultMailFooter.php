@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1711461580SetSystemDefaultForDefaultMailFooter extends MigrationStep
 {
     public function getCreationTimestamp(): int

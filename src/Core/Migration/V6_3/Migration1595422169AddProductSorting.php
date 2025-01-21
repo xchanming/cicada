@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1595422169AddProductSorting extends MigrationStep
 {
     use ImportTranslationsTrait;

@@ -14,7 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\UpdatedAtField;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class EntityTranslationDefinition extends EntityDefinition
 {
     public function getParentDefinition(): EntityDefinition

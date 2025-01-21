@@ -12,7 +12,7 @@ use GuzzleHttp\Pool;
 use GuzzleHttp\Psr7\Request;
 use Psr\Log\LoggerInterface;
 
-#[Package('core')]
+#[Package('discovery')]
 class FastlyMediaReverseProxy implements MediaReverseProxy
 {
     private const API_URL = 'https://api.fastly.com';

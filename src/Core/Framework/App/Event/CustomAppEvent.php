@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\FlowEventAware;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class CustomAppEvent extends Event implements CustomAppAware, FlowEventAware
 {
     /**

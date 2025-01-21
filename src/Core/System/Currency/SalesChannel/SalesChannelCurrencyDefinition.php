@@ -9,7 +9,7 @@ use Cicada\Core\System\Currency\CurrencyDefinition;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class SalesChannelCurrencyDefinition extends CurrencyDefinition implements SalesChannelDefinitionInterface
 {
     public function processCriteria(Criteria $criteria, SalesChannelContext $context): void

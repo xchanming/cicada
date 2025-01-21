@@ -19,7 +19,7 @@ use PHPUnit\TextUI\Configuration\Configuration;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class DatadogExtension implements Extension
 {
     public const THRESHOLD_IN_SECONDS = 2;

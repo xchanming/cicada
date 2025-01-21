@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @phpstan-type FilterConfig array{excluded_terms: array<string>, min_search_length: int}
  */
-#[Package('core')]
+#[Package('framework')]
 class TokenFilter extends AbstractTokenFilter
 {
     /**

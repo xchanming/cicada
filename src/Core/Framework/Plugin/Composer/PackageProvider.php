@@ -9,7 +9,7 @@ use Composer\Package\CompletePackageInterface;
 use Composer\Package\Loader\ValidatingArrayLoader;
 use Composer\Util\ConfigValidator;
 
-#[Package('core')]
+#[Package('framework')]
 class PackageProvider
 {
     /**

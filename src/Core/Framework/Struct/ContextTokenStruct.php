@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
 
-#[Package('core')]
+#[Package('framework')]
 class ContextTokenStruct extends Struct
 {
     /**

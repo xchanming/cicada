@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1620733405UpdateRolePrivilegesForDistinguishablePaymentName extends MigrationStep
 {
     private const NEW_PRIVILEGES = [

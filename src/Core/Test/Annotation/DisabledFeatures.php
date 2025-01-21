@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
  * @internal
  */
 #[\Attribute(\Attribute::TARGET_METHOD | \Attribute::TARGET_CLASS)]
-#[Package('core')]
+#[Package('framework')]
 final class DisabledFeatures
 {
     /**

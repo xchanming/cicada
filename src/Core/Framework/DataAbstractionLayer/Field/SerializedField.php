@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FieldSerializerIn
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\JsonFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class SerializedField extends Field implements StorageAware
 {
     /**

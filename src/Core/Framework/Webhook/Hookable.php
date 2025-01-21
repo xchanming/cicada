@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Update\Event\UpdatePostFinishEvent;
 use Cicada\Core\System\SystemConfig\Event\SystemConfigChangedHook;
 
-#[Package('core')]
+#[Package('framework')]
 interface Hookable
 {
     public const HOOKABLE_EVENTS = [

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class ParentAssociationCanNotBeFetched extends DataAbstractionLayerException
 {
     public function __construct()

@@ -22,7 +22,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @implements Rule<InClassNode>
  */
-#[Package('core')]
+#[Package('framework')]
 class DALFieldsMustBeRegisteredWithSchemaBuilder implements Rule
 {
     use InTestClassTrait;

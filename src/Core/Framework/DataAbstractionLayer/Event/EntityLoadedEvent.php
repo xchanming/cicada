@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @implements \IteratorAggregate<array-key, Entity>
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityLoadedEvent extends NestedEvent implements GenericEvent, \IteratorAggregate
 {
     /**

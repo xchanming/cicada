@@ -15,7 +15,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class SystemConfigDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'system_config';

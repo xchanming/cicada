@@ -19,7 +19,7 @@ use Doctrine\DBAL\Connection;
  *
  * @phpstan-import-type CustomFieldSetArray from CustomFieldSet
  */
-#[Package('core')]
+#[Package('framework')]
 class CustomFieldPersister
 {
     /**

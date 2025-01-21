@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class ActionNotFoundException extends CicadaHttpException
 {
     public function __construct()

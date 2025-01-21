@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 
-#[Package('core')]
+#[Package('framework')]
 class AccessKeyHelper
 {
     private const USER_IDENTIFIER = 'SWUA';

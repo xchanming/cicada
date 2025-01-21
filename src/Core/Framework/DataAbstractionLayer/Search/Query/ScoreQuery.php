@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class ScoreQuery extends Filter
 {
     public function __construct(

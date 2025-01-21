@@ -12,7 +12,7 @@ use Psr\Container\ContainerInterface;
  *
  * @phpstan-type RedisConnection \Redis|\RedisArray|\RedisCluster|\Predis\ClientInterface|\Relay\Relay
  */
-#[Package('core')]
+#[Package('framework')]
 class RedisConnectionProvider
 {
     /**

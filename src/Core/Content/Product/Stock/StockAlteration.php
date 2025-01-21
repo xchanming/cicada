@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Product\Stock;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('inventory')]
 final class StockAlteration
 {
     public function __construct(

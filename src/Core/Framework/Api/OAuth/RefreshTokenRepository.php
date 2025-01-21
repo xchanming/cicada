@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 use League\OAuth2\Server\Entities\RefreshTokenEntityInterface;
 use League\OAuth2\Server\Repositories\RefreshTokenRepositoryInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class RefreshTokenRepository implements RefreshTokenRepositoryInterface
 {
     /**

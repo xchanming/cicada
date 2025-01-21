@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Hookable;
 
-#[Package('core')]
+#[Package('framework')]
 class SystemConfigChangedHook implements Hookable
 {
     public const EVENT_NAME = 'app.config.changed';

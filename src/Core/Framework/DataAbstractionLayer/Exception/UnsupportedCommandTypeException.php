@@ -7,7 +7,7 @@ use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class UnsupportedCommandTypeException extends HttpException
 {
     public function __construct(WriteCommand $command)

@@ -10,7 +10,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 
-#[Package('core')]
+#[Package('framework')]
 class VariantListingUpdater
 {
     /**

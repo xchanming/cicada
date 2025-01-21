@@ -15,7 +15,7 @@ use Psr\Log\LoggerInterface;
  *
  * @codeCoverageIgnore @see \Cicada\Tests\Integration\Core\Framework\Adapter\Cache\InvalidatorStorage\MySQLInvalidatorStorageTest
  */
-#[Package('core')]
+#[Package('framework')]
 class MySQLInvalidatorStorage extends AbstractInvalidatorStorage
 {
     private const TABLE_NAME = 'invalidation_tags';

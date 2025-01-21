@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FloatFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class FloatField extends Field implements StorageAware
 {
     public function __construct(

@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CustomFieldEntity>
  */
-#[Package('core')]
+#[Package('framework')]
 class CustomFieldCollection extends EntityCollection
 {
     public function filterByType(string $type): self

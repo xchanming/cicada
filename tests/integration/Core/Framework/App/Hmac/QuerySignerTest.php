@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(QuerySigner::class)]
-#[Package('core')]
+#[Package('framework')]
 class QuerySignerTest extends TestCase
 {
     use IntegrationTestBehaviour;

@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1674200008UpdateOrderViewerRolePrivileges extends MigrationStep
 {
     final public const NEW_PRIVILEGES = [

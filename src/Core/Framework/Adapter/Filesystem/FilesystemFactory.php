@@ -14,7 +14,7 @@ use League\Flysystem\Visibility;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-#[Package('core')]
+#[Package('framework')]
 class FilesystemFactory
 {
     /**

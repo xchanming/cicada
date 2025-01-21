@@ -12,7 +12,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class AuthMiddleware
 {
     final public const APP_REQUEST_TYPE = 'request_type';

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Twig;
 use Cicada\Core\Framework\Log\Package;
 use Twig\Environment;
 
-#[Package('core')]
+#[Package('framework')]
 class TwigVariableParserFactory
 {
     public function getParser(Environment $twig): TwigVariableParser

@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1665267882RenameCountryVat extends MigrationStep
 {
     use ImportTranslationsTrait;

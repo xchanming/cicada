@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Flag;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AttributeTranslationDefinition extends EntityTranslationDefinition
 {
     /**

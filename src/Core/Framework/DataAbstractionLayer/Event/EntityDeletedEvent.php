@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Event;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class EntityDeletedEvent extends EntityWrittenEvent
 {
     public function __construct(

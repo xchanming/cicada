@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage\AbstractIncrementStorage;
 
-#[Package('checkout')]
+#[Package('framework')]
 class ValueGeneratorPatternIncrement extends AbstractValueGenerator
 {
     /**

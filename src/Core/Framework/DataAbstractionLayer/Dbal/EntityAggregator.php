@@ -57,7 +57,7 @@ use Doctrine\DBAL\Connection;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityAggregator implements EntityAggregatorInterface
 {
     /**

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Event;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class ProgressAdvancedEvent extends Event
 {
     final public const NAME = self::class;

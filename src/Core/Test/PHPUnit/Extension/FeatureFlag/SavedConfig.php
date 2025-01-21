@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @phpstan-import-type FeatureFlagConfig from Feature
  */
-#[Package('core')]
+#[Package('framework')]
 class SavedConfig
 {
     /**

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class MissingFieldSerializerException extends CicadaHttpException
 {
     public function __construct(Field $field)

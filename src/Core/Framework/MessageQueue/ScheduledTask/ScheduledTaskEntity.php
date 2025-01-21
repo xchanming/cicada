@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ScheduledTaskEntity extends Entity
 {
     use EntityIdTrait;

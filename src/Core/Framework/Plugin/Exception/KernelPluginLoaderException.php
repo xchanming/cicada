@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Plugin\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class KernelPluginLoaderException extends CicadaHttpException
 {
     public function __construct(

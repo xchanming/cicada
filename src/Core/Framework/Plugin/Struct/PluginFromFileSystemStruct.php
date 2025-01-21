@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 use Composer\Package\CompletePackageInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginFromFileSystemStruct extends Struct
 {
     /**

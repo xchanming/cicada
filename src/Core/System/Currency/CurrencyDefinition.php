@@ -31,7 +31,7 @@ use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelCurrency\SalesChannelC
 use Cicada\Core\System\SalesChannel\Aggregate\SalesChannelDomain\SalesChannelDomainDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'currency';

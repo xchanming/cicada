@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CurrencyTranslationEntity>
  */
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyTranslationCollection extends EntityCollection
 {
     public function getCurrencyIds(): array
