@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Rule;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class SimpleRule extends Rule
 {
     final public const RULE_NAME = 'simple';

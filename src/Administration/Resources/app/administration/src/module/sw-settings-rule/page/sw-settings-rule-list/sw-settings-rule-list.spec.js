@@ -4,7 +4,7 @@ import FilterService from 'src/app/service/filter.service';
 const { Criteria } = Cicada.Data;
 
 /**
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 
 async function createWrapper(privileges = []) {

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Rule\Container;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class OrRule extends Container
 {
     final public const RULE_NAME = 'orContainer';

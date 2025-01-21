@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Rule\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class InvalidConditionException extends CicadaHttpException
 {
     public function __construct(string $conditionName)

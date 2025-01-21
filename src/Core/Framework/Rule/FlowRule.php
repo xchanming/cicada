@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Rule;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class FlowRule extends Rule
 {
 }

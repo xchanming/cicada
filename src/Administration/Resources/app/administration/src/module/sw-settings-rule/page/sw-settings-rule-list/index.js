@@ -6,7 +6,7 @@ const { Criteria } = Cicada.Data;
 
 /**
  * @private
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 export default {
     template,

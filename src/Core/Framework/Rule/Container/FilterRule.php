@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Rule\Container;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class FilterRule extends Rule implements ContainerInterface
 {
     /**

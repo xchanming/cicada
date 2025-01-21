@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleConfigControllerTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;
