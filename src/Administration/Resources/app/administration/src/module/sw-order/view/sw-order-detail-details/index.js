@@ -154,12 +154,12 @@ export default {
 
         selectedBillingAddressId() {
             const currentAddress = this.orderAddressIds.find((item) => item.type === 'billing');
-            return currentAddress?.customerAddressId || this.billingAddress.id;
+            return currentAddress?.customerAddressId || this.billingAddress?.id;
         },
 
         selectedShippingAddressId() {
             const currentAddress = this.orderAddressIds.find((item) => item.type === 'shipping');
-            return currentAddress?.customerAddressId || this.shippingAddress.id;
+            return currentAddress?.customerAddressId || this.shippingAddress?.id;
         },
 
         shippingCosts: {

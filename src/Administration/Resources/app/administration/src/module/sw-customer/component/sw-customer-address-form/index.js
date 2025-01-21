@@ -75,10 +75,11 @@ export default {
             'vatId',
             'countryStateId',
             'salutationId',
-            'city',
+            'cityId',
             'street',
             'zipcode',
             'name',
+            'DistrictId',
         ]),
 
         countryId: {

@@ -85,7 +85,9 @@ async function createWrapper(propsData) {
                                     {
                                         street: 'Stehr Divide',
                                         zipcode: '64885-2245',
-                                        city: 'Faheyshire',
+                                        city: {
+                                            name:'Faheyshire'
+                                        },
                                         id: '652e9e571cc94bd898077f256dcf629f',
                                         country: {
                                             translated: {
@@ -110,7 +112,9 @@ async function createWrapper(propsData) {
             address: {
                 street: 'Denesik Bridge',
                 zipcode: '05132',
-                city: 'Bernierstad',
+                city: {
+                    name: 'Bernierstad',
+                },
                 company: 'Muster SE',
                 department: 'People & Culture',
                 id: '38e8895864a649a1b2ec806dad02ab87',
@@ -147,7 +151,9 @@ describe('src/module/sw-order/component/sw-order-address-selection', () => {
                         {
                             street: 'Denesik Bridge',
                             zipcode: '05132',
-                            city: 'Bernierstad',
+                            city: {
+                                name: 'Bernierstad',
+                            },
                             id: '38e8895864a649a1b2ec806dad02ab87',
                             country: {
                                 translated: {
@@ -190,7 +196,9 @@ describe('src/module/sw-order/component/sw-order-address-selection', () => {
         expect(wrapper.vm.currentAddress).toEqual({
             street: 'Denesik Bridge',
             zipcode: '05132',
-            city: 'Bernierstad',
+            city: {
+                name: 'Bernierstad',
+            },
             company: 'Muster SE',
             id: '38e8895864a649a1b2ec806dad02ab87',
             country: {
