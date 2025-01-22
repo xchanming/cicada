@@ -246,6 +246,7 @@
           "label": {
             "minHeight": "最小高度",
             "minHeightHelpText": "输入所需单位的最小高度。例如：200px",
+            "isDecorative": "将图片标记为装饰性",
             "linkNewTab": "在新标签页中打开链接",
             "linkTo": "链接目标"
           },

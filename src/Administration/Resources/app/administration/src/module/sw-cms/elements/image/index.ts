@@ -57,5 +57,9 @@ Cicada.Service('cmsService').registerCmsElement({
             source: 'static',
             value: 'center',
         },
+        isDecorative: {
+            source: 'static',
+            value: false,
+        },
     },
 });

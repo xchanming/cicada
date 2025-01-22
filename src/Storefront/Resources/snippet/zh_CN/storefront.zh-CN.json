@@ -714,9 +714,7 @@
     "serviceContactText": "或通过我们的<a data-ajax-modal=\"true\" data-url=\"%url%\" href=\"%url%\" title=\"联系表\">联系表</a>。",
     "newsletterInput": "电子邮件地址",
     "newsletter": "立即订阅我们的定期新闻，保持关注最新商品和特价优惠。",
-    "includeVatText": "%star%所有价格包含增值税加上 <a data-ajax-modal=\"true\" href=\"%url%\" data-url=\"%url%\">送货费用</a> 和可能的送货费用，除非另有说明。",
-    "excludeVatText": "%star%所有价格不含增值税加上 <a data-ajax-modal=\"true\" href=\"%url%\" data-url=\"%url%\">送货费用</a> 和可能的送货费用，除非另有说明。",
-    "copyrightInfo": "Copyright © Haoke AG - All rights reserved"
+    "copyrightInfo": "Copyright © Cicada AG - All rights reserved"
   },
   "captcha": {
     "googleReCaptcha": {

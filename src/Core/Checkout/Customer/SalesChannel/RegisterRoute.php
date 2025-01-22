@@ -149,7 +149,7 @@ class RegisterRoute extends AbstractRegisterRoute
             }
         }
 
-        if ($shipping instanceof DataBag && $requireCustomerAddress) {
+        if ($shipping instanceof DataBag) {
             $shippingAddress = $this->mapAddressData($shipping, $context->getContext(), CustomerEvents::MAPPING_REGISTER_ADDRESS_SHIPPING);
             $shippingAddress['id'] = Uuid::randomHex();
             $shippingAddress['customerId'] = $customer['id'];

@@ -2,10 +2,8 @@
 
 namespace Cicada\Storefront\Controller;
 
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RoutingException;
-use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Framework\Captcha\AbstractCaptcha;
 use Cicada\Storefront\Framework\Captcha\BasicCaptcha;
