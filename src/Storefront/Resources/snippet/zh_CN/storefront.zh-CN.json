@@ -777,6 +777,9 @@
         "increaseOfProduct": "增加 %product% 的数量",
         "decrease": "减少数量",
         "decreaseOfProduct": "减少 %product% 的数量"
+      },
+      "configurator": {
+        "legend": "<span class=\"%hidden_cls%\">选择&nbsp;</span>%group_name%"
       }
     },
     "cms": {

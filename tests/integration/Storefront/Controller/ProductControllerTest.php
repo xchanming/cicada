@@ -10,7 +10,6 @@ use Cicada\Core\Content\Test\Product\ProductBuilder;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -249,32 +248,32 @@ class ProductControllerTest extends TestCase
 
         $crawler->filter('.product-detail-configurator .product-detail-configurator-option-label')
             ->each(static function (Crawler $option) use ($blue, $green, $red, $xl, $l, &$blueFound, &$greenFound, &$redFound, &$xlFound, &$lFound, &$mFound): void {
-                if ($option->text() === 'blue') {
+                if ($option->innerText() === 'blue') {
                     static::assertEquals($blue, $option->matches('.is-combinable'));
                     $blueFound = true;
                 }
 
-                if ($option->text() === 'green') {
+                if ($option->innerText() === 'green') {
                     static::assertEquals($green, $option->matches('.is-combinable'));
                     $greenFound = true;
                 }
 
-                if ($option->text() === 'red') {
+                if ($option->innerText() === 'red') {
                     static::assertEquals($red, $option->matches('.is-combinable'));
                     $redFound = true;
                 }
 
-                if ($option->text() === 'xl') {
+                if ($option->innerText() === 'xl') {
                     static::assertEquals($xl, $option->matches('.is-combinable'));
                     $xlFound = true;
                 }
 
-                if ($option->text() === 'l') {
+                if ($option->innerText() === 'l') {
                     static::assertEquals($l, $option->matches('.is-combinable'));
                     $lFound = true;
                 }
 
-                if ($option->text() === 'm') {
+                if ($option->innerText() === 'm') {
                     $mFound = true;
                 }
             });
@@ -422,6 +421,7 @@ class ProductControllerTest extends TestCase
                 'id' => $addressId,
                 'name' => 'Max',
                 'street' => 'Musterstraße 1',
+                'cityId' => $this->getValidCountryCityId(),
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId(),
@@ -434,10 +434,6 @@ class ProductControllerTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $repo = static::getContainer()->get('customer.repository');
 
