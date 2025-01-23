@@ -10,6 +10,7 @@ use Cicada\Core\Framework\Plugin\PluginCollection;
 use Cicada\Core\Framework\Plugin\PluginEntity;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\RequirementStackException;
 use Cicada\Core\Framework\Plugin\Requirement\RequirementsValidator;
+use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\TestBootstrapper;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -205,6 +206,50 @@ class RequirementsValidatorTest extends TestCase
         $this->createValidator()->validateRequirements($plugin, Context::createDefaultContext(), 'test');
     }
 
+    public function testValidateConflictsValidOtherPluginDuringUpdate(): void
+    {
+        $pathA = str_replace(
+            $this->projectDir,
+            '',
+            $this->fixturePath . 'SwagTestValidateConflictsValidOtherPluginDuringUpdateA'
+        );
+        $pluginA = $this->createPlugin($pathA);
+        $pluginA->setActive(false);
+        $pluginA->setVersion('1.0.0');
+        $pluginA->setUpgradeVersion('2.0.0');
+
+        $pathB = str_replace(
+            $this->projectDir,
+            '',
+            $this->fixturePath . 'SwagTestValidateConflictsValidOtherPluginDuringUpdateB'
+        );
+        $pluginB = $this->createPlugin($pathB);
+        $pluginB->setActive(true);
+
+        $pluginRepo = $this->createMock(EntityRepository::class);
+        $pluginRepo->method('search')->willReturn(new EntitySearchResult(
+            'plugin',
+            1,
+            new PluginCollection([$pluginB]),
+            null,
+            new Criteria(),
+            Context::createDefaultContext()
+        ));
+
+        $validator = new RequirementsValidator(
+            $pluginRepo,
+            $this->projectDir
+        );
+
+        $exception = null;
+        try {
+            $validator->validateRequirements($pluginA, Context::createDefaultContext(), 'test');
+        } catch (\Exception $exception) {
+        }
+
+        static::assertNull($exception);
+    }
+
     private function createValidator(): RequirementsValidator
     {
         $pluginRepo = $this->createMock(EntityRepository::class);
@@ -226,6 +271,7 @@ class RequirementsValidatorTest extends TestCase
     private function createPlugin(string $path): PluginEntity
     {
         $plugin = new PluginEntity();
+        $plugin->setId(Uuid::randomHex());
         $plugin->setPath($path);
         $plugin->setManagedByComposer(false);
         $plugin->setVersion('1.0.0');
