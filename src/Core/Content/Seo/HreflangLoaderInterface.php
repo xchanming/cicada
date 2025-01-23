@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Seo;
 use Cicada\Core\Content\Seo\Hreflang\HreflangCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 interface HreflangLoaderInterface
 {
     public function load(HreflangLoaderParameter $parameter): HreflangCollection;

@@ -10,7 +10,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\Routing\RouterInterface;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class HreflangLoader implements HreflangLoaderInterface
 {
     /**

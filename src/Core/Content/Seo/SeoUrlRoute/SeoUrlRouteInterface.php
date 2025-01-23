@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 interface SeoUrlRouteInterface
 {
     public function getConfig(): SeoUrlRouteConfig;

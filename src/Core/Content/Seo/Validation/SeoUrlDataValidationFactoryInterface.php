@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataValidationDefinition;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 interface SeoUrlDataValidationFactoryInterface
 {
     public function buildValidation(Context $context, SeoUrlRouteConfig $config): DataValidationDefinition;

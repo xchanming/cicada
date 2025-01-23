@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Seo\Hreflang;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class HreflangStruct extends Struct
 {
     /**

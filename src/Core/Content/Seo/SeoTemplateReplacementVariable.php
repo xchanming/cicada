@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Seo;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoTemplateReplacementVariable
 {
     public function __construct(

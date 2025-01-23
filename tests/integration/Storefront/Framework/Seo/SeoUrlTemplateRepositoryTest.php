@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlTemplateRepositoryTest extends TestCase
 {
     use IntegrationTestBehaviour;

@@ -17,7 +17,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlTemplateDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'seo_url_template';

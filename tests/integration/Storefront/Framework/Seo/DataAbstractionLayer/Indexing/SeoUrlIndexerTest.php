@@ -33,7 +33,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 #[Group('slow')]
 class SeoUrlIndexerTest extends TestCase
 {

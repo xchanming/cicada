@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Seo\SeoUrlTemplate;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class TemplateGroup
 {
     /**

@@ -16,7 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class MainCategoryDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'main_category';

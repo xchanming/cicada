@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Seo\Event;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoEvents
 {
     final public const SEO_URL_WRITTEN_EVENT = 'seo_url.written';

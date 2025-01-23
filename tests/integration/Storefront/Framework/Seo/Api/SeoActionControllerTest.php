@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @phpstan-type Product array{id: string, attributes: array{isModified: boolean, seoPathInfo: string } }
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoActionControllerTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;

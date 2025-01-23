@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlDefinition extends EntityDefinition
 {
     public const ENTITY_NAME = 'seo_url';
