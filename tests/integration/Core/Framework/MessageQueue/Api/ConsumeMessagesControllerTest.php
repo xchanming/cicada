@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class ConsumeMessagesControllerTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;

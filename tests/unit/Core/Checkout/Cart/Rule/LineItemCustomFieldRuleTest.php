@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(LineItemCustomFieldRule::class)]
 #[Group('rules')]
 class LineItemCustomFieldRuleTest extends TestCase

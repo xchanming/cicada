@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class Migration1672164687FixTypoInUserRecoveryPasswordResetMail extends MigrationStep
 {
     use UpdateMailTrait;

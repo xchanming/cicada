@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class Migration1717572627RemoveImportExportProfileName extends MigrationStep
 {
     public function getCreationTimestamp(): int

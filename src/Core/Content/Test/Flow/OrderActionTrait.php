@@ -28,7 +28,7 @@ use Symfony\Bundle\FrameworkBundle\KernelBrowser;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 trait OrderActionTrait
 {
     use CountryAddToSalesChannelTestBehaviour;

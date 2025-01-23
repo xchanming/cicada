@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class MessageQueueEndpointTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;

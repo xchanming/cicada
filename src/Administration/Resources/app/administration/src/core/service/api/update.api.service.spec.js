@@ -12,7 +12,7 @@ function createUpdateApiService() {
 }
 
 /**
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 describe('updateApiService', () => {
     it('is registered correctly', async () => {

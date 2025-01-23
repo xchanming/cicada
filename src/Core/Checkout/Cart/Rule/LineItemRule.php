@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Rule\RuleComparison;
 use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class LineItemRule extends Rule
 {
     final public const RULE_NAME = 'cartLineItem';

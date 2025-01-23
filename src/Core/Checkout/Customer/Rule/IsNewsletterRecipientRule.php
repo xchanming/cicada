@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class IsNewsletterRecipientRule extends Rule
 {
     final public const RULE_NAME = 'customerIsNewsletterRecipient';

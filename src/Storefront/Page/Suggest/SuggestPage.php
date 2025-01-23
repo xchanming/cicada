@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Page\Page;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SuggestPage extends Page
 {
     /**

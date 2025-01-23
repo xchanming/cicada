@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(LineItemTotalPriceRule::class)]
 class LineItemTotalPriceRuleTest extends TestCase
 {

@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('inventory')]
 class ProductStreamFilterRepositoryTest extends TestCase
 {
     use IntegrationTestBehaviour;

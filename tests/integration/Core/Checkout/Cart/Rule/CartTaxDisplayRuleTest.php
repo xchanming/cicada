@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CartTaxDisplayRuleTest extends TestCase
 {
     use DatabaseTransactionBehaviour;

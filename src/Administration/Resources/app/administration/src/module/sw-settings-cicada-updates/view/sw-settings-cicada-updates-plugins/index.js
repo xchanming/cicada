@@ -3,7 +3,7 @@ import template from './sw-cicada-updates-plugins.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package services-settings
+ * @sw-package framework
  * @private
  */
 Component.register('sw-settings-cicada-updates-plugins', {

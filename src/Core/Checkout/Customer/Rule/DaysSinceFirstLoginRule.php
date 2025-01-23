@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Container\DaysSinceRule;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class DaysSinceFirstLoginRule extends DaysSinceRule
 {
     final public const RULE_NAME = 'customerDaysSinceFirstLogin';

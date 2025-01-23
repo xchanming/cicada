@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(MatchAllLineItemsRule::class)]
 #[CoversClass(Container::class)]
 class MatchAllLineItemsRuleTest extends TestCase

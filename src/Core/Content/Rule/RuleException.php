@@ -9,7 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Write\Command\WriteCommand;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleException extends HttpException
 {
     public static function unsupportedCommandType(WriteCommand $command): HttpException

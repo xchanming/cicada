@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Util\ArrayComparator;
 use Cicada\Core\Framework\Util\FloatComparator;
 use Symfony\Component\Validator\Constraint;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class LineItemCustomFieldRule extends Rule
 {
     final public const RULE_NAME = 'cartLineItemCustomField';

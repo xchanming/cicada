@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Event;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[\Attribute(\Attribute::TARGET_CLASS)]
 class IsFlowEventAware
 {

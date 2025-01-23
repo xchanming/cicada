@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('inventory')]
 class ProductStreamSyncTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;

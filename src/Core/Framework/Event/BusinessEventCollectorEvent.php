@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Event;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class BusinessEventCollectorEvent extends NestedEvent
 {
     final public const NAME = 'collect.business-events';

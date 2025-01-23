@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Event\EventData;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 interface EventDataType
 {
     /**

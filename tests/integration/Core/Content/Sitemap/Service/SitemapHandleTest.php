@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapHandleTest extends TestCase
 {
     use KernelTestBehaviour;

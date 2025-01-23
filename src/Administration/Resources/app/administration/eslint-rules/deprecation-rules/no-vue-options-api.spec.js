@@ -874,7 +874,7 @@ export default {
             name: 'Invalid: Real world example 1',
             code: `
 /**
- * @package services-settings
+ * @sw-package fundamentals@framework
  */
 import template from './sw-users-permissions-role-view-general.html.twig';
 

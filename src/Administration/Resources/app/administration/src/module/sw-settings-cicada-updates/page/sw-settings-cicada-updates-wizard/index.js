@@ -4,7 +4,7 @@ import './sw-settings-cicada-updates-wizard.scss';
 const { Component, Mixin } = Cicada;
 
 /**
- * @package services-settings
+ * @sw-package framework
  * @private
  */
 Component.register('sw-settings-cicada-updates-wizard', {

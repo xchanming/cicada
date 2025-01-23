@@ -16,7 +16,7 @@ use Cicada\Storefront\Page\PageLoadedHook;
  *
  * @final
  */
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapPageLoadedHook extends PageLoadedHook
 {
     use SalesChannelContextAwareTrait;

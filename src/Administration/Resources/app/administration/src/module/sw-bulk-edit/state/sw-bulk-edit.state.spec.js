@@ -1,5 +1,5 @@
 /**
- * @package services-settings
+ * @sw-package inventory
  */
 import swBulkEditState from 'src/module/sw-bulk-edit/state/sw-bulk-edit.state';
 

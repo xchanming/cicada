@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\MappingEntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Tag\TagDefinition;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleTagDefinition extends MappingEntityDefinition
 {
     final public const ENTITY_NAME = 'rule_tag';

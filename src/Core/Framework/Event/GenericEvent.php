@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Event;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 interface GenericEvent
 {
     public function getName(): string;

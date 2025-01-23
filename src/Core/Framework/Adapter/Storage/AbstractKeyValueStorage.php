@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Adapter\Storage;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 abstract class AbstractKeyValueStorage
 {
     abstract public function has(string $key): bool;

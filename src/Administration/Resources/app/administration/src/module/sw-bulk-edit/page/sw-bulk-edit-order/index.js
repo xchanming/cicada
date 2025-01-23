@@ -8,7 +8,7 @@ const { types } = Cicada.Utils;
 const { intersectionBy, chunk, uniqBy } = Cicada.Utils.array;
 
 /**
- * @package services-settings
+ * @sw-package inventory
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

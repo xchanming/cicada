@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(CustomerSalutationRule::class)]
 #[Group('rules')]
 class CustomerSalutationRuleTest extends TestCase

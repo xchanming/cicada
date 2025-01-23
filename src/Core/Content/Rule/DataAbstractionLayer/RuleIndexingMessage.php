@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Rule\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Indexing\EntityIndexingMessage;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleIndexingMessage extends EntityIndexingMessage
 {
 }

@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(DaysSinceLastLoginRule::class)]
 #[CoversClass(DaysSinceRule::class)]
 #[Group('rules')]

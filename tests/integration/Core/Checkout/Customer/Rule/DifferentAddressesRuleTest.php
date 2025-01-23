@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class DifferentAddressesRuleTest extends TestCase
 {
     use DatabaseTransactionBehaviour;

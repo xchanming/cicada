@@ -43,7 +43,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(RuleAreaUpdater::class)]
 class RuleAreaUpdaterTest extends TestCase
 {

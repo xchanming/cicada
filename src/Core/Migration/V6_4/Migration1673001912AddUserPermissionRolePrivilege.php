@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class Migration1673001912AddUserPermissionRolePrivilege extends MigrationStep
 {
     public const NEW_PRIVILEGES = [

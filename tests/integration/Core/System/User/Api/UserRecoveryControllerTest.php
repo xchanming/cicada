@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class UserRecoveryControllerTest extends TestCase
 {
     use AdminFunctionalTestBehaviour;

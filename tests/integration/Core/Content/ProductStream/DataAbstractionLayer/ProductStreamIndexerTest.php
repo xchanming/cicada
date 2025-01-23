@@ -26,7 +26,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('inventory')]
 class ProductStreamIndexerTest extends TestCase
 {
     use DatabaseTransactionBehaviour;

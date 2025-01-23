@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Update\Services\Filesystem;
 use Cicada\Core\Framework\Update\Struct\ValidationResult;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class WriteableCheck
 {
     /**

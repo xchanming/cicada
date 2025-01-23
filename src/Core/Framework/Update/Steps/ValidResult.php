@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Update\Steps;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class ValidResult
 {
     public function __construct(

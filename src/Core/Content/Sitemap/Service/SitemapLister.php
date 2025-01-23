@@ -8,7 +8,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use League\Flysystem\FilesystemOperator;
 use Symfony\Component\Asset\Package;
 
-#[\Cicada\Core\Framework\Log\Package('services-settings')]
+#[\Cicada\Core\Framework\Log\Package('discovery')]
 class SitemapLister implements SitemapListerInterface
 {
     /**

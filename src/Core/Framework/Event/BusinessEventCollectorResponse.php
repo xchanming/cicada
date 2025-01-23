@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<BusinessEventDefinition>
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class BusinessEventCollectorResponse extends Collection
 {
     protected function getExpectedClass(): ?string

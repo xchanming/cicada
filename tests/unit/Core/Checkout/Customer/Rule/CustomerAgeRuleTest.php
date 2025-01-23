@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(CustomerAgeRule::class)]
 #[Group('rules')]
 class CustomerAgeRuleTest extends TestCase

@@ -5,7 +5,7 @@ import BulkEditCustomerHandler from './handler/bulk-edit-customer.handler';
 /**
  * @class
  *
- * @package services-settings
+ * @sw-package inventory
  */
 class BulkEditApiFactory {
     constructor() {

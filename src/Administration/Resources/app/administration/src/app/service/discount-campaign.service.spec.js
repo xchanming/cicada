@@ -1,7 +1,7 @@
 import CicadaDiscountCampaignService from 'src/app/service/discount-campaign.service';
 
 /**
- * @package services-settings
+ * @sw-package framework
  */
 describe('src/app/service/discount-campaign.service.ts', () => {
     beforeAll(() => {

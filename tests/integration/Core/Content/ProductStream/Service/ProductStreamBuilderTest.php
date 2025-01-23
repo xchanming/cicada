@@ -29,7 +29,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('inventory')]
 class ProductStreamBuilderTest extends TestCase
 {
     use IntegrationTestBehaviour;

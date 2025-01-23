@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('checkout')]
 class Migration1688717599UpdateCreatedByIdAndUpdatedByIdInOrderAndCustomer extends MigrationStep
 {
     public function getCreationTimestamp(): int

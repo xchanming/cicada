@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @codeCoverageIgnore
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class Filesystem
 {
     /**

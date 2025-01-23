@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class Migration1671003201RemoveDeprecatedColumns extends MigrationStep
 {
     public function getCreationTimestamp(): int

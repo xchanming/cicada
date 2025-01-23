@@ -5,7 +5,7 @@ namespace Cicada\Storefront\Page\Sitemap;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SitemapPage extends Struct
 {
     /**

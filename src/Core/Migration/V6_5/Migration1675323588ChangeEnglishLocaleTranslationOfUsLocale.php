@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@discovery')]
 class Migration1675323588ChangeEnglishLocaleTranslationOfUsLocale extends MigrationStep
 {
     public function getCreationTimestamp(): int

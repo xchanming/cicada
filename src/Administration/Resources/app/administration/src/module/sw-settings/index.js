@@ -1,5 +1,5 @@
 /**
- * @package services-settings
+ * @sw-package fundamentals@framework
  */
 import './mixin/sw-settings-list.mixin';
 import './acl';

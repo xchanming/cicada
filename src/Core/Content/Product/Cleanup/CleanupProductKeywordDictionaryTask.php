@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Product\Cleanup;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
-#[Package('services-settings')]
+#[Package('inventory')]
 class CleanupProductKeywordDictionaryTask extends ScheduledTask
 {
     public static function getTaskName(): string

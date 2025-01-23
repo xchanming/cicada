@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(LineItemActualStockRule::class)]
 #[Group('rules')]
 class LineItemActualStockRuleTest extends TestCase

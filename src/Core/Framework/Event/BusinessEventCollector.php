@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class BusinessEventCollector
 {
     /**

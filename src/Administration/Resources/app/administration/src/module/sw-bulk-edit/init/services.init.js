@@ -1,7 +1,7 @@
 import BulkEditApiFactory from '../service/bulk-edit.api.factory';
 
 /**
- * @package services-settings
+ * @sw-package inventory
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 Cicada.Service().register('bulkEditApiFactory', () => {
