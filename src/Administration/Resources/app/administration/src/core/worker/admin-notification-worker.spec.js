@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import AdminNotificationWorker from 'src/core/worker/admin-notification-worker';
 
 describe('src/core/worker/admin-notification-worker', () => {

@@ -4,7 +4,7 @@ import './sw-cms-missing-element-modal.scss';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

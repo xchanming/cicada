@@ -7,7 +7,7 @@ const { object } = Cicada.Utils;
 const { warn } = Cicada.Utils.debug;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

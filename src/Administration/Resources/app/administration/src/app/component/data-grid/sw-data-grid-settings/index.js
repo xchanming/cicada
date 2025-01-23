@@ -4,7 +4,7 @@ import './sw-data-grid-settings.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

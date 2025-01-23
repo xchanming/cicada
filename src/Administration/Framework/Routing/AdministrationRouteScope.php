@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Routing\AbstractRouteScope;
 use Cicada\Core\Framework\Routing\ApiContextRouteScopeDependant;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('administration')]
+#[Package('framework')]
 class AdministrationRouteScope extends AbstractRouteScope implements ApiContextRouteScopeDependant
 {
     final public const ID = 'administration';

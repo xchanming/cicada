@@ -3,7 +3,7 @@ import template from './sw-settings-store.html.twig';
 const { Mixin } = Cicada;
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default {

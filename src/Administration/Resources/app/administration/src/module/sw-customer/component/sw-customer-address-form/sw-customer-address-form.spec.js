@@ -5,7 +5,7 @@ import CicadaError from 'src/core/data/CicadaError';
 import CUSTOMER from '../../constant/sw-customer.constant';
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 
 async function createWrapper() {

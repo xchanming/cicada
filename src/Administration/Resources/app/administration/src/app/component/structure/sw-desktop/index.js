@@ -5,7 +5,7 @@ const { Component } = Cicada;
 const { hasOwnProperty } = Cicada.Utils.object;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

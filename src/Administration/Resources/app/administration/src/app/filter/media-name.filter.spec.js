@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 describe('src/app/filter/media-name.filter.js', () => {
     const mediaNameFilter = Cicada.Filter.getByName('mediaName');

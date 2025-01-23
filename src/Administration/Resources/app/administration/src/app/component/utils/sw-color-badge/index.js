@@ -4,7 +4,7 @@ import './sw-color-badge.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description

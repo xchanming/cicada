@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Event\CicadaEvent;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('administration')]
+#[Package('framework')]
 class PreResetExcludedSearchTermEvent extends Event implements CicadaEvent
 {
     /**

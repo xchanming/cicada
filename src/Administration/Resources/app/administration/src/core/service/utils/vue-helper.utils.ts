@@ -1,4 +1,7 @@
 /**
+ * @sw-package unknown
+ */
+/**
  * @private
  *
  * These helper methods shouldn't be used.

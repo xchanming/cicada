@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 
 import Entity, { assignSetterMethod } from '@cicada-ag/meteor-admin-sdk/es/_internals/data/Entity';

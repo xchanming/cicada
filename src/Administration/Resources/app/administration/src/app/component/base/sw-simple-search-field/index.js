@@ -4,7 +4,7 @@ import './sw-simple-search-field.scss';
 const { Component, Utils } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description a search field with delayed update

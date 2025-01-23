@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 describe('src/app/filter/salutation.filter.ts', () => {
     const salutationFilter = Cicada.Filter.getByName('salutation');

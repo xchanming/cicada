@@ -8,7 +8,7 @@ const { cloneDeep, merge } = Cicada.Utils.object;
 const type = Cicada.Utils.types;
 
 /**
- * @package discovery
+ * @sw-package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

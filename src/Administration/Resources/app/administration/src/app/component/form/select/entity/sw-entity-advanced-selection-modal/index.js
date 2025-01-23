@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-entity-advanced-selection-modal.html.twig';
 import './sw-entity-advanced-selection-modal.scss';
 

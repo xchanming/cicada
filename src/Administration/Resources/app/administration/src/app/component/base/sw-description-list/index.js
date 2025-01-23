@@ -4,7 +4,7 @@ import './sw-description-list.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description A definition list which uses CSS grid for a column layout.

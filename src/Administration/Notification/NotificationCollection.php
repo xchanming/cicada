@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<NotificationEntity>
  */
-#[Package('administration')]
+#[Package('framework')]
 class NotificationCollection extends EntityCollection
 {
     protected function getExpectedClass(): string

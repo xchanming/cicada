@@ -2,7 +2,7 @@ import CMS from '../../../constant/sw-cms.constant';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-preview-sidebar-filter', () => import('./preview'));
 /**
@@ -12,7 +12,7 @@ Cicada.Component.register('sw-cms-block-sidebar-filter', () => import('./compone
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsBlock({
     name: 'sidebar-filter',

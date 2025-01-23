@@ -4,7 +4,7 @@ import './sw-confirm-field.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Text field with additional confirmation buttons inlined in the field itself.

@@ -5,7 +5,7 @@ const { Component } = Cicada;
 const { mapState } = Component.getComponentHelper();
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default {

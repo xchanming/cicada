@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 const { Module } = Cicada;
 
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations

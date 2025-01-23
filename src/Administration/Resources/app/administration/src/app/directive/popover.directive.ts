@@ -6,7 +6,7 @@ import { ComponentPublicInstance } from 'vue';
 const { Directive } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * Directive for automatic edge detection of the element place
  *

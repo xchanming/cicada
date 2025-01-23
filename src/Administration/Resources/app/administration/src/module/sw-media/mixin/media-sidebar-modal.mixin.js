@@ -1,5 +1,5 @@
 /**
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Mixin.register('media-sidebar-modal-mixin', {
     inject: [

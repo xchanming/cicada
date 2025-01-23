@@ -7,7 +7,7 @@ const EXTENSION_POSTFIX = 'SwCategories';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

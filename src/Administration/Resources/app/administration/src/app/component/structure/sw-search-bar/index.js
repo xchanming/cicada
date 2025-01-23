@@ -7,7 +7,7 @@ const utils = Cicada.Utils;
 const { cloneDeep } = utils.object;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description

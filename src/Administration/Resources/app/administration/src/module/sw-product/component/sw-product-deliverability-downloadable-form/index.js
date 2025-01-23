@@ -5,7 +5,7 @@ const { Mixin } = Cicada;
 const { mapState, mapPropertyErrors, mapGetters } = Cicada.Component.getComponentHelper();
 
 /*
- * @package inventory
+ * @sw-package inventory
  * @private
  */
 export default {

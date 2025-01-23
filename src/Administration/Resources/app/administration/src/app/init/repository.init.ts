@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 
 const RepositoryFactory = Cicada.Classes._private.RepositoryFactory;

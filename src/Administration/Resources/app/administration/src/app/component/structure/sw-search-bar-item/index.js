@@ -3,7 +3,7 @@ import './sw-search-bar-item.scss';
 
 const { Component, Application } = Cicada;
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description

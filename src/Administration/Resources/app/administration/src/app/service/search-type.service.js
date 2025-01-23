@@ -1,4 +1,7 @@
 /**
+ * @sw-package unknown
+ */
+/**
  * @module app/service/search-type
  */
 

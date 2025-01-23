@@ -4,7 +4,7 @@ import './sw-product-variant-info.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Component which renders the variations of variant products.

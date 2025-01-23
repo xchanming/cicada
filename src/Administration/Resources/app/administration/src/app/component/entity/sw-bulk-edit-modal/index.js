@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-bulk-edit-modal.html.twig';
 import './sw-bulk-edit-modal.scss';
 

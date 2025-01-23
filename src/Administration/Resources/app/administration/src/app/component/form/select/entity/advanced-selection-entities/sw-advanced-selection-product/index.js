@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-advanced-selection-product.html.twig';
 
 const { Component } = Cicada;

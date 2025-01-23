@@ -1,5 +1,5 @@
 /**
- * @package checkout
+ * @sw-package checkout
  */
 const { merge, cloneDeep } = Cicada.Utils.object;
 const { Criteria } = Cicada.Data;

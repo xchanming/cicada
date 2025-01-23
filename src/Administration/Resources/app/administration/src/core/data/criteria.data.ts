@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 
 import Criteria from '@cicada-ag/meteor-admin-sdk/es/data/Criteria';

@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('administration')]
+#[Package('framework')]
 class AdminSearcher
 {
     /**

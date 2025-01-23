@@ -6,7 +6,7 @@ const { Criteria } = Cicada.Data;
 const utils = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready
@@ -204,6 +204,12 @@ Component.register('sw-data-grid', {
             default() {
                 return false;
             },
+        },
+
+        contextButtonMenuWidth: {
+            type: Number,
+            required: false,
+            default: 220,
         },
     },
 

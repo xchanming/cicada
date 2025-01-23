@@ -4,7 +4,7 @@ import './sw-sidebar-navigation-item.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package buyers-experience
  *
  * @private
  */

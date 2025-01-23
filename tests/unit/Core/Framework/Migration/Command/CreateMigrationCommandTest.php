@@ -2,13 +2,13 @@
 
 namespace Cicada\Tests\Unit\Core\Framework\Migration\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\Migration\Command\CreateMigrationCommand;
 use Cicada\Core\Framework\Migration\MigrationException;
 use Cicada\Core\Framework\Plugin\KernelPluginCollection;
 use Cicada\Tests\Integration\Storefront\Theme\fixtures\SimplePlugin\SimplePlugin as SimplePluginIntegration;
 use Cicada\Tests\Unit\Storefront\Theme\fixtures\SimplePlugin\SimplePlugin;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**

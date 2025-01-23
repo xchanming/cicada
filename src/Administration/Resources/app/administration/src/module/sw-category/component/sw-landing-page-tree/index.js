@@ -5,7 +5,7 @@ const { Criteria } = Cicada.Data;
 const { mapState } = Cicada.Component.getComponentHelper();
 
 /**
- * @package discovery
+ * @sw-package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

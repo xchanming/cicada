@@ -1,7 +1,7 @@
 const { Criteria } = Cicada.Data;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @module app/app-acl-service
  */

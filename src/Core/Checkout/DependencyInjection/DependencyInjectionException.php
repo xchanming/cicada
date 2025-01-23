@@ -5,7 +5,7 @@ namespace Cicada\Core\Checkout\DependencyInjection;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('checkout')]
 class DependencyInjectionException extends HttpException
 {
     public const CART_REDIS_NOT_CONFIGURED = 'CHECKOUT__CART_REDIS_NOT_CONFIGURED';

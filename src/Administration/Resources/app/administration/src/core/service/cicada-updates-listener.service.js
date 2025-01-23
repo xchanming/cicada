@@ -1,7 +1,7 @@
 const { Application } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @module core/service/cicada-updates-listener
  */

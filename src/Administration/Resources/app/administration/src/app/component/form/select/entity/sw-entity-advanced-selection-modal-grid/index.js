@@ -4,7 +4,7 @@ const { Component } = Cicada;
 
 /**
  * @private
- * @package buyers-experience
+ * @sw-package buyers-experience
  * @status prototype
  */
 Component.extend('sw-entity-advanced-selection-modal-grid', 'sw-entity-listing', {

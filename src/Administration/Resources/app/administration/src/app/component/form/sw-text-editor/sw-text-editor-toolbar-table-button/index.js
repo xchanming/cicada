@@ -4,7 +4,7 @@ import './sw-text-editor-toolbar-table-button.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

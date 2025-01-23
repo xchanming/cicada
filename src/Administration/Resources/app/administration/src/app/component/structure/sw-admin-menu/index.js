@@ -5,7 +5,7 @@ const { Component, Mixin } = Cicada;
 const { dom, types } = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

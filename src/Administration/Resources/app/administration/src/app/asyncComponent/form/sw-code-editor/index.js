@@ -7,7 +7,7 @@ import './sw-code-editor.scss';
 const utils = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

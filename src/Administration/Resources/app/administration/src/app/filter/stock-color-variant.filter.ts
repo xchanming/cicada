@@ -1,5 +1,5 @@
 /**
- * @package inventory
+ * @sw-package inventory
  */
 
 Cicada.Filter.register('stockColorVariant', (value: number) => {

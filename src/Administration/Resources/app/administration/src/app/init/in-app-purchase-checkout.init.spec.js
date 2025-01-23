@@ -1,5 +1,5 @@
 /**
- * @package checkout
+ * @sw-package checkout
  */
 import { purchase } from '@cicada-ag/meteor-admin-sdk/es/iap';
 import initializeInAppPurchaseCheckout from './in-app-purchase-checkout.init';

@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-base-filter.html.twig';
 import './sw-base-filter.scss';
 

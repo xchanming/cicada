@@ -2,13 +2,13 @@ const { Application, Service, State } = Cicada;
 const { Criteria } = Cicada.Data;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @module core/service/customer-group-registration-listener
  */
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @memberOf module:core/service/customer-group-registration-listener
  * @method addCustomerGroupRegistrationListener
  * @param loginService

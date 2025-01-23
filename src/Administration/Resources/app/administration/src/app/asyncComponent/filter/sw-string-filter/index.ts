@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import type { PropType } from 'vue';
 import template from './sw-string-filter.html.twig';
 

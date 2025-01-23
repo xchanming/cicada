@@ -24,7 +24,7 @@ import '@cicada-ag/meteor-icon-kit/icons/regular/chevron-circle-left.svg';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Renders an icon from the icon library.

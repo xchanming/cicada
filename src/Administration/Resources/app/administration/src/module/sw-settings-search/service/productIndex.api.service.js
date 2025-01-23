@@ -1,5 +1,5 @@
 /**
- * @package buyers-experience
+ * @sw-package buyers-experience
  */
 const ApiService = Cicada.Classes.ApiService;
 

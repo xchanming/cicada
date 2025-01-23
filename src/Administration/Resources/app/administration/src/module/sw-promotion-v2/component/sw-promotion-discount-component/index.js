@@ -8,7 +8,7 @@ const { Criteria } = Cicada.Data;
 const discountHandler = new DiscountHandler();
 
 /**
- * @package checkout
+ * @sw-package checkout
  *
  * @private
  */

@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-entity-multi-id-select.html.twig';
 
 const { Component, Context, Mixin } = Cicada;

@@ -3,7 +3,7 @@ import './sw-image-preview-modal.scss';
 
 const { Component } = Cicada;
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

@@ -5,7 +5,7 @@ const { Component } = Cicada;
 const utils = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Modal box component which can be displayed in different variants and sizes

@@ -8,7 +8,7 @@ import './sw-datepicker.scss';
 const { Mixin } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Datepicker wrapper for date inputs. For all configuration options visit:

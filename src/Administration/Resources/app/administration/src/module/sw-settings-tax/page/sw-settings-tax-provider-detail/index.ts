@@ -7,7 +7,7 @@ const { Component, Mixin } = Cicada;
 const { Criteria } = Cicada.Data;
 
 /**
- * @package checkout
+ * @sw-package checkout
  *
  * @private
  */

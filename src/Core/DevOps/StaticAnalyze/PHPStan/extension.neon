@@ -15,6 +15,7 @@ parameters:
             - Cicada\Core\Framework\Plugin\Exception\DecorationPatternException
             - Cicada\Core\Framework\Validation\Exception\ConstraintViolationException
             - Cicada\Core\Framework\Api\Controller\Exception\PermissionDeniedException
+            - Cicada\Core\Content\MailTemplate\Exception\MailEventConfigurationException
             - Twig\Error\LoaderError
             - Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
             - Symfony\Component\Messenger\Exception\UnrecoverableMessageHandlingException

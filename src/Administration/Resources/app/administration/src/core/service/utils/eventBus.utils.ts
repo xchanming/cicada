@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import mitt from 'mitt';
 
 /**

@@ -19,7 +19,6 @@ class MailApiService extends ApiService {
         mailTemplateMedia,
         salesChannelId,
         testMode = false,
-        documentIds = [],
         templateData = null,
         mailTemplateTypeId = null,
         mailTemplateId = null,
@@ -39,7 +38,6 @@ class MailApiService extends ApiService {
                     subject: mailTemplate.subject ?? mailTemplate.translated?.subject,
                     senderMail: mailTemplate.senderMail,
                     senderName: mailTemplate.senderName ?? mailTemplate.translated?.senderName,
-                    documentIds,
                     testMode,
                     mailTemplateTypeId,
                     mailTemplateId,
@@ -60,7 +58,6 @@ class MailApiService extends ApiService {
         salesChannelId,
         mailTemplateTypeId,
         mailTemplateId,
-        documentIds = [],
     ) {
         return this.sendMailTemplate(
             recipient,
@@ -69,7 +66,6 @@ class MailApiService extends ApiService {
             mailTemplateMedia,
             salesChannelId,
             true,
-            documentIds,
             null,
             mailTemplateTypeId,
             mailTemplateId,

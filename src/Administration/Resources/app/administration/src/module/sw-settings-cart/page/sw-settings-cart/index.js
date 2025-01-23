@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-settings-cart.html.twig';
 
 const { Mixin } = Cicada;

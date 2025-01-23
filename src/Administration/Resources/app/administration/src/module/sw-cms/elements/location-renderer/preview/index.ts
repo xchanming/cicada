@@ -6,7 +6,7 @@ const { Component } = Cicada;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Component.register('sw-cms-el-preview-location-renderer', {
     template,

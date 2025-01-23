@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 describe('src/app/filter/date.filter.ts', () => {
     const dateFilter = Cicada.Filter.getByName('date');

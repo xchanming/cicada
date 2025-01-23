@@ -6,7 +6,7 @@ import type MediaUploadResult from '../../../shared/MediaUploadResult';
 const { Mixin } = Cicada;
 
 /**
- * @package discovery
+ * @sw-package discovery
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default Cicada.Component.wrapComponentConfig({

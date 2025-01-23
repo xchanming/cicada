@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import 'src/app/component/filter/sw-filter-panel';
 import 'src/app/component/filter/sw-boolean-filter';
 import 'src/app/component/filter/sw-existence-filter';

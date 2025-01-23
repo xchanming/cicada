@@ -4,7 +4,7 @@ import './sw-data-grid-skeleton.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

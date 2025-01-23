@@ -3,8 +3,11 @@
 namespace Cicada\Core\Checkout\Order;
 
 use Cicada\Core\Checkout\Customer\Exception\CustomerAuthThrottledException;
+use Cicada\Core\Checkout\Order\Exception\GuestNotAuthenticatedException;
+use Cicada\Core\Checkout\Order\Exception\WrongGuestCredentialsException;
 use Cicada\Core\Content\Flow\Exception\CustomerDeletedException;
 use Cicada\Core\Framework\CicadaHttpException;
+use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,6 +30,8 @@ class OrderException extends HttpException
     final public const ORDER_CUSTOMER_ADDRESS_NOT_FOUND = 'CHECKOUT__ORDER_CUSTOMER_ADDRESS_NOT_FOUND';
     final public const ORDER_INVALID_ORDER_ADDRESS_MAPPING = 'CHECKOUT__INVALID_ORDER_ADDRESS_MAPPING';
     final public const ORDER_DELIVERY_WITHOUT_ADDRESS = 'CHECKOUT__DELIVERY_WITHOUT_ADDRESS';
+    final public const CHECKOUT_GUEST_NOT_AUTHENTICATED = 'CHECKOUT__GUEST_NOT_AUTHENTICATED';
+    final public const CHECKOUT_GUEST_WRONG_CREDENTIALS = 'CHECKOUT__GUEST_WRONG_CREDENTIALS';
 
     public static function missingAssociation(string $association): self
     {
@@ -191,5 +196,31 @@ class OrderException extends HttpException
     public static function orderCustomerDeleted(string $orderId): CustomerDeletedException
     {
         return new CustomerDeletedException($orderId);
+    }
+
+    public static function guestNotAuthenticated(): self|GuestNotAuthenticatedException
+    {
+        if (Feature::isActive('v6.7.0.0')) {
+            return new self(
+                Response::HTTP_FORBIDDEN,
+                self::CHECKOUT_GUEST_NOT_AUTHENTICATED,
+                'Guest not authenticated.'
+            );
+        }
+
+        return new GuestNotAuthenticatedException();
+    }
+
+    public static function wrongGuestCredentials(): self|WrongGuestCredentialsException
+    {
+        if (Feature::isActive('v6.7.0.0')) {
+            return new self(
+                Response::HTTP_FORBIDDEN,
+                self::CHECKOUT_GUEST_WRONG_CREDENTIALS,
+                'Wrong credentials for guest authentication.'
+            );
+        }
+
+        return new WrongGuestCredentialsException();
     }
 }

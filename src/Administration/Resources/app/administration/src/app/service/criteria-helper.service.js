@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import Criteria from '@cicada-ag/meteor-admin-sdk/es/data/Criteria';
 
 /**

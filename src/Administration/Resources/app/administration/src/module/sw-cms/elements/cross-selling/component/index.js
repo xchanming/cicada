@@ -6,7 +6,7 @@ const { isEmpty } = Cicada.Utils.types;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default {
     template,

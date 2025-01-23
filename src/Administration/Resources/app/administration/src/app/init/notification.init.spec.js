@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 import initializeNotifications from 'src/app/init/notification.init';
 import { notification } from '@cicada-ag/meteor-admin-sdk';

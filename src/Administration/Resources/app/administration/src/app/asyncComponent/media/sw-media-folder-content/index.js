@@ -5,7 +5,7 @@ const { Context } = Cicada;
 const { Criteria } = Cicada.Data;
 
 /**
- * @package content
+ * @sw-package content
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

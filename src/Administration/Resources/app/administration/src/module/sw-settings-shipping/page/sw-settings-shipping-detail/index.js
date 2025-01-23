@@ -9,7 +9,7 @@ const { Criteria } = Cicada.Data;
 const { warn } = Cicada.Utils.debug;
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

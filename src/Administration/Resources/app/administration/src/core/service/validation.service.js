@@ -1,7 +1,7 @@
 const { types } = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @module core/service/validation
  */

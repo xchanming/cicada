@@ -5,7 +5,7 @@ import type MediaUploadResult from '../../../shared/MediaUploadResult';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

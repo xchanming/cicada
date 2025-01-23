@@ -6,7 +6,7 @@ const { Criteria, EntityCollection } = Cicada.Data;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default {
     template,

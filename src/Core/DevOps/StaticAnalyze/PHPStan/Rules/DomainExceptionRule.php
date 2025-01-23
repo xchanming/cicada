@@ -2,16 +2,6 @@
 
 namespace Cicada\Core\DevOps\StaticAnalyze\PHPStan\Rules;
 
-use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Configuration;
-use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\FastlyReverseProxyGateway;
-use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\RedisReverseProxyGateway;
-use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\ReverseProxyException;
-use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\VarnishReverseProxyGateway;
-use Cicada\Core\Framework\Framework;
-use Cicada\Core\Framework\FrameworkException;
-use Cicada\Core\Framework\HttpException;
-use Cicada\Core\Framework\Log\Package;
-use Cicada\Core\Kernel;
 use PhpParser\Node;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Expr\StaticCall;
@@ -22,6 +12,16 @@ use PHPStan\Reflection\ReflectionProvider;
 use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
+use Cicada\Core\DevOps\StaticAnalyze\PHPStan\Configuration;
+use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\FastlyReverseProxyGateway;
+use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\RedisReverseProxyGateway;
+use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\ReverseProxyException;
+use Cicada\Core\Framework\Adapter\Cache\ReverseProxy\VarnishReverseProxyGateway;
+use Cicada\Core\Framework\Framework;
+use Cicada\Core\Framework\FrameworkException;
+use Cicada\Core\Framework\HttpException;
+use Cicada\Core\Framework\Log\Package;
+use Cicada\Core\Kernel;
 
 /**
  * @internal

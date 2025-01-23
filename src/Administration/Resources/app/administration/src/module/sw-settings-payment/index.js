@@ -21,7 +21,7 @@ Cicada.Component.extend(
 const { Module } = Cicada;
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 Module.register('sw-settings-payment', {

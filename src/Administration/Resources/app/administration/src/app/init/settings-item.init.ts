@@ -1,6 +1,6 @@
 /**
  * @private
- * @package admin
+ * @sw-package framework
  */
 export default function initializeSettingItems(): void {
     Cicada.ExtensionAPI.handle('settingsItemAdd', async (settingsItemConfig, additionalInformation) => {

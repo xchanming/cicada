@@ -4,7 +4,7 @@ import './sw-product-image.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Component which renders an image.

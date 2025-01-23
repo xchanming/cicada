@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-boolean-filter.html.twig';
 
 const { Component } = Cicada;

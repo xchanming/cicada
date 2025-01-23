@@ -1,5 +1,5 @@
 /**
- * @package checkout
+ * @sw-package checkout
  */
 Cicada.Service('privileges').addPrivilegeMappingEntry({
     category: 'permissions',

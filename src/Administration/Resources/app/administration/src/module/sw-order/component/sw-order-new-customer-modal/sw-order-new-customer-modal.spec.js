@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import CicadaError from 'src/core/data/CicadaError';
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 
 const { Context } = Cicada;

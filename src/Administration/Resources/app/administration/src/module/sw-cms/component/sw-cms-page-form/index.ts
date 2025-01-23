@@ -5,7 +5,7 @@ import CMS from '../../constant/sw-cms.constant';
 
 /**
  * @private
- * @package buyers-experience
+ * @sw-package buyers-experience
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

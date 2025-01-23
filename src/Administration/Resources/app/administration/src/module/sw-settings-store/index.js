@@ -4,7 +4,7 @@ Cicada.Component.register('sw-settings-store', () => import('./page/sw-settings-
 const { Module } = Cicada;
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 Module.register('sw-settings-store', {

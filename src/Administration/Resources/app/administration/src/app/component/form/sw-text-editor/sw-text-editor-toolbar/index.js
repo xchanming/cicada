@@ -4,7 +4,7 @@ import './sw-text-editor-toolbar.scss';
 const { Component, Utils } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

@@ -8,7 +8,7 @@ import type { UserInfo } from '../../../../core/service/api/store.api.service';
 const { State, Mixin, Filter } = Cicada;
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default Cicada.Component.wrapComponentConfig({

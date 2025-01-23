@@ -4,7 +4,7 @@ import './sw-radio-field.scss';
 const { Component, Mixin } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description radio input field.

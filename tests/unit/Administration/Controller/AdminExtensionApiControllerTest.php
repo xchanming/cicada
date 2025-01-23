@@ -29,7 +29,7 @@ use Psr\Http\Message\UriInterface;
 /**
  * @internal
  */
-#[Package('administration')]
+#[Package('framework')]
 #[CoversClass(AdminExtensionApiController::class)]
 class AdminExtensionApiControllerTest extends TestCase
 {
