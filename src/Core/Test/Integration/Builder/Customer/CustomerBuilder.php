@@ -28,6 +28,8 @@ class CustomerBuilder
 
     protected string $name;
 
+    protected string $title;
+
     protected string $email;
 
     protected string $customerGroupId;
@@ -66,6 +68,7 @@ class CustomerBuilder
     ) {
         $this->ids = $ids;
         $this->id = $ids->create($customerNumber);
+        $this->title = 'Max';
         $this->name = 'Max';
         $this->email = 'max@mustermann.com';
         $this->salutation = self::salutation($ids);
@@ -82,9 +85,16 @@ class CustomerBuilder
         return $this;
     }
 
-    public function name(string $name): self
+    public function name(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function title(?string $title): self
+    {
+        $this->title = $this->title;
 
         return $this;
     }

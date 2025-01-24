@@ -826,7 +826,7 @@ class SalesChannelContextTest extends TestCase
             'email' => Uuid::randomHex() . '@example.com',
             'guest' => $isGuest,
             'password' => '$password',
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];
