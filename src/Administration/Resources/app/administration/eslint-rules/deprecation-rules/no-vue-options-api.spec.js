@@ -167,7 +167,7 @@ export default {
             async loadEntityData() {
                 this.numberRange = await this.numberRangeRepository.get(
                     this.numberRangeId,
-                    Cicada.Context.api,
+                    Shopware.Context.api,
                     this.numberRangeCriteria,
                 );
             }
@@ -187,7 +187,7 @@ export default {
                 '      const loadEntityData = async () => {\n' +
                 '                Object.assign(numberRange, await this.numberRangeRepository.get(\n' +
                 '                    this.numberRangeId,\n' +
-                '                    Cicada.Context.api,\n' +
+                '                    Shopware.Context.api,\n' +
                 '                    this.numberRangeCriteria,\n' +
                 '                ))\n' +
                 ';\n' +
@@ -474,21 +474,21 @@ export default {
       `,
             errors: [{ message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' }],
             output: '' +
-'\n' +
-'      export default {\n' +
-'      setup(props) {\n' +
-'          const increment = () => {\n' +
-'            props.count++;\n' +
-'          };\n' +
-'\n' +
-'          return {\n' +
-'            increment,\n' +
-'          };\n' +
-'        },\n' +
-"props: ['count'],\n" +
-'        \n' +
-'      };\n' +
-'      ',
+                '\n' +
+                '      export default {\n' +
+                '      setup(props) {\n' +
+                '          const increment = () => {\n' +
+                '            props.count++;\n' +
+                '          };\n' +
+                '\n' +
+                '          return {\n' +
+                '            increment,\n' +
+                '          };\n' +
+                '        },\n' +
+                "props: ['count'],\n" +
+                '        \n' +
+                '      };\n' +
+                '      ',
         },
         {
             name: 'Invalid: Convert watch to watch() in setup()',
@@ -537,21 +537,21 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-"        import { watch } from 'vue';\n" +
-'export default {\n' +
-'            setup(props) {\n' +
-'          watch(props.count, (newValue, oldValue) => {\n' +
-"                    console.log('Count changed:', newValue, oldValue);\n" +
-'                });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-"props: ['count'],\n" +
-'            \n' +
-'        };\n' +
-'        ',
+                '\n' +
+                "        import { watch } from 'vue';\n" +
+                'export default {\n' +
+                '            setup(props) {\n' +
+                '          watch(props.count, (newValue, oldValue) => {\n' +
+                "                    console.log('Count changed:', newValue, oldValue);\n" +
+                '                });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                "props: ['count'],\n" +
+                '            \n' +
+                '        };\n' +
+                '        ',
         },
         {
             name: 'Invalid: Convert watch with handler and deep to watch() in setup()',
@@ -666,19 +666,19 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-'        import { onMounted } from \'vue\';\n' +
-'export default {\n' +
-'            setup() {\n' +
-'          onMounted(() => {\n' +
-"                console.log('Component mounted');\n" +
-'            });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'        };',
+                '\n' +
+                '        import { onMounted } from \'vue\';\n' +
+                'export default {\n' +
+                '            setup() {\n' +
+                '          onMounted(() => {\n' +
+                "                console.log('Component mounted');\n" +
+                '            });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '        };',
         },
         {
             name: 'Invalid: Convert "onUpdated" lifecycle hook to Composition API',
@@ -693,19 +693,19 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-'        import { onUpdated } from \'vue\';\n' +
-'export default {\n' +
-'            setup() {\n' +
-'          onUpdated(() => {\n' +
-"                console.log('Component updated');\n" +
-'            });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'        };',
+                '\n' +
+                '        import { onUpdated } from \'vue\';\n' +
+                'export default {\n' +
+                '            setup() {\n' +
+                '          onUpdated(() => {\n' +
+                "                console.log('Component updated');\n" +
+                '            });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '        };',
         },
         {
             name: 'Invalid: Convert "onUnmounted" lifecycle hook to Composition API',
@@ -720,19 +720,19 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-'        import { onUnmounted } from \'vue\';\n' +
-'export default {\n' +
-'            setup() {\n' +
-'          onUnmounted(() => {\n' +
-"                console.log('Component unmounted');\n" +
-'            });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'        };',
+                '\n' +
+                '        import { onUnmounted } from \'vue\';\n' +
+                'export default {\n' +
+                '            setup() {\n' +
+                '          onUnmounted(() => {\n' +
+                "                console.log('Component unmounted');\n" +
+                '            });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '        };',
         },
         {
             name: 'Invalid: Convert "onBeforeMount" lifecycle hook to Composition API',
@@ -747,19 +747,19 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-'        import { onBeforeMount } from \'vue\';\n' +
-'export default {\n' +
-'            setup() {\n' +
-'          onBeforeMount(() => {\n' +
-"                console.log('Component before mount');\n" +
-'            });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'        };',
+                '\n' +
+                '        import { onBeforeMount } from \'vue\';\n' +
+                'export default {\n' +
+                '            setup() {\n' +
+                '          onBeforeMount(() => {\n' +
+                "                console.log('Component before mount');\n" +
+                '            });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '        };',
         },
         {
             name: 'Invalid: Convert "onBeforeUpdate" lifecycle hook to Composition API',
@@ -774,19 +774,19 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-'        import { onBeforeUpdate } from \'vue\';\n' +
-'export default {\n' +
-'            setup() {\n' +
-'          onBeforeUpdate(() => {\n' +
-"                console.log('Component before update');\n" +
-'            });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'        };',
+                '\n' +
+                '        import { onBeforeUpdate } from \'vue\';\n' +
+                'export default {\n' +
+                '            setup() {\n' +
+                '          onBeforeUpdate(() => {\n' +
+                "                console.log('Component before update');\n" +
+                '            });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '        };',
         },
         {
             name: 'Invalid: Convert "onBeforeUnmount" lifecycle hook to Composition API',
@@ -801,19 +801,19 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-'        import { onBeforeUnmount } from \'vue\';\n' +
-'export default {\n' +
-'            setup() {\n' +
-'          onBeforeUnmount(() => {\n' +
-"                console.log('Component before unmount');\n" +
-'            });\n' +
-'\n' +
-'          return {\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'        };',
+                '\n' +
+                '        import { onBeforeUnmount } from \'vue\';\n' +
+                'export default {\n' +
+                '            setup() {\n' +
+                '          onBeforeUnmount(() => {\n' +
+                "                console.log('Component before unmount');\n" +
+                '            });\n' +
+                '\n' +
+                '          return {\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '        };',
         },
         {
             name: 'Invalid: Convert multiple Vue 2 Options API properties (data, computed, methods, watch) to Composition API',
@@ -878,12 +878,12 @@ export default {
  */
 import template from './sw-users-permissions-role-view-general.html.twig';
 
-const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
+const { mapPropertyErrors } = Shopware.Component.getComponentHelper();
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'acl',
@@ -910,12 +910,12 @@ export default {
             ],
             output: '\n' +
                 '/**\n' +
-                ' * @package services-settings\n' +
+                ' * @sw-package fundamentals@framework\n' +
                 ' */\n' +
                 "import { inject } from 'vue';\n" +
                 "import template from './sw-users-permissions-role-view-general.html.twig';\n" +
                 '\n' +
-                'const { mapPropertyErrors } = Cicada.Component.getComponentHelper();\n' +
+                'const { mapPropertyErrors } = Shopware.Component.getComponentHelper();\n' +
                 '\n' +
                 'export default {\n' +
                 '    setup() {\n' +
@@ -934,7 +934,7 @@ export default {
                 '        },\n' +
                 'template,\n' +
                 '\n' +
-                '    compatConfig: Cicada.compatConfig,\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
                 '\n' +
                 '    \n' +
                 '\n' +
@@ -955,13 +955,13 @@ export default {
 import template from './sw-users-permissions-user-detail.html.twig';
 import './sw-users-permissions-user-detail.scss';
 
-const { Component, Mixin } = Cicada;
+const { Component, Mixin } = Shopware;
 const { mapPropertyErrors } = Component.getComponentHelper();
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'userService',
@@ -1074,7 +1074,7 @@ export default {
                 "import template from './sw-users-permissions-user-detail.html.twig';\n" +
                 "import './sw-users-permissions-user-detail.scss';\n" +
                 '\n' +
-                'const { Component, Mixin } = Cicada;\n' +
+                'const { Component, Mixin } = Shopware;\n' +
                 'const { mapPropertyErrors } = Component.getComponentHelper();\n' +
                 '\n' +
                 'export default {\n' +
@@ -1182,7 +1182,7 @@ export default {
                 '        },\n' +
                 'template,\n' +
                 '\n' +
-                '    compatConfig: Cicada.compatConfig,\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
                 '\n' +
                 '    \n' +
                 '\n' +
@@ -1223,13 +1223,13 @@ import './sw-settings-tax-detail.scss';
  * @package checkout
  */
 
-const { Mixin } = Cicada;
-const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
+const { Mixin } = Shopware;
+const { mapPropertyErrors } = Shopware.Component.getComponentHelper();
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'repositoryFactory',
@@ -1321,12 +1321,12 @@ export default {
             };
         },
 
-        isCicadaDefaultTax() {
+        isShopwareDefaultTax() {
             return this.$te(\`global.tax-rates.\${this.tax.name}\`, 'en-GB');
         },
 
         label() {
-            return this.isCicadaDefaultTax ? this.$tc(\`global.tax-rates.\${this.tax.name}\`) : this.tax.name;
+            return this.isShopwareDefaultTax ? this.$tc(\`global.tax-rates.\${this.tax.name}\`) : this.tax.name;
         },
 
         showCustomFields() {
@@ -1420,7 +1420,7 @@ export default {
         },
 
         onChangeLanguage(languageId) {
-            Cicada.State.commit('context/setApiLanguageId', languageId);
+            Shopware.State.commit('context/setApiLanguageId', languageId);
             this.createdComponent();
         },
 
@@ -1460,263 +1460,263 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-"import { reactive, ref, inject, computed, onBeforeMount, watch } from 'vue';\n" +
-"import template from './sw-settings-tax-detail.html.twig';\n" +
-"import './sw-settings-tax-detail.scss';\n" +
-'\n' +
-'/**\n' +
-' * @package checkout\n' +
-' */\n' +
-'\n' +
-'const { Mixin } = Cicada;\n' +
-'const { mapPropertyErrors } = Cicada.Component.getComponentHelper();\n' +
-'\n' +
-'export default {\n' +
-'    setup(props) {\n' +
-'          const tax = reactive({});\n' +
-'      const isLoading = ref(false);\n' +
-'      const isSaveSuccessful = ref(false);\n' +
-'      const customFieldSets = ref(null);\n' +
-'      const defaultTaxRateId = ref(null);\n' +
-'      const changeDefaultTaxRate = ref(false);\n' +
-"      const formerDefaultTaxName = ref('');\n" +
-'      const config = reactive({});\n' +
-'      const isDefault = ref(false);\n' +
-'\n' +
-'    /** TODO: Spread computed property is not fully supported yet. Original code:\n' +
-"        mapPropertyErrors('tax', ['name', 'taxRate'])\n" +
-'    */\n' +
-"      const repositoryFactory = inject('repositoryFactory');\n" +
-"      const acl = inject('acl');\n" +
-"      const customFieldDataProviderService = inject('customFieldDataProviderService');\n" +
-"      const systemConfigApiService = inject('systemConfigApiService');\n" +
-"      const feature = inject('feature');\n" +
-'          const identifier = computed(() => {\n' +
-"            return tax.name || '';\n" +
-'        });\n' +
-'          const taxRepository = computed(() => {\n' +
-"            return repositoryFactory.create('tax');\n" +
-'        });\n' +
-'          const isNewTax = computed(() => {\n' +
-"            return tax.isNew === 'function'\n" +
-'                ? tax.isNew()\n' +
-'                : false;\n' +
-'        });\n' +
-'          const allowSave = computed(() => {\n' +
-'            return isNewTax.value\n' +
-"                ? acl.can('tax.creator')\n" +
-"                : acl.can('tax.editor');\n" +
-'        });\n' +
-'          const tooltipSave = computed(() => {\n' +
-'            if (!allowSave.value) {\n' +
-'                return {\n' +
-"                    message: this.$tc('sw-privileges.tooltip.warning'),\n" +
-'                    disabled: allowSave.value,\n' +
-'                    showOnDisabledElements: true,\n' +
-'                };\n' +
-'            }\n' +
-'\n' +
-'            const systemKey = this.$device.getSystemKey();\n' +
-'\n' +
-'            return {\n' +
-'                message: `${systemKey} + S`,\n' +
-"                appearance: 'light',\n" +
-'            };\n' +
-'        });\n' +
-'          const isCicadaDefaultTax = computed(() => {\n' +
-"            return this.$te(`global.tax-rates.${tax.name}`, 'en-GB');\n" +
-'        });\n' +
-'          const label = computed(() => {\n' +
-'            return isCicadaDefaultTax.value ? this.$tc(`global.tax-rates.${tax.name}`) : tax.name;\n' +
-'        });\n' +
-'          const showCustomFields = computed(() => {\n' +
-'            return customFieldSets.value && customFieldSets.value.length > 0;\n' +
-'        });\n' +
-'          const isDefaultTaxRate = computed(() => {\n' +
-'            if (!defaultTaxRateId.value) {\n' +
-'                return false;\n' +
-'            }\n' +
-'            return props.taxId === defaultTaxRateId.value;\n' +
-'        });\n' +
-'      const createdComponent = () => {\n' +
-'            isLoading.value = true;\n' +
-'            if (props.taxId) {\n' +
-'                taxRepository.value.get(props.taxId).then((tax) => {\n' +
-'                    Object.assign(tax, tax);\n' +
-'                    isLoading.value = false;\n' +
-'                });\n' +
-'                loadCustomFieldSets();\n' +
-'                reloadDefaultTaxRate();\n' +
-'\n' +
-'                return;\n' +
-'            }\n' +
-'\n' +
-'            Object.assign(tax, taxRepository.value.create());\n' +
-'            isLoading.value = false;\n' +
-'        };\n' +
-'      const loadCustomFieldSets = () => {\n' +
-"            customFieldDataProviderService.getCustomFieldSets('tax').then((sets) => {\n" +
-'                customFieldSets.value = sets;\n' +
-'            });\n' +
-'        };\n' +
-'      const onSave = () => {\n' +
-'            isSaveSuccessful.value = false;\n' +
-'            isLoading.value = true;\n' +
-'\n' +
-'            return taxRepository.value.save(tax).then(() => {\n' +
-'                isSaveSuccessful.value = true;\n' +
-'                if (!props.taxId) {\n' +
-"                    this.$router.push({ name: 'sw.settings.tax.detail', params: { id: tax.id } });\n" +
-'                }\n' +
-'\n' +
-'                taxRepository.value.get(tax.id).then((updatedTax) => {\n' +
-'                    Object.assign(tax, updatedTax);\n' +
-'                }).then(() => {\n' +
-'                    return systemConfigApiService.saveValues(config).then(() => {\n' +
-'                        defaultTaxRateId.value = tax.id;\n' +
-'                        reloadDefaultTaxRate();\n' +
-'                        isLoading.value = false;\n' +
-'                    });\n' +
-'                });\n' +
-'            }).catch(() => {\n' +
-'                this.createNotificationError({\n' +
-"                    message: this.$tc('sw-settings-tax.detail.messageSaveError'),\n" +
-'                });\n' +
-'                isLoading.value = false;\n' +
-'            });\n' +
-'        };\n' +
-'      const onCancel = () => {\n' +
-"            this.$router.push({ name: 'sw.settings.tax.index' });\n" +
-'        };\n' +
-'      const abortOnLanguageChange = () => {\n' +
-'            return taxRepository.value.hasChanges(tax);\n' +
-'        };\n' +
-'      const saveOnLanguageChange = () => {\n' +
-'            return onSave();\n' +
-'        };\n' +
-'      const onChangeLanguage = (languageId) => {\n' +
-"            Cicada.State.commit('context/setApiLanguageId', languageId);\n" +
-'            createdComponent();\n' +
-'        };\n' +
-'      const changeName = (name) => {\n' +
-'            tax.name = name;\n' +
-'        };\n' +
-'      const reloadDefaultTaxRate = () => {\n' +
-'            systemConfigApiService\n' +
-"                .getValues('core.tax')\n" +
-'                .then(response => {\n' +
-"                    defaultTaxRateId.value = response['core.tax.defaultTaxRate'] ?? null;\n" +
-'                })\n' +
-'                .then(() => {\n' +
-'                    if (defaultTaxRateId.value) {\n' +
-'                        taxRepository.value.get(defaultTaxRateId.value).then((tax) => {\n' +
-'                            formerDefaultTaxName.value = tax.name;\n' +
-'                        });\n' +
-'                    }\n' +
-'                })\n' +
-'                .catch(() => {\n' +
-'                    defaultTaxRateId.value = null;\n' +
-'                });\n' +
-'        };\n' +
-'      const onChangeDefaultTaxRate = () => {\n' +
-"            const newDefaultTax = !isDefaultTaxRate.value ? props.taxId : '';\n" +
-'\n' +
-"            this.$set(config, 'core.tax.defaultTaxRate', newDefaultTax);\n" +
-'            changeDefaultTaxRate.value = false;\n' +
-'        };\n' +
-'      onBeforeMount(() => {\n' +
-'        createdComponent();\n' +
-'    });\n' +
-'      watch(props.taxId, () => {\n' +
-'            if (!props.taxId) {\n' +
-'                createdComponent();\n' +
-'            }\n' +
-'        });\n' +
-'      watch(isDefaultTaxRate, () => {\n' +
-'            isDefault.value = isDefaultTaxRate.value;\n' +
-'        });\n' +
-'\n' +
-'          return {\n' +
-'            tax,\n' +
-'            isLoading,\n' +
-'            isSaveSuccessful,\n' +
-'            customFieldSets,\n' +
-'            defaultTaxRateId,\n' +
-'            changeDefaultTaxRate,\n' +
-'            formerDefaultTaxName,\n' +
-'            config,\n' +
-'            isDefault,\n' +
-'            repositoryFactory,\n' +
-'            acl,\n' +
-'            customFieldDataProviderService,\n' +
-'            systemConfigApiService,\n' +
-'            feature,\n' +
-'            identifier,\n' +
-'            taxRepository,\n' +
-'            isNewTax,\n' +
-'            allowSave,\n' +
-'            tooltipSave,\n' +
-'            isCicadaDefaultTax,\n' +
-'            label,\n' +
-'            showCustomFields,\n' +
-'            isDefaultTaxRate,\n' +
-'            createdComponent,\n' +
-'            loadCustomFieldSets,\n' +
-'            onSave,\n' +
-'            onCancel,\n' +
-'            abortOnLanguageChange,\n' +
-'            saveOnLanguageChange,\n' +
-'            onChangeLanguage,\n' +
-'            changeName,\n' +
-'            reloadDefaultTaxRate,\n' +
-'            onChangeDefaultTaxRate,\n' +
-'          };\n' +
-'        },\n' +
-'template,\n' +
-'\n' +
-'    compatConfig: Cicada.compatConfig,\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    mixins: [\n' +
-"        Mixin.getByName('notification'),\n" +
-'    ],\n' +
-'\n' +
-'    shortcuts: {\n' +
-"        'SYSTEMKEY+S': {\n" +
-'            active() {\n' +
-'                return this.allowSave;\n' +
-'            },\n' +
-"            method: 'onSave',\n" +
-'        },\n' +
-"        ESCAPE: 'onCancel',\n" +
-'    },\n' +
-'\n' +
-'    props: {\n' +
-'        taxId: {\n' +
-'            type: String,\n' +
-'            required: false,\n' +
-'            default: null,\n' +
-'        },\n' +
-'    },\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    metaInfo() {\n' +
-'        return {\n' +
-'            title: this.$createTitle(this.identifier),\n' +
-'        };\n' +
-'    },\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'};\n'
+                '\n' +
+                "import { reactive, ref, inject, computed, onBeforeMount, watch } from 'vue';\n" +
+                "import template from './sw-settings-tax-detail.html.twig';\n" +
+                "import './sw-settings-tax-detail.scss';\n" +
+                '\n' +
+                '/**\n' +
+                ' * @package checkout\n' +
+                ' */\n' +
+                '\n' +
+                'const { Mixin } = Shopware;\n' +
+                'const { mapPropertyErrors } = Shopware.Component.getComponentHelper();\n' +
+                '\n' +
+                'export default {\n' +
+                '    setup(props) {\n' +
+                '          const tax = reactive({});\n' +
+                '      const isLoading = ref(false);\n' +
+                '      const isSaveSuccessful = ref(false);\n' +
+                '      const customFieldSets = ref(null);\n' +
+                '      const defaultTaxRateId = ref(null);\n' +
+                '      const changeDefaultTaxRate = ref(false);\n' +
+                "      const formerDefaultTaxName = ref('');\n" +
+                '      const config = reactive({});\n' +
+                '      const isDefault = ref(false);\n' +
+                '\n' +
+                '    /** TODO: Spread computed property is not fully supported yet. Original code:\n' +
+                "        mapPropertyErrors('tax', ['name', 'taxRate'])\n" +
+                '    */\n' +
+                "      const repositoryFactory = inject('repositoryFactory');\n" +
+                "      const acl = inject('acl');\n" +
+                "      const customFieldDataProviderService = inject('customFieldDataProviderService');\n" +
+                "      const systemConfigApiService = inject('systemConfigApiService');\n" +
+                "      const feature = inject('feature');\n" +
+                '          const identifier = computed(() => {\n' +
+                "            return tax.name || '';\n" +
+                '        });\n' +
+                '          const taxRepository = computed(() => {\n' +
+                "            return repositoryFactory.create('tax');\n" +
+                '        });\n' +
+                '          const isNewTax = computed(() => {\n' +
+                "            return tax.isNew === 'function'\n" +
+                '                ? tax.isNew()\n' +
+                '                : false;\n' +
+                '        });\n' +
+                '          const allowSave = computed(() => {\n' +
+                '            return isNewTax.value\n' +
+                "                ? acl.can('tax.creator')\n" +
+                "                : acl.can('tax.editor');\n" +
+                '        });\n' +
+                '          const tooltipSave = computed(() => {\n' +
+                '            if (!allowSave.value) {\n' +
+                '                return {\n' +
+                "                    message: this.$tc('sw-privileges.tooltip.warning'),\n" +
+                '                    disabled: allowSave.value,\n' +
+                '                    showOnDisabledElements: true,\n' +
+                '                };\n' +
+                '            }\n' +
+                '\n' +
+                '            const systemKey = this.$device.getSystemKey();\n' +
+                '\n' +
+                '            return {\n' +
+                '                message: `${systemKey} + S`,\n' +
+                "                appearance: 'light',\n" +
+                '            };\n' +
+                '        });\n' +
+                '          const isShopwareDefaultTax = computed(() => {\n' +
+                "            return this.$te(`global.tax-rates.${tax.name}`, 'en-GB');\n" +
+                '        });\n' +
+                '          const label = computed(() => {\n' +
+                '            return isShopwareDefaultTax.value ? this.$tc(`global.tax-rates.${tax.name}`) : tax.name;\n' +
+                '        });\n' +
+                '          const showCustomFields = computed(() => {\n' +
+                '            return customFieldSets.value && customFieldSets.value.length > 0;\n' +
+                '        });\n' +
+                '          const isDefaultTaxRate = computed(() => {\n' +
+                '            if (!defaultTaxRateId.value) {\n' +
+                '                return false;\n' +
+                '            }\n' +
+                '            return props.taxId === defaultTaxRateId.value;\n' +
+                '        });\n' +
+                '      const createdComponent = () => {\n' +
+                '            isLoading.value = true;\n' +
+                '            if (props.taxId) {\n' +
+                '                taxRepository.value.get(props.taxId).then((tax) => {\n' +
+                '                    Object.assign(tax, tax);\n' +
+                '                    isLoading.value = false;\n' +
+                '                });\n' +
+                '                loadCustomFieldSets();\n' +
+                '                reloadDefaultTaxRate();\n' +
+                '\n' +
+                '                return;\n' +
+                '            }\n' +
+                '\n' +
+                '            Object.assign(tax, taxRepository.value.create());\n' +
+                '            isLoading.value = false;\n' +
+                '        };\n' +
+                '      const loadCustomFieldSets = () => {\n' +
+                "            customFieldDataProviderService.getCustomFieldSets('tax').then((sets) => {\n" +
+                '                customFieldSets.value = sets;\n' +
+                '            });\n' +
+                '        };\n' +
+                '      const onSave = () => {\n' +
+                '            isSaveSuccessful.value = false;\n' +
+                '            isLoading.value = true;\n' +
+                '\n' +
+                '            return taxRepository.value.save(tax).then(() => {\n' +
+                '                isSaveSuccessful.value = true;\n' +
+                '                if (!props.taxId) {\n' +
+                "                    this.$router.push({ name: 'sw.settings.tax.detail', params: { id: tax.id } });\n" +
+                '                }\n' +
+                '\n' +
+                '                taxRepository.value.get(tax.id).then((updatedTax) => {\n' +
+                '                    Object.assign(tax, updatedTax);\n' +
+                '                }).then(() => {\n' +
+                '                    return systemConfigApiService.saveValues(config).then(() => {\n' +
+                '                        defaultTaxRateId.value = tax.id;\n' +
+                '                        reloadDefaultTaxRate();\n' +
+                '                        isLoading.value = false;\n' +
+                '                    });\n' +
+                '                });\n' +
+                '            }).catch(() => {\n' +
+                '                this.createNotificationError({\n' +
+                "                    message: this.$tc('sw-settings-tax.detail.messageSaveError'),\n" +
+                '                });\n' +
+                '                isLoading.value = false;\n' +
+                '            });\n' +
+                '        };\n' +
+                '      const onCancel = () => {\n' +
+                "            this.$router.push({ name: 'sw.settings.tax.index' });\n" +
+                '        };\n' +
+                '      const abortOnLanguageChange = () => {\n' +
+                '            return taxRepository.value.hasChanges(tax);\n' +
+                '        };\n' +
+                '      const saveOnLanguageChange = () => {\n' +
+                '            return onSave();\n' +
+                '        };\n' +
+                '      const onChangeLanguage = (languageId) => {\n' +
+                "            Shopware.State.commit('context/setApiLanguageId', languageId);\n" +
+                '            createdComponent();\n' +
+                '        };\n' +
+                '      const changeName = (name) => {\n' +
+                '            tax.name = name;\n' +
+                '        };\n' +
+                '      const reloadDefaultTaxRate = () => {\n' +
+                '            systemConfigApiService\n' +
+                "                .getValues('core.tax')\n" +
+                '                .then(response => {\n' +
+                "                    defaultTaxRateId.value = response['core.tax.defaultTaxRate'] ?? null;\n" +
+                '                })\n' +
+                '                .then(() => {\n' +
+                '                    if (defaultTaxRateId.value) {\n' +
+                '                        taxRepository.value.get(defaultTaxRateId.value).then((tax) => {\n' +
+                '                            formerDefaultTaxName.value = tax.name;\n' +
+                '                        });\n' +
+                '                    }\n' +
+                '                })\n' +
+                '                .catch(() => {\n' +
+                '                    defaultTaxRateId.value = null;\n' +
+                '                });\n' +
+                '        };\n' +
+                '      const onChangeDefaultTaxRate = () => {\n' +
+                "            const newDefaultTax = !isDefaultTaxRate.value ? props.taxId : '';\n" +
+                '\n' +
+                "            this.$set(config, 'core.tax.defaultTaxRate', newDefaultTax);\n" +
+                '            changeDefaultTaxRate.value = false;\n' +
+                '        };\n' +
+                '      onBeforeMount(() => {\n' +
+                '        createdComponent();\n' +
+                '    });\n' +
+                '      watch(props.taxId, () => {\n' +
+                '            if (!props.taxId) {\n' +
+                '                createdComponent();\n' +
+                '            }\n' +
+                '        });\n' +
+                '      watch(isDefaultTaxRate, () => {\n' +
+                '            isDefault.value = isDefaultTaxRate.value;\n' +
+                '        });\n' +
+                '\n' +
+                '          return {\n' +
+                '            tax,\n' +
+                '            isLoading,\n' +
+                '            isSaveSuccessful,\n' +
+                '            customFieldSets,\n' +
+                '            defaultTaxRateId,\n' +
+                '            changeDefaultTaxRate,\n' +
+                '            formerDefaultTaxName,\n' +
+                '            config,\n' +
+                '            isDefault,\n' +
+                '            repositoryFactory,\n' +
+                '            acl,\n' +
+                '            customFieldDataProviderService,\n' +
+                '            systemConfigApiService,\n' +
+                '            feature,\n' +
+                '            identifier,\n' +
+                '            taxRepository,\n' +
+                '            isNewTax,\n' +
+                '            allowSave,\n' +
+                '            tooltipSave,\n' +
+                '            isShopwareDefaultTax,\n' +
+                '            label,\n' +
+                '            showCustomFields,\n' +
+                '            isDefaultTaxRate,\n' +
+                '            createdComponent,\n' +
+                '            loadCustomFieldSets,\n' +
+                '            onSave,\n' +
+                '            onCancel,\n' +
+                '            abortOnLanguageChange,\n' +
+                '            saveOnLanguageChange,\n' +
+                '            onChangeLanguage,\n' +
+                '            changeName,\n' +
+                '            reloadDefaultTaxRate,\n' +
+                '            onChangeDefaultTaxRate,\n' +
+                '          };\n' +
+                '        },\n' +
+                'template,\n' +
+                '\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    mixins: [\n' +
+                "        Mixin.getByName('notification'),\n" +
+                '    ],\n' +
+                '\n' +
+                '    shortcuts: {\n' +
+                "        'SYSTEMKEY+S': {\n" +
+                '            active() {\n' +
+                '                return this.allowSave;\n' +
+                '            },\n' +
+                "            method: 'onSave',\n" +
+                '        },\n' +
+                "        ESCAPE: 'onCancel',\n" +
+                '    },\n' +
+                '\n' +
+                '    props: {\n' +
+                '        taxId: {\n' +
+                '            type: String,\n' +
+                '            required: false,\n' +
+                '            default: null,\n' +
+                '        },\n' +
+                '    },\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    metaInfo() {\n' +
+                '        return {\n' +
+                '            title: this.$createTitle(this.identifier),\n' +
+                '        };\n' +
+                '    },\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '};\n'
         },
         {
             name: 'Invalid: Real world example 4',
@@ -1725,12 +1725,12 @@ import Sanitizer from 'src/core/helper/sanitizer.helper';
 import template from './sw-settings-snippet-list.html.twig';
 import './sw-settings-snippet-list.scss';
 
-const { Mixin, Data: { Criteria } } = Cicada;
+const { Mixin, Data: { Criteria } } = Shopware;
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'snippetSetService',
@@ -1991,300 +1991,300 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-"import { ref, inject, computed, onBeforeUnmount, onBeforeMount } from 'vue';\n" +
-"import Sanitizer from 'src/core/helper/sanitizer.helper';\n" +
-"import template from './sw-settings-snippet-list.html.twig';\n" +
-"import './sw-settings-snippet-list.scss';\n" +
-'\n' +
-'const { Mixin, Data: { Criteria } } = Cicada;\n' +
-'\n' +
-'export default {\n' +
-'    setup() {\n' +
-"          const entityName = ref('snippet');\n" +
-"      const sortBy = ref('id');\n" +
-"      const sortDirection = ref('ASC');\n" +
-"      const metaId = ref('');\n" +
-"      const currentAuthor = ref('');\n" +
-'      const snippetSets = ref(null);\n' +
-'      const hasResetableItems = ref(true);\n' +
-'      const showOnlyEdited = ref(false);\n' +
-'      const showOnlyAdded = ref(false);\n' +
-'      const emptySnippets = ref(false);\n' +
-'      const grid = ref(undefined);\n' +
-'      const resetItems = ref(undefined);\n' +
-'      const filterItems = ref(undefined);\n' +
-'      const authorFilters = ref(undefined);\n' +
-'      const appliedFilter = ref(undefined);\n' +
-'      const appliedAuthors = ref(undefined);\n' +
-'      const emptyIcon = ref(undefined);\n' +
-'      const skeletonItemAmount = ref(25);\n' +
-'      const filterSettings = ref(null);\n' +
-"      const snippetSetService = inject('snippetSetService');\n" +
-"      const snippetService = inject('snippetService');\n" +
-"      const userService = inject('userService');\n" +
-"      const repositoryFactory = inject('repositoryFactory');\n" +
-"      const acl = inject('acl');\n" +
-"      const userConfigService = inject('userConfigService');\n" +
-'          const filter = computed(() => {\n' +
-'            const filter = {};\n' +
-'            if (showOnlyEdited.value) {\n' +
-'                filter.edited = true;\n' +
-'            }\n' +
-'            if (showOnlyAdded.value) {\n' +
-'                filter.added = true;\n' +
-'            }\n' +
-'            if (emptySnippets.value) {\n' +
-'                filter.empty = true;\n' +
-'            }\n' +
-'            if (this.term) {\n' +
-'                filter.term = this.term;\n' +
-'            }\n' +
-'            if (appliedFilter.value.length > 0) {\n' +
-'                filter.namespace = appliedFilter.value;\n' +
-'            }\n' +
-'            if (appliedAuthors.value.length > 0) {\n' +
-'                filter.author = appliedAuthors.value;\n' +
-'            }\n' +
-'\n' +
-'            return filter;\n' +
-'        });\n' +
-'          const contextMenuEditSnippet = computed(() => {\n' +
-"            return acl.can('snippet.editor') ?\n" +
-"                this.$tc('global.default.edit') :\n" +
-"                this.$tc('global.default.view');\n" +
-'        });\n' +
-'          const hasActiveFilters = computed(() => {\n' +
-'            if (!filterSettings.value) {\n' +
-'                return false;\n' +
-'            }\n' +
-'\n' +
-'            return Object.values(filterSettings.value).some((value) => value === true);\n' +
-'        });\n' +
-'          const activeFilters = computed(() => {\n' +
-'            let filter = {};\n' +
-'\n' +
-'            if (!hasActiveFilters.value) {\n' +
-'                return filter;\n' +
-'            }\n' +
-'\n' +
-'            if (filterSettings.value.editedSnippets) {\n' +
-'                filter = { ...filter, edited: true };\n' +
-'            }\n' +
-'            if (filterSettings.value.addedSnippets) {\n' +
-'                filter = { ...filter, added: true };\n' +
-'            }\n' +
-'            if (filterSettings.value.emptySnippets) {\n' +
-'                filter = { ...filter, empty: true };\n' +
-'            }\n' +
-'\n' +
-'            filter = { ...filter, author: [] };\n' +
-'            authorFilters.value.forEach((item) => {\n' +
-'                if (filterSettings.value[item] === true) {\n' +
-'                    filter.author.push(item);\n' +
-'                }\n' +
-'            });\n' +
-'\n' +
-'            filter = { ...filter, namespace: [] };\n' +
-'            filterItems.value.forEach((item) => {\n' +
-'                if (filterSettings.value[item] === true) {\n' +
-'                    filter.namespace.push(item);\n' +
-'                }\n' +
-'            });\n' +
-'\n' +
-'            return filter;\n' +
-'        });\n' +
-'      const createdComponent = async () => {\n' +
-'            this.addEventListeners();\n' +
-'\n' +
-'            this.snippetSetRepository.search(this.snippetSetCriteria)\n' +
-'                .then((sets) => {\n' +
-'                    snippetSets.value = sets;\n' +
-'                });\n' +
-'\n' +
-'            userService.getUser().then((response) => {\n' +
-'                currentAuthor.value = `user/${response.data.username}`;\n' +
-'            });\n' +
-'\n' +
-'            const filterItems = await snippetService.getFilter();\n' +
-'            filterItems.value = filterItems.data;\n' +
-'\n' +
-'            const authorFilters = await snippetSetService.getAuthors();\n' +
-'            authorFilters.value = authorFilters.data;\n' +
-'\n' +
-'            await this.getFilterSettings();\n' +
-'\n' +
-'            if (hasActiveFilters.value) {\n' +
-'                initializeSnippetSet(activeFilters.value);\n' +
-'            }\n' +
-'        };\n' +
-'      const beforeDestroyComponent = () => {\n' +
-'            this.saveUserConfig();\n' +
-'            this.removeEventListeners();\n' +
-'        };\n' +
-'      const createFilterSettings = () => {\n' +
-'            const authorFilters = authorFilters.value.reduce((acc, item) => ({ ...acc, [item]: false }), {});\n' +
-'            const moreFilters = filterItems.value.reduce((acc, item) => ({ ...acc, [item]: false }), {});\n' +
-'\n' +
-'            return {\n' +
-'                emptySnippets: false,\n' +
-'                editedSnippets: false,\n' +
-'                addedSnippets: false,\n' +
-'                ...authorFilters,\n' +
-'                ...moreFilters,\n' +
-'            };\n' +
-'        };\n' +
-'      const getList = () => {\n' +
-'            if (hasActiveFilters.value) {\n' +
-'                initializeSnippetSet(activeFilters.value);\n' +
-'            } else {\n' +
-'                initializeSnippetSet();\n' +
-'            }\n' +
-'        };\n' +
-'      const getColumns = () => {\n' +
-'            const columns = [{\n' +
-"                property: 'id',\n" +
-"                label: 'sw-settings-snippet.list.columnKey',\n" +
-'                inlineEdit: true,\n' +
-'                allowResize: true,\n' +
-'                rawData: true,\n' +
-'                primary: true,\n' +
-'            }];\n' +
-'\n' +
-'            if (snippetSets.value) {\n' +
-'                snippetSets.value.forEach((item) => {\n' +
-'                    columns.push({\n' +
-'                        property: item.id,\n' +
-'                        label: item.name,\n' +
-'                        allowResize: true,\n' +
-"                        inlineEdit: 'string',\n" +
-'                        rawData: true,\n' +
-'                    });\n' +
-'                });\n' +
-'            }\n' +
-'            return columns;\n' +
-'        };\n' +
-'      const initializeSnippetSet = (filter = filter.value) => {\n' +
-'            if (!this.$route.query.ids) {\n' +
-'                this.backRoutingError();\n' +
-'                return;\n' +
-'            }\n' +
-'\n' +
-'            this.isLoading = true;\n' +
-'\n' +
-'            const sort = {\n' +
-'                sortBy: sortBy.value,\n' +
-'                sortDirection: sortDirection.value,\n' +
-'            };\n' +
-'\n' +
-'            snippetSetService.getCustomList(this.page, this.limit, filter, sort).then((response) => {\n' +
-'                metaId.value = this.queryIds[0];\n' +
-'                this.total = response.total;\n' +
-'                grid.value = prepareGrid(response.data);\n' +
-'                this.isLoading = false;\n' +
-'            });\n' +
-'        };\n' +
-'      const prepareGrid = (grid) => {\n' +
-'            function prepareContent(items) {\n' +
-'                const content = items.reduce((acc, item) => {\n' +
-'                    item.resetTo = item.value;\n' +
-'                    acc[item.setId] = item;\n' +
-"                    acc.isCustomSnippet = item.author.includes('user/');\n" +
-'                    return acc;\n' +
-'                }, {});\n' +
-'                content.id = items[0].translationKey;\n' +
-'\n' +
-'                return content;\n' +
-'            }\n' +
-'\n' +
-'            return Object.values(grid).reduce((accumulator, items) => {\n' +
-'                accumulator.push(prepareContent(items));\n' +
-'                return accumulator;\n' +
-'            }, []);\n' +
-'        };\n' +
-'      const onEdit = (snippet) => {\n' +
-'            if (snippet?.id) {\n' +
-'                this.$router.push({\n' +
-"                    name: 'sw.settings.snippet.detail',\n" +
-'                    params: {\n' +
-'                        id: snippet.id,\n' +
-'                    },\n' +
-'                });\n' +
-'            }\n' +
-'        };\n' +
-'      onBeforeUnmount(() => {\n' +
-'        beforeDestroyComponent();\n' +
-'    });\n' +
-'      onBeforeMount(() => {\n' +
-'        createdComponent();\n' +
-'    });\n' +
-'\n' +
-'          return {\n' +
-'            entityName,\n' +
-'            sortBy,\n' +
-'            sortDirection,\n' +
-'            metaId,\n' +
-'            currentAuthor,\n' +
-'            snippetSets,\n' +
-'            hasResetableItems,\n' +
-'            showOnlyEdited,\n' +
-'            showOnlyAdded,\n' +
-'            emptySnippets,\n' +
-'            grid,\n' +
-'            resetItems,\n' +
-'            filterItems,\n' +
-'            authorFilters,\n' +
-'            appliedFilter,\n' +
-'            appliedAuthors,\n' +
-'            emptyIcon,\n' +
-'            skeletonItemAmount,\n' +
-'            filterSettings,\n' +
-'            snippetSetService,\n' +
-'            snippetService,\n' +
-'            userService,\n' +
-'            repositoryFactory,\n' +
-'            acl,\n' +
-'            userConfigService,\n' +
-'            filter,\n' +
-'            contextMenuEditSnippet,\n' +
-'            hasActiveFilters,\n' +
-'            activeFilters,\n' +
-'            createdComponent,\n' +
-'            beforeDestroyComponent,\n' +
-'            createFilterSettings,\n' +
-'            getList,\n' +
-'            getColumns,\n' +
-'            initializeSnippetSet,\n' +
-'            prepareGrid,\n' +
-'            onEdit,\n' +
-'          };\n' +
-'        },\n' +
-'template,\n' +
-'\n' +
-'    compatConfig: Cicada.compatConfig,\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    mixins: [\n' +
-"        Mixin.getByName('sw-settings-list'),\n" +
-'    ],\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    metaInfo() {\n' +
-'        return {\n' +
-'            title: this.$createTitle(this.identifier),\n' +
-'        };\n' +
-'    },\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'};\n'
+                '\n' +
+                "import { ref, inject, computed, onBeforeUnmount, onBeforeMount } from 'vue';\n" +
+                "import Sanitizer from 'src/core/helper/sanitizer.helper';\n" +
+                "import template from './sw-settings-snippet-list.html.twig';\n" +
+                "import './sw-settings-snippet-list.scss';\n" +
+                '\n' +
+                'const { Mixin, Data: { Criteria } } = Shopware;\n' +
+                '\n' +
+                'export default {\n' +
+                '    setup() {\n' +
+                "          const entityName = ref('snippet');\n" +
+                "      const sortBy = ref('id');\n" +
+                "      const sortDirection = ref('ASC');\n" +
+                "      const metaId = ref('');\n" +
+                "      const currentAuthor = ref('');\n" +
+                '      const snippetSets = ref(null);\n' +
+                '      const hasResetableItems = ref(true);\n' +
+                '      const showOnlyEdited = ref(false);\n' +
+                '      const showOnlyAdded = ref(false);\n' +
+                '      const emptySnippets = ref(false);\n' +
+                '      const grid = ref(undefined);\n' +
+                '      const resetItems = ref(undefined);\n' +
+                '      const filterItems = ref(undefined);\n' +
+                '      const authorFilters = ref(undefined);\n' +
+                '      const appliedFilter = ref(undefined);\n' +
+                '      const appliedAuthors = ref(undefined);\n' +
+                '      const emptyIcon = ref(undefined);\n' +
+                '      const skeletonItemAmount = ref(25);\n' +
+                '      const filterSettings = ref(null);\n' +
+                "      const snippetSetService = inject('snippetSetService');\n" +
+                "      const snippetService = inject('snippetService');\n" +
+                "      const userService = inject('userService');\n" +
+                "      const repositoryFactory = inject('repositoryFactory');\n" +
+                "      const acl = inject('acl');\n" +
+                "      const userConfigService = inject('userConfigService');\n" +
+                '          const filter = computed(() => {\n' +
+                '            const filter = {};\n' +
+                '            if (showOnlyEdited.value) {\n' +
+                '                filter.edited = true;\n' +
+                '            }\n' +
+                '            if (showOnlyAdded.value) {\n' +
+                '                filter.added = true;\n' +
+                '            }\n' +
+                '            if (emptySnippets.value) {\n' +
+                '                filter.empty = true;\n' +
+                '            }\n' +
+                '            if (this.term) {\n' +
+                '                filter.term = this.term;\n' +
+                '            }\n' +
+                '            if (appliedFilter.value.length > 0) {\n' +
+                '                filter.namespace = appliedFilter.value;\n' +
+                '            }\n' +
+                '            if (appliedAuthors.value.length > 0) {\n' +
+                '                filter.author = appliedAuthors.value;\n' +
+                '            }\n' +
+                '\n' +
+                '            return filter;\n' +
+                '        });\n' +
+                '          const contextMenuEditSnippet = computed(() => {\n' +
+                "            return acl.can('snippet.editor') ?\n" +
+                "                this.$tc('global.default.edit') :\n" +
+                "                this.$tc('global.default.view');\n" +
+                '        });\n' +
+                '          const hasActiveFilters = computed(() => {\n' +
+                '            if (!filterSettings.value) {\n' +
+                '                return false;\n' +
+                '            }\n' +
+                '\n' +
+                '            return Object.values(filterSettings.value).some((value) => value === true);\n' +
+                '        });\n' +
+                '          const activeFilters = computed(() => {\n' +
+                '            let filter = {};\n' +
+                '\n' +
+                '            if (!hasActiveFilters.value) {\n' +
+                '                return filter;\n' +
+                '            }\n' +
+                '\n' +
+                '            if (filterSettings.value.editedSnippets) {\n' +
+                '                filter = { ...filter, edited: true };\n' +
+                '            }\n' +
+                '            if (filterSettings.value.addedSnippets) {\n' +
+                '                filter = { ...filter, added: true };\n' +
+                '            }\n' +
+                '            if (filterSettings.value.emptySnippets) {\n' +
+                '                filter = { ...filter, empty: true };\n' +
+                '            }\n' +
+                '\n' +
+                '            filter = { ...filter, author: [] };\n' +
+                '            authorFilters.value.forEach((item) => {\n' +
+                '                if (filterSettings.value[item] === true) {\n' +
+                '                    filter.author.push(item);\n' +
+                '                }\n' +
+                '            });\n' +
+                '\n' +
+                '            filter = { ...filter, namespace: [] };\n' +
+                '            filterItems.value.forEach((item) => {\n' +
+                '                if (filterSettings.value[item] === true) {\n' +
+                '                    filter.namespace.push(item);\n' +
+                '                }\n' +
+                '            });\n' +
+                '\n' +
+                '            return filter;\n' +
+                '        });\n' +
+                '      const createdComponent = async () => {\n' +
+                '            this.addEventListeners();\n' +
+                '\n' +
+                '            this.snippetSetRepository.search(this.snippetSetCriteria)\n' +
+                '                .then((sets) => {\n' +
+                '                    snippetSets.value = sets;\n' +
+                '                });\n' +
+                '\n' +
+                '            userService.getUser().then((response) => {\n' +
+                '                currentAuthor.value = `user/${response.data.username}`;\n' +
+                '            });\n' +
+                '\n' +
+                '            const filterItems = await snippetService.getFilter();\n' +
+                '            filterItems.value = filterItems.data;\n' +
+                '\n' +
+                '            const authorFilters = await snippetSetService.getAuthors();\n' +
+                '            authorFilters.value = authorFilters.data;\n' +
+                '\n' +
+                '            await this.getFilterSettings();\n' +
+                '\n' +
+                '            if (hasActiveFilters.value) {\n' +
+                '                initializeSnippetSet(activeFilters.value);\n' +
+                '            }\n' +
+                '        };\n' +
+                '      const beforeDestroyComponent = () => {\n' +
+                '            this.saveUserConfig();\n' +
+                '            this.removeEventListeners();\n' +
+                '        };\n' +
+                '      const createFilterSettings = () => {\n' +
+                '            const authorFilters = authorFilters.value.reduce((acc, item) => ({ ...acc, [item]: false }), {});\n' +
+                '            const moreFilters = filterItems.value.reduce((acc, item) => ({ ...acc, [item]: false }), {});\n' +
+                '\n' +
+                '            return {\n' +
+                '                emptySnippets: false,\n' +
+                '                editedSnippets: false,\n' +
+                '                addedSnippets: false,\n' +
+                '                ...authorFilters,\n' +
+                '                ...moreFilters,\n' +
+                '            };\n' +
+                '        };\n' +
+                '      const getList = () => {\n' +
+                '            if (hasActiveFilters.value) {\n' +
+                '                initializeSnippetSet(activeFilters.value);\n' +
+                '            } else {\n' +
+                '                initializeSnippetSet();\n' +
+                '            }\n' +
+                '        };\n' +
+                '      const getColumns = () => {\n' +
+                '            const columns = [{\n' +
+                "                property: 'id',\n" +
+                "                label: 'sw-settings-snippet.list.columnKey',\n" +
+                '                inlineEdit: true,\n' +
+                '                allowResize: true,\n' +
+                '                rawData: true,\n' +
+                '                primary: true,\n' +
+                '            }];\n' +
+                '\n' +
+                '            if (snippetSets.value) {\n' +
+                '                snippetSets.value.forEach((item) => {\n' +
+                '                    columns.push({\n' +
+                '                        property: item.id,\n' +
+                '                        label: item.name,\n' +
+                '                        allowResize: true,\n' +
+                "                        inlineEdit: 'string',\n" +
+                '                        rawData: true,\n' +
+                '                    });\n' +
+                '                });\n' +
+                '            }\n' +
+                '            return columns;\n' +
+                '        };\n' +
+                '      const initializeSnippetSet = (filter = filter.value) => {\n' +
+                '            if (!this.$route.query.ids) {\n' +
+                '                this.backRoutingError();\n' +
+                '                return;\n' +
+                '            }\n' +
+                '\n' +
+                '            this.isLoading = true;\n' +
+                '\n' +
+                '            const sort = {\n' +
+                '                sortBy: sortBy.value,\n' +
+                '                sortDirection: sortDirection.value,\n' +
+                '            };\n' +
+                '\n' +
+                '            snippetSetService.getCustomList(this.page, this.limit, filter, sort).then((response) => {\n' +
+                '                metaId.value = this.queryIds[0];\n' +
+                '                this.total = response.total;\n' +
+                '                grid.value = prepareGrid(response.data);\n' +
+                '                this.isLoading = false;\n' +
+                '            });\n' +
+                '        };\n' +
+                '      const prepareGrid = (grid) => {\n' +
+                '            function prepareContent(items) {\n' +
+                '                const content = items.reduce((acc, item) => {\n' +
+                '                    item.resetTo = item.value;\n' +
+                '                    acc[item.setId] = item;\n' +
+                "                    acc.isCustomSnippet = item.author.includes('user/');\n" +
+                '                    return acc;\n' +
+                '                }, {});\n' +
+                '                content.id = items[0].translationKey;\n' +
+                '\n' +
+                '                return content;\n' +
+                '            }\n' +
+                '\n' +
+                '            return Object.values(grid).reduce((accumulator, items) => {\n' +
+                '                accumulator.push(prepareContent(items));\n' +
+                '                return accumulator;\n' +
+                '            }, []);\n' +
+                '        };\n' +
+                '      const onEdit = (snippet) => {\n' +
+                '            if (snippet?.id) {\n' +
+                '                this.$router.push({\n' +
+                "                    name: 'sw.settings.snippet.detail',\n" +
+                '                    params: {\n' +
+                '                        id: snippet.id,\n' +
+                '                    },\n' +
+                '                });\n' +
+                '            }\n' +
+                '        };\n' +
+                '      onBeforeUnmount(() => {\n' +
+                '        beforeDestroyComponent();\n' +
+                '    });\n' +
+                '      onBeforeMount(() => {\n' +
+                '        createdComponent();\n' +
+                '    });\n' +
+                '\n' +
+                '          return {\n' +
+                '            entityName,\n' +
+                '            sortBy,\n' +
+                '            sortDirection,\n' +
+                '            metaId,\n' +
+                '            currentAuthor,\n' +
+                '            snippetSets,\n' +
+                '            hasResetableItems,\n' +
+                '            showOnlyEdited,\n' +
+                '            showOnlyAdded,\n' +
+                '            emptySnippets,\n' +
+                '            grid,\n' +
+                '            resetItems,\n' +
+                '            filterItems,\n' +
+                '            authorFilters,\n' +
+                '            appliedFilter,\n' +
+                '            appliedAuthors,\n' +
+                '            emptyIcon,\n' +
+                '            skeletonItemAmount,\n' +
+                '            filterSettings,\n' +
+                '            snippetSetService,\n' +
+                '            snippetService,\n' +
+                '            userService,\n' +
+                '            repositoryFactory,\n' +
+                '            acl,\n' +
+                '            userConfigService,\n' +
+                '            filter,\n' +
+                '            contextMenuEditSnippet,\n' +
+                '            hasActiveFilters,\n' +
+                '            activeFilters,\n' +
+                '            createdComponent,\n' +
+                '            beforeDestroyComponent,\n' +
+                '            createFilterSettings,\n' +
+                '            getList,\n' +
+                '            getColumns,\n' +
+                '            initializeSnippetSet,\n' +
+                '            prepareGrid,\n' +
+                '            onEdit,\n' +
+                '          };\n' +
+                '        },\n' +
+                'template,\n' +
+                '\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    mixins: [\n' +
+                "        Mixin.getByName('sw-settings-list'),\n" +
+                '    ],\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    metaInfo() {\n' +
+                '        return {\n' +
+                '            title: this.$createTitle(this.identifier),\n' +
+                '        };\n' +
+                '    },\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '};\n'
         },
         {
             name: 'Invalid: Real world example 5',
@@ -2292,14 +2292,14 @@ export default {
             import template from './sw-sales-channel-detail-domains.html.twig';
 import './sw-sales-channel-detail-domains.scss';
 
-const { Mixin, Context } = Cicada;
-const { Criteria } = Cicada.Data;
-const { CicadaError } = Cicada.Classes;
+const { Mixin, Context } = Shopware;
+const { Criteria } = Shopware.Data;
+const { ShopwareError } = Shopware.Classes;
 
 export default {
     template,
 
-    compatConfig: Cicada.compatConfig,
+    compatConfig: Shopware.compatConfig,
 
     inject: [
         'repositoryFactory',
@@ -2398,122 +2398,122 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-"            import { ref, reactive, inject, computed } from 'vue';\n" +
-"import template from './sw-sales-channel-detail-domains.html.twig';\n" +
-"import './sw-sales-channel-detail-domains.scss';\n" +
-'\n' +
-'const { Mixin, Context } = Cicada;\n' +
-'const { Criteria } = Cicada.Data;\n' +
-'const { CicadaError } = Cicada.Classes;\n' +
-'\n' +
-'export default {\n' +
-'    setup(props) {\n' +
-'          const currentDomain = ref(null);\n' +
-'      const currentDomainBackup = reactive({\n' +
-'                url: null,\n' +
-'                language: null,\n' +
-'                languageId: null,\n' +
-'                currency: null,\n' +
-'                currencyId: null,\n' +
-'                snippetSet: null,\n' +
-'                snippetSetId: null,\n' +
-'            });\n' +
-'      const isLoadingDomains = ref(false);\n' +
-'      const deleteDomain = ref(null);\n' +
-"      const sortBy = ref('url');\n" +
-"      const sortDirection = ref('ASC');\n" +
-'      const error = ref(null);\n' +
-"      const repositoryFactory = inject('repositoryFactory');\n" +
-'          const domainRepository = computed(() => {\n' +
-'            return repositoryFactory.create(\n' +
-'                props.salesChannel.domains.entity,\n' +
-'                props.salesChannel.domains.source,\n' +
-'            );\n' +
-'        });\n' +
-'          const currentDomainModalTitle = computed(() => {\n' +
-'            if (currentDomain.value?.isNew()) {\n' +
-"                return this.$t('sw-sales-channel.detail.titleCreateDomain');\n" +
-'            }\n' +
-'\n' +
-"            return this.$t('sw-sales-channel.detail.titleEditDomain', 0, {\n" +
-'                name: this.unicodeUriFilter(currentDomainBackup.url),\n' +
-'            });\n' +
-'        });\n' +
-'      const domainExistsInDatabase = async (url) => {\n' +
-'            const globalDomainRepository = repositoryFactory.create(props.salesChannel.domains.entity);\n' +
-'            const criteria = new Criteria(1, 25);\n' +
-"            criteria.addFilter(Criteria.equals('url', url));\n" +
-'\n' +
-'            const items = await globalDomainRepository.search(criteria);\n' +
-'\n' +
-'            if (items.total === 0) {\n' +
-'                return false;\n' +
-'            }\n' +
-'\n' +
-'            return items.first().salesChannelId !== props.salesChannel.id;\n' +
-'        };\n' +
-'      const setCurrentDomainBackup = (domain) => {\n' +
-'            Object.assign(currentDomainBackup, {\n' +
-'                url: domain.url,\n' +
-'                language: domain.language,\n' +
-'                languageId: domain.languageId,\n' +
-'                currency: domain.currency,\n' +
-'                currencyId: domain.currencyId,\n' +
-'                snippetSet: domain.snippetSet,\n' +
-'                snippetSetId: domain.snippetSetId,\n' +
-'            })\n' +
-';\n' +
-'        };\n' +
-'      const resetCurrentDomainToBackup = () => {\n' +
-'            currentDomain.value.url = currentDomainBackup.url;\n' +
-'            currentDomain.value.language = currentDomainBackup.language;\n' +
-'            currentDomain.value.languageId = currentDomainBackup.languageId;\n' +
-'            currentDomain.value.currency = currentDomainBackup.currency;\n' +
-'            currentDomain.value.currencyId = currentDomainBackup.currencyId;\n' +
-'            currentDomain.value.snippetSet = currentDomainBackup.snippetSet;\n' +
-'            currentDomain.value.snippetSetId = currentDomainBackup.snippetSetId;\n' +
-'        };\n' +
-'\n' +
-'          return {\n' +
-'            currentDomain,\n' +
-'            currentDomainBackup,\n' +
-'            isLoadingDomains,\n' +
-'            deleteDomain,\n' +
-'            sortBy,\n' +
-'            sortDirection,\n' +
-'            error,\n' +
-'            repositoryFactory,\n' +
-'            domainRepository,\n' +
-'            currentDomainModalTitle,\n' +
-'            domainExistsInDatabase,\n' +
-'            setCurrentDomainBackup,\n' +
-'            resetCurrentDomainToBackup,\n' +
-'          };\n' +
-'        },\n' +
-'template,\n' +
-'\n' +
-'    compatConfig: Cicada.compatConfig,\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    mixins: [\n' +
-"        Mixin.getByName('notification'),\n" +
-'    ],\n' +
-'\n' +
-'    props: {\n' +
-'        salesChannel: {\n' +
-'            required: true,\n' +
-'        },\n' +
-'    },\n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'\n' +
-'    \n' +
-'};\n' +
-'            ',
+                '\n' +
+                "            import { ref, reactive, inject, computed } from 'vue';\n" +
+                "import template from './sw-sales-channel-detail-domains.html.twig';\n" +
+                "import './sw-sales-channel-detail-domains.scss';\n" +
+                '\n' +
+                'const { Mixin, Context } = Shopware;\n' +
+                'const { Criteria } = Shopware.Data;\n' +
+                'const { ShopwareError } = Shopware.Classes;\n' +
+                '\n' +
+                'export default {\n' +
+                '    setup(props) {\n' +
+                '          const currentDomain = ref(null);\n' +
+                '      const currentDomainBackup = reactive({\n' +
+                '                url: null,\n' +
+                '                language: null,\n' +
+                '                languageId: null,\n' +
+                '                currency: null,\n' +
+                '                currencyId: null,\n' +
+                '                snippetSet: null,\n' +
+                '                snippetSetId: null,\n' +
+                '            });\n' +
+                '      const isLoadingDomains = ref(false);\n' +
+                '      const deleteDomain = ref(null);\n' +
+                "      const sortBy = ref('url');\n" +
+                "      const sortDirection = ref('ASC');\n" +
+                '      const error = ref(null);\n' +
+                "      const repositoryFactory = inject('repositoryFactory');\n" +
+                '          const domainRepository = computed(() => {\n' +
+                '            return repositoryFactory.create(\n' +
+                '                props.salesChannel.domains.entity,\n' +
+                '                props.salesChannel.domains.source,\n' +
+                '            );\n' +
+                '        });\n' +
+                '          const currentDomainModalTitle = computed(() => {\n' +
+                '            if (currentDomain.value?.isNew()) {\n' +
+                "                return this.$t('sw-sales-channel.detail.titleCreateDomain');\n" +
+                '            }\n' +
+                '\n' +
+                "            return this.$t('sw-sales-channel.detail.titleEditDomain', 0, {\n" +
+                '                name: this.unicodeUriFilter(currentDomainBackup.url),\n' +
+                '            });\n' +
+                '        });\n' +
+                '      const domainExistsInDatabase = async (url) => {\n' +
+                '            const globalDomainRepository = repositoryFactory.create(props.salesChannel.domains.entity);\n' +
+                '            const criteria = new Criteria(1, 25);\n' +
+                "            criteria.addFilter(Criteria.equals('url', url));\n" +
+                '\n' +
+                '            const items = await globalDomainRepository.search(criteria);\n' +
+                '\n' +
+                '            if (items.total === 0) {\n' +
+                '                return false;\n' +
+                '            }\n' +
+                '\n' +
+                '            return items.first().salesChannelId !== props.salesChannel.id;\n' +
+                '        };\n' +
+                '      const setCurrentDomainBackup = (domain) => {\n' +
+                '            Object.assign(currentDomainBackup, {\n' +
+                '                url: domain.url,\n' +
+                '                language: domain.language,\n' +
+                '                languageId: domain.languageId,\n' +
+                '                currency: domain.currency,\n' +
+                '                currencyId: domain.currencyId,\n' +
+                '                snippetSet: domain.snippetSet,\n' +
+                '                snippetSetId: domain.snippetSetId,\n' +
+                '            })\n' +
+                ';\n' +
+                '        };\n' +
+                '      const resetCurrentDomainToBackup = () => {\n' +
+                '            currentDomain.value.url = currentDomainBackup.url;\n' +
+                '            currentDomain.value.language = currentDomainBackup.language;\n' +
+                '            currentDomain.value.languageId = currentDomainBackup.languageId;\n' +
+                '            currentDomain.value.currency = currentDomainBackup.currency;\n' +
+                '            currentDomain.value.currencyId = currentDomainBackup.currencyId;\n' +
+                '            currentDomain.value.snippetSet = currentDomainBackup.snippetSet;\n' +
+                '            currentDomain.value.snippetSetId = currentDomainBackup.snippetSetId;\n' +
+                '        };\n' +
+                '\n' +
+                '          return {\n' +
+                '            currentDomain,\n' +
+                '            currentDomainBackup,\n' +
+                '            isLoadingDomains,\n' +
+                '            deleteDomain,\n' +
+                '            sortBy,\n' +
+                '            sortDirection,\n' +
+                '            error,\n' +
+                '            repositoryFactory,\n' +
+                '            domainRepository,\n' +
+                '            currentDomainModalTitle,\n' +
+                '            domainExistsInDatabase,\n' +
+                '            setCurrentDomainBackup,\n' +
+                '            resetCurrentDomainToBackup,\n' +
+                '          };\n' +
+                '        },\n' +
+                'template,\n' +
+                '\n' +
+                '    compatConfig: Shopware.compatConfig,\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    mixins: [\n' +
+                "        Mixin.getByName('notification'),\n" +
+                '    ],\n' +
+                '\n' +
+                '    props: {\n' +
+                '        salesChannel: {\n' +
+                '            required: true,\n' +
+                '        },\n' +
+                '    },\n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '\n' +
+                '    \n' +
+                '};\n' +
+                '            ',
         },
         {
             name: 'Invalid: Real world example 6',
@@ -2561,7 +2561,7 @@ export default {
                     async loadEntityData() {
                         this.numberRange = await this.numberRangeRepository.get(
                             this.numberRangeId,
-                            Cicada.Context.api,
+                            Shopware.Context.api,
                             this.numberRangeCriteria,
                         );
 
@@ -2577,68 +2577,68 @@ export default {
                 { message: 'Vue 2 Options API shouldn\'t be used anymore. Convert to Vue 3 Composition API.' },
             ],
             output: '' +
-'\n' +
-"            import { ref, reactive, computed } from 'vue';\n" +
-'export default {\n' +
-'                setup() {\n' +
-"          const numberRangeId = ref(undefined);\n" +
-'      const numberRange = reactive({});\n' +
-'          const numberRangeRepository = computed(() => {\n' +
-"                        return this.repositoryFactory.create('number_range');\n" +
-'                    });\n' +
-'          const numberRangeCriteria = computed(() => {\n' +
-'                        const criteria = new Criteria(1, 25);\n' +
-'\n' +
-'                        criteria.addAssociation(\'type\');\n' +
-'                        criteria.addAssociation(\'numberRangeSalesChannels\');\n' +
-'\n' +
-'                        return criteria;\n' +
-'                    });\n' +
-'      const getState = () => {\n' +
-'                        if (!numberRange.type.technicalName) {\n' +
-'                            return Promise.resolve();\n' +
-'                        }\n' +
-'\n' +
-'                        return this.numberRangeService.previewPattern(\n' +
-'                            numberRange.type.technicalName,\n' +
-'                            \'{n}\',\n' +
-'                            0,\n' +
-'                        ).then((response) => {\n' +
-'                            if (response.number > 1) {\n' +
-'                                this.state = response.number - 1;\n' +
-'                                return Promise.resolve();\n' +
-'                            }\n' +
-'\n' +
-'                            this.state = numberRange.start;\n' +
-'                            return Promise.resolve();\n' +
-'                        });\n' +
-'                    };\n' +
-'      const loadEntityData = async () => {\n' +
-'                        Object.assign(numberRange, await numberRangeRepository.value.get(\n' +
-'                            numberRangeId.value,\n' +
-'                            Cicada.Context.api,\n' +
-'                            numberRangeCriteria.value,\n' +
-'                        ))\n' +
-';\n' +
-'\n' +
-'                        getState();\n' +
-'                        this.splitPattern();\n' +
-'                        await this.loadSalesChannels();\n' +
-'                    };\n' +
-'\n' +
-'          return {\n' +
-'            numberRangeId,\n' +
-'            numberRange,\n' +
-'            numberRangeRepository,\n' +
-'            numberRangeCriteria,\n' +
-'            getState,\n' +
-'            loadEntityData,\n' +
-'          };\n' +
-'        },\n' +
-'\n' +
-'                \n' +
-'                \n' +
-'            }\n',
+                '\n' +
+                "            import { ref, reactive, computed } from 'vue';\n" +
+                'export default {\n' +
+                '                setup() {\n' +
+                "          const numberRangeId = ref(undefined);\n" +
+                '      const numberRange = reactive({});\n' +
+                '          const numberRangeRepository = computed(() => {\n' +
+                "                        return this.repositoryFactory.create('number_range');\n" +
+                '                    });\n' +
+                '          const numberRangeCriteria = computed(() => {\n' +
+                '                        const criteria = new Criteria(1, 25);\n' +
+                '\n' +
+                '                        criteria.addAssociation(\'type\');\n' +
+                '                        criteria.addAssociation(\'numberRangeSalesChannels\');\n' +
+                '\n' +
+                '                        return criteria;\n' +
+                '                    });\n' +
+                '      const getState = () => {\n' +
+                '                        if (!numberRange.type.technicalName) {\n' +
+                '                            return Promise.resolve();\n' +
+                '                        }\n' +
+                '\n' +
+                '                        return this.numberRangeService.previewPattern(\n' +
+                '                            numberRange.type.technicalName,\n' +
+                '                            \'{n}\',\n' +
+                '                            0,\n' +
+                '                        ).then((response) => {\n' +
+                '                            if (response.number > 1) {\n' +
+                '                                this.state = response.number - 1;\n' +
+                '                                return Promise.resolve();\n' +
+                '                            }\n' +
+                '\n' +
+                '                            this.state = numberRange.start;\n' +
+                '                            return Promise.resolve();\n' +
+                '                        });\n' +
+                '                    };\n' +
+                '      const loadEntityData = async () => {\n' +
+                '                        Object.assign(numberRange, await numberRangeRepository.value.get(\n' +
+                '                            numberRangeId.value,\n' +
+                '                            Shopware.Context.api,\n' +
+                '                            numberRangeCriteria.value,\n' +
+                '                        ))\n' +
+                ';\n' +
+                '\n' +
+                '                        getState();\n' +
+                '                        this.splitPattern();\n' +
+                '                        await this.loadSalesChannels();\n' +
+                '                    };\n' +
+                '\n' +
+                '          return {\n' +
+                '            numberRangeId,\n' +
+                '            numberRange,\n' +
+                '            numberRangeRepository,\n' +
+                '            numberRangeCriteria,\n' +
+                '            getState,\n' +
+                '            loadEntityData,\n' +
+                '          };\n' +
+                '        },\n' +
+                '\n' +
+                '                \n' +
+                '                \n' +
+                '            }\n',
         },
     ]
 });
