@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(KernelFactory::class)]
 class KernelFactoryTest extends TestCase
 {

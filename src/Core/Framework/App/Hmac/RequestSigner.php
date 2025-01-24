@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class RequestSigner
 {
     final public const CICADA_APP_SIGNATURE = 'cicada-app-signature';

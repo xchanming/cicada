@@ -38,7 +38,7 @@ use League\Flysystem\FilesystemOperator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-#[Package('core')]
+#[Package('framework')]
 class AutoconfigureCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void

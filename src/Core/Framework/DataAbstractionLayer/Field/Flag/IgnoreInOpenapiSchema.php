@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class IgnoreInOpenapiSchema extends Flag
 {
     public function parse(): \Generator

@@ -2,7 +2,7 @@ const { Application, State } = Cicada;
 
 /**
  * @private
- * @package services-settings
+ * @sw-package framework
  */
 export default function createLicenseViolationsService(storeService) {
     /** {VueInstance|null} applicationRoot  */

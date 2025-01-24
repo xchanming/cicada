@@ -9,7 +9,7 @@ const { chunk } = Cicada.Utils.array;
 const { cloneDeep } = Cicada.Utils.object;
 
 /**
- * @package services-settings
+ * @sw-package inventory
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

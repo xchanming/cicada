@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<SeoUrlEntity>
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlCollection extends EntityCollection
 {
     public function filterBySalesChannelId(string $id): SeoUrlCollection

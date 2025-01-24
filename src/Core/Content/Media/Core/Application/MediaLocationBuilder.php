@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal Just for abstraction between domain and infrastructure. No public API!
  */
-#[Package('core')]
+#[Package('discovery')]
 interface MediaLocationBuilder
 {
     /**

@@ -14,7 +14,6 @@ use Cicada\Core\Framework\Api\EventListener\Acl\CreditOrderLineItemListener;
 use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseHelper\ReflectionHelper;
@@ -1487,18 +1486,10 @@ class SalesChannelProxyControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethod'] = [
-                'name' => 'Invoice',
-                'technicalName' => 'payment_test',
-                'description' => 'Default payment method',
-            ];
-        }
 
         $this->customerRepository->create([$customer], $salesChannelContext->getContext());
 

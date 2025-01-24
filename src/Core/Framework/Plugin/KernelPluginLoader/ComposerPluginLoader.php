@@ -10,7 +10,7 @@ use Composer\InstalledVersions;
 /**
  * @phpstan-import-type PluginInfo from KernelPluginLoader
  */
-#[Package('core')]
+#[Package('framework')]
 class ComposerPluginLoader extends KernelPluginLoader
 {
     /**

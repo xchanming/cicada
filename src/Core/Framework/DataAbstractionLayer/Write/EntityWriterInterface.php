@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal use entity repository to write data
  */
-#[Package('core')]
+#[Package('framework')]
 interface EntityWriterInterface
 {
     /**

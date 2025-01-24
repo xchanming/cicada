@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1727768690UpdateDefaultChinesePlainMailFooter::class)]
 class Migration1727768690UpdateDefaultEnglishPlainMailFooterTest extends TestCase
 {

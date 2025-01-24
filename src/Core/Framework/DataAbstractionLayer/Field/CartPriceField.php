@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\CartPriceFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CartPriceField extends JsonField
 {
     public function __construct(

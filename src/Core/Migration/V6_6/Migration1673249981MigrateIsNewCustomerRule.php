@@ -10,7 +10,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1673249981MigrateIsNewCustomerRule extends MigrationStep
 {
     public function getCreationTimestamp(): int

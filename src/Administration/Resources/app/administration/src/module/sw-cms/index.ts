@@ -26,12 +26,12 @@ initCmsPageTypes();
 Cicada.Component.register('sw-cms-list', () => import('./page/sw-cms-list'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-detail', () => import('./page/sw-cms-detail'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.extend('sw-cms-create', 'sw-cms-detail', () => import('./page/sw-cms-create'));
 

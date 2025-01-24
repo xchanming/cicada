@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1654839361ProductDownloadDelivery extends MigrationStep
 {
     use ImportTranslationsTrait;
@@ -52,11 +52,11 @@ class Migration1654839361ProductDownloadDelivery extends MigrationStep
         $translation = new Translations(
             [
                 'delivery_time_id' => $downloadDeliveryTime,
-                'name' => self::DELIVERY_TIME_NAME_EN,
+                'name' => self::DELIVERY_TIME_NAME_ZH,
             ],
             [
                 'delivery_time_id' => $downloadDeliveryTime,
-                'name' => self::DELIVERY_TIME_NAME_ZH,
+                'name' => self::DELIVERY_TIME_NAME_EN,
             ]
         );
 

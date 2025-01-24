@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder\ConfigJ
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\ConfigJsonFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ConfigJsonField extends JsonField
 {
     final public const STORAGE_KEY = '_value';

@@ -1,22 +1,22 @@
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-preview-cross-selling', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-config-cross-selling', () => import('./config'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-cross-selling', () => import('./component'));
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'cross-selling',

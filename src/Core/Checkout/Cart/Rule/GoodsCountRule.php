@@ -11,7 +11,7 @@ use Cicada\Core\Framework\Rule\RuleComparison;
 use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class GoodsCountRule extends FilterRule
 {
     final public const RULE_NAME = 'cartGoodsCount';

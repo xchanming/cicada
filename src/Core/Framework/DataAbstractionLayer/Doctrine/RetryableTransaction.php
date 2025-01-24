@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Telemetry\Metrics\Metric\ConfiguredMetric;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception\RetryableException;
 
-#[Package('core')]
+#[Package('framework')]
 class RetryableTransaction
 {
     /**

@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(Metric::class)]
-#[Package('core')]
+#[Package('framework')]
 class MetricTest extends TestCase
 {
     public function testInvokeRemovesDisallowedLabels(): void

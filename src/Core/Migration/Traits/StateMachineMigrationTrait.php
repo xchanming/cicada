@@ -5,7 +5,7 @@ namespace Cicada\Core\Migration\Traits;
 use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 
-#[Package('core')]
+#[Package('framework')]
 trait StateMachineMigrationTrait
 {
     private function import(StateMachineMigration $migration, Connection $connection): StateMachineMigration

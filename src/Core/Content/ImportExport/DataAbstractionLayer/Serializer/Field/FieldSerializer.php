@@ -30,7 +30,7 @@ use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 use Cicada\Core\Framework\Struct\Collection;
 use Cicada\Core\Framework\Uuid\Uuid;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class FieldSerializer extends AbstractFieldSerializer
 {
     /**

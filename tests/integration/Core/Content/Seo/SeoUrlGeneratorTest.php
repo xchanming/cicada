@@ -37,7 +37,7 @@ use Psr\Log\NullLogger;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 #[CoversClass(SeoUrlGenerator::class)]
 class SeoUrlGeneratorTest extends TestCase
 {

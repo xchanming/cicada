@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class MaxResult extends AggregationResult
 {
     public function __construct(

@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1650620993SetDefaultCmsPagesAndSetCategoryCmsPageToNull extends MigrationStep
 {
     public function getCreationTimestamp(): int

@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInterface;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SalesChannelSeoUrlDefinition extends SeoUrlDefinition implements SalesChannelDefinitionInterface
 {
     public function processCriteria(Criteria $criteria, SalesChannelContext $context): void

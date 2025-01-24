@@ -261,7 +261,7 @@ class CartTaxTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
             'vatIds' => ['DE123456789'],

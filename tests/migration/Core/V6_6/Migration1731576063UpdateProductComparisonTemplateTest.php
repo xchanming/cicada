@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1731576063UpdateProductComparisonTemplate::class)]
 class Migration1731576063UpdateProductComparisonTemplateTest extends TestCase
 {

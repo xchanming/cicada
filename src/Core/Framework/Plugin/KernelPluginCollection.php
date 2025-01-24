@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Plugin;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin;
 
-#[Package('core')]
+#[Package('framework')]
 class KernelPluginCollection
 {
     /**

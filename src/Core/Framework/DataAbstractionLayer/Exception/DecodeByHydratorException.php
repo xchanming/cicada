@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @deprecated tag:v6.7.0 - will be removed, use \Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException::decodeHandledByHydrator instead
  */
-#[Package('core')]
+#[Package('framework')]
 class DecodeByHydratorException extends CicadaHttpException
 {
     public function __construct(Field $field)

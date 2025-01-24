@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Seo;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class HreflangLoaderParameter
 {
     /**

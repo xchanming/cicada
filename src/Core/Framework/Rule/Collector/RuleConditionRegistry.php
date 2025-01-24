@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Rule\Exception\InvalidConditionException;
 use Cicada\Core\Framework\Rule\FlowRule;
 use Cicada\Core\Framework\Rule\Rule;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleConditionRegistry
 {
     /**

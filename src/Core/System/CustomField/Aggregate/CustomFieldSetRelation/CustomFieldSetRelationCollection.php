@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<CustomFieldSetRelationEntity>
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class CustomFieldSetRelationCollection extends EntityCollection
 {
     public function getApiAlias(): string

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\ConnectionException;
 
-#[Package('core')]
+#[Package('framework')]
 interface SyncServiceInterface
 {
     /**

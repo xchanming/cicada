@@ -14,7 +14,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class ProductCrossSellingSerializer extends EntitySerializer
 {
     /**

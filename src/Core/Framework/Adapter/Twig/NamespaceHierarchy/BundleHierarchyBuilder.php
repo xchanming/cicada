@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpKernel\KernelInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class BundleHierarchyBuilder implements TemplateNamespaceHierarchyBuilderInterface
 {
     /**

@@ -24,7 +24,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSetRelation\CustomFieldSetRelationDefinition;
 use Cicada\Core\System\CustomField\CustomFieldDefinition;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class CustomFieldSetDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'custom_field_set';

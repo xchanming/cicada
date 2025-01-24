@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class SearchPattern
 {
     final public const BOOLEAN_CLAUSE_AND = 'boolean_clause_and';

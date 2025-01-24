@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-license-violation.html.twig';
 import './sw-license-violation.scss';
 

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @template TCachedContent
  */
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractCacheTracer
 {
     /**

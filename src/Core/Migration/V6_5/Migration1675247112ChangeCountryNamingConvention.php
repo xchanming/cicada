@@ -10,7 +10,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class Migration1675247112ChangeCountryNamingConvention extends MigrationStep
 {
     public function getCreationTimestamp(): int

@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1679581138RemoveAssociationFields extends MigrationStep
 {
     public function getCreationTimestamp(): int

@@ -8,7 +8,7 @@ use League\Flysystem\Local\LocalFilesystemAdapter;
 use League\Flysystem\UnixVisibility\PortableVisibilityConverter;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-#[Package('core')]
+#[Package('framework')]
 class LocalFactory implements AdapterFactoryInterface
 {
     /**

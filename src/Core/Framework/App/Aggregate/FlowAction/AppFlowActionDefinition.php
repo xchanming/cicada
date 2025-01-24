@@ -25,7 +25,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationFiel
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppFlowActionDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'app_flow_action';

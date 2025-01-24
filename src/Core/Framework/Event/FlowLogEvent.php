@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Event\EventData\EventDataCollection;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class FlowLogEvent extends Event implements FlowEventAware
 {
     final public const NAME = 'flow.log';

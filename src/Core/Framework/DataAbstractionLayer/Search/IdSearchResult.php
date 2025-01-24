@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Struct\Struct;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class IdSearchResult extends Struct
 {
     use StateAwareTrait;

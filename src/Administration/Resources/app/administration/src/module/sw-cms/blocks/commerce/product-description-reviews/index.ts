@@ -1,17 +1,17 @@
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-preview-product-description-reviews', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-block-product-description-reviews', () => import('./component'));
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsBlock({
     name: 'product-description-reviews',

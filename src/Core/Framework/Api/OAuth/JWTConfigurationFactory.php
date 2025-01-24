@@ -14,7 +14,7 @@ use Lcobucci\JWT\Validation\Constraint\SignedWith;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class JWTConfigurationFactory
 {
     public static function createJWTConfiguration(

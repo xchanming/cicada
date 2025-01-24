@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import ApiService from 'src/core/service/api.service';
 import template from './sw-customer-imitate-customer-modal.html.twig';
 import './sw-customer-imitate-customer-modal.scss';

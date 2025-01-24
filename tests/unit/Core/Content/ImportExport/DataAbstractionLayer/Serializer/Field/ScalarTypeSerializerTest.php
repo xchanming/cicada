@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(ScalarTypeSerializer::class)]
 class ScalarTypeSerializerTest extends TestCase
 {

@@ -8,7 +8,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Query\QueryBuilder;
 use Psr\Log\LoggerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class MigrationRuntime
 {
     /**

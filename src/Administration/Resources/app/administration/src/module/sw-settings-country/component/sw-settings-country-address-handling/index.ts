@@ -39,7 +39,7 @@ const DefaultAddressFormat = [
 ] as string[][];
 
 /**
- * @package buyers-experience
+ * @sw-package buyers-experience
  *
  * @private
  */

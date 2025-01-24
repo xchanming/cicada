@@ -2,23 +2,23 @@ import CMS from '../../constant/sw-cms.constant';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-preview-sidebar-filter', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-config-sidebar-filter', () => import('./config'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-sidebar-filter', () => import('./component'));
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'sidebar-filter',

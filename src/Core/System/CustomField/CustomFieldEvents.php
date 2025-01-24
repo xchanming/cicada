@@ -4,7 +4,7 @@ namespace Cicada\Core\System\CustomField;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class CustomFieldEvents
 {
     final public const CUSTOM_FIELD_WRITTEN_EVENT = 'custom_field.written';

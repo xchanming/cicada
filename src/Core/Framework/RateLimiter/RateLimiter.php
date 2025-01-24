@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\RateLimiter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\RateLimiter\Exception\RateLimitExceededException;
 
-#[Package('core')]
+#[Package('framework')]
 class RateLimiter
 {
     final public const LOGIN_ROUTE = 'login';

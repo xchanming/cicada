@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\MessageQueue;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 interface LowPriorityMessageInterface
 {
 }

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('core')]
+#[Package('framework')]
 class ContextLoadRouteResponse extends StoreApiResponse
 {
     /**

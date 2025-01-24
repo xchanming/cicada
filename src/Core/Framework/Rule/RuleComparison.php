@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Exception\UnsupportedOperatorException;
 use Cicada\Core\Framework\Util\FloatComparator;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleComparison
 {
     public static function numeric(?float $itemValue, ?float $ruleValue, string $operator): bool

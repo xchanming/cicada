@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class EnrichExportCriteriaEvent extends Event
 {
     public function __construct(

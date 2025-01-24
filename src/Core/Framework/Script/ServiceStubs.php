@@ -21,7 +21,7 @@ use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
  * @method \Cicada\Core\Framework\Script\Api\ScriptResponseFactoryFacade response()
  * @method \Cicada\Core\Framework\Adapter\Cache\Script\Facade\CacheInvalidatorFacade cache()
  */
-#[Package('core')]
+#[Package('framework')]
 final class ServiceStubs
 {
     private string $hook;

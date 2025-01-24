@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @phpstan-import-type ResolvedSeoUrl from AbstractSeoResolver
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class EmptyPathInfoResolver extends AbstractSeoResolver
 {
     /**

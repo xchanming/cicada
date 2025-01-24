@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(Gateways::class)]
-#[Package('core')]
+#[Package('framework')]
 class GatewaysTest extends TestCase
 {
     public function testParse(): void

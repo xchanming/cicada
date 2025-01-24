@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Api\Sync;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class SyncBehavior
 {
     /**

@@ -5,7 +5,7 @@ const { Application, Mixin, Context } = Cicada;
 const { warn } = Cicada.Utils.debug;
 
 /**
- * @package content
+ * @sw-package content
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<CicadaHttpException>
  */
-#[Package('core')]
+#[Package('framework')]
 class ExceptionCollection extends Collection
 {
     public function getApiAlias(): string

@@ -12,7 +12,7 @@ use Composer\Repository\PlatformRepository;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EnvironmentRequirementsValidator implements RequirementsValidatorInterface
 {
     public function __construct(

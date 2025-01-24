@@ -18,7 +18,7 @@ use Cicada\Core\System\SalesChannel\Api\StructEncoder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class JsonApiType extends JsonFactoryBase
 {
     /**

@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Pricing\PriceCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 class CheapestPriceContainer extends Struct
 {
     /**

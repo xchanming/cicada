@@ -53,6 +53,7 @@ class AddressValidationFactory implements DataValidationFactoryInterface
             ->add('name', new NotBlank(null, 'VIOLATION::NAME_IS_BLANK_ERROR'))
             ->add('street', new NotBlank(null, 'VIOLATION::STREET_IS_BLANK_ERROR'))
             ->add('cityId', new NotBlank(null, 'VIOLATION::CITY_IS_BLANK_ERROR'))
+            ->add('districtId', new NotBlank(null, 'VIOLATION::DISTRICT_IS_BLANK_ERROR'))
             ->add('countryId', new NotBlank(null, 'VIOLATION::COUNTRY_IS_BLANK_ERROR'), new EntityExists(['entity' => 'country', 'context' => $frameworkContext]));
 
         if ($this->systemConfigService->get('core.loginRegistration.showAdditionalAddressField1', $salesChannelId)
@@ -65,10 +66,8 @@ class AddressValidationFactory implements DataValidationFactoryInterface
             $definition->add('additionalAddressLine2', new NotBlank(null, 'VIOLATION::ADDITIONAL_ADDR2_IS_BLANK_ERROR'));
         }
 
-        if ($this->systemConfigService->get('core.loginRegistration.phoneNumberFieldRequired', $salesChannelId)) {
-            $definition->add('phoneNumber', new NotBlank(null, 'VIOLATION::PHONE_NUMBER_IS_BLANK_ERROR'));
-            $definition->add('phoneNumber', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_PHONE_NUMBER], null, null, null, null, null, 'VIOLATION::PHONE_NUMBER_IS_TOO_LONG'));
-        }
+        $definition->add('phoneNumber', new NotBlank(null, 'VIOLATION::PHONE_NUMBER_IS_BLANK_ERROR'));
+        $definition->add('phoneNumber', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_PHONE_NUMBER], null, null, null, null, null, 'VIOLATION::PHONE_NUMBER_IS_TOO_LONG'));
 
         $definition
             ->add('name', new Length(['max' => CustomerAddressDefinition::MAX_LENGTH_NAME], null, null, null, null, null, 'VIOLATION::NAME_IS_TOO_LONG'))

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 interface EntitySearcherInterface
 {
     public function search(EntityDefinition $definition, Criteria $criteria, Context $context): IdSearchResult;

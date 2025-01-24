@@ -1,5 +1,5 @@
 /**
- * @package services-settings
+ * @sw-package fundamentals@framework
  */
 const { Module } = Cicada;
 const ModuleFactory = Module;

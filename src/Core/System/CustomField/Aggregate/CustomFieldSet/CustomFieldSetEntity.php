@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSetRelation\CustomFieldSetRelationCollection;
 use Cicada\Core\System\CustomField\CustomFieldCollection;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class CustomFieldSetEntity extends Entity
 {
     use EntityIdTrait;

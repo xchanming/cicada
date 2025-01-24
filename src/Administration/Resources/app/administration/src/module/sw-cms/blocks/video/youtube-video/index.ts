@@ -1,17 +1,17 @@
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-preview-youtube-video', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-block-youtube-video', () => import('./component'));
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsBlock({
     name: 'youtube-video',

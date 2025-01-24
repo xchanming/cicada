@@ -12,7 +12,7 @@ use Cicada\Core\System\SalesChannel\Exception\SalesChannelRepositoryNotFoundExce
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class DefinitionRegistryChain
 {
     public function __construct(

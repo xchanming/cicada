@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Event\NestedEvent;
 use Cicada\Core\Framework\Event\NestedEventCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class EntityLoadedContainerEvent extends NestedEvent
 {
     public function __construct(

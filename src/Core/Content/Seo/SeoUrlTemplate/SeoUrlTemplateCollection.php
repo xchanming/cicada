@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<SeoUrlTemplateEntity>
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlTemplateCollection extends EntityCollection
 {
     public function getApiAlias(): string

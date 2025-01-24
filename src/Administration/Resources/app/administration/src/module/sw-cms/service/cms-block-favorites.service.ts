@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import { reactive } from 'vue';
 import UserConfigClass from '../../../core/service/support/user-config.class';
 

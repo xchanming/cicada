@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Changelog;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 enum ChangelogKeyword: string
 {
     case ADDED = 'Added';

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityProtection\EntityProtection
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class EntityExtension
 {
     /**

@@ -18,7 +18,7 @@ use PHPUnit\Framework\Attributes\CoversNothing;
  *
  * @implements Rule<InClassNode>
  */
-#[Package('core')]
+#[Package('framework')]
 class CoversAttributeRule implements Rule
 {
     public function getNodeType(): string

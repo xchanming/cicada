@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Version\Cleanup;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 
-#[Package('core')]
+#[Package('framework')]
 class CleanupVersionTask extends ScheduledTask
 {
     public static function getTaskName(): string

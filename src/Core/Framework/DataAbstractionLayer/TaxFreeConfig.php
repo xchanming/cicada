@@ -6,7 +6,7 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 class TaxFreeConfig extends Struct
 {
     public function __construct(

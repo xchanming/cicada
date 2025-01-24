@@ -6,7 +6,7 @@ const { mapState } = Cicada.Component.getComponentHelper();
 const { warn } = Cicada.Utils.debug;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description

@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(TransportCollection::class)]
 class TransportCollectionTest extends TestCase
 {

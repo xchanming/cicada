@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Version\Aggregate\VersionCommitDa
 use Cicada\Core\Framework\DataAbstractionLayer\Version\VersionEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class VersionCommitEntity extends Entity
 {
     use EntityIdTrait;

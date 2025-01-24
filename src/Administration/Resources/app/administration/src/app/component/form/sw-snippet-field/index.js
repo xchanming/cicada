@@ -8,7 +8,7 @@ const {
 } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Input field that allows you to easily edit and translate snippet in a modal.

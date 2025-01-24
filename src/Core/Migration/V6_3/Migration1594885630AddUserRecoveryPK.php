@@ -12,7 +12,7 @@ use Doctrine\DBAL\Exception;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1594885630AddUserRecoveryPK extends MigrationStep
 {
     public function getCreationTimestamp(): int

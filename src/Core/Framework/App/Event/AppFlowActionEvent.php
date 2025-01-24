@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Hookable;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class AppFlowActionEvent extends Event implements Hookable
 {
     /**

@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1633422057AddSalutationPrivilegeForOrderViewerRole extends MigrationStep
 {
     private const PRIVILEGES = [

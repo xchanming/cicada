@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Entities\Traits\ClientTrait;
 
-#[Package('core')]
+#[Package('framework')]
 class ApiClient implements ClientEntityInterface
 {
     use ClientTrait;

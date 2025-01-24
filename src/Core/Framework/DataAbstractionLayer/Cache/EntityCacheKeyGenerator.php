@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 class EntityCacheKeyGenerator
 {
     public static function buildCmsTag(string $id): string

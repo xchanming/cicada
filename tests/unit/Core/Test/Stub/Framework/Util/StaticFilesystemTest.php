@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(StaticFilesystem::class)]
 class StaticFilesystemTest extends TestCase
 {

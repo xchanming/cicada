@@ -357,8 +357,8 @@
       "labelSystemUser": "系统",
       "column": {
         "createdAt": "日期",
-        "entity": "更改内容",
-        "user": "更改者",
+        "entity": "修改内容",
+        "user": "修改人",
         "transaction": "支付",
         "delivery": "物流",
         "order": "订单"
@@ -402,7 +402,7 @@
         "labelSalesChannel": "使用销售渠道",
         "placeholderSalesChannel": "选择一个销售渠道...",
         "buttonSelectSalesChannel": "选择",
-        "labelAllChannel": "所有渠道",
+        "labelAllChannel": "全部",
         "titleCustomerChanges": "更改客户",
         "descriptionCustomerChanges": "您确定要更改此订单的客户吗？此客户有不同的销售渠道，这将移除商品并重置选项。",
         "buttonChangeCustomer": "更改客户"

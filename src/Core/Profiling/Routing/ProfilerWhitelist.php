@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RouteScopeWhitelistInterface;
 use Cicada\Core\Profiling\Controller\ProfilerController;
 
-#[Package('core')]
+#[Package('framework')]
 class ProfilerWhitelist implements RouteScopeWhitelistInterface
 {
     public function applies(string $controllerClass): bool

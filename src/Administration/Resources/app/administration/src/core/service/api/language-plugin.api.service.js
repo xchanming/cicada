@@ -4,7 +4,7 @@ const ApiService = Cicada.Classes.ApiService;
  * Gateway for the API end point "language-plugins"
  * @class
  * @extends ApiService
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 class LanguagePluginApiService extends ApiService {
     constructor(httpClient, loginService, apiEndpoint = 'language-plugins') {

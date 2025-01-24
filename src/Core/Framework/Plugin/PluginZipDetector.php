@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Plugin\Util\ZipUtils;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class PluginZipDetector
 {
     /**

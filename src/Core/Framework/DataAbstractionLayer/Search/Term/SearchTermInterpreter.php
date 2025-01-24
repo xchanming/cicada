@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Search\Term;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class SearchTermInterpreter
 {
     /**

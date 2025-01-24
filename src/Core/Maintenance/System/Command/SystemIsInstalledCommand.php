@@ -15,7 +15,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[AsCommand(
     name: 'system:is-installed',
     description: 'Checks if the system is installed and returns exit code 0 if Cicada is installed',

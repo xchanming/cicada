@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeGeneratedEvent extends Event
 {
     final public const NAME = 'number_range.generated';

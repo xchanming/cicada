@@ -21,7 +21,7 @@ use Doctrine\DBAL\Connection;
 use League\Flysystem\FilesystemOperator;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportFactory
 {
     /**

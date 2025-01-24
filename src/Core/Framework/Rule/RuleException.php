@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Script\Exception\ScriptExecutionFailedException;
 use Cicada\Core\Framework\Script\ScriptException;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleException extends HttpException
 {
     public static function scriptExecutionFailed(string $hook, string $scriptName, \Throwable $previous): ScriptException

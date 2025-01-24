@@ -7,7 +7,7 @@ const { deepCopyObject } = Cicada.Utils.object;
 
 /**
  * @private since v6.5.0
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

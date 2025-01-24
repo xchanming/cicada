@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Event;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class BusinessEventDefinition extends Struct
 {
     /**

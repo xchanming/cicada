@@ -12,7 +12,7 @@ use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Exception\OAuthServerException;
 use League\OAuth2\Server\Repositories\ClientRepositoryInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class ClientRepository implements ClientRepositoryInterface
 {
     /**

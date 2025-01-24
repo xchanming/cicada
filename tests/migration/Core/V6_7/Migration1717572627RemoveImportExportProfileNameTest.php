@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(Migration1717572627RemoveImportExportProfileName::class)]
 class Migration1717572627RemoveImportExportProfileNameTest extends TestCase
 {

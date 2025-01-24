@@ -5,7 +5,7 @@ const { date } = Cicada.Utils.format;
 
 /**
  * @private
- * @package checkout
+ * @sw-package checkout
  */
 export default {
     template,

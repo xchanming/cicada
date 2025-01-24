@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Flag;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AttributeEntityDefinition extends EntityDefinition
 {
     /**

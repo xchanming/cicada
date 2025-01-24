@@ -4,7 +4,7 @@ import './sw-context-menu-item.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 export default function getTreeItems() {
     return [
         {

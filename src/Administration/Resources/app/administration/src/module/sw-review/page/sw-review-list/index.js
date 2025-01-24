@@ -5,7 +5,7 @@ const { Mixin } = Cicada;
 const { Criteria } = Cicada.Data;
 
 /**
- * @package inventory
+ * @sw-package inventory
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

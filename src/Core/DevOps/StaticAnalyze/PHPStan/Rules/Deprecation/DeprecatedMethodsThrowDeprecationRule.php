@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class DeprecatedMethodsThrowDeprecationRule implements Rule
 {
     /**

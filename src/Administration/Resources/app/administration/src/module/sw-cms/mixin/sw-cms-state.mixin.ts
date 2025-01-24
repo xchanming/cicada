@@ -3,7 +3,7 @@ import '../store/cms-page.store';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Mixin.register(
     'cms-state',

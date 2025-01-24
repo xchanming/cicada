@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class ReloadDataResponse extends ActionButtonResponse
 {
     final public const ACTION_TYPE = 'reload';

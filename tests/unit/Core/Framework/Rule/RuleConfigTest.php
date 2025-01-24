@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(RuleConfig::class)]
 #[Group('rules')]
 class RuleConfigTest extends TestCase

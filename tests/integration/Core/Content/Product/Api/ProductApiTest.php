@@ -4,7 +4,6 @@ namespace Cicada\Tests\Integration\Core\Content\Product\Api;
 
 use Cicada\Core\Content\Product\Aggregate\ProductPrice\ProductPriceEntity;
 use Cicada\Core\Content\Product\ProductCollection;
-use Cicada\Core\Content\Product\ProductEntity;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
@@ -76,11 +75,8 @@ class ProductApiTest extends TestCase
         $criteria->addAssociation('prices');
 
         $products = $this->repository->search($criteria, $context);
-        static::assertTrue($products->has($id));
-
         $product = $products->get($id);
-
-        static::assertInstanceOf(ProductEntity::class, $product);
+        static::assertNotNull($product);
         static::assertNotNull($product->getPrices());
         static::assertCount(1, $product->getPrices());
 
@@ -116,11 +112,11 @@ class ProductApiTest extends TestCase
         $criteria->addAssociation('prices');
 
         $products = $this->repository->search($criteria, $context);
-        static::assertTrue($products->has($id));
-
         $product = $products->get($id);
+        static::assertNotNull($product);
+        static::assertNotNull($product->getPrices());
+        static::assertCount(2, $product->getPrices());
 
-        static::assertInstanceOf(ProductEntity::class, $product);
         static::assertNotNull($product->getPrices());
         static::assertCount(2, $product->getPrices());
 
@@ -155,11 +151,11 @@ class ProductApiTest extends TestCase
         $criteria->addAssociation('prices');
 
         $products = $this->repository->search($criteria, $context);
-        static::assertTrue($products->has($id));
-
         $product = $products->get($id);
+        static::assertNotNull($product);
+        static::assertNotNull($product->getPrices());
+        static::assertCount(3, $product->getPrices());
 
-        static::assertInstanceOf(ProductEntity::class, $product);
         static::assertNotNull($product->getPrices());
         static::assertCount(3, $product->getPrices());
 

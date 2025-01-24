@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
 use Cicada\Core\Framework\Webhook\Hookable;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class UpdatePostFinishEvent extends UpdateEvent implements Hookable
 {
     public const EVENT_NAME = 'cicada.updated';

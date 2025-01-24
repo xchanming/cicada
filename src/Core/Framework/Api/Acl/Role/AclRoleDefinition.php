@@ -23,7 +23,7 @@ use Cicada\Core\System\Integration\Aggregate\IntegrationRole\IntegrationRoleDefi
 use Cicada\Core\System\Integration\IntegrationDefinition;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class AclRoleDefinition extends EntityDefinition
 {
     final public const PRIVILEGE_READ = 'read';

@@ -5,7 +5,7 @@ const utils = Cicada.Utils;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default {
     template,

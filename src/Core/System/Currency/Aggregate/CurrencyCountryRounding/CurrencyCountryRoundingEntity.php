@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryEntity;
 use Cicada\Core\System\Currency\CurrencyEntity;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyCountryRoundingEntity extends Entity
 {
     use EntityIdTrait;

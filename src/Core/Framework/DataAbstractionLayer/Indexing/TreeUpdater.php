@@ -18,7 +18,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Query\QueryBuilder;
 
-#[Package('core')]
+#[Package('framework')]
 class TreeUpdater
 {
     /**

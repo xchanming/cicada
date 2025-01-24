@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\FrameworkException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class EntityType implements EventDataType
 {
     final public const TYPE = 'entity';

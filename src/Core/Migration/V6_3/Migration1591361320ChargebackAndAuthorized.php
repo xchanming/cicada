@@ -15,7 +15,7 @@ use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1591361320ChargebackAndAuthorized extends MigrationStep
 {
     public function getCreationTimestamp(): int

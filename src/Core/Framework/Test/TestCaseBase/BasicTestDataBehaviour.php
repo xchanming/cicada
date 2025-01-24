@@ -224,6 +224,26 @@ trait BasicTestDataBehaviour
         return $id;
     }
 
+    /**
+     * @param string|null $salesChannelId (null when no saleschannel filtering)
+     */
+    protected function getValidCountryDistrictId(?string $salesChannelId = TestDefaults::SALES_CHANNEL): string
+    {
+        /** @var EntityRepository $repository */
+        $repository = static::getContainer()->get('country_state.repository');
+
+        $criteria = (new Criteria())->setLimit(1)
+            ->addFilter(new EqualsFilter('active', true))
+            ->addFilter(new EqualsFilter('countryId', $this->getValidCountryId($salesChannelId)))
+            ->addFilter(new EqualsFilter('parentId', $this->getValidCountryCityId($salesChannelId)))
+            ->addFilter(new EqualsFilter('shortCode', '510156'));
+
+        /** @var string $id */
+        $id = $repository->searchIds($criteria, Context::createDefaultContext())->firstId();
+
+        return $id;
+    }
+
     protected function getCnCountryId(): string
     {
         /** @var EntityRepository $repository */

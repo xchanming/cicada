@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @phpstan-import-type FeatureFlagConfig from Feature
  */
-#[Package('services-settings')]
+#[Package('framework')]
 #[CoversClass(ConfigurationService::class)]
 class ConfigurationServiceTest extends TestCase
 {

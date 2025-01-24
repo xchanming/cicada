@@ -96,11 +96,6 @@ parameters:
 			path: src/Core/Checkout/Customer/CustomerValueResolver.php
 
 		-
-			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
-			count: 1
-			path: src/Core/Checkout/Customer/Event/CustomerBeforeLoginEvent.php
-
-		-
 			message: "#^Method Cicada\\\\Core\\\\Checkout\\\\Customer\\\\Event\\\\CustomerIndexerEvent\\:\\:__construct\\(\\) has parameter \\$ids with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Core/Checkout/Customer/Event/CustomerIndexerEvent.php
@@ -188,11 +183,6 @@ parameters:
 		-
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
 			count: 1
-			path: src/Core/Checkout/Customer/Validation/Constraint/CustomerPhoneNumberUniqueValidator.php
-
-		-
-			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
-			count: 1
 			path: src/Core/Checkout/Customer/Validation/Constraint/CustomerPasswordMatches.php
 
 		-
@@ -234,11 +224,6 @@ parameters:
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
 			count: 1
 			path: src/Core/Checkout/Order/Event/OrderPaymentMethodChangedEvent.php
-
-		-
-			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
-			count: 1
-			path: src/Core/Checkout/Order/Event/OrderStateMachineStateChangeEvent.php
 
 		-
 			message: "#^Call to an undefined method Cicada\\\\Core\\\\Framework\\\\DataAbstractionLayer\\\\Entity\\:\\:getOrder\\(\\)\\.$#"
@@ -421,11 +406,6 @@ parameters:
 			path: src/Core/Content/Cms/Aggregate/CmsSlotTranslation/CmsSlotTranslationEntity.php
 
 		-
-			message: "#^Parameter \\#1 \\$object of class Cicada\\\\Core\\\\Content\\\\Cms\\\\SalesChannel\\\\CmsRouteResponse constructor expects Cicada\\\\Core\\\\Content\\\\Cms\\\\CmsPageEntity, Cicada\\\\Core\\\\Framework\\\\DataAbstractionLayer\\\\Entity given\\.$#"
-			count: 1
-			path: src/Core/Content/Cms/SalesChannel/CmsRoute.php
-
-		-
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
 			count: 1
 			path: src/Core/Content/Cms/SalesChannel/CmsRoute.php
@@ -459,11 +439,6 @@ parameters:
 			message: "#^Method Cicada\\\\Core\\\\Content\\\\Flow\\\\Dispatching\\\\AbstractFlowLoader\\:\\:load\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Core/Content/Flow/Dispatching/AbstractFlowLoader.php
-
-		-
-			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
-			count: 2
-			path: src/Core/Content/Flow/Dispatching/Action/SendMailAction.php
 
 		-
 			message: "#^Expected domain exception class Cicada\\\\Core\\\\Content\\\\Flow\\\\FlowException, got Cicada\\\\Core\\\\System\\\\StateMachine\\\\StateMachineException$#"
@@ -1339,11 +1314,6 @@ parameters:
 			message: "#^Expected domain exception class Cicada\\\\Core\\\\Content\\\\Product\\\\ProductException, got Cicada\\\\Core\\\\Framework\\\\Routing\\\\RoutingException$#"
 			count: 1
 			path: src/Core/Content/Product/SearchKeyword/ProductSearchBuilder.php
-
-		-
-			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
-			count: 1
-			path: src/Core/Content/ProductExport/Event/ProductExportLoggingEvent.php
 
 		-
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
@@ -2720,11 +2690,6 @@ parameters:
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
 			count: 1
 			path: src/Core/Framework/MessageQueue/ScheduledTask/Scheduler/TaskScheduler.php
-
-		-
-			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"
-			count: 5
-			path: src/Core/Framework/Migration/Command/CreateMigrationCommand.php
 
 		-
 			message: "#^Throwing new exceptions within classes are not allowed\\. Please use domain exception pattern\\. See https\\://github\\.com/cicada-ag/cicada/blob/v6\\.4\\.20\\.0/adr/2022\\-02\\-24\\-domain\\-exceptions\\.md$#"

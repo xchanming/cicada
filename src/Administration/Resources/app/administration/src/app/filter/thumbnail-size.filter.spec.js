@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 describe('src/app/filter/thumbnail-size.filter.ts', () => {
     const thumbnailSizeFilter = Cicada.Filter.getByName('thumbnailSize');

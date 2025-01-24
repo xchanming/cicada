@@ -23,7 +23,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\DataStack\KeyValuePair;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\EntityExistence;
 use Cicada\Core\Framework\DataAbstractionLayer\Write\WriteParameterBag;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
@@ -198,7 +197,7 @@ class RemoteAddressFieldTest extends TestCase
             'id' => $customerId,
             'customerNumber' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'email' => 'test@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
@@ -218,10 +217,6 @@ class RemoteAddressFieldTest extends TestCase
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')->upsert([$customer], Context::createDefaultContext());
 

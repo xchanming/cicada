@@ -2,18 +2,18 @@ import CMS from '../../../constant/sw-cms.constant';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-preview-image-text-bubble', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-block-image-text-bubble', () => import('./component'));
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsBlock({
     name: 'image-text-bubble',

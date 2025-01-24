@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 enum Status
 {
     case OK;

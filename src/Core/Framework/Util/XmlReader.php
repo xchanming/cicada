@@ -7,7 +7,7 @@ use Cicada\Core\System\SystemConfig\Exception\XmlElementNotFoundException;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
 use Symfony\Component\Config\Util\XmlUtils;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class XmlReader
 {
     /**

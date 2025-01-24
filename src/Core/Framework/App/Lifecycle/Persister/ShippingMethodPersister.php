@@ -22,7 +22,7 @@ use League\MimeTypeDetection\FinfoMimeTypeDetector;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class ShippingMethodPersister
 {
     private FinfoMimeTypeDetector $mimeDetector;

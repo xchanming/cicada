@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Cache\Script\Facade;
 use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenContainerEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class WrittenEventScriptFacade
 {
     public function __construct(private readonly EntityWrittenContainerEvent $containerEvent)

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('core')]
+#[Package('framework')]
 trait RouteScopeCheckTrait
 {
     abstract protected function getScopeRegistry(): RouteScopeRegistry;

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\JsonSerializableTrait;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class NestedEvent extends Event implements CicadaEvent
 {
     use JsonSerializableTrait;

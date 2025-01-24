@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1626696809AddImportExportCustomerProfile extends MigrationStep
 {
     use ImportTranslationsTrait;
@@ -43,6 +43,7 @@ class Migration1626696809AddImportExportCustomerProfile extends MigrationStep
                 ['key' => 'salutation.salutationKey', 'mappedKey' => 'salutation'],
                 ['key' => 'customerNumber', 'mappedKey' => 'customer_number'],
                 ['key' => 'name', 'mappedKey' => 'name'],
+                ['key' => 'title', 'mappedKey' => 'title'],
                 ['key' => 'email', 'mappedKey' => 'email'],
                 ['key' => 'active', 'mappedKey' => 'active'],
                 ['key' => 'guest', 'mappedKey' => 'guest'],

@@ -6,7 +6,7 @@ namespace Cicada\Core\Framework\Util;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class Hasher
 {
     public const ALGO = 'xxh128';

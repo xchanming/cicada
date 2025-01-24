@@ -8,7 +8,7 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTask;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class InstallServicesTask extends ScheduledTask
 {
     public static function getTaskName(): string

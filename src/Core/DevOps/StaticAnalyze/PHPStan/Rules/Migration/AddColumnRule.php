@@ -21,7 +21,7 @@ use PHPStan\Type\ObjectType;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class AddColumnRule implements Rule
 {
     use InMigrationClassTrait;

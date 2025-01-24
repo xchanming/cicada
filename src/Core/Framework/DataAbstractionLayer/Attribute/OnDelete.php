@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Attribute;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 enum OnDelete: string
 {
     case CASCADE = 'CASCADE';

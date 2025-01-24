@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 #[CoversClass(UpdatePostFinishSubscriber::class)]
 class UpdatePostFinishSubscriberTest extends TestCase
 {

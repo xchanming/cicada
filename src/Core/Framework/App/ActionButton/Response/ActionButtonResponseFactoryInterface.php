@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 interface ActionButtonResponseFactoryInterface
 {
     public function supports(string $actionType): bool;

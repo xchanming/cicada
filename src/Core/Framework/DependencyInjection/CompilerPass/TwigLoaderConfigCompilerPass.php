@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\Definition;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TwigLoaderConfigCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void

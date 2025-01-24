@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ProductCrossSellingSerializerTest extends TestCase
 {
     use IntegrationTestBehaviour;

@@ -15,11 +15,10 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\Common\RepositoryIterator;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityDefinitionQueryHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
-use Cicada\Core\Framework\DataAbstractionLayer\Entity;
-use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Runtime;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
+use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Hasher;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
@@ -32,7 +31,7 @@ use Twig\Error\SyntaxError;
 use Twig\Loader\ArrayLoader;
 use Twig\Loader\ChainLoader;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlGenerator
 {
     final public const ESCAPE_SLUGIFY = 'slugifyurlencode';
@@ -76,14 +75,14 @@ class SeoUrlGenerator
             /** @var RepositoryIterator<LandingPageCollection|CategoryCollection|ProductCollection> $iterator */
             $iterator = $context->enableInheritance(static fn (Context $context): RepositoryIterator => new RepositoryIterator($repository, $context, $criteria));
 
-            while ($entities = $iterator->fetch()) {
-                yield from $this->generateUrls($route, $config, $salesChannel, $entities, $this->getTemplateName($template));
+            while ($searchResult = $iterator->fetch()) {
+                yield from $this->generateUrls($route, $config, $salesChannel, $searchResult, $this->getTemplateName($template));
             }
         }
     }
 
     /**
-     * @param EntityCollection<Entity> $entities
+     * @param EntitySearchResult<LandingPageCollection|CategoryCollection|ProductCollection> $searchResult
      *
      * @return iterable<SeoUrlEntity>
      */
@@ -91,14 +90,14 @@ class SeoUrlGenerator
         SeoUrlRouteInterface $seoUrlRoute,
         SeoUrlRouteConfig $config,
         SalesChannelEntity $salesChannel,
-        EntityCollection $entities,
+        EntitySearchResult $searchResult,
         string $templateName
     ): iterable {
         $request = $this->requestStack->getMainRequest();
 
         $basePath = $request ? $request->getBasePath() : '';
 
-        foreach ($entities as $entity) {
+        foreach ($searchResult->getEntities() as $entity) {
             $seoUrl = new SeoUrlEntity();
             $seoUrl->setForeignKey($entity->getUniqueIdentifier());
 

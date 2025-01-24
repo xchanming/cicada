@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Write;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CloneBehavior
 {
     public function __construct(

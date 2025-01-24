@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Script\Execution\Awareness\AppSpecificHook;
  *
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class AppUpdatedHook extends AppLifecycleHook implements AppSpecificHook
 {
     final public const HOOK_NAME = 'app-updated';

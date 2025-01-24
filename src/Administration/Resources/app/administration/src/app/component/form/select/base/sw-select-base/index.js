@@ -4,7 +4,7 @@ import './sw-select-base.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

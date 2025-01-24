@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Store\Services\StoreClient;
 use Cicada\Core\Framework\Update\Struct\ValidationResult;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class LicenseCheck
 {
     /**

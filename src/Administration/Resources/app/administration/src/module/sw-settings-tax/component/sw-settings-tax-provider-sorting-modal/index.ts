@@ -6,7 +6,7 @@ import './sw-settings-tax-provider-sorting-modal.scss';
 const { Component, Mixin } = Cicada;
 
 /**
- * @package checkout
+ * @sw-package checkout
  *
  * @private
  */

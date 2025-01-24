@@ -4,7 +4,7 @@ import './sw-cms-mapping-field.scss';
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

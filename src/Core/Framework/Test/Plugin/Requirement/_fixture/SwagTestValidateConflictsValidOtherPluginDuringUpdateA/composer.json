@@ -1,0 +1,21 @@
+{
+    "name": "swag/test-validate-conflicts-valid-other-plugin-during-update-a",
+    "description": "Test conflict handling",
+    "version": "v2.0.0",
+    "type": "cicada-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "shopware AG",
+            "role": "Manufacturer"
+        }
+    ],
+    "extra": {
+        "shopware-plugin-class": "SwagTestValidateConflictsValidOtherPluginDuringUpdateA\\SwagTestValidateConflictsValidOtherPluginDuringUpdateA",
+        "copyright": "(c) by shopware AG",
+        "label": {
+            "zh-CN": "Test für conflict-Handling",
+            "en-GB": "Test for conflict handling"
+        }
+    }
+}

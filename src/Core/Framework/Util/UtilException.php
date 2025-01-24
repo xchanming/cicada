@@ -10,7 +10,7 @@ use Cicada\Core\System\SystemConfig\Exception\XmlElementNotFoundException;
 use Cicada\Core\System\SystemConfig\Exception\XmlParsingException;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class UtilException extends HttpException
 {
     public const INVALID_JSON = 'UTIL_INVALID_JSON';

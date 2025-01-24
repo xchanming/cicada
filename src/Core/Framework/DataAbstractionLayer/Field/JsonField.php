@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder\JsonFie
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\JsonFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class JsonField extends Field implements StorageAware
 {
     /**

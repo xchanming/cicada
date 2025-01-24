@@ -4,7 +4,7 @@ import template from './sw-label.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

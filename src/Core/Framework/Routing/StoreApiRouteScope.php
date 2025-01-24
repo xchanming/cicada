@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('core')]
+#[Package('framework')]
 class StoreApiRouteScope extends AbstractRouteScope implements SalesChannelContextRouteScopeDependant
 {
     final public const ID = DefinitionService::STORE_API;

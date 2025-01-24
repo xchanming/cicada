@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 use Cicada\Core\System\Tag\TagDefinition;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CustomerTagRule extends Rule
 {
     final public const RULE_NAME = 'customerTag';

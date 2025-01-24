@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  *
  * Cicada End Developer API
  * @module Cicada

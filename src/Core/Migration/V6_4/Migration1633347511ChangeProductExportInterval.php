@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1633347511ChangeProductExportInterval extends MigrationStep
 {
     private const OLD_INTERVAL = 86400;

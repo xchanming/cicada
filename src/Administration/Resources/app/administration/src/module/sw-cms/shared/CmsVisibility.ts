@@ -6,6 +6,6 @@ type CmsVisibility = {
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default CmsVisibility;

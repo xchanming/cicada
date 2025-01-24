@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 import { send } from '@cicada-ag/meteor-admin-sdk/es/channel';
 import MissingPrivilegesError from '@cicada-ag/meteor-admin-sdk/es/_internals/privileges/missing-privileges-error';

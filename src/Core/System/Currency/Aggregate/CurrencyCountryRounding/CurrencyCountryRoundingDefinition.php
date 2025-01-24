@@ -15,7 +15,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Country\CountryDefinition;
 use Cicada\Core\System\Currency\CurrencyDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyCountryRoundingDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'currency_country_rounding';

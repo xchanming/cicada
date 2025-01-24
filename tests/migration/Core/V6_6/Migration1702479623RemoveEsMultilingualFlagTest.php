@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1702479623RemoveEsMultilingualFlag::class)]
 class Migration1702479623RemoveEsMultilingualFlagTest extends TestCase
 {

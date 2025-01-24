@@ -20,7 +20,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Version\Aggregate\VersionCommitDa
 use Cicada\Core\Framework\DataAbstractionLayer\Version\VersionDefinition;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class VersionCommitDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'version_commit';

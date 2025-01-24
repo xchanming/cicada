@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Validation\Constraint\ArrayOfType;
 /**
  * AbstractContainer implements setRules and addRule of the container interface
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class Container extends Rule implements ContainerInterface
 {
     /**

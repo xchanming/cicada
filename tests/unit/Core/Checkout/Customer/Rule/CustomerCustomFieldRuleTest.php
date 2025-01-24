@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(CustomerCustomFieldRule::class)]
 #[Group('rules')]
 class CustomerCustomFieldRuleTest extends TestCase

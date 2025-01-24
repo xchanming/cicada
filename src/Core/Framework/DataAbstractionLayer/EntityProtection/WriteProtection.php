@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\EntityProtection;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class WriteProtection extends EntityProtection
 {
     final public const PROTECTION = 'write_protection';

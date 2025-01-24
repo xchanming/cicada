@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1727768690UpdateDefaultChinesePlainMailFooter extends MigrationStep
 {
     public function getCreationTimestamp(): int

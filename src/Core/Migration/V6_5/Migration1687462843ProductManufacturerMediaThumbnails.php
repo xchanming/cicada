@@ -10,7 +10,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1687462843ProductManufacturerMediaThumbnails extends MigrationStep
 {
     use EnsureThumbnailSizesTrait;

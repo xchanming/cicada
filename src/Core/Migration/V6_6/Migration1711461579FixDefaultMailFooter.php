@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1711461579FixDefaultMailFooter extends MigrationStep
 {
     use ImportTranslationsTrait;

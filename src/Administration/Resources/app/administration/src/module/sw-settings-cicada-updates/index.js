@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import './page/sw-settings-cicada-updates-wizard';
 import './page/sw-settings-cicada-updates-index';
 import './view/sw-settings-cicada-updates-info';

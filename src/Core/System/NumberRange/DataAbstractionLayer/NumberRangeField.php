@@ -5,7 +5,7 @@ namespace Cicada\Core\System\NumberRange\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class NumberRangeField extends StringField
 {
     public function __construct(

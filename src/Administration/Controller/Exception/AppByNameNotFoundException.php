@@ -6,7 +6,7 @@ use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('administration')]
+#[Package('framework')]
 class AppByNameNotFoundException extends CicadaHttpException
 {
     public function __construct(string $appName)

@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@discovery')]
 class Migration1677470540AddProvincesForCanada extends MigrationStep
 {
     use ImportTranslationsTrait;

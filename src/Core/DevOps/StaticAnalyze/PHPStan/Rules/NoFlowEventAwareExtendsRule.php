@@ -18,7 +18,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class NoFlowEventAwareExtendsRule implements Rule
 {
     public function getNodeType(): string

@@ -18,7 +18,7 @@ use Cicada\Core\System\User\Aggregate\UserAccessKey\UserAccessKeyCollection;
 use Cicada\Core\System\User\Aggregate\UserConfig\UserConfigCollection;
 use Cicada\Core\System\User\Aggregate\UserRecovery\UserRecoveryEntity;
 
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class UserEntity extends Entity
 {
     use EntityCustomFieldsTrait;

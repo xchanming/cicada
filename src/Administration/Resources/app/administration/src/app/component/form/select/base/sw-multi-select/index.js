@@ -4,7 +4,7 @@ const { Component, Mixin } = Cicada;
 const { debounce, get } = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

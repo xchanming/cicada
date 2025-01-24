@@ -1,5 +1,5 @@
 /**
- * @package services-settings
+ * @sw-package inventory
  */
 import template from './sw-bulk-edit-form-field-renderer.html.twig';
 

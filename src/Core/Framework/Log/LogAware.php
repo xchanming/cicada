@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Event\IsFlowEventAware;
 use Monolog\Level;
 
 #[IsFlowEventAware]
-#[Package('core')]
+#[Package('framework')]
 interface LogAware
 {
     /**

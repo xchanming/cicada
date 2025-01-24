@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('core')]
+#[Package('framework')]
 class BuildValidationEvent extends Event implements CicadaEvent, GenericEvent
 {
     public function __construct(

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class FeatureException extends HttpException
 {
     final public const FEATURE_NOT_REGISTERED = 'FRAMEWORK__FEATURE_NOT_REGISTERED';

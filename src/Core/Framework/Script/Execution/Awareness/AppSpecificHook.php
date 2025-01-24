@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 interface AppSpecificHook
 {
     public function getAppId(): string;

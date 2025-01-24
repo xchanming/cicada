@@ -4,7 +4,7 @@ namespace Cicada\Core\System\CustomField;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 final class CustomFieldTypes
 {
     public const BOOL = 'bool';

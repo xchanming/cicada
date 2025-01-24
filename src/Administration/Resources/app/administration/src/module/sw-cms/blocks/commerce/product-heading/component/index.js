@@ -5,7 +5,7 @@ const { Store } = Cicada;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default {
     template,

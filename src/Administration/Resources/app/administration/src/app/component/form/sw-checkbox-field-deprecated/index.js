@@ -6,7 +6,7 @@ const { Component, Mixin } = Cicada;
 const utils = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Boolean input field based on checkbox.

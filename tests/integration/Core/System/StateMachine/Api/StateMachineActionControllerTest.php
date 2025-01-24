@@ -19,7 +19,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Pricing\CashRoundingConfig;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -385,7 +384,7 @@ class StateMachineActionControllerTest extends TestCase
             'id' => $customerId,
             'customerNumber' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
@@ -404,11 +403,6 @@ class StateMachineActionControllerTest extends TestCase
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->customerRepository->upsert([$customer], $context);
 
         return $customerId;

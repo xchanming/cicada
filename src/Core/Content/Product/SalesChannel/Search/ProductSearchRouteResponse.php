@@ -6,7 +6,7 @@ use Cicada\Core\Content\Product\SalesChannel\Listing\ProductListingResult;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\StoreApiResponse;
 
-#[Package('services-settings')]
+#[Package('inventory')]
 class ProductSearchRouteResponse extends StoreApiResponse
 {
     /**

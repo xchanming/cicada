@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Seo\SeoUrlRoute;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlRouteRegistry
 {
     /**

@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class AlwaysValidRule extends Rule
 {
     final public const RULE_NAME = 'alwaysValid';

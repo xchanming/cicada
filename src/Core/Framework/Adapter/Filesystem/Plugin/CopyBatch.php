@@ -7,7 +7,7 @@ use League\Flysystem\Filesystem;
 use League\Flysystem\FilesystemAdapter;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('core')]
+#[Package('framework')]
 class CopyBatch
 {
     public static function copy(FilesystemOperator $filesystem, CopyBatchInput ...$files): void

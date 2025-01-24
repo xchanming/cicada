@@ -6,7 +6,7 @@ use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportBeforeExportRecordEvent extends Event
 {
     public function __construct(

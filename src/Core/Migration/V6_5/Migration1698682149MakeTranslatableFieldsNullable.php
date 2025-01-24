@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1698682149MakeTranslatableFieldsNullable extends MigrationStep
 {
     /**

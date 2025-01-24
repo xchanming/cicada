@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('after-sales')]
 class Migration1692277552FixCustomerReviewCount extends MigrationStep
 {
     public function getCreationTimestamp(): int

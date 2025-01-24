@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Util\Random;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportFileEntity extends Entity
 {
     use EntityIdTrait;

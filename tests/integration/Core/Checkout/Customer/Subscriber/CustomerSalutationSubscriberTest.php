@@ -6,7 +6,6 @@ use Cicada\Core\Checkout\Customer\CustomerEntity;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -99,16 +98,11 @@ class CustomerSalutationSubscriberTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => Uuid::randomHex(),
-            'name' => 'Max',
+            'title' => 'Max',
             'guest' => false,
             'salutationId' => null,
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->customerRepository->create([$customer], Context::createDefaultContext());
     }
 }

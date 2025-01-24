@@ -3,6 +3,7 @@
 namespace Cicada\Tests\Unit\Core\Framework\Adapter;
 
 use Cicada\Core\Framework\Adapter\AdapterException;
+use Cicada\Core\Test\Annotation\DisabledFeatures;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -66,5 +67,27 @@ class AdapterExceptionTest extends TestCase
         static::assertSame(AdapterException::INVALID_TEMPLATE_SYNTAX, $exception->getErrorCode());
         static::assertSame('Failed rendering Twig string template due syntax error: "test"', $exception->getMessage());
         static::assertSame(['message' => 'test'], $exception->getParameters());
+    }
+
+    public function testInvalidArgument(): void
+    {
+        $exception = AdapterException::invalidArgument('test');
+
+        static::assertInstanceOf(AdapterException::class, $exception);
+        static::assertSame(Response::HTTP_INTERNAL_SERVER_ERROR, $exception->getStatusCode());
+        static::assertSame(AdapterException::INVALID_ARGUMENT, $exception->getErrorCode());
+        static::assertSame('test', $exception->getMessage());
+        static::assertEmpty($exception->getParameters());
+    }
+
+    /**
+     * @deprecated tag:v6.7.0 - reason: see AdapterException::invalidArgument - to be removed
+     */
+    #[DisabledFeatures(['v6.7.0.0'])]
+    public function testInvalidArgumentDeprecated(): void
+    {
+        $exception = AdapterException::invalidArgument('test');
+        static::assertInstanceOf(\InvalidArgumentException::class, $exception);
+        static::assertSame('test', $exception->getMessage());
     }
 }

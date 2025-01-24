@@ -10,7 +10,7 @@ use Ramsey\Uuid\BinaryUtils;
 use Ramsey\Uuid\Generator\RandomGeneratorFactory;
 use Ramsey\Uuid\Generator\UnixTimeGenerator;
 
-#[Package('core')]
+#[Package('framework')]
 class Uuid
 {
     /**

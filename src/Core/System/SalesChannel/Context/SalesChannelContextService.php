@@ -11,7 +11,7 @@ use Cicada\Core\System\SalesChannel\Event\SalesChannelContextCreatedEvent;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextService implements SalesChannelContextServiceInterface
 {
     final public const CURRENCY_ID = 'currencyId';

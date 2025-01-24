@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package buyers-experience
  */
 
 import template from './sw-sidebar-collapse.html.twig';

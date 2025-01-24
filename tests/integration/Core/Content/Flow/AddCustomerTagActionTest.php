@@ -7,7 +7,6 @@ use Cicada\Core\Checkout\Customer\Event\CustomerLoginEvent;
 use Cicada\Core\Content\Flow\Dispatching\Action\AddCustomerTagAction;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
@@ -164,21 +163,18 @@ class AddCustomerTagActionTest extends TestCase
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'countryId' => $this->getValidCountryId($this->ids->get('sales-channel')),
+                'districtId' => $this->getValidCountryDistrictId($this->ids->get('sales-channel')),
             ],
             'defaultBillingAddressId' => $this->ids->get('address'),
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
             'vatIds' => ['DE123456789'],
             'company' => 'Test',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->create([$customer], Context::createDefaultContext());
     }

@@ -21,7 +21,7 @@ use League\MimeTypeDetection\FinfoMimeTypeDetector;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class PaymentMethodPersister
 {
     private FinfoMimeTypeDetector $mimeDetector;

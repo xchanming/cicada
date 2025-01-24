@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-product-download-form.html.twig';
 import './sw-product-download-form.scss';
 

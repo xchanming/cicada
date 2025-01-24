@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class MissingReverseAssociation extends CicadaHttpException
 {
     public function __construct(

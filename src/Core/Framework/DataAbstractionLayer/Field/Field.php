@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FieldSerializerIn
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class Field extends Struct
 {
     /**

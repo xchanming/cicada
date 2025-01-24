@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Update\Services\ExtensionCompatibility;
 use Cicada\Core\Framework\Update\Struct\Version;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class DeactivateExtensionsStep
 {
     final public const UPDATE_DEACTIVATED_PLUGINS = 'core.update.deactivatedPlugins';

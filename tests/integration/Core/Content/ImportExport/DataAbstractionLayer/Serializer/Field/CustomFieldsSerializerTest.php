@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(CustomFieldsSerializer::class)]
 class CustomFieldsSerializerTest extends TestCase
 {

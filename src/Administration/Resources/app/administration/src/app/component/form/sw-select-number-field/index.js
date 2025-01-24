@@ -1,7 +1,7 @@
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  * @deprecated tag:v6.7.0 - Will be removed, use mt-select instead.
  *
  * @private

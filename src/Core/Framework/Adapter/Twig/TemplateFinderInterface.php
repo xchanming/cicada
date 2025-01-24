@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Twig;
 use Cicada\Core\Framework\Log\Package;
 use Twig\Error\LoaderError;
 
-#[Package('core')]
+#[Package('framework')]
 interface TemplateFinderInterface
 {
     public function getTemplateName(string $template): string;

@@ -1,5 +1,5 @@
 /**
- * @package discovery
+ * @sw-package discovery
  */
 
 Cicada.Service('privileges').addPrivilegeMappingEntry({

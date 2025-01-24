@@ -23,7 +23,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class HookableEventCollector
 {
     final public const HOOKABLE_ENTITIES = [

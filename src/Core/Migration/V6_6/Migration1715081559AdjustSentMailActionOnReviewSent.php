@@ -10,7 +10,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1715081559AdjustSentMailActionOnReviewSent extends MigrationStep
 {
     public function getCreationTimestamp(): int

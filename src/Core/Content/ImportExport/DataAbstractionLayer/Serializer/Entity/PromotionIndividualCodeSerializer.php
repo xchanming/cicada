@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\Service\ResetInterface;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class PromotionIndividualCodeSerializer extends EntitySerializer implements ResetInterface
 {
     /**

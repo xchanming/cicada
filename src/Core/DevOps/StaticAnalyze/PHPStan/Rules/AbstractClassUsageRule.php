@@ -15,7 +15,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @implements Rule<InClassNode>
  */
-#[Package('core')]
+#[Package('framework')]
 class AbstractClassUsageRule implements Rule
 {
     use InTestClassTrait;

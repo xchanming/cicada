@@ -4,7 +4,7 @@ Cicada.Component.register('sw-settings-login-registration', () => import('./page
 const { Module } = Cicada;
 
 /**
- * @package services-settings
+ * @sw-package fundamentals@framework
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 Module.register('sw-settings-login-registration', {

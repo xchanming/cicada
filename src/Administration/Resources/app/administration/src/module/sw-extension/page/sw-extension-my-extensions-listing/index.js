@@ -4,7 +4,7 @@ import './sw-extension-my-extensions-listing.scss';
 const { mapState } = Cicada.Component.getComponentHelper();
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default {

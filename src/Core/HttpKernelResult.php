@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class HttpKernelResult
 {
     public function __construct(

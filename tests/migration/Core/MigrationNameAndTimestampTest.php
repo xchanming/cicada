@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(MigrationCollection::class)]
 class MigrationNameAndTimestampTest extends TestCase
 {

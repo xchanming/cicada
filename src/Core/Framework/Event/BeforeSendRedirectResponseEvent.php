@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Event;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class BeforeSendRedirectResponseEvent extends BeforeSendResponseEvent
 {
 }

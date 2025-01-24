@@ -4,7 +4,7 @@ import './sw-extension-review-creation.scss';
 const { CicadaError } = Cicada.Classes;
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default {

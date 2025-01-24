@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\ArrayStruct;
 
-#[Package('core')]
+#[Package('framework')]
 class NoContentResponse extends StoreApiResponse
 {
     /**

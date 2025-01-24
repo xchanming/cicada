@@ -7,7 +7,7 @@ const { warn } = Cicada.Utils.debug;
 const { mapPropertyErrors } = Cicada.Component.getComponentHelper();
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

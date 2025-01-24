@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class OrderSerializerTest extends TestCase
 {
     use IntegrationTestBehaviour;

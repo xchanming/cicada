@@ -3,7 +3,7 @@ Cicada.Component.extend('sw-cms-el-config-product-name', 'sw-cms-el-config-text'
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'product-name',

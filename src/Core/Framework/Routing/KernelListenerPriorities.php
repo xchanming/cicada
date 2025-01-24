@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Routing;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 final class KernelListenerPriorities
 {
     public const KERNEL_CONTROLLER_EVENT_PRIORITY_AUTH_VALIDATE_PRE = -1;

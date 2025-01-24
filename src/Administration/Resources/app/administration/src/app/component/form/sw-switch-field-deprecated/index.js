@@ -5,7 +5,7 @@ import './sw-switch-field-deprecated.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Boolean input field based on checkbox.

@@ -3,7 +3,7 @@ Cicada.Component.extend('sw-cms-el-manufacturer-logo', 'sw-cms-el-image', () => 
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'manufacturer-logo',

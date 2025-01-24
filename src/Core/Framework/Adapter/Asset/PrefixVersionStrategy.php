@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Asset;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\Asset\VersionStrategy\VersionStrategyInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class PrefixVersionStrategy implements VersionStrategyInterface
 {
     private readonly string $prefix;

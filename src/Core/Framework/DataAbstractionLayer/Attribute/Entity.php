@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\EntityHydrator;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 #[\Attribute(\Attribute::TARGET_CLASS)]
 final class Entity
 {

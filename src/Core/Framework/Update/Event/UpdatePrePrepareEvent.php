@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Update\Event;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class UpdatePrePrepareEvent extends UpdateEvent
 {
     public function __construct(

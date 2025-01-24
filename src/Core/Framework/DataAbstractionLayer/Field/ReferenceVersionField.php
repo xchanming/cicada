@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\ReferenceVersionF
 use Cicada\Core\Framework\DataAbstractionLayer\Version\VersionDefinition;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ReferenceVersionField extends FkField
 {
     /**

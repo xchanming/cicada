@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldAccessorBuilder\PriceFi
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\PriceFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class PriceField extends JsonField
 {
     public function __construct(

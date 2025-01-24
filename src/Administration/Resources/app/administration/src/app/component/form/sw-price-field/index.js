@@ -5,7 +5,7 @@ const { Component, Application } = Cicada;
 const { debounce } = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

@@ -11,7 +11,7 @@ use Monolog\LogRecord;
 use Psr\Log\LogLevel;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 
-#[Package('core')]
+#[Package('framework')]
 class ErrorCodeLogLevelHandler extends AbstractHandler
 {
     /**

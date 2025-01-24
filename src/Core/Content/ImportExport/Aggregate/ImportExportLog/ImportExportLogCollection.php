@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<ImportExportLogEntity>
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportLogCollection extends EntityCollection
 {
     public function getApiAlias(): string

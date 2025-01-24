@@ -18,7 +18,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1572193798TaxRule extends MigrationStep
 {
     public function getCreationTimestamp(): int

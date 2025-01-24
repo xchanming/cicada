@@ -15,7 +15,7 @@ use Cicada\Core\Framework\MessageQueue\ScheduledTask\ScheduledTaskEntity;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class TaskRegistry
 {
     /**

@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1730191192UpdateDefaultSalutation::class)]
 class Migration1730191192UpdateDefaultSalutationTest extends TestCase
 {

@@ -1,6 +1,6 @@
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default function initializeCms(): void {
     Cicada.ExtensionAPI.handle('cmsRegisterElement', (element, additionalInformation) => {

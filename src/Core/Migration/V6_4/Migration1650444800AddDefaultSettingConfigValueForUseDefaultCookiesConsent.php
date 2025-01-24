@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1650444800AddDefaultSettingConfigValueForUseDefaultCookiesConsent extends MigrationStep
 {
     private const CONFIG_KEY = 'core.basicInformation.useDefaultCookieConsent';

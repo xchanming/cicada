@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field\Flag;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class Flag
 {
     /**

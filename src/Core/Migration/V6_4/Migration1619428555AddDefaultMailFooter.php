@@ -17,7 +17,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1619428555AddDefaultMailFooter extends MigrationStep
 {
     use ImportTranslationsTrait;

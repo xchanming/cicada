@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1625831469AddImportExportCrossSellingProfile extends MigrationStep
 {
     use ImportTranslationsTrait;

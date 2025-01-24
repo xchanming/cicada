@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import { mount } from '@vue/test-utils';
 
 const { Criteria } = Cicada.Data;

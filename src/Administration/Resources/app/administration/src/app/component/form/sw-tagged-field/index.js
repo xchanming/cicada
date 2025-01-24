@@ -4,7 +4,7 @@ import './sw-tagged-field.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status deprecated

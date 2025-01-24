@@ -14,6 +14,7 @@ use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -78,6 +79,20 @@ class SaleChannelsReadinessCheckTest extends TestCase
 
         static::assertFalse($result->healthy);
         static::assertSame(Status::FAILURE, $result->status);
+    }
+
+    public function testTrustedHostsAreTheSameBeforeAndAfterCheck(): void
+    {
+        // empty test state, if this assertion fails, some other test is leaking.
+        static::assertEmpty(Request::getTrustedHosts());
+        Request::setTrustedHosts(['foo.bar', 'test.com']);
+        $trustedHostsBefore = Request::getTrustedHosts();
+        $check = $this->createCheck();
+        $check->run();
+
+        static::assertSame($trustedHostsBefore, Request::getTrustedHosts());
+        // reset the trusted hosts to avoid leaking state
+        Request::setTrustedHosts([]);
     }
 
     private function createCheck((MockObject&Kernel)|null $kernel = null): SaleChannelsReadinessCheck

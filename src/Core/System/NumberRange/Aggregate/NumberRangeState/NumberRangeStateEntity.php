@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\NumberRangeEntity;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeStateEntity extends Entity
 {
     use EntityIdTrait;

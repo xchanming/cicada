@@ -30,7 +30,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @see https://github.com/symfony/symfony/pull/44451
  */
-#[Package('core')]
+#[Package('framework')]
 class MessagesShouldNotUsePHPStanTypes implements Rule
 {
     use InTestClassTrait;

@@ -4,7 +4,7 @@ import template from './sw-grouped-single-select.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description The <u>sw-grouped-single-select</u> component can be used to show a single sleect with grouped result items.

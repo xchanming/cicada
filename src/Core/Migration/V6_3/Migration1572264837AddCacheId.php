@@ -13,7 +13,7 @@ use Doctrine\DBAL\Exception;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1572264837AddCacheId extends MigrationStep
 {
     public function getCreationTimestamp(): int

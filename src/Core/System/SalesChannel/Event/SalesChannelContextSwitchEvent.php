@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\DataBag\DataBag;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelContextSwitchEvent extends NestedEvent implements CicadaSalesChannelEvent
 {
     public function __construct(

@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @extends EntityCollection<AppTranslationEntity>
  */
-#[Package('core')]
+#[Package('framework')]
 class AppTranslationCollection extends EntityCollection
 {
     protected function getExpectedClass(): string

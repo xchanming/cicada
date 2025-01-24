@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('discovery')]
+#[Package('inventory')]
 class MainCategoryExtensionTest extends TestCase
 {
     use IntegrationTestBehaviour;

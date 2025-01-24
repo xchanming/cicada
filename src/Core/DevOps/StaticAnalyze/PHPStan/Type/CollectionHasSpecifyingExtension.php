@@ -18,7 +18,7 @@ use PHPStan\Type\TypeCombinator;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class CollectionHasSpecifyingExtension implements MethodTypeSpecifyingExtension, TypeSpecifierAwareExtension
 {
     private TypeSpecifier $typeSpecifier;

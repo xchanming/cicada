@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  * @phpstan-import-type Option from RuleIdMatcher
  */
 #[CoversClass(RuleIdMatcher::class)]
-#[Package('core')]
+#[Package('framework')]
 class RuleIdMatcherTest extends TestCase
 {
     private readonly IdsCollection $ids;

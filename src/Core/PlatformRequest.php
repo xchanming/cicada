@@ -4,7 +4,7 @@ namespace Cicada\Core;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 final class PlatformRequest
 {
     /**

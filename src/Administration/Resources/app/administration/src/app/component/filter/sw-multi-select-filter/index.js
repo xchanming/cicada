@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import template from './sw-multi-select-filter.html.twig';
 
 const { Component } = Cicada;

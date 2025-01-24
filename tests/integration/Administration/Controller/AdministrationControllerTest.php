@@ -8,7 +8,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminFunctionalTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\SystemConfig\SystemConfigService;
@@ -247,16 +246,11 @@ class AdministrationControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => 'random@mail.com',
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'guest' => false,
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ], $overrideData);
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->customerRepository->create([$customer], Context::createDefaultContext());
 
         return $customerId;

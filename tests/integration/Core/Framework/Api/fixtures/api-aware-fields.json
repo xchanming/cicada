@@ -1106,7 +1106,6 @@
   "customer.salutation",
   "customer.addresses",
   "customer.tags",
-  "customer.phoneNumber",
   "customer.tagIds",
   "customer.accountType",
   "customer.createdById",

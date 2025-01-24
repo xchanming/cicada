@@ -11,7 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Currency\CurrencyDefinition;
 
-#[Package('buyers-experience')]
+#[Package('fundamentals@framework')]
 class CurrencyTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'currency_translation';

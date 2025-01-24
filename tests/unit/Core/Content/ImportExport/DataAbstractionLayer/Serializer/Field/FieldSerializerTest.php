@@ -38,7 +38,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(FieldSerializer::class)]
 class FieldSerializerTest extends TestCase
 {

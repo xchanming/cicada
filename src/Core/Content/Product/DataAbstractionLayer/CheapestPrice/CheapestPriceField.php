@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\JsonField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\PHPUnserializeFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CheapestPriceField extends JsonField
 {
     public function __construct(

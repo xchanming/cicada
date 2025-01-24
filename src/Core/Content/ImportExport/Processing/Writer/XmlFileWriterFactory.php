@@ -10,7 +10,7 @@ use League\Flysystem\FilesystemOperator;
 /**
  * @deprecated tag:v6.7.0 - Will be removed in v6.7.0. as it is not used anymore
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class XmlFileWriterFactory extends AbstractWriterFactory
 {
     public function __construct(private readonly FilesystemOperator $filesystem)

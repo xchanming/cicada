@@ -4,7 +4,7 @@ import './sw-external-link.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description Link to another website outside the admin, that opens in a new browser tab

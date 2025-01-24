@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Rule\RuleConfig;
 use Cicada\Core\Framework\Rule\RuleConstraints;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class LineItemsInCartCountRule extends Rule
 {
     final public const RULE_NAME = 'cartLineItemsInCartCount';

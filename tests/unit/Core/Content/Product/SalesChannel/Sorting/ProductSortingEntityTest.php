@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(ProductSortingEntity::class)]
 class ProductSortingEntityTest extends TestCase
 {

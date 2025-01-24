@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @extends EntityCollection<ActionButtonTranslationEntity>
  */
-#[Package('core')]
+#[Package('framework')]
 class ActionButtonTranslationCollection extends EntityCollection
 {
     protected function getExpectedClass(): string

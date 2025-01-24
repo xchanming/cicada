@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception\RetryableException;
 use Doctrine\DBAL\Statement;
 
-#[Package('core')]
+#[Package('framework')]
 class RetryableQuery
 {
     public function __construct(
@@ -19,7 +19,7 @@ class RetryableQuery
     }
 
     /**
-     * @param array<int|string, mixed> $params
+     * @param array<string, mixed> $params
      */
     public function execute(array $params = []): int
     {

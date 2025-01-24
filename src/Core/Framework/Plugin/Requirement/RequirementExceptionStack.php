@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\RequirementException;
 use Cicada\Core\Framework\Plugin\Requirement\Exception\RequirementStackException;
 
-#[Package('core')]
+#[Package('framework')]
 class RequirementExceptionStack
 {
     /**

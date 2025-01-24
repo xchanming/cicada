@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(BanMediaUrl::class)]
 class BanMediaUrlTest extends TestCase
 {

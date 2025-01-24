@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use ImportExportException::fileNotReadable instead
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class FileNotReadableException extends CicadaHttpException
 {
     public function __construct(string $path)

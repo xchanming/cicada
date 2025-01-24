@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(LineItemPropertyRule::class)]
 class LineItemPropertyRuleTest extends TestCase
 {

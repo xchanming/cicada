@@ -154,7 +154,7 @@ class CustomerChangePasswordSubscriberTest extends TestCase
             'password' => null,
             'legacyPassword' => Hasher::hash($password, 'md5'),
             'legacyEncoder' => 'Md5',
-            'name' => 'encryption',
+            'title' => 'encryption',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];

@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(QuerySigner::class)]
 class QuerySignerTest extends TestCase
 {

@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 #[CoversClass(SeoUrlUpdater::class)]
 class SeoUrlUpdaterTest extends TestCase
 {

@@ -13,7 +13,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 /**
  * @extends EntityCollection<RuleEntity>
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleCollection extends EntityCollection
 {
     public function filterMatchingRules(Cart $cart, SalesChannelContext $context): self

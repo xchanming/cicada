@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 #[CoversClass(ConfigReader::class)]
 class ConfigReaderTest extends TestCase
 {

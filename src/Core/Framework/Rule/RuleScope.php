@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class RuleScope
 {
     abstract public function getContext(): Context;

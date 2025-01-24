@@ -7,7 +7,7 @@ use Cicada\Core\Content\ImportExport\DataAbstractionLayer\Serializer\Field\Abstr
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class SerializerRegistry
 {
     /**

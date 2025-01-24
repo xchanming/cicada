@@ -7,7 +7,7 @@ const { Criteria } = Cicada.Data;
 
 /**
  * @private
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  * @memberOf module:core/service/rule-assignment-configuration
  * @constructor
  * @method createRuleAssignmentConfigService

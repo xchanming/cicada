@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal experimental atm
  */
-#[Package('core')]
+#[Package('framework')]
 interface ProfilerInterface
 {
     public function start(string $title, string $category, array $tags): void;

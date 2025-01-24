@@ -19,7 +19,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Language\LanguageDefinition;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class PrimaryKeyResolver
 {
     /**

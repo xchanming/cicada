@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Adapter\Filesystem\Adapter;
 use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\FilesystemAdapter;
 
-#[Package('core')]
+#[Package('framework')]
 interface AdapterFactoryInterface
 {
     public function create(array $config): FilesystemAdapter;

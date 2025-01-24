@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\CreatedAtFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CreatedAtField extends DateTimeField
 {
     public function __construct()

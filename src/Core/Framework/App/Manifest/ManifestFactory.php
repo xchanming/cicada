@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class ManifestFactory
 {
     public function createFromXmlFile(string $file): Manifest

@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Adapter\Twig\NamespaceHierarchy;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class NamespaceHierarchyBuilder
 {
     /**

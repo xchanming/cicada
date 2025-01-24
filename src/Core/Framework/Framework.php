@@ -45,7 +45,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Framework extends Bundle
 {
     public function getTemplatePriority(): int

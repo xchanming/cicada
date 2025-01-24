@@ -7,7 +7,7 @@ use Cicada\Core\Checkout\CheckoutRuleScope;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CartRuleScope extends CheckoutRuleScope
 {
     public function __construct(

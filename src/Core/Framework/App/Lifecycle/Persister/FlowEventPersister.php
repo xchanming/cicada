@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class FlowEventPersister
 {
     public function __construct(

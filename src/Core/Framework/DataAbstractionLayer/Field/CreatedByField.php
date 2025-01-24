@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\CreatedByFieldSer
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class CreatedByField extends FkField
 {
     public function __construct(private readonly array $allowedWriteScopes = [Context::SYSTEM_SCOPE])

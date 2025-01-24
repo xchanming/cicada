@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class ShopConfiguratorTest extends TestCase
 {
     use CacheTestBehaviour;

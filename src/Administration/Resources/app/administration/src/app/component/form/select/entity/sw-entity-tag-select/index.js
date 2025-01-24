@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 const { Component } = Cicada;
 const { Criteria } = Cicada.Data;
 

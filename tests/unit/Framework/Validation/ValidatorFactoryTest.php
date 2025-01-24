@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(ValidatorFactory::class)]
 class ValidatorFactoryTest extends TestCase
 {

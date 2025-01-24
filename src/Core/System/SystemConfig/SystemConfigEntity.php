@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class SystemConfigEntity extends Entity
 {
     use EntityIdTrait;

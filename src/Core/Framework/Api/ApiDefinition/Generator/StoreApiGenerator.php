@@ -22,7 +22,7 @@ use OpenApi\Annotations\Parameter;
  * @phpstan-import-type Api from DefinitionService
  * @phpstan-import-type OpenApiSpec from DefinitionService
  */
-#[Package('core')]
+#[Package('framework')]
 class StoreApiGenerator implements ApiDefinitionGeneratorInterface
 {
     final public const FORMAT = 'openapi-3';

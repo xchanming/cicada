@@ -16,7 +16,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelEntity;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class NavigationPageSeoUrlRoute implements SeoUrlRouteInterface
 {
     final public const ROUTE_NAME = 'frontend.navigation.page';

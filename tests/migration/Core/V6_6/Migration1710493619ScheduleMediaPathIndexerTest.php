@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1710493619ScheduleMediaPathIndexer::class)]
 class Migration1710493619ScheduleMediaPathIndexerTest extends TestCase
 {

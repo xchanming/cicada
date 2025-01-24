@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Script\Debugging;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class Debug
 {
     protected array $dumps = [];

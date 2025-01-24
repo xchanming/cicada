@@ -76,7 +76,7 @@ use Doctrine\DBAL\Types\Types;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class SchemaBuilder
 {
     /**

@@ -7,7 +7,7 @@ use League\Flysystem\FilesystemOperator;
 use Pentatrion\ViteBundle\Service\FileAccessor;
 use Symfony\Component\Asset\Packages;
 
-#[Package('administration')]
+#[Package('framework')]
 class ViteFileAccessorDecorator extends FileAccessor
 {
     private string $assetPath;

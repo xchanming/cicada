@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1733136208AddH1ToCmsCategoryListing extends MigrationStep
 {
     public function getCreationTimestamp(): int

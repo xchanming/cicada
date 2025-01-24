@@ -11,7 +11,7 @@ use Cicada\Core\System\NumberRange\Aggregate\NumberRangeState\NumberRangeStateEn
 use Cicada\Core\System\NumberRange\Aggregate\NumberRangeTranslation\NumberRangeTranslationCollection;
 use Cicada\Core\System\NumberRange\Aggregate\NumberRangeType\NumberRangeTypeEntity;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeEntity extends Entity
 {
     use EntityCustomFieldsTrait;

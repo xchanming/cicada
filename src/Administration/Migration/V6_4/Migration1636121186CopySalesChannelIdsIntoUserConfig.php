@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1636121186CopySalesChannelIdsIntoUserConfig extends MigrationStep
 {
     private const CONFIG_KEY = 'sales-channel-favorites';

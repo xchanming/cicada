@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Dbal\FieldResolver\ManyToOneAssoc
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\ManyToOneAssociationFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ManyToOneAssociationField extends AssociationField
 {
     final public const PRIORITY = 80;

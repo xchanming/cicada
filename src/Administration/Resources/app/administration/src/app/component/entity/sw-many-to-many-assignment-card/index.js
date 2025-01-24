@@ -6,7 +6,7 @@ const { debounce, get } = Cicada.Utils;
 const { Criteria, EntityCollection } = Cicada.Data;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

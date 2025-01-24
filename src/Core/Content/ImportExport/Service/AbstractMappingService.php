@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractMappingService
 {
     abstract public function getDecorated(): AbstractMappingService;

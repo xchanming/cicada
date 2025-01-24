@@ -26,7 +26,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Event\EntityWrittenEvent;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\Event\NestedEventCollection;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\Hookable\HookableEventFactory;
@@ -169,7 +168,7 @@ class WebhookManagerTest extends TestCase
         static::assertJson($body);
 
         $data = json_decode($body, true, 512, \JSON_THROW_ON_ERROR);
-        static::assertSame('Max', $data['data']['payload']['customer']['name']);
+        static::assertSame('Max', $data['data']['payload']['customer']['title']);
         static::assertArrayHasKey('timestamp', $data);
         static::assertArrayHasKey('eventId', $data['source']);
         unset($data['timestamp'], $data['data']['payload']['customer'], $data['source']['eventId']);
@@ -1038,16 +1037,12 @@ class WebhookManagerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => 'test@gmail.com',
             'password' => '12345678',
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
             'vatIds' => ['DE123456789'],
             'company' => 'Test',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')
             ->create([$customer], Context::createDefaultContext());

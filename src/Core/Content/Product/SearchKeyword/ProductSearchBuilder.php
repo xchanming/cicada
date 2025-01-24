@@ -15,7 +15,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('services-settings')]
+#[Package('inventory')]
 class ProductSearchBuilder implements ProductSearchBuilderInterface
 {
     /**

@@ -13,7 +13,7 @@ use PHPUnit\Framework\Attributes\CodeCoverageIgnore;
  *
  * @codeCoverageIgnore @see \Cicada\Tests\Integration\Core\Framework\Webhook\Service\RelatedWebhooksTest
  */
-#[Package('core')]
+#[Package('framework')]
 class RelatedWebhooks
 {
     public function __construct(

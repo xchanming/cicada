@@ -5,7 +5,7 @@ namespace Cicada\Core\System\NumberRange\ValueGenerator\Pattern;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('checkout')]
+#[Package('framework')]
 class ValueGeneratorPatternRegistry
 {
     /**

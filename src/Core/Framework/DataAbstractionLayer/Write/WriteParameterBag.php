@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class WriteParameterBag
 {
     private ?string $currentWriteLanguageId = null;

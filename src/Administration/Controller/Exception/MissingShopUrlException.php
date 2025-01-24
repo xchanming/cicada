@@ -5,7 +5,7 @@ namespace Cicada\Administration\Controller\Exception;
 use Cicada\Core\Framework\CicadaHttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('administration')]
+#[Package('framework')]
 class MissingShopUrlException extends CicadaHttpException
 {
     public function __construct()

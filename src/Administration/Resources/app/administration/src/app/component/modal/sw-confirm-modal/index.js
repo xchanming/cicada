@@ -3,7 +3,7 @@ import template from './sw-confirm-modal.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

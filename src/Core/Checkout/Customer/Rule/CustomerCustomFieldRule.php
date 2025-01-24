@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Rule\Exception\UnsupportedOperatorException;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Rule\RuleScope;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CustomerCustomFieldRule extends Rule
 {
     final public const RULE_NAME = 'customerCustomField';

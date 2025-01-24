@@ -4,7 +4,7 @@ namespace Cicada\Core\DevOps\Docs;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ArrayWriter
 {
     /**

@@ -1,5 +1,5 @@
 /**
- * @package buyers-experience
+ * @sw-package buyers-experience
  */
 import './acl';
 
@@ -51,10 +51,10 @@ Module.register('sw-settings-language', {
         },
     },
 
-    settingsItem: {
-        group: 'shop',
-        to: 'sw.settings.language.index',
-        icon: 'regular-flag',
-        privilege: 'language.viewer',
-    },
+    // settingsItem: {
+    //     group: 'shop',
+    //     to: 'sw.settings.language.index',
+    //     icon: 'regular-flag',
+    //     privilege: 'language.viewer',
+    // },
 });

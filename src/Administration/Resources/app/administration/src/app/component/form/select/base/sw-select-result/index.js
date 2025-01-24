@@ -4,7 +4,7 @@ import template from './sw-select-result.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

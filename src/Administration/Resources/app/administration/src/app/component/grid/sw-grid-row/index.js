@@ -5,7 +5,7 @@ const { Component } = Cicada;
 const utils = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

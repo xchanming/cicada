@@ -81,7 +81,7 @@ Cicada.Component.register('sw-extension-app-module-page', () => import('./page/s
 /* eslint-enable max-len, sw-deprecation-rules/private-feature-declarations */
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 Cicada.Module.register('sw-extension', {

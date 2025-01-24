@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @extends EntityCollection<UserRecoveryEntity>
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class UserRecoveryCollection extends EntityCollection
 {
     public function getApiAlias(): string

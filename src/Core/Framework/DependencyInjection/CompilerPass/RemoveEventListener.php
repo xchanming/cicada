@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DependencyInjection\CompilerPass;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class RemoveEventListener
 {
     /**

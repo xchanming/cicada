@@ -17,7 +17,7 @@ use Doctrine\DBAL\ArrayParameterType;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlPersister
 {
     /**

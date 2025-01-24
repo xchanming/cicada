@@ -29,7 +29,7 @@ use Doctrine\DBAL\Connection;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use Symfony\Contracts\Service\ResetInterface;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class SystemConfigService implements ResetInterface
 {
     /**

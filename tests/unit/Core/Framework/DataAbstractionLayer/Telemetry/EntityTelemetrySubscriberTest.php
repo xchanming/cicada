@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(EntityTelemetrySubscriber::class)]
 class EntityTelemetrySubscriberTest extends TestCase
 {

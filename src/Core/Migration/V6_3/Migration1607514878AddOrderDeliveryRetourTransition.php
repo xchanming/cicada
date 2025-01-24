@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1607514878AddOrderDeliveryRetourTransition extends MigrationStep
 {
     public function getCreationTimestamp(): int

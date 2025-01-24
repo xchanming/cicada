@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Api\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\JsonSerializableTrait;
 
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelApiSource implements ContextSource, \JsonSerializable
 {
     use JsonSerializableTrait;

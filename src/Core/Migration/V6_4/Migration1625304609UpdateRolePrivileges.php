@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1625304609UpdateRolePrivileges extends MigrationStep
 {
     public function getCreationTimestamp(): int

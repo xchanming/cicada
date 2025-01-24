@@ -6,7 +6,7 @@ const types = Cicada.Utils.types;
 /**
  * @class
  * @extends BulkEditBaseHandler
- * @package services-settings
+ * @sw-package inventory
  */
 class BulkEditCustomerHandler extends BulkEditBaseHandler {
     constructor() {

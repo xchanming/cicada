@@ -6,7 +6,7 @@ use Cicada\Core\Checkout\Customer\CustomerException;
 use Cicada\Core\Framework\DataAbstractionLayer\Dbal\ExceptionHandlerInterface;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('checkout')]
 class CustomerWishlistProductExceptionHandler implements ExceptionHandlerInterface
 {
     public function getPriority(): int

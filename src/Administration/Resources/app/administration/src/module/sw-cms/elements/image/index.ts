@@ -1,22 +1,22 @@
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-preview-image', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-config-image', () => import('./config'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-image', () => import('./component'));
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'image',
@@ -56,6 +56,10 @@ Cicada.Service('cmsService').registerCmsElement({
         horizontalAlign: {
             source: 'static',
             value: 'center',
+        },
+        isDecorative: {
+            source: 'static',
+            value: false,
         },
     },
 });

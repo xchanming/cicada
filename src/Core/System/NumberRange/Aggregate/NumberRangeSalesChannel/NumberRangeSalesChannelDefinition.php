@@ -14,7 +14,7 @@ use Cicada\Core\System\NumberRange\Aggregate\NumberRangeType\NumberRangeTypeDefi
 use Cicada\Core\System\NumberRange\NumberRangeDefinition;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeSalesChannelDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'number_range_sales_channel';

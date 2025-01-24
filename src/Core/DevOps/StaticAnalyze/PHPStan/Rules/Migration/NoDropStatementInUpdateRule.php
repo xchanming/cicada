@@ -28,7 +28,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @implements Rule<ClassMethod>
  */
-#[Package('core')]
+#[Package('framework')]
 class NoDropStatementInUpdateRule implements Rule
 {
     use InMigrationClassTrait;

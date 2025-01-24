@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Adapter\Cache\Event;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AddCacheTagEvent
 {
     /**

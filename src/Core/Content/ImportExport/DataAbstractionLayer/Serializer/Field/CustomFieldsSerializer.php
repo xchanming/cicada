@@ -11,7 +11,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\CustomFieldsSeria
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\CustomFieldService;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class CustomFieldsSerializer extends FieldSerializer
 {
     /**

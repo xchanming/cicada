@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\VersionFieldSeria
 use Cicada\Core\Framework\DataAbstractionLayer\Version\VersionDefinition;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class VersionField extends FkField
 {
     public function __construct()

@@ -5,7 +5,7 @@ namespace Cicada\Core\System\NumberRange\ValueGenerator\Pattern\IncrementStorage
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\Exception\IncrementStorageNotFoundException;
 
-#[Package('checkout')]
+#[Package('framework')]
 class IncrementStorageRegistry
 {
     /**

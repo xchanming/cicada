@@ -2,7 +2,7 @@
     {% set formPrefix = 'cms-form-contact' %}
     <form action="{{ path(action) }}"
           method="post"
-          data-form-validation="true"
+          data-form-handler="true"
           data-form-preserver="true"
           id="{{ formPrefix }}"
           aria-label="{{ element.config.title.value ? element.config.title.value : 'contact.headline'|trans }}">

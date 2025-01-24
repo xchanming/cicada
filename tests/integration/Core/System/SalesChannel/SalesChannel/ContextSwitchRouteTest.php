@@ -5,7 +5,6 @@ namespace Cicada\Tests\Integration\Core\System\SalesChannel\SalesChannel;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -340,15 +339,10 @@ class ContextSwitchRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => $password,
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->customerRepository->create([$customer], Context::createDefaultContext());
 
         return $customerId;

@@ -16,7 +16,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1586173614AddAdditionalImportExportProfiles extends MigrationStep
 {
     public function getCreationTimestamp(): int

@@ -21,7 +21,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\UserDefinition;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportLogDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'import_export_log';

@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Indexing;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class TreeUpdaterBag
 {
     private array $entities = [];

@@ -7,7 +7,7 @@ const { cloneDeep } = Cicada.Utils.object;
 
 /**
  * @private
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 export default {
     template,

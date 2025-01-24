@@ -9,7 +9,7 @@ use PHPStan\Analyser\Scope;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 trait InMigrationClassTrait
 {
     protected function isInMigrationClass(Scope $scope): bool

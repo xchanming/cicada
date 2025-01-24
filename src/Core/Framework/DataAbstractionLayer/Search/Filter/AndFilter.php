@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class AndFilter extends MultiFilter
 {
     public function __construct(array $queries = [])

@@ -19,7 +19,7 @@ use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\System\Tag\TagCollection;
 use Cicada\Core\System\TaxProvider\TaxProviderCollection;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleEntity extends Entity
 {
     use EntityCustomFieldsTrait;

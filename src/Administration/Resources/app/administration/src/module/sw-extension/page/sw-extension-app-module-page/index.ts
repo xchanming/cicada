@@ -5,7 +5,7 @@ import './sw-extension-app-module-page.scss';
 const { State, Context } = Cicada;
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default Cicada.Component.wrapComponentConfig({

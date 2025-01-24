@@ -12,7 +12,7 @@ const { getObjectDiff } = Cicada.Utils.object;
 /**
  * @class
  *
- * @package services-settings
+ * @sw-package inventory
  */
 class BulkEditBaseHandler {
     constructor() {

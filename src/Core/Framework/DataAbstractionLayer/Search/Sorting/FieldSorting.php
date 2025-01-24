@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\CriteriaPartInterface;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 class FieldSorting extends Struct implements CriteriaPartInterface
 {
     public const ASCENDING = 'ASC';

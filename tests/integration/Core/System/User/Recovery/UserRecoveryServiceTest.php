@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class UserRecoveryServiceTest extends TestCase
 {
     use IntegrationTestBehaviour;

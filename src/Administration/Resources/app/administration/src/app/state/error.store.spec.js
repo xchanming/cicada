@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import instance from './error.store';
 
 describe('Test actions at file src/app/state/error.store.js', () => {

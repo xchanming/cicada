@@ -16,7 +16,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\System\Language\LanguageCollection;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class TranslationsSerializer extends FieldSerializer
 {
     /**

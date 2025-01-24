@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1649858046UpdateConfigurableFormatAndValidationForAddressCountry extends MigrationStep
 {
     final public const PATTERNS = [

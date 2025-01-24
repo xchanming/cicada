@@ -126,7 +126,7 @@
             :criteria="stateCityCriteria"
             :label="$tc('sw-customer.addressForm.labelCity')"
             :placeholder="$tc('sw-customer.addressForm.placeholderCity')"
-            :error="disabled ? null : addressCityError"
+            :error="disabled ? null : addressCityIdError"
             :disabled="disabled || !(address.countryStateId)"
             show-clearable-button
         />
@@ -142,7 +142,7 @@
             :criteria="stateDistrictCriteria"
             :label="$tc('sw-customer.addressForm.labelDistrict')"
             :placeholder="$tc('sw-customer.addressForm.placeholderDistrict')"
-            :error="disabled ? null : addressDistrictError"
+            :error="disabled ? null : addressDistrictIdError"
             :disabled="disabled || !(address.cityId)"
             show-clearable-button
         />

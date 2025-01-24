@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class PermissionPersister
 {
     public function __construct(private readonly Connection $connection)

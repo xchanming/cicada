@@ -19,7 +19,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
  *
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class StoreApiHook extends InterfaceHook implements SalesChannelContextAware
 {
     use ScriptResponseAwareTrait;

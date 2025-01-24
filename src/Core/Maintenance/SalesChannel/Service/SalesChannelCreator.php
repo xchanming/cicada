@@ -17,7 +17,7 @@ use Cicada\Core\Maintenance\MaintenanceException;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('discovery')]
 class SalesChannelCreator
 {
     /**

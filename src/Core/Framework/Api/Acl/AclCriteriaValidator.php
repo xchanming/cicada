@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
-#[Package('core')]
+#[Package('framework')]
 class AclCriteriaValidator
 {
     /**

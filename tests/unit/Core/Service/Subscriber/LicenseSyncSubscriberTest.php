@@ -32,7 +32,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(LicenseSyncSubscriber::class)]
-#[Package('core')]
+#[Package('framework')]
 class LicenseSyncSubscriberTest extends TestCase
 {
     /**

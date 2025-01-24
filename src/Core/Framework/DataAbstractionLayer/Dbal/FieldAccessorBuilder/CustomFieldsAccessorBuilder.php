@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class CustomFieldsAccessorBuilder extends JsonFieldAccessorBuilder
 {
     /**

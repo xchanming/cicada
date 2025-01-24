@@ -5,7 +5,7 @@ namespace Cicada\Core\System\NumberRange\ValueGenerator;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('checkout')]
+#[Package('framework')]
 interface NumberRangeValueGeneratorInterface
 {
     /**

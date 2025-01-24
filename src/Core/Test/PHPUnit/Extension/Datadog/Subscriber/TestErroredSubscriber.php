@@ -13,7 +13,7 @@ use PHPUnit\Event\Test\ErroredSubscriber;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TestErroredSubscriber implements ErroredSubscriber
 {
     public function __construct(

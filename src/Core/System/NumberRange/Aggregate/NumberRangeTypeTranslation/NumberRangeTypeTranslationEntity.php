@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\TranslationEntity;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\NumberRange\Aggregate\NumberRangeType\NumberRangeTypeEntity;
 
-#[Package('checkout')]
+#[Package('framework')]
 class NumberRangeTypeTranslationEntity extends TranslationEntity
 {
     use EntityCustomFieldsTrait;

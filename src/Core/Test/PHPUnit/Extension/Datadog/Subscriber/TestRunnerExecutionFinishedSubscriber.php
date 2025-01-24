@@ -12,7 +12,7 @@ use PHPUnit\Event\TestRunner\ExecutionFinishedSubscriber;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TestRunnerExecutionFinishedSubscriber implements ExecutionFinishedSubscriber
 {
     public function __construct(

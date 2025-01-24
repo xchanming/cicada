@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\StateMachineState
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\StateMachine\Aggregation\StateMachineState\StateMachineStateDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class StateMachineStateField extends FkField
 {
     /**

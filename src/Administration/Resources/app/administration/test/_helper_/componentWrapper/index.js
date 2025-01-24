@@ -1,4 +1,7 @@
 /**
+ * @sw-package unknown
+ */
+/**
  * @package admin
 */
 /* eslint-disable sw-test-rules/await-async-functions */

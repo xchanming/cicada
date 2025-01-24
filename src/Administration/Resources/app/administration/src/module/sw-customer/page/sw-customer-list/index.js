@@ -2,7 +2,7 @@ import template from './sw-customer-list.html.twig';
 import './sw-customer-list.scss';
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 
 const { Mixin } = Cicada;
@@ -289,10 +289,10 @@ export default {
         getCustomerColumns() {
             const columns = [
                 {
-                    property: 'name',
-                    dataIndex: 'name',
+                    property: 'title',
+                    dataIndex: 'title',
                     inlineEdit: 'string',
-                    label: 'sw-customer.list.columnName',
+                    label: 'sw-customer.list.columnTitle',
                     routerLink: 'sw.customer.detail',
                     width: '250px',
                     allowResize: true,

@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default (() => {
     if (window._features_.ADMIN_VITE) {

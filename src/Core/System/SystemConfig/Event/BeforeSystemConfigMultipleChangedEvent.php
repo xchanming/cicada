@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SystemConfig\Event;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Contracts\EventDispatcher\Event;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class BeforeSystemConfigMultipleChangedEvent extends Event
 {
     /**

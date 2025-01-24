@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Api\Sync;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\EntityNotFoundException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractFkResolver
 {
     /**

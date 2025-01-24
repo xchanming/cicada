@@ -19,7 +19,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
  *
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class StoreApiCacheKeyHook extends OptionalFunctionHook implements SalesChannelContextAware, StoppableHook
 {
     use StoppableHookTrait;

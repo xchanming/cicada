@@ -1,7 +1,7 @@
 const { Component } = Cicada;
 
 /**
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 Component.extend('sw-condition-is-net-select', 'sw-condition-operator-select', {
     computed: {

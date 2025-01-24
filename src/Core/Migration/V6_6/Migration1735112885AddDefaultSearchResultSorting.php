@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1735112885AddDefaultSearchResultSorting extends MigrationStep
 {
     private const CONFIG_KEY = 'core.listing.defaultSearchResultSorting';

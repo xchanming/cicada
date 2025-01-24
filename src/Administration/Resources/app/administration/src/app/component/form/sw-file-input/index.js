@@ -7,7 +7,7 @@ const { fileSize } = Cicada.Utils.format;
 const utils = Cicada.Utils;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description The <u>sw-file-input</u> component can be used wherever a file input is needed.

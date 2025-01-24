@@ -6,7 +6,7 @@ use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEn
 use Cicada\Core\Framework\Log\Package;
 use League\Flysystem\FilesystemOperator;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CsvFileWriterFactory extends AbstractWriterFactory
 {
     /**

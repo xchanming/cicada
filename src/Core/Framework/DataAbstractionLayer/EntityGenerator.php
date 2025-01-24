@@ -44,7 +44,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @final
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityGenerator
 {
     private string $classTemplate = <<<EOF

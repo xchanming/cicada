@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1565270366PromotionSetGroupRule extends MigrationStep
 {
     public function getCreationTimestamp(): int

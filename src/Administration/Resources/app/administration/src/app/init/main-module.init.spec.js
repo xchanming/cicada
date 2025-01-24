@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 import { ui } from '@cicada-ag/meteor-admin-sdk';
 import initMainModules from 'src/app/init/main-module.init';

@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Product\DataAbstractionLayer\CheapestPrice;
 use Cicada\Core\Checkout\Cart\Price\Struct\CalculatedPrice;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class CalculatedCheapestPrice extends CalculatedPrice
 {
     /**

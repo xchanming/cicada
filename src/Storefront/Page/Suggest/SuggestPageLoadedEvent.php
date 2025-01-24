@@ -7,7 +7,7 @@ use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Page\PageLoadedEvent;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('services-settings')]
+#[Package('discovery')]
 class SuggestPageLoadedEvent extends PageLoadedEvent
 {
     /**

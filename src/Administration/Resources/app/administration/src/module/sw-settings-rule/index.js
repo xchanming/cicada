@@ -31,7 +31,7 @@ Cicada.Component.register('sw-settings-rule-detail-assignments', () => import('.
 
 /**
  * @private
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 Module.register('sw-settings-rule', {
     type: 'core',

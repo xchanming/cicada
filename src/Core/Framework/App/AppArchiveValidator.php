@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
  *
  * @codeCoverageIgnore Integration tested with \Cicada\Tests\Integration\Core\Framework\App\AppArchiveValidatorTest
  */
-#[Package('core')]
+#[Package('framework')]
 class AppArchiveValidator
 {
     public function validate(\ZipArchive $archive, ?string $expectedAppName = null): void

@@ -22,7 +22,7 @@ use Cicada\Core\Framework\Log\Package;
  *         }
  *     }
  */
-#[Package('core')]
+#[Package('framework')]
 interface BundleConfigGeneratorInterface
 {
     /**

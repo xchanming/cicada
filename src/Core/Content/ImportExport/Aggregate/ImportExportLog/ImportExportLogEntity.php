@@ -9,7 +9,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\User\UserEntity;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ImportExportLogEntity extends Entity
 {
     use EntityIdTrait;

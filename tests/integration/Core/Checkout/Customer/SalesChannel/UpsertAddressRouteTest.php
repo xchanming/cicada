@@ -90,6 +90,8 @@ class UpsertAddressRouteTest extends TestCase
     {
         $data['countryId'] = $this->getValidCountryId();
         $data['cityId'] = $this->getValidCountryCityId();
+        $data['districtId'] = $this->getValidCountryDistrictId();
+        $data['phoneNumber'] = '123456789';
 
         if (\array_key_exists('salutationId', $data)) {
             $data['salutationId'] = $this->getValidSalutationId();
@@ -196,9 +198,10 @@ class UpsertAddressRouteTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Test',
             'street' => 'Test',
-            'zipcode' => 'Test',
+            'phoneNumber' => 'Test',
             'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
+            'districtId' => $this->getValidCountryDistrictId(),
         ];
 
         $this->browser

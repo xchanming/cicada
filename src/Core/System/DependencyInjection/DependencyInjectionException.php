@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Exception\DefinitionNotFoundExcep
 use Cicada\Core\Framework\HttpException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('checkout')]
 class DependencyInjectionException extends HttpException
 {
     public const NUMBER_RANGE_REDIS_NOT_CONFIGURED = 'SYSTEM__NUMBER_RANGE_REDIS_NOT_CONFIGURED';

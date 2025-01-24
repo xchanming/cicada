@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[Group('rules')]
 class LineItemOfManufacturerRuleTest extends TestCase
 {

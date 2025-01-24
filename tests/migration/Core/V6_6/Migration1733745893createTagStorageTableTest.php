@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1733745893createTagStorageTable::class)]
 class Migration1733745893createTagStorageTableTest extends TestCase
 {

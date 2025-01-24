@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppCookieProvider implements CookieProviderInterface
 {
     /**

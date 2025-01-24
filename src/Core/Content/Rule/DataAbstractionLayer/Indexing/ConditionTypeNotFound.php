@@ -4,7 +4,7 @@ namespace Cicada\Core\Content\Rule\DataAbstractionLayer\Indexing;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class ConditionTypeNotFound extends \RuntimeException
 {
 }

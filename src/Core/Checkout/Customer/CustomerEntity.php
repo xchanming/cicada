@@ -47,7 +47,7 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected ?string $salutationId = null;
 
-    protected string $name;
+    protected ?string $name = null;
 
     protected ?string $company = null;
 
@@ -58,7 +58,7 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected string $email;
 
-    protected ?string $title = null;
+    protected string $title;
 
     /**
      * @var array<string>|null
@@ -142,8 +142,6 @@ class CustomerEntity extends Entity implements \Stringable
 
     protected int $autoIncrement;
 
-    protected ?string $phoneNumber;
-
     protected ?TagCollection $tags = null;
 
     /**
@@ -179,7 +177,7 @@ class CustomerEntity extends Entity implements \Stringable
 
     public function __toString(): string
     {
-        return $this->getName();
+        return $this->getName() ?? $this->getTitle();
     }
 
     public function getGroupId(): string
@@ -300,12 +298,12 @@ class CustomerEntity extends Entity implements \Stringable
         $this->email = $email;
     }
 
-    public function getTitle(): ?string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function setTitle(?string $title): void
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -336,12 +334,12 @@ class CustomerEntity extends Entity implements \Stringable
         $this->active = $active;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
@@ -417,9 +415,9 @@ class CustomerEntity extends Entity implements \Stringable
     }
 
     /**
-     * @internal
-     *
      * @return array<string>|null
+     *
+     * @internal
      */
     public function getNewsletterSalesChannelIds(): ?array
     {
@@ -429,9 +427,9 @@ class CustomerEntity extends Entity implements \Stringable
     }
 
     /**
-     * @internal
-     *
      * @param array<string>|null $newsletterSalesChannelIds
+     *
+     * @internal
      */
     public function setNewsletterSalesChannelIds(?array $newsletterSalesChannelIds): void
     {
@@ -861,15 +859,5 @@ class CustomerEntity extends Entity implements \Stringable
     public function setAvatarMedia(MediaEntity $avatarMedia): void
     {
         $this->avatarMedia = $avatarMedia;
-    }
-
-    public function getPhoneNumber(): ?string
-    {
-        return $this->phoneNumber;
-    }
-
-    public function setPhoneNumber(?string $phoneNumber): void
-    {
-        $this->phoneNumber = $phoneNumber;
     }
 }

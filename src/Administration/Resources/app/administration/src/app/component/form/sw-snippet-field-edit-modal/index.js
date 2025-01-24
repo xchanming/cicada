@@ -4,7 +4,7 @@ import template from './sw-snippet-field-edit-modal.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @status ready

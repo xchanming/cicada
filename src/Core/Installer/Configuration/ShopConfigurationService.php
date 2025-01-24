@@ -20,7 +20,7 @@ use Psr\EventDispatcher\EventDispatcherInterface;
  *
  * @phpstan-import-type Shop from ShopConfigurationController
  */
-#[Package('core')]
+#[Package('framework')]
 class ShopConfigurationService
 {
     public function __construct(

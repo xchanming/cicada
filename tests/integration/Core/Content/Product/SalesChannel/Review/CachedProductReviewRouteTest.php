@@ -17,11 +17,8 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
 use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\DatabaseTransactionBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
-use Cicada\Core\Framework\Uuid\Uuid;
-use Cicada\Core\System\SalesChannel\Context\SalesChannelContextFactory;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
-use Cicada\Core\Test\TestDefaults;
 use PHPUnit\Framework\Attributes\AfterClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
@@ -40,15 +37,10 @@ class CachedProductReviewRouteTest extends TestCase
     use DatabaseTransactionBehaviour;
     use KernelTestBehaviour;
 
-    private SalesChannelContext $context;
-
     protected function setUp(): void
     {
         Feature::skipTestIfActive('cache_rework', $this);
         parent::setUp();
-
-        $this->context = static::getContainer()->get(SalesChannelContextFactory::class)
-            ->create(Uuid::randomHex(), TestDefaults::SALES_CHANNEL);
     }
 
     #[AfterClass]

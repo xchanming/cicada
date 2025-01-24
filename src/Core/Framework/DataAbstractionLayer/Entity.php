@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Struct\ArrayStruct;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 class Entity extends Struct
 {
     /**

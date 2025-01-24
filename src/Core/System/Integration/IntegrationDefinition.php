@@ -20,7 +20,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Integration\Aggregate\IntegrationRole\IntegrationRoleDefinition;
 
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class IntegrationDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'integration';

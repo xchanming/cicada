@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
  * Defines the current state of an entity in relation to the parent-child inheritance and
  * existence in the storage or command queue.
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityExistence
 {
     /**

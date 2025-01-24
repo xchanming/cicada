@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Migration;
 use Cicada\Core\Framework\Log\Package;
 use Doctrine\DBAL\Connection;
 
-#[Package('core')]
+#[Package('framework')]
 trait InheritanceUpdaterTrait
 {
     protected function updateInheritance(Connection $connection, string $entity, string $propertyName): void

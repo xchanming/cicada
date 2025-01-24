@@ -9,7 +9,7 @@ use League\OAuth2\Server\CryptKey;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 final class FakeCryptKey extends CryptKey
 {
     /**

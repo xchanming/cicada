@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Webhook\BusinessEventEncoder;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Exception;
 
-#[Package('core')]
+#[Package('framework')]
 class AppFlowActionProvider
 {
     /**

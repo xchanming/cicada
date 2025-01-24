@@ -19,7 +19,7 @@ use Doctrine\DBAL\Connection;
 /**
  * This class can be used to regenerate the seo urls for a route and an offset at ids.
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoUrlUpdater
 {
     /**

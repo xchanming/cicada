@@ -11,7 +11,7 @@ use Cicada\Core\System\CustomEntity\Xml\Field\StringField;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class CustomEntityXmlSchemaValidator
 {
     public function validate(CustomEntityXmlSchema $schema): void

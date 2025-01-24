@@ -1,5 +1,5 @@
 /**
- * @package admin
+ * @sw-package framework
  */
 
 import { updateSubscriber, register, handleGet } from '@cicada-ag/meteor-admin-sdk/es/data';

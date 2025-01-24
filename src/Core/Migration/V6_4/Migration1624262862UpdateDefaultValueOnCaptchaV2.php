@@ -12,7 +12,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1624262862UpdateDefaultValueOnCaptchaV2 extends MigrationStep
 {
     private const CONFIG_KEY = 'core.basicInformation.activeCaptchasV2';

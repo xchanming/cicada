@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1623305620ChangeSalutationIdNullable extends MigrationStep
 {
     final public const TABLES = [

@@ -21,7 +21,7 @@ use Doctrine\DBAL\Connection;
  *
  * @phpstan-import-type SequenceData from Migration1648803451FixInvalidMigrationOfBusinessEventToFlow
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1625583619MoveDataFromEventActionToFlow extends MigrationStep
 {
     private const RECIPIENT_TYPE_DEFAULT = 'default';

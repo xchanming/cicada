@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityCustomFieldsTrait;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppFlowActionEntity extends Entity
 {
     use EntityCustomFieldsTrait;

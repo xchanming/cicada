@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Struct;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 trait CloneTrait
 {
     public function __clone()

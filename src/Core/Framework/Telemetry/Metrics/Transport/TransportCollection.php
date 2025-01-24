@@ -15,7 +15,7 @@ use IteratorAggregate;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TransportCollection implements \IteratorAggregate
 {
     /**

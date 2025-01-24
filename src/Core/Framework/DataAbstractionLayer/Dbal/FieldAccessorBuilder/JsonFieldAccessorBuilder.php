@@ -17,7 +17,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class JsonFieldAccessorBuilder implements FieldAccessorBuilderInterface
 {
     /**

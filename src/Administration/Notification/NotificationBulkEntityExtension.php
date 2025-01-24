@@ -13,7 +13,7 @@ use Cicada\Core\System\User\UserDefinition;
  *
  * @codeCoverageIgnore
  */
-#[Package('administration')]
+#[Package('framework')]
 class NotificationBulkEntityExtension extends BulkEntityExtension
 {
     public function collect(): \Generator

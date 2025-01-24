@@ -7,7 +7,7 @@ use Cicada\Core\Content\ImportExport\Struct\Config;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractFieldSerializer
 {
     protected SerializerRegistry $serializerRegistry;

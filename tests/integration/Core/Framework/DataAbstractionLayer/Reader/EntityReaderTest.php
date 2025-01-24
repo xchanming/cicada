@@ -35,7 +35,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ConsistsOfManyToManyDefinition;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\NonIdFieldNamePrimaryKeyTestDefinition;
@@ -1027,7 +1026,7 @@ class EntityReaderTest extends TestCase
 
         $customer = [
             'id' => $id,
-            'name' => 'Test',
+            'title' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1074,7 +1073,7 @@ class EntityReaderTest extends TestCase
 
         $customer = [
             'id' => $id,
-            'name' => 'Test',
+            'title' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1091,10 +1090,6 @@ class EntityReaderTest extends TestCase
                 $address,
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->upsert([$customer], $context);
 
@@ -1130,7 +1125,7 @@ class EntityReaderTest extends TestCase
             'countryId' => $this->getValidCountryId(),
         ];
         $customer = [
-            'name' => 'Test',
+            'title' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1138,10 +1133,6 @@ class EntityReaderTest extends TestCase
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'group' => ['name' => 'test'],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->upsert([
             array_merge(
@@ -1222,8 +1213,6 @@ class EntityReaderTest extends TestCase
         $addressId5 = Uuid::randomHex();
         $addressId6 = Uuid::randomHex();
 
-        $repository = $this->customerRepository;
-
         $address = [
             'street' => 'A',
             'zipcode' => 'A',
@@ -1233,16 +1222,12 @@ class EntityReaderTest extends TestCase
         ];
         $customer = [
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Test',
+            'title' => 'Test',
             'customerNumber' => 'A',
             'password' => TestDefaults::HASHED_PASSWORD,
             'salesChannelId' => TestDefaults::SALES_CHANNEL,
             'group' => ['name' => 'test'],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->upsert([
             array_merge(
@@ -1359,7 +1344,7 @@ class EntityReaderTest extends TestCase
 
         $customer = [
             'id' => $id,
-            'name' => 'Test',
+            'title' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1376,10 +1361,6 @@ class EntityReaderTest extends TestCase
                 array_merge($address, ['street' => 'D']),
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->upsert([$customer], $context);
 
@@ -1431,7 +1412,7 @@ class EntityReaderTest extends TestCase
 
         $customer = [
             'id' => $id,
-            'name' => 'Test',
+            'title' => 'Test',
             'customerNumber' => 'A',
             'salutationId' => $this->getValidSalutationId(),
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1448,10 +1429,6 @@ class EntityReaderTest extends TestCase
                 $address,
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->upsert([$customer], $context);
 

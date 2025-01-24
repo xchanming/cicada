@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer;
 use Cicada\Core\Framework\DataAbstractionLayer\Exception\MappingEntityClassesException;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class MappingEntityDefinition extends EntityDefinition
 {
     public function getCollectionClass(): string

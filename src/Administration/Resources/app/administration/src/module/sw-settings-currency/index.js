@@ -1,5 +1,5 @@
 /**
- * @package buyers-experience
+ * @sw-package buyers-experience
  */
 import './acl';
 
@@ -60,10 +60,10 @@ Module.register('sw-settings-currency', {
         },
     },
 
-    settingsItem: {
-        group: 'shop',
-        to: 'sw.settings.currency.index',
-        icon: 'regular-euro',
-        privilege: 'currencies.viewer',
-    },
+    // settingsItem: {
+    //     group: 'shop',
+    //     to: 'sw.settings.currency.index',
+    //     icon: 'regular-euro',
+    //     privilege: 'currencies.viewer',
+    // },
 });

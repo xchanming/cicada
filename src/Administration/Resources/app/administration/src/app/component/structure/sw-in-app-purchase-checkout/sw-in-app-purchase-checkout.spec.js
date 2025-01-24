@@ -1,7 +1,7 @@
 import 'src/app/store/in-app-purchase-checkout.store';
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 import { mount } from '@vue/test-utils';
 

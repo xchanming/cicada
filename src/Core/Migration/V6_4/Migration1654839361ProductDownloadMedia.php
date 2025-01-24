@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1654839361ProductDownloadMedia extends MigrationStep
 {
     private const FOLDER_NAME = 'Product downloads';

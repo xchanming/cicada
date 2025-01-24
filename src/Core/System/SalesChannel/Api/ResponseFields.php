@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel\Api;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelException;
 
-#[Package('core')]
+#[Package('framework')]
 class ResponseFields
 {
     /**

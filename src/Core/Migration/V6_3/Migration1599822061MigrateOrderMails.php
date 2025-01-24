@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1599822061MigrateOrderMails extends MigrationStep
 {
     public function getCreationTimestamp(): int

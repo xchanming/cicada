@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Rule\RuleScope;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class LineItemGroupRule extends FilterRule
 {
     final public const RULE_NAME = 'cartLineItemInGroup';

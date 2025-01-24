@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1610625925RequireDataProtectionCheckbox extends MigrationStep
 {
     public function getCreationTimestamp(): int

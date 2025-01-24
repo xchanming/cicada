@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\Field;
 use Cicada\Core\Framework\Log\Package;
 use Psr\Log\LoggerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class CheapestPriceAccessorBuilder implements FieldAccessorBuilderInterface
 {
     /**

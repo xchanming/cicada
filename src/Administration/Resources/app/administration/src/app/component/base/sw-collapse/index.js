@@ -3,7 +3,7 @@ import template from './sw-collapse.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  * @description A container, which creates a collapsible list of items.

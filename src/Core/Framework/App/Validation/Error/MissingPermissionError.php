@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 class MissingPermissionError extends Error
 {
     private const KEY = 'manifest-missing-permission';

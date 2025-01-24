@@ -14,7 +14,7 @@ use Doctrine\DBAL\Exception;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1590408550AclResources extends MigrationStep
 {
     public function getCreationTimestamp(): int

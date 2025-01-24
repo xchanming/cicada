@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport\Processing\Pipe;
 use Cicada\Core\Content\ImportExport\Aggregate\ImportExportLog\ImportExportLogEntity;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class AbstractPipeFactory
 {
     abstract public function create(ImportExportLogEntity $logEntity): AbstractPipe;

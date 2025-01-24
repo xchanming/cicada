@@ -25,7 +25,7 @@ use Composer\Semver\Constraint\Constraint;
 use Composer\Semver\Constraint\ConstraintInterface;
 use Composer\Semver\VersionParser;
 
-#[Package('core')]
+#[Package('framework')]
 class RequirementsValidator
 {
     private Composer $pluginComposer;
@@ -226,7 +226,7 @@ class RequirementsValidator
                 $installedPluginComposerPackage->getConflicts(),
                 $installedPluginComposerPackage->getName(),
                 $this->pluginComposer->getPackage()->getName(),
-                new Constraint('==', $parser->normalize($installingPlugin->getVersion())),
+                new Constraint('==', $parser->normalize($installingPlugin->getUpgradeVersion() ?? $installingPlugin->getVersion())),
                 $exceptionStack
             );
 

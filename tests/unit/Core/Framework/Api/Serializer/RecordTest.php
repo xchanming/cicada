@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Record::class)]
 class RecordTest extends TestCase
 {

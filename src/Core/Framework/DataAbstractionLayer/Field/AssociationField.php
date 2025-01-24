@@ -6,7 +6,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AssociationField extends Field
 {
     /**

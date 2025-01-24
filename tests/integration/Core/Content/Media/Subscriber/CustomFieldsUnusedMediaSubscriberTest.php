@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(CustomFieldsUnusedMediaSubscriber::class)]
 class CustomFieldsUnusedMediaSubscriberTest extends TestCase
 {

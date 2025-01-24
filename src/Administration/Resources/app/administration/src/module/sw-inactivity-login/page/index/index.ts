@@ -4,7 +4,7 @@ import template from './sw-inactivity-login.html.twig';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  * @private
  */
 Component.register('sw-inactivity-login', {

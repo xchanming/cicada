@@ -18,7 +18,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppFlowEventDefinition extends EntityDefinition
 {
     public const ENTITY_NAME = 'app_flow_event';

@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\Before;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 trait MigrationUntouchedDbTestTrait
 {
     private string $databaseName = 'cicada';

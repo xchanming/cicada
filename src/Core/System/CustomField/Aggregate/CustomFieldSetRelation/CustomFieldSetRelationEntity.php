@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\CustomField\Aggregate\CustomFieldSet\CustomFieldSetEntity;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class CustomFieldSetRelationEntity extends Entity
 {
     use EntityIdTrait;

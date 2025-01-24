@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class UserValidationServiceTest extends TestCase
 {
     use IntegrationTestBehaviour;

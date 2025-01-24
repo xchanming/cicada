@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@framework')]
 class AclCriteriaValidatorTest extends TestCase
 {
     use KernelTestBehaviour;

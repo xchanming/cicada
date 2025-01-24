@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(Migration1723193659UpdateVatPatternForCountry::class)]
 class Migration1723193659UpdateVatPatternForCountryTest extends TestCase
 {

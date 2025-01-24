@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1697532722FixADInMediaPath extends MigrationStep
 {
     public function getCreationTimestamp(): int

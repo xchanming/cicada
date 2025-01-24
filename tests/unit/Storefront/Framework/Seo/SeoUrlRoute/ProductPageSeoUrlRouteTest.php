@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 #[CoversClass(ProductPageSeoUrlRoute::class)]
 class ProductPageSeoUrlRouteTest extends TestCase
 {

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Indexing\MessageQueue;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class FullEntityIndexerMessage implements AsyncMessageInterface
 {
     /**

@@ -67,7 +67,7 @@ class ProductReviewSaveRoute extends AbstractProductReviewSaveRoute
         $customerId = $customer->getId();
 
         if (!$data->has('name')) {
-            $data->set('name', $customer->getName());
+            $data->set('name', $customer->getName() ?? $customer->getTitle());
         }
 
         if (!$data->has('email')) {

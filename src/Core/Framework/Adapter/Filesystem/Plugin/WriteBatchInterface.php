@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Adapter\Filesystem\Plugin;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 interface WriteBatchInterface
 {
     public function writeBatch(CopyBatchInput ...$files): void;

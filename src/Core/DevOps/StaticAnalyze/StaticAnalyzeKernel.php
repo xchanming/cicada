@@ -8,7 +8,7 @@ use Cicada\Core\Kernel;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class StaticAnalyzeKernel extends Kernel
 {
     public function getCacheDir(): string

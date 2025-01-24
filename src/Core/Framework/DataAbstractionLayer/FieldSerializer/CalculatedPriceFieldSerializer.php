@@ -18,7 +18,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class CalculatedPriceFieldSerializer extends JsonFieldSerializer
 {
     public function encode(

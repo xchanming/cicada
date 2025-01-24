@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 use Symfony\Component\Validator\Constraint;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 abstract class Rule extends Struct
 {
     public const RULE_NAME = null;

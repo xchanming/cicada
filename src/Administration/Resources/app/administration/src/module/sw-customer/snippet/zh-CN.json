@@ -17,16 +17,16 @@
       "tooltipLanguageSwitch": "语言选择已禁用，因为没有可翻译的字段。"
     },
     "customerGroupRegistration": {
-      "alert": "已请求访问客户组 \"{name}\"。",
+      "alert": "申请客户组 \"{name}\"。",
       "accept": "接受",
-      "acceptMessage": "客户组已更改",
+      "acceptMessage": "申请客户组成功",
       "decline": "拒绝",
-      "declineMessage": "请求已被拒绝",
+      "declineMessage": "申请已被拒绝",
       "errorMessage": "无法处理请求",
       "notification": {
-        "title": "商家状态请求",
-        "message": "客户 \"{name}\" 请求访问客户组 \"{groupName}\"。",
-        "openCustomer": "打开客户"
+        "title": "申请状态",
+        "message": "客户 \"{name}\" 申请客户组 \"{groupName}\"。",
+        "openCustomer": "查看客户"
       }
     },
     "card": {
@@ -47,18 +47,17 @@
       "labelGuest": "访客帐户",
       "labelVatId": "统一社会信用代码",
       "placeholderVatId": "输入 统一社会信用代码...",
-      "labelPhoneNumber": "手机号",
       "placeholderPhoneNumber": "输入手机号..."
     },
     "list": {
       "textCustomers": "客户",
-      "textCustomersTotal": "无客户 | 一个客户 | {count} 个客户",
-      "buttonAddCustomer": "添加",
+      "textCustomersTotal": "暂无客户 | 1个客户 | {count} 个客户",
+      "buttonAddCustomer": "添加客户",
       "columnCompany": "公司",
       "columnCustomerNumber": "客户编号",
-      "columnName": "姓名",
+      "columnTitle": "昵称",
       "columnGroup": "客户组",
-      "columnGroupRequested": "请求",
+      "columnGroupRequested": "申请",
       "columnNameGuestLabel": "访客帐户",
       "labelCreatedByAdmin": "管理员创建",
       "columnStreet": "街道",
@@ -92,7 +91,6 @@
       "labelTitle": "昵称",
       "labelName": "姓名",
       "labelEmail": "邮箱地址",
-      "labelPhoneNumber": "手机号",
       "placeholderPhoneNumber": "输入手机号...",
       "labelCompany": "公司",
       "labelCustomerGroup": "客户组",
@@ -128,10 +126,10 @@
       "labelCampaignCode": "活动代码",
       "labelCompany": "公司",
       "labelVatId": "统一社会信用代码",
-      "contentActive": "活跃 | 非活跃",
+      "contentActive": "启用 | 禁用",
       "contentConfirmed": "已确认 | 未确认",
-      "emptyTextLogin": "尚未登录",
-      "emptyTextBirthday": "无信息",
+      "emptyTextLogin": "暂未登录",
+      "emptyTextBirthday": "未知",
       "labelBoundSalesChannel": "销售渠道",
       "emptyBoundSalesChannel": "全部",
       "helpTextBoundSalesChannel": "该客户可以登录到以下销售渠道",
@@ -276,10 +274,10 @@
         "placeholder": "选择活动代码..."
       },
       "customerGroupRequest": {
-        "label": "客户组请求",
-        "placeholder": "选择请求状态...",
-        "textHasCriteria": "打开客户组请求",
-        "textNoCriteria": "无客户组请求"
+        "label": "客户组申请",
+        "placeholder": "选择申请状态...",
+        "textHasCriteria": "待审核",
+        "textNoCriteria": "无申请"
       },
       "messageEmptyTitle": "未找到结果",
       "messageEmptySubline": "编辑筛选条件以找到结果。"

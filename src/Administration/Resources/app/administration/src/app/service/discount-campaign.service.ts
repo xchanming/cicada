@@ -2,7 +2,7 @@ import type { DiscountCampaign } from 'src/module/sw-extension/service/extension
 
 /**
  * @private
- * @package services-settings
+ * @sw-package framework
  */
 export default class CicadaDiscountCampaignService {
     public isDiscountCampaignActive(discountCampaign: DiscountCampaign) {
@@ -45,6 +45,6 @@ export default class CicadaDiscountCampaignService {
 
 /**
  * @private
- * @package services-settings
+ * @sw-package framework
  */
 export type { CicadaDiscountCampaignService };

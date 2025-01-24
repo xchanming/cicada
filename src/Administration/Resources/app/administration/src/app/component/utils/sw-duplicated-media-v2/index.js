@@ -5,7 +5,7 @@ const { Component, Context, Filter } = Cicada;
 const { Criteria } = Cicada.Data;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

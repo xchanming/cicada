@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import ApiService from '../api.service';
 
 /**

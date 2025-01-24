@@ -98,7 +98,7 @@ const cicadaExtensionsStore: Module<CicadaExtensionsState, VuexRootState> = {
 };
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  * @deprecated tag:v6.7.0 - Will be replaced with Pinia store
  */

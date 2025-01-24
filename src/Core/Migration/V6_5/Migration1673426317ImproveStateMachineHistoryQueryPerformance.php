@@ -9,7 +9,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1673426317ImproveStateMachineHistoryQueryPerformance extends MigrationStep
 {
     public function getCreationTimestamp(): int

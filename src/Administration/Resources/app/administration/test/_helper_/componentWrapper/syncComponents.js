@@ -1,4 +1,7 @@
 /**
+ * @sw-package unknown
+ */
+/**
  * @private
  * @package admin
  */

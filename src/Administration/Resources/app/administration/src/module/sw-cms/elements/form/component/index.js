@@ -7,7 +7,7 @@ const { Mixin } = Cicada;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default {
     template,

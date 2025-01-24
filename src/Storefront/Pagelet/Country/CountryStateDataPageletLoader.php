@@ -30,7 +30,7 @@ class CountryStateDataPageletLoader
         $page = new CountryStateDataPagelet();
 
         $criteria = new Criteria();
-
+        $criteria->addAssociation('children.children');
         $criteria->addFilter(new EqualsFilter('parentId', empty($parentId) ? null : $parentId));
 
         $this->eventDispatcher->dispatch(new CountryStateDataPageletCriteriaEvent($criteria, $context, $request));

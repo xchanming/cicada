@@ -28,7 +28,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationFiel
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class AppScriptConditionDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'app_script_condition';

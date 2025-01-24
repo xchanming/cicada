@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Increment;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractIncrementer
 {
     protected string $poolName;

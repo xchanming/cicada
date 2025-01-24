@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Log\Package;
  * This event can be dispatch, to generate the path for a thumbnail afterward and store it in the database.
  * The `MediaSubscriber` will listen to this event and generate the path for the thumbnail.
  */
-#[Package('core')]
+#[Package('discovery')]
 class UpdateThumbnailPathEvent implements \IteratorAggregate
 {
     /**

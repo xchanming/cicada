@@ -10,7 +10,7 @@ use Cicada\Core\Maintenance\MaintenanceException;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class DatabaseConnectionInformation extends Struct
 {
     protected string $hostname = '';

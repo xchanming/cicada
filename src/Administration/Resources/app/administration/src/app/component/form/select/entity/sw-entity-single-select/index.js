@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import './sw-entity-single-select.scss';
 import template from './sw-entity-single-select.html.twig';
 

@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Migration\Exception\UnknownMigrationSourceException;
 use Doctrine\DBAL\Connection;
 use Psr\Log\LoggerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class MigrationCollectionLoader
 {
     /**

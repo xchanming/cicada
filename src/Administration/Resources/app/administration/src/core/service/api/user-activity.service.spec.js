@@ -12,7 +12,7 @@ function createUserActivityApiService() {
 }
 
 /**
- * @package services-settings
+ * @sw-package fundamentals@after-sales
  */
 describe('userActivityApiService', () => {
     it('is registered correctly', async () => {

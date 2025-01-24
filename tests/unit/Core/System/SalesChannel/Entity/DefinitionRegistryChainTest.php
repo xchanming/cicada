@@ -16,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(DefinitionRegistryChain::class)]
 class DefinitionRegistryChainTest extends TestCase
 {

@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Routing;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Request;
 
-#[Package('core')]
+#[Package('framework')]
 class RouteScope extends AbstractRouteScope
 {
     /**

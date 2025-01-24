@@ -13,7 +13,6 @@ use Cicada\Core\Checkout\Promotion\Cart\PromotionProcessor;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Rule\Rule;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
@@ -523,7 +522,7 @@ class PromotionExtensionCodesTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -543,10 +542,6 @@ class PromotionExtensionCodesTest extends TestCase
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()
             ->get('customer.repository')

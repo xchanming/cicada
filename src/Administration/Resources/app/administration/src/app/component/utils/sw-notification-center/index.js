@@ -1,3 +1,6 @@
+/**
+ * @sw-package unknown
+ */
 import { POLL_BACKGROUND_INTERVAL, POLL_FOREGROUND_INTERVAL } from 'src/core/worker/worker-notification-listener';
 import template from './sw-notification-center.html.twig';
 import './sw-notification-center.scss';

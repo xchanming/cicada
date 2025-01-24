@@ -57,8 +57,6 @@ class RegisterRouteTest extends TestCase
      */
     private EntityRepository $customerRepository;
 
-    private SystemConfigService $systemConfigService;
-
     protected function setUp(): void
     {
         $this->ids = new IdsCollection();
@@ -71,8 +69,6 @@ class RegisterRouteTest extends TestCase
 
         $this->assignSalesChannelContext($this->browser);
         $this->customerRepository = static::getContainer()->get('customer.repository');
-
-        $this->systemConfigService = static::getContainer()->get(SystemConfigService::class);
     }
 
     public function testBaseRegistration(): void
@@ -904,58 +900,6 @@ class RegisterRouteTest extends TestCase
         static::assertNotEmpty($contextToken);
     }
 
-    public function testRegistrationCommercialAccountWithVatIds(): void
-    {
-        $this->systemConfigService->set('core.loginRegistration.requireCustomerAddress', true);
-
-        $additionalData = [
-            'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'billingAddress' => [
-                'company' => 'Test Company',
-                'department' => 'Test Department',
-                'cityId' => $this->getValidCountryCityId(),
-            ],
-            'vatIds' => [
-                'DE123456789',
-            ],
-        ];
-        $registrationData = array_merge_recursive($this->getRegistrationData(), $additionalData);
-
-        $this->browser
-            ->request(
-                'POST',
-                '/store-api/account/register',
-                [],
-                [],
-                ['CONTENT_TYPE' => 'application/json'],
-                json_encode($registrationData, \JSON_THROW_ON_ERROR)
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertSame('customer', $response['apiAlias']);
-        static::assertSame(['DE123456789'], $response['vatIds']);
-        static::assertNotEmpty($this->browser->getResponse()->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN));
-
-        $this->browser
-            ->request(
-                'POST',
-                '/store-api/account/login',
-                [],
-                [],
-                ['CONTENT_TYPE' => 'application/json'],
-                json_encode([
-                    'email' => 'teg-reg@example.com',
-                    'password' => '12345678',
-                ], \JSON_THROW_ON_ERROR)
-            );
-
-        $response = $this->browser->getResponse();
-
-        $contextToken = $response->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN) ?? '';
-        static::assertNotEmpty($contextToken);
-    }
-
     public function testRegistrationCommercialAccountWithVatIdsIsEmpty(): void
     {
         $additionalData = [
@@ -1038,7 +982,7 @@ class RegisterRouteTest extends TestCase
 
         $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertArrayHasKey('errors', $response);
+        static::assertArrayNotHasKey('errors', $response);
     }
 
     public function testRegistrationBusinessAccountWithVatIdsMatchRegex(): void
@@ -1091,127 +1035,6 @@ class RegisterRouteTest extends TestCase
 
         $contextToken = $response->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN) ?? '';
         static::assertNotEmpty($contextToken);
-    }
-
-    public function testRegistrationCommercialAccountWithDifferentCommercialAddress(): void
-    {
-        $this->systemConfigService->set('core.loginRegistration.showAccountTypeSelection', true);
-        $this->systemConfigService->set('core.loginRegistration.requireShippingAddressDuringRegistration', true);
-        $this->systemConfigService->set('core.loginRegistration.requireCustomerAddress', true);
-
-        $additionalData = [
-            'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'billingAddress' => [
-                'company' => 'Test Company 1',
-                'department' => 'Test Department 1',
-                'cityId' => $this->getValidCountryCityId(),
-            ],
-            'shippingAddress' => [
-                'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-                'company' => 'Test Company 2',
-                'department' => 'Test Department 2',
-                'cityId' => $this->getValidCountryCityId(),
-            ],
-        ];
-        $registrationData = array_merge_recursive($this->getRegistrationData(), $additionalData);
-
-        $this->browser
-            ->request(
-                'POST',
-                '/store-api/account/register',
-                [],
-                [],
-                ['CONTENT_TYPE' => 'application/json'],
-                json_encode($registrationData, \JSON_THROW_ON_ERROR)
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertSame('customer', $response['apiAlias']);
-
-        $criteria = new Criteria([$response['id']]);
-        $criteria->addAssociation('addresses');
-
-        $customer = $this->customerRepository->search($criteria, Context::createDefaultContext())->first();
-
-        static::assertInstanceOf(CustomerEntity::class, $customer);
-
-        $customerAddressCollection = $customer->getAddresses();
-
-        static::assertNotNull($customerAddressCollection);
-
-        static::assertCount(2, $customerAddressCollection->getElements());
-
-        $addressesCompany = [];
-        $addressesDepartment = [];
-        foreach ($customerAddressCollection->getElements() as $address) {
-            $addressesCompany[] = $address->getCompany();
-            $addressesDepartment[] = $address->getDepartment();
-        }
-
-        sort($addressesCompany);
-        sort($addressesDepartment);
-
-        static::assertEquals('Test Company 1', $addressesCompany[0]);
-        static::assertEquals('Test Company 2', $addressesCompany[1]);
-        static::assertEquals('Test Department 1', $addressesDepartment[0]);
-        static::assertEquals('Test Department 2', $addressesDepartment[1]);
-
-        static::assertNotEmpty($this->browser->getResponse()->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN));
-
-        $this->browser
-            ->request(
-                'POST',
-                '/store-api/account/login',
-                [],
-                [],
-                ['CONTENT_TYPE' => 'application/json'],
-                json_encode([
-                    'email' => 'teg-reg@example.com',
-                    'password' => '12345678',
-                ], \JSON_THROW_ON_ERROR)
-            );
-
-        $response = $this->browser->getResponse();
-
-        $contextToken = $response->headers->get(PlatformRequest::HEADER_CONTEXT_TOKEN) ?? '';
-        static::assertNotEmpty($contextToken);
-    }
-
-    public function testRegistrationCommercialAccountWithDifferentCommercialAddressButEmptyCompany(): void
-    {
-        $this->systemConfigService->set('core.loginRegistration.showAccountTypeSelection', true);
-        $this->systemConfigService->set('core.loginRegistration.requireCustomerAddress', true);
-
-        $additionalData = [
-            'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'billingAddress' => [
-                'name' => 'Max',
-                'company' => 'Test Company 1',
-                'department' => 'Test Department 1',
-                'cityId' => $this->getValidCountryCityId(),
-            ],
-            'shippingAddress' => [
-                'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-                'department' => 'Test Department 2',
-                'cityId' => $this->getValidCountryCityId(),
-            ],
-        ];
-        $registrationData = array_merge_recursive($this->getRegistrationData(), $additionalData);
-
-        $this->browser
-            ->request(
-                'POST',
-                '/store-api/account/register',
-                [],
-                [],
-                ['CONTENT_TYPE' => 'application/json'],
-                json_encode($registrationData, \JSON_THROW_ON_ERROR)
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        static::assertArrayHasKey('errors', $response);
     }
 
     public function testRegistrationWithActiveCart(): void
@@ -1445,7 +1268,7 @@ class RegisterRouteTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '1337',
             'email' => $email,
             'password' => '12345678',

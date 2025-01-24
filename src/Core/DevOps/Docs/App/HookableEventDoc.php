@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Event\EventData\EntityCollectionType;
 use Cicada\Core\Framework\Event\EventData\EntityType;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class HookableEventDoc
 {
     private const WRITE_EVENT_DESCRIPTION_TEMPLATE = 'Triggers when a %s is %s';

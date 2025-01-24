@@ -3,7 +3,7 @@ import template from './sw-order-address-selection.html.twig';
 import './sw-order-address-selection.scss';
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 
 const { EntityDefinition, Mixin } = Cicada;
@@ -285,7 +285,7 @@ export default {
                     .filter((v) => v)
                     .join(' - '),
                 address.street,
-                `${address.zipcode ?? ''} ${address.city}`.trim(),
+                `${address.zipcode ?? ''} ${address.city?.name}`.trim(),
                 address?.countryState?.translated?.name,
                 address?.country?.translated?.name,
             ];

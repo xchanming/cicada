@@ -20,7 +20,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\Framework\Uuid\Uuid;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class ProductSerializer extends EntitySerializer
 {
     final public const VISIBILITY_MAPPING = [

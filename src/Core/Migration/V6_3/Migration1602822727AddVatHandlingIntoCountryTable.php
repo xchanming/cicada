@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1602822727AddVatHandlingIntoCountryTable extends MigrationStep
 {
     /**

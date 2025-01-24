@@ -13,7 +13,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\LongTextField;
 use Cicada\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 
-#[Package('core')]
+#[Package('framework')]
 class LogEntryDefinition extends EntityDefinition
 {
     final public const ENTITY_NAME = 'log_entry';

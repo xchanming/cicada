@@ -12,7 +12,6 @@ use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
@@ -318,7 +317,7 @@ class LoginRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
             'boundSalesChannelId' => $boundSalesChannelId,
@@ -328,11 +327,6 @@ class LoginRouteTest extends TestCase
         if ($languageId !== null) {
             $customer['languageId'] = $languageId;
         }
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->customerRepository->create([$customer], Context::createDefaultContext());
 
         return $customerId;

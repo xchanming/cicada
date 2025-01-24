@@ -10,7 +10,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class EntityPipe extends AbstractPipe
 {
     public function __construct(

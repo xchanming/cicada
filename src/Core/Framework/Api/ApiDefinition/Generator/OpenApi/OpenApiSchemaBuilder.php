@@ -17,7 +17,7 @@ use OpenApi\Annotations\SecurityScheme;
 use OpenApi\Annotations\Server;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class OpenApiSchemaBuilder
 {
     final public const API = [

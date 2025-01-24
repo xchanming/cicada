@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 #[CoversClass(TransportConfigProvider::class)]
 class TransportConfigProviderTest extends TestCase
 {

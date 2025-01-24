@@ -24,7 +24,7 @@ use Symfony\Component\Console\Output\OutputInterface;
     name: 'system:install',
     description: 'Installs the Cicada 6 system',
 )]
-#[Package('core')]
+#[Package('framework')]
 class SystemInstallCommand extends Command
 {
     public function __construct(

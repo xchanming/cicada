@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class PriceRuleEntity extends Entity implements IdAware
 {
     use EntityIdTrait;

@@ -26,14 +26,6 @@
         </input-field>
 
         <input-field type="bool">
-            <name>requireCustomerAddress</name>
-            <label>Require customer address on registration</label>
-            <label lang="zh-CN">注册时必须填写地址信息</label>
-            <helpText>If this setting is active, customers are required to provide an address during registration. If inactive, the address is optional during registration.</helpText>
-            <helpText lang="zh-CN">如果此设置已激活，客户在注册时必须提供地址。如果未激活，地址在注册时为可选项。</helpText>
-        </input-field>
-
-        <input-field type="bool">
             <name>requireEmailConfirmation</name>
             <label>Email address must be entered twice</label>
             <label lang="zh-CN">是否必须输入两次电子邮件地址</label>
@@ -73,12 +65,6 @@
             <label lang="zh-CN">是否密码必须输入两次</label>
             <helpText>Password has to be filled in twice to avoid input errors.</helpText>
             <helpText lang="zh-CN">密码必须输入两次以避免输入错误。</helpText>
-        </input-field>
-
-        <input-field type="bool">
-            <name>titleFieldRequired</name>
-            <label>Require customer nick name</label>
-            <label lang="zh-CN">是否必须填写“昵称”字段</label>
         </input-field>
 
         <input-field type="bool">

@@ -17,7 +17,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(BatchImportStrategy::class)]
 class BatchImportStrategyTest extends ImportStrategyTestCase
 {

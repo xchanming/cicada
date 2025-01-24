@@ -29,7 +29,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 #[Group('slow')]
 #[Group('skip-paratest')]
 class SeoUrlTest extends TestCase

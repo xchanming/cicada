@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class SystemConfigFacadeHookFactory extends HookServiceFactory
 {
     /**

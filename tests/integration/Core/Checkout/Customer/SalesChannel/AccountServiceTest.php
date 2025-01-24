@@ -10,7 +10,6 @@ use Cicada\Core\Checkout\Customer\SalesChannel\AccountService;
 use Cicada\Core\Defaults;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelFunctionalTestBehaviour;
 use Cicada\Core\Framework\Util\Hasher;
@@ -269,7 +268,7 @@ class AccountServiceTest extends TestCase
             'createdAt' => $createdAt,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '1337',
             'email' => $email,
             'password' => $legacyEncoder ? null : $password,
@@ -293,11 +292,6 @@ class AccountServiceTest extends TestCase
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         static::getContainer()
             ->get('customer.repository')
             ->upsert([$customer], Context::createDefaultContext());

@@ -6,6 +6,9 @@ const fs = require('fs');
 const chalk = require('chalk');
 const path = require('path');
 
+// Available Cicada versions
+const cicadaVersions = ['6.6', '6.7'];
+
 // Command options
 const optionDefinitions = [
     {
@@ -45,6 +48,13 @@ const optionDefinitions = [
         alias: 'G',
         type: Boolean,
     },
+    {
+        // eslint-disable-next-line max-len
+        description: `Define the Cicada version for loading the correct codemods. Available: ${cicadaVersions.join(', ')}`,
+        name: 'cicada-version',
+        alias: 'v',
+        type: String,
+    },
 ];
 
 // Command help
@@ -79,6 +89,12 @@ const sections = [
         // eslint-disable-next-line no-console
         console.log(getUsage(sections));
         process.exit();
+    }
+
+    const cicadaVersion = options['cicada-version'];
+    if (cicadaVersion && !cicadaVersions.includes(cicadaVersion)) {
+        console.error(chalk.red('Invalid Cicada version. Available: 6.6, 6.7'));
+        process.exit(1);
     }
 
     const pluginName = options['plugin-name'];
@@ -157,7 +173,7 @@ const sections = [
         copyFolderRecursiveSync(pluginAdminSrcDir, workingDir);
 
         const fix = options.fix;
-        await lintFiles([workingDir], fix);
+        await lintFiles([workingDir], fix, cicadaVersion);
 
         // only copy back changes if fix is requested
         if (fix) {
@@ -215,8 +231,8 @@ function createESLintInstance(overrideConfig, fix) {
 }
 
 // Lint the specified files and return the results
-async function lintAndFix(eslint, filePaths) {
-    const results = await eslint.lintFiles(filePaths);
+async function lintAndFix(eslint, filePaths, cicadaVersion) {
+    const results = await eslint.lintFiles(filePaths, cicadaVersion);
 
     // Apply automatic fixes and output fixed code
     await ESLint.outputFixes(results);
@@ -235,7 +251,7 @@ async function outputLintingResults(results, eslint) {
 }
 
 // Put previous functions all together
-async function lintFiles(filePaths, fix) {
+async function lintFiles(filePaths, fix, cicadaVersion) {
     // The ESLint configuration. Alternatively, you could load the configuration
     // from a .eslintrc file or just use the default config.
     const overrideConfig = {
@@ -252,13 +268,25 @@ async function lintFiles(filePaths, fix) {
                 processor: 'twig-vue/twig-vue',
                 files: ['**/*.html.twig'],
                 rules: {
-                    'sw-deprecation-rules/no-deprecated-components': ['error'],
-                    'sw-deprecation-rules/no-deprecated-component-usage': ['error'],
+                    ...(() => {
+                        if (isVersionNewerOrSame(cicadaVersion, '6.7')) {
+                            return {
+                                'sw-deprecation-rules/no-deprecated-components': ['error'],
+                                'sw-deprecation-rules/no-deprecated-component-usage': ['error'],
+                            };
+                        }
+
+                        return {
+                            'sw-deprecation-rules/no-deprecated-components': 'off',
+                            'sw-deprecation-rules/no-deprecated-component-usage': 'off',
+                        };
+                    })(),
                     // Disabled rules
                     'eol-last': 'off',
                     'no-multiple-empty-lines': 'off',
                     'vue/comment-directive': 'off',
                     'vue/jsx-uses-vars': 'off',
+                    'max-len': 'off',
                 },
             },
             {
@@ -276,6 +304,8 @@ async function lintFiles(filePaths, fix) {
                     'sw-deprecation-rules/no-compat-conditions': ['error'],
                     'sw-deprecation-rules/no-empty-listeners': ['error'],
                     'sw-core-rules/require-explicit-emits': 'error',
+                    'sw-core-rules/require-package-annotation': 'off',
+                    'sw-deprecation-rules/private-feature-declarations': 'off',
                 },
             },
             {
@@ -294,13 +324,15 @@ async function lintFiles(filePaths, fix) {
                     'sw-deprecation-rules/no-compat-conditions': ['error'],
                     'sw-deprecation-rules/no-empty-listeners': ['error'],
                     'sw-core-rules/require-explicit-emits': 'error',
+                    'sw-core-rules/require-package-annotation': 'off',
+                    'sw-deprecation-rules/private-feature-declarations': 'off',
                 },
             },
         ],
     };
 
     const eslint = createESLintInstance(overrideConfig, fix);
-    const results = await lintAndFix(eslint, filePaths);
+    const results = await lintAndFix(eslint, filePaths, cicadaVersion);
     return outputLintingResults(results, eslint);
 }
 
@@ -317,4 +349,24 @@ function createPluginsTsConfigFile(pluginName) {
 
 function removePluginsTsConfigFile() {
     fs.rmSync('./tsconfig-plugins.json', { force: true });
+}
+
+function isVersionNewerOrSame(version, compareVersion) {
+    const versionParts = version.split('.');
+    const compareVersionParts = compareVersion.split('.');
+
+    for (let i = 0; i < versionParts.length; i++) {
+        const versionPart = parseInt(versionParts[i], 10);
+        const compareVersionPart = parseInt(compareVersionParts[i], 10);
+
+        if (versionPart > compareVersionPart) {
+            return true;
+        }
+
+        if (versionPart < compareVersionPart) {
+            return false;
+        }
+    }
+
+    return true;
 }

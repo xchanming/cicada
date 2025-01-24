@@ -9,7 +9,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
@@ -188,14 +187,10 @@ class AddressControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
-            'name' => 'First name',
+            'title' => 'First name',
             'salutationId' => $salutationId,
             'customerNumber' => 'not',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->create([$customer], Context::createDefaultContext());
 
@@ -254,7 +249,7 @@ class AddressControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
-            'name' => 'Name',
+            'title' => 'Name',
             'salutationId' => $salutationId,
             'customerNumber' => 'not',
         ];
@@ -431,15 +426,10 @@ class AddressControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => 'test@example.com',
             'password' => 'test12345',
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $context = Context::createDefaultContext();
 
         /** @var EntityRepository<CustomerCollection> $repo */
@@ -482,7 +472,7 @@ class AddressControllerTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => Uuid::randomHex() . '@example.com',
                 'password' => 'not12345',
-                'name' => 'First name',
+                'title' => 'First name',
                 'salutationId' => $salutationId,
                 'customerNumber' => 'not',
             ],
@@ -501,7 +491,7 @@ class AddressControllerTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => Uuid::randomHex() . '@example.com',
                 'password' => 'not12345',
-                'name' => 'First name',
+                'title' => 'First name',
                 'salutationId' => $salutationId,
                 'customerNumber' => 'not',
             ],
@@ -529,6 +519,8 @@ class AddressControllerTest extends TestCase
                 'street' => 'not',
                 'cityId' => $this->getValidCountryCityId(),
                 'countryId' => $this->getValidCountryId(),
+                'phoneNumber' => 'not',
+                'districtId' => $this->getValidCountryDistrictId(),
             ]),
         ]);
     }

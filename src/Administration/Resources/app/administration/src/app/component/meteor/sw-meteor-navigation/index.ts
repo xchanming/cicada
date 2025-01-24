@@ -6,7 +6,7 @@ import './sw-meteor-navigation.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

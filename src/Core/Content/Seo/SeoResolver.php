@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @phpstan-import-type ResolvedSeoUrl from AbstractSeoResolver
  */
-#[Package('buyers-experience')]
+#[Package('inventory')]
 class SeoResolver extends AbstractSeoResolver
 {
     /**

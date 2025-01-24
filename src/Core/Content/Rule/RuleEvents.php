@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\Rule;
 use Cicada\Core\Content\Rule\Event\RuleIndexerEvent;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class RuleEvents
 {
     final public const RULE_WRITTEN_EVENT = 'rule.written';

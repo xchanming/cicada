@@ -25,7 +25,7 @@ use Cicada\Core\Test\TestDefaults;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('checkout')]
 trait OrderFixture
 {
     use BasicTestDataBehaviour;

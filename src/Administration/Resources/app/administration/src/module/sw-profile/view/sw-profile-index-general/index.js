@@ -1,5 +1,5 @@
 /**
- * @package services-settings
+ * @package fundamentals@framework
  */
 import template from './sw-profile-index-general.html.twig';
 

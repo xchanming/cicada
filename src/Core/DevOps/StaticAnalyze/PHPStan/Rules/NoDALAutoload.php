@@ -20,7 +20,7 @@ use PHPStan\Rules\RuleErrorBuilder;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class NoDALAutoload implements Rule
 {
     use InTestClassTrait;

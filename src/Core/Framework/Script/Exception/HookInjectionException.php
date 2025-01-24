@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Script\Execution\Hook;
 /**
  * @deprecated tag:v6.7.0 - Will be removed, use Cicada\Core\Checkout\Cart\CartException::hookInjectionException or Cicada\Core\Framework\DataAbstractionLayer\DataAbstractionLayerException::hookInjectionException instead
  */
-#[Package('core')]
+#[Package('framework')]
 class HookInjectionException extends \RuntimeException
 {
     public function __construct(

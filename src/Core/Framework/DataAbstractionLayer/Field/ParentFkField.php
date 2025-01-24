@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ParentFkField extends FkField
 {
     public function __construct(string $referenceClass)

@@ -15,7 +15,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1638514913RemovedUnusedVarsInMailTemplates extends MigrationStep
 {
     use UpdateMailTrait;

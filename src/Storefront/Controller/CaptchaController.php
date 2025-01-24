@@ -4,7 +4,6 @@ namespace Cicada\Storefront\Controller;
 
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Routing\RoutingException;
-use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 use Cicada\Storefront\Framework\Captcha\AbstractCaptcha;
 use Cicada\Storefront\Framework\Captcha\BasicCaptcha;
@@ -60,15 +59,9 @@ class CaptchaController extends StorefrontController
             return new JsonResponse(['session' => $fakeSession]);
         }
 
-        $violations = $this->basicCaptcha->getViolations();
-        $formViolations = new ConstraintViolationException($violations, []);
         $response[] = [
             'type' => 'danger',
             'error' => 'invalid_captcha',
-            'input' => $this->renderView('@Storefront/storefront/component/captcha/basicCaptchaFields.html.twig', [
-                'formId' => $request->get('formId'),
-                'formViolations' => $formViolations,
-            ]),
         ];
 
         return new JsonResponse($response);

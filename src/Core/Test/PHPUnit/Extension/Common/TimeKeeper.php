@@ -9,7 +9,7 @@ use PHPUnit\Event\Telemetry\HRTime;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TimeKeeper
 {
     /**

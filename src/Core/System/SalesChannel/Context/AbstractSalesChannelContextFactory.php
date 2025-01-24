@@ -5,7 +5,7 @@ namespace Cicada\Core\System\SalesChannel\Context;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
 
-#[Package('core')]
+#[Package('framework')]
 abstract class AbstractSalesChannelContextFactory
 {
     abstract public function getDecorated(): AbstractSalesChannelContextFactory;

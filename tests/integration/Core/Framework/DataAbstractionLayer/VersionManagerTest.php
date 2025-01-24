@@ -20,8 +20,8 @@ use Cicada\Core\Framework\Struct\ArrayEntity;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\DataAbstractionLayerFieldTestBehaviour;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ManyToOneProductDefinition;
 use Cicada\Core\Framework\Test\DataAbstractionLayer\Field\TestDefinition\ToOneProductExtension;
-use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
+use Cicada\Core\Framework\Test\TestCaseBase\KernelTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Doctrine\DBAL\Connection;
@@ -37,7 +37,7 @@ class VersionManagerTest extends TestCase
     use DataAbstractionLayerFieldTestBehaviour {
         tearDown as protected tearDownDefinitions;
     }
-    use IntegrationTestBehaviour;
+    use KernelTestBehaviour;
 
     private const PRODUCT_ID = 'product-1';
 
@@ -78,7 +78,6 @@ class VersionManagerTest extends TestCase
             ALTER TABLE `product`
             DROP COLUMN `many_to_one_id`
         ');
-        $this->connection->beginTransaction();
 
         // reboot kernel to create a new container since we manipulated the original one
         KernelLifecycleManager::bootKernel();
@@ -275,7 +274,6 @@ class VersionManagerTest extends TestCase
             ProductDefinition::class,
             ToOneProductExtension::class
         );
-        $this->connection->rollBack();
 
         $this->connection->executeStatement('
             DROP TABLE IF EXISTS `many_to_one_product`;

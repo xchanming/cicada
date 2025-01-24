@@ -5,7 +5,7 @@
                 {% if not headerWidget %}
                     <div class="card-header account-aside-header">
                         {{ 'account.greetings'|trans|sw_sanitize }}
-                        {{ context.customer.name | default(context.customer.title) }}
+                        {{ context.customer.title }}
                     </div>
                 {% endif %}
             {% endblock %}

@@ -26,7 +26,7 @@ Cicada.Service().register('cicadaDiscountCampaignService', () => {
 });
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 describe('src/module/sw-extension/service/cicada-extension.service', () => {
     let cicadaExtensionService;

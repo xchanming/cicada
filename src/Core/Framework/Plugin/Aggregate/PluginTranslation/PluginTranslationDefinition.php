@@ -12,7 +12,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\PluginDefinition;
 
-#[Package('core')]
+#[Package('framework')]
 class PluginTranslationDefinition extends EntityTranslationDefinition
 {
     final public const ENTITY_NAME = 'plugin_translation';

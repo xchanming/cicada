@@ -5,7 +5,7 @@ namespace Cicada\Core\System\NumberRange\ValueGenerator\Pattern;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Plugin\Exception\DecorationPatternException;
 
-#[Package('checkout')]
+#[Package('framework')]
 class ValueGeneratorPatternDate extends AbstractValueGenerator
 {
     final public const STANDARD_FORMAT = 'Y-m-d';

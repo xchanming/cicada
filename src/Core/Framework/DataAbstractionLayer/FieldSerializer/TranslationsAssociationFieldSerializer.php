@@ -20,7 +20,7 @@ use Cicada\Core\Framework\Uuid\Uuid;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class TranslationsAssociationFieldSerializer implements FieldSerializerInterface
 {
     /**

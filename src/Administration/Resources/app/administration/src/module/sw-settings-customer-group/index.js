@@ -2,7 +2,7 @@ import './acl';
 import defaultSearchConfiguration from './default-search-configuration';
 
 /**
- * @package discovery
+ * @sw-package discovery
  */
 /* eslint-disable max-len, sw-deprecation-rules/private-feature-declarations */
 Cicada.Component.register('sw-settings-customer-group-list', () => import('./page/sw-settings-customer-group-list'));

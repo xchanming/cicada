@@ -5,11 +5,12 @@ namespace Cicada\Core\System\Exception;
 namespace Cicada\Core\Framework\DataAbstractionLayer\Exception;
 
 use Cicada\Core\Defaults;
+use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\WriteConstraintViolationException;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
-#[\Cicada\Core\Framework\Log\Package('core')]
+#[Package('framework')]
 class MissingSystemTranslationException extends WriteConstraintViolationException
 {
     final public const VIOLATION_MISSING_SYSTEM_TRANSLATION = 'MISSING-SYSTEM-TRANSLATION';

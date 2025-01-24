@@ -7,7 +7,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\PlatformRequest;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 
-#[Package('core')]
+#[Package('framework')]
 class RouteParamsCleanupListener
 {
     private const CLEANUP_PARAMETERS = [

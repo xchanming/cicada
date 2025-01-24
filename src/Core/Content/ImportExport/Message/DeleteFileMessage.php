@@ -5,7 +5,7 @@ namespace Cicada\Core\Content\ImportExport\Message;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\MessageQueue\AsyncMessageInterface;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class DeleteFileMessage implements AsyncMessageInterface
 {
     private array $files = [];

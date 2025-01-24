@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('discovery')]
 class HomeUrlProviderTest extends TestCase
 {
     use IntegrationTestBehaviour;

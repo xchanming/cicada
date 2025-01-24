@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Struct\Collection;
 /**
  * @extends Collection<Price>
  */
-#[Package('core')]
+#[Package('framework')]
 class PriceCollection extends Collection
 {
     public function add($element): void

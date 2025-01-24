@@ -10,7 +10,7 @@ use Cicada\Core\Framework\Telemetry\TelemetryException;
  *
  * @phpstan-import-type MetricDefinition from MetricConfig
  */
-#[Package('core')]
+#[Package('framework')]
 class MetricConfigProvider
 {
     /**

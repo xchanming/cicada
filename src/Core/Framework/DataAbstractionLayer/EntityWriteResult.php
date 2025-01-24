@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * Contains the result of the entity write process
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityWriteResult
 {
     final public const OPERATION_INSERT = 'insert';

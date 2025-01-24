@@ -20,7 +20,7 @@ type GenericCustomEntityDetailData = {
 
 /**
  * @private
- * @package content
+ * @sw-package content
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

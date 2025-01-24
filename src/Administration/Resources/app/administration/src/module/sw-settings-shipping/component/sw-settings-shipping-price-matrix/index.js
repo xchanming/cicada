@@ -10,7 +10,7 @@ const { cloneDeep } = Cicada.Utils.object;
 const { mapState, mapGetters } = Cicada.Component.getComponentHelper();
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default {

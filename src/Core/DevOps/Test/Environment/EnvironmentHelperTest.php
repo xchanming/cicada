@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EnvironmentHelperTest extends TestCase
 {
     protected function tearDown(): void

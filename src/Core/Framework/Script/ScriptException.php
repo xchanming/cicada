@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Script\Exception\ScriptExecutionFailedException;
 use Cicada\Core\Framework\Script\Execution\Awareness\HookServiceFactory;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class ScriptException extends HttpException
 {
     public const HOOK_METHOD_OUTSIDE_SALES_CHANNEL_CONTEXT = 'FRAMEWORK__HOOK_METHOD_OUTSIDE_SALES_CHANNEL_CONTEXT';

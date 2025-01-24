@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class SalutationSerializerTest extends TestCase
 {
     use KernelTestBehaviour;

@@ -2,7 +2,7 @@ import type { CicadaClass } from 'src/core/cicada';
 import extensionStore from './extensions.store';
 
 /**
- * @package checkout
+ * @sw-package checkout
  * @private
  */
 export default function initState(Cicada: CicadaClass): void {

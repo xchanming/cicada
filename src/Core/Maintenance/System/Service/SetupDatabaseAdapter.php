@@ -14,7 +14,7 @@ use Doctrine\DBAL\Connection;
  * @codeCoverageIgnore - Is tested by integration test, does not make sense to unit test
  * as the sole purpose of this class is to abstract DB interactions during setup
  */
-#[Package('core')]
+#[Package('framework')]
 class SetupDatabaseAdapter
 {
     public function dropDatabase(Connection $connection, string $database): void

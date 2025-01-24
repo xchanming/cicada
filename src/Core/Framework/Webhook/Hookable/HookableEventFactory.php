@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Webhook\Hookable;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class HookableEventFactory
 {
     /**

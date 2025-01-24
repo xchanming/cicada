@@ -22,7 +22,7 @@ use Doctrine\DBAL\Connection;
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class ManyToOneAssociationFieldResolver extends AbstractFieldResolver
 {
     public function __construct(

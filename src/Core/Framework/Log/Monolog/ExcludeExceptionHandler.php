@@ -7,7 +7,7 @@ use Monolog\Handler\AbstractHandler;
 use Monolog\Handler\HandlerInterface;
 use Monolog\LogRecord;
 
-#[Package('core')]
+#[Package('framework')]
 class ExcludeExceptionHandler extends AbstractHandler
 {
     /**

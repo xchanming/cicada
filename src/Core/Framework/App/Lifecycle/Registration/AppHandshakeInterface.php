@@ -8,7 +8,7 @@ use Psr\Http\Message\RequestInterface;
 /**
  * @internal only for use by the app-system
  */
-#[Package('core')]
+#[Package('framework')]
 interface AppHandshakeInterface
 {
     public function assembleRequest(): RequestInterface;

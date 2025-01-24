@@ -13,7 +13,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1585490020ActivateHoneypotCaptcha extends MigrationStep
 {
     private const CONFIG_KEY = 'core.basicInformation.activeCaptchas';

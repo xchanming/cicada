@@ -8,7 +8,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Integration\IntegrationEntity;
 use Cicada\Core\System\User\UserEntity;
 
-#[Package('administration')]
+#[Package('framework')]
 class NotificationEntity extends Entity
 {
     use EntityIdTrait;

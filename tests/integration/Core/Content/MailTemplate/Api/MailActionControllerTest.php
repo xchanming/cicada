@@ -120,7 +120,7 @@ class MailActionControllerTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => '12345678',

@@ -13,7 +13,7 @@ use Cicada\Core\Framework\Struct\Collection;
  *
  * @psalm-type Option =
  */
-#[Package('core')]
+#[Package('framework')]
 class RuleIdMatcher
 {
     /**

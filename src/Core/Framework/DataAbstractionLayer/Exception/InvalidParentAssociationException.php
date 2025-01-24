@@ -12,7 +12,7 @@ use Cicada\Core\Framework\Log\Package;
 /**
  * @deprecated tag:v6.7.0 - Will be removed. Use DataAbstractionLayerException::invalidParentAssociation instead
  */
-#[Package('core')]
+#[Package('framework')]
 class InvalidParentAssociationException extends CicadaHttpException
 {
     public function __construct(

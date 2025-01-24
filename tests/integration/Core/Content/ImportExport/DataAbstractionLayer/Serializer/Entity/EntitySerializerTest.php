@@ -34,7 +34,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class EntitySerializerTest extends TestCase
 {
     use DataAbstractionLayerFieldTestBehaviour;

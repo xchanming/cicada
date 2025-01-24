@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\DataAbstractionLayer\Field\Flag;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class RuleAreas extends Flag
 {
     final public const PRODUCT_AREA = 'product';

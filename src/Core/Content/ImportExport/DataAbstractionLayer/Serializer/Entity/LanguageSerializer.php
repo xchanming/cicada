@@ -14,7 +14,7 @@ use Cicada\Core\System\Language\LanguageDefinition;
 use Cicada\Core\System\Language\LanguageEntity;
 use Symfony\Contracts\Service\ResetInterface;
 
-#[Package('core')]
+#[Package('fundamentals@after-sales')]
 class LanguageSerializer extends EntitySerializer implements ResetInterface
 {
     /**

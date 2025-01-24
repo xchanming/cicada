@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 interface CicadaException extends \Throwable
 {
     public function getErrorCode(): string;

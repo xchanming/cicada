@@ -6,7 +6,7 @@ use Cicada\Core\Framework\Api\ApiException;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('core')]
+#[Package('framework')]
 class SyncOperation extends Struct
 {
     final public const ACTION_UPSERT = 'upsert';

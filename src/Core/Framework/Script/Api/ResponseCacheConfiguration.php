@@ -4,7 +4,7 @@ namespace Cicada\Core\Framework\Script\Api;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class ResponseCacheConfiguration
 {
     private bool $enabled = true;

@@ -14,7 +14,7 @@ use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistr
 /**
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class SalesChannelRepositoryFacadeHookFactory extends HookServiceFactory
 {
     /**

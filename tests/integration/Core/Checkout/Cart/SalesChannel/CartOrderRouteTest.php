@@ -829,7 +829,7 @@ class CartOrderRouteTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => $email,
                 'password' => $password,
-                'name' => 'Max',
+                'title' => 'Max',
                 'salutationId' => ($invalidSalutaionId ? null : $validSalutationId ?? $this->getValidSalutationId()),
                 'customerNumber' => '12345',
             ],

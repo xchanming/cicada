@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('administration')]
+#[Package('framework')]
 #[CoversClass(NotificationService::class)]
 class NotificationServiceTest extends TestCase
 {

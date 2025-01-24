@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Update\Struct;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Struct\Struct;
 
-#[Package('services-settings')]
+#[Package('framework')]
 class ValidationResult extends Struct
 {
     /**

@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('administration')]
+#[Package('framework')]
 #[CoversClass(AdminSearcher::class)]
 class AdminSearcherTest extends TestCase
 {

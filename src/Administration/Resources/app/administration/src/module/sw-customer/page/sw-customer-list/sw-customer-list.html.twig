@@ -97,29 +97,29 @@
                 {% block sw_customer_list_grid_columns %}
 
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                {% block sw_product_list_grid_columns_name_preview %}
-                <template #preview-name="{ item, compact }">
+                {% block sw_customer_list_grid_columns_title_preview %}
+                <template #preview-title="{ item, compact }">
                     <sw-avatar
                         :size="compact ? '32px' : '48px'"
                         :source-context="item"
-                        :name="item.name"
+                        :name="item.title"
                     />
                 </template>
                 {% endblock %}
 
                 <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                {% block sw_customer_list_grid_columns_name %}
-                <template #column-name="{ item, compact, isInlineEdit }">
+                {% block sw_customer_list_grid_columns_title %}
+                <template #column-title="{ item, compact, isInlineEdit }">
 
                     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                    {% block sw_customer_list_grid_inline_edit_name %}
+                    {% block sw_customer_list_grid_inline_edit_title %}
                     <template v-if="isInlineEdit">
                         <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                        {% block sw_customer_list_grid_inline_edit_name %}
+                        {% block sw_customer_list_grid_inline_edit_title %}
                         <sw-text-field
-                            v-model:value="item.name"
-                            name="sw-field--item-name"
-                            class="sw-customer-list__inline-edit-name"
+                            v-model:value="item.title"
+                            name="sw-field--item-title"
+                            class="sw-customer-list__inline-edit-title"
                             :size="compact ? 'small' : 'default'"
                         />
                         {% endblock %}
@@ -128,12 +128,12 @@
                     {% endblock %}
 
                     <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
-                    {% block sw_customer_list_grid_columns_name_link %}
+                    {% block sw_customer_list_grid_columns_title_link %}
                     <router-link
                         v-else
                         :to="{ name: 'sw.customer.detail', params: { id: item.id }, query: { edit: false } }"
                     >
-                        {{ item.name }}
+                        {{ item.title }}
                     </router-link>
                     {% endblock %}
 

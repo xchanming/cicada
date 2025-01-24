@@ -9,7 +9,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\Integration\IntegrationCollection;
 use Cicada\Core\System\User\UserCollection;
 
-#[Package('core')]
+#[Package('framework')]
 class AclRoleEntity extends Entity
 {
     use EntityIdTrait;

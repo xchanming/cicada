@@ -1,5 +1,5 @@
 /**
- * @package buyers-experience
+ * @sw-package inventory
  */
 Cicada.Service('privileges').addPrivilegeMappingEntry({
     category: 'permissions',

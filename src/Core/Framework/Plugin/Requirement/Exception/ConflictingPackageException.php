@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Plugin\Requirement\Exception;
 use Cicada\Core\Framework\Log\Package;
 use Symfony\Component\HttpFoundation\Response;
 
-#[Package('core')]
+#[Package('framework')]
 class ConflictingPackageException extends RequirementException
 {
     public function __construct(

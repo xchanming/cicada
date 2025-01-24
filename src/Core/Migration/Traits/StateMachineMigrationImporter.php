@@ -12,7 +12,7 @@ use Cicada\Core\System\StateMachine\StateMachineDefinition;
 use Cicada\Core\System\StateMachine\StateMachineTranslationDefinition;
 use Doctrine\DBAL\Connection;
 
-#[Package('core')]
+#[Package('framework')]
 class StateMachineMigrationImporter
 {
     use ImportTranslationsTrait;

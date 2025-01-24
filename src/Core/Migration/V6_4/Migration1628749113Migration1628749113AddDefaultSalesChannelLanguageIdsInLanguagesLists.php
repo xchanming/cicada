@@ -11,7 +11,7 @@ use Doctrine\DBAL\Connection;
  *
  * @codeCoverageIgnore
  */
-#[Package('core')]
+#[Package('framework')]
 class Migration1628749113Migration1628749113AddDefaultSalesChannelLanguageIdsInLanguagesLists extends MigrationStep
 {
     public function getCreationTimestamp(): int

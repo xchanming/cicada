@@ -27,7 +27,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('framework')]
 class SystemConfigFacadeTest extends TestCase
 {
     use AppSystemTestBehaviour;

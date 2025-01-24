@@ -4,7 +4,7 @@ namespace Cicada\Core\System\CustomEntity\Xml\Field;
 
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class FieldFactory
 {
     private const MAPPING = [

@@ -31,7 +31,7 @@ use Doctrine\DBAL\Connection;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EntityDefinitionQueryHelper
 {
     final public const HAS_TO_MANY_JOIN = 'has_to_many_join';

@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @internal
  */
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 #[CoversClass(DifferentAddressesRule::class)]
 class DifferentAddressesRuleTest extends TestCase
 {

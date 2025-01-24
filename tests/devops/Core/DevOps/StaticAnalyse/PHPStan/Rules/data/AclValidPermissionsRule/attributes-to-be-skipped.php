@@ -4,7 +4,7 @@ use Cicada\Core\Framework\Log\Package;
 use Cicada\Storefront\Controller\StorefrontController;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Package('core')]
+#[Package('framework')]
 #[Route(defaults: false)]
 class InvalidAclRouteInRouteAttributeController extends StorefrontController
 {

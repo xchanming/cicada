@@ -23,7 +23,7 @@ use Doctrine\DBAL\Connection;
  *
  * @internal
  */
-#[Package('core')]
+#[Package('framework')]
 class EntitySearcher implements EntitySearcherInterface
 {
     public function __construct(

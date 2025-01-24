@@ -14,7 +14,7 @@ use Cicada\Core\Framework\Struct\Struct;
 use Cicada\Core\System\SalesChannel\Entity\DefinitionRegistryChain;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
-#[Package('core')]
+#[Package('framework')]
 class StructEncoder
 {
     /**

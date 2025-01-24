@@ -1,16 +1,16 @@
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-preview-image-slider', () => import('./preview'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-config-image-slider', () => import('./config'));
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Component.register('sw-cms-el-image-slider', () => import('./component'));
 
@@ -28,7 +28,7 @@ type ImageSliderItem = {
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 Cicada.Service('cmsService').registerCmsElement({
     name: 'image-slider',
@@ -76,6 +76,10 @@ Cicada.Service('cmsService').registerCmsElement({
         autoplayTimeout: {
             value: 5000,
             source: 'static',
+        },
+        isDecorative: {
+            source: 'static',
+            value: false,
         },
     },
     enrich: function enrich(slot, data) {

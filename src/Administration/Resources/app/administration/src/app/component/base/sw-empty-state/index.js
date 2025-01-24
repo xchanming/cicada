@@ -4,7 +4,7 @@ import './sw-empty-state.scss';
 const { Component } = Cicada;
 
 /**
- * @package admin
+ * @sw-package framework
  *
  * @private
  */

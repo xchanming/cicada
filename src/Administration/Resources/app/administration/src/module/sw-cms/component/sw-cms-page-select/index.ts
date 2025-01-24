@@ -6,7 +6,7 @@ const { Criteria } = Cicada.Data;
 
 /**
  * @private
- * @package discovery
+ * @sw-package discovery
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

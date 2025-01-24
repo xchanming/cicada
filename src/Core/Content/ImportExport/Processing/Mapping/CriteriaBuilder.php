@@ -8,7 +8,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\Field\AssociationField;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class CriteriaBuilder
 {
     public function __construct(private readonly EntityDefinition $definition)

@@ -7,7 +7,7 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Cicada\Core\Framework\DataAbstractionLayer\FieldSerializer\FkFieldSerializer;
 use Cicada\Core\Framework\Log\Package;
 
-#[Package('core')]
+#[Package('framework')]
 class FkField extends Field implements StorageAware
 {
     final public const PRIORITY = 70;

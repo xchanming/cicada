@@ -3,7 +3,7 @@ import './sw-customer-address-form.scss';
 import CUSTOMER from '../../constant/sw-customer.constant';
 
 /**
- * @package checkout
+ * @sw-package checkout
  */
 
 const { Defaults, EntityDefinition } = Cicada;
@@ -75,10 +75,11 @@ export default {
             'vatId',
             'countryStateId',
             'salutationId',
-            'city',
+            'cityId',
             'street',
             'zipcode',
             'name',
+            'DistrictId',
         ]),
 
         countryId: {

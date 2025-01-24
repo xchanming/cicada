@@ -5,7 +5,7 @@ namespace Cicada\Core\Framework\Rule;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\System\SalesChannel\SalesChannelDefinition;
 
-#[Package('services-settings')]
+#[Package('fundamentals@after-sales')]
 class SalesChannelRule extends Rule
 {
     final public const RULE_NAME = 'salesChannel';
