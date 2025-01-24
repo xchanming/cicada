@@ -205,6 +205,7 @@ class ResetPasswordRouteTest extends TestCase
                 'street' => 'Musterstraße 1',
                 'zipcode' => '12345',
                 'countryId' => $this->getValidCountryId(),
+                'districtId' => $this->getValidCountryDistrictId(),
             ],
             'defaultBillingAddressId' => $addressId,
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
