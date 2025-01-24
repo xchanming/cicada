@@ -14,6 +14,7 @@ use Cicada\Core\Content\MailTemplate\MailTemplateTypes;
 use Cicada\Core\Content\Newsletter\Event\NewsletterConfirmEvent;
 use Cicada\Core\Content\Newsletter\Event\NewsletterRegisterEvent;
 use Cicada\Core\Defaults;
+use Cicada\Core\Framework\Api\Util\AccessKeyHelper;
 use Cicada\Core\Framework\DataAbstractionLayer\Doctrine\MultiInsertQueryQueue;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Migration\MigrationStep;
@@ -59,6 +60,7 @@ class Migration1536233560BasicData extends MigrationStep
         $this->createTax($connection);
         $this->createRootCategory($connection);
         $this->createSalesChannelTypes($connection);
+        $this->createSalesChannel($connection);
         $this->createProductManufacturer($connection);
         $this->createDefaultSnippetSets($connection);
         $this->createDefaultMediaFolders($connection);
@@ -385,6 +387,65 @@ class Migration1536233560BasicData extends MigrationStep
         $connection->insert('category', ['id' => $id, 'version_id' => $versionId, 'type' => CategoryDefinition::TYPE_PAGE, 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('category_translation', ['category_id' => $id, 'category_version_id' => $versionId, 'language_id' => $languageEN, 'name' => 'Catalogue #1', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
         $connection->insert('category_translation', ['category_id' => $id, 'category_version_id' => $versionId, 'language_id' => $languageZH, 'name' => 'Catalogue #1', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+    }
+
+    private function createSalesChannel(Connection $connection): void
+    {
+        $currencies = $connection->executeQuery('SELECT id FROM currency')->fetchFirstColumn();
+        $languages = $connection->executeQuery('SELECT id FROM language')->fetchFirstColumn();
+        $shippingMethods = $connection->executeQuery('SELECT id FROM shipping_method')->fetchFirstColumn();
+        $paymentMethods = $connection->executeQuery('SELECT id FROM payment_method')->fetchFirstColumn();
+        $defaultPaymentMethod = $connection->executeQuery('SELECT id FROM payment_method WHERE active = 1 ORDER BY `position`')->fetchOne();
+        $defaultShippingMethod = $connection->executeQuery('SELECT id FROM shipping_method WHERE active = 1')->fetchOne();
+        $countryStatement = $connection->executeQuery('SELECT id FROM country WHERE active = 1 ORDER BY `position`');
+        $defaultCountry = $countryStatement->fetchOne();
+        $rootCategoryId = $connection->executeQuery('SELECT id FROM category')->fetchOne();
+
+        $id = Uuid::fromHexToBytes('98432def39fc4624b33213a56b8c944d');
+        $languageEN = Uuid::fromHexToBytes($this->getEnGbLanguageId());
+        $languageZH = Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM);
+
+        $connection->insert('sales_channel', [
+            'id' => $id,
+            'type_id' => Uuid::fromHexToBytes(Defaults::SALES_CHANNEL_TYPE_API),
+            'access_key' => AccessKeyHelper::generateAccessKey('sales-channel'),
+            'active' => 1,
+            'language_id' => Uuid::fromHexToBytes(Defaults::LANGUAGE_SYSTEM),
+            'currency_id' => Uuid::fromHexToBytes(Defaults::CURRENCY),
+            'payment_method_id' => $defaultPaymentMethod,
+            'shipping_method_id' => $defaultShippingMethod,
+            'country_id' => $defaultCountry,
+            'navigation_category_id' => $rootCategoryId,
+            'navigation_category_version_id' => Uuid::fromHexToBytes(Defaults::LIVE_VERSION),
+            'customer_group_id' => Uuid::fromHexToBytes('cfbd5018d38d41d8adca10d94fc8bdd6'),
+            'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT),
+        ]);
+
+        $connection->insert('sales_channel_translation', ['sales_channel_id' => $id, 'language_id' => $languageEN, 'name' => 'Headless', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+        $connection->insert('sales_channel_translation', ['sales_channel_id' => $id, 'language_id' => $languageZH, 'name' => 'Headless', 'created_at' => (new \DateTime())->format(Defaults::STORAGE_DATE_TIME_FORMAT)]);
+
+        // country
+        $connection->insert('sales_channel_country', ['sales_channel_id' => $id, 'country_id' => $defaultCountry]);
+
+        // currency
+        foreach ($currencies as $currency) {
+            $connection->insert('sales_channel_currency', ['sales_channel_id' => $id, 'currency_id' => $currency]);
+        }
+
+        // language
+        foreach ($languages as $language) {
+            $connection->insert('sales_channel_language', ['sales_channel_id' => $id, 'language_id' => $language]);
+        }
+
+        // shipping methods
+        foreach ($shippingMethods as $shippingMethod) {
+            $connection->insert('sales_channel_shipping_method', ['sales_channel_id' => $id, 'shipping_method_id' => $shippingMethod]);
+        }
+
+        // payment methods
+        foreach ($paymentMethods as $paymentMethod) {
+            $connection->insert('sales_channel_payment_method', ['sales_channel_id' => $id, 'payment_method_id' => $paymentMethod]);
+        }
     }
 
     private function createDefaultSnippetSets(Connection $connection): void
