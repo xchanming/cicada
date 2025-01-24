@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package framework
  */
 const { Component } = Cicada;
 const { Criteria } = Cicada.Data;

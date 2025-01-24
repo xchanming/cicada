@@ -1,3 +1,6 @@
+/**
+ * @sw-package framework
+ */
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export default function initializeShortcutService() {
     const factoryContainer = Cicada.Application.getContainer('factory');

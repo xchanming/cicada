@@ -1,3 +1,6 @@
+/**
+ * @sw-package innovation
+ */
 import initTeaserButtons from 'src/app/init/teaser-popover.init';
 import { send } from '@cicada-ag/meteor-admin-sdk/es/channel';
 

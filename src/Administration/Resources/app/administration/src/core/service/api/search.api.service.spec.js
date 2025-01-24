@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package inventory
  */
 import createLoginService from 'src/core/service/login.service';
 import createHTTPClient from 'src/core/factory/http.factory';

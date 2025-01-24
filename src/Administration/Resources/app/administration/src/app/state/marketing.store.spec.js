@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package innovation
  */
 import CicadaDiscountCampaignService from 'src/app/service/discount-campaign.service';
 import marketingStore from 'src/app/state/marketing.store';

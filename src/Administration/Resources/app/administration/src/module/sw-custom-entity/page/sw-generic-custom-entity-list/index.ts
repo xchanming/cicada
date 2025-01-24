@@ -41,7 +41,7 @@ interface RouteParseOptions {
 
 /**
  * @private
- * @sw-package content
+ * @sw-package framework
  */
 export default Cicada.Component.wrapComponentConfig({
     template,

@@ -1,10 +1,6 @@
 /**
- * @sw-package unknown
+ * @sw-package framework
  */
-/**
- * @package admin
- */
-
 const { Component } = Cicada;
 const utils = Cicada.Utils;
 

@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package inventory
  */
 import { CanceledError } from 'axios';
 import ApiService from '../api.service';

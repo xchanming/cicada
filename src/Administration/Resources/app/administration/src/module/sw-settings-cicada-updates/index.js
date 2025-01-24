@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package framework
  */
 import './page/sw-settings-cicada-updates-wizard';
 import './page/sw-settings-cicada-updates-index';

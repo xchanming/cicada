@@ -4,7 +4,7 @@ import swGenericCustomEntityDetail from 'src/module/sw-custom-entity/page/sw-gen
 import 'src/app/component/base/sw-button-process';
 
 /**
- * @sw-package content
+ * @sw-package framework
  */
 
 Cicada.Component.register('sw-generic-custom-entity-detail', swGenericCustomEntityDetail);

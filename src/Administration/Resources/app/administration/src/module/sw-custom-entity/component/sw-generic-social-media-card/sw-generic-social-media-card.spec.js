@@ -10,7 +10,7 @@ const TEST_OG_IMAGE = {
 };
 
 /**
- * @sw-package content
+ * @sw-package discovery
  */
 async function createWrapper() {
     return mount(await wrapTestComponent('sw-generic-social-media-card', { sync: true }), {

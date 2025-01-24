@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package discovery
  */
 import 'src/app/component/structure/sw-skip-link';
 import { mount } from '@vue/test-utils';
