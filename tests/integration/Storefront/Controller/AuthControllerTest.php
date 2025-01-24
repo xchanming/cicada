@@ -21,7 +21,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Entity;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\OrFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Monolog\DoctrineSQLHandler;
 use Cicada\Core\Framework\Log\Monolog\ExcludeFlowEventHandler;
 use Cicada\Core\Framework\Script\Debugging\ScriptTraces;

@@ -402,7 +402,7 @@ class AddressControllerTest extends TestCase
             ])
         );
         $response = $browser->getResponse();
-        static::assertSame(200, $response->getStatusCode(), (string)$response->getContent());
+        static::assertSame(200, $response->getStatusCode(), (string) $response->getContent());
 
         return $browser;
     }
@@ -520,7 +520,7 @@ class AddressControllerTest extends TestCase
                 'cityId' => $this->getValidCountryCityId(),
                 'countryId' => $this->getValidCountryId(),
                 'phoneNumber' => 'not',
-                'districtId' => $this->getValidCountryDistrictId()
+                'districtId' => $this->getValidCountryDistrictId(),
             ]),
         ]);
     }
@@ -538,7 +538,7 @@ class AddressControllerTest extends TestCase
             $criteria->addFilter(new EqualsFilter('salesChannels.id', $salesChannelId));
         }
 
-        return (string)$repository->searchIds($criteria, Context::createDefaultContext())->firstId();
+        return (string) $repository->searchIds($criteria, Context::createDefaultContext())->firstId();
     }
 
     private function setPostalCodeOfTheCountryToBeRequired(): void

@@ -287,6 +287,8 @@ trait StorefrontPageTestBehaviour
                 'zipcode' => '12345',
                 'salutationId' => $this->getValidSalutationId(),
                 'country' => ['id' => $this->getValidCountryId()],
+                'districtId' => $this->getValidCountryDistrictId(),
+                'phoneNumber' => '0123456789',
             ],
             'defaultBillingAddressId' => $addressId,
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
