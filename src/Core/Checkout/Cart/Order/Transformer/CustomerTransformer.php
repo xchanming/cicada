@@ -28,7 +28,7 @@ class CustomerTransformer
         return [
             'customerId' => $customer->getId(),
             'email' => $customer->getEmail(),
-            'name' => $customer->getName(),
+            'name' => $customer->getName() ?? $customer->getTitle(),
             'salutationId' => $customer->getSalutationId(),
             'title' => $customer->getTitle(),
             'vatIds' => $customer->getVatIds(),

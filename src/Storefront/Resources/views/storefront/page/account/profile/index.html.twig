@@ -31,7 +31,7 @@
                                       action="{{ path('frontend.account.profile.save') }}"
                                       data-form-handler="true">
                                     {% block page_account_profile_personal_fields %}
-                                        {% sw_include '@Storefront/storefront/component/address/address-personal.html.twig' with {
+                                        {% sw_include '@Storefront/storefront/component/account/profile.html.twig' with {
                                             showBirthdayField: config('core.loginRegistration.showBirthdayField'),
                                             showVatIdField: true,
                                             data: context.customer,

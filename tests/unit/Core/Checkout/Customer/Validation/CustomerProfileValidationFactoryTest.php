@@ -147,7 +147,6 @@ class CustomerProfileValidationFactoryTest extends TestCase
         $actual = $customerProfileValidationFactory->create($salesChannelContext);
         $expected = new DataValidationDefinition('customer.profile.create');
         $this->addConstraintsSalesChannelContext($expected, $salesChannelContext);
-        $this->addConstraintsTitleNumber($expected);
 
         static::assertEquals($expected, $actual);
     }
@@ -250,9 +249,8 @@ class CustomerProfileValidationFactoryTest extends TestCase
     {
         $definition
             ->add('salutationId', new EntityExists(['entity' => $this->salutationDefinition->getEntityName(), 'context' => $context->getContext()]))
-            ->add('name', new NotBlank())
-            ->add('accountType', new Choice($this->accountTypes))
-            ->add('title', new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE]));
+            ->add('title', new NotBlank(), new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE]))
+            ->add('accountType', new Choice($this->accountTypes));
 
         $definition
             ->add('name', new Length(['max' => CustomerDefinition::MAX_LENGTH_NAME]));
@@ -264,11 +262,5 @@ class CustomerProfileValidationFactoryTest extends TestCase
             ->add('birthdayDay', new GreaterThanOrEqual(['value' => 1]), new LessThanOrEqual(['value' => 31]))
             ->add('birthdayMonth', new GreaterThanOrEqual(['value' => 1]), new LessThanOrEqual(['value' => 12]))
             ->add('birthdayYear', new GreaterThanOrEqual(['value' => 1900]), new LessThanOrEqual(['value' => date('Y')]));
-    }
-
-    private function addConstraintsTitleNumber(DataValidationDefinition $definition): void
-    {
-        $definition->add('title', new NotBlank(null, 'VIOLATION::TITLE_IS_BLANK_ERROR'));
-        $definition->add('title', new Length(['max' => CustomerDefinition::MAX_LENGTH_TITLE], null, null, null, null, null, 'VIOLATION::TITLE_NUMBER_IS_TOO_LONG'));
     }
 }

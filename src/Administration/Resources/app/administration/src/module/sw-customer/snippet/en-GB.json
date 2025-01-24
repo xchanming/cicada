@@ -55,7 +55,7 @@
       "buttonAddCustomer": "Add customer",
       "columnCompany": "Company",
       "columnCustomerNumber": "Customer number",
-      "columnName": "Name",
+      "columnTitle": "Nickname",
       "columnGroup": "Customer group",
       "columnGroupRequested": "Request",
       "columnNameGuestLabel": "Guest account",

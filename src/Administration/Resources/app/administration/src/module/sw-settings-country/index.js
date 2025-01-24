@@ -147,10 +147,10 @@ Module.register('sw-settings-country', {
         },
     },
 
-    settingsItem: {
-        group: 'shop',
-        to: 'sw.settings.country.index',
-        icon: 'regular-map',
-        privilege: 'country.viewer',
-    },
+    // settingsItem: {
+    //     group: 'shop',
+    //     to: 'sw.settings.country.index',
+    //     icon: 'regular-map',
+    //     privilege: 'country.viewer',
+    // },
 });

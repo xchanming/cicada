@@ -68,12 +68,6 @@
         </input-field>
 
         <input-field type="bool">
-            <name>titleFieldRequired</name>
-            <label>Require customer nick name</label>
-            <label lang="zh-CN">是否必须填写“昵称”字段</label>
-        </input-field>
-
-        <input-field type="bool">
             <name>showBirthdayField</name>
             <label>Show birthday field</label>
             <label lang="zh-CN">是否显示“生日”字段</label>

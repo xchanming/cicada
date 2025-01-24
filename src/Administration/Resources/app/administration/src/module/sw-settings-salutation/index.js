@@ -57,10 +57,10 @@ Module.register('sw-settings-salutation', {
         },
     },
 
-    settingsItem: {
-        group: 'shop',
-        to: 'sw.settings.salutation.index',
-        icon: 'regular-comments',
-        privilege: 'salutation.viewer',
-    },
+    // settingsItem: {
+    //     group: 'shop',
+    //     to: 'sw.settings.salutation.index',
+    //     icon: 'regular-comments',
+    //     privilege: 'salutation.viewer',
+    // },
 });

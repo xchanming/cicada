@@ -8,69 +8,6 @@
         {% endif %}
     {% endblock %}
 
-    {% block component_address_form_company %}
-        {% if showFormCompany %}
-            {% if config('core.loginRegistration.showAccountTypeSelection') %}
-                {% set accountTypeRequired = true %}
-            {% endif %}
-
-            {% if config('core.loginRegistration.showAccountTypeSelection') or prefix == 'address' or prefix == 'shippingAddress' or hasSelectedBusiness %}
-                <div
-                    class="{% if prefix == 'shippingAddress' or hasSelectedBusiness %}address-contact-type-company{% elseif prefix == 'address' %}js-field-toggle-contact-type-company d-block{% else %}js-field-toggle-contact-type-company d-none{% endif %}">
-                    {% block component_address_form_company_fields %}
-                        <div class="row g-2">
-                            {% block component_address_form_company_name %}
-                                {% if formViolations.getViolations('/company') is not empty %}
-                                    {% set violationPath = '/company' %}
-                                {% elseif formViolations.getViolations("/#{prefix}/company") is not empty %}
-                                    {% set violationPath = "/#{prefix}/company" %}
-                                {% endif %}
-                                {% set companyValidationRules = (prefix != 'shippingAddress' and accountTypeRequired) ? 'required' : '' %}
-
-                                {% sw_include '@Storefront/storefront/component/form/form-input.html.twig' with {
-                                    label: 'address.companyNameLabel'|trans|sw_sanitize,
-                                    id: idPrefix ~ prefix ~ '-company',
-                                    name: prefix ~ '[company]',
-                                    value: data.get('company'),
-                                    autocomplete: 'organization',
-                                    violationPath: violationPath,
-                                    validationRules: companyValidationRules,
-                                    additionalClass: 'col-sm-6',
-                                } %}
-                            {% endblock %}
-
-                            {% block component_address_form_company_department %}
-                                {% if formViolations.getViolations('/department') is not empty %}
-                                    {% set violationPath = '/department' %}
-                                {% elseif formViolations.getViolations("/#{prefix}/department") is not empty %}
-                                    {% set violationPath = "/#{prefix}/department" %}
-                                {% endif %}
-                                {% sw_include '@Storefront/storefront/component/form/form-input.html.twig' with {
-                                    label: 'address.companyDepartmentLabel'|trans|sw_sanitize,
-                                    id: idPrefix ~ prefix ~ '-department',
-                                    name: prefix ~ '[department]',
-                                    value: data.get('department'),
-                                    autocomplete: 'organization',
-                                    violationPath: violationPath,
-                                    additionalClass: 'col-sm-6',
-                                } %}
-                            {% endblock %}
-
-                            {# ludtwig-ignore twig-block-name-snake-case #}
-                            {% block component_address_form_company_vatId %}
-                                {% if prefix == 'address' and showVatIdField %}
-                                    {% sw_include '@Storefront/storefront/component/address/address-personal-vat-id.html.twig' with {
-                                        vatIds: context.customer.vatIds
-                                    } %}
-                                {% endif %}
-                            {% endblock %}
-                        </div>
-                    {% endblock %}
-                </div>
-            {% endif %}
-        {% endif %}
-    {% endblock %}
-
     {% block component_address_form_address_fields %}
         {% set options = {
             scopeElementSelector,
@@ -104,10 +41,12 @@
                 } %}
             {% endblock %}
         </div>
+
         <div class="row g-2 country-and-state-form-elements" data-country-state-select="true"
              data-country-state-select-options="{{ options|json_encode }}">
             {% block component_address_form_country %}
                 {% set initialCountryId = null %}
+                {% set initialCountry = null %}
 
                 {% if data.get('countryId') %}
                     {% set initialCountryId = data.get('countryId') %}
@@ -127,7 +66,6 @@
                 {% elseif prefix == 'billingAddress' %}
                     {% set countryAutocomplete = 'billing country-name' %}
                 {% endif %}
-
                 {% set countryOptions %}
                     {% if not initialCountryId %}
                         <option value=""
@@ -136,12 +74,15 @@
                             {{ 'address.countryPlaceholder'|trans|sw_sanitize }}
                         </option>
                     {% endif %}
+
                     {% for country in page.countries %}
+                        {% if country.id == initialCountryId %}
+                            {% set initialCountry = country %}
+                        {% endif %}
                         <option value="{{ country.id }}"
                                 {% if country.id == initialCountryId %}selected="selected"{% endif %}
                                 data-zipcode-required="{{ country.postalCodeRequired }}"
                                 data-vat-id-required="{{ country.vatIdRequired }}"
-                                data-state-required="{{ country.forceStateInRegistration }}"
                             {% if not country.shippingAvailable and disableNonShippableCountries %}disabled="disabled"{% endif %}>
 
                             {{ country.translated.name }}
@@ -168,6 +109,13 @@
                     }
                 } %}
 
+
+                {% set initialCountryStateId = null %}
+                {% set initialCountryState = null %}
+                {% if data.get('countryStateId') %}
+                    {% set initialCountryStateId = data.get('countryStateId') %}
+                {% endif %}
+
                 {% if formViolations.getViolations('/countryStateId') is not empty %}
                     {% set violationPath = '/countryStateId' %}
                 {% elseif formViolations.getViolations("/#{prefix}/countryStateId") is not empty %}
@@ -183,11 +131,24 @@
                 {% endif %}
 
                 {% set countryStateOptions %}
-                    <option value=""
-                            selected="selected"
-                            data-placeholder-option="true">
-                        {{ 'address.countryStatePlaceholder'|trans|sw_sanitize }}
-                    </option>
+                    {% if not initialCountryStateId %}
+                        <option value=""
+                                selected="selected"
+                                data-placeholder-option="true">
+                            {{ 'address.countryStatePlaceholder'|trans|sw_sanitize }}
+                        </option>
+                    {% endif %}
+
+                    {% for state in initialCountry.states %}
+                        {% if state.id == initialCountryStateId %}
+                            {% set initialCountryState = state %}
+                        {% endif %}
+                        <option value="{{ state.id }}"
+                                {% if state.id == initialCountryStateId %}selected="selected"{% endif %}
+                        >
+                            {{ state.translated.name }}
+                        </option>
+                    {% endfor %}
                 {% endset %}
 
                 {% sw_include '@Storefront/storefront/component/form/form-select.html.twig' with {
@@ -198,13 +159,18 @@
                     options: countryStateOptions,
                     violationPath: violationPath,
                     additionalClass: 'col-md-6',
+                    validationRules: 'required',
                     additionalSelectClass: 'country-state-select',
                     attributes: {
-                        'data-initial-country-state-id': data.get('countryStateId'),
+                        'data-initial-country-state-id': initialCountryStateId,
                     }
                 } %}
 
-
+                {% set initialCityId = null %}
+                {% set initialCity = null %}
+                {% if data.get('cityId') %}
+                    {% set initialCityId = data.get('cityId') %}
+                {% endif %}
                 {% if formViolations.getViolations('/cityId') is not empty %}
                     {% set violationPath = '/cityId' %}
                 {% elseif formViolations.getViolations("/#{prefix}/cityId") is not empty %}
@@ -220,11 +186,24 @@
                 {% endif %}
 
                 {% set countryStateCityOptions %}
-                    <option value=""
-                            selected="selected"
-                            data-city-placeholder-option="true">
-                        {{ 'address.countryCityPlaceholder'|trans|sw_sanitize }}
-                    </option>
+                    {% if not  initialCityId %}
+                        <option value=""
+                                selected="selected"
+                                data-city-placeholder-option="true">
+                            {{ 'address.countryCityPlaceholder'|trans|sw_sanitize }}
+                        </option>
+                    {% endif %}
+
+                    {% for state in initialCountryState.children %}
+                        {% if state.id == initialCityId %}
+                            {% set initialCity = state %}
+                        {% endif %}
+                        <option value="{{ state.id }}"
+                                {% if state.id == initialCityId %}selected="selected"{% endif %}
+                        >
+                            {{ state.translated.name }}
+                        </option>
+                    {% endfor %}
                 {% endset %}
                 {% sw_include '@Storefront/storefront/component/form/form-select.html.twig' with {
                     label: 'address.countryCityLabel'|trans|sw_sanitize,
@@ -234,11 +213,17 @@
                     options: countryStateCityOptions,
                     violationPath: violationPath,
                     additionalClass: 'col-md-6',
+                    validationRules: 'required',
                     additionalSelectClass: 'country-state-city-select',
                     attributes: {
-                        'data-initial-city-id': data.get('cityId'),
+                        'data-initial-city-id': initialCityId,
                     }
                 } %}
+
+                {% set initialDistrictId = null %}
+                {% if data.get('districtId') %}
+                    {% set initialDistrictId = data.get('districtId') %}
+                {% endif %}
 
                 {% if formViolations.getViolations('/districtId') is not empty %}
                     {% set violationPath = '/districtId' %}
@@ -254,23 +239,35 @@
                 {% endif %}
 
                 {% set districtOptions %}
-                    <option value=""
-                            selected="selected"
-                            data-district-placeholder-option="true">
-                        {{ 'address.countryDistrictPlaceholder'|trans|sw_sanitize }}
-                    </option>
+                    {% if not  initialDistrictId %}
+                        <option value=""
+                                selected="selected"
+                                data-district-placeholder-option="true">
+                            {{ 'address.countryDistrictPlaceholder'|trans|sw_sanitize }}
+                        </option>
+                    {% endif %}
+
+                    {% for state in initialCity.children %}
+                        <option value="{{ state.id }}"
+                                {% if state.id == initialDistrictId %}selected="selected"{% endif %}
+                        >
+                            {{ state.translated.name }}
+                        </option>
+                    {% endfor %}
                 {% endset %}
+
                 {% sw_include '@Storefront/storefront/component/form/form-select.html.twig' with {
                     label: 'address.countryDistrictLabel'|trans|sw_sanitize,
-                    id: idPrefix ~ prefix ~ 'AddressCity',
-                    name: prefix ~ '[cityId]',
+                    id: idPrefix ~ prefix ~ 'AddressDistrict',
+                    name: prefix ~ '[districtId]',
                     autocomplete: districtAutocomplete,
                     options: districtOptions,
                     violationPath: violationPath,
+                    validationRules: 'required',
                     additionalClass: 'col-md-6',
-                    additionalSelectClass: 'district-select',
+                    additionalSelectClass: 'country-state-city-district-select',
                     attributes: {
-                        'data-initial-district-id': data.get('cityId'),
+                        'data-initial-district-id': initialDistrictId,
                     }
                 } %}
             {% endblock %}

@@ -55,7 +55,7 @@
       "buttonAddCustomer": "添加客户",
       "columnCompany": "公司",
       "columnCustomerNumber": "客户编号",
-      "columnName": "姓名",
+      "columnTitle": "昵称",
       "columnGroup": "客户组",
       "columnGroupRequested": "申请",
       "columnNameGuestLabel": "访客帐户",

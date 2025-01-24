@@ -59,7 +59,7 @@ class AddressValidationFactoryTest extends TestCase
     {
         $definition = $this->addressValidationFactory->update($this->salesChannelContext)->getProperties();
 
-        static::assertCount(9, $definition);
+        static::assertCount(11, $definition);
         static::assertArrayHasKey('id', $definition);
 
         static::assertCount(2, $definition['id']);

@@ -63,7 +63,7 @@
                     <sw-avatar
                         size="80px"
                         :source-context="customer"
-                        :name="customer.name"
+                        :name="customer.title"
                     />
                     {% endblock %}
 
@@ -129,6 +129,7 @@
                                 <sw-text-field
                                     v-model:value="customer.title"
                                     name="sw-field--customer-title"
+                                    required
                                     :label="$tc('sw-customer.card.labelTitle')"
                                     :placeholder="$tc('sw-customer.card.placeholderTitle')"
                                 />
@@ -146,7 +147,6 @@
                                     name="sw-field--customer-name"
                                     :label="$tc('sw-customer.card.labelName')"
                                     validation="required"
-                                    required
                                     :error="customerNameError"
                                     :placeholder="$tc('sw-customer.card.placeholderName')"
                                 />

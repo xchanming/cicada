@@ -103,6 +103,7 @@
     "VIOLATION::NAME_IS_BLANK_ERROR": "Please fill in your name.",
     "VIOLATION::STREET_IS_BLANK_ERROR": "Please fill in your street of residence.",
     "VIOLATION::CITY_IS_BLANK_ERROR": "Please fill in your city of residence.",
+    "VIOLATION::DISTRICT_IS_BLANK_ERROR": "Please fill in your district of residence.",
     "VIOLATION::COUNTRY_IS_BLANK_ERROR": "Please fill in your country of residence.",
     "VIOLATION::ADDITIONAL_ADDR1_IS_BLANK_ERROR": "Please fill in additional address information.",
     "VIOLATION::ADDITIONAL_ADDR2_IS_BLANK_ERROR": "Please fill in additional address information.",

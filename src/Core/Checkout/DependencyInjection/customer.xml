@@ -242,11 +242,9 @@
             <argument type="service" id="Cicada\Core\System\NumberRange\ValueGenerator\NumberRangeValueGeneratorInterface"/>
             <argument type="service" id="Cicada\Core\Framework\Validation\DataValidator"/>
             <argument type="service" id="Cicada\Core\Checkout\Customer\Validation\CustomerValidationFactory"/>
-            <argument type="service" id="Cicada\Core\Checkout\Customer\Validation\AddressValidationFactory"/>
             <argument type="service" id="Cicada\Core\System\SystemConfig\SystemConfigService"/>
             <argument type="service" id="customer.repository"/>
             <argument type="service" id="Cicada\Core\System\SalesChannel\Context\SalesChannelContextPersister"/>
-            <argument type="service" id="sales_channel.country.repository"/>
             <argument type="service" id="Doctrine\DBAL\Connection"/>
             <argument type="service" id="Cicada\Core\System\SalesChannel\Context\SalesChannelContextService"/>
             <argument type="service" id="Cicada\Core\System\SalesChannel\StoreApiCustomFieldMapper"/>

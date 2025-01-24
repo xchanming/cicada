@@ -102,10 +102,10 @@ Module.register('sw-settings-tax', {
         },
     },
 
-    settingsItem: {
-        group: 'shop',
-        to: 'sw.settings.tax.index',
-        icon: 'regular-chart-pie',
-        privilege: 'tax.viewer',
-    },
+    // settingsItem: {
+    //     group: 'shop',
+    //     to: 'sw.settings.tax.index',
+    //     icon: 'regular-chart-pie',
+    //     privilege: 'tax.viewer',
+    // },
 });

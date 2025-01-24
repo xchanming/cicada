@@ -887,7 +887,7 @@ class OrderConverterTest extends TestCase
         $customer->setId('customer-id');
         $customer->setEmail('customer-email');
         $customer->setSalutationId('customer-salutation-id');
-        $customer->setName('customer-first-name');
+        $customer->setTitle('customer-title');
         $customer->setCustomerNumber('customer-number');
         $customer->setGroupId('customer-group-id');
 
@@ -1343,10 +1343,10 @@ class OrderConverterTest extends TestCase
                 ],
                 'customerNumber' => 'customer-number',
                 'email' => 'customer-email',
-                'name' => 'customer-first-name',
+                'name' => 'customer-title',
                 'remoteAddress' => null,
                 'salutationId' => 'customer-salutation-id',
-                'title' => null,
+                'title' => 'customer-title',
                 'vatIds' => null,
             ],
             'transactions' => [],
