@@ -240,7 +240,7 @@ trait SalesChannelApiTestBehaviour
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'guest' => $guest,
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',

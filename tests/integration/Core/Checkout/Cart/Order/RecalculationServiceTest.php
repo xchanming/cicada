@@ -41,7 +41,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Rule\Collector\RuleConditionRegistry;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\CountryAddToSalesChannelTestBehaviour;
@@ -1401,7 +1400,7 @@ class RecalculationServiceTest extends TestCase
             'id' => $customerId,
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '1337',
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -1421,11 +1420,6 @@ class RecalculationServiceTest extends TestCase
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         static::getContainer()->get('customer.repository')->upsert([$customer], $this->context);
 
         return $customerId;
