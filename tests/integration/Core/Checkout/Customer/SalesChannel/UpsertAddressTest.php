@@ -66,9 +66,10 @@ class UpsertAddressTest extends TestCase
         $data = [
             'name' => 'Test',
             'street' => 'Test',
-            'zipcode' => 'Test',
+            'phoneNumber' => 'Test',
             'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
+            'districtId' => $this->getValidCountryDistrictId(),
         ];
 
         $salutations = $this->connection->fetchAllKeyValue('SELECT salutation_key, id FROM salutation');
