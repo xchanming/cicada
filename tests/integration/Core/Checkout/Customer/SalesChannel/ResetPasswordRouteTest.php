@@ -9,7 +9,6 @@ use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\SalesChannelApiTestBehaviour;
@@ -211,17 +210,13 @@ class ResetPasswordRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => $password,
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '12345',
         ];
 
         if ($addLegacyPassword) {
             $customer['legacyPassword'] = Hasher::hash('test', 'md5');
             $customer['legacyEncoder'] = 'Md5';
-        }
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
         }
 
         $this->customerRepository->create([

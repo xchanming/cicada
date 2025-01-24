@@ -147,7 +147,7 @@ class OrderPersisterTest extends TestCase
         $customer->setDefaultBillingAddress($billingAddress);
         $customer->setEmail('test@example.com');
         $customer->setSalutationId($this->getValidSalutationId());
-        $customer->setName($faker->name());
+        $customer->setTitle($faker->name());
         $customer->setCustomerNumber('Test');
 
         return $customer;

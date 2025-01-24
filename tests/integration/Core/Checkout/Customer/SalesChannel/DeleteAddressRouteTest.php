@@ -63,9 +63,10 @@ class DeleteAddressRouteTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Test',
             'street' => 'Test',
-            'zipcode' => 'Test',
+            'phoneNumber' => 'Test',
             'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
+            'districtId' => $this->getValidCountryDistrictId(),
         ];
 
         $this->browser
@@ -151,9 +152,10 @@ class DeleteAddressRouteTest extends TestCase
             'salutationId' => $this->getValidSalutationId(),
             'name' => 'Test',
             'street' => 'Test',
-            'zipcode' => 'Test',
+            'phoneNumber' => 'Test',
             'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
+            'districtId' => $this->getValidCountryDistrictId(),
         ];
 
         $this->browser
@@ -210,6 +212,8 @@ class DeleteAddressRouteTest extends TestCase
             'zipcode' => 'Test',
             'cityId' => $this->getValidCountryCityId(),
             'countryId' => $this->getValidCountryId(),
+            'phoneNumber' => '1234567890',
+            'districtId' => $this->getValidCountryDistrictId(),
         ];
 
         $this->browser

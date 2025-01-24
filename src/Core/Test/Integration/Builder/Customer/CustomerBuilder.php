@@ -26,7 +26,7 @@ class CustomerBuilder
 
     public string $id;
 
-    protected string $name;
+    protected ?string $name = null;
 
     protected string $title;
 
@@ -92,9 +92,9 @@ class CustomerBuilder
         return $this;
     }
 
-    public function title(?string $title): self
+    public function title(string $title): self
     {
-        $this->title = $this->title;
+        $this->title = $title;
 
         return $this;
     }

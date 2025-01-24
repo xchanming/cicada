@@ -10,7 +10,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Sorting\FieldSorting;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Uuid\Uuid;
@@ -21,7 +20,6 @@ use Cicada\Core\Test\Integration\Traits\CustomerTestTrait;
 use Cicada\Core\Test\Stub\Framework\IdsCollection;
 use Cicada\Core\Test\TestDefaults;
 use Doctrine\DBAL\Connection;
-use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\KernelBrowser;
@@ -97,7 +95,7 @@ class ChangeProfileRouteTest extends TestCase
         static::assertArrayHasKey('errors', $response);
 
         $sources = array_column(array_column($response['errors'], 'source'), 'pointer');
-        static::assertContains('/name', $sources);
+        static::assertContains('/title', $sources);
     }
 
     public function testChangeName(): void
@@ -108,7 +106,7 @@ class ChangeProfileRouteTest extends TestCase
                 '/store-api/account/change-profile',
                 [
                     'salutationId' => $this->getValidSalutationId(),
-                    'name' => 'Max',
+                    'title' => 'Max',
                 ]
             );
 
@@ -119,7 +117,7 @@ class ChangeProfileRouteTest extends TestCase
         $this->browser->request('GET', '/store-api/account/customer');
         $customer = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
-        static::assertSame('Max', $customer['name']);
+        static::assertSame('Max', $customer['title']);
         static::assertSame($this->getValidSalutationId(), $customer['salutationId']);
     }
 
@@ -128,7 +126,7 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'name' => 'Max',
+            'title' => 'Max',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -149,7 +147,7 @@ class ChangeProfileRouteTest extends TestCase
 
         static::assertEquals(['DE123456789'], $customer->getVatIds());
         static::assertEquals($changeData['company'], $customer->getCompany());
-        static::assertEquals($changeData['name'], $customer->getName());
+        static::assertEquals($changeData['title'], $customer->getTitle());
     }
 
     public function testChangeProfileDataWithCommercialAccountAndVatIdsIsEmpty(): void
@@ -159,7 +157,7 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'name' => 'Max',
+            'title' => 'Max',
             'company' => 'Test Company',
             'vatIds' => [],
         ];
@@ -178,7 +176,7 @@ class ChangeProfileRouteTest extends TestCase
 
         static::assertNull($customer->getVatIds());
         static::assertEquals($changeData['company'], $customer->getCompany());
-        static::assertEquals($changeData['name'], $customer->getName());
+        static::assertEquals($changeData['title'], $customer->getTitle());
     }
 
     public function testChangeProfileWithExistingNotSpecifiedSalutation(): void
@@ -193,7 +191,7 @@ class ChangeProfileRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-profile',
                 [
-                    'name' => 'Max',
+                    'title' => 'Max',
                 ]
             );
 
@@ -219,7 +217,7 @@ class ChangeProfileRouteTest extends TestCase
                 'POST',
                 '/store-api/account/change-profile',
                 [
-                    'name' => 'Max',
+                    'title' => 'Max',
                 ]
             );
 
@@ -229,183 +227,12 @@ class ChangeProfileRouteTest extends TestCase
         static::assertTrue($response['success']);
     }
 
-    public static function dataProviderVatIds(): \Generator
-    {
-        yield 'Error when vatIds is require but no validate format, and has value is empty' => [
-            [''],
-            [
-                'required' => true,
-                'validateFormat' => false,
-            ],
-            false,
-            null,
-        ];
-
-        yield 'Error when vatIds is require but no validate format, and without vatIds in parameters' => [
-            null,
-            [
-                'required' => true,
-                'validateFormat' => false,
-            ],
-            false,
-            null,
-        ];
-
-        yield 'Error when vatIds is require but no validate format, and has value is null and empty value' => [
-            [null, ''],
-            [
-                'required' => true,
-                'validateFormat' => false,
-            ],
-            false,
-            null,
-        ];
-
-        yield 'Success when vatIds is require but no validate format, and has one of the value is not null' => [
-            [null, 'some-text'],
-            [
-                'required' => true,
-                'validateFormat' => false,
-            ],
-            true,
-            ['some-text'],
-        ];
-
-        yield 'Success when vatIds is require but no validate format, and has value is random string' => [
-            ['some-text'],
-            [
-                'required' => true,
-                'validateFormat' => false,
-            ],
-            true,
-            ['some-text'],
-        ];
-
-        yield 'Success when vatIds need to validate format but no require and has value is empty' => [
-            [],
-            [
-                'required' => false,
-                'validateFormat' => true,
-            ],
-            true,
-            null,
-        ];
-
-        yield 'Success when vatIds need to validate format but no require and has value is null' => [
-            [null],
-            [
-                'required' => false,
-                'validateFormat' => true,
-            ],
-            true,
-            null,
-        ];
-
-        yield 'Success when vatIds need to validate format but no require and has value is blank' => [
-            [''],
-            [
-                'required' => false,
-                'validateFormat' => true,
-            ],
-            true,
-            null,
-        ];
-
-        yield 'Error when vatIds need to validate format but no require and has value is boolean' => [
-            [true],
-            [
-                'required' => false,
-                'validateFormat' => true,
-            ],
-            false,
-            null,
-        ];
-
-        yield 'Error when vatIds need to validate format but no require and has value is incorrect format' => [
-            ['random-string'],
-            [
-                'required' => false,
-                'validateFormat' => true,
-            ],
-            false,
-            null,
-        ];
-
-        yield 'Success when vatIds need to validate format but no require and has value is correct format' => [
-            ['123456789'],
-            [
-                'required' => false,
-                'validateFormat' => true,
-            ],
-            true,
-            ['123456789'],
-        ];
-    }
-
-    /**
-     * @param array<string, bool> $constraint
-     * @param array<string|null>|null $vatIds
-     * @param array<string>|null $expectedVatIds
-     */
-    #[DataProvider('dataProviderVatIds')]
-    public function testChangeVatIdsOfCommercialAccount(?array $vatIds, array $constraint, bool $shouldBeValid, ?array $expectedVatIds): void
-    {
-        if (isset($constraint['required']) && $constraint['required']) {
-            $this->setVatIdOfTheCountryToBeRequired();
-        }
-
-        if (isset($constraint['validateFormat']) && $constraint['validateFormat']) {
-            $this->setVatIdOfTheCountryToValidateFormat();
-        }
-
-        $changeData = [
-            'salutationId' => $this->getValidSalutationId(),
-            'accountType' => CustomerEntity::ACCOUNT_TYPE_BUSINESS,
-            'name' => 'Max',
-            'company' => 'Test Company',
-        ];
-        if ($vatIds !== null) {
-            $changeData['vatIds'] = $vatIds;
-        }
-
-        $this->browser
-            ->request(
-                'POST',
-                '/store-api/account/change-profile',
-                $changeData
-            );
-
-        $response = json_decode((string) $this->browser->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
-
-        if (!$shouldBeValid) {
-            static::assertArrayHasKey('errors', $response);
-
-            $sources = array_column(array_column($response['errors'], 'source'), 'pointer');
-            static::assertContains('/vatIds', $sources);
-
-            return;
-        }
-
-        static::assertTrue($response['success']);
-
-        $customer = $this->getCustomer();
-
-        if ($expectedVatIds === null) {
-            static::assertNull($customer->getVatIds());
-        } else {
-            static::assertEquals($expectedVatIds, $customer->getVatIds());
-        }
-
-        static::assertEquals($changeData['company'], $customer->getCompany());
-        static::assertEquals($changeData['name'], $customer->getName());
-    }
-
     public function testChangeProfileDataWithPrivateAccount(): void
     {
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
             'accountType' => CustomerEntity::ACCOUNT_TYPE_PRIVATE,
-            'name' => 'FirstName',
+            'title' => 'FirstName',
         ];
         $this->browser->request(
             'POST',
@@ -421,7 +248,7 @@ class ChangeProfileRouteTest extends TestCase
 
         static::assertNull($customer->getVatIds());
         static::assertEquals('', $customer->getCompany());
-        static::assertEquals($changeData['name'], $customer->getName());
+        static::assertEquals($changeData['title'], $customer->getTitle());
     }
 
     public function testChangeSuccessWithNewsletterRecipient(): void
@@ -442,7 +269,7 @@ class ChangeProfileRouteTest extends TestCase
                 '/store-api/newsletter/subscribe',
                 [
                     'email' => $response['email'],
-                    'name' => $response['name'],
+                    'title' => $response['title'],
                     'option' => 'direct',
                     'storefrontUrl' => 'http://localhost',
                 ]
@@ -452,7 +279,7 @@ class ChangeProfileRouteTest extends TestCase
         $newsletterRecipient = static::getContainer()->get(Connection::class)
             ->fetchAssociative('SELECT * FROM newsletter_recipient WHERE status = "direct" AND email = ?', [$response['email']]);
 
-        static::assertSame($newsletterRecipient['name'], $response['name']);
+        static::assertSame($newsletterRecipient['title'], $response['title']);
 
         $this->browser
             ->request(
@@ -461,7 +288,7 @@ class ChangeProfileRouteTest extends TestCase
                 [
                     'salutationId' => $this->getValidSalutationId(),
                     'accountType' => CustomerEntity::ACCOUNT_TYPE_PRIVATE,
-                    'name' => 'FirstName',
+                    'title' => 'FirstName',
                 ]
             );
 
@@ -469,7 +296,7 @@ class ChangeProfileRouteTest extends TestCase
         $newsletterRecipient = static::getContainer()->get(Connection::class)
             ->fetchAssociative('SELECT * FROM newsletter_recipient WHERE status = "direct" AND email = ?', [$response['email']]);
 
-        static::assertEquals($newsletterRecipient['name'], 'Max');
+        static::assertEquals($newsletterRecipient['title'], 'Max');
     }
 
     public function testChangeWithAllowedAccountType(): void
@@ -482,7 +309,7 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'accountType' => $accountType,
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -527,7 +354,7 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'accountType' => '',
             'salutationId' => $updateSalutationId,
-            'name' => 'Max',
+            'title' => 'Max',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -556,7 +383,7 @@ class ChangeProfileRouteTest extends TestCase
         $changeData = [
             'accountType' => $notAllowedAccountType,
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -581,7 +408,7 @@ class ChangeProfileRouteTest extends TestCase
     {
         $changeData = [
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'company' => 'Test Company',
             'vatIds' => [
                 'DE123456789',
@@ -688,15 +515,11 @@ class ChangeProfileRouteTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => $email,
             'password' => $password,
-            'name' => 'Max',
+            'title' => 'Max',
             'guest' => $guest,
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $this->customerRepository->create([$customer], Context::createDefaultContext());
 
@@ -708,18 +531,6 @@ class ChangeProfileRouteTest extends TestCase
         static::getContainer()->get(Connection::class)
             ->executeStatement(
                 'UPDATE `country` SET `check_vat_id_pattern` = 1, `vat_id_pattern` = "(DE)?[0-9]{9}"
-                 WHERE id = :id',
-                [
-                    'id' => Uuid::fromHexToBytes($this->getValidCountryId($this->ids->create('sales-channel'))),
-                ]
-            );
-    }
-
-    private function setVatIdOfTheCountryToBeRequired(): void
-    {
-        static::getContainer()->get(Connection::class)
-            ->executeStatement(
-                'UPDATE `country` SET `vat_id_required` = 1
                  WHERE id = :id',
                 [
                     'id' => Uuid::fromHexToBytes($this->getValidCountryId($this->ids->create('sales-channel'))),

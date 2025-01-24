@@ -365,7 +365,7 @@ class OrderServiceTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => $name,
+            'title' => $name,
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];

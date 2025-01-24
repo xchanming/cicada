@@ -9,7 +9,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\EntityScoreQueryBuilder;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Term\SearchTermInterpreter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Test\TestCaseBase\IntegrationTestBehaviour;
 use Cicada\Core\Framework\Util\Random;
@@ -92,7 +91,8 @@ class CustomerRepositoryTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => Uuid::randomHex() . '@example.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
-                'name' => $matchTerm,
+                'title' => $matchTerm,
+                'name' => 'not',
                 'salutationId' => $salutation,
                 'customerNumber' => 'not',
             ],
@@ -103,7 +103,7 @@ class CustomerRepositoryTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => Uuid::randomHex() . '@example.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
-                'name' => 'not',
+                'title' => 'not',
                 'salutationId' => $salutation,
                 'customerNumber' => 'not',
             ],
@@ -114,6 +114,7 @@ class CustomerRepositoryTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => Uuid::randomHex() . '@example.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
+                'title' => 'not',
                 'name' => 'not',
                 'salutationId' => $salutation,
                 'customerNumber' => $matchTerm,
@@ -125,7 +126,7 @@ class CustomerRepositoryTest extends TestCase
                 'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
                 'email' => $matchTerm . '@example.com',
                 'password' => TestDefaults::HASHED_PASSWORD,
-                'name' => 'not',
+                'title' => 'not',
                 'salutationId' => $salutation,
                 'customerNumber' => 'not',
             ],
@@ -151,7 +152,7 @@ class CustomerRepositoryTest extends TestCase
             $result->getDataFieldOfId($recordC, '_score')
         );
 
-        static::assertGreaterThan(
+        static::assertEquals(
             $result->getDataFieldOfId($recordA, '_score'),
             $result->getDataFieldOfId($recordC, '_score')
         );
@@ -174,16 +175,11 @@ class CustomerRepositoryTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => 'test@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'test',
+            'title' => 'test',
             'salutationId' => $salutation,
             'customerNumber' => 'not',
             'tags' => [['name' => 'testTag']],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         $this->repository->create([$customer], Context::createDefaultContext());
 
         $this->repository->delete([['id' => $customerId]], Context::createDefaultContext());
@@ -209,14 +205,10 @@ class CustomerRepositoryTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => 'foo@bar.de',
             'password' => TestDefaults::HASHED_PASSWORD,
-            'name' => 'Max',
+            'title' => 'Max',
             'salutationId' => $this->getValidSalutationId(),
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         $repo = static::getContainer()->get('customer.repository');
 
