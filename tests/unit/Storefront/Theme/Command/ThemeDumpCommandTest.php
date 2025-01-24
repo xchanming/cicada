@@ -2,6 +2,9 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Command;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
@@ -14,9 +17,6 @@ use Cicada\Storefront\Theme\StorefrontPluginRegistryInterface;
 use Cicada\Storefront\Theme\ThemeEntity;
 use Cicada\Storefront\Theme\ThemeFileResolver;
 use Cicada\Storefront\Theme\ThemeFilesystemResolver;
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -59,6 +59,38 @@ class ThemeDumpCommandTest extends TestCase
         $application->add($command);
 
         $this->commandTester = new CommandTester($command);
+    }
+
+    public function testExecutesSuccessfullyWithValidThemeName(): void
+    {
+        $themeEntity = new ThemeEntity();
+        $themeEntity->setId('theme-id');
+        $themeEntity->setTechnicalName('technical-name');
+        $themeEntity->setName('Theme Name');
+
+        $searchResult = $this->createMock(EntitySearchResult::class);
+        $searchResult->method('count')->willReturn(1);
+        $searchResult->method('first')->willReturn($themeEntity);
+
+        $this->themeRepository->method('search')->willReturn($searchResult);
+
+        $this->pluginRegistry->method('getConfigurations')->willReturn(
+            new StorefrontPluginConfigurationCollection([
+                new StorefrontPluginConfiguration('technical-name'),
+            ])
+        );
+
+        $this->themeFileResolver->method('resolveFiles')->willReturn(['resolved' => 'files']);
+        $this->themeFilesystemResolver->method('getFilesystemForStorefrontConfig')->willReturn(
+            new Filesystem('')
+        );
+
+        $this->commandTester->execute(
+            ['domain-url' => 'http://example.com'],
+            ['theme-name' => 'technical-name']
+        );
+
+        static::assertEquals(Command::SUCCESS, $this->commandTester->getStatusCode());
     }
 
     public function testExecutesSuccessfullyWithValidThemeId(): void
