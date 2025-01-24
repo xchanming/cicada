@@ -683,15 +683,10 @@ class CheckoutControllerTest extends TestCase
             'groupId' => TestDefaults::FALLBACK_CUSTOMER_GROUP,
             'email' => Uuid::randomHex() . '@example.com',
             'password' => 'not12345',
-            'name' => self::CUSTOMER_NAME,
+            'title' => self::CUSTOMER_NAME,
             'salutationId' => $salutationId,
             'customerNumber' => '12345',
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $customer['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
-
         static::getContainer()->get('customer.repository')->create([$customer], Context::createDefaultContext());
 
         return $this->customerId;

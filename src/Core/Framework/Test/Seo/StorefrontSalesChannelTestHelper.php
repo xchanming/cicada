@@ -138,7 +138,7 @@ trait StorefrontSalesChannelTestHelper
 
         $customer = [
             'id' => $customerId,
-            'name' => 'test',
+            'title' => 'test',
             'email' => $email,
             'password' => $password,
             'groupId' => $salesChannel->getCustomerGroupId(),
