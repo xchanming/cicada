@@ -5,7 +5,6 @@ namespace Cicada\Core\Content\Category\SalesChannel;
 use Cicada\Core\Content\Category\CategoryDefinition;
 use Cicada\Core\Content\Category\CategoryEntity;
 use Cicada\Core\Content\Category\CategoryException;
-use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\DataResolver\ResolverContext\EntityResolverContext;
 use Cicada\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoaderInterface;
 use Cicada\Core\Framework\Adapter\Cache\Event\AddCacheTagEvent;
@@ -91,13 +90,12 @@ class CategoryRoute extends AbstractCategoryRoute
             $resolverContext
         );
 
-        if (!$pages->has($pageId)) {
+        $cmsPage = $pages->first();
+        if ($cmsPage === null) {
             throw CategoryException::pageNotFound($pageId);
         }
 
-        /** @var CmsPageEntity $page */
-        $page = $pages->get($pageId);
-        $category->setCmsPage($page);
+        $category->setCmsPage($cmsPage);
         $category->setCmsPageId($pageId);
 
         return new CategoryRouteResponse($category);

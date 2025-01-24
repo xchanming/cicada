@@ -2,7 +2,6 @@
 
 namespace Cicada\Core\Content\LandingPage\SalesChannel;
 
-use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\DataResolver\ResolverContext\EntityResolverContext;
 use Cicada\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoaderInterface;
 use Cicada\Core\Content\LandingPage\LandingPageDefinition;
@@ -72,12 +71,12 @@ class LandingPageRoute extends AbstractLandingPageRoute
             throw LandingPageException::notFound($pageId);
         }
 
-        $page = $pages->get($pageId);
-        if (!$page instanceof CmsPageEntity) {
+        $cmsPage = $pages->first();
+        if ($cmsPage === null) {
             throw LandingPageException::notFound($pageId);
         }
 
-        $landingPage->setCmsPage($page);
+        $landingPage->setCmsPage($cmsPage);
 
         return new LandingPageRouteResponse($landingPage);
     }

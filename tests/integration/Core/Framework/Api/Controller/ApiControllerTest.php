@@ -20,7 +20,6 @@ use Cicada\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\MultiFilter;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\Filter\NotFilter;
-use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Test\TestCaseBase\AdminApiTestBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\BasicTestDataBehaviour;
 use Cicada\Core\Framework\Test\TestCaseBase\FilesystemBehaviour;
@@ -2491,7 +2490,7 @@ EOF;
             'id' => $ids->get('customer'),
             'number' => '1337',
             'salutationId' => $this->getValidSalutationId(),
-            'name' => 'Max',
+            'title' => 'Max',
             'customerNumber' => '1337',
             'email' => $ids->get('email') . '@example.com',
             'password' => TestDefaults::HASHED_PASSWORD,
@@ -2511,10 +2510,6 @@ EOF;
                 ],
             ],
         ];
-
-        if (!Feature::isActive('v6.7.0.0')) {
-            $data['defaultPaymentMethodId'] = $this->getValidPaymentMethodId();
-        }
 
         static::getContainer()->get('customer.repository')
             ->create([$data], Context::createDefaultContext());

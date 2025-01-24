@@ -2,9 +2,6 @@
 
 namespace Cicada\Tests\Unit\Storefront\Theme\Command;
 
-use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 use Cicada\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Cicada\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult;
 use Cicada\Core\Framework\Log\Package;
@@ -17,6 +14,9 @@ use Cicada\Storefront\Theme\StorefrontPluginRegistryInterface;
 use Cicada\Storefront\Theme\ThemeEntity;
 use Cicada\Storefront\Theme\ThemeFileResolver;
 use Cicada\Storefront\Theme\ThemeFilesystemResolver;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;

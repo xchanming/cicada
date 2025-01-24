@@ -3,7 +3,6 @@
 namespace Cicada\Core\Content\Product\SalesChannel\Detail;
 
 use Cicada\Core\Content\Category\Service\CategoryBreadcrumbBuilder;
-use Cicada\Core\Content\Cms\CmsPageEntity;
 use Cicada\Core\Content\Cms\DataResolver\ResolverContext\EntityResolverContext;
 use Cicada\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoaderInterface;
 use Cicada\Core\Content\Product\Aggregate\ProductVisibility\ProductVisibilityDefinition;
@@ -114,9 +113,9 @@ class ProductDetailRoute extends AbstractProductDetailRoute
                     $resolverContext
                 );
 
-                $page = $pages->first();
-                if ($page instanceof CmsPageEntity) {
-                    $product->setCmsPage($page);
+                $cmsPage = $pages->first();
+                if ($cmsPage !== null) {
+                    $product->setCmsPage($cmsPage);
                 }
             }
 
