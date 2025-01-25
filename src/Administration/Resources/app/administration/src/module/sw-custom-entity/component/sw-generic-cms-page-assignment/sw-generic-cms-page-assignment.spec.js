@@ -33,7 +33,7 @@ const pageMock = {
 };
 
 /**
- * @sw-package content
+ * @sw-package discovery
  */
 async function createWrapper() {
     return mount(

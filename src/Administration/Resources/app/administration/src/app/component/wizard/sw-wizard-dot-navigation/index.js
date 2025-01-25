@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package framework
  */
 import './sw-wizard-dot-navigation.scss';
 import template from './sw-wizard-dot-navigation.html.twig';

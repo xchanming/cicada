@@ -1,5 +1,5 @@
 /**
- * @sw-package unknown
+ * @sw-package framework
  */
 const ApiService = Cicada.Classes.ApiService;
 

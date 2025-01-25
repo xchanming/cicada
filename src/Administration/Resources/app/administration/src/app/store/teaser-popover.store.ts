@@ -1,8 +1,9 @@
 /**
- * @sw-package customer-order
+ * @sw-package innovation
  * @private
  * @description Apply for upselling service only, no public usage
  */
+
 
 // eslint-disable-next-line sw-deprecation-rules/private-feature-declarations
 export type TeaserPopoverConfig = {

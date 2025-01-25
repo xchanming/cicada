@@ -1,5 +1,5 @@
 /**
- * @sw-package content
+ * @sw-package discovery
  */
 Cicada.Filter.register(
     'mediaName',
