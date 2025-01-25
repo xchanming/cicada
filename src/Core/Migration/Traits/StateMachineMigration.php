@@ -12,7 +12,7 @@ class StateMachineMigration
 {
     public function __construct(
         private string $technicalName,
-        private string $de,
+        private string $zh,
         private string $en,
         private array $states = [],
         private array $transitions = [],
@@ -20,9 +20,9 @@ class StateMachineMigration
     ) {
     }
 
-    public static function state(string $technicalName, string $de, string $en): array
+    public static function state(string $technicalName, string $zh, string $en): array
     {
-        return ['technicalName' => $technicalName, 'de' => $de, 'en' => $en];
+        return ['technicalName' => $technicalName, 'zh' => $zh, 'en' => $en];
     }
 
     public static function transition(string $actionName, string $from, string $to): array
@@ -40,14 +40,14 @@ class StateMachineMigration
         $this->technicalName = $technicalName;
     }
 
-    public function getDe(): string
+    public function getZh(): string
     {
-        return $this->de;
+        return $this->zh;
     }
 
-    public function setDe(string $de): void
+    public function setZh(string $zh): void
     {
-        $this->de = $de;
+        $this->zh = $zh;
     }
 
     public function getEn(): string

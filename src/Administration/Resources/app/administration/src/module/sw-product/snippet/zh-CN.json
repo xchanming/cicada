@@ -242,7 +242,7 @@
       "contextMenuEdit": "编辑",
       "contextMenuDelete": "删除",
       "contextMenuDuplicate": "副本",
-      "contextMenuShowVariants": "显示变体",
+      "contextMenuShowVariants": "查看变体",
       "variantIndicatorTooltip": "该商品有变体。",
       "variantGridEmptyStateSubline": "未找到变体。",
       "multipleVariantsDeleteModalText": "您确定要删除 {amount} 个变体吗？",

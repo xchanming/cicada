@@ -295,7 +295,7 @@ export default {
                     this.isSaveSuccessful = true;
                     this.createNotificationSuccess({
                         message: this.$tc('sw-customer.detail.messageSaveSuccess', 0, {
-                            name: `${this.customer.name}`,
+                            name: `${this.customer.title}`,
                         }),
                     });
                 })
