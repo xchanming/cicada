@@ -9,13 +9,13 @@ function getMedias() {
         {
             id: '1',
             media: {
-                url: 'http://xchanming.com/image1.jpg',
+                url: 'http://cicada.com/image1.jpg',
             },
         },
         {
             id: '2',
             media: {
-                url: 'http://xchanming.com/image2.jpg',
+                url: 'http://cicada.com/image2.jpg',
             },
         },
     ];

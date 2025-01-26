@@ -267,7 +267,10 @@ export default {
         async getList() {
             this.isLoading = true;
 
-            let criteria = await Cicada.Service('filterService').mergeWithStoredFilters(this.storeKey, this.productCriteria);
+            let criteria = await Cicada.Service('filterService').mergeWithStoredFilters(
+                this.storeKey,
+                this.productCriteria,
+            );
 
             criteria = await this.addQueryScores(this.term, criteria);
 
