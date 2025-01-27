@@ -419,6 +419,7 @@
     "cartMetaTitle": "购物车",
     "cartHeader": "购物车",
     "cartUpdateSuccess": "购物车已更新。",
+    "cartScreenReaderUpdate": "购物车包含一件商品。购物车总金额为 %total%。|购物车包含 %count% 件商品。购物车总金额为 %total%。",
     "continueShopping": "继续购物",
     "emptyCart": "您的购物车是空的。",
     "proceedToCart": "显示购物车",
