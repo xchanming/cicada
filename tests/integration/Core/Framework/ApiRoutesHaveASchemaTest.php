@@ -12,8 +12,8 @@ use Cicada\Core\Framework\Test\TestCaseBase\KernelLifecycleManager;
 use Cicada\Core\System\CustomEntity\Api\CustomEntityApiController;
 use Cicada\Core\System\SalesChannel\Entity\SalesChannelDefinitionInstanceRegistry;
 use Cicada\Core\Test\Integration\Traits\SnapshotTesting;
+use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RouterInterface;
@@ -28,25 +28,26 @@ class ApiRoutesHaveASchemaTest extends TestCase
 
     private RouteCollection $routes;
 
-    private ContainerInterface $container;
-
     protected function setUp(): void
     {
-        $container = KernelLifecycleManager::bootKernel()->getContainer()->get('test.service_container');
+        // Boot kernel, as some test definitions might still be registered in the old kernel
+        KernelLifecycleManager::bootKernel();
 
-        static::assertInstanceOf(ContainerInterface::class, $container);
+        $connection = $this->getContainer()->get(Connection::class);
+        if ($connection->getTransactionNestingLevel() === 0) {
+            // transaction was implicitly closed on kernel boot, start it again to don't mess up test execution
+            $connection->beginTransaction();
+        }
 
-        $this->container = $container;
-
-        $router = $this->container->get(RouterInterface::class);
+        $router = $this->getContainer()->get(RouterInterface::class);
         $this->routes = $router->getRouteCollection();
     }
 
     public function testStoreApiRoutesHaveASchema(): void
     {
-        $generator = $this->container->get(StoreApiGenerator::class);
+        $generator = $this->getContainer()->get(StoreApiGenerator::class);
         $schema = $generator->generate(
-            $this->container->get(SalesChannelDefinitionInstanceRegistry::class)->getDefinitions(),
+            $this->getContainer()->get(SalesChannelDefinitionInstanceRegistry::class)->getDefinitions(),
             DefinitionService::STORE_API,
             DefinitionService::TYPE_JSON_API,
             null
@@ -112,9 +113,9 @@ class ApiRoutesHaveASchemaTest extends TestCase
 
     public function testAdminApiRoutesHaveASchema(): void
     {
-        $generator = $this->container->get(OpenApi3Generator::class);
+        $generator = $this->getContainer()->get(OpenApi3Generator::class);
         $schema = $generator->generate(
-            $this->container->get(DefinitionInstanceRegistry::class)->getDefinitions(),
+            $this->getContainer()->get(DefinitionInstanceRegistry::class)->getDefinitions(),
             DefinitionService::API
         );
 
