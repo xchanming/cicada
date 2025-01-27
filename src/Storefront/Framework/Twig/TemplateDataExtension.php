@@ -62,7 +62,7 @@ class TemplateDataExtension extends AbstractExtension implements GlobalsInterfac
         );
 
         $globalTemplateData = [
-            'shopware' => [
+            'cicada' => [
                 'dateFormat' => \DATE_ATOM,
                 'navigation' => $navigationInfo,
                 'minSearchLength' => $this->minSearchLength($context),

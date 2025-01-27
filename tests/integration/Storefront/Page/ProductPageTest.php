@@ -15,7 +15,6 @@ use Cicada\Core\System\SystemConfig\SystemConfigService;
 use Cicada\Storefront\Page\Product\ProductPageLoadedEvent;
 use Cicada\Storefront\Page\Product\ProductPageLoader;
 use Cicada\Storefront\Test\Page\StorefrontPageTestBehaviour;
-use Doctrine\DBAL\Connection;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
