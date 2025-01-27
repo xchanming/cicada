@@ -37,6 +37,7 @@
                 {% block component_product_box_price_reference_unit %}
                     {% if referencePrice is not null %}
                         <span class="price-unit-reference">
+                            {# @deprecated tag:v6.7.0 - Showing asterisk next to every price is deprecated. Tax and shipping info is displayed as text instead if `allowBuyInListing` is true. #}
                             ({{ referencePrice.price|currency }} / {{ referencePrice.referenceUnit }} {{ referencePrice.unitName }})
                         </span>
                     {% endif %}
@@ -81,6 +82,7 @@
                 </span>
                 {% if isRegulationPrice %}
                     <span class="product-price with-regulation-price">
+                        {# @deprecated tag:v6.7.0 - Showing asterisk next to every price is deprecated. Tax and shipping info is displayed as text instead if `allowBuyInListing` is true. #}
                         {% if isListPrice %}<br>{% endif %}<span class="regulation-price">{{ 'general.listPricePreviously'|trans({'%price%': price.regulationPrice.price|currency }) }}</span>
                     </span>
                 {% endif %}
@@ -91,17 +93,18 @@
         If a product can be added to the shipping directly from the listing,
         we need to display information about taxes and shipping.
         #}
-        {% if feature('ACCESSIBILITY_TWEAKS') and config('core.listing.allowBuyInListing') %}
+        {% if config('core.listing.allowBuyInListing') %}
             {% block component_product_box_price_tax_info %}
-                <button class="product-price-tax-link btn btn-link fw-normal p-0 fs-6 lh-base"
-                        data-ajax-modal="true"
-                        data-url="{{ path('frontend.cms.page', { id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                {% set cmsPath ='frontend.cms.page.full'  %}
+
+                <a class="product-price-tax-link fw-normal p-0 fs-6 lh-base"
+                   href="{{ path(cmsPath, { id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
                     {% if context.taxState == 'gross' %}
                         {{ 'general.grossTaxInformation'|trans|sw_sanitize }}
                     {% else %}
                         {{ 'general.netTaxInformation'|trans|sw_sanitize }}
                     {% endif %}
-                </button>
+                </a>
             {% endblock %}
         {% endif %}
     </div>

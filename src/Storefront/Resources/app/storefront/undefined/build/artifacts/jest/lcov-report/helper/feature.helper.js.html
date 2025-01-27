@@ -29,16 +29,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">40% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>2/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">57.14% </span>
+                <span class="strong">42.86% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/7</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
@@ -149,22 +149,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -190,18 +190,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
@@ -222,9 +222,9 @@ class FeatureSingleton {
      * @param {Object} flagConfig
      *
      */
-    init(flagConfig) {
-        Object.entries(flagConfig).forEach(([flagName, isActive]) =&gt; {
-            this.flags[flagName] = isActive;
+<span class="fstat-no" title="function not covered" >    in</span>it(flagConfig) {
+<span class="cstat-no" title="statement not covered" >        Object.entries(flagConfig).forEach(<span class="fstat-no" title="function not covered" >([</span>flagName, isActive]) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.flags[flagName] = isActive;</span>
         });
     }
 &nbsp;
@@ -235,10 +235,10 @@ class FeatureSingleton {
      *
      * @returns {boolean}
      */
-<span class="fstat-no" title="function not covered" >    is</span>Active(flagName) {
-<span class="cstat-no" title="statement not covered" >        if (!Object.prototype.hasOwnProperty.call(this.flags, flagName)) {</span>
+    isActive(flagName) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!Object.prototype.hasOwnProperty.call(this.flags, flagName)) {
             // if not set, its false
-<span class="cstat-no" title="statement not covered" >            return false;</span>
+            return false;
         }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        return this.flags[flagName];</span>
@@ -263,8 +263,8 @@ export default class Feature {
      * @param {Object} flagConfig
      *
      */
-    static init(flagConfig = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-        FeatureInstance.init(flagConfig);
+<span class="fstat-no" title="function not covered" >    st</span>atic init(flagConfig = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="cstat-no" title="statement not covered" >        FeatureInstance.init(flagConfig);</span>
     }
 &nbsp;
     /**
@@ -274,8 +274,8 @@ export default class Feature {
      *
      * @returns {boolean}
      */
-<span class="fstat-no" title="function not covered" >    st</span>atic isActive(flag) {
-<span class="cstat-no" title="statement not covered" >        return FeatureInstance.isActive(flag);</span>
+    static isActive(flag) {
+        return FeatureInstance.isActive(flag);
     }
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -285,7 +285,7 @@ export default class Feature {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jan 24 2025 05:34:59 GMT+0800 (China Standard Time)
+                at Mon Jan 27 2025 20:36:30 GMT+0800 (China Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

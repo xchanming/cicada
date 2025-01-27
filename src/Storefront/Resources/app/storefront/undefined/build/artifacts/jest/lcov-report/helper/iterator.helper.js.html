@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">31.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>5/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">31.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/16</span>
+                <span class='fraction'>5/16</span>
             </div>
         
             
@@ -130,23 +130,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -182,24 +182,24 @@ export default class Iterator {
      *
      * @returns {*}
      */
-<span class="fstat-no" title="function not covered" >    st</span>atic iterate(source, callback) {
-<span class="cstat-no" title="statement not covered" >        if (source instanceof Map) {</span>
+    static iterate(source, callback) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (source instanceof Map) {
 <span class="cstat-no" title="statement not covered" >            return source.forEach(callback);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (Array.isArray(source)) {</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (Array.isArray(source)) {
 <span class="cstat-no" title="statement not covered" >            return source.forEach(callback);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (source instanceof FormData) {</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (source instanceof FormData) {
 <span class="cstat-no" title="statement not covered" >            for (var entry of source.entries()) {</span>
 <span class="cstat-no" title="statement not covered" >                callback(entry[1], entry[0]);</span>
             }
 <span class="cstat-no" title="statement not covered" >            return;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (source instanceof NodeList) {</span>
-<span class="cstat-no" title="statement not covered" >            return source.forEach(callback);</span>
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (source instanceof NodeList) {
+            return source.forEach(callback);
         }
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        if (source instanceof HTMLCollection) {</span>
@@ -222,7 +222,7 @@ export default class Iterator {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jan 24 2025 05:34:59 GMT+0800 (China Standard Time)
+                at Mon Jan 27 2025 20:36:30 GMT+0800 (China Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

@@ -32,6 +32,11 @@ class Migration1578042218DefaultPages extends MigrationStep
 
         $pages = [
             [
+                'key' => 'core.basicInformation.shippingPaymentInfoPage',
+                'zh' => '支付 & 物流',
+                'en' => 'Payment / Shipping',
+            ],
+            [
                 'key' => 'core.basicInformation.tosPage',
                 'zh' => '服务条款',
                 'en' => 'Terms of service',

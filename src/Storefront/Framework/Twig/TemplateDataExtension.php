@@ -55,13 +55,14 @@ class TemplateDataExtension extends AbstractExtension implements GlobalsInterfac
         $themeId = $request->attributes->get(SalesChannelRequest::ATTRIBUTE_THEME_ID);
 
         $activeNavigationId = (string) $request->get('navigationId', $context->getSalesChannel()->getNavigationCategoryId());
+        $navigationPathIdList = $this->getNavigationPath($activeNavigationId, $context);
         $navigationInfo = new NavigationInfo(
             $activeNavigationId,
-            $this->getNavigationPath($activeNavigationId),
+            $navigationPathIdList,
         );
 
         $globalTemplateData = [
-            'cicada' => [
+            'shopware' => [
                 'dateFormat' => \DATE_ATOM,
                 'navigation' => $navigationInfo,
                 'minSearchLength' => $this->minSearchLength($context),
@@ -76,7 +77,7 @@ class TemplateDataExtension extends AbstractExtension implements GlobalsInterfac
         ];
 
         if (!Feature::isActive('v6.7.0.0')) {
-            /** @deprecated tag:v6.7.0 - Will be removed, use cicada.showStagingBanner instead */
+            /** @deprecated tag:v6.7.0 - Will be removed, use shopware.showStagingBanner instead */
             $globalTemplateData['showStagingBanner'] = $this->showStagingBanner;
         }
 
@@ -116,12 +117,22 @@ class TemplateDataExtension extends AbstractExtension implements GlobalsInterfac
         return $min ?: AbstractTokenFilter::DEFAULT_MIN_SEARCH_TERM_LENGTH;
     }
 
-    private function getNavigationPath(string $activeNavigationId): string
+    /**
+     * @return list<string>
+     */
+    private function getNavigationPath(string $activeNavigationId, SalesChannelContext $context): array
     {
-        return $this->connection->fetchOne(
+        $path = $this->connection->fetchOne(
             'SELECT path FROM category WHERE id = :id',
             ['id' => Uuid::fromHexToBytes($activeNavigationId)]
         ) ?: '';
+
+        $navigationPathIdList = array_filter(explode('|', $path));
+        if (Feature::isActive('cache_rework')) {
+            $navigationPathIdList = array_diff($navigationPathIdList, [$context->getSalesChannel()->getNavigationCategoryId()]);
+        }
+
+        return array_values($navigationPathIdList);
     }
 
     private function getLanguageInfo(Context $context): LanguageInfo

@@ -2,6 +2,7 @@
 
 namespace Cicada\Storefront\Controller;
 
+use Cicada\Core\Framework\Feature;
 use Cicada\Core\Framework\Log\Package;
 use Cicada\Core\Framework\Validation\Exception\ConstraintViolationException;
 use Cicada\Core\System\SalesChannel\SalesChannelContext;
@@ -62,7 +63,8 @@ class ErrorController extends StorefrontController
             } else {
                 $errorTemplate = $this->errorTemplateResolver->resolve($exception, $request);
 
-                if (!$request->isXmlHttpRequest()) {
+                /* @deprecated tag:v6.7.0 - Remove the whole if branch as it is not needed anymore */
+                if (!$request->isXmlHttpRequest() && !Feature::isActive('cache_rework')) {
                     $header = $this->headerPageletLoader->load($request, $context);
                     $footer = $this->footerPageletLoader->load($request, $context);
                     $errorTemplate->setHeader($header);

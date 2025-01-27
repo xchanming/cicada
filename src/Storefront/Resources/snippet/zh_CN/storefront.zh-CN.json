@@ -42,6 +42,7 @@
     "requiredFields": "标有星号 (*) 的字段为必填项。",
     "privacyTitle": "隐私",
     "privacyNoticeText": "选择继续即表示您确认已阅读我们的<a data-ajax-modal=\"true\" data-url=\"%privacyUrl%\" href=\"%privacyUrl%\" title=\"数据保护信息\">数据保护信息</a>并接受我们的<a data-ajax-modal=\"true\" data-url=\"%tosUrl%\" href=\"%tosUrl%\" title=\"一般条款和条件\">一般条款和条件</a>。",
+    "privacyNoticeTextPage": "选择继续即表示您已阅读我们的<a href=\"%privacyUrl%\" title=\"数据保护信息\">数据保护信息</a>并接受我们的<a href=\"%tosUrl%\" title=\"一般条款和条件\">一般条款和条件</a>。",
     "privacyLink": "隐私政策",
     "imprintLink": "版权声明",
     "404ErrorPageHeader": "页面未找到",

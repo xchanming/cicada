@@ -117,5 +117,11 @@
         <service id="Cicada\Core\Content\Category\DataAbstractionLayer\CategoryNonExistentExceptionHandler">
             <tag name="cicada.dal.exception_handler"/>
         </service>
+
+        <service id="Cicada\Core\Content\Category\Cms\CategoryNavigationCmsElementResolver">
+            <argument type="service" id="Cicada\Core\Content\Category\Service\NavigationLoader"/>
+
+            <tag name="cicada.cms.data_resolver"/>
+        </service>
     </services>
 </container>
