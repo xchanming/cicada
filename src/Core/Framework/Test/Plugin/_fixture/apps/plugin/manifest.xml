@@ -4,9 +4,9 @@
     <meta>
         <name>SwagApp</name>
         <label>Swag App Test</label>
-        <label lang="de-DE">Swag App Test</label>
+        <label lang="en-GB">Swag App Test</label>
         <description>Test for App System</description>
-        <description lang="de-DE">Test für das App System</description>
+        <description lang="en-GB">Test für das App System</description>
         <author>shopware AG</author>
         <copyright>(c) by shopware AG</copyright>
         <version>1.0.0</version>
@@ -24,7 +24,7 @@
             view="detail"
             url="https://swag-test.com/your-order">
             <label>View Order</label>
-            <label lang="de-DE">Zeige Bestellung</label>
+            <label lang="en-GB">Zeige Bestellung</label>
         </action-button>
         <action-button
             action="doStuffWithProducts"
@@ -35,7 +35,7 @@
         </action-button>
         <module name="first-module" source="https://test.com" parent="sw-catalouge">
             <label>My first own module</label>
-            <label lang="de-DE">Mein erstes eigenes Modul</label>
+            <label lang="en-GB">Mein erstes eigenes Modul</label>
         </module>
     </admin>
     <permissions>
@@ -51,7 +51,7 @@
         <custom-field-set>
             <name>custom_field_test</name>
             <label>Custom field test</label>
-            <label lang="de-DE">Zusatzfeld Test</label>
+            <label lang="en-GB">Zusatzfeld Test</label>
             <related-entities>
                 <product/>
                 <customer/>
