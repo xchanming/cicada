@@ -32,7 +32,7 @@ export default Cicada.Component.wrapComponentConfig({
 
     data() {
         return {
-            showSelection: this.forceChoose as boolean,
+            showSelection: this.forceChoose,
         };
     },
 

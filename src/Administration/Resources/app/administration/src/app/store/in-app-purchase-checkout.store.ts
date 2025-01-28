@@ -18,6 +18,7 @@ export type InAppPurchaseCheckoutState =
           extension: string;
       };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const inAppPurchaseCheckoutStore = Cicada.Store.register({
     id: 'inAppPurchaseCheckout',
 

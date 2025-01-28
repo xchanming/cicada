@@ -113,9 +113,9 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override ref values, access previous ones and modify previous ones', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -268,9 +268,9 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override ref values, access previous ones and modify previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -1580,10 +1580,10 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override readonly computed values (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -1645,11 +1645,11 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override readonly computed values and access previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
-                    <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
+                        <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -1718,11 +1718,11 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override readonly computed values and modify previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
-                    <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
+                        <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -1793,10 +1793,10 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override writable computed values (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
-                    <input v-model="countDoubled" type="number"/>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
+                        <input v-model="countDoubled" type="number"/>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -1875,11 +1875,11 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override writable computed values and access previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
-                    <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
-                    <input v-model="countTripled" type="number"/>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
+                        <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
+                        <input v-model="countTripled" type="number"/>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -1971,11 +1971,11 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override writable computed values and modify previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
-                    <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
-                    <input v-model="countTripled" type="number"/>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="count-doubled">Count Doubled: {{ countDoubled }}</div>
+                        <div class="count-tripled">Count Tripled: {{ countTripled }}</div>
+                        <input v-model="countTripled" type="number"/>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -2187,9 +2187,9 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override functions (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -2331,10 +2331,10 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override functions and access previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="double-count">Double Count: {{ doubleCount }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="double-count">Double Count: {{ doubleCount }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -2408,10 +2408,10 @@ describe('src/app/adapter/composition-extension-system', () => {
             it('should be able to override functions and modify previous ones (Multiple overridess)', async () => {
                 const originalComponent = defineComponent({
                     template: `
-                    <div class="count">Count: {{ count }}</div>
-                    <div class="double-count">Double Count: {{ doubleCount }}</div>
-                    <button @click="increment">Increment</button>
-                `,
+                        <div class="count">Count: {{ count }}</div>
+                        <div class="double-count">Double Count: {{ doubleCount }}</div>
+                        <button @click="increment">Increment</button>
+                    `,
                     setup: (props, context) =>
                         createExtendableSetup(
                             {
@@ -2909,13 +2909,13 @@ describe('src/app/adapter/composition-extension-system', () => {
         it('should be able to access context in the override (with empty slot)', async () => {
             const originalComponent = defineComponent({
                 template: `
-                <div>
-                    <slot name="header">
-                        {{ message }}
-                    </slot>
-                    {{ secondMessage }}
-                </div>
-            `,
+                    <div>
+                        <slot name="header">
+                            {{ message }}
+                        </slot>
+                        {{ secondMessage }}
+                    </div>
+                `,
                 setup: (props, context) =>
                     createExtendableSetup(
                         {
@@ -3150,6 +3150,7 @@ describe('src/app/adapter/composition-extension-system', () => {
         });
 
         it('should have correct previousState types for the overrideComponentSetup', () => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const _InternalTestComponent = defineComponent({
                 template: `
                     <div class="base">Base: {{ baseValue }}</div>
@@ -3267,6 +3268,7 @@ describe('src/app/adapter/composition-extension-system', () => {
         });
 
         it('should have correct props types for the overrideComponentSetup', () => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const originalComponent = defineComponent({
                 template: `
                     <div>Hello World</div>
@@ -3330,6 +3332,7 @@ describe('src/app/adapter/composition-extension-system', () => {
         });
 
         it('should have correct context types for the overrideComponentSetup', () => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const originalComponent = defineComponent({
                 template: `
                     <div>Hello World</div>
