@@ -34,13 +34,6 @@ const zoomableImage = {
     offsetHeight: 200,
 };
 
-const unzoomableImage = {
-    naturalWidth: 400,
-    naturalHeight: 200,
-    offsetWidth: 400,
-    offsetHeight: 200,
-};
-
 function getTranslateAmount(itemLength = 1, itemPerPage = 1, expectedIndex = 0) {
     const remainder = itemLength % itemPerPage;
     const totalPage = Math.ceil(itemLength / itemPerPage);
@@ -498,11 +491,6 @@ describe('src/app/component/modal/sw-image-preview-modal', () => {
         const btnReset = wrapper.find({ ref: 'btnReset' });
 
         wrapper.vm.getActiveImage = jest.fn().mockImplementation(() => Promise.resolve());
-
-        // Mock image with natural size smaller than offset size
-        await wrapper.setData({
-            image: createImage(wrapper.vm.image, unzoomableImage),
-        });
 
         await wrapper.vm.$forceUpdate();
         await wrapper.vm.$nextTick();

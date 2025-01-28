@@ -4,8 +4,10 @@
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-named-default */
+/* eslint-disable @typescript-eslint/no-empty-object-type */
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import type { default as Bottle, Decorator } from 'bottlejs';
-import type { Router } from 'vue-router';
+import type { NavigationGuardNext, RouteLocationNormalizedLoaded, RouteLocationRaw, Router } from 'vue-router';
 // Import explicitly global types from meteor-admin-sdk
 import '@cicada-ag/meteor-admin-sdk';
 import type FeatureService from 'src/app/service/feature.service';
@@ -158,6 +160,7 @@ declare global {
 
     interface CustomCicadaProperties {}
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
     interface Window {
         Cicada: CicadaClass;
         _features_: {
@@ -413,7 +416,6 @@ declare module 'bottlejs' {
  * @deprecated tag:v6.7.0 - will be removed when Vue compat gets removed
  */
 interface LegacyPublicProperties {
-    /* eslint-disable @typescript-eslint/ban-types */
     $set(target: object, key: string, value: any): void;
     $delete(target: object, key: string): void;
     $mount(el?: string | Element): this;
@@ -425,22 +427,22 @@ interface LegacyPublicProperties {
     $children: LegacyPublicProperties[];
     $listeners: Record<string, Function | Function[]>;
     isCompatEnabled: (key: string) => boolean;
-    /* eslint-enable @typescript-eslint/ban-types */
 }
 
 interface CustomProperties extends ServiceContainer, LegacyPublicProperties {
     $createTitle: (identifier?: string | null) => string;
     $router: Router;
     $store: Store<VuexRootState>;
-    // $route: SwRouteLocationNormalizedLoaded,
-    // eslint-disable-next-line @typescript-eslint/ban-types
+    $route: RouteLocationNormalizedLoaded;
     $tc: I18n<{}, {}, {}, string, true>['global']['tc'];
-    // eslint-disable-next-line @typescript-eslint/ban-types
     $t: I18n<{}, {}, {}, string, true>['global']['t'];
     $dataScope: () => ComponentInternalInstance['proxy'];
 }
 
-declare module 'vue' {
+declare module '@vue/runtime-core' {
+    // eslint-disable-next-line @typescript-eslint/no-shadow,@typescript-eslint/no-empty-interface
+    interface App extends CustomProperties {}
+
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
     interface ComponentCustomProperties extends CustomProperties {}
 
@@ -460,21 +462,19 @@ declare module 'vue' {
             positionId?: (currentComponent: any) => string;
             helpText?: string;
         };
+        beforeRouteEnter?: (to: RouteLocationRaw, from: RouteLocationRaw, next: NavigationGuardNext) => void;
+        beforeRouteLeave?: (to: RouteLocationRaw, from: RouteLocationRaw, next: NavigationGuardNext) => void;
     }
+
 
     interface PropOptions {
         validValues?: any[];
     }
 }
 
-declare module '@vue/runtime-core' {
-    // eslint-disable-next-line @typescript-eslint/no-shadow,@typescript-eslint/no-empty-interface
-    interface App extends CustomProperties {}
-}
-
 declare module 'axios' {
     interface AxiosRequestConfig {
-        // adds the cicada API version to the RequestConfig
+        // adds the shopware API version to the RequestConfig
         version?: number;
     }
 }

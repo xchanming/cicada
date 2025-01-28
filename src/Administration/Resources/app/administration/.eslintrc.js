@@ -109,7 +109,7 @@ module.exports = {
                 'prettier',
             ],
             files: ['**/*.js'],
-            excludedFiles: ['*.spec.js', '*.spec.vue3.js'],
+            excludedFiles: ['*.spec.js'],
             rules: {
                 ...baseRules,
                 'sw-core-rules/require-explicit-emits': 'error',
@@ -292,7 +292,11 @@ module.exports = {
                 'no-void': 'off',
                 // Disable the base rule as it can report incorrect errors
                 'no-unused-vars': 'off',
-                '@typescript-eslint/no-unused-vars': 'error',
+                '@typescript-eslint/no-unused-vars': [
+                    'error',
+                    { caughtErrors: 'none' },
+                ],
+                '@typescript-eslint/prefer-promise-reject-errors': 'warn',
                 'sw-deprecation-rules/no-compat-conditions': ['warn', 'disableFix'],
                 'sw-deprecation-rules/no-empty-listeners': ['error', 'enableFix'],
                 'sw-deprecation-rules/no-vue-options-api': 'off',

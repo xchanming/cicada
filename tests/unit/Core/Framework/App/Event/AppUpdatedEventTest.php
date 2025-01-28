@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Cicada\Tests\Integration\Core\Framework\App\Event;
+namespace Cicada\Tests\Unit\Core\Framework\App\Event;
 
 use Cicada\Core\Framework\App\AppEntity;
 use Cicada\Core\Framework\App\Event\AppInstalledEvent;
@@ -9,11 +9,13 @@ use Cicada\Core\Framework\App\Manifest\Manifest;
 use Cicada\Core\Framework\Context;
 use Cicada\Core\Framework\Uuid\Uuid;
 use Cicada\Core\Framework\Webhook\AclPrivilegeCollection;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @internal
  */
+#[CoversClass(AppUpdatedEvent::class)]
 class AppUpdatedEventTest extends TestCase
 {
     public function testGetter(): void

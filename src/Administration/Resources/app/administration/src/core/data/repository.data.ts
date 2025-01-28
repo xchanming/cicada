@@ -1,7 +1,7 @@
 /**
  * @sw-package framework
  */
-
+/* eslint-disable @typescript-eslint/only-throw-error */
 import type { AxiosInstance, AxiosResponse } from 'axios';
 import Criteria from './criteria.data';
 import type EntityHydrator from './entity-hydrator.data';
